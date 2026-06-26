@@ -24,54 +24,58 @@
 html,body{margin:0;padding:0;background:var(--bg);}
 ::selection{background:var(--ring);}
 body{color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;line-height:1.5;}
-#vf-app{max-width:1180px;margin:0 auto;padding:0 28px 96px;}
+#vf-app{max-width:1200px;margin:0 auto;padding:0 28px 64px;}
 .vf-num{font-variant-numeric:tabular-nums;}
 h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:-.01em;color:var(--ink);margin:0;}
 button{font-family:inherit;}
 :focus-visible{outline:2px solid var(--rec);outline-offset:2px;border-radius:3px;}
 
-/* ---------- HERO ---------- */
-.vf-hero{padding:52px 0 30px;border-bottom:1px solid var(--line);}
-.vf-head{max-width:760px;margin-bottom:26px;}
-.vf-kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;}
-.vf-h1{font-size:44px;line-height:1.03;}
-.vf-sub{font-size:15.5px;color:var(--muted);max-width:620px;line-height:1.55;margin:10px 0 0;}
-.vf-hero-grid{display:grid;grid-template-columns:1.9fr 0.92fr;gap:28px;align-items:start;}
-@media(max-width:840px){.vf-hero-grid{grid-template-columns:1fr;gap:22px;}}
+/* ---------- TOP ---------- */
+.vf-top{padding:38px 0 18px;}
+.vf-kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:13px;}
+.vf-h1{font-size:38px;line-height:1.04;}
+.vf-sub{font-size:15px;color:var(--muted);max-width:660px;line-height:1.55;margin:10px 0 0;}
 
-.vf-charthead{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-bottom:8px;}
-.vf-h2{font-size:21px;}
+/* ---------- WORKSPACE: chart | detail ---------- */
+.vf-workspace{display:grid;grid-template-columns:1.55fr 1fr;gap:26px;align-items:start;}
+@media(max-width:980px){.vf-workspace{grid-template-columns:1fr;gap:20px;}}
+.vf-chart-col{min-width:0;}
+
+.vf-charthead{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:8px;}
+.vf-h2{font-size:20px;}
 .vf-h2-sub{font-family:var(--sans);font-weight:400;font-size:14px;color:var(--faint);letter-spacing:0;}
-.vf-cap{font-size:12.5px;color:var(--muted);margin-top:2px;}
-.vf-legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);}
+.vf-cap{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:5px;}
+.vf-cap-key{display:inline-flex;align-items:center;gap:5px;}
+.vf-kp{font-weight:700;font-size:12px;line-height:1;}
+.vf-kp-rec{color:var(--rec);}
+.vf-kp-sel{color:var(--ink);}
+.vf-legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);align-items:center;}
 .vf-lg{display:inline-flex;align-items:center;gap:6px;}
 .vf-dot{width:10px;height:10px;border-radius:50%;display:inline-block;}
 .vf-dot-rec{width:11px;height:11px;background:var(--rec);box-shadow:0 0 0 3px var(--ring);}
 .vf-dot-front{background:var(--front);}
 .vf-dot-dom{width:9px;height:9px;background:var(--dom);}
+.vf-legend-heat{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--muted);}
+.vf-heat-lab{font-weight:600;color:var(--ink);}
+.vf-heat-bar{width:78px;height:9px;border-radius:5px;background:linear-gradient(90deg,rgb(233,226,216),rgb(184,67,15));border:1px solid var(--line);}
+.vf-heat-ends{font-family:var(--mono);font-size:9px;letter-spacing:.04em;color:var(--faint);}
+
 .vf-card{position:relative;border:1px solid var(--line);border-radius:12px;background:var(--card);padding:10px 12px 4px 4px;box-shadow:0 1px 3px rgba(28,26,23,.03);}
 .vf-chart-tools{position:absolute;top:10px;right:12px;display:flex;gap:4px;z-index:3;}
 .vf-tool{width:28px;height:28px;border:1px solid var(--line);background:var(--card);color:var(--muted);border-radius:6px;cursor:pointer;font-size:15px;line-height:1;display:flex;align-items:center;justify-content:center;}
 .vf-tool:hover{border-color:var(--dom);color:var(--ink);}
-.vf-card:fullscreen{display:flex;flex-direction:column;justify-content:center;padding:28px;background:var(--bg);}
+.vf-tool-adjust{width:auto;padding:0 11px;gap:6px;color:var(--ink);border-color:var(--dom);font-weight:500;}
+.vf-tool-adjust .vf-tool-ic{font-size:14px;}
+.vf-tool-adjust .vf-tool-tx{font-size:12.5px;}
+.vf-card:fullscreen,.vf-card.vf-fs{display:flex;flex-direction:column;justify-content:center;padding:28px;background:var(--bg);}
 .vf-card:fullscreen .vf-plot{width:100%;max-width:1500px;margin:0 auto;}
 .vf-card:fullscreen .vf-svg{max-height:88vh;}
 
-/* robustness / tornado */
-.vf-robust{margin:26px 0 0;}
-.vf-tor{margin:4px 0 0;}
-.vf-tor-row{display:grid;grid-template-columns:150px 1fr 46px;gap:10px;align-items:center;padding:4px 0;}
-.vf-tor-lab{font-size:12.5px;color:var(--ink);text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-.vf-tor-track{position:relative;height:12px;background:var(--track);border-radius:3px;}
-.vf-tor-track::before{content:"";position:absolute;left:50%;top:-2px;bottom:-2px;width:1px;background:var(--dom);}
-.vf-tor-bar{position:absolute;top:0;bottom:0;border-radius:2px;min-width:1px;}
-.vf-tor-bar.pos{background:var(--front);}
-.vf-tor-bar.neg{background:var(--rec);}
-.vf-tor-amt{font-size:12px;font-variant-numeric:tabular-nums;font-weight:600;text-align:right;}
-.vf-tor-axis{display:flex;justify-content:space-between;font-family:var(--mono);font-size:9px;letter-spacing:.04em;text-transform:uppercase;color:var(--faint);margin:7px 0 0;padding:0 46px 0 160px;}
-.vf-wwhtbt{font-size:13px;color:var(--muted);line-height:1.5;margin:14px 0 2px;}
-@media(max-width:520px){.vf-tor-row{grid-template-columns:104px 1fr 40px;}.vf-tor-lab{font-size:11.5px;}.vf-tor-axis{padding-left:114px;}}
+/* chart svg */
+.vf-plot{position:relative;}
 .vf-svg{display:block;width:100%;height:auto;}
+.vf-card .vf-svg{cursor:grab;touch-action:pan-y;}
+.vf-card .vf-svg:active{cursor:grabbing;}
 .vf-grid{stroke:var(--hair);stroke-width:1;}
 .vf-tick{fill:var(--faint);font-size:11px;font-family:var(--mono);text-anchor:middle;}
 .vf-tick-y{text-anchor:end;}
@@ -84,71 +88,134 @@ button{font-family:inherit;}
 .vf-pt-front{fill:var(--front);}
 .vf-pt-dom{fill:var(--dom);}
 .vf-pt-screen{fill:var(--screen);stroke:var(--screen-bd);}
-.vf-pt-selring{fill:none;stroke:var(--ink);stroke-width:1.5;opacity:.6;}
-.vf-pt-ring{fill:none;stroke:var(--rec);stroke-width:1.5;opacity:.4;}
+.vf-pt-lens{stroke:#fff;stroke-width:1.5;}
+.vf-pt-selring{fill:none;stroke:var(--ink);stroke-width:2;opacity:.75;}
+.vf-pt-recring{fill:none;stroke:var(--rec);stroke-width:1.5;opacity:.45;}
 .vf-pt-lab{fill:var(--ink);font-size:12px;font-weight:600;font-family:var(--serif);}
-.vf-pt-sublab{fill:var(--rec);font-size:10px;font-family:var(--mono);letter-spacing:.04em;}
+.vf-pt-lab-rec{fill:var(--rec);}
+.vf-pt-sublab{fill:var(--muted);font-size:9.5px;font-family:var(--mono);letter-spacing:.03em;}
 .vf-axisnote{font-size:10.5px;font-family:var(--mono);color:var(--faint);text-align:center;margin:6px 8px 4px;}
 
-/* verdict */
-.vf-verdict{display:flex;flex-direction:column;gap:12px;}
-.vf-vcard{display:block;width:100%;text-align:left;border:1px solid var(--line);border-radius:12px;background:var(--card);padding:18px 20px;cursor:pointer;transition:border-color .12s,box-shadow .12s;font-family:inherit;}
-.vf-vcard:hover{border-color:var(--dom);}
-.vf-vsel{box-shadow:0 0 0 2px var(--ink);}
-.vf-vcard-rec{background:var(--rec-bg);border-color:var(--rec-border);}
-.vf-vcard-rec.vf-vsel{box-shadow:0 0 0 2px var(--rec);}
-.vf-vtag{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--rec);}
-.vf-vname{font-family:var(--serif);font-size:20px;font-weight:600;line-height:1.15;margin:6px 0 10px;}
-.vf-vfig{display:flex;align-items:baseline;gap:14px;margin-bottom:10px;}
-.vf-vbig{font-family:var(--serif);font-size:32px;font-weight:600;color:var(--rec);line-height:1;}
-.vf-vunit{font-size:16px;color:var(--rec);font-weight:400;}
-.vf-vsec{font-size:13px;color:var(--muted);}
-.vf-vwhy{font-size:13px;color:var(--muted);line-height:1.45;}
-.vf-valt-h{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin:6px 0 -2px 2px;}
-.vf-vcard-alt{padding:13px 16px;}
-.vf-valt-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;}
-.vf-valt-lab{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--front);}
-.vf-valt-fig{font-size:13px;color:var(--ink);}
-.vf-valt-name{font-size:14px;font-weight:600;margin:2px 0 3px;}
-.vf-valt-why{font-size:12px;color:var(--muted);line-height:1.4;}
+/* ---------- PICKS row ---------- */
+.vf-picks{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px;}
+@media(max-width:560px){.vf-picks{grid-template-columns:1fr;}}
+.vf-pick{display:block;width:100%;text-align:left;border:1px solid var(--line);border-radius:11px;background:var(--card);padding:12px 14px;cursor:pointer;transition:border-color .12s,box-shadow .12s;font-family:inherit;}
+.vf-pick:hover{border-color:var(--dom);}
+.vf-pick-sel{box-shadow:0 0 0 2px var(--ink);}
+.vf-pick-rec{background:var(--rec-bg);border-color:var(--rec-border);}
+.vf-pick-rec.vf-pick-sel{box-shadow:0 0 0 2px var(--rec);}
+.vf-pick-tag{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--front);}
+.vf-pick-rec .vf-pick-tag{color:var(--rec);}
+.vf-pick-name{font-family:var(--serif);font-weight:600;font-size:15px;line-height:1.16;margin:5px 0 8px;}
+.vf-pick-fig{display:flex;align-items:baseline;gap:10px;}
+.vf-pick-fig>.vf-num{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--ink);}
+.vf-pick-rec .vf-pick-fig>.vf-num{color:var(--rec);}
+.vf-pick-val{font-size:11.5px;color:var(--muted);}
+.vf-pick-why{font-size:11.5px;color:var(--muted);line-height:1.4;margin-top:7px;}
+.vf-pick-empty{grid-column:1/-1;color:var(--muted);font-size:13px;padding:16px;text-align:center;}
 
-/* ---------- ADJUST ---------- */
-.vf-adjust{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:16px 20px;margin:24px 0 0;}
-.vf-adj-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
-.vf-adj-lab{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);}
+/* ---------- DETAIL rail ---------- */
+.vf-detail{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:22px 24px;}
+.vf-detail-top{padding-bottom:16px;border-bottom:1px solid var(--hair);}
+.vf-detail-tagline{display:flex;align-items:center;gap:9px;margin-bottom:9px;flex-wrap:wrap;}
+.vf-detail-view{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);}
+.vf-detail-name{font-family:var(--serif);font-size:21px;font-weight:600;line-height:1.14;}
+.vf-stat{display:flex;gap:30px;margin-top:14px;}
+.vf-stat-lab{font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin-bottom:3px;font-family:var(--mono);}
+.vf-stat-val{font-family:var(--serif);font-size:25px;font-weight:600;line-height:1;}
+.vf-stat-cost{color:var(--rec);}
+.vf-pnote{font-size:12.5px;color:var(--muted);font-style:italic;margin:14px 0 0;line-height:1.45;}
+.vf-buy{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:14px 0 0;}
+.vf-buy-lab{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);}
+.vf-buy-link{font-size:13px;color:var(--rec);text-decoration:none;border-bottom:1px solid var(--ring);}
+.vf-buy-link:hover{border-bottom-color:var(--rec);}
+.vf-col{margin-top:18px;}
+.vf-col-h{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);font-family:var(--mono);margin-bottom:10px;display:flex;flex-wrap:wrap;gap:3px 8px;align-items:baseline;}
+.vf-col-sub{font-family:var(--serif);text-transform:none;letter-spacing:0;font-size:11.5px;font-style:italic;color:var(--faint);}
+
+/* value waterfall */
+.vf-wf{padding:7px 0;border-bottom:1px solid var(--line3);}
+.vf-wf-lenson{background:var(--rec-bg);border-radius:7px;border-bottom-color:transparent;margin:0 -8px;padding:7px 8px;}
+.vf-wf-head{display:flex;align-items:baseline;gap:8px;}
+.vf-wf-lab{font-size:13px;color:var(--ink);font-weight:500;flex:1;}
+.vf-wf-meta{font-size:10px;color:var(--faint);white-space:nowrap;}
+.vf-wf-amt{font-size:12.5px;font-weight:600;font-variant-numeric:tabular-nums;width:44px;text-align:right;}
+.vf-amt-pos{color:var(--front);} .vf-amt-neg{color:var(--rec);}
+.vf-wf-track{position:relative;height:10px;margin:5px 0 0;background:var(--track);border-radius:3px;}
+.vf-wf-bar{position:absolute;top:0;bottom:0;border-radius:2px;min-width:2px;}
+.vf-wf-bar.pos{background:var(--front);}
+.vf-wf-bar.neg{background:var(--rec);}
+.vf-wf-bar.total{background:var(--ink);}
+.vf-wf-why{font-size:11.5px;color:var(--faint);margin-top:5px;font-style:italic;line-height:1.4;}
+.vf-wf-total{border-bottom:none;border-top:1.5px solid var(--line);margin-top:4px;padding-top:9px;}
+.vf-wf-total .vf-wf-lab{font-weight:600;font-family:var(--serif);font-size:14px;}
+.vf-wf-total .vf-wf-amt{font-family:var(--serif);font-size:15px;color:var(--ink);}
+.vf-br-src{color:var(--front);}
+
+/* cost bars (parity with value) */
+.vf-cb{display:grid;grid-template-columns:1fr 80px 60px;gap:10px;align-items:center;padding:6px 0;border-bottom:1px solid var(--line3);}
+.vf-cb-lab{font-size:11.5px;color:var(--ink);line-height:1.3;}
+.vf-cb-track{height:9px;background:var(--track);border-radius:3px;position:relative;overflow:hidden;}
+.vf-cb-bar{position:absolute;left:0;top:0;bottom:0;background:var(--rec);border-radius:3px;opacity:.85;}
+.vf-cb-bar.neg{background:var(--front);}
+.vf-cb-amt{font-size:12.5px;color:var(--ink);text-align:right;font-variant-numeric:tabular-nums;}
+.vf-cb-total{border-bottom:none;border-top:1.5px solid var(--line);margin-top:3px;padding-top:9px;}
+.vf-cb-total .vf-cb-lab{font-weight:600;font-size:12.5px;}
+.vf-cb-total .vf-cb-amt{font-family:var(--serif);font-size:16px;font-weight:600;color:var(--rec);}
+
+/* ---------- CONTROLS (on page; rides into fullscreen drawer) ---------- */
+.vf-controls-slot{margin-top:26px;}
+.vf-controls{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:15px 18px;}
+.vf-ctrl-primary{display:flex;gap:30px;flex-wrap:wrap;align-items:flex-start;}
+.vf-ctrl-field{display:flex;flex-direction:column;gap:8px;}
+.vf-ctrl-lab{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);}
+.vf-segwrap{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--bg);width:fit-content;}
+.vf-seg{font-size:12.5px;border:none;background:none;color:var(--muted);padding:7px 15px;cursor:pointer;border-right:1px solid var(--line);}
+.vf-seg:last-child{border-right:none;}
+.vf-seg:hover{color:var(--ink);}
+.vf-seg.on{background:var(--ink);color:#fff;}
 .vf-chips{display:flex;gap:7px;flex-wrap:wrap;}
-.vf-chip{font-size:12.5px;border:1px solid var(--line);background:var(--bg);color:var(--muted);padding:5px 12px;border-radius:999px;cursor:pointer;}
+.vf-chip{font-size:12px;border:1px solid var(--line);background:var(--bg);color:var(--muted);padding:5px 12px;border-radius:999px;cursor:pointer;}
 .vf-chip:hover{border-color:var(--dom);color:var(--ink);}
 .vf-chip-on{background:var(--ink);color:#fff;border-color:var(--ink);}
-.vf-adj-weights{margin-top:14px;border-top:1px solid var(--line2);padding-top:12px;}
-.vf-adj-weights>summary{cursor:pointer;list-style:none;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;}
-.vf-adj-weights>summary::-webkit-details-marker{display:none;}
-.vf-adj-weights>summary::before{content:"▸";color:var(--faint);font-size:10px;}
-.vf-adj-weights[open]>summary::before{content:"▾";}
-.vf-adj-hint{font-size:12px;color:var(--faint);font-style:italic;}
-.vf-wts{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:6px 22px;margin-top:14px;align-items:center;}
-.vf-wt{display:grid;grid-template-columns:1fr 62px 82px;align-items:center;gap:8px;font-size:12.5px;color:var(--muted);}
+.vf-adv{margin-top:15px;border-top:1px solid var(--line2);padding-top:12px;}
+.vf-adv>summary{cursor:pointer;list-style:none;font-size:12.5px;color:var(--rec);font-weight:500;}
+.vf-adv>summary::-webkit-details-marker{display:none;}
+.vf-adv>summary::before{content:"▸ ";color:var(--faint);}
+.vf-adv[open]>summary::before{content:"▾ ";}
+.vf-adv-body{margin-top:12px;}
+.vf-adv-body .vf-ctrl-field{flex-direction:row;align-items:baseline;gap:12px;flex-wrap:wrap;}
+.vf-wgroup{margin-top:16px;}
+.vf-wgroup-h{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);display:flex;flex-wrap:wrap;gap:3px 10px;align-items:baseline;}
+.vf-wgroup-sub{font-family:var(--serif);text-transform:none;letter-spacing:0;font-size:11.5px;font-style:italic;color:var(--faint);flex-basis:100%;}
+.vf-wts{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:6px 24px;margin-top:14px;align-items:center;}
+.vf-wt{display:grid;grid-template-columns:1fr 92px;align-items:center;gap:10px;font-size:12.5px;color:var(--muted);}
 .vf-wt-lab{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-.vf-wt input[type=range]{width:100%;accent-color:var(--rec);height:4px;cursor:pointer;}
-.vf-wt-val{font-variant-numeric:tabular-nums;color:var(--ink);text-align:right;font-family:var(--mono);font-size:11.5px;}
-.vf-wt-sc{color:var(--faint);}
+.vf-wt input[type=range]{grid-column:1 / -1;grid-row:2;width:100%;accent-color:var(--rec);height:4px;cursor:pointer;}
+.vf-wt-val{grid-column:2;grid-row:1;font-variant-numeric:tabular-nums;color:var(--muted);text-align:right;font-family:var(--mono);font-size:11px;}
+.vf-wt-val b{color:var(--ink);}
 .vf-wt-pct{color:var(--rec);font-weight:600;}
-.vf-reset{grid-column:1 / -1;justify-self:start;margin-top:6px;font-size:12px;color:var(--rec);background:none;border:none;cursor:pointer;text-decoration:underline;}
+.vf-reset{grid-column:1 / -1;justify-self:start;margin-top:8px;font-size:12px;color:var(--rec);background:none;border:none;cursor:pointer;text-decoration:underline;padding:4px 0;}
 
-/* ---------- EXPLORE ---------- */
-.vf-explore{display:grid;grid-template-columns:.92fr 1.08fr;gap:30px;align-items:start;margin:38px 0 0;}
-@media(max-width:840px){.vf-explore{grid-template-columns:1fr;gap:24px;}}
-.vf-explore-h{margin-bottom:12px;}
-.vf-h3{font-size:17px;}
-.vf-subcap{font-size:12px;color:var(--faint);margin-top:3px;}
+/* ---------- TABS ---------- */
+.vf-tabs{margin-top:36px;}
+.vf-tabnav{display:flex;gap:2px;border-bottom:1px solid var(--line);flex-wrap:wrap;}
+.vf-tab{font-family:var(--serif);font-size:14.5px;font-weight:600;color:var(--muted);background:none;border:none;border-bottom:2px solid transparent;padding:9px 15px;cursor:pointer;margin-bottom:-1px;}
+.vf-tab:hover{color:var(--ink);}
+.vf-tab-on{color:var(--ink);border-bottom-color:var(--rec);}
+.vf-tabpanel{padding:20px 0 0;}
+.vf-subcap{font-size:12.5px;color:var(--muted);margin-bottom:14px;line-height:1.5;}
+
+/* table */
 .vf-table{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--card);}
-.vf-thead,.vf-row{display:grid;grid-template-columns:1fr 62px 80px;gap:8px;align-items:center;}
-.vf-thead{padding:9px 14px;border-bottom:1px solid var(--line);background:var(--head);font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);}
+.vf-thead,.vf-row{display:grid;grid-template-columns:1fr 64px 84px;gap:8px;align-items:center;}
+.vf-thead{padding:9px 16px;border-bottom:1px solid var(--line);background:var(--head);font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);}
 .vf-thead .r,.vf-row .fig{text-align:right;}
-.vf-row{padding:11px 14px;cursor:pointer;border-bottom:1px solid var(--line2);border-left:2px solid transparent;}
+.vf-row{padding:11px 16px;cursor:pointer;border-bottom:1px solid var(--line2);border-left:2px solid transparent;}
 .vf-row:last-child{border-bottom:none;}
 .vf-row:hover{background:#1c1a170a;}
-.vf-row-sel{background:var(--rec-bg);border-left-color:var(--rec);}
+.vf-row-sel{background:var(--rec-bg);border-left-color:var(--ink);}
+.vf-row-rec.vf-row-sel{border-left-color:var(--rec);}
 .vf-row-name{font-size:13.5px;font-weight:500;line-height:1.3;display:flex;align-items:center;gap:7px;flex-wrap:wrap;}
 .vf-row-star{color:var(--rec);}
 .vf-row-rec .vf-row-name{font-weight:600;}
@@ -160,116 +227,34 @@ button{font-family:inherit;}
 .vf-b-dom{background:var(--line2);color:var(--faint);border-color:var(--line);}
 .vf-b-screen{background:var(--line3);color:#9a8f86;border-color:var(--screen);}
 
-/* detail */
-.vf-detail{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:24px 26px;}
-.vf-detail-top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-bottom:18px;border-bottom:1px solid var(--hair);}
-.vf-detail-tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px;}
-.vf-detail-name{font-family:var(--serif);font-size:22px;font-weight:600;line-height:1.12;}
-.vf-stat{display:flex;gap:26px;}
-.vf-stat-lab{font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin-bottom:3px;text-align:right;font-family:var(--mono);}
-.vf-stat-val{font-family:var(--serif);font-size:25px;font-weight:600;line-height:1;text-align:right;}
-.vf-pnote{font-size:12.5px;color:var(--muted);font-style:italic;margin:14px 0 0;line-height:1.4;}
-.vf-buy{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:14px 0 0;}
-.vf-buy-lab{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);}
-.vf-buy-link{font-size:13px;color:var(--rec);text-decoration:none;border-bottom:1px solid var(--ring);}
-.vf-buy-link:hover{border-bottom-color:var(--rec);}
-.vf-cols{display:grid;grid-template-columns:1fr 1fr;gap:28px;padding-top:20px;}
-@media(max-width:560px){.vf-cols{grid-template-columns:1fr;}}
-.vf-col-h{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);font-family:var(--mono);}
-.vf-col-sub{font-size:11.5px;color:var(--faint);margin:2px 0 10px;}
-.vf-br{padding:9px 0;border-bottom:1px solid var(--line3);}
-.vf-br-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:5px;}
-.vf-br-lab{font-size:13px;color:var(--ink);font-weight:500;}
-.vf-br-meta{font-size:10.5px;color:var(--faint);white-space:nowrap;}
-.vf-br-row{display:flex;align-items:center;gap:10px;}
-.vf-bar{flex:1;height:7px;background:var(--track);border-radius:3px;position:relative;overflow:hidden;}
-.vf-bar span{position:absolute;top:0;bottom:0;left:0;border-radius:3px;}
-.vf-bar .pos{background:var(--front);}
-.vf-bar .neg{background:var(--rec);}
-.vf-br-amt{width:44px;text-align:right;font-size:12.5px;font-weight:600;}
-.vf-amt-pos{color:var(--front);} .vf-amt-neg{color:var(--rec);}
-.vf-br-why{font-size:11.5px;color:var(--faint);margin-top:4px;font-style:italic;line-height:1.35;}
-.vf-total{display:flex;justify-content:space-between;align-items:baseline;padding-top:12px;}
-.vf-total b{font-size:13px;font-weight:600;}
-.vf-total .v{font-family:var(--serif);font-size:18px;font-weight:600;}
-.vf-cost-step{display:flex;align-items:baseline;gap:11px;padding:6px 0;border-bottom:1px solid var(--line3);}
-.vf-cost-op{width:14px;font-family:var(--mono);font-size:13px;color:var(--dom);text-align:center;}
-.vf-cost-lab{flex:1;font-size:13px;color:var(--ink);}
-.vf-cost-note{font-size:10.5px;color:var(--faint);font-family:var(--mono);margin-top:2px;}
-.vf-cost-amt{font-size:13.5px;color:var(--ink);white-space:nowrap;}
-.vf-cost-step.total{border-bottom:none;border-top:1px solid var(--line);margin-top:2px;font-weight:600;}
-.vf-cost-step.total .vf-cost-amt{color:var(--rec);font-family:var(--serif);font-size:16px;}
-.vf-cost-sec{font-family:var(--mono);font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin:13px 0 2px;}
-.vf-cost-step.sub .vf-cost-lab,.vf-cost-step.sub .vf-cost-amt{font-weight:600;color:var(--ink);}
+/* robustness / tornado */
+.vf-tor{margin:4px 0 0;}
+.vf-tor-row{display:grid;grid-template-columns:170px 1fr 46px;gap:10px;align-items:center;padding:4px 0;}
+.vf-tor-lab{font-size:12.5px;color:var(--ink);text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.vf-tor-track{position:relative;height:12px;background:var(--track);border-radius:3px;}
+.vf-tor-track::before{content:"";position:absolute;left:50%;top:-2px;bottom:-2px;width:1px;background:var(--dom);}
+.vf-tor-bar{position:absolute;top:0;bottom:0;border-radius:2px;min-width:1px;}
+.vf-tor-bar.pos{background:var(--front);}
+.vf-tor-bar.neg{background:var(--rec);}
+.vf-tor-amt{font-size:12px;font-variant-numeric:tabular-nums;font-weight:600;text-align:right;}
+.vf-tor-axis{display:flex;justify-content:space-between;font-family:var(--mono);font-size:9px;letter-spacing:.04em;text-transform:uppercase;color:var(--faint);margin:7px 0 0;padding:0 46px 0 180px;}
+.vf-tor-axis span{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.vf-wwhtbt{font-size:13px;color:var(--muted);line-height:1.55;margin:16px 0 2px;}
 
-/* ---------- EVIDENCE ---------- */
-.vf-audit{margin:38px 0 0;}
-.vf-disc{border:1px solid var(--line);border-radius:10px;background:var(--card);}
-.vf-disc>summary{cursor:pointer;padding:14px 18px;font-weight:600;font-size:14px;list-style:none;font-family:var(--serif);}
-.vf-disc>summary::-webkit-details-marker{display:none;}
-.vf-disc>summary::before{content:"+";color:var(--faint);margin-right:10px;font-family:var(--mono);}
-.vf-disc[open]>summary::before{content:"–";}
-.vf-disc>summary:hover{color:var(--rec);}
-.vf-disc>*:not(summary){margin:0 18px 16px;}
+/* scoring tab */
 .vf-scroll{overflow-x:auto;}
 .vf-mtable{width:100%;border-collapse:collapse;font-size:12.5px;}
 .vf-mtable th{font-family:var(--mono);font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--faint);text-align:left;padding:6px 9px;border-bottom:1px solid var(--line);font-weight:500;}
-.vf-mtable td{padding:6px 9px;border-bottom:1px solid var(--line2);}
+.vf-mtable td{padding:6px 9px;border-bottom:1px solid var(--line2);vertical-align:top;}
 .vf-mtable .r{text-align:right;font-variant-numeric:tabular-nums;}
-.vf-note{color:var(--faint);font-size:11.5px;font-style:italic;margin:30px 0 0;line-height:1.5;}
+.vf-note{color:var(--muted);font-size:12px;line-height:1.6;margin:22px 0 0;border-top:1px solid var(--line2);padding-top:16px;}
+.vf-note-h{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-bottom:7px;}
 .vf-error{color:#b00;background:#fff0f0;padding:12px;border-radius:8px;white-space:pre-wrap;font-family:var(--mono);}
 
-/* waterfall (why this value) */
-.vf-wf{padding:7px 0;border-bottom:1px solid var(--line3);}
-.vf-wf-head{display:flex;align-items:baseline;gap:8px;}
-.vf-wf-lab{font-size:13px;color:var(--ink);font-weight:500;flex:1;}
-.vf-wf-meta{font-size:10px;color:var(--faint);white-space:nowrap;}
-.vf-wf-amt{font-size:12.5px;font-weight:600;font-variant-numeric:tabular-nums;width:44px;text-align:right;}
-.vf-wf-track{position:relative;height:10px;margin:5px 0 0;background:var(--track);border-radius:3px;}
-.vf-wf-bar{position:absolute;top:0;bottom:0;border-radius:2px;min-width:2px;}
-.vf-wf-bar.pos{background:var(--front);}
-.vf-wf-bar.neg{background:var(--rec);}
-.vf-wf-bar.total{background:var(--ink);}
-.vf-wf-why{font-size:11.5px;color:var(--faint);margin-top:5px;font-style:italic;line-height:1.35;}
-.vf-wf-total{border-bottom:none;border-top:1.5px solid var(--line);margin-top:4px;padding-top:9px;}
-.vf-wf-total .vf-wf-lab{font-weight:600;font-family:var(--serif);font-size:14px;}
-.vf-wf-total .vf-wf-amt{font-family:var(--serif);font-size:15px;color:var(--ink);}
-.vf-br-src{color:var(--front);}
-
-/* zoom */
-.vf-card .vf-svg{cursor:grab;touch-action:pan-y;}
-.vf-card .vf-svg:active{cursor:grabbing;}
-
-@media(max-width:520px){#vf-app{padding:0 16px 72px;}.vf-h1{font-size:34px;}.vf-stat{gap:18px;}}
-/* === audit fixes: mobile ergonomics + polish === */
-.vf-wgroup{margin-top:16px;}
-.vf-wgroup-h{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);display:flex;flex-wrap:wrap;gap:3px 10px;align-items:baseline;}
-.vf-wgroup-sub{font-family:var(--serif);text-transform:none;letter-spacing:0;font-size:11.5px;font-style:italic;color:var(--faint);flex-basis:100%;}
-.vf-vfig{flex-wrap:wrap;row-gap:4px;}
-.vf-tor-axis span{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-@media(max-width:520px){
-  .vf-wt{grid-template-columns:1fr auto;gap:3px 10px;}
-  .vf-wt input[type=range]{grid-column:1 / -1;grid-row:2;height:26px;}
-  .vf-wt-val{grid-column:2;grid-row:1;}
-  .vf-tool{width:40px;height:40px;font-size:18px;}
-  .vf-chip{padding:9px 14px;font-size:13px;}
-  .vf-chips{gap:8px;}
-  .vf-reset{padding:8px 2px;display:inline-block;font-size:13px;}
-  .vf-tor-axis{padding-left:114px;padding-right:40px;}
-}
-@media(max-width:400px){
-  .vf-h1{font-size:29px;}
-  .vf-tor-row{grid-template-columns:84px 1fr 34px;gap:6px;}
-  .vf-tor-axis{padding-left:90px;padding-right:34px;font-size:8px;}
-  .vf-thead,.vf-row{grid-template-columns:1fr 52px 66px;gap:6px;}
-}
-/* ---------- CONTROLS DRAWER (overlay on the chart; in-page, mobile & fullscreen) ---------- */
-.vf-tool-adjust{width:auto;padding:0 11px;gap:6px;color:var(--ink);border-color:var(--dom);font-weight:500;}
-.vf-tool-adjust .vf-tool-ic{font-size:14px;}
-.vf-tool-adjust .vf-tool-tx{font-size:12.5px;}
+/* ---------- CONTROLS DRAWER (fullscreen only) ---------- */
 .vf-drawer-backdrop{position:fixed;inset:0;background:rgba(28,26,23,.20);opacity:0;visibility:hidden;transition:opacity .2s ease;z-index:59;}
 .vf-card.vf-drawer-on .vf-drawer-backdrop{opacity:1;visibility:visible;}
-.vf-drawer{position:fixed;top:0;right:0;height:100%;width:min(370px,90vw);background:var(--card);border-left:1px solid var(--line);box-shadow:-12px 0 30px rgba(28,26,23,.14);z-index:60;display:none;flex-direction:column;}
+.vf-drawer{position:fixed;top:0;right:0;height:100%;width:min(380px,92vw);background:var(--card);border-left:1px solid var(--line);box-shadow:-12px 0 30px rgba(28,26,23,.14);z-index:60;display:none;flex-direction:column;}
 .vf-card.vf-drawer-on .vf-drawer{display:flex;animation:vf-din-x .2s ease both;}
 .vf-card.vf-drawer-on .vf-chart-tools{display:none;}
 @keyframes vf-din-x{from{transform:translateX(24px);opacity:0;}to{transform:translateX(0);opacity:1;}}
@@ -279,12 +264,29 @@ button{font-family:inherit;}
 .vf-drawer-close{width:32px;height:32px;border:1px solid var(--line);background:var(--bg);border-radius:8px;font-size:20px;line-height:1;color:var(--muted);cursor:pointer;display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
 .vf-drawer-close:hover{color:var(--ink);border-color:var(--dom);}
 .vf-drawer-body{overflow-y:auto;-webkit-overflow-scrolling:touch;padding:4px 16px 20px;}
-.vf-drawer .vf-adjust{border:none;background:none;padding:12px 0 0;margin:0;}
+.vf-drawer-body .vf-controls{border:none;background:none;padding:12px 0 0;}
+
+/* ---------- responsive ---------- */
+@media(max-width:520px){
+  #vf-app{padding:0 16px 56px;}
+  .vf-h1{font-size:30px;}
+  .vf-stat{gap:22px;}
+  .vf-tool{width:40px;height:40px;font-size:18px;}
+  .vf-chip{padding:9px 14px;font-size:13px;}
+  .vf-seg{padding:9px 14px;font-size:13px;}
+  .vf-tor-row{grid-template-columns:104px 1fr 40px;}
+  .vf-tor-lab{font-size:11.5px;}
+  .vf-tor-axis{padding-left:114px;padding-right:40px;}
+}
 @media(max-width:560px){
   .vf-drawer{top:auto;bottom:0;left:0;right:0;width:100%;height:auto;max-height:86vh;border-left:none;border-top:1px solid var(--line);border-radius:16px 16px 0 0;box-shadow:0 -12px 30px rgba(28,26,23,.16);}
   .vf-card.vf-drawer-on .vf-drawer{animation-name:vf-din-y;}
 }
 @media(max-width:400px){
+  .vf-h1{font-size:27px;}
+  .vf-tor-row{grid-template-columns:84px 1fr 34px;gap:6px;}
+  .vf-tor-axis{padding-left:90px;padding-right:34px;font-size:8px;}
+  .vf-thead,.vf-row{grid-template-columns:1fr 52px 70px;gap:6px;}
   .vf-tool-adjust .vf-tool-tx{display:none;}
   .vf-tool-adjust{width:40px;padding:0;}
 }
@@ -1483,15 +1485,15 @@ button{font-family:inherit;}
     }
   ]
 };</script>
-<script>/* Value Frontier — engine v0.7.0
- * Pure compute (Node-testable) + interactive SVG/DOM. Zero dependencies.
- * 0.6: priorities visible + auto-rebalanced to sum 100% (true trade-off);
- * anti-needs split out as penalties; cost toggle (per-year EAC vs total lifetime);
- * every score shows its reason. Compute math unchanged.
- * 0.7: all controls (cost / rank-by / horizon / weights) live in an "Adjust"
- * overlay drawer anchored inside the chart card, so they're usable in normal
- * page view, on mobile (bottom sheet), and in fullscreen (it rides into the
- * fullscreen subtree). Fullscreen also requests landscape orientation. Compute math unchanged.
+<script>/* Value Frontier — engine v0.8.0
+ * Pure compute (Node-testable) + interactive workspace UI. Zero dependencies.
+ * 0.8: workspace layout — chart + selected-detail side-by-side; controls live on
+ *   the page (and ride into fullscreen); cost defaults to PURCHASE; a value
+ *   dimension acts as a heat LENS (recolors points, never re-ranks the frontier);
+ *   the picks are labelled on the chart; selected (clicked) is visually distinct
+ *   from the recommended pick; cost gets a breakdown viz with parity to value;
+ *   secondary depth (all options · how it's scored · robustness) lives in tabs.
+ *   Pure finance/value/frontier/knee math is unchanged from 0.7.
  */
 (function (global) {
   'use strict';
@@ -1508,7 +1510,6 @@ button{font-family:inherit;}
     var price = p.price || 0, delivery = c.deliveryCost || 0, install = c.installCost || 0, extras = c.extrasCost || 0;
     var acq = price + delivery + install + extras;
     var endResale = c.resaleValue || 0;
-    // keeping it fewer years than its full life leaves residual value — straight-line on price down to the end-of-life resale
     var resale = (life < fullLife) ? endResale + Math.max(0, price - endResale) * (fullLife - life) / fullLife : endResale;
     var pvRunning = running * annuityFactor(r, life), pvResale = resale / Math.pow(1 + r, life);
     var npv = acq + pvRunning - pvResale;
@@ -1560,12 +1561,11 @@ button{font-family:inherit;}
   function compute(data, state) {
     state = state || {};
     var meta = data.meta || {}, r = meta.discountRate != null ? meta.discountRate : 0.05, fallback = meta.horizonYears || 5, dims = data.dimensions || [];
-    var viewDim = state.viewDim ? dims.filter(function (d) { return d.id === state.viewDim; })[0] : null, cmode = state.costMode || 'eac', pickCost = function (c) { return cmode === 'acq' ? c.acquisition : cmode === 'total' ? c.npv : c.eac; };
+    var cmode = state.costMode || 'acq', pickCost = function (c) { return cmode === 'acq' ? c.acquisition : cmode === 'total' ? c.npv : c.eac; };
     var rows = (data.products || []).map(function (p) {
       var parts = valueParts(p, dims, state.weights), val = parts.reduce(function (s, x) { return s + x.contribution; }, 0);
-      var plot = viewDim ? normDim(viewDim, rawOf(p, viewDim)) * 100 : val;
       var c = eacCost(p, r, fallback, state.horizon), s = screenProduct(p, dims);
-      return { id: p.id, name: p.name, price: p.price, links: p.links || [], note: p.note || '', parts: parts, value: val, plot: plot,
+      return { id: p.id, name: p.name, price: p.price, links: p.links || [], note: p.note || '', parts: parts, value: val, plot: val,
         eac: c.eac, life: c.life, costX: pickCost(c), costDetail: { price: c.price, delivery: c.delivery, install: c.install, extras: c.extras, acquisition: c.acquisition, energy: c.energy, consumables: c.consumables, maintenance: c.maintenance, running: c.running, life: c.life, fullLife: c.fullLife, npv: c.npv, resale: c.resale, pvRunning: c.pvRunning, pvResale: c.pvResale },
         screenedOut: s.screenedOut, screenReason: s.reason, onFrontier: false, recommended: false };
     });
@@ -1576,7 +1576,7 @@ button{font-family:inherit;}
     var recId = kneePoint(fp);
     rows.forEach(function (x) { x.recommended = (x.id === recId); });
     var xs = rows.map(function (x) { return x.costX; }), ys = rows.map(function (x) { return x.plot; });
-    return { rows: rows, recommendedId: recId, discountRate: r, meta: meta, viewDim: viewDim, costMode: state.costMode || 'eac', frontierIdsByCost: fp.map(function (p) { return p.id; }),
+    return { rows: rows, recommendedId: recId, discountRate: r, meta: meta, costMode: cmode, frontierIdsByCost: fp.map(function (p) { return p.id; }),
       bounds: { xMin: Math.min.apply(null, xs), xMax: Math.max.apply(null, xs), yMin: Math.min.apply(null, ys), yMax: Math.max.apply(null, ys) } };
   }
 
@@ -1588,124 +1588,70 @@ button{font-family:inherit;}
   function svgEl(t, a, k) { var e = document.createElementNS('http://www.w3.org/2000/svg', t); if (a) for (var x in a) e.setAttribute(x, a[x]); if (k) k.forEach(function (c) { e.appendChild(c); }); return e; }
   function svgText(x, y, s, c) { var t = svgEl('text', { x: x, y: y, class: c || '' }); t.textContent = s; return t; }
   function div(c) { var e = document.createElement('div'); if (c) e.className = c; return e; }
+  function lerp(a, b, t) { return a + (b - a) * t; }
+  function heat(t) { t = Math.max(0, Math.min(1, t)); return 'rgb(' + Math.round(lerp(233, 184, t)) + ',' + Math.round(lerp(226, 67, t)) + ',' + Math.round(lerp(216, 15, t)) + ')'; }
   function statusInfo(r) {
     if (r.screenedOut) return { label: 'Screened out', badge: 'vf-b-screen', tag: '#9a8f86' };
-    if (r.recommended) return { label: 'Recommended', badge: 'vf-b-rec', tag: '#b8430f' };
-    if (r.onFrontier) return { label: 'On frontier', badge: 'vf-b-front', tag: '#5f7a55' };
-    return { label: 'Dominated', badge: 'vf-b-dom', tag: '#9a958c' };
+    if (r.recommended) return { label: 'Our pick', badge: 'vf-b-rec', tag: '#b8430f' };
+    if (r.onFrontier) return { label: 'Best-in-class for its price', badge: 'vf-b-front', tag: '#5f7a55' };
+    return { label: 'Beaten by a better-value option', badge: 'vf-b-dom', tag: '#9a958c' };
   }
+  function shortName(s) { return s.length > 26 ? s.slice(0, 24) + '…' : s; }
 
   // ===================== reactive app =====================
   function App(data, root) {
-    var dims = data.dimensions || [], self = this;
+    var self = this;
     this.data = data; this.root = root;
-    this.state = { weights: {}, wants: {}, viewDim: null, selectedId: null, costMode: 'eac', horizon: null };
+    this.state = { weights: {}, wants: {}, lensDim: null, selectedId: null, costMode: 'acq', horizon: null, zoom: null, tab: 'all' };
     this.initWants();
     root.innerHTML = '';
-    var hero = div('vf-hero'); root.appendChild(hero);
-    this.elHead = div('vf-head'); hero.appendChild(this.elHead);
-    var hg = div('vf-hero-grid'); hero.appendChild(hg);
-    var cw = div('vf-chartwrap'); hg.appendChild(cw);
-    this.elChartHead = div('vf-charthead'); cw.appendChild(this.elChartHead);
-    this.elCard = div('vf-card'); cw.appendChild(this.elCard);
+    this.elHead = div('vf-top'); root.appendChild(this.elHead);
+    var ws = div('vf-workspace'); root.appendChild(ws);
+    var cc = div('vf-chart-col'); ws.appendChild(cc);
+    this.elChartHead = div('vf-charthead'); cc.appendChild(this.elChartHead);
+    this.elCard = div('vf-card'); cc.appendChild(this.elCard);
     this.elTools = div('vf-chart-tools'); this.elCard.appendChild(this.elTools);
     this.elPlot = div('vf-plot'); this.elCard.appendChild(this.elPlot);
+    this.elPicks = div('vf-picks'); cc.appendChild(this.elPicks);
+    this.elDetail = div('vf-detail'); ws.appendChild(this.elDetail);
+    this.elControlsSlot = div('vf-controls-slot'); root.appendChild(this.elControlsSlot);
+    this.elControls = div('vf-controls'); this.elControlsSlot.appendChild(this.elControls);
+    this.elTabs = div('vf-tabs'); root.appendChild(this.elTabs);
     this.buildDrawer();
     this.buildChartTools();
+    this.buildTabs();
     this.setupChartPan();
     document.addEventListener('fullscreenchange', function () { self.onFsChange(); });
-    this.elVerdict = div('vf-verdict'); hg.appendChild(this.elVerdict);
-    this.elRobust = div('vf-robust'); root.appendChild(this.elRobust);
-    var ex = div('vf-explore'); root.appendChild(ex);
-    var exL = div('vf-explore-list'); ex.appendChild(exL); this.elTableWrap = exL;
-    this.elDetail = div('vf-detail'); ex.appendChild(this.elDetail);
-    this.elAudit = div('vf-audit'); root.appendChild(this.elAudit);
-    this.renderHead(); this.renderAdjust(); this.renderAudit(); this.recompute(); this.select(this.result.recommendedId);
+    this.renderHead(); this.renderControls(); this.recompute(); this.select(this.result.recommendedId);
   }
+  App.prototype.lensObj = function () { var id = this.state.lensDim; return id ? (this.data.dimensions || []).filter(function (d) { return d.id === id; })[0] : null; };
+  App.prototype.byId = function (id) { return this.result.rows.filter(function (r) { return r.id === id; })[0]; };
+  App.prototype.costLabel = function () { var m = this.state.costMode; return m === 'acq' ? 'Purchase cost' : m === 'eac' ? 'Cost per year' : 'Total cost of ownership'; };
   App.prototype.money = function (r) { return fmtMoney(r.costX) + (this.state.costMode === 'eac' ? '/yr' : ''); };
+  App.prototype.pickIds = function () {
+    var fp = this.result.frontierIdsByCost, ki = fp.indexOf(this.result.recommendedId);
+    return { cheaper: ki > 0 ? fp[ki - 1] : null, rec: this.result.recommendedId, pricier: (ki >= 0 && ki < fp.length - 1) ? fp[ki + 1] : null };
+  };
+
   App.prototype.recompute = function () {
     this.syncWeights();
     this.result = compute(this.data, this.state);
     if (!this.state.selectedId || !this.result.rows.some(function (r) { return r.id === this.state.selectedId; }, this)) this.state.selectedId = this.result.recommendedId;
-    this.renderVerdict(); this.renderChartHead(); this.renderChart(); this.renderRobust(); this.renderTable(); this.renderDetail();
+    this.renderChartHead(); this.renderChart(); this.renderPicks(); this.renderDetail(); this.renderTabPanel();
   };
   App.prototype.scheduleChart = function () { var self = this; if (self._chartRAF) return; var raf = global.requestAnimationFrame || function (f) { return setTimeout(f, 16); }; self._chartRAF = raf(function () { self._chartRAF = null; self.renderChart(); }); };
   App.prototype.scheduleRecompute = function () { var self = this; if (self._recRAF) return; var raf = global.requestAnimationFrame || function (f) { return setTimeout(f, 16); }; self._recRAF = raf(function () { self._recRAF = null; self.recompute(); }); };
-  App.prototype.setupChartPan = function () {
-    var self = this, el = this.elPlot, W = 920, H = 480, iw = 826, ih = 394;   // pan/capture on the persistent container, not the swapped <svg>
-    el.addEventListener('pointerdown', function (e) { if (!self.result) return; self._pan = { id: e.pointerId, mx: e.clientX, my: e.clientY, dom: self.curDomain(), moved: false }; });
-    el.addEventListener('pointermove', function (e) {
-      if (!self._pan || self._pan.id !== e.pointerId) return;
-      var svg = el.querySelector('.vf-svg'); if (!svg) return;
-      var rect = svg.getBoundingClientRect(), d = self._pan.dom, rx = e.clientX - self._pan.mx, ry = e.clientY - self._pan.my;
-      if (!self._pan.moved) { if (Math.abs(rx) + Math.abs(ry) < 8) return; self._pan.moved = true; try { el.setPointerCapture(e.pointerId); } catch (err) {} }
-      e.preventDefault();
-      var ddx = rx / rect.width * W / iw * (d.x1 - d.x0), ddy = ry / rect.height * H / ih * (d.y1 - d.y0);
-      self.state.zoom = { x0: d.x0 - ddx, x1: d.x1 - ddx, y0: d.y0 + ddy, y1: d.y1 + ddy }; self.scheduleChart();
-    });
-    var endPan = function (e) { if (self._pan && self._pan.id === e.pointerId) self._pan = null; };
-    el.addEventListener('pointerup', endPan); el.addEventListener('pointercancel', endPan);
-  };
-  App.prototype.select = function (id) { if (!id) return; this.state.selectedId = id; this.renderDetail(); this.renderChart(); this.renderVerdict(); this.markRows(); };
+  App.prototype.select = function (id) { if (!id) return; this.state.selectedId = id; this.renderDetail(); this.renderChart(); this.renderPicks(); this.markRows(); };
+  App.prototype.applyLens = function () { this.renderChartHead(); this.renderChart(); this.renderDetail(); };
 
+  // ---------- head ----------
   App.prototype.renderHead = function () {
     var meta = this.data.meta || {};
     this.elHead.innerHTML = '<div class="vf-kicker">Purchase decision</div><h1 class="vf-h1">' + htmlEsc(meta.title || 'Value Frontier') + '</h1>'
-      + '<p class="vf-sub">Every option placed by what it’s worth to you against what it truly costs. The line is the efficient frontier; the star is where buying up stops paying off.</p>';
+      + '<p class="vf-sub">Every option placed by what it’s worth to you (up) against what it costs (right). The line is the efficient frontier; the ★ is where paying more stops buying much.</p>';
   };
 
-  App.prototype.renderVerdict = function () {
-    var res = this.result, rows = res.rows, sel = this.state.selectedId, self = this;
-    function byId(id) { return rows.filter(function (r) { return r.id === id; })[0]; }
-    var fp = res.frontierIdsByCost, ki = fp.indexOf(res.recommendedId), rec = byId(res.recommendedId);
-    var cheaper = ki > 0 ? byId(fp[ki - 1]) : null, pricier = (ki >= 0 && ki < fp.length - 1) ? byId(fp[ki + 1]) : null;
-    var cm = this.state.costMode, unit = cm === 'eac' ? '/yr' : cm === 'acq' ? 'upfront' : 'total', h = '';
-    if (rec) {
-      h += '<button class="vf-vcard vf-vcard-rec' + (sel === rec.id ? ' vf-vsel' : '') + '" data-id="' + rec.id + '"><div class="vf-vtag">★ Recommended</div><div class="vf-vname">' + htmlEsc(rec.name) + '</div>'
-        + '<div class="vf-vfig"><span class="vf-num vf-vbig">' + fmtMoney(rec.costX) + '<span class="vf-vunit">' + unit + '</span></span><span class="vf-vsec">value <span class="vf-num">' + rec.plot.toFixed(1) + '</span></span></div>'
-        + '<div class="vf-vwhy">Best value for the money — the knee of the frontier, where paying more stops buying much.</div></button>';
-    } else { h += '<div class="vf-vcard"><div class="vf-vtag">No pick</div><div class="vf-vname">Nothing clears your minimums</div><div class="vf-vwhy">Relax a hard requirement to see recommendations.</div></div>'; }
-    var alts = [];
-    if (cheaper) alts.push({ r: cheaper, lab: 'Cheaper', why: 'saves ' + fmtMoney(rec.costX - cheaper.costX) + ' for ' + (rec.plot - cheaper.plot).toFixed(1) + ' less value — if budget’s tighter.' });
-    if (pricier) alts.push({ r: pricier, lab: 'More value', why: '+' + (pricier.plot - rec.plot).toFixed(1) + ' value for +' + fmtMoney(pricier.costX - rec.costX) + ' — rarely worth it.' });
-    if (alts.length) {
-      h += '<div class="vf-valt-h">Also worth a look</div>';
-      alts.forEach(function (a) {
-        h += '<button class="vf-vcard vf-vcard-alt' + (sel === a.r.id ? ' vf-vsel' : '') + '" data-id="' + a.r.id + '"><div class="vf-valt-top"><span class="vf-valt-lab">' + a.lab + '</span><span class="vf-num vf-valt-fig">' + self.money(a.r) + '</span></div><div class="vf-valt-name">' + htmlEsc(a.r.name) + '</div><div class="vf-valt-why">' + htmlEsc(a.why) + '</div></button>';
-      });
-    }
-    this.elVerdict.innerHTML = h;
-    Array.prototype.forEach.call(this.elVerdict.querySelectorAll('.vf-vcard'), function (el) { el.addEventListener('click', function () { self.select(el.getAttribute('data-id')); }); });
-  };
-
-  App.prototype.renderAdjust = function () {
-    var self = this, dims = this.data.dimensions || [], cm = this.state.costMode;
-    var positives = dims.filter(function (d) { return d.direction !== 'unwanted'; }), antis = dims.filter(function (d) { return d.direction === 'unwanted'; });
-    function chipRow(lab, items) { return '<div class="vf-adj-row"><span class="vf-adj-lab">' + lab + '</span><div class="vf-chips">' + items + '</div></div>'; }
-    var rankChips = '<button class="vf-chip vf-chip-on" data-view="">Total value</button>' + positives.map(function (d) { return '<button class="vf-chip" data-view="' + d.id + '">' + htmlEsc(d.label) + '</button>'; }).join('');
-    var costChips = '<button class="vf-chip ' + (cm === 'eac' ? 'vf-chip-on' : '') + '" data-cost="eac">Per year</button><button class="vf-chip ' + (cm === 'total' ? 'vf-chip-on' : '') + '" data-cost="total">Total (lifetime)</button><button class="vf-chip ' + (cm === 'acq' ? 'vf-chip-on' : '') + '" data-cost="acq">Purchase only</button>';
-    var hz = (this.state.horizon || '') + '', horChips = ['', '5', '8', '10', '15', '20'].map(function (v) { return '<button class="vf-chip ' + (hz === v ? 'vf-chip-on' : '') + '" data-hor="' + v + '">' + (v ? v + ' yr' : 'Each model’s life') + '</button>'; }).join('');
-    function slider(d, group, max) { var w = Math.round((self.state.weights[d.id] || 0) * 100); return '<label class="vf-wt"><span class="vf-wt-lab">' + htmlEsc(d.label) + '</span><input type="range" min="0" max="' + max + '" value="' + w + '" data-' + group + '="' + d.id + '" aria-label="' + htmlEsc(d.label) + '"><span class="vf-wt-val" data-wv="' + d.id + '">' + w + '%</span></label>'; }
-    function wantSlider(d) { var sc = self.state.wants[d.id] || 0, pc = Math.round((self.state.weights[d.id] || 0) * 100); return '<label class="vf-wt"><span class="vf-wt-lab">' + htmlEsc(d.label) + '</span><input type="range" min="0" max="10" step="1" value="' + sc + '" data-pri="' + d.id + '" aria-label="' + htmlEsc(d.label) + '"><span class="vf-wt-val" data-wv="' + d.id + '">' + sc + '<span class="vf-wt-sc">/10</span> <span class="vf-wt-pct">' + pc + '%</span></span></label>'; }
-    this.elAdjust.innerHTML = chipRow('Rank by', rankChips) + chipRow('Cost shown', costChips) + chipRow('Spread cost over', horChips) + '<div class="vf-adj-hint">Fewer years → higher per-year cost (the purchase spreads over less time), and the pick can shift.</div>'
-      + '<div class="vf-wgroup"><div class="vf-wgroup-h">How much you want each<span class="vf-wgroup-sub">score 0–10 on its own — the % is the app’s relative weighting, not a budget you split</span></div><div class="vf-wts">' + positives.map(function (d) { return wantSlider(d); }).join('') + '</div></div>'
-      + (antis.length ? '<div class="vf-wgroup"><div class="vf-wgroup-h">Penalties<span class="vf-wgroup-sub">how hard to dock for things you don’t want</span></div><div class="vf-wts">' + antis.map(function (d) { return slider(d, 'pen', 30); }).join('') + '</div></div>' : '')
-      + '<button class="vf-reset" type="button">Reset to defaults</button>';
-    Array.prototype.forEach.call(this.elAdjust.querySelectorAll('.vf-chip[data-view]'), function (b) { b.addEventListener('click', function () { self.state.viewDim = b.getAttribute('data-view') || null; Array.prototype.forEach.call(self.elAdjust.querySelectorAll('.vf-chip[data-view]'), function (x) { x.classList.toggle('vf-chip-on', x === b); }); self.recompute(); }); });
-    Array.prototype.forEach.call(this.elAdjust.querySelectorAll('.vf-chip[data-cost]'), function (b) { b.addEventListener('click', function () { self.state.costMode = b.getAttribute('data-cost'); Array.prototype.forEach.call(self.elAdjust.querySelectorAll('.vf-chip[data-cost]'), function (x) { x.classList.toggle('vf-chip-on', x === b); }); self.recompute(); }); });
-    Array.prototype.forEach.call(this.elAdjust.querySelectorAll('.vf-chip[data-hor]'), function (b) { b.addEventListener('click', function () { var v = b.getAttribute('data-hor'); self.state.horizon = v ? +v : null; Array.prototype.forEach.call(self.elAdjust.querySelectorAll('.vf-chip[data-hor]'), function (x) { x.classList.toggle('vf-chip-on', x === b); }); self.recompute(); }); });
-    var priIds = positives.map(function (d) { return d.id; });
-    Array.prototype.forEach.call(this.elAdjust.querySelectorAll('input[data-pri]'), function (inp) {
-      inp.addEventListener('input', function () {
-        self.state.wants[inp.getAttribute('data-pri')] = +inp.value;
-        self.syncWeights();
-        priIds.forEach(function (pid) { var el = self.elAdjust.querySelector('[data-wv="' + pid + '"]'); if (el) el.innerHTML = (self.state.wants[pid] || 0) + '<span class="vf-wt-sc">/10</span> <span class="vf-wt-pct">' + Math.round((self.state.weights[pid] || 0) * 100) + '%</span>'; });
-        self.scheduleRecompute();
-      });
-    });
-    Array.prototype.forEach.call(this.elAdjust.querySelectorAll('input[data-pen]'), function (inp) { inp.addEventListener('input', function () { var id = inp.getAttribute('data-pen'); self.state.weights[id] = (+inp.value) / 100; self.elAdjust.querySelector('[data-wv="' + id + '"]').textContent = inp.value + '%'; self.scheduleRecompute(); }); });
-    this.elAdjust.querySelector('.vf-reset').addEventListener('click', function () { self.initWants(); self.renderAdjust(); self.recompute(); });
-  };
+  // ---------- weights ----------
   App.prototype.initWants = function () {
     var self = this, pos = (this.data.dimensions || []).filter(function (d) { return d.direction !== 'unwanted'; });
     var maxW = Math.max.apply(null, pos.map(function (d) { return d.weight || 0; })) || 1;
@@ -1719,14 +1665,210 @@ button{font-family:inherit;}
     pos.forEach(function (d) { self.state.weights[d.id] = (self.state.wants[d.id] || 0) / sum; });
   };
 
+  // ---------- on-page controls (cost · lens · horizon · priorities) ----------
+  App.prototype.renderControls = function () {
+    var self = this, dims = this.data.dimensions || [], cm = this.state.costMode, ld = this.state.lensDim;
+    var positives = dims.filter(function (d) { return d.direction !== 'unwanted'; }), antis = dims.filter(function (d) { return d.direction === 'unwanted'; });
+    var costChips = '<button class="vf-seg ' + (cm === 'acq' ? 'on' : '') + '" data-cost="acq">Purchase</button><button class="vf-seg ' + (cm === 'eac' ? 'on' : '') + '" data-cost="eac">Per year</button><button class="vf-seg ' + (cm === 'total' ? 'on' : '') + '" data-cost="total">Total</button>';
+    var lensChips = '<button class="vf-chip ' + (!ld ? 'vf-chip-on' : '') + '" data-lens="">Off (status)</button>' + positives.map(function (d) { return '<button class="vf-chip ' + (ld === d.id ? 'vf-chip-on' : '') + '" data-lens="' + d.id + '">' + htmlEsc(d.label) + '</button>'; }).join('');
+    var hz = (this.state.horizon || '') + '', horChips = ['', '5', '8', '10', '15', '20'].map(function (v) { return '<button class="vf-chip ' + (hz === v ? 'vf-chip-on' : '') + '" data-hor="' + v + '">' + (v ? v + ' yr' : 'Each model’s life') + '</button>'; }).join('');
+    function wantSlider(d) { var sc = self.state.wants[d.id] || 0, pc = Math.round((self.state.weights[d.id] || 0) * 100); return '<label class="vf-wt"><span class="vf-wt-lab">' + htmlEsc(d.label) + '</span><input type="range" min="0" max="10" step="1" value="' + sc + '" data-pri="' + d.id + '" aria-label="' + htmlEsc(d.label) + '"><span class="vf-wt-val" data-wv="' + d.id + '"><b class="vf-num">' + sc + '</b>/10 · <span class="vf-wt-pct vf-num">' + pc + '%</span></span></label>'; }
+    function penSlider(d) { var w = Math.round((self.state.weights[d.id] || 0) * 100); return '<label class="vf-wt"><span class="vf-wt-lab">' + htmlEsc(d.label) + '</span><input type="range" min="0" max="30" value="' + w + '" data-pen="' + d.id + '" aria-label="' + htmlEsc(d.label) + '"><span class="vf-wt-val" data-wv="' + d.id + '"><span class="vf-num">' + w + '%</span></span></label>'; }
+    this.elControls.innerHTML =
+      '<div class="vf-ctrl-primary">'
+      + '<div class="vf-ctrl-field"><span class="vf-ctrl-lab">Cost shown</span><div class="vf-segwrap">' + costChips + '</div></div>'
+      + '<div class="vf-ctrl-field"><span class="vf-ctrl-lab">Colour points by</span><div class="vf-chips">' + lensChips + '</div></div>'
+      + '</div>'
+      + '<details class="vf-adv"><summary>Adjust your priorities &amp; time horizon — the pick updates live</summary><div class="vf-adv-body">'
+      + '<div class="vf-ctrl-field"><span class="vf-ctrl-lab">Spread cost over</span><div class="vf-chips">' + horChips + '</div></div>'
+      + '<div class="vf-wgroup"><div class="vf-wgroup-h">How much each matters<span class="vf-wgroup-sub">drag 0–10; the % is its share of the decision — they always total 100%</span></div><div class="vf-wts">' + positives.map(wantSlider).join('') + '</div></div>'
+      + (antis.length ? '<div class="vf-wgroup"><div class="vf-wgroup-h">Penalties<span class="vf-wgroup-sub">how hard to dock things you didn’t want — 0 = ignore</span></div><div class="vf-wts">' + antis.map(penSlider).join('') + '</div></div>' : '')
+      + '<button class="vf-reset" type="button">Reset to defaults</button>'
+      + '</div></details>';
+    Array.prototype.forEach.call(this.elControls.querySelectorAll('[data-cost]'), function (b) { b.addEventListener('click', function () { self.state.costMode = b.getAttribute('data-cost'); Array.prototype.forEach.call(self.elControls.querySelectorAll('[data-cost]'), function (x) { x.classList.toggle('on', x === b); }); self.recompute(); }); });
+    Array.prototype.forEach.call(this.elControls.querySelectorAll('[data-lens]'), function (b) { b.addEventListener('click', function () { self.state.lensDim = b.getAttribute('data-lens') || null; Array.prototype.forEach.call(self.elControls.querySelectorAll('[data-lens]'), function (x) { x.classList.toggle('vf-chip-on', x === b); }); self.applyLens(); }); });
+    Array.prototype.forEach.call(this.elControls.querySelectorAll('[data-hor]'), function (b) { b.addEventListener('click', function () { var v = b.getAttribute('data-hor'); self.state.horizon = v ? +v : null; Array.prototype.forEach.call(self.elControls.querySelectorAll('[data-hor]'), function (x) { x.classList.toggle('vf-chip-on', x === b); }); self.recompute(); }); });
+    var priIds = positives.map(function (d) { return d.id; });
+    Array.prototype.forEach.call(this.elControls.querySelectorAll('input[data-pri]'), function (inp) {
+      inp.addEventListener('input', function () {
+        self.state.wants[inp.getAttribute('data-pri')] = +inp.value; self.syncWeights();
+        priIds.forEach(function (pid) { var el = self.elControls.querySelector('[data-wv="' + pid + '"]'); if (el) el.innerHTML = '<b class="vf-num">' + (self.state.wants[pid] || 0) + '</b>/10 · <span class="vf-wt-pct vf-num">' + Math.round((self.state.weights[pid] || 0) * 100) + '%</span>'; });
+        self.scheduleRecompute();
+      });
+    });
+    Array.prototype.forEach.call(this.elControls.querySelectorAll('input[data-pen]'), function (inp) { inp.addEventListener('input', function () { var id = inp.getAttribute('data-pen'); self.state.weights[id] = (+inp.value) / 100; self.elControls.querySelector('[data-wv="' + id + '"]').innerHTML = '<span class="vf-num">' + inp.value + '%</span>'; self.scheduleRecompute(); }); });
+    this.elControls.querySelector('.vf-reset').addEventListener('click', function () { self.initWants(); self.state.horizon = null; self.renderControls(); self.recompute(); });
+  };
+
+  // ---------- picks row (cheaper · the pick · more value) ----------
+  App.prototype.renderPicks = function () {
+    var self = this, res = this.result, sel = this.state.selectedId, p = this.pickIds(), rec = this.byId(p.rec);
+    if (!rec) { this.elPicks.innerHTML = '<div class="vf-pick vf-pick-empty">Nothing clears your minimums — relax a hard requirement.</div>'; return; }
+    function card(id, kind, lab, sub) {
+      var r = self.byId(id); if (!r) return '';
+      return '<button class="vf-pick vf-pick-' + kind + (sel === id ? ' vf-pick-sel' : '') + '" data-id="' + id + '"><div class="vf-pick-tag">' + lab + '</div>'
+        + '<div class="vf-pick-name">' + htmlEsc(shortName(r.name)) + '</div>'
+        + '<div class="vf-pick-fig"><span class="vf-num">' + self.money(r) + '</span><span class="vf-pick-val">value <b class="vf-num">' + r.plot.toFixed(0) + '</b></span></div>'
+        + '<div class="vf-pick-why">' + sub + '</div></button>';
+    }
+    var h = '';
+    if (p.cheaper) { var ch = this.byId(p.cheaper); h += card(p.cheaper, 'alt', 'Cheaper', 'saves ' + fmtMoney(rec.costX - ch.costX) + this.unitTail() + ' for ' + (rec.plot - ch.plot).toFixed(0) + ' less value'); }
+    h += card(p.rec, 'rec', '★ The pick', 'best value for money — the knee of the frontier');
+    if (p.pricier) { var pr = this.byId(p.pricier); h += card(p.pricier, 'alt', 'More value', '+' + (pr.plot - rec.plot).toFixed(0) + ' value for +' + fmtMoney(pr.costX - rec.costX) + this.unitTail()); }
+    this.elPicks.innerHTML = h;
+    Array.prototype.forEach.call(this.elPicks.querySelectorAll('.vf-pick'), function (el) { if (el.getAttribute('data-id')) el.addEventListener('click', function () { self.select(el.getAttribute('data-id')); }); });
+  };
+  App.prototype.unitTail = function () { return this.state.costMode === 'eac' ? '/yr' : ''; };
+
+  // ---------- chart head ----------
+  App.prototype.renderChartHead = function () {
+    var lens = this.lensObj();
+    var h = '<div class="vf-ch-l"><h2 class="vf-h2">Value <span class="vf-h2-sub">vs ' + htmlEsc(this.costLabel()) + '</span></h2>'
+      + '<div class="vf-cap"><span class="vf-cap-key"><span class="vf-kp vf-kp-rec">★</span> our pick</span><span class="vf-cap-key"><span class="vf-kp vf-kp-sel">◯</span> what you clicked</span><span class="vf-cap-key">hover a dot for details</span></div></div>';
+    if (lens) {
+      h += '<div class="vf-legend vf-legend-heat"><span class="vf-heat-lab">' + htmlEsc(lens.label) + '</span><span class="vf-heat-bar"></span><span class="vf-heat-ends">low → high</span></div>';
+    } else {
+      h += '<div class="vf-legend"><span class="vf-lg"><span class="vf-dot vf-dot-rec"></span>Pick</span><span class="vf-lg"><span class="vf-dot vf-dot-front"></span>Frontier</span><span class="vf-lg"><span class="vf-dot vf-dot-dom"></span>Beaten</span></div>';
+    }
+    this.elChartHead.innerHTML = h;
+  };
+
+  // ---------- chart ----------
+  App.prototype.curDomain = function () {
+    var b = this.result.bounds, padX = (b.xMax - b.xMin) * 0.12 || 1, padY = (b.yMax - b.yMin) * 0.18 || 1, z = this.state.zoom;
+    return z ? { x0: z.x0, x1: z.x1, y0: z.y0, y1: z.y1 } : { x0: b.xMin - padX, x1: b.xMax + padX, y0: b.yMin - padY, y1: b.yMax + padY };
+  };
+  App.prototype.renderChart = function () {
+    var res = this.result, sel = this.state.selectedId, self = this, lens = this.lensObj(), p = this.pickIds();
+    var W = 960, H = 600, m = { l: 60, r: 26, t: 34, b: 56 }, iw = W - m.l - m.r, ih = H - m.t - m.b;
+    var dm = this.curDomain(), x0 = dm.x0, x1 = dm.x1, y0 = dm.y0, y1 = dm.y1;
+    var sx = function (v) { return m.l + (v - x0) / (x1 - x0) * iw; }, sy = function (v) { return m.t + (1 - (v - y0) / (y1 - y0)) * ih; };
+    var svg = svgEl('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'vf-svg', role: 'img', 'aria-label': 'Value versus cost scatter with efficient frontier' });
+    ticks(x0, x1, 5).forEach(function (t) { svg.appendChild(svgEl('line', { x1: sx(t), y1: m.t, x2: sx(t), y2: m.t + ih, class: 'vf-grid' })); svg.appendChild(svgText(sx(t), m.t + ih + 22, '€' + Math.round(t).toLocaleString(), 'vf-tick')); });
+    ticks(y0, y1, 5).forEach(function (t) { svg.appendChild(svgEl('line', { x1: m.l, y1: sy(t), x2: m.l + iw, y2: sy(t), class: 'vf-grid' })); svg.appendChild(svgText(m.l - 10, sy(t) + 4, Math.round(t), 'vf-tick vf-tick-y')); });
+    svg.appendChild(svgText(m.l, m.t - 14, 'VALUE TO YOU →', 'vf-axhint'));
+    svg.appendChild(svgText(m.l + iw, m.t + ih + 42, (this.costLabel().toUpperCase()) + ' →', 'vf-axhint vf-axhint-r'));
+    var fr = res.rows.filter(function (r) { return r.onFrontier; }).map(function (r) { return { x: r.costX, y: r.plot }; }).sort(function (a, b) { return a.x - b.x; });
+    if (fr.length >= 2) { var d = 'M ' + sx(fr[0].x) + ' ' + sy(fr[0].y); for (var i = 1; i < fr.length; i++) d += ' L ' + sx(fr[i].x) + ' ' + sy(fr[i - 1].y) + ' L ' + sx(fr[i].x) + ' ' + sy(fr[i].y); svg.appendChild(svgEl('path', { d: d, class: 'vf-frontier' })); }
+    res.rows.forEach(function (r) {
+      var cx = sx(r.costX), cy = sy(r.plot), g = svgEl('g', { class: 'vf-pt-g' }), isSel = r.id === sel, isRec = r.recommended;
+      if (isSel) g.appendChild(svgEl('circle', { cx: cx, cy: cy, r: 15, class: 'vf-pt-selring' }));
+      if (isRec) g.appendChild(svgEl('circle', { cx: cx, cy: cy, r: isSel ? 19 : 13, class: 'vf-pt-recring' }));
+      var lensPart = lens ? r.parts.filter(function (p) { return p.id === lens.id; })[0] : null;
+      var rad = isRec ? 8 : r.onFrontier ? 6 : 5, cls = 'vf-pt ', attrs = { cx: cx, cy: cy, r: rad, tabindex: '0', role: 'button' };
+      if (lens && !r.screenedOut) { cls += 'vf-pt-lens'; attrs.style = 'fill:' + heat(lensPart ? lensPart.norm : 0); }
+      else cls += r.screenedOut ? 'vf-pt-screen' : isRec ? 'vf-pt-rec' : r.onFrontier ? 'vf-pt-front' : 'vf-pt-dom';
+      attrs['class'] = cls; var c = svgEl('circle', attrs); g.appendChild(c);
+      var ti = svgEl('title'); ti.textContent = r.name + '\n' + 'value ' + r.plot.toFixed(1) + ' · ' + self.money(r) + (lensPart ? '\n' + lens.label + ': ' + lensPart.raw : ''); g.appendChild(ti);
+      var label = null, sub = null;
+      if (isRec) { label = shortName(r.name); sub = '★ the pick · best value'; }
+      else if (r.id === p.cheaper) { label = shortName(r.name); sub = 'cheaper'; }
+      else if (r.id === p.pricier) { label = shortName(r.name); sub = 'more value'; }
+      else if (isSel) { label = shortName(r.name); sub = 'viewing'; }
+      if (label) {
+        var right = cx < (m.l + iw * 0.66), lx = right ? cx + 14 : cx - 14, anc = right ? 'start' : 'end';
+        var t1 = svgText(lx, cy - 3, label, 'vf-pt-lab' + (isRec ? ' vf-pt-lab-rec' : '')); t1.setAttribute('text-anchor', anc); g.appendChild(t1);
+        var t2 = svgText(lx, cy + 11, sub, 'vf-pt-sublab'); t2.setAttribute('text-anchor', anc); g.appendChild(t2);
+      }
+      g.addEventListener('click', function () { self.select(r.id); });
+      g.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); self.select(r.id); } });
+      svg.appendChild(g);
+    });
+    this.elPlot.innerHTML = ''; this.elPlot.appendChild(svg);
+    if (y0 > 0.5) { var note = div('vf-axisnote'); note.textContent = 'value axis starts at ' + Math.round(Math.max(0, y0)) + ', not 0 — the spread is real but modest'; this.elPlot.appendChild(note); }
+  };
+
+  // ---------- detail rail ----------
+  App.prototype.renderDetail = function () {
+    var res = this.result, r = res.rows.filter(function (x) { return x.id === this.state.selectedId; }, this)[0], lens = this.state.lensDim;
+    if (!r) { this.elDetail.innerHTML = ''; return; }
+    var si = statusInfo(r), self = this;
+    var ordered = r.parts.slice().sort(function (a, b) { if ((a.contribution < 0) !== (b.contribution < 0)) return a.contribution < 0 ? 1 : -1; return Math.abs(b.contribution) - Math.abs(a.contribution); });
+    var cum = 0, steps = ordered.map(function (p) { var before = cum; cum += p.contribution; return { p: p, before: before, after: cum }; });
+    var hi = Math.max(r.value, 0), lo = 0;
+    steps.forEach(function (s) { hi = Math.max(hi, s.before, s.after); lo = Math.min(lo, s.before, s.after); });
+    var span = (hi - lo) || 1, xp = function (v) { return (v - lo) / span * 100; };
+    var brk = steps.map(function (s) {
+      var p = s.p, neg = p.contribution < 0, L = xp(Math.min(s.before, s.after)), Wd = Math.abs(p.contribution) / span * 100, on = lens && p.id === lens;
+      return '<div class="vf-wf' + (on ? ' vf-wf-lenson' : '') + '"><div class="vf-wf-head"><span class="vf-wf-lab">' + htmlEsc(p.label) + '</span><span class="vf-wf-meta vf-num">' + (p.anti ? 'level ' : 'score ') + p.raw + ' · w ' + pct(p.weight) + '</span><span class="vf-wf-amt ' + (neg ? 'vf-amt-neg' : 'vf-amt-pos') + '">' + (neg ? '' : '+') + p.contribution.toFixed(1) + '</span></div>'
+        + '<div class="vf-wf-track"><span class="vf-wf-bar ' + (neg ? 'neg' : 'pos') + '" style="left:' + L.toFixed(1) + '%;width:' + Math.max(Wd, 0.7).toFixed(1) + '%"></span></div>'
+        + (p.why ? '<div class="vf-wf-why">' + htmlEsc(p.why) + (p.source ? ' <a class="vf-br-src" href="' + htmlEsc(p.source) + '" target="_blank" rel="noopener">source ↗</a>' : '') + '</div>' : '') + '</div>';
+    }).join('');
+    brk += '<div class="vf-wf vf-wf-total"><div class="vf-wf-head"><span class="vf-wf-lab">Total value</span><span class="vf-wf-meta"></span><span class="vf-wf-amt vf-num">' + r.value.toFixed(1) + '</span></div><div class="vf-wf-track"><span class="vf-wf-bar total" style="left:' + xp(Math.min(0, r.value)).toFixed(1) + '%;width:' + Math.abs(r.value / span * 100).toFixed(1) + '%"></span></div></div>';
+    var links = (r.links && r.links.length) ? '<div class="vf-buy"><span class="vf-buy-lab">Buy / view</span>' + r.links.map(function (l) { return '<a class="vf-buy-link" href="' + htmlEsc(l.url) + '" target="_blank" rel="noopener">' + htmlEsc(l.label) + ' ↗</a>'; }).join('') + '</div>' : '';
+    var costFig = this.state.costMode === 'eac' ? 'Per year to own' : this.state.costMode === 'acq' ? 'To buy now' : 'Total to own';
+    this.elDetail.innerHTML = '<div class="vf-detail-top"><div class="vf-detail-tagline"><span class="vf-badge ' + si.badge + '">' + si.label + '</span><span class="vf-detail-view">you’re viewing</span></div>'
+      + '<div class="vf-detail-name">' + htmlEsc(r.name) + '</div>'
+      + '<div class="vf-stat"><div class="vf-stat-b"><div class="vf-stat-lab">Value to you</div><div class="vf-stat-val vf-num">' + r.value.toFixed(1) + '</div></div><div class="vf-stat-b"><div class="vf-stat-lab">' + costFig + '</div><div class="vf-stat-val vf-num vf-stat-cost">' + this.money(r) + '</div></div></div></div>'
+      + (r.note ? '<div class="vf-pnote">' + htmlEsc(r.note) + '</div>' : '') + links
+      + '<div class="vf-col"><div class="vf-col-h">Why this value <span class="vf-col-sub">each dimension adds or subtracts to the total</span></div>' + brk + '</div>'
+      + '<div class="vf-col"><div class="vf-col-h">Why this cost <span class="vf-col-sub">where the money goes' + (this.state.costMode === 'acq' ? ' up front' : ', present-valued at ' + (res.discountRate * 100).toFixed(0) + '%') + '</span></div>' + this.renderCostBars(r) + '</div>';
+  };
+  App.prototype.renderCostBars = function (r) {
+    var c = r.costDetail, mode = this.state.costMode, rr = this.result.discountRate, comps = [];
+    comps.push({ lab: 'Purchase price', amt: c.price });
+    if (c.delivery) comps.push({ lab: 'Delivery', amt: c.delivery });
+    if (c.install) comps.push({ lab: 'Installation', amt: c.install });
+    if (c.extras) comps.push({ lab: 'Kit & fees', amt: c.extras });
+    if (mode !== 'acq') {
+      if (c.pvRunning) comps.push({ lab: 'Running · ' + fmtMoney(c.running) + '/yr × ' + c.life + ' yr (PV)', amt: c.pvRunning });
+      if (c.pvResale) comps.push({ lab: 'Resale at year ' + c.life, amt: -c.pvResale });
+    }
+    var maxA = Math.max.apply(null, comps.map(function (x) { return Math.abs(x.amt); })) || 1;
+    var bars = comps.map(function (x) {
+      var neg = x.amt < 0, w = Math.abs(x.amt) / maxA * 100;
+      return '<div class="vf-cb"><div class="vf-cb-lab">' + htmlEsc(x.lab) + '</div><div class="vf-cb-track"><span class="vf-cb-bar' + (neg ? ' neg' : '') + '" style="width:' + Math.max(w, 1).toFixed(1) + '%"></span></div><div class="vf-cb-amt vf-num">' + (neg ? '−' : '') + fmtMoney(Math.abs(x.amt)) + '</div></div>';
+    }).join('');
+    var totLab = mode === 'acq' ? 'Total to buy' : mode === 'total' ? 'Total over ' + c.life + ' yr' : 'Per year (÷ ' + c.life + ' yr)';
+    var totVal = mode === 'acq' ? c.acquisition : mode === 'total' ? c.npv : r.eac;
+    bars += '<div class="vf-cb vf-cb-total"><div class="vf-cb-lab">' + totLab + '</div><div class="vf-cb-track"></div><div class="vf-cb-amt vf-num">' + fmtMoney(totVal) + (mode === 'eac' ? '/yr' : '') + '</div></div>';
+    return bars;
+  };
+
+  // ---------- tabs ----------
+  App.prototype.buildTabs = function () {
+    var self = this;
+    this.elTabs.innerHTML = '<div class="vf-tabnav" role="tablist">'
+      + '<button class="vf-tab vf-tab-on" data-tab="all" role="tab">All options</button>'
+      + '<button class="vf-tab" data-tab="robust" role="tab">How solid is the pick</button>'
+      + '<button class="vf-tab" data-tab="score" role="tab">How it’s scored</button>'
+      + '</div><div class="vf-tabpanel"></div>';
+    this.elTabPanel = this.elTabs.querySelector('.vf-tabpanel');
+    Array.prototype.forEach.call(this.elTabs.querySelectorAll('.vf-tab'), function (b) {
+      b.addEventListener('click', function () { self.state.tab = b.getAttribute('data-tab'); Array.prototype.forEach.call(self.elTabs.querySelectorAll('.vf-tab'), function (x) { x.classList.toggle('vf-tab-on', x === b); }); self.renderTabPanel(); });
+    });
+  };
+  App.prototype.renderTabPanel = function () {
+    var t = this.state.tab;
+    if (t === 'score') this.renderScoring();
+    else if (t === 'robust') this.renderRobust();
+    else this.renderTable();
+  };
+
+  App.prototype.renderTable = function () {
+    var self = this, res = this.result, ranked = res.rows.slice().sort(function (a, b) { return b.plot - a.plot; });
+    var costHdr = res.costMode === 'eac' ? '€/yr' : res.costMode === 'acq' ? 'Buy €' : 'Total €';
+    var h = '<div class="vf-subcap">All ' + res.rows.length + ' options, best value first. Click any row to inspect it above — it syncs with the chart.</div>'
+      + '<div class="vf-table"><div class="vf-thead"><div>Option</div><div class="r">Value</div><div class="r">' + costHdr + '</div></div>';
+    ranked.forEach(function (r) {
+      var si = statusInfo(r);
+      h += '<div class="vf-row' + (r.screenedOut ? ' vf-row-screen' : '') + (r.recommended ? ' vf-row-rec' : '') + '" data-id="' + r.id + '" tabindex="0" role="button"><div class="vf-row-name">' + (r.recommended ? '<span class="vf-row-star">★</span>' : '') + htmlEsc(r.name) + '<span class="vf-badge ' + si.badge + '">' + si.label + '</span></div><div class="fig vf-num">' + r.plot.toFixed(1) + '</div><div class="fig vf-num">' + fmtMoney(r.costX) + '</div></div>';
+    });
+    h += '</div>';
+    this.elTabPanel.innerHTML = h;
+    Array.prototype.forEach.call(this.elTabPanel.querySelectorAll('.vf-row'), function (el) { el.addEventListener('click', function () { self.select(el.getAttribute('data-id')); }); el.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); self.select(el.getAttribute('data-id')); } }); });
+    this.markRows();
+  };
+  App.prototype.markRows = function () { var sel = this.state.selectedId; if (this.elTabPanel) Array.prototype.forEach.call(this.elTabPanel.querySelectorAll('.vf-row'), function (el) { el.classList.toggle('vf-row-sel', el.getAttribute('data-id') === sel); }); };
+
   App.prototype.renderRobust = function () {
-    var res = this.result, rows = res.rows, fp = res.frontierIdsByCost;
+    var res = this.result, rows = res.rows, fp = res.frontierIdsByCost, self = this;
     function byId(id) { return rows.filter(function (r) { return r.id === id; })[0]; }
     var rec = byId(res.recommendedId), ki = fp.indexOf(res.recommendedId);
     var ru = ki > 0 ? byId(fp[ki - 1]) : (ki >= 0 && ki < fp.length - 1 ? byId(fp[ki + 1]) : null);
-    if (!rec || !ru) { this.elRobust.innerHTML = ''; return; }
+    if (!rec || !ru) { this.elTabPanel.innerHTML = '<div class="vf-subcap">Not enough frontier options to compare robustness.</div>'; return; }
     var diffs = rec.parts.map(function (p, i) { return { label: p.label, d: p.contribution - (ru.parts[i] ? ru.parts[i].contribution : 0) }; })
-      .filter(function (x) { return Math.abs(x.d) > 0.05; }).sort(function (a, b) { return Math.abs(b.d) - Math.abs(a.d); }).slice(0, 7);
+      .filter(function (x) { return Math.abs(x.d) > 0.05; }).sort(function (a, b) { return Math.abs(b.d) - Math.abs(a.d); }).slice(0, 8);
     var maxAbs = Math.max.apply(null, diffs.map(function (x) { return Math.abs(x.d); })) || 1;
     var net = rec.value - ru.value, costD = rec.costX - ru.costX, unit = this.state.costMode === 'eac' ? '/yr' : '';
     var trows = diffs.map(function (x) {
@@ -1736,29 +1878,75 @@ button{font-family:inherit;}
     var ahead2 = diffs.filter(function (x) { return x.d > 0; }).slice(0, 2).map(function (x) { return x.label.toLowerCase(); }).join(' and ');
     var valP = net >= 0 ? 'leads by <b>' + net.toFixed(1) + '</b> value-points' : 'trails by <b>' + Math.abs(net).toFixed(1) + '</b> value-points';
     var costP = costD >= 0 ? 'costs ' + fmtMoney(costD) + unit + ' more' : 'costs ' + fmtMoney(Math.abs(costD)) + unit + ' less';
-    var wwhtbt = '<b>' + htmlEsc(rec.name) + '</b> ' + valP + ' and ' + costP + ' than <b>' + htmlEsc(ru.name) + '</b>, and is the better value-for-money (the knee). '
+    var wwhtbt = '<b>' + htmlEsc(rec.name) + '</b> ' + valP + ' and ' + costP + ' than the runner-up, <b>' + htmlEsc(ru.name) + '</b>, and is the better value-for-money (the knee). '
       + (ahead2 ? 'Its edge is mostly ' + ahead2 + '. ' : '')
       + 'It would shift to ' + htmlEsc(ru.name) + ' if that edge closed' + (costD > 0 ? ', or if the ' + fmtMoney(costD) + unit + ' premium isn’t worth it to you' : '') + '.';
-    this.elRobust.innerHTML = '<details class="vf-disc vf-robust-d" open><summary>How robust is the pick? — what it beats the runner-up on, and what would flip it</summary>'
+    this.elTabPanel.innerHTML = '<div class="vf-subcap">What the pick beats its runner-up on, and what would flip it.</div>'
       + '<div class="vf-tor">' + trows + '</div>'
       + '<div class="vf-tor-axis"><span>← ' + htmlEsc(ru.name.split(' ')[0]) + ' ahead</span><span>' + htmlEsc(rec.name.split(' ')[0]) + ' ahead →</span></div>'
-      + '<p class="vf-wwhtbt">' + wwhtbt + '</p></details>';
+      + '<p class="vf-wwhtbt">' + wwhtbt + '</p>';
   };
 
-  App.prototype.renderChartHead = function () {
-    var v = this.result.viewDim;
-    this.elChartHead.innerHTML = '<div><h2 class="vf-h2">' + (v ? htmlEsc(v.label) : 'Value') + ' <span class="vf-h2-sub">vs. ' + (this.state.costMode === 'eac' ? 'cost per year' : this.state.costMode === 'acq' ? 'purchase cost' : 'total cost') + '</span></h2><div class="vf-cap">' + (v ? 'Ranked on this one dimension. ' : '') + 'Click a point to inspect · drag to pan · +/−/⤢ to zoom &amp; fullscreen.</div></div>'
-      + '<div class="vf-legend"><span class="vf-lg"><span class="vf-dot vf-dot-rec"></span>Pick</span><span class="vf-lg"><span class="vf-dot vf-dot-front"></span>Frontier</span><span class="vf-lg"><span class="vf-dot vf-dot-dom"></span>Beaten</span></div>';
+  App.prototype.renderScoring = function () {
+    var data = this.data, note = (data.meta || {}).note;
+    var rows = (data.dimensions || []).map(function (dim) { return '<tr><td>' + htmlEsc(dim.label) + '</td><td>' + htmlEsc(dim.type || '') + '</td><td>' + htmlEsc(dim.direction) + '</td><td class="r">' + pct(dim.weight) + '</td><td class="r">' + (dim.range ? dim.range.min + '…' + dim.range.max : '') + '</td><td>' + (dim.rationale ? htmlEsc(dim.rationale) : '') + '</td></tr>'; }).join('');
+    this.elTabPanel.innerHTML = '<div class="vf-subcap">Every dimension, its default weight, and why it’s in the decision. Open any option above to see each score’s reasoning + source.</div>'
+      + '<div class="vf-scroll"><table class="vf-mtable"><thead><tr><th>Dimension</th><th>Type</th><th>Direction</th><th class="r">Default weight</th><th class="r">Scale</th><th>Why it matters</th></tr></thead><tbody>' + rows + '</tbody></table></div>'
+      + (note ? '<div class="vf-note"><div class="vf-note-h">Notes &amp; caveats</div>' + htmlEsc(note) + '</div>' : '');
   };
 
-  App.prototype.curDomain = function () {
-    var b = this.result.bounds, padX = (b.xMax - b.xMin) * 0.1 || 1, padY = (b.yMax - b.yMin) * 0.16 || 1, z = this.state.zoom;
-    return z ? { x0: z.x0, x1: z.x1, y0: z.y0, y1: z.y1 } : { x0: b.xMin - padX, x1: b.xMax + padX, y0: b.yMin - padY, y1: b.yMax + padY };
+  // ---------- chart pan / zoom / fullscreen / drawer ----------
+  App.prototype.setupChartPan = function () {
+    var self = this, el = this.elPlot, W = 960, H = 600, iw = 874, ih = 510;
+    el.addEventListener('pointerdown', function (e) { if (!self.result) return; self._pan = { id: e.pointerId, mx: e.clientX, my: e.clientY, dom: self.curDomain(), moved: false }; });
+    el.addEventListener('pointermove', function (e) {
+      if (!self._pan || self._pan.id !== e.pointerId) return;
+      var svg = el.querySelector('.vf-svg'); if (!svg) return;
+      var rect = svg.getBoundingClientRect(), d = self._pan.dom, rx = e.clientX - self._pan.mx, ry = e.clientY - self._pan.my;
+      if (!self._pan.moved) { if (Math.abs(rx) + Math.abs(ry) < 8) return; self._pan.moved = true; try { el.setPointerCapture(e.pointerId); } catch (err) {} }
+      e.preventDefault();
+      var ddx = rx / rect.width * W / iw * (d.x1 - d.x0), ddy = ry / rect.height * H / ih * (d.y1 - d.y0);
+      self.state.zoom = { x0: d.x0 - ddx, x1: d.x1 - ddx, y0: d.y0 + ddy, y1: d.y1 + ddy }; self.scheduleChart();
+    });
+    var endPan = function (e) { if (self._pan && self._pan.id === e.pointerId) self._pan = null; };
+    el.addEventListener('pointerup', endPan); el.addEventListener('pointercancel', endPan);
   };
   App.prototype.zoomBy = function (k) {
     var d = this.curDomain(), cx = (d.x0 + d.x1) / 2, cy = (d.y0 + d.y1) / 2;
     this.state.zoom = { x0: cx - (cx - d.x0) * k, x1: cx + (d.x1 - cx) * k, y0: cy - (cy - d.y0) * k, y1: cy + (d.y1 - cy) * k };
     this.renderChart();
+  };
+  App.prototype.buildChartTools = function () {
+    var self = this;
+    this.elTools.innerHTML = '<button class="vf-tool vf-tool-adjust" type="button" data-z="adjust" title="Adjust priorities &amp; cost"><span class="vf-tool-ic">⚙</span><span class="vf-tool-tx">Adjust</span></button><button class="vf-tool" type="button" data-z="out" title="Zoom out">−</button><button class="vf-tool" type="button" data-z="in" title="Zoom in">+</button><button class="vf-tool" type="button" data-z="reset" title="Reset zoom">↺</button><button class="vf-tool" type="button" data-z="full" title="Full screen">⤢</button>';
+    var on = function (k, fn) { self.elTools.querySelector('[data-z="' + k + '"]').addEventListener('click', fn); };
+    on('adjust', function () {
+      if (document.fullscreenElement) self.toggleDrawer();
+      else { var d = self.elControls.querySelector('.vf-adv'); if (d) d.open = true; self.elControls.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+    });
+    on('in', function () { self.zoomBy(0.8); });
+    on('out', function () { self.zoomBy(1.25); });
+    on('reset', function () { self.state.zoom = null; self.renderChart(); });
+    on('full', function () { self.toggleFull(); });
+  };
+  App.prototype.buildDrawer = function () {
+    var self = this;
+    var backdrop = div('vf-drawer-backdrop'); this.elCard.appendChild(backdrop);
+    var drawer = div('vf-drawer'); this.elCard.appendChild(drawer); this.elDrawer = drawer;
+    var head = div('vf-drawer-head'); head.innerHTML = '<span class="vf-drawer-title">Adjust the view</span>';
+    var close = document.createElement('button'); close.type = 'button'; close.className = 'vf-drawer-close'; close.setAttribute('aria-label', 'Close'); close.innerHTML = '&times;';
+    head.appendChild(close); drawer.appendChild(head);
+    this.elDrawerBody = div('vf-drawer-body'); drawer.appendChild(this.elDrawerBody);
+    close.addEventListener('click', function () { self.toggleDrawer(false); });
+    backdrop.addEventListener('click', function () { self.toggleDrawer(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && self._drawerOpen && !document.fullscreenElement) self.toggleDrawer(false); });
+  };
+  App.prototype.toggleDrawer = function (force) {
+    var open = (force == null) ? !this._drawerOpen : !!force;
+    this._drawerOpen = open;
+    if (open) { this.elDrawerBody.appendChild(this.elControls); var d = this.elControls.querySelector('.vf-adv'); if (d) d.open = true; }
+    else if (this.elControls.parentNode === this.elDrawerBody) this.elControlsSlot.appendChild(this.elControls);
+    this.elCard.classList.toggle('vf-drawer-on', open);
   };
   App.prototype.toggleFull = function () {
     var el = this.elCard;
@@ -1771,138 +1959,20 @@ button{font-family:inherit;}
       if (p && p.then) p.then(lock, function () {}); else lock();
     }
   };
-  App.prototype.buildDrawer = function () {
-    var self = this;
-    var backdrop = div('vf-drawer-backdrop'); this.elCard.appendChild(backdrop);
-    var drawer = div('vf-drawer'); this.elCard.appendChild(drawer); this.elDrawer = drawer;
-    var head = div('vf-drawer-head'); head.innerHTML = '<span class="vf-drawer-title">Adjust the view</span>';
-    var close = document.createElement('button'); close.type = 'button'; close.className = 'vf-drawer-close'; close.setAttribute('aria-label', 'Close'); close.innerHTML = '&times;';
-    head.appendChild(close); drawer.appendChild(head);
-    var body = div('vf-drawer-body'); drawer.appendChild(body);
-    this.elAdjust = div('vf-adjust'); body.appendChild(this.elAdjust);
-    close.addEventListener('click', function () { self.toggleDrawer(false); });
-    backdrop.addEventListener('click', function () { self.toggleDrawer(false); });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && self._drawerOpen && !document.fullscreenElement) self.toggleDrawer(false); });
-  };
-  App.prototype.toggleDrawer = function (force) {
-    var open = (force == null) ? !this._drawerOpen : !!force;
-    this._drawerOpen = open;
-    this.elCard.classList.toggle('vf-drawer-on', open);
-  };
   App.prototype.onFsChange = function () {
-    this.elCard.classList.toggle('vf-fs', !!document.fullscreenElement);
+    var fs = !!document.fullscreenElement;
+    this.elCard.classList.toggle('vf-fs', fs);
+    if (!fs && this._drawerOpen) this.toggleDrawer(false);
     this.scheduleChart();
-  };
-  App.prototype.buildChartTools = function () {
-    var self = this;
-    this.elTools.innerHTML = '<button class="vf-tool vf-tool-adjust" type="button" data-z="adjust" aria-label="Adjust the view" title="Adjust cost, ranking &amp; weights"><span class="vf-tool-ic">⚙</span><span class="vf-tool-tx">Adjust</span></button><button class="vf-tool" type="button" data-z="out" aria-label="Zoom out" title="Zoom out">−</button><button class="vf-tool" type="button" data-z="in" aria-label="Zoom in" title="Zoom in">+</button><button class="vf-tool" type="button" data-z="reset" aria-label="Reset zoom" title="Reset zoom">↺</button><button class="vf-tool" type="button" data-z="full" aria-label="Full screen" title="Full screen">⤢</button>';
-    var on = function (k, fn) { self.elTools.querySelector('[data-z="' + k + '"]').addEventListener('click', fn); };
-    on('adjust', function () { self.toggleDrawer(); });
-    on('in', function () { self.zoomBy(0.8); });
-    on('out', function () { self.zoomBy(1.25); });
-    on('reset', function () { self.state.zoom = null; self.renderChart(); });
-    on('full', function () { self.toggleFull(); });
-  };
-
-  App.prototype.renderChart = function () {
-    var res = this.result, sel = this.state.selectedId, self = this, totalMode = this.state.costMode === 'total';
-    var W = 920, H = 480, m = { l: 64, r: 30, t: 30, b: 56 }, iw = W - m.l - m.r, ih = H - m.t - m.b, b = res.bounds;
-    var dm = this.curDomain(), x0 = dm.x0, x1 = dm.x1, y0 = dm.y0, y1 = dm.y1;
-    var sx = function (v) { return m.l + (v - x0) / (x1 - x0) * iw; }, sy = function (v) { return m.t + (1 - (v - y0) / (y1 - y0)) * ih; };
-    var svg = svgEl('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'vf-svg', role: 'img', 'aria-label': 'Value versus cost scatter with efficient frontier' });
-    ticks(x0, x1, 5).forEach(function (t) { svg.appendChild(svgEl('line', { x1: sx(t), y1: m.t, x2: sx(t), y2: m.t + ih, class: 'vf-grid' })); svg.appendChild(svgText(sx(t), m.t + ih + 20, '€' + Math.round(t), 'vf-tick')); });
-    ticks(y0, y1, 5).forEach(function (t) { svg.appendChild(svgEl('line', { x1: m.l, y1: sy(t), x2: m.l + iw, y2: sy(t), class: 'vf-grid' })); svg.appendChild(svgText(m.l - 10, sy(t) + 4, Math.round(t), 'vf-tick vf-tick-y')); });
-    svg.appendChild(svgText(m.l, m.t - 12, (res.viewDim ? res.viewDim.label.toUpperCase() : 'VALUE') + ' →', 'vf-axhint'));
-    svg.appendChild(svgText(m.l + iw, m.t + ih + 38, 'COST · €' + (this.state.costMode === 'eac' ? '/YEAR' : this.state.costMode === 'acq' ? ' UPFRONT' : ' TOTAL') + ' →', 'vf-axhint vf-axhint-r'));
-    var fr = res.rows.filter(function (r) { return r.onFrontier; }).map(function (r) { return { x: r.costX, y: r.plot }; }).sort(function (a, b) { return a.x - b.x; });
-    if (fr.length >= 2) { var d = 'M ' + sx(fr[0].x) + ' ' + sy(fr[0].y); for (var i = 1; i < fr.length; i++) d += ' L ' + sx(fr[i].x) + ' ' + sy(fr[i - 1].y) + ' L ' + sx(fr[i].x) + ' ' + sy(fr[i].y); svg.appendChild(svgEl('path', { d: d, class: 'vf-frontier' })); }
-    res.rows.forEach(function (r) {
-      var cx = sx(r.costX), cy = sy(r.plot), g = svgEl('g', { class: 'vf-pt-g' });
-      if (r.id === sel) g.appendChild(svgEl('circle', { cx: cx, cy: cy, r: 15, class: 'vf-pt-selring' }));
-      else if (r.recommended) g.appendChild(svgEl('circle', { cx: cx, cy: cy, r: 13, class: 'vf-pt-ring' }));
-      var cls = r.recommended ? 'vf-pt-rec' : r.onFrontier ? 'vf-pt-front' : r.screenedOut ? 'vf-pt-screen' : 'vf-pt-dom';
-      g.appendChild(svgEl('circle', { cx: cx, cy: cy, r: r.recommended ? 8 : r.onFrontier ? 6 : 5, class: 'vf-pt ' + cls, tabindex: '0', role: 'button' }));
-      var ti = svgEl('title'); ti.textContent = r.name + '\n' + r.plot.toFixed(1) + ' · ' + self.money(r); g.appendChild(ti);
-      if (r.recommended) { g.appendChild(svgText(cx + 15, cy - 13, r.name.length > 24 ? r.name.slice(0, 22) + '…' : r.name, 'vf-pt-lab')); g.appendChild(svgText(cx + 15, cy + 1, 'the knee · best value', 'vf-pt-sublab')); }
-      else if (r.id === sel) g.appendChild(svgText(cx + 15, cy - 11, r.name.length > 24 ? r.name.slice(0, 22) + '…' : r.name, 'vf-pt-lab'));
-      g.addEventListener('click', function () { self.select(r.id); });
-      g.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); self.select(r.id); } });
-      svg.appendChild(g);
-    });
-    this.elPlot.innerHTML = ''; this.elPlot.appendChild(svg);
-    if (y0 > 0.5 && !res.viewDim) { var note = div('vf-axisnote'); note.textContent = 'value axis starts at ' + Math.round(y0) + ', not 0 — the spread is real but modest'; this.elPlot.appendChild(note); }
-  };
-
-  App.prototype.renderTable = function () {
-    var self = this, res = this.result, ranked = res.rows.slice().sort(function (a, b) { return b.plot - a.plot; });
-    var costHdr = res.costMode === 'eac' ? '€/yr' : res.costMode === 'acq' ? 'Buy €' : 'Total €';
-    var h = '<div class="vf-explore-h"><h3 class="vf-h3">All ' + res.rows.length + ' options</h3><div class="vf-subcap">Ranked by ' + (res.viewDim ? htmlEsc(res.viewDim.label) : 'value') + '. Click to inspect — it syncs with the chart.</div></div>'
-      + '<div class="vf-table"><div class="vf-thead"><div>Option</div><div class="r">' + (res.viewDim ? 'Score' : 'Value') + '</div><div class="r">' + costHdr + '</div></div>';
-    ranked.forEach(function (r) {
-      var si = statusInfo(r);
-      h += '<div class="vf-row' + (r.screenedOut ? ' vf-row-screen' : '') + (r.recommended ? ' vf-row-rec' : '') + '" data-id="' + r.id + '" tabindex="0" role="button"><div class="vf-row-name">' + (r.recommended ? '<span class="vf-row-star">★</span>' : '') + htmlEsc(r.name) + '<span class="vf-badge ' + si.badge + '">' + si.label + '</span></div><div class="fig vf-num">' + r.plot.toFixed(1) + '</div><div class="fig vf-num">' + fmtMoney(r.costX) + '</div></div>';
-    });
-    h += '</div>';
-    this.elTableWrap.innerHTML = h;
-    Array.prototype.forEach.call(this.elTableWrap.querySelectorAll('.vf-row'), function (el) { el.addEventListener('click', function () { self.select(el.getAttribute('data-id')); }); el.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); self.select(el.getAttribute('data-id')); } }); });
-    this.markRows();
-  };
-  App.prototype.markRows = function () { var sel = this.state.selectedId; if (this.elTableWrap) Array.prototype.forEach.call(this.elTableWrap.querySelectorAll('.vf-row'), function (el) { el.classList.toggle('vf-row-sel', el.getAttribute('data-id') === sel); }); };
-
-  App.prototype.renderDetail = function () {
-    var res = this.result, r = res.rows.filter(function (x) { return x.id === this.state.selectedId; }, this)[0];
-    if (!r) { this.elDetail.innerHTML = ''; return; }
-    var si = statusInfo(r);
-    var ordered = r.parts.slice().sort(function (a, b) { if ((a.contribution < 0) !== (b.contribution < 0)) return a.contribution < 0 ? 1 : -1; return Math.abs(b.contribution) - Math.abs(a.contribution); });
-    var cum = 0, steps = ordered.map(function (p) { var before = cum; cum += p.contribution; return { p: p, before: before, after: cum }; });
-    var hi = Math.max(r.value, 0), lo = 0;
-    steps.forEach(function (s) { hi = Math.max(hi, s.before, s.after); lo = Math.min(lo, s.before, s.after); });
-    var span = (hi - lo) || 1, xp = function (v) { return (v - lo) / span * 100; };
-    var brk = steps.map(function (s) {
-      var p = s.p, neg = p.contribution < 0, L = xp(Math.min(s.before, s.after)), Wd = Math.abs(p.contribution) / span * 100;
-      return '<div class="vf-wf"><div class="vf-wf-head"><span class="vf-wf-lab">' + htmlEsc(p.label) + '</span><span class="vf-wf-meta vf-num">' + (p.anti ? 'level ' : 'score ') + p.raw + ' · w ' + pct(p.weight) + '</span><span class="vf-wf-amt ' + (neg ? 'vf-amt-neg' : 'vf-amt-pos') + '">' + (neg ? '' : '+') + p.contribution.toFixed(1) + '</span></div>'
-        + '<div class="vf-wf-track"><span class="vf-wf-bar ' + (neg ? 'neg' : 'pos') + '" style="left:' + L.toFixed(1) + '%;width:' + Math.max(Wd, 0.7).toFixed(1) + '%"></span></div>'
-        + (p.why ? '<div class="vf-wf-why">' + htmlEsc(p.why) + (p.source ? ' <a class="vf-br-src" href="' + htmlEsc(p.source) + '" target="_blank" rel="noopener">source ↗</a>' : '') + '</div>' : '') + '</div>';
-    }).join('');
-    brk += '<div class="vf-wf vf-wf-total"><div class="vf-wf-head"><span class="vf-wf-lab">Total value</span><span class="vf-wf-meta"></span><span class="vf-wf-amt vf-num">' + r.value.toFixed(1) + '</span></div><div class="vf-wf-track"><span class="vf-wf-bar total" style="left:' + xp(Math.min(0, r.value)).toFixed(1) + '%;width:' + Math.abs(r.value / span * 100).toFixed(1) + '%"></span></div></div>';
-    var c = r.costDetail, rr = res.discountRate, cmA = this.state.costMode, hasExtras = c.delivery || c.install || c.extras;
-    function step(op, lab, note, amt, cls) { return '<div class="vf-cost-step ' + (cls || '') + '"><div class="vf-cost-op">' + op + '</div><div class="vf-cost-lab">' + lab + (note ? '<div class="vf-cost-note">' + note + '</div>' : '') + '</div><div class="vf-cost-amt vf-num">' + amt + '</div></div>'; }
-    var acqRows = step('', 'Purchase price', '', fmtMoney(c.price), (!hasExtras && cmA === 'acq') ? 'total' : '')
-      + (c.delivery ? step('+', 'Delivery', '', fmtMoney(c.delivery)) : '')
-      + (c.install ? step('+', 'Installation', '', fmtMoney(c.install)) : '')
-      + (c.extras ? step('+', 'Stacking kit &amp; fees', '', fmtMoney(c.extras)) : '')
-      + (hasExtras ? step('=', 'Acquisition', 'what you pay up front', fmtMoney(c.acquisition), cmA === 'acq' ? 'total' : 'sub') : '');
-    var runRows = step('', 'Energy', '', fmtMoney(c.energy) + '/yr')
-      + (c.consumables ? step('+', 'Consumables', '', fmtMoney(c.consumables) + '/yr') : '')
-      + (c.maintenance ? step('+', 'Maintenance &amp; repairs', '', fmtMoney(c.maintenance) + '/yr') : '')
-      + step('=', 'Running, present-valued', fmtMoney(c.running) + '/yr × ' + c.life + ' yr @ ' + (rr * 100).toFixed(0) + '%', fmtMoney(c.pvRunning), 'sub');
-    var cost = '<div class="vf-cost-sec">Acquisition</div>' + acqRows
-      + '<div class="vf-cost-sec">Running' + (c.life < c.fullLife ? ' · kept ' + c.life + ' of ~' + c.fullLife + ' yr' : ' · over ' + c.life + ' yr') + '</div>' + runRows
-      + (c.pvResale ? step('−', 'Resale at year ' + c.life, c.life < c.fullLife ? 'still worth this much when sold' : '', '−' + fmtMoney(c.pvResale)) : '')
-      + step('=', 'Total over ' + c.life + ' yr', '', fmtMoney(c.npv), cmA === 'total' ? 'total' : '')
-      + step('÷', 'Per year', 'spread over ' + c.life + ' yr', fmtMoney(r.eac) + '/yr', cmA === 'eac' ? 'total' : '');
-    var links = (r.links && r.links.length) ? '<div class="vf-buy"><span class="vf-buy-lab">Buy / view</span>' + r.links.map(function (l) { return '<a class="vf-buy-link" href="' + htmlEsc(l.url) + '" target="_blank" rel="noopener">' + htmlEsc(l.label) + ' ↗</a>'; }).join('') + '</div>' : '';
-    this.elDetail.innerHTML = '<div class="vf-detail-top"><div><div class="vf-detail-tag" style="color:' + si.tag + '">' + si.label + '</div><div class="vf-detail-name">' + htmlEsc(r.name) + '</div></div>'
-      + '<div class="vf-stat"><div><div class="vf-stat-lab">Value</div><div class="vf-stat-val vf-num">' + r.value.toFixed(1) + '</div></div><div><div class="vf-stat-lab">' + (this.state.costMode === 'eac' ? '€/yr to own' : this.state.costMode === 'acq' ? 'To buy now' : 'Total to own') + '</div><div class="vf-stat-val vf-num" style="color:#b8430f">' + fmtMoney(r.costX) + '</div></div></div></div>'
-      + (r.note ? '<div class="vf-pnote">' + htmlEsc(r.note) + '</div>' : '') + links
-      + '<div class="vf-cols"><div><div class="vf-col-h">Why this value</div><div class="vf-col-sub">each dimension adds or subtracts, landing on the total</div>' + brk + '</div>'
-      + '<div><div class="vf-col-h">Why this cost</div><div class="vf-col-sub">acquisition up front + running over the years you keep it, present-valued at ' + (rr * 100).toFixed(0) + '%</div>' + cost + '</div></div>';
-  };
-
-  App.prototype.renderAudit = function () {
-    var data = this.data, d = document.createElement('details'); d.className = 'vf-disc';
-    var rows = (data.dimensions || []).map(function (dim) { return '<tr><td>' + htmlEsc(dim.label) + '</td><td>' + htmlEsc(dim.type || '') + '</td><td>' + htmlEsc(dim.direction) + '</td><td class="r">' + pct(dim.weight) + '</td><td class="r">' + (dim.range ? dim.range.min + '…' + dim.range.max : '') + '</td><td>' + (dim.rationale ? htmlEsc(dim.rationale) : '') + '</td></tr>'; }).join('');
-    d.innerHTML = '<summary>See how every score was set — dimensions &amp; weights</summary><div class="vf-scroll"><table class="vf-mtable"><thead><tr><th>Dimension</th><th>Type</th><th>Direction</th><th class="r">Default weight</th><th class="r">Scale</th><th>Why it matters</th></tr></thead><tbody>' + rows + '</tbody></table></div>';
-    this.elAudit.appendChild(d);
   };
 
   function boot() {
     var data = global.__VF_DATA__, root = document.getElementById('vf-app');
     if (!data || !root) return;
-    try { if (data.meta && data.meta.title) document.title = 'Value Frontier — ' + data.meta.title; global.__VF_APP = new App(data, root); if (data.meta && data.meta.note) { var n = div('vf-note'); n.textContent = data.meta.note; root.appendChild(n); } }
+    try { if (data.meta && data.meta.title) document.title = 'Value Frontier — ' + data.meta.title; global.__VF_APP = new App(data, root); }
     catch (e) { root.innerHTML = '<pre class="vf-error">Engine error: ' + (e && e.message) + '</pre>'; }
   }
-  var api = { compute: compute, crf: crf, annuityFactor: annuityFactor, eacCost: eacCost, valueParts: valueParts, normDim: normDim, markFrontier: markFrontier, kneePoint: kneePoint, version: '0.7.0' };
+  var api = { compute: compute, crf: crf, annuityFactor: annuityFactor, eacCost: eacCost, valueParts: valueParts, normDim: normDim, markFrontier: markFrontier, kneePoint: kneePoint, version: '0.8.0' };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else { global.ValueFrontier = api; if (typeof document !== 'undefined') { if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot(); } }
 })(typeof window !== 'undefined' ? window : globalThis);
