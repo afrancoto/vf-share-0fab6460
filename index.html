@@ -144,7 +144,11 @@ button{font-family:inherit;}
 .vf-wbar-key{font-size:11px;color:var(--muted);display:inline-flex;align-items:center;gap:5px;}
 .vf-wbar-key b{color:var(--ink);}
 .vf-wbar-sw{width:9px;height:9px;border-radius:2px;display:inline-block;}
-.vf-ctrl-primary{display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start;}
+/* priorities — sliders are always visible (the page's core interaction, not hidden) */
+.vf-prios{margin:16px 0 4px;}
+.vf-prios-h{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);display:flex;flex-wrap:wrap;gap:3px 10px;align-items:baseline;margin-bottom:12px;}
+.vf-prios-sub{font-family:var(--serif);text-transform:none;letter-spacing:0;font-size:11.5px;font-style:italic;color:var(--faint);}
+.vf-ctrl-primary{display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start;margin-top:16px;padding-top:14px;border-top:1px solid var(--line2);}
 .vf-ctrl-field{display:flex;flex-direction:column;gap:8px;}
 .vf-ctrl-lab{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);}
 .vf-ctrl-hint{text-transform:none;letter-spacing:0;font-family:var(--serif);font-style:italic;font-size:11px;color:var(--faint);}
@@ -257,19 +261,32 @@ button{font-family:inherit;}
 .vf-tl-cell.vf-tl-h{justify-content:flex-end;text-align:right;}
 .vf-tl-h:hover{color:var(--ink);}
 .vf-tl-h-on{color:var(--rec);}
-.vf-tl-name{position:sticky;left:0;background:var(--card);z-index:1;padding:10px 12px;font-size:13px;font-weight:500;line-height:1.25;display:flex;align-items:center;gap:7px;flex-wrap:wrap;border-right:1px solid var(--line2);}
-.vf-tl-head .vf-tl-name{background:var(--head);}
-.vf-tl-cell{position:relative;padding:8px;display:flex;align-items:center;justify-content:flex-end;gap:6px;border-left:1px solid var(--line3);}
-.vf-tl-bar{position:absolute;left:6px;bottom:5px;height:4px;border-radius:2px;background:var(--front);opacity:.5;max-width:calc(100% - 12px);}
+.vf-tl-name{position:sticky;left:0;background:var(--card);z-index:1;padding:10px 14px 10px 12px;font-size:13px;font-weight:500;line-height:1.25;display:flex;align-items:center;gap:8px;min-width:0;box-shadow:1px 0 0 var(--line2);}
+.vf-tl-head .vf-tl-name{background:var(--head);box-shadow:1px 0 0 var(--line);}
+.vf-tl-nm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.vf-tl-cell{position:relative;padding:8px;display:flex;align-items:center;justify-content:flex-end;gap:6px;}
+.vf-tl-bar{position:absolute;left:8px;bottom:5px;height:4px;border-radius:2px;background:var(--front);opacity:.5;max-width:calc(100% - 16px);}
 .vf-tl-bar.neg{background:var(--rec);opacity:.45;}
 .vf-tl-fig{position:relative;font-size:12.5px;color:var(--ink);font-variant-numeric:tabular-nums;}
 .vf-tl-row[data-id]{cursor:pointer;}
 .vf-tl-row[data-id]:hover,.vf-tl-row.vf-brush-hot{background:#1c1a170a;}
 .vf-tl-row[data-id]:hover .vf-tl-name,.vf-tl-row.vf-brush-hot .vf-tl-name{background:#f6f4ef;}
 .vf-tl-rec .vf-tl-name{font-weight:600;}
-.vf-tl-dim{opacity:.6;}
+.vf-tl-dim{opacity:.55;}
 .vf-tl-sel{background:var(--rec-bg) !important;}
-.vf-tl-sel .vf-tl-name{background:var(--rec-bg) !important;box-shadow:inset 3px 0 0 var(--rec);}
+.vf-tl-sel .vf-tl-name{background:var(--rec-bg) !important;box-shadow:inset 3px 0 0 var(--rec),1px 0 0 var(--line2);}
+/* medals (muted metal, no bling) + status dot */
+.vf-medal{flex:0 0 auto;width:18px;height:18px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:10.5px;font-weight:700;color:#fff;box-shadow:inset 0 0 0 1px rgba(28,26,23,.14);}
+.vf-medal-1{background:#c19a2e;}
+.vf-medal-2{background:#a7a59c;}
+.vf-medal-3{background:#ac7b46;}
+.vf-sdot{flex:0 0 auto;width:8px;height:8px;border-radius:50%;display:inline-block;margin:0 5px;background:var(--dom);}
+.vf-sdot.vf-b-front{background:var(--front);}
+.vf-sdot.vf-b-dom{background:var(--dom);}
+.vf-sdot.vf-b-rec{background:var(--rec);}
+.vf-sdot.vf-b-screen{background:var(--screen-bd);}
+.vf-leg-dot{margin:0 1px -1px;}
+.vf-leg-medal{font-family:var(--mono);color:var(--ink);}
 .vf-row-star{color:var(--rec);}
 .vf-badge{font-family:var(--mono);font-size:9px;letter-spacing:.04em;text-transform:uppercase;padding:2px 7px;border-radius:4px;white-space:nowrap;border:1px solid;}
 .vf-b-rec{background:var(--rec);color:#fff;border-color:var(--rec);}
@@ -360,6 +377,10 @@ button{font-family:inherit;}
   .vf-wbar{margin-bottom:11px;padding-bottom:11px;}
   .vf-wbar-keys{gap:3px 10px;}
   .vf-wbar-key{font-size:10px;}
+  .vf-prios{margin:12px 0 2px;}
+  .vf-prios-h{margin-bottom:9px;}
+  .vf-wts{gap:3px 18px;margin-top:8px;}
+  .vf-wt{font-size:12px;}
   .vf-ctrl-primary{gap:15px;}
   .vf-ctrl-primary .vf-chips{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:3px;scrollbar-width:none;}
   .vf-ctrl-primary .vf-chips::-webkit-scrollbar{display:none;}
@@ -1737,7 +1758,6 @@ button{font-family:inherit;}
     this.elTools = div('vf-chart-tools'); this.elCard.appendChild(this.elTools);
     this.elPlot = div('vf-plot'); this.elCard.appendChild(this.elPlot);
     this.elTip = div('vf-tip'); this.elTip.style.display = 'none'; this.elPlot.appendChild(this.elTip);
-    this.elPicks = div('vf-picks'); cc.appendChild(this.elPicks);
     this.elControlsSlot = div('vf-controls-slot'); cc.appendChild(this.elControlsSlot);
     this.elControls = div('vf-controls'); this.elControlsSlot.appendChild(this.elControls);
     this.elInspector = div('vf-detail'); ws.appendChild(this.elInspector);
@@ -1772,11 +1792,11 @@ button{font-family:inherit;}
     var rows = this.result.rows, sel = this.state.selectedId;
     if (!sel || !rows.some(function (r) { return r.id === sel; })) this.state.selectedId = this.result.recommendedId || (rows[0] && rows[0].id) || null;
     this.writeHash();
-    this.renderVerdict(); this.renderChartHead(); this.renderChart(); this.renderPicks(); this.renderInspector(); this.renderTabPanel();
+    this.renderVerdict(); this.renderChartHead(); this.renderChart(); this.renderInspector(); this.renderTabPanel();
   };
   App.prototype.scheduleChart = function () { var self = this; if (self._chartRAF) return; var raf = global.requestAnimationFrame || function (f) { return setTimeout(f, 16); }; self._chartRAF = raf(function () { self._chartRAF = null; self.renderChart(); }); };
   App.prototype.scheduleRecompute = function () { var self = this; if (self._recRAF) return; var raf = global.requestAnimationFrame || function (f) { return setTimeout(f, 16); }; self._recRAF = raf(function () { self._recRAF = null; self.recompute(); }); };
-  App.prototype.select = function (id, silent) { if (!id) return; this.state.selectedId = id; this.renderInspector(); this.renderChart(); this.renderPicks(); this.markRows(); if (!silent) this.writeHash(); };
+  App.prototype.select = function (id, silent) { if (!id) return; this.state.selectedId = id; this.renderInspector(); this.renderChart(); this.markRows(); if (!silent) this.writeHash(); };
   App.prototype.applyLens = function () { this.renderChartHead(); this.renderChart(); this.renderInspector(); this.renderTabPanel(); this.writeHash(); };
 
   // ---------- shareable URL-hash state ----------
@@ -1860,22 +1880,16 @@ button{font-family:inherit;}
 
   // ---------- live weight bar (the 100-point recipe, always visible) ----------
   App.prototype.weightBarHTML = function () {
-    var self = this, pos = this.posDims(), ld = this.state.lensDim;
+    var self = this, pos = this.posDims();
     var segs = pos.map(function (d, i) {
       var w = self.state.weights[d.id] || 0, color = PALETTE[i % PALETTE.length];
-      return '<span class="vf-wbar-seg' + (ld === d.id ? ' on' : '') + '" data-lens="' + d.id + '" title="' + htmlEsc(d.label) + ' — ' + pct(w) + '" style="width:' + (w * 100).toFixed(2) + '%;background:' + color + '"></span>';
+      return '<span class="vf-wbar-seg" title="' + htmlEsc(d.label) + ' — ' + pct(w) + '" style="width:' + (w * 100).toFixed(2) + '%;background:' + color + '"></span>';
     }).join('');
     var keys = pos.map(function (d, i) { var w = self.state.weights[d.id] || 0; if (w < 0.06) return ''; return '<span class="vf-wbar-key"><span class="vf-wbar-sw" style="background:' + PALETTE[i % PALETTE.length] + '"></span>' + htmlEsc(d.label) + ' <b class="vf-num">' + pct(w) + '</b></span>'; }).join('');
-    return '<div class="vf-wbar-h">Your priorities <span class="vf-wbar-sub">share of the decision — always totals 100%. Click a slice to colour the chart by it.</span></div>'
+    return '<div class="vf-wbar-h">The recipe <span class="vf-wbar-sub">each priority’s share of the decision — always totals 100%</span></div>'
       + '<div class="vf-wbar-track">' + segs + '</div><div class="vf-wbar-keys">' + keys + '</div>';
   };
-  App.prototype.refreshWeightBar = function () { var el = this.elControls.querySelector('.vf-wbar'); if (el) { el.innerHTML = this.weightBarHTML(); this.bindWeightBar(); } };
-  App.prototype.bindWeightBar = function () {
-    var self = this;
-    Array.prototype.forEach.call(this.elControls.querySelectorAll('.vf-wbar-seg'), function (s) {
-      s.addEventListener('click', function () { var id = s.getAttribute('data-lens'); self.state.lensDim = (self.state.lensDim === id) ? null : id; self.renderControls(); self.applyLens(); });
-    });
-  };
+  App.prototype.refreshWeightBar = function () { var el = this.elControls.querySelector('.vf-wbar'); if (el) el.innerHTML = this.weightBarHTML(); };
 
   // ---------- on-page controls (docked under the chart) ----------
   App.prototype.renderControls = function () {
@@ -1892,18 +1906,17 @@ button{font-family:inherit;}
       + '<div class="vf-budget-row"><input type="range" min="' + Math.floor(pb.min) + '" max="' + Math.ceil(pb.max) + '" step="' + step + '" value="' + Math.round(capVal) + '" data-budget aria-label="Maximum budget"><span class="vf-budget-val vf-num" data-budgetval>' + (this.state.budgetCap != null ? fmtMoney(this.state.budgetCap) : 'no cap') + '</span></div></div>';
     this.elControls.innerHTML =
       '<div class="vf-wbar">' + this.weightBarHTML() + '</div>'
+      + '<div class="vf-prios"><div class="vf-prios-h">Your priorities<span class="vf-prios-sub">drag any slider (0–10) — the chart and the pick update live; the % is its share of the decision</span></div><div class="vf-wts">' + positives.map(wantSlider).join('') + '</div></div>'
       + '<div class="vf-ctrl-primary">'
       + '<div class="vf-ctrl-field"><span class="vf-ctrl-lab">Cost axis</span><div class="vf-segwrap">' + costChips + '</div></div>'
       + budgetField
       + '<div class="vf-ctrl-field"><span class="vf-ctrl-lab">Colour points by</span><div class="vf-chips">' + lensChips + '</div></div>'
       + '</div>'
-      + '<details class="vf-adv"><summary>Fine-tune your priorities &amp; time horizon — the pick updates live</summary><div class="vf-adv-body">'
+      + '<details class="vf-adv"><summary>More — time horizon, penalties &amp; reset</summary><div class="vf-adv-body">'
       + '<div class="vf-ctrl-field vf-ctrl-row"><span class="vf-ctrl-lab">Spread cost over</span><div class="vf-chips">' + horChips + '</div></div>'
-      + '<div class="vf-wgroup"><div class="vf-wgroup-h">How much each matters<span class="vf-wgroup-sub">drag 0–10; the % above is its share of the decision — they always total 100%</span></div><div class="vf-wts">' + positives.map(wantSlider).join('') + '</div></div>'
       + (antis.length ? '<div class="vf-wgroup"><div class="vf-wgroup-h">Penalties<span class="vf-wgroup-sub">how hard to dock things you didn’t want — 0 = ignore</span></div><div class="vf-wts">' + antis.map(penSlider).join('') + '</div></div>' : '')
       + '<button class="vf-reset" type="button">Reset to defaults</button>'
       + '</div></details>';
-    this.bindWeightBar();
     Array.prototype.forEach.call(this.elControls.querySelectorAll('[data-cost]'), function (b) { b.addEventListener('click', function () { self.state.costMode = b.getAttribute('data-cost'); Array.prototype.forEach.call(self.elControls.querySelectorAll('[data-cost]'), function (x) { x.classList.toggle('on', x === b); }); self.recompute(); }); });
     Array.prototype.forEach.call(this.elControls.querySelectorAll('[data-lens]'), function (b) { b.addEventListener('click', function () { self.state.lensDim = b.getAttribute('data-lens') || null; Array.prototype.forEach.call(self.elControls.querySelectorAll('[data-lens]'), function (x) { x.classList.toggle('vf-chip-on', x === b); }); self.refreshWeightBar(); self.applyLens(); }); });
     Array.prototype.forEach.call(this.elControls.querySelectorAll('[data-hor]'), function (b) { b.addEventListener('click', function () { var v = b.getAttribute('data-hor'); self.state.horizon = v ? +v : null; Array.prototype.forEach.call(self.elControls.querySelectorAll('[data-hor]'), function (x) { x.classList.toggle('vf-chip-on', x === b); }); self.recompute(); }); });
@@ -1921,29 +1934,6 @@ button{font-family:inherit;}
     this.elControls.querySelector('.vf-reset').addEventListener('click', function () { self.initWants(); self.state.horizon = null; self.state.budgetCap = null; self.renderControls(); self.recompute(); });
   };
 
-  // ---------- picks row (cheaper · the pick · more value) ----------
-  App.prototype.renderPicks = function () {
-    var self = this, sel = this.state.selectedId, p = this.pickIds(), rec = p.rec ? this.byId(p.rec) : null;
-    if (!rec) { this.elPicks.innerHTML = '<div class="vf-pick vf-pick-empty">Nothing clears your filters — relax the budget or a hard requirement.</div>'; return; }
-    function card(id, kind, lab, sub) {
-      var r = self.byId(id); if (!r) return '';
-      return '<button class="vf-pick vf-pick-' + kind + (sel === id ? ' vf-pick-sel' : '') + '" data-id="' + id + '" data-brush="' + id + '"><div class="vf-pick-tag">' + lab + '</div>'
-        + '<div class="vf-pick-name">' + htmlEsc(shortName(r.name)) + '</div>'
-        + '<div class="vf-pick-fig"><span class="vf-num">' + self.money(r) + '</span><span class="vf-pick-val">value <b class="vf-num">' + r.plot.toFixed(0) + '</b></span></div>'
-        + '<div class="vf-pick-why">' + sub + '</div></button>';
-    }
-    var h = '';
-    if (p.cheaper) { var ch = this.byId(p.cheaper); h += card(p.cheaper, 'alt', 'Cheaper', 'saves ' + fmtMoney(rec.costX - ch.costX) + this.unitTail() + ' for ' + (rec.plot - ch.plot).toFixed(0) + ' less value'); }
-    h += card(p.rec, 'rec', '★ The pick', 'best value for money — the knee of the frontier');
-    if (p.pricier) { var pr = this.byId(p.pricier); h += card(p.pricier, 'alt', 'More value', '+' + (pr.plot - rec.plot).toFixed(0) + ' value for +' + fmtMoney(pr.costX - rec.costX) + this.unitTail()); }
-    this.elPicks.innerHTML = h;
-    Array.prototype.forEach.call(this.elPicks.querySelectorAll('.vf-pick'), function (el) {
-      var id = el.getAttribute('data-id'); if (!id) return;
-      el.addEventListener('click', function () { self.select(id); });
-      el.addEventListener('mouseenter', function () { self.highlight(id); });
-      el.addEventListener('mouseleave', function () { self.highlight(null); });
-    });
-  };
 
   // ---------- chart head ----------
   App.prototype.renderChartHead = function () {
@@ -2061,7 +2051,6 @@ button{font-family:inherit;}
       Array.prototype.forEach.call(svg.querySelectorAll('.vf-pt-g'), function (g) { g.classList.toggle('vf-pt-hot', g.getAttribute('data-id') === id); });
     }
     if (this.elTabPanel) Array.prototype.forEach.call(this.elTabPanel.querySelectorAll('[data-brush]'), function (el) { el.classList.toggle('vf-brush-hot', el.getAttribute('data-brush') === id); });
-    Array.prototype.forEach.call(this.elPicks.querySelectorAll('[data-brush]'), function (el) { el.classList.toggle('vf-brush-hot', el.getAttribute('data-brush') === id); });
   };
   App.prototype.showTip = function (r, e) {
     var lens = this.lensObj(), lensPart = lens ? r.parts.filter(function (q) { return q.id === lens.id; })[0] : null;
@@ -2164,21 +2153,36 @@ button{font-family:inherit;}
       return r.plot;
     }
     var ranked = res.rows.slice().sort(function (a, b) { return (metric(a) - metric(b)) * sortDir; });
+    // gold/silver/bronze: the three frontier picks (knee = gold; the two neighbours by value)
+    var pk = this.pickIds(), medals = {};
+    if (pk.rec) medals[pk.rec] = 1;
+    var nbrs = [pk.pricier, pk.cheaper].filter(Boolean).map(function (id) { return self.byId(id); }).sort(function (a, b) { return b.plot - a.plot; });
+    if (nbrs[0]) medals[nbrs[0].id] = 2;
+    if (nbrs[1]) medals[nbrs[1].id] = 3;
+    function shortStat(r) {
+      if (r.screenedOut) return { t: 'Screened', c: 'vf-b-screen' };
+      if (r.overBudget) return { t: 'Over budget', c: 'vf-b-screen' };
+      if (r.recommended) return { t: 'Pick', c: 'vf-b-rec' };
+      if (r.onFrontier) return { t: 'Best value', c: 'vf-b-front' };
+      return { t: 'Beaten', c: 'vf-b-dom' };
+    }
     // header
     var arrow = function (k) { return sortKey === k ? (sortDir < 0 ? ' ▾' : ' ▴') : ''; };
     var head = '<div class="vf-tl-row vf-tl-head"><div class="vf-tl-name vf-tl-h" data-sort="name">Option</div>'
       + cols.map(function (c) { return '<div class="vf-tl-cell vf-tl-h' + (sortKey === c.key ? ' vf-tl-h-on' : '') + '" data-sort="' + c.key + '" title="sort by ' + htmlEsc(c.label) + '">' + htmlEsc(c.label) + arrow(c.key) + '</div>'; }).join('') + '</div>';
     var body = ranked.map(function (r) {
-      var si = statusInfo(r), cells = cols.map(function (c) {
+      var ss = shortStat(r), med = medals[r.id], cells = cols.map(function (c) {
         if (c.kind === 'value') { var wv = res.bounds.yMax > 0 ? Math.max(0, r.plot) / res.bounds.yMax * 100 : 0; return '<div class="vf-tl-cell"><span class="vf-tl-bar" style="width:' + wv.toFixed(0) + '%;background:#5f7a55"></span><span class="vf-tl-fig vf-num">' + r.plot.toFixed(0) + '</span></div>'; }
         if (c.kind === 'cost') { return '<div class="vf-tl-cell"><span class="vf-tl-fig vf-num">' + fmtMoney(r.costX) + '</span></div>'; }
         var pp = r.parts.filter(function (q) { return q.id === c.dim.id; })[0], norm = pp ? pp.norm : 0, raw = pp ? pp.raw : '';
         if (c.kind === 'anti') { var bad = norm < 0; return '<div class="vf-tl-cell">' + (bad ? '<span class="vf-tl-bar neg" style="width:' + Math.min(100, Math.abs(norm) * 100).toFixed(0) + '%"></span>' : '') + '<span class="vf-tl-fig vf-num">' + raw + '</span></div>'; }
         return '<div class="vf-tl-cell"><span class="vf-tl-bar" style="width:' + (norm * 100).toFixed(0) + '%;background:' + c.color + '"></span><span class="vf-tl-fig vf-num">' + raw + '</span></div>';
       }).join('');
-      return '<div class="vf-tl-row' + (r.recommended ? ' vf-tl-rec' : '') + ((r.screenedOut || r.overBudget) ? ' vf-tl-dim' : '') + '" data-id="' + r.id + '" data-brush="' + r.id + '" tabindex="0" role="button"><div class="vf-tl-name">' + (r.recommended ? '<span class="vf-row-star">★</span>' : '') + htmlEsc(r.name) + '<span class="vf-badge ' + si.badge + '">' + si.label + '</span></div>' + cells + '</div>';
+      var lead = med ? '<span class="vf-medal vf-medal-' + med + '" title="' + (med === 1 ? 'Our pick' : med === 2 ? 'Runner-up' : 'Third place') + '">' + med + '</span>'
+        : '<span class="vf-sdot ' + ss.c + '" title="' + ss.t + '"></span>';
+      return '<div class="vf-tl-row' + (med === 1 ? ' vf-tl-rec' : '') + ((r.screenedOut || r.overBudget) ? ' vf-tl-dim' : '') + '" data-id="' + r.id + '" data-brush="' + r.id + '" tabindex="0" role="button"><div class="vf-tl-name">' + lead + '<span class="vf-tl-nm">' + htmlEsc(r.name) + '</span></div>' + cells + '</div>';
     }).join('');
-    this.elTabPanel.innerHTML = '<div class="vf-subcap">Every option as a matrix — cell = score with a mini-bar. Click a column to sort (e.g. find the best blacks in one click); click a row to inspect it above. Hover anything to find it on the chart.</div>'
+    this.elTabPanel.innerHTML = '<div class="vf-subcap">Every option as a matrix — each cell is the score with a mini-bar. <b class="vf-leg-medal">1·2·3</b> are our top three; a <span class="vf-sdot vf-b-front vf-leg-dot"></span> green dot is best-value-for-price, <span class="vf-sdot vf-b-dom vf-leg-dot"></span> grey is beaten. Click a column to sort (best blacks in one click); click a row to inspect it above.</div>'
       + '<div class="vf-tl" style="--vf-tl-cols:' + cols.length + '">' + head + body + '</div>';
     var setSort = function (k) { if (self.state.sortKey === k) self.state.sortDir = -self.state.sortDir; else { self.state.sortKey = k; self.state.sortDir = (k === 'cost') ? 1 : -1; } self.renderTableLens(); };
     Array.prototype.forEach.call(this.elTabPanel.querySelectorAll('[data-sort]'), function (el) { var k = el.getAttribute('data-sort'); if (k === 'name') return; el.addEventListener('click', function () { setSort(k); }); });
