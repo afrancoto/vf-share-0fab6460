@@ -12,7 +12,7 @@
 </style>
 <style>:root{
   /* calm light app surfaces — warm-neutral, low chroma so the data leads */
-  --bg:#f4f4f1; --ink:#1a1815; --muted:#6d685f; --faint:#9c968c;
+  --bg:#f4f4f1; --ink:#1a1815; --muted:#5d584f; --faint:#847e72;
   --line:#e7e4dc; --line2:#f0ede6; --line3:#f5f2ec; --hair:#eeeae2;
   --card:#fff; --card-2:#fbfaf7; --head:#f7f5f0; --track:#edeae2;
   /* ONE decision accent (clay) — reserved for the pick, costs, recommendation */
@@ -150,8 +150,8 @@ button{font-family:inherit;}
 .vf-controls-slot{margin-top:16px;}
 .vf-controls{border:1px solid var(--line);border-radius:var(--r-card);background:var(--card);padding:15px 17px;box-shadow:var(--sh-1);}
 .vf-wbar{margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--line2);}
-.vf-wbar-h{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-bottom:8px;display:flex;flex-wrap:wrap;gap:3px 10px;align-items:baseline;}
-.vf-wbar-sub{font-family:var(--serif);text-transform:none;letter-spacing:0;font-size:11.5px;font-style:italic;color:var(--faint);}
+.vf-wbar-h{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:0;text-transform:none;color:var(--ink);margin-bottom:8px;display:flex;flex-wrap:wrap;gap:3px 10px;align-items:baseline;}
+.vf-wbar-sub{font-family:var(--serif);text-transform:none;letter-spacing:0;font-size:11.5px;font-style:italic;font-weight:400;color:var(--muted);}
 .vf-wbar-track{display:flex;height:15px;border-radius:5px;overflow:hidden;background:var(--track);border:1px solid var(--line);}
 .vf-wbar-seg{height:100%;cursor:pointer;transition:filter .12s;border-right:1px solid rgba(255,255,255,.55);}
 .vf-wbar-seg:last-child{border-right:none;}
@@ -163,8 +163,8 @@ button{font-family:inherit;}
 .vf-wbar-sw{width:9px;height:9px;border-radius:2px;display:inline-block;}
 /* priorities — sliders are always visible (the page's core interaction, not hidden) */
 .vf-prios{margin:16px 0 4px;}
-.vf-prios-h{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);display:flex;flex-wrap:wrap;gap:3px 10px;align-items:baseline;margin-bottom:12px;}
-.vf-prios-sub{font-family:var(--serif);text-transform:none;letter-spacing:0;font-size:11.5px;font-style:italic;color:var(--faint);}
+.vf-prios-h{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:0;text-transform:none;color:var(--ink);display:flex;flex-wrap:wrap;gap:3px 10px;align-items:baseline;margin-bottom:12px;}
+.vf-prios-sub{font-family:var(--serif);text-transform:none;letter-spacing:0;font-size:11.5px;font-style:italic;font-weight:400;color:var(--muted);flex-basis:100%;}
 /* penalties — surfaced right under the priorities (separate signed docks, not part of the 100% pie) */
 .vf-pens{margin:15px 0 2px;padding-top:14px;border-top:1px dashed var(--line);}
 .vf-pens-h{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);display:flex;flex-wrap:wrap;gap:3px 10px;align-items:baseline;margin-bottom:11px;}
@@ -173,8 +173,8 @@ button{font-family:inherit;}
 .vf-reset-all:hover{border-color:var(--rec);background:var(--rec-bg);}
 .vf-ctrl-primary{display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start;margin-top:16px;padding-top:14px;border-top:1px solid var(--line2);}
 .vf-ctrl-field{display:flex;flex-direction:column;gap:8px;}
-.vf-ctrl-lab{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);}
-.vf-ctrl-hint{text-transform:none;letter-spacing:0;font-family:var(--serif);font-style:italic;font-size:11px;color:var(--faint);}
+.vf-ctrl-lab{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:0;text-transform:none;color:var(--ink);}
+.vf-ctrl-hint{text-transform:none;letter-spacing:0;font-family:var(--serif);font-weight:400;font-style:italic;font-size:11px;color:var(--muted);}
 .vf-segwrap{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--bg);width:fit-content;}
 .vf-seg{font-size:12.5px;border:none;background:none;color:var(--muted);padding:7px 15px;cursor:pointer;border-right:1px solid var(--line);}
 .vf-seg:last-child{border-right:none;}
@@ -246,8 +246,8 @@ button{font-family:inherit;}
 .vf-buy-link{font-size:13px;color:var(--rec);text-decoration:none;border-bottom:1px solid var(--ring);}
 .vf-buy-link:hover{border-bottom-color:var(--rec);}
 .vf-col{margin-top:18px;}
-.vf-col-h{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);font-family:var(--mono);margin-bottom:10px;display:flex;flex-wrap:wrap;gap:3px 8px;align-items:baseline;}
-.vf-col-sub{font-family:var(--serif);text-transform:none;letter-spacing:0;font-size:11.5px;font-style:italic;color:var(--faint);}
+.vf-col-h{font-size:12.5px;font-weight:600;letter-spacing:0;text-transform:none;color:var(--ink);font-family:var(--sans);margin-bottom:10px;display:flex;flex-wrap:wrap;gap:3px 8px;align-items:baseline;}
+.vf-col-sub{font-family:var(--serif);text-transform:none;letter-spacing:0;font-size:11.5px;font-style:italic;font-weight:400;color:var(--muted);}
 
 /* value waterfall */
 .vf-wf{padding:7px 0;border-bottom:1px solid var(--line3);}
@@ -284,8 +284,9 @@ button{font-family:inherit;}
 .vf-cb-total .vf-cb-lab{font-weight:600;font-size:12.5px;}
 .vf-cb-total .vf-cb-amt{font-family:var(--serif);font-size:16px;font-weight:600;color:var(--rec);}
 
-/* ---------- TABS (pill segmented control) ---------- */
-.vf-tabs{margin-top:44px;}
+/* ---------- TABS (pill segmented control; Overview hosts the chart workspace) ---------- */
+.vf-tabs{margin-top:18px;}
+.vf-overview{padding-top:22px;}
 .vf-tabnav{display:inline-flex;gap:3px;background:var(--card);border:1px solid var(--line);border-radius:var(--r-pill);padding:4px;box-shadow:var(--sh-1);max-width:100%;overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none;}
 .vf-tabnav::-webkit-scrollbar{display:none;}
 .vf-tab{font-family:var(--sans);font-size:13.5px;font-weight:500;color:var(--muted);background:none;border:none;border-radius:var(--r-pill);padding:8px 16px;cursor:pointer;white-space:nowrap;transition:color .12s,background .12s;}
@@ -296,7 +297,9 @@ button{font-family:inherit;}
 
 /* Table-Lens matrix */
 .vf-tl{border:1px solid var(--line);border-radius:var(--r-card);overflow-x:auto;background:var(--card);box-shadow:var(--sh-1);}
-.vf-tl-row{display:grid;grid-template-columns:minmax(168px,1.7fr) repeat(var(--vf-tl-cols),minmax(58px,1fr));align-items:stretch;min-width:680px;border-bottom:1px solid var(--line2);}
+.vf-tl-row{display:grid;grid-template-columns:minmax(168px,1.7fr) 48px repeat(var(--vf-tl-cols),minmax(58px,1fr));align-items:stretch;min-width:720px;border-bottom:1px solid var(--line2);}
+.vf-tl-row[data-id]:nth-child(even){background:#1c1a1705;}
+.vf-tl-row[data-id]:nth-child(even) .vf-tl-name{background:#faf9f6;}
 .vf-tl-row:last-child{border-bottom:none;}
 .vf-tl-head{position:sticky;top:var(--appbar-h);background:var(--head);z-index:2;border-bottom:1px solid var(--line);}
 .vf-tl-h{font-family:var(--mono);font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--faint);padding:9px 8px;cursor:pointer;user-select:none;display:flex;align-items:center;}
@@ -497,6 +500,71 @@ button{font-family:inherit;}
   .vf-tor-row{grid-template-columns:84px 1fr 34px;gap:6px;}
   .vf-tor-axis{padding-left:90px;padding-right:34px;font-size:8px;}
 }
+/* ============================================================
+   v1.0 — Overview tab IA · All-options rank/select/best-in-class ·
+   Compare why · chart legend + axis break · density & a11y
+   ============================================================ */
+.vf-overview,.vf-tabcontent{min-width:0;}
+/* verdict: one-liner + jump up top; full reasoning card reused inside How-solid */
+.vf-verdict-jump{font-family:var(--sans);font-size:13px;color:var(--rec);background:none;border:none;cursor:pointer;padding:0;font-weight:500;white-space:nowrap;}
+.vf-verdict-jump:hover{text-decoration:underline;}
+.vf-verdict-intab{margin:0 0 20px;}
+
+/* All-options: comparison toolbar */
+.vf-tl-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0 2px 12px;}
+.vf-tl-toolnote{font-size:12px;color:var(--muted);}
+.vf-tl-cmpbtn{font-family:inherit;font-size:12.5px;font-weight:500;color:#fff;background:var(--rec);border:1px solid var(--rec);border-radius:var(--r-pill);padding:7px 15px;cursor:pointer;white-space:nowrap;}
+.vf-tl-cmpbtn:hover{background:var(--rec-2);}
+.vf-tl-cmpbtn:disabled{background:var(--track);color:var(--faint);border-color:var(--line);cursor:not-allowed;}
+.vf-best-chip{display:inline-block;border:1.5px solid var(--rec);border-radius:var(--r-pill);padding:0 7px;font-size:11px;color:var(--rec);font-weight:600;}
+
+/* All-options: rank column + sort cue */
+.vf-tl-rankhead{justify-content:center !important;text-align:center;}
+.vf-tl-rankcell{justify-content:center;}
+.vf-tl-rankfig{color:var(--muted);font-weight:600;}
+.vf-tl-rec .vf-tl-rankfig{color:var(--rec);}
+.vf-tl-sortcue{color:var(--dom);font-size:10px;margin-left:1px;opacity:.7;}
+.vf-tl-h:hover .vf-tl-sortcue{opacity:1;}
+.vf-tl-h:focus-visible{outline:2px solid var(--rec);outline-offset:-2px;border-radius:0;}
+
+/* All-options: select checkbox + best-in-class ring (the "sun with a coloured rim") */
+.vf-tl-chk{flex:0 0 auto;width:15px;height:15px;accent-color:var(--rec);cursor:pointer;margin:0 1px 0 0;}
+.vf-tl-best .vf-tl-fig{box-shadow:0 0 0 1.5px var(--rec);border-radius:var(--r-pill);padding:1px 7px;background:var(--rec-bg);color:var(--rec);font-weight:600;}
+
+/* Compare: why per rating (collapsed by default) */
+.vf-cmp-whytoggle{margin-left:auto;background:none;border:none;font-family:var(--mono);font-size:10px;letter-spacing:.03em;color:var(--rec);cursor:pointer;padding:0;}
+.vf-cmp-whytoggle:hover{text-decoration:underline;}
+.vf-cmp-dimcell{flex-direction:column;align-items:flex-end;gap:4px;}
+.vf-cmp-cellrow{position:relative;display:flex;align-items:center;justify-content:flex-end;gap:5px;width:100%;min-height:20px;}
+.vf-cmp-why{display:none;font-size:11px;color:var(--muted);line-height:1.4;text-align:left;width:100%;font-style:italic;}
+.vf-cmp-why-on .vf-cmp-why{display:block;}
+.vf-cmp-why .vf-conf{font-style:normal;}
+
+/* Things you didn't want: collapsible */
+.vf-pens-toggle{display:flex;align-items:center;gap:8px;width:100%;background:none;border:none;cursor:pointer;padding:0;font-family:var(--sans);font-size:13px;font-weight:600;color:var(--ink);text-align:left;}
+.vf-pens-count{font-family:var(--mono);font-size:10px;color:var(--faint);background:var(--track);border-radius:var(--r-pill);padding:1px 7px;}
+.vf-pens-ic{margin-left:auto;color:var(--faint);font-size:12px;}
+.vf-pens-body{margin-top:11px;}
+.vf-pens-hidden{display:none;}
+.vf-pens-sub{font-family:var(--serif);font-style:italic;font-size:11.5px;color:var(--muted);margin-bottom:10px;}
+
+/* chart: zig-zag axis break + inline legend */
+.vf-axisbreak{fill:none;stroke:var(--faint);stroke-width:1.4;paint-order:stroke;stroke-linejoin:round;stroke-linecap:round;}
+.vf-chart-legend{display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:center;margin:8px 8px 2px;font-size:11px;color:var(--muted);}
+.vf-lg{display:inline-flex;align-items:center;gap:5px;white-space:nowrap;}
+.vf-lg-dot{width:9px;height:9px;border-radius:50%;display:inline-block;}
+.vf-lg-front{background:var(--front);}
+.vf-lg-dom{background:var(--dom);}
+.vf-lg-screen{background:var(--screen);border:1px solid var(--screen-bd);}
+.vf-lg-star{color:var(--rec);font-size:12px;}
+.vf-lg-line{width:16px;border-top:2px solid var(--front);display:inline-block;opacity:.85;}
+
+@media(max-width:640px){
+  .vf-overview{padding-top:14px;}
+  .vf-tl-cmpbtn{width:100%;}
+  .vf-chart-legend{gap:4px 12px;font-size:10.5px;}
+}
+
 @media (prefers-reduced-motion: reduce){*{transition:none !important;animation:none !important;}}
 </style>
 </head>
@@ -1448,8 +1516,15 @@ button{font-family:inherit;}
     }
   }
 };</script>
-<script>/* Value Frontier — engine v0.9.0
+<script>/* Value Frontier — engine v1.0.0
  * Pure compute (Node-testable) + interactive decision cockpit. Zero dependencies.
+ * 1.0: information-hierarchy pass. One-line verdict up top (full reasoning + flip-point
+ *   moves into the How-solid tab); the chart workspace becomes the OVERVIEW tab so only
+ *   one panel shows at a time; All-options gains a weight-ranked Rank column, tick-to-
+ *   compare selection synced across tabs, and a best-in-class ring per column; Compare
+ *   shows the why behind each rating; the chart gains an inline legend + zig-zag axis
+ *   break; sentence-case headers, exact-cents money, collapsible anti-needs, and a
+ *   priorities-normalisation explainer. Pure finance/value/frontier/knee math unchanged.
  * 0.9: research-backed redesign. The fix is structural, not cosmetic —
  *   CONTAINMENT (height-capped workspace; the inspector scrolls in its own
  *   column, the document doesn't) + ADJACENCY (controls dock directly under the
@@ -1557,6 +1632,9 @@ button{font-family:inherit;}
 
   // ===================== view helpers =====================
   function fmtMoney(x) { return '€' + Math.round(x).toLocaleString(); }
+  // exact money: show cents when the amount isn't a whole number, so the headline, the
+  // breakdown and the buy-link reconcile (€15.99 + €2.00 = €17.99, not a rounded "€18").
+  function fmtMoney2(x) { var r = Math.round((x || 0) * 100) / 100; return '€' + (Math.abs(r % 1) < 1e-9 ? Math.round(r).toLocaleString() : r.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })); }
   function pct(x) { return Math.round((x || 0) * 100) + '%'; }
   function htmlEsc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   function ticks(min, max, n) { if (min === max) { min -= 1; max += 1; } var o = [], st = (max - min) / (n - 1); for (var i = 0; i < n; i++) o.push(min + i * st); return o; }
@@ -1589,7 +1667,7 @@ button{font-family:inherit;}
     var self = this;
     this.data = data; this.root = root;
     this.state = { weights: {}, wants: {}, lensDim: null, selectedId: null, hoveredId: null,
-      costMode: 'acq', horizon: null, budgetCap: null, zoomPreset: 'all', tab: 'table', sortKey: 'value', sortDir: -1, cmp: null };
+      costMode: 'acq', horizon: null, budgetCap: null, zoomPreset: 'all', tab: 'overview', sortKey: 'value', sortDir: -1, cmp: null, cmpWhyOpen: false, pensOpen: false };
     this.dotEls = {};
     this.initWants();
     this.readHash();
@@ -1599,7 +1677,9 @@ button{font-family:inherit;}
     this.elAppbar = div('vf-appbar'); root.appendChild(this.elAppbar);
     this.elHead = div('vf-top'); root.appendChild(this.elHead);
     this.elVerdict = div('vf-verdict'); root.appendChild(this.elVerdict);
-    var ws = div('vf-workspace'); root.appendChild(ws);
+    // the chart workspace now lives inside the OVERVIEW tab (one panel shows at a time)
+    this.elOverview = div('vf-overview');
+    var ws = div('vf-workspace'); this.elOverview.appendChild(ws);
     var cc = div('vf-chart-col'); ws.appendChild(cc);
     this.elChartHead = div('vf-charthead'); cc.appendChild(this.elChartHead);
     this.elCard = div('vf-card'); cc.appendChild(this.elCard);
@@ -1617,12 +1697,20 @@ button{font-family:inherit;}
     this.renderHead(); this.renderControls(); this.recompute();
     this.select(this.state.selectedId || this.result.recommendedId, true);
   }
+  // switch tabs programmatically (used by the verdict "see How solid →" jump and "Compare selected →")
+  App.prototype.goTab = function (t, scroll) {
+    this.state.tab = t;
+    if (this.elTabs) Array.prototype.forEach.call(this.elTabs.querySelectorAll('.vf-tab'), function (x) { x.classList.toggle('vf-tab-on', x.getAttribute('data-tab') === t); });
+    this.renderTabPanel(); this.writeHash();
+    if (scroll && this.elTabs && this.elTabs.scrollIntoView) this.elTabs.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
   App.prototype.posDims = function () { return (this.data.dimensions || []).filter(function (d) { return d.direction !== 'unwanted'; }); };
   App.prototype.antiDims = function () { return (this.data.dimensions || []).filter(function (d) { return d.direction === 'unwanted'; }); };
   App.prototype.lensObj = function () { var id = this.state.lensDim; return id ? (this.data.dimensions || []).filter(function (d) { return d.id === id; })[0] : null; };
   App.prototype.byId = function (id) { return this.result.rows.filter(function (r) { return r.id === id; })[0]; };
   App.prototype.costLabel = function () { var m = this.state.costMode; return m === 'acq' ? 'Purchase cost' : m === 'eac' ? 'Cost per year' : 'Total cost of ownership'; };
   App.prototype.money = function (r) { return fmtMoney(r.costX) + (this.state.costMode === 'eac' ? '/yr' : ''); };
+  App.prototype.moneyExact = function (r) { return fmtMoney2(r.costX) + (this.state.costMode === 'eac' ? '/yr' : ''); };
   App.prototype.unitTail = function () { return this.state.costMode === 'eac' ? '/yr' : ''; };
   App.prototype.pickIds = function () {
     var fp = this.result.frontierIdsByCost, ki = fp.indexOf(this.result.recommendedId);
@@ -1674,7 +1762,7 @@ button{font-family:inherit;}
       if (s.lensDim) parts.push('lens=' + encodeURIComponent(s.lensDim));
       if (s.selectedId && s.selectedId !== this.result.recommendedId) parts.push('sel=' + encodeURIComponent(s.selectedId));
       if (s.budgetCap != null) parts.push('b=' + Math.round(s.budgetCap));
-      if (s.tab && s.tab !== 'table') parts.push('tab=' + s.tab);
+      if (s.tab && s.tab !== 'overview') parts.push('tab=' + s.tab);
       if (s.cmp && s.cmp.filter(Boolean).length) parts.push('cmp=' + encodeURIComponent(s.cmp.filter(Boolean).join(',')));
       var wd = this.posDims().map(function (d) { return d.id + ':' + (s.wants[d.id] || 0); }).join(',');
       if (wd) parts.push('w=' + encodeURIComponent(wd));
@@ -1698,19 +1786,28 @@ button{font-family:inherit;}
   };
 
   // ---------- live verdict headline + flip-point ----------
+  // top of page: ONE plain-language line — the answer. Detail (cheaper/pricier + flip) lives in How-solid.
   App.prototype.renderVerdict = function () {
     var res = this.result, p = this.pickIds(), rec = p.rec ? this.byId(p.rec) : null, self = this;
     if (!rec) {
       var why = res.budgetCap != null ? 'No option lands at or under ' + fmtMoney(res.budgetCap) + ' that also clears your minimums.' : 'Nothing clears your hard minimums.';
-      this.elVerdict.innerHTML = '<div class="vf-verdict-head"><span class="vf-verdict-lead">No pick yet.</span> ' + why + ' Loosen the budget or a dealbreaker below.</div>';
+      this.elVerdict.innerHTML = '<div class="vf-verdict-head"><span class="vf-verdict-lead">No pick yet.</span> ' + why + ' Loosen the budget or a dealbreaker in Overview.</div>';
       return;
     }
+    this.elVerdict.innerHTML = '<div class="vf-verdict-head"><span class="vf-verdict-lead">' + htmlEsc(rec.name) + ' is the pick</span> — the best value for the money (the knee of the frontier). <button type="button" class="vf-verdict-jump">Why it’s solid &amp; what would flip it →</button></div>';
+    var jb = this.elVerdict.querySelector('.vf-verdict-jump');
+    if (jb) jb.addEventListener('click', function () { self.goTab('robust', true); });
+  };
+  // the full verdict reasoning — rendered INSIDE the How-solid tab
+  App.prototype.verdictDetailHTML = function () {
+    var p = this.pickIds(), rec = p.rec ? this.byId(p.rec) : null;
+    if (!rec) return '';
     var bits = '';
     if (p.cheaper) { var ch = this.byId(p.cheaper); var ratio = rec.plot > 0 ? Math.round(ch.plot / rec.plot * 100) : 0; bits += ' The cheaper <b>' + htmlEsc(shortName(ch.name)) + '</b> keeps ' + ratio + '% of the value for ' + fmtMoney(rec.costX - ch.costX) + this.unitTail() + ' less.'; }
     if (p.pricier) { var pr = this.byId(p.pricier); bits += ' Paying ' + fmtMoney(pr.costX - rec.costX) + this.unitTail() + ' more (<b>' + htmlEsc(shortName(pr.name)) + '</b>) buys +' + (pr.plot - rec.plot).toFixed(0) + ' value.'; }
     var head = '<span class="vf-verdict-lead">' + htmlEsc(rec.name) + ' is the pick</span> — the best value for the money (the knee of the frontier).' + bits;
     var flip = this.flipSentence();
-    this.elVerdict.innerHTML = '<div class="vf-verdict-head">' + head + '</div>' + (flip ? '<div class="vf-verdict-flip">' + flip + '</div>' : '');
+    return '<div class="vf-verdict vf-verdict-intab"><div class="vf-verdict-head">' + head + '</div>' + (flip ? '<div class="vf-verdict-flip">' + flip + '</div>' : '') + '</div>';
   };
   App.prototype.flipSentence = function () {
     var res = this.result, rec = res.recommendedId ? this.byId(res.recommendedId) : null, ruId = this.runnerUp(), ru = ruId ? this.byId(ruId) : null;
@@ -1752,12 +1849,12 @@ button{font-family:inherit;}
   App.prototype.resetAll = function () {
     this.initWants();
     this.state.horizon = null; this.state.budgetCap = null; this.state.costMode = 'acq';
-    this.state.lensDim = null; this.state.zoomPreset = 'all'; this.state.whyOpen = false;
+    this.state.lensDim = null; this.state.zoomPreset = 'all'; this.state.whyOpen = false; this.state.cmpWhyOpen = false; this.state.pensOpen = false;
     this.state.cmp = null; this.state.sortKey = 'value'; this.state.sortDir = -1;
-    this.state.tab = 'table'; this.state.selectedId = null;
+    this.state.tab = 'overview'; this.state.selectedId = null;
     this.renderControls();
     if (this.elTools) Array.prototype.forEach.call(this.elTools.querySelectorAll('.vf-segp'), function (x) { x.classList.toggle('on', x.getAttribute('data-z') === 'all'); });
-    if (this.elTabs) Array.prototype.forEach.call(this.elTabs.querySelectorAll('.vf-tab'), function (x) { x.classList.toggle('vf-tab-on', x.getAttribute('data-tab') === 'table'); });
+    if (this.elTabs) Array.prototype.forEach.call(this.elTabs.querySelectorAll('.vf-tab'), function (x) { x.classList.toggle('vf-tab-on', x.getAttribute('data-tab') === 'overview'); });
     this.recompute();
   };
 
@@ -1770,7 +1867,7 @@ button{font-family:inherit;}
     var costChips = '<button class="vf-seg ' + (cm === 'acq' ? 'on' : '') + '" data-cost="acq">Purchase</button><button class="vf-seg ' + (cm === 'eac' ? 'on' : '') + '" data-cost="eac">Per year</button><button class="vf-seg ' + (cm === 'total' ? 'on' : '') + '" data-cost="total">Total</button>';
     var lensChips = '<button class="vf-chip ' + (!ld ? 'vf-chip-on' : '') + '" data-lens="">Off</button>' + positives.map(function (d) { return '<button class="vf-chip ' + (ld === d.id ? 'vf-chip-on' : '') + '" data-lens="' + d.id + '">' + htmlEsc(d.label) + '</button>'; }).join('');
     var hz = (this.state.horizon || '') + '', horChips = ['', '5', '8', '10', '15', '20'].map(function (v) { return '<button class="vf-chip ' + (hz === v ? 'vf-chip-on' : '') + '" data-hor="' + v + '">' + (v ? v + ' yr' : 'Each model’s life') + '</button>'; }).join('');
-    function wantSlider(d) { var sc = self.state.wants[d.id] || 0, pc = Math.round((self.state.weights[d.id] || 0) * 100); return '<label class="vf-wt"><span class="vf-wt-lab">' + htmlEsc(d.label) + '</span><input type="range" min="0" max="10" step="1" value="' + sc + '" data-pri="' + d.id + '" aria-label="' + htmlEsc(d.label) + '"><span class="vf-wt-val" data-wv="' + d.id + '"><b class="vf-num">' + sc + '</b>/10 · <span class="vf-wt-pct vf-num">' + pc + '%</span></span></label>'; }
+    function wantSlider(d) { var sc = self.state.wants[d.id] || 0, pc = Math.round((self.state.weights[d.id] || 0) * 100); return '<label class="vf-wt"><span class="vf-wt-lab">' + htmlEsc(d.label) + '</span><input type="range" min="0" max="10" step="1" value="' + sc + '" data-pri="' + d.id + '" aria-label="' + htmlEsc(d.label) + '"><span class="vf-wt-val" data-wv="' + d.id + '" title="Your 0–10 scores, normalised so all priorities total 100%"><b class="vf-num">' + sc + '</b>/10 · <span class="vf-wt-pct vf-num">' + pc + '%</span></span></label>'; }
     function penSlider(d) { var w = Math.round((self.state.weights[d.id] || 0) * 100); return '<label class="vf-wt"><span class="vf-wt-lab">' + htmlEsc(d.label) + '</span><input type="range" min="0" max="30" value="' + w + '" data-pen="' + d.id + '" aria-label="' + htmlEsc(d.label) + '"><span class="vf-wt-val" data-wv="' + d.id + '"><span class="vf-num">' + w + '%</span></span></label>'; }
     var budgetField = '<div class="vf-ctrl-field vf-budget-field"><span class="vf-ctrl-lab">Max budget <span class="vf-ctrl-hint">(purchase) — greys out the rest</span></span>'
       + '<div class="vf-budget-row"><input type="range" min="' + Math.floor(pb.min) + '" max="' + Math.ceil(pb.max) + '" step="' + step + '" value="' + Math.round(capVal) + '" data-budget aria-label="Maximum budget"><span class="vf-budget-val vf-num" data-budgetval>' + (this.state.budgetCap != null ? fmtMoney(this.state.budgetCap) : 'no cap') + '</span></div></div>';
@@ -1779,8 +1876,8 @@ button{font-family:inherit;}
       '<button class="vf-ctrl-toggle" type="button" aria-expanded="' + (co ? 'true' : 'false') + '"><span>⚙ Adjust priorities &amp; cost</span><span class="vf-ctrl-toggle-ic">' + (co ? '▾' : '▸') + '</span></button>'
       + '<div class="vf-ctrl-inner' + (co ? '' : ' vf-collapsed') + '">'
       + '<div class="vf-wbar">' + this.weightBarHTML() + '</div>'
-      + '<div class="vf-prios"><div class="vf-prios-h"><span>Your priorities</span><span class="vf-prios-sub">drag any slider (0–10) — the chart and the pick update live; the % is its share of the decision</span><button class="vf-reset-all" type="button" title="Restore weights and all settings to the defaults">↺ Reset all</button></div><div class="vf-wts">' + positives.map(wantSlider).join('') + '</div></div>'
-      + (antis.length ? '<div class="vf-pens"><div class="vf-pens-h"><span>Things you didn&rsquo;t want</span><span class="vf-pens-sub">how hard to dock a feature you&rsquo;ll never use &mdash; drag to 0 to ignore it entirely</span></div><div class="vf-wts">' + antis.map(penSlider).join('') + '</div></div>' : '')
+      + '<div class="vf-prios"><div class="vf-prios-h"><span>Your priorities</span><span class="vf-prios-sub">drag any slider (0–10); the chart and pick update live. The % beside each is that score ÷ the sum of all scores — your weights, normalised to 100%.</span><button class="vf-reset-all" type="button" title="Restore weights and all settings to the defaults">↺ Reset all</button></div><div class="vf-wts">' + positives.map(wantSlider).join('') + '</div></div>'
+      + (antis.length ? '<div class="vf-pens"><button class="vf-pens-toggle" type="button" data-penstoggle aria-expanded="' + (this.state.pensOpen ? 'true' : 'false') + '"><span class="vf-pens-title">Things you didn&rsquo;t want</span><span class="vf-pens-count">' + antis.length + '</span><span class="vf-pens-ic">' + (this.state.pensOpen ? '▾' : '▸') + '</span></button><div class="vf-pens-body' + (this.state.pensOpen ? '' : ' vf-pens-hidden') + '"><div class="vf-pens-sub">how hard to dock a feature you&rsquo;ll never use &mdash; drag to 0 to ignore it entirely</div><div class="vf-wts">' + antis.map(penSlider).join('') + '</div></div></div>' : '')
       + '<div class="vf-ctrl-primary">'
       + '<div class="vf-ctrl-field"><span class="vf-ctrl-lab">Cost axis</span><div class="vf-segwrap">' + costChips + '</div></div>'
       + budgetField
@@ -1809,6 +1906,8 @@ button{font-family:inherit;}
     Array.prototype.forEach.call(this.elControls.querySelectorAll('input[data-pen]'), function (inp) { inp.addEventListener('input', function () { var id = inp.getAttribute('data-pen'); self.state.weights[id] = (+inp.value) / 100; self.elControls.querySelector('[data-wv="' + id + '"]').innerHTML = '<span class="vf-num">' + inp.value + '%</span>'; self.scheduleRecompute(); }); });
     this.elControls.querySelector('.vf-reset').addEventListener('click', function () { self.resetAll(); });
     var resetAllBtn = this.elControls.querySelector('.vf-reset-all'); if (resetAllBtn) resetAllBtn.addEventListener('click', function () { self.resetAll(); });
+    var pt = this.elControls.querySelector('[data-penstoggle]');
+    if (pt) pt.addEventListener('click', function () { self.state.pensOpen = !self.state.pensOpen; var body = self.elControls.querySelector('.vf-pens-body'); if (body) body.classList.toggle('vf-pens-hidden', !self.state.pensOpen); pt.setAttribute('aria-expanded', self.state.pensOpen ? 'true' : 'false'); var ic = pt.querySelector('.vf-pens-ic'); if (ic) ic.textContent = self.state.pensOpen ? '▾' : '▸'; });
   };
 
 
@@ -1841,6 +1940,8 @@ button{font-family:inherit;}
     ticks(y0, y1, 5).forEach(function (t) { svg.appendChild(svgEl('line', { x1: m.l, y1: sy(t), x2: m.l + iw, y2: sy(t), class: 'vf-grid' })); svg.appendChild(svgText(m.l - 10, sy(t) + 4, Math.round(t), 'vf-tick vf-tick-y')); });
     svg.appendChild(svgText(m.l, m.t - 16, 'VALUE TO YOU →', 'vf-axhint'));
     svg.appendChild(svgText(m.l + iw, m.t + ih + 42, (this.costLabel().toUpperCase()) + ' →', 'vf-axhint vf-axhint-r'));
+    // zig-zag scale-break mark on the value axis when it doesn't start at 0 (communicates the break faster than text)
+    if (y0 > 0.5) { var byb = m.t + ih; svg.appendChild(svgEl('path', { d: 'M ' + (m.l - 4.5) + ' ' + (byb - 9) + ' l 9 -3.5 l -9 -3.5 l 9 -3.5', class: 'vf-axisbreak' })); }
     // your-budget reference line (purchase mode only — budget is an acquisition ceiling)
     if (res.budgetCap != null && this.state.costMode === 'acq' && res.budgetCap >= x0 && res.budgetCap <= x1) {
       var bx = sx(res.budgetCap);
@@ -1902,6 +2003,14 @@ button{font-family:inherit;}
     // remove any prior svg (keep tip element)
     var olds = this.elPlot.querySelectorAll('.vf-svg'); if (olds.length > 1) olds[0].parentNode.removeChild(olds[0]);
     var oldNote = this.elPlot.querySelector('.vf-axisnote'); if (oldNote) oldNote.parentNode.removeChild(oldNote);
+    var oldLeg = this.elPlot.querySelector('.vf-chart-legend'); if (oldLeg) oldLeg.parentNode.removeChild(oldLeg);
+    // inline legend so the ★ pick, the frontier line and the dot colours read without hovering
+    var hasDim = res.rows.some(function (r) { return r.screenedOut || r.overBudget; });
+    var legParts = ['<span class="vf-lg"><span class="vf-lg-star">★</span> pick</span>'];
+    if (!lens) { legParts.push('<span class="vf-lg"><span class="vf-lg-dot vf-lg-front"></span> best value at its price</span>', '<span class="vf-lg"><span class="vf-lg-dot vf-lg-dom"></span> beaten</span>'); if (hasDim) legParts.push('<span class="vf-lg"><span class="vf-lg-dot vf-lg-screen"></span> screened / over budget</span>'); }
+    else legParts.push('<span class="vf-lg">dot colour = ' + htmlEsc(lens.label) + '</span>');
+    legParts.push('<span class="vf-lg"><span class="vf-lg-line"></span> frontier — best deal at each price</span>');
+    var leg = div('vf-chart-legend'); leg.innerHTML = legParts.join(''); this.elPlot.appendChild(leg);
     if (y0 > 0.5) { var note = div('vf-axisnote'); note.textContent = 'value axis starts at ' + Math.round(Math.max(0, y0)) + ', not 0 — the spread is real but modest'; this.elPlot.appendChild(note); }
     this.applyHighlight();
   };
@@ -1965,13 +2074,14 @@ button{font-family:inherit;}
     var weak = r.parts.filter(function (p) { return !p.anti && p.weight > 0.01; }).sort(function (a, b) { return a.norm - b.norm; }).slice(0, 2).filter(function (p) { return p.norm < 0.75; });
     var flaws = weak.length ? '<div class="vf-flaws"><span class="vf-flaws-lab">Weakest on</span> ' + weak.map(function (p) { return htmlEsc(p.label) + ' (' + p.raw + ')'; }).join(', ') + ' — small given your weights.</div>' : '';
     var links = (r.links && r.links.length) ? '<div class="vf-buy"><span class="vf-buy-lab">Buy / view</span>' + r.links.map(function (l) { return '<a class="vf-buy-link" href="' + htmlEsc(l.url) + '" target="_blank" rel="noopener">' + htmlEsc(l.label) + ' ↗</a>'; }).join('') + '</div>' : '';
-    var costFig = this.state.costMode === 'eac' ? 'Per year to own' : this.state.costMode === 'acq' ? 'To buy now' : 'Total to own';
+    var hasAdd = ((r.costDetail.delivery || 0) + (r.costDetail.install || 0) + (r.costDetail.extras || 0)) > 0;
+    var costFig = this.state.costMode === 'eac' ? 'Per year to own' : this.state.costMode === 'acq' ? (hasAdd ? 'To buy, delivered' : 'To buy now') : 'Total to own';
     var vsRec = '';
     if (!r.recommended && res.recommendedId) { var rec = this.byId(res.recommendedId); vsRec = '<div class="vf-vsrec">vs the pick (' + htmlEsc(shortName(rec.name)) + '): <b>' + (r.plot - rec.plot >= 0 ? '+' : '') + (r.plot - rec.plot).toFixed(0) + '</b> value, <b>' + (r.costX - rec.costX >= 0 ? '+' : '−') + fmtMoney(Math.abs(r.costX - rec.costX)) + this.unitTail() + '</b></div>'; }
     var deepOpen = this.state.detailOpen, whyOpen = this.state.whyOpen;
     this.elInspector.innerHTML = '<div class="vf-detail-top"><div class="vf-detail-tagline"><span class="vf-badge ' + si.badge + '">' + si.label + '</span><span class="vf-detail-view">you’re viewing</span></div>'
       + '<div class="vf-detail-name">' + htmlEsc(r.name) + '</div>'
-      + '<div class="vf-stat"><div class="vf-stat-b"><div class="vf-stat-lab">Value to you</div><div class="vf-stat-val vf-num">' + r.value.toFixed(1) + '</div></div><div class="vf-stat-b"><div class="vf-stat-lab">' + costFig + '</div><div class="vf-stat-val vf-num vf-stat-cost">' + this.money(r) + '</div></div></div>' + vsRec + '</div>'
+      + '<div class="vf-stat"><div class="vf-stat-b"><div class="vf-stat-lab">Value to you</div><div class="vf-stat-val vf-num">' + r.value.toFixed(1) + '</div></div><div class="vf-stat-b"><div class="vf-stat-lab">' + costFig + '</div><div class="vf-stat-val vf-num vf-stat-cost">' + this.moneyExact(r) + '</div></div></div>' + vsRec + '</div>'
       + (r.note ? '<div class="vf-pnote">' + htmlEsc(r.note) + '</div>' : '') + flaws + links
       + '<button class="vf-deep-toggle" type="button">' + (deepOpen ? 'Hide the full breakdown ▾' : 'Show the full breakdown ▸') + '</button>'
       + '<div class="vf-detail-deep' + (deepOpen ? '' : ' vf-collapsed') + '">'
@@ -1996,34 +2106,52 @@ button{font-family:inherit;}
     var maxA = Math.max.apply(null, comps.map(function (x) { return Math.abs(x.amt); })) || 1;
     var bars = comps.map(function (x) {
       var neg = x.amt < 0, w = Math.abs(x.amt) / maxA * 100;
-      return '<div class="vf-cb"><div class="vf-cb-lab">' + htmlEsc(x.lab) + '</div><div class="vf-cb-track"><span class="vf-cb-bar' + (neg ? ' neg' : '') + '" style="width:' + Math.max(w, 1).toFixed(1) + '%"></span></div><div class="vf-cb-amt vf-num">' + (neg ? '−' : '') + fmtMoney(Math.abs(x.amt)) + '</div></div>';
+      return '<div class="vf-cb"><div class="vf-cb-lab">' + htmlEsc(x.lab) + '</div><div class="vf-cb-track"><span class="vf-cb-bar' + (neg ? ' neg' : '') + '" style="width:' + Math.max(w, 1).toFixed(1) + '%"></span></div><div class="vf-cb-amt vf-num">' + (neg ? '−' : '') + fmtMoney2(Math.abs(x.amt)) + '</div></div>';
     }).join('');
     var totLab = mode === 'acq' ? 'Total to buy' : mode === 'total' ? 'Total over ' + c.life + ' yr' : 'Per year (÷ ' + c.life + ' yr)';
     var totVal = mode === 'acq' ? c.acquisition : mode === 'total' ? c.npv : r.eac;
-    bars += '<div class="vf-cb vf-cb-total"><div class="vf-cb-lab">' + totLab + '</div><div class="vf-cb-track"></div><div class="vf-cb-amt vf-num">' + fmtMoney(totVal) + (mode === 'eac' ? '/yr' : '') + '</div></div>';
+    bars += '<div class="vf-cb vf-cb-total"><div class="vf-cb-lab">' + totLab + '</div><div class="vf-cb-track"></div><div class="vf-cb-amt vf-num">' + fmtMoney2(totVal) + (mode === 'eac' ? '/yr' : '') + '</div></div>';
     return bars;
   };
 
   // ---------- tabs ----------
   App.prototype.buildTabs = function () {
-    var self = this, cur = this.state.tab || 'table';
-    var defs = [['table', 'All options'], ['compare', 'Compare side-by-side'], ['robust', 'How solid is the pick'], ['score', 'How it’s scored']];
+    var self = this, cur = this.state.tab || 'overview';
+    var defs = [['overview', 'Overview'], ['table', 'All options'], ['compare', 'Compare'], ['robust', 'How solid is the pick'], ['score', 'How it’s scored']];
     this.elTabs.innerHTML = '<div class="vf-tabnav" role="tablist">'
-      + defs.map(function (t) { return '<button class="vf-tab' + (t[0] === cur ? ' vf-tab-on' : '') + '" data-tab="' + t[0] + '" role="tab">' + t[1] + '</button>'; }).join('')
-      + '</div><div class="vf-tabpanel"></div>';
-    this.elTabPanel = this.elTabs.querySelector('.vf-tabpanel');
+      + defs.map(function (t) { return '<button class="vf-tab' + (t[0] === cur ? ' vf-tab-on' : '') + '" data-tab="' + t[0] + '" role="tab" aria-selected="' + (t[0] === cur ? 'true' : 'false') + '">' + htmlEsc(t[1]) + '</button>'; }).join('')
+      + '</div>';
+    var content = div('vf-tabcontent'); this.elTabs.appendChild(content);
+    this.elTabPanel = div('vf-tabpanel');
+    content.appendChild(this.elOverview);   // the chart workspace IS the Overview tab
+    content.appendChild(this.elTabPanel);
     Array.prototype.forEach.call(this.elTabs.querySelectorAll('.vf-tab'), function (b) {
-      b.addEventListener('click', function () { self.state.tab = b.getAttribute('data-tab'); Array.prototype.forEach.call(self.elTabs.querySelectorAll('.vf-tab'), function (x) { x.classList.toggle('vf-tab-on', x === b); }); self.renderTabPanel(); self.writeHash(); });
+      b.addEventListener('click', function () { self.goTab(b.getAttribute('data-tab'), false); });
     });
   };
   App.prototype.renderTabPanel = function () {
-    var t = this.state.tab;
+    var t = this.state.tab, ov = (t === 'overview');
+    if (this.elOverview) this.elOverview.style.display = ov ? '' : 'none';
+    if (this.elTabPanel) this.elTabPanel.style.display = ov ? 'none' : '';
+    Array.prototype.forEach.call((this.elTabs ? this.elTabs.querySelectorAll('.vf-tab') : []), function (x) { x.setAttribute('aria-selected', x.getAttribute('data-tab') === t ? 'true' : 'false'); });
+    if (ov) return;   // the workspace is already rendered (kept live in memory); just reveal it
     if (t === 'score') this.renderScoring();
     else if (t === 'robust') this.renderRobust();
     else if (t === 'compare') this.renderCompare();
     else this.renderTableLens();
   };
 
+  // the comparison selection, shared across tabs: explicit picks if any, else the default trio
+  App.prototype.effectiveCmp = function () {
+    var ex = (this.state.cmp || []).filter(Boolean);
+    return ex.length ? ex.slice(0, 3) : this.cmpDefault();
+  };
+  App.prototype.toggleCmp = function (id) {
+    var cmp = this.effectiveCmp().slice(), i = cmp.indexOf(id);
+    if (i >= 0) cmp.splice(i, 1); else { if (cmp.length >= 3) cmp.shift(); cmp.push(id); }
+    this.state.cmp = [cmp[0] || '', cmp[1] || '', cmp[2] || ''];
+    this.writeHash();
+  };
   // ---------- Table-Lens: sortable matrix, cell = number + mini-bar ----------
   App.prototype.renderTableLens = function () {
     var self = this, res = this.result, dims = this.posDims(), antis = this.antiDims();
@@ -2038,6 +2166,14 @@ button{font-family:inherit;}
       return r.plot;
     }
     var ranked = res.rows.slice().sort(function (a, b) { return (metric(a) - metric(b)) * sortDir; });
+    var rankOf = {}; ranked.forEach(function (r, i) { rankOf[r.id] = i + 1; });
+    // best-in-class per column (over options that pass the screen + budget) — marked with a ring
+    var live = res.rows.filter(function (r) { return !r.screenedOut && !r.overBudget; });
+    var bestVal = {}; var EPS = 1e-9;
+    bestVal['value'] = live.reduce(function (m, r) { return Math.max(m, r.plot); }, -Infinity);
+    bestVal['cost'] = live.reduce(function (m, r) { return Math.min(m, r.costX); }, Infinity);
+    dims.concat(antis).forEach(function (d) { bestVal['dim:' + d.id] = live.reduce(function (m, r) { var p = r.parts.filter(function (q) { return q.id === d.id; })[0]; return Math.max(m, p ? (d.direction === 'unwanted' ? p.raw : p.norm) : -Infinity); }, -Infinity); });
+    function isBest(r, key, v) { return !r.screenedOut && !r.overBudget && bestVal[key] != null && isFinite(bestVal[key]) && Math.abs(v - bestVal[key]) < EPS; }
     // gold/silver/bronze: the three frontier picks (knee = gold; the two neighbours by value)
     var pk = this.pickIds(), medals = {};
     if (pk.rec) medals[pk.rec] = 1;
@@ -2051,26 +2187,42 @@ button{font-family:inherit;}
       if (r.onFrontier) return { t: 'Best value', c: 'vf-b-front' };
       return { t: 'Beaten', c: 'vf-b-dom' };
     }
-    // header
-    var arrow = function (k) { return sortKey === k ? (sortDir < 0 ? ' ▾' : ' ▴') : ''; };
-    var head = '<div class="vf-tl-row vf-tl-head"><div class="vf-tl-name vf-tl-h" data-sort="name">Option</div>'
-      + cols.map(function (c) { return '<div class="vf-tl-cell vf-tl-h' + (sortKey === c.key ? ' vf-tl-h-on' : '') + '" data-sort="' + c.key + '" title="sort by ' + htmlEsc(c.label) + '">' + htmlEsc(c.label) + arrow(c.key) + '</div>'; }).join('') + '</div>';
+    var cmpSet = {}; this.effectiveCmp().forEach(function (id) { cmpSet[id] = true; });
+    // header — rank col is fixed (not a sort metric; clicking returns to the weight-ranking)
+    var arrow = function (k) { return sortKey === k ? (sortDir < 0 ? ' ▾' : ' ▴') : ' <span class="vf-tl-sortcue">⇅</span>'; };
+    var head = '<div class="vf-tl-row vf-tl-head"><div class="vf-tl-name vf-tl-h vf-tl-namehead">Option</div>'
+      + '<div class="vf-tl-cell vf-tl-h vf-tl-rankhead' + (sortKey === 'value' ? ' vf-tl-h-on' : '') + '" data-rankhead="1" tabindex="0" role="button" title="Rank by your current weights">Rank</div>'
+      + cols.map(function (c) { return '<div class="vf-tl-cell vf-tl-h' + (sortKey === c.key ? ' vf-tl-h-on' : '') + '" data-sort="' + c.key + '" tabindex="0" role="button" aria-label="Sort by ' + htmlEsc(c.label) + '" title="Sort by ' + htmlEsc(c.label) + '">' + htmlEsc(c.label) + arrow(c.key) + '</div>'; }).join('') + '</div>';
     var body = ranked.map(function (r) {
-      var ss = shortStat(r), med = medals[r.id], cells = cols.map(function (c) {
-        if (c.kind === 'value') { var wv = res.bounds.yMax > 0 ? Math.max(0, r.plot) / res.bounds.yMax * 100 : 0; return '<div class="vf-tl-cell"><span class="vf-tl-bar" style="width:' + wv.toFixed(0) + '%;background:#5f7a55"></span><span class="vf-tl-fig vf-num">' + r.plot.toFixed(0) + '</span></div>'; }
-        if (c.kind === 'cost') { return '<div class="vf-tl-cell"><span class="vf-tl-fig vf-num">' + fmtMoney(r.costX) + '</span></div>'; }
+      var ss = shortStat(r), med = medals[r.id];
+      var rankCell = '<div class="vf-tl-cell vf-tl-rankcell"><span class="vf-tl-fig vf-num vf-tl-rankfig">' + rankOf[r.id] + '</span></div>';
+      var cells = cols.map(function (c) {
+        if (c.kind === 'value') { var wv = res.bounds.yMax > 0 ? Math.max(0, r.plot) / res.bounds.yMax * 100 : 0; var bv = isBest(r, 'value', r.plot); return '<div class="vf-tl-cell' + (bv ? ' vf-tl-best' : '') + '"><span class="vf-tl-bar" style="width:' + wv.toFixed(0) + '%;background:#5f7a55"></span><span class="vf-tl-fig vf-num">' + r.plot.toFixed(0) + '</span></div>'; }
+        if (c.kind === 'cost') { var bc = isBest(r, 'cost', r.costX); return '<div class="vf-tl-cell' + (bc ? ' vf-tl-best' : '') + '"><span class="vf-tl-fig vf-num">' + fmtMoney(r.costX) + '</span></div>'; }
         var pp = r.parts.filter(function (q) { return q.id === c.dim.id; })[0], norm = pp ? pp.norm : 0, raw = pp ? pp.raw : '';
-        if (c.kind === 'anti') { var bad = norm < 0; return '<div class="vf-tl-cell">' + (bad ? '<span class="vf-tl-bar neg" style="width:' + Math.min(100, Math.abs(norm) * 100).toFixed(0) + '%"></span>' : '') + '<span class="vf-tl-fig vf-num">' + raw + '</span></div>'; }
-        return '<div class="vf-tl-cell"><span class="vf-tl-bar" style="width:' + (norm * 100).toFixed(0) + '%;background:' + c.color + '"></span><span class="vf-tl-fig vf-num">' + raw + '</span></div>';
+        if (c.kind === 'anti') { var bad = norm < 0, ba = isBest(r, 'dim:' + c.dim.id, pp ? pp.raw : -Infinity); return '<div class="vf-tl-cell' + (ba ? ' vf-tl-best' : '') + '">' + (bad ? '<span class="vf-tl-bar neg" style="width:' + Math.min(100, Math.abs(norm) * 100).toFixed(0) + '%"></span>' : '') + '<span class="vf-tl-fig vf-num">' + raw + '</span></div>'; }
+        var bd = isBest(r, 'dim:' + c.dim.id, norm);
+        return '<div class="vf-tl-cell' + (bd ? ' vf-tl-best' : '') + '"><span class="vf-tl-bar" style="width:' + (norm * 100).toFixed(0) + '%;background:' + c.color + '"></span><span class="vf-tl-fig vf-num">' + raw + '</span></div>';
       }).join('');
       var lead = med ? '<span class="vf-medal vf-medal-' + med + '" title="' + (med === 1 ? 'Our pick' : med === 2 ? 'Runner-up' : 'Third place') + '">' + med + '</span>'
         : '<span class="vf-sdot ' + ss.c + '" title="' + ss.t + '"></span>';
-      return '<div class="vf-tl-row' + (med === 1 ? ' vf-tl-rec' : '') + ((r.screenedOut || r.overBudget) ? ' vf-tl-dim' : '') + '" data-id="' + r.id + '" data-brush="' + r.id + '" tabindex="0" role="button"><div class="vf-tl-name">' + lead + '<span class="vf-tl-nm">' + htmlEsc(r.name) + '</span></div>' + cells + '</div>';
+      var chk = '<input type="checkbox" class="vf-tl-chk" data-cmp="' + r.id + '"' + (cmpSet[r.id] ? ' checked' : '') + ' aria-label="Add ' + htmlEsc(r.name) + ' to comparison"' + (r.screenedOut ? ' disabled' : '') + '>';
+      return '<div class="vf-tl-row' + (med === 1 ? ' vf-tl-rec' : '') + ((r.screenedOut || r.overBudget) ? ' vf-tl-dim' : '') + '" data-id="' + r.id + '" data-brush="' + r.id + '" tabindex="0" role="button"><div class="vf-tl-name">' + chk + lead + '<span class="vf-tl-nm">' + htmlEsc(r.name) + '</span></div>' + rankCell + cells + '</div>';
     }).join('');
-    this.elTabPanel.innerHTML = '<div class="vf-subcap">Every option as a matrix — each cell is the score with a mini-bar. <b class="vf-leg-medal">1·2·3</b> are our top three; a <span class="vf-sdot vf-b-front vf-leg-dot"></span> green dot is best-value-for-price, <span class="vf-sdot vf-b-dom vf-leg-dot"></span> grey is beaten. Click a column to sort (best blacks in one click); click a row to inspect it above.</div>'
+    var nCmp = this.effectiveCmp().length;
+    var toolbar = '<div class="vf-tl-toolbar"><span class="vf-tl-toolnote">Tick boxes to compare (up to 3) — the choice carries into the Compare tab.</span>'
+      + '<button type="button" class="vf-tl-cmpbtn" data-gocmp="1"' + (nCmp < 2 ? ' disabled' : '') + '>Compare ' + nCmp + ' selected →</button></div>';
+    this.elTabPanel.innerHTML = '<div class="vf-subcap">Ranked by your current weights (drag priorities in Overview to re-rank). The <b>Rank</b> column follows your weighting; click any column header to re-sort. A <span class="vf-best-chip">ring</span> marks the best in that column. <b class="vf-leg-medal">1·2·3</b> are the top three; a <span class="vf-sdot vf-b-front vf-leg-dot"></span> green dot is best-value-for-price, <span class="vf-sdot vf-b-dom vf-leg-dot"></span> grey is beaten. Click a row to inspect it in Overview.</div>'
+      + toolbar
       + '<div class="vf-tl" style="--vf-tl-cols:' + cols.length + '">' + head + body + '</div>';
     var setSort = function (k) { if (self.state.sortKey === k) self.state.sortDir = -self.state.sortDir; else { self.state.sortKey = k; self.state.sortDir = (k === 'cost') ? 1 : -1; } self.renderTableLens(); };
-    Array.prototype.forEach.call(this.elTabPanel.querySelectorAll('[data-sort]'), function (el) { var k = el.getAttribute('data-sort'); if (k === 'name') return; el.addEventListener('click', function () { setSort(k); }); });
+    Array.prototype.forEach.call(this.elTabPanel.querySelectorAll('[data-sort]'), function (el) { var k = el.getAttribute('data-sort'); el.addEventListener('click', function () { setSort(k); }); el.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setSort(k); } }); });
+    var rh = this.elTabPanel.querySelector('[data-rankhead]'); if (rh) { var toRank = function () { self.state.sortKey = 'value'; self.state.sortDir = -1; self.renderTableLens(); }; rh.addEventListener('click', toRank); rh.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toRank(); } }); }
+    Array.prototype.forEach.call(this.elTabPanel.querySelectorAll('.vf-tl-chk'), function (cb) {
+      cb.addEventListener('click', function (e) { e.stopPropagation(); });
+      cb.addEventListener('change', function () { self.toggleCmp(cb.getAttribute('data-cmp')); self.renderTableLens(); });
+    });
+    var gc = this.elTabPanel.querySelector('[data-gocmp]'); if (gc) gc.addEventListener('click', function () { self.goTab('compare', true); });
     Array.prototype.forEach.call(this.elTabPanel.querySelectorAll('.vf-tl-row[data-id]'), function (el) {
       var id = el.getAttribute('data-id');
       el.addEventListener('click', function () { self.select(id); });
@@ -2124,8 +2276,22 @@ button{font-family:inherit;}
     var head = row('vf-cmp-h', '<div class="vf-cmp-lab"></div>', sel.map(function (r) { var si = statusInfo(r); return '<div class="vf-cmp-cell vf-cmp-name">' + (r.recommended ? '<span class="vf-row-star">★</span> ' : '') + htmlEsc(shortName(r.name)) + '<span class="vf-cmp-badge" style="color:' + si.tag + '">' + si.label + '</span></div>'; }).join(''));
     var valRow = row('vf-cmp-sum', labCell('Value to you', 'higher is better'), rowCells(function (r) { return r.plot; }, function (v) { return v.toFixed(1); }, true, null, null));
     var costRow = row('vf-cmp-sum', labCell(this.costLabel(), 'lower is better'), rowCells(function (r) { return r.costX; }, function (v) { return self.money({ costX: v }); }, false, null, null));
-    var dimRows = dims.map(function (d) { return row('', labCell(d.label), rowCells(function (r) { var p = partOf(r, d.id); return p ? p.raw : null; }, function (v) { return v; }, true, '#5f7a55', function (r) { var p = partOf(r, d.id); return p ? p.norm : 0; })); }).join('');
-    var antiRows = antis.map(function (d) { return row('vf-cmp-anti', labCell(d.label, 'unwanted'), rowCells(function (r) { var p = partOf(r, d.id); return p ? p.raw : 0; }, function (v) { return v; }, true, null, null)); }).join('');
+    // dimension/anti rows carry the WHY for each rating (confidence chip + source), collapsed behind a toggle — parity with the inspector
+    function dimRow(d, isAnti) {
+      var vals = sel.map(function (r) { var p = partOf(r, d.id); return p ? p.raw : (isAnti ? 0 : null); });
+      var nn = vals.filter(function (v) { return v != null; });
+      var distinct = nn.filter(function (v, i, a) { return a.indexOf(v) === i; });
+      var best = distinct.length > 1 ? Math.max.apply(null, nn) : null;   // higher raw wins (for anti-needs that means least harm)
+      var cells = sel.map(function (r, i) {
+        var p = partOf(r, d.id), v = vals[i], win = (best != null && v === best), cf = p ? confidenceOf(p.why) : null;
+        var bar = isAnti ? '' : '<span class="vf-cmp-bar" style="width:' + ((p ? p.norm : 0) * 100).toFixed(0) + '%;background:#5f7a55"></span>';
+        var why = (p && p.why) ? '<div class="vf-cmp-why">' + (cf ? '<span class="vf-conf vf-conf-' + cf.k + '" title="' + cf.t + '">' + cf.k + '</span>' : '') + htmlEsc(p.why) + (p.source ? ' <a class="vf-br-src" href="' + htmlEsc(p.source) + '" target="_blank" rel="noopener">source ↗</a>' : '') + '</div>' : '';
+        return '<div class="vf-cmp-cell vf-cmp-dimcell' + (win ? ' vf-cmp-win' : '') + (isAnti ? ' vf-cmp-anti' : '') + '"><div class="vf-cmp-cellrow">' + bar + '<span class="vf-cmp-fig vf-num">' + (v == null ? '—' : v) + '</span>' + (win ? '<span class="vf-cmp-tick">✓</span>' : '') + '</div>' + why + '</div>';
+      }).join('');
+      return row(isAnti ? 'vf-cmp-anti' : '', labCell(d.label, isAnti ? 'unwanted' : ''), cells);
+    }
+    var dimRows = dims.map(function (d) { return dimRow(d, false); }).join('');
+    var antiRows = antis.map(function (d) { return dimRow(d, true); }).join('');
     function costComp(lab, getAmt, neg) { return row('vf-cmp-cost', labCell(lab), sel.map(function (r) { var a = getAmt(r.costDetail); return '<div class="vf-cmp-cell"><span class="vf-cmp-fig vf-num">' + (a ? (neg ? '−' : '') + fmtMoney(Math.abs(a)) : '—') + '</span></div>'; }).join('')); }
     var costRows = costComp('Purchase price', function (c) { return c.price; }) + costComp('Delivery', function (c) { return c.delivery; }) + costComp('Installation', function (c) { return c.install; }) + costComp('Kit & fees', function (c) { return c.extras; });
     if (mode !== 'acq') costRows += costComp('Running (PV)', function (c) { return c.pvRunning; }) + costComp('Resale credit', function (c) { return c.pvResale; }, true);
@@ -2142,9 +2308,9 @@ button{font-family:inherit;}
     var assessBlock = assessHTML ? '<div class="vf-cmp-assess-wrap"><div class="vf-cmp-assess-title">Assessment</div>' + assessHTML + '</div>' : '';
     this.elTabPanel.innerHTML = '<div class="vf-subcap">Choose 2–3 products to compare side by side. <b>✓</b> marks the leader on each row — value &amp; each dimension (higher wins), cost (lower wins). Outright dimension wins: ' + tallyTxt + ' of ' + dims.length + '.</div>'
       + pickers
-      + '<div class="vf-cmp-wrap"><div class="vf-cmp-table" style="--n:' + N + '">'
+      + '<div class="vf-cmp-wrap"><div class="vf-cmp-table' + (this.state.cmpWhyOpen ? ' vf-cmp-why-on' : '') + '" style="--n:' + N + '">'
       + head + valRow + costRow
-      + '<div class="vf-cmp-section">Value by dimension <span class="vf-cmp-section-sub">raw score · bar = share of the scale</span></div>' + dimRows + antiRows
+      + '<div class="vf-cmp-section">Value by dimension <span class="vf-cmp-section-sub">raw score · bar = share of the scale</span><button type="button" class="vf-cmp-whytoggle" data-cmpwhy="1">' + (this.state.cmpWhyOpen ? 'hide reasoning ▾' : 'show reasoning ▸') + '</button></div>' + dimRows + antiRows
       + '<div class="vf-cmp-section">Cost breakdown <span class="vf-cmp-section-sub">' + (mode === 'acq' ? 'up front' : 'present-valued over the life') + '</span></div>' + costRows
       + '</div></div>' + assessBlock;
     this.bindCompare();
@@ -2154,13 +2320,15 @@ button{font-family:inherit;}
     Array.prototype.forEach.call(this.elTabPanel.querySelectorAll('.vf-cmp-sel'), function (s) {
       s.addEventListener('change', function () { var slot = +s.getAttribute('data-slot'), cmp = (self.state.cmp || []).slice(); cmp[slot] = s.value || ''; self.state.cmp = [cmp[0] || '', cmp[1] || '', cmp[2] || '']; self.writeHash(); self.renderCompare(); });
     });
+    var wt = this.elTabPanel.querySelector('[data-cmpwhy]');
+    if (wt) wt.addEventListener('click', function () { self.state.cmpWhyOpen = !self.state.cmpWhyOpen; self.renderCompare(); });
   };
 
   App.prototype.renderRobust = function () {
     var res = this.result, rows = res.rows, self = this;
     function byId(id) { return rows.filter(function (r) { return r.id === id; })[0]; }
     var rec = byId(res.recommendedId), ruId = this.runnerUp(), ru = ruId ? byId(ruId) : null;
-    if (!rec || !ru) { this.elTabPanel.innerHTML = '<div class="vf-subcap">Not enough frontier options to compare robustness.</div>'; return; }
+    if (!rec || !ru) { this.elTabPanel.innerHTML = this.verdictDetailHTML() + '<div class="vf-subcap">Not enough frontier options to compare robustness.</div>'; return; }
     var diffs = rec.parts.map(function (p, i) { return { label: p.label, d: p.contribution - (ru.parts[i] ? ru.parts[i].contribution : 0) }; })
       .filter(function (x) { return Math.abs(x.d) > 0.05; }).sort(function (a, b) { return Math.abs(b.d) - Math.abs(a.d); }).slice(0, 8);
     var maxAbs = Math.max.apply(null, diffs.map(function (x) { return Math.abs(x.d); })) || 1;
@@ -2175,7 +2343,8 @@ button{font-family:inherit;}
     var wwhtbt = '<b>' + htmlEsc(rec.name) + '</b> ' + valP + ' and ' + costP + ' than the runner-up, <b>' + htmlEsc(ru.name) + '</b>, and is the better value-for-money (the knee). '
       + (ahead2 ? 'Its edge is mostly ' + ahead2 + '. ' : '')
       + 'It would shift to ' + htmlEsc(ru.name) + ' if that edge closed' + (costD > 0 ? ', or if the ' + fmtMoney(costD) + unit + ' premium isn’t worth it to you' : '') + '.';
-    this.elTabPanel.innerHTML = '<div class="vf-subcap">What the pick beats its runner-up on, and what would flip it.</div>'
+    this.elTabPanel.innerHTML = this.verdictDetailHTML()
+      + '<div class="vf-subcap">What the pick beats its runner-up on, and what would flip it.</div>'
       + '<div class="vf-tor">' + trows + '</div>'
       + '<div class="vf-tor-axis"><span>← ' + htmlEsc(firstWord(ru.name)) + ' ahead</span><span>' + htmlEsc(firstWord(rec.name)) + ' ahead →</span></div>'
       + '<p class="vf-wwhtbt">' + wwhtbt + '</p>';
@@ -2248,7 +2417,7 @@ button{font-family:inherit;}
     try { if (data.meta && data.meta.title) document.title = 'Value Frontier — ' + data.meta.title; global.__VF_APP = new App(data, root); }
     catch (e) { root.innerHTML = '<pre class="vf-error">Engine error: ' + (e && e.message) + '</pre>'; }
   }
-  var api = { compute: compute, crf: crf, annuityFactor: annuityFactor, eacCost: eacCost, valueParts: valueParts, normDim: normDim, markFrontier: markFrontier, kneePoint: kneePoint, version: '0.9.3' };
+  var api = { compute: compute, crf: crf, annuityFactor: annuityFactor, eacCost: eacCost, valueParts: valueParts, normDim: normDim, markFrontier: markFrontier, kneePoint: kneePoint, version: '1.0.0' };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else { global.ValueFrontier = api; if (typeof document !== 'undefined') { if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot(); } }
 })(typeof window !== 'undefined' ? window : globalThis);
