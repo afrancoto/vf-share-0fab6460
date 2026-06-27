@@ -184,6 +184,24 @@ button{font-family:inherit;}
 .vf-wt-pct{color:var(--rec);font-weight:600;}
 .vf-reset{grid-column:1 / -1;justify-self:start;margin-top:8px;font-size:12px;color:var(--rec);background:none;border:none;cursor:pointer;text-decoration:underline;padding:4px 0;}
 
+/* ---------- progressive disclosure (collapse on mobile; reasoning collapsed everywhere) ---------- */
+.vf-ctrl-toggle{display:none;width:100%;align-items:center;justify-content:space-between;gap:10px;background:none;border:none;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--rec);cursor:pointer;padding:2px 0;}
+.vf-ctrl-toggle-ic{color:var(--faint);font-size:13px;}
+.vf-deep-toggle{display:none;width:100%;margin-top:16px;background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:11px 12px;font-size:13px;color:var(--rec);cursor:pointer;font-family:inherit;}
+.vf-deep-toggle:hover{border-color:var(--dom);}
+.vf-why-toggle{margin-left:auto;background:none;border:none;font-family:var(--mono);font-size:10px;letter-spacing:.03em;color:var(--rec);cursor:pointer;padding:0;text-transform:none;}
+.vf-why-toggle:hover{text-decoration:underline;}
+.vf-col-why:not(.vf-why-on) .vf-wf-why{display:none;}
+.vf-collapsed{display:none;}
+@media(min-width:641px){
+  .vf-collapsed{display:block;}             /* desktop keeps the cockpit fully open */
+  .vf-ctrl-toggle,.vf-deep-toggle{display:none !important;}
+}
+@media(max-width:640px){
+  .vf-ctrl-toggle{display:flex;}
+  .vf-deep-toggle{display:block;}
+}
+
 /* ---------- INSPECTOR rail (scrolls in its own column) ---------- */
 .vf-detail{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:20px 22px;align-self:start;position:sticky;top:14px;max-height:calc(100vh - 28px);max-height:calc(100dvh - 28px);overflow-y:auto;-webkit-overflow-scrolling:touch;}
 @media(max-width:980px){.vf-detail{position:static;max-height:none;overflow:visible;}}
@@ -917,6 +935,8 @@ button{font-family:inherit;}
     this.dotEls = {};
     this.initWants();
     this.readHash();
+    var mob = !!(global.matchMedia && global.matchMedia('(max-width:640px)').matches);
+    this.state.controlsOpen = !mob; this.state.detailOpen = !mob; // collapsed by default on phones, open on desktop
     root.innerHTML = '';
     this.elHead = div('vf-top'); root.appendChild(this.elHead);
     this.elVerdict = div('vf-verdict'); root.appendChild(this.elVerdict);
@@ -1073,8 +1093,11 @@ button{font-family:inherit;}
     function penSlider(d) { var w = Math.round((self.state.weights[d.id] || 0) * 100); return '<label class="vf-wt"><span class="vf-wt-lab">' + htmlEsc(d.label) + '</span><input type="range" min="0" max="30" value="' + w + '" data-pen="' + d.id + '" aria-label="' + htmlEsc(d.label) + '"><span class="vf-wt-val" data-wv="' + d.id + '"><span class="vf-num">' + w + '%</span></span></label>'; }
     var budgetField = '<div class="vf-ctrl-field vf-budget-field"><span class="vf-ctrl-lab">Max budget <span class="vf-ctrl-hint">(purchase) — greys out the rest</span></span>'
       + '<div class="vf-budget-row"><input type="range" min="' + Math.floor(pb.min) + '" max="' + Math.ceil(pb.max) + '" step="' + step + '" value="' + Math.round(capVal) + '" data-budget aria-label="Maximum budget"><span class="vf-budget-val vf-num" data-budgetval>' + (this.state.budgetCap != null ? fmtMoney(this.state.budgetCap) : 'no cap') + '</span></div></div>';
+    var co = this.state.controlsOpen;
     this.elControls.innerHTML =
-      '<div class="vf-wbar">' + this.weightBarHTML() + '</div>'
+      '<button class="vf-ctrl-toggle" type="button" aria-expanded="' + (co ? 'true' : 'false') + '"><span>⚙ Adjust priorities &amp; cost</span><span class="vf-ctrl-toggle-ic">' + (co ? '▾' : '▸') + '</span></button>'
+      + '<div class="vf-ctrl-inner' + (co ? '' : ' vf-collapsed') + '">'
+      + '<div class="vf-wbar">' + this.weightBarHTML() + '</div>'
       + '<div class="vf-prios"><div class="vf-prios-h">Your priorities<span class="vf-prios-sub">drag any slider (0–10) — the chart and the pick update live; the % is its share of the decision</span></div><div class="vf-wts">' + positives.map(wantSlider).join('') + '</div></div>'
       + '<div class="vf-ctrl-primary">'
       + '<div class="vf-ctrl-field"><span class="vf-ctrl-lab">Cost axis</span><div class="vf-segwrap">' + costChips + '</div></div>'
@@ -1085,7 +1108,10 @@ button{font-family:inherit;}
       + '<div class="vf-ctrl-field vf-ctrl-row"><span class="vf-ctrl-lab">Spread cost over</span><div class="vf-chips">' + horChips + '</div></div>'
       + (antis.length ? '<div class="vf-wgroup"><div class="vf-wgroup-h">Penalties<span class="vf-wgroup-sub">how hard to dock things you didn’t want — 0 = ignore</span></div><div class="vf-wts">' + antis.map(penSlider).join('') + '</div></div>' : '')
       + '<button class="vf-reset" type="button">Reset to defaults</button>'
-      + '</div></details>';
+      + '</div></details>'
+      + '</div>';
+    var ctgl = this.elControls.querySelector('.vf-ctrl-toggle'), cinner = this.elControls.querySelector('.vf-ctrl-inner');
+    ctgl.addEventListener('click', function () { self.state.controlsOpen = !self.state.controlsOpen; cinner.classList.toggle('vf-collapsed', !self.state.controlsOpen); ctgl.setAttribute('aria-expanded', self.state.controlsOpen ? 'true' : 'false'); ctgl.querySelector('.vf-ctrl-toggle-ic').textContent = self.state.controlsOpen ? '▾' : '▸'; });
     Array.prototype.forEach.call(this.elControls.querySelectorAll('[data-cost]'), function (b) { b.addEventListener('click', function () { self.state.costMode = b.getAttribute('data-cost'); Array.prototype.forEach.call(self.elControls.querySelectorAll('[data-cost]'), function (x) { x.classList.toggle('on', x === b); }); self.recompute(); }); });
     Array.prototype.forEach.call(this.elControls.querySelectorAll('[data-lens]'), function (b) { b.addEventListener('click', function () { self.state.lensDim = b.getAttribute('data-lens') || null; Array.prototype.forEach.call(self.elControls.querySelectorAll('[data-lens]'), function (x) { x.classList.toggle('vf-chip-on', x === b); }); self.refreshWeightBar(); self.applyLens(); }); });
     Array.prototype.forEach.call(this.elControls.querySelectorAll('[data-hor]'), function (b) { b.addEventListener('click', function () { var v = b.getAttribute('data-hor'); self.state.horizon = v ? +v : null; Array.prototype.forEach.call(self.elControls.querySelectorAll('[data-hor]'), function (x) { x.classList.toggle('vf-chip-on', x === b); }); self.recompute(); }); });
@@ -1260,12 +1286,20 @@ button{font-family:inherit;}
     var costFig = this.state.costMode === 'eac' ? 'Per year to own' : this.state.costMode === 'acq' ? 'To buy now' : 'Total to own';
     var vsRec = '';
     if (!r.recommended && res.recommendedId) { var rec = this.byId(res.recommendedId); vsRec = '<div class="vf-vsrec">vs the pick (' + htmlEsc(shortName(rec.name)) + '): <b>' + (r.plot - rec.plot >= 0 ? '+' : '') + (r.plot - rec.plot).toFixed(0) + '</b> value, <b>' + (r.costX - rec.costX >= 0 ? '+' : '−') + fmtMoney(Math.abs(r.costX - rec.costX)) + this.unitTail() + '</b></div>'; }
+    var deepOpen = this.state.detailOpen, whyOpen = this.state.whyOpen;
     this.elInspector.innerHTML = '<div class="vf-detail-top"><div class="vf-detail-tagline"><span class="vf-badge ' + si.badge + '">' + si.label + '</span><span class="vf-detail-view">you’re viewing</span></div>'
       + '<div class="vf-detail-name">' + htmlEsc(r.name) + '</div>'
       + '<div class="vf-stat"><div class="vf-stat-b"><div class="vf-stat-lab">Value to you</div><div class="vf-stat-val vf-num">' + r.value.toFixed(1) + '</div></div><div class="vf-stat-b"><div class="vf-stat-lab">' + costFig + '</div><div class="vf-stat-val vf-num vf-stat-cost">' + this.money(r) + '</div></div></div>' + vsRec + '</div>'
       + (r.note ? '<div class="vf-pnote">' + htmlEsc(r.note) + '</div>' : '') + flaws + links
-      + '<div class="vf-col"><div class="vf-col-h">Why this value <span class="vf-col-sub">each dimension adds or subtracts to the total</span></div>' + brk + '</div>'
-      + '<div class="vf-col"><div class="vf-col-h">Why this cost <span class="vf-col-sub">where the money goes' + (this.state.costMode === 'acq' ? ' up front' : ', present-valued at ' + (res.discountRate * 100).toFixed(0) + '%') + '</span></div>' + this.renderCostBars(r) + '</div>';
+      + '<button class="vf-deep-toggle" type="button">' + (deepOpen ? 'Hide the full breakdown ▾' : 'Show the full breakdown ▸') + '</button>'
+      + '<div class="vf-detail-deep' + (deepOpen ? '' : ' vf-collapsed') + '">'
+      + '<div class="vf-col vf-col-why' + (whyOpen ? ' vf-why-on' : '') + '"><div class="vf-col-h">Why this value <button class="vf-why-toggle" type="button" aria-expanded="' + (whyOpen ? 'true' : 'false') + '">' + (whyOpen ? 'hide reasoning ▾' : 'show reasoning ▸') + '</button></div>' + brk + '</div>'
+      + '<div class="vf-col"><div class="vf-col-h">Why this cost <span class="vf-col-sub">where the money goes' + (this.state.costMode === 'acq' ? ' up front' : ', present-valued at ' + (res.discountRate * 100).toFixed(0) + '%') + '</span></div>' + this.renderCostBars(r) + '</div>'
+      + '</div>';
+    var dtgl = this.elInspector.querySelector('.vf-deep-toggle'), deep = this.elInspector.querySelector('.vf-detail-deep');
+    if (dtgl) dtgl.addEventListener('click', function () { self.state.detailOpen = !self.state.detailOpen; deep.classList.toggle('vf-collapsed', !self.state.detailOpen); dtgl.textContent = self.state.detailOpen ? 'Hide the full breakdown ▾' : 'Show the full breakdown ▸'; });
+    var wtgl = this.elInspector.querySelector('.vf-why-toggle'), wcol = this.elInspector.querySelector('.vf-col-why');
+    if (wtgl) wtgl.addEventListener('click', function () { self.state.whyOpen = !self.state.whyOpen; wcol.classList.toggle('vf-why-on', self.state.whyOpen); wtgl.setAttribute('aria-expanded', self.state.whyOpen ? 'true' : 'false'); wtgl.textContent = self.state.whyOpen ? 'hide reasoning ▾' : 'show reasoning ▸'; });
   };
   App.prototype.renderCostBars = function (r) {
     var c = r.costDetail, mode = this.state.costMode, comps = [];
@@ -1458,7 +1492,7 @@ button{font-family:inherit;}
     try { if (data.meta && data.meta.title) document.title = 'Value Frontier — ' + data.meta.title; global.__VF_APP = new App(data, root); }
     catch (e) { root.innerHTML = '<pre class="vf-error">Engine error: ' + (e && e.message) + '</pre>'; }
   }
-  var api = { compute: compute, crf: crf, annuityFactor: annuityFactor, eacCost: eacCost, valueParts: valueParts, normDim: normDim, markFrontier: markFrontier, kneePoint: kneePoint, version: '0.9.0' };
+  var api = { compute: compute, crf: crf, annuityFactor: annuityFactor, eacCost: eacCost, valueParts: valueParts, normDim: normDim, markFrontier: markFrontier, kneePoint: kneePoint, version: '0.9.3' };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else { global.ValueFrontier = api; if (typeof document !== 'undefined') { if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot(); } }
 })(typeof window !== 'undefined' ? window : globalThis);
