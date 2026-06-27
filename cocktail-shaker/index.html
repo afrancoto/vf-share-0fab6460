@@ -850,8 +850,9 @@ button{font-family:inherit;}
 };</script>
 <script>/* Value Frontier — engine v1.0.0
  * Pure compute (Node-testable) + interactive decision cockpit. Zero dependencies.
- * 1.0: information-hierarchy pass. One-line verdict up top (full reasoning + flip-point
- *   moves into the How-solid tab); the chart workspace becomes the OVERVIEW tab so only
+ * 1.0: information-hierarchy pass. No standing verdict line at the top (the answer is the
+ *   chart's ★ and the How-solid tab; only a "no pick yet" alert surfaces up top); the
+ *   full reasoning + flip-point live in How-solid; the chart workspace becomes the OVERVIEW tab so only
  *   one panel shows at a time; All-options gains a weight-ranked Rank column, tick-to-
  *   compare selection synced across tabs, and a best-in-class ring per column; Compare
  *   shows the why behind each rating; the chart gains an inline legend + zig-zag axis
@@ -1118,17 +1119,18 @@ button{font-family:inherit;}
   };
 
   // ---------- live verdict headline + flip-point ----------
-  // top of page: ONE plain-language line — the answer. Detail (cheaper/pricier + flip) lives in How-solid.
+  // top of page: no standing verdict line (removed by request — the answer lives on the chart's ★
+  // and in the How-solid tab). Only the "no pick yet" alert surfaces here, when the screen empties.
   App.prototype.renderVerdict = function () {
-    var res = this.result, p = this.pickIds(), rec = p.rec ? this.byId(p.rec) : null, self = this;
+    var res = this.result, p = this.pickIds(), rec = p.rec ? this.byId(p.rec) : null;
     if (!rec) {
       var why = res.budgetCap != null ? 'No option lands at or under ' + fmtMoney(res.budgetCap) + ' that also clears your minimums.' : 'Nothing clears your hard minimums.';
+      this.elVerdict.style.display = '';
       this.elVerdict.innerHTML = '<div class="vf-verdict-head"><span class="vf-verdict-lead">No pick yet.</span> ' + why + ' Loosen the budget or a dealbreaker in Overview.</div>';
       return;
     }
-    this.elVerdict.innerHTML = '<div class="vf-verdict-head"><span class="vf-verdict-lead">' + htmlEsc(rec.name) + ' is the pick</span> — the best value for the money (the knee of the frontier). <button type="button" class="vf-verdict-jump">Why it’s solid &amp; what would flip it →</button></div>';
-    var jb = this.elVerdict.querySelector('.vf-verdict-jump');
-    if (jb) jb.addEventListener('click', function () { self.goTab('robust', true); });
+    this.elVerdict.innerHTML = '';
+    this.elVerdict.style.display = 'none';
   };
   // the full verdict reasoning — rendered INSIDE the How-solid tab
   App.prototype.verdictDetailHTML = function () {
