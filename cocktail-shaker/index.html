@@ -580,7 +580,7 @@ button{font-family:inherit;}
     "discountRate": 0.05,
     "engineVersion": "0.9.5",
     "createdISO": "2026-06-27",
-    "note": "Regular home use, dishwasher-safe is a hard screen (it pruned all coated/gold finishes and the mirror-polished pro tins). Boston/French shakers carry a separate Hawthorne strainer (~€9–14) folded into the cost axis as 'extras'; cobblers have none. Steel grade is rarely stated on NL mass listings — treat 'RVS' as 304-equivalent unless flagged; only Westmark (18/8) and WMF (18/10) are explicit (a confidence caveat on durability). Prices live-fetched 2026-06-27."
+    "note": "Regular home use, dishwasher-safe is a hard screen (it pruned all coated/gold finishes and the mirror-polished pro tins). Boston/French shakers carry a separate Hawthorne strainer (~€9–14) folded into the cost axis as 'extras'; cobblers have none. Steel grade is rarely stated on NL mass listings — treat 'RVS' as 304-equivalent unless flagged; only Westmark (18/8) and WMF (18/10) are explicit (a confidence caveat on durability). Prices live-fetched 2026-06-27. A dedicated bol.com sweep (product-search) confirmed the field and ADDED the OXO Steel single-wall shaker — which becomes the engine's pick; Zulay/WOTOR are Amazon-only (no bol equivalent), and bol's other top hits are multi-piece gift bundles, pruned by design."
   },
   "dimensions": [
     { "id": "seal", "label": "Leakproof seal", "type": "functional", "direction": "more-better", "weight": 0.153, "range": { "min": 0, "max": 10 }, "hardMin": 4, "rationale": "Must not spray while shaking — the core failure mode. Hard floor screens out known leakers." },
@@ -714,6 +714,21 @@ button{font-family:inherit;}
         "capacity": { "value": 4, "why": "spec: 400 ml — one drink only (the design trade-off)", "source": "https://www.debijenkorf.nl/d/stelton-pilastro-cocktailshaker-40-cl-8629090057-862909005706090 (2026-06-27)" },
         "coating": { "value": 0, "why": "glass + bare steel + silicone — no flaking coating (fragility is captured under durability)" } } },
 
+    { "id": "oxo-steel", "name": "OXO Steel single-wall cocktail shaker (700 ml)", "price": 23.09,
+      "costs": { "deliveryCost": 0, "installCost": 0, "extrasCost": 0, "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "expectedLifeYears": 18, "resaleValue": 0 },
+      "links": [ { "label": "bol.com €23.09", "url": "https://www.bol.com/nl/nl/p/oxo-cocktailshaker-steel-roestvrijstalen-shaker-met-jiggerdop/9300000161740506/" } ],
+      "note": "bol.com 30-day return. Cobbler-style: built-in strainer + jigger cap (½–1½ oz markings), single-wall → NO separate strainer. Two silicone gaskets stop leaks + smooth-release design eases opening. 700 ml = two drinks. Dishwasher-safe (verified, OXO). bol 5.0/3 — thin local sample, but strong global OXO review history. Added after a dedicated bol.com verification sweep (2026-06-27).",
+      "scores": {
+        "seal": { "value": 8, "why": "spec-mechanism + brand: two silicone gaskets engineered to stop leaks — the shaker's headline feature; OXO's leakproof reputation. CONFIDENCE: design-spec + brand, only 3 bol reviews", "source": "https://www.oxo.com/steel-single-wall-cocktail-shaker.html (2026-06-27)" },
+        "openease": { "value": 8, "why": "spec-mechanism: 'smooth-release' design + silicone gasket (not metal-on-metal) avoids cold-seize; unscrews apart", "source": "https://www.amazon.com/OXO-SteeL-Cocktail-Shaker-24/dp/B07JW89TC3 (2026-06-27)" },
+        "durability": { "value": 7, "why": "brand-inferred: solid OXO Steel single-wall build; steel grade unstated", "source": "https://www.bol.com/nl/nl/p/oxo-cocktailshaker-steel-roestvrijstalen-shaker-met-jiggerdop/9300000161740506/ (2026-06-27)" },
+        "feel": { "value": 7, "why": "brand-inferred: OXO ergonomics, good single-wall heft", "source": "https://www.bol.com/nl/nl/p/oxo-cocktailshaker-steel-roestvrijstalen-shaker-met-jiggerdop/9300000161740506/ (2026-06-27)" },
+        "clean": { "value": 8, "why": "verified: dishwasher-safe + unscrews fully for easy cleaning — a cleanup standout", "source": "https://www.oxo.com/steel-single-wall-cocktail-shaker.html (2026-06-27)" },
+        "strain": { "value": 6, "why": "spec-derived: built-in strainer top (cobbler-coarse, below a dedicated Hawthorne)", "source": "https://www.oxo.com/steel-single-wall-cocktail-shaker.html (2026-06-27)" },
+        "looks": { "value": 6, "why": "spec-derived: clean OXO Steel single-wall design", "source": "https://www.bol.com/nl/nl/p/oxo-cocktailshaker-steel-roestvrijstalen-shaker-met-jiggerdop/9300000161740506/ (2026-06-27)" },
+        "capacity": { "value": 8, "why": "spec: 24 oz / 700 ml — two drinks; cap doubles as a jigger", "source": "https://www.amazon.com/OXO-SteeL-Cocktail-Shaker-24/dp/B07JW89TC3 (2026-06-27)" },
+        "coating": { "value": 0, "why": "bare single-wall stainless — nothing to chip" } } },
+
     { "id": "wotor", "name": "WOTOR Boston set 530 + 830 ml (weighted)", "price": 19.99,
       "costs": { "deliveryCost": 2, "installCost": 0, "extrasCost": 13.95, "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "expectedLifeYears": 20, "resaleValue": 0 },
       "links": [ { "label": "Amazon.nl €19.99", "url": "https://www.amazon.nl/dp/B0CCVFCMG2" }, { "label": "+ My Green Deal 304 Hawthorne €13.95", "url": "https://www.bol.com/nl/nl/p/my-green-deal-rvs-cocktail-strainer/9300000261525502/" } ],
@@ -820,6 +835,16 @@ button{font-family:inherit;}
         "coating": { "value": 0, "why": "bare steel" } } }
   ],
   "comparisons": {
+    "oxo-steel|zulay": {
+      "text": "The new top two — and it's close. The OXO edges the engine's value elbow: silicone gaskets purpose-built to stop leaks, a smooth-release cap that won't cold-seize, the same 700 ml, a jigger built into the cap, and it's a single self-contained unit you can buy on bol.com. The Zulay counters with 2,511 reviews of proof (vs OXO's 3 on bol), ~€5 less all-in, and a finer included Hawthorne strain — but it's Amazon-only. Prefer the OXO for the better-sealing all-in-one on bol; the Zulay if you want the cheapest, most review-proven option and don't mind Amazon + a looser strain.",
+      "flag": "OXO's pick status leans on its silicone-gasket seal/open scores (design + brand reputation; only 3 bol reviews). Nudge either down ~1 point and the Zulay retakes the pick — see How-solid."
+    },
+    "oxo-steel|pointvirgule-cobbler": {
+      "text": "Both bol cobblers, but the OXO dominates outright — cheaper (€23.09 vs €26.25) and better-sealing (silicone gaskets + smooth-release vs a plain screw cap), at the same ~700–750 ml — so it knocks the Point-Virgule off the value frontier entirely. Prefer the OXO; the Point-Virgule only if you specifically want that brand or finish."
+    },
+    "oxo-steel|wotor": {
+      "text": "The 'is the step up worth it?' walk from the new pick. WOTOR adds weighted 830 ml tins, the firmest seal, the best feel and 746 reviews, for ~€13 more all-in (€36 vs €23) — because it carries a separate Hawthorne the OXO doesn't need. Prefer WOTOR if you'll shake often and want heft + a finer strain; the OXO if you want the best-value self-contained shaker on bol."
+    },
     "leopold-cobbler|zulay": {
       "text": "The cheaper-neighbour call. The Zulay (Boston, strainer in the box) opens easier (tins separate vs a cobbler cap that can stick), holds more (700 vs 500 ml) and strains finer, for only ~€3 more all-in. The Leopold cobbler wins on simplicity — one self-contained unit, no loose strainer to store — and slightly nicer brushed looks. Prefer the Zulay for the better tool; the Leopold if you want the least fuss and fewest pieces."
     },
