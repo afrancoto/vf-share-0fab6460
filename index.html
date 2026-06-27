@@ -2236,7 +2236,7 @@ button{font-family:inherit;}
   // ---------- tabs ----------
   App.prototype.buildTabs = function () {
     var self = this, cur = this.state.tab || 'table';
-    var defs = [['table', 'Compare all options'], ['compare', 'Head-to-head'], ['robust', 'How solid is the pick'], ['score', 'How it’s scored']];
+    var defs = [['table', 'All options'], ['compare', 'Compare side-by-side'], ['robust', 'How solid is the pick'], ['score', 'How it’s scored']];
     this.elTabs.innerHTML = '<div class="vf-tabnav" role="tablist">'
       + defs.map(function (t) { return '<button class="vf-tab' + (t[0] === cur ? ' vf-tab-on' : '') + '" data-tab="' + t[0] + '" role="tab">' + t[1] + '</button>'; }).join('')
       + '</div><div class="vf-tabpanel"></div>';
