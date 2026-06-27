@@ -148,6 +148,8 @@ button{font-family:inherit;}
 .vf-prios{margin:16px 0 4px;}
 .vf-prios-h{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);display:flex;flex-wrap:wrap;gap:3px 10px;align-items:baseline;margin-bottom:12px;}
 .vf-prios-sub{font-family:var(--serif);text-transform:none;letter-spacing:0;font-size:11.5px;font-style:italic;color:var(--faint);}
+.vf-reset-all{margin-left:auto;background:none;border:1px solid var(--line);border-radius:999px;color:var(--rec);font-family:inherit;font-size:11px;letter-spacing:.02em;padding:4px 11px;cursor:pointer;white-space:nowrap;}
+.vf-reset-all:hover{border-color:var(--rec);background:var(--rec-bg);}
 .vf-ctrl-primary{display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start;margin-top:16px;padding-top:14px;border-top:1px solid var(--line2);}
 .vf-ctrl-field{display:flex;flex-direction:column;gap:8px;}
 .vf-ctrl-lab{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);}
@@ -339,6 +341,13 @@ button{font-family:inherit;}
 .vf-cmp-section-sub{font-family:var(--serif);text-transform:none;letter-spacing:0;font-style:italic;font-size:11px;color:var(--faint);}
 .vf-cmp-cost .vf-cmp-fig{color:var(--muted);}
 .vf-cmp-anti .vf-cmp-lab{color:var(--muted);}
+.vf-cmp-assess-wrap{margin-top:18px;border-top:1px solid var(--line2);padding-top:16px;}
+.vf-cmp-assess-title{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-bottom:11px;}
+.vf-cmp-assess{border-left:3px solid var(--front);padding:2px 0 2px 14px;margin-bottom:15px;}
+.vf-cmp-assess:last-child{margin-bottom:0;}
+.vf-cmp-assess-h{font-family:var(--serif);font-weight:600;font-size:14px;margin-bottom:5px;}
+.vf-cmp-assess p{font-size:13px;color:var(--muted);line-height:1.55;margin:0;}
+.vf-cmp-flag{margin-top:7px;font-size:12px;color:var(--rec);background:var(--rec-bg);border:1px solid var(--rec-border);border-radius:6px;padding:6px 9px;line-height:1.45;}
 
 /* robustness / tornado */
 .vf-tor{margin:4px 0 0;}
@@ -470,7 +479,7 @@ button{font-family:inherit;}
     "currency": "EUR",
     "horizonYears": 8,
     "discountRate": 0.05,
-    "engineVersion": "0.3.0",
+    "engineVersion": "0.9.4",
     "createdISO": "2026-06-26",
     "note": "55-inch OLED field, NL, prices = live Tweakers Pricewatch lowest in-stock (fetched 2026-06-26); majors (Coolblue/MediaMarkt) often ~€30-50 more but with 30-day returns — see each product note. Her #1 ('blacks stay black, no gray patches, no mirror reflection') splits in two: (a) gray/washed blacks under ambient light = decided by WOLED (polarizer, neutral) vs QD-OLED (no polarizer, raises to gray/purple) → all picks are WOLED except the QD-OLED S95D and S90C-class; (b) mirror reflection of a lamp = decided by coating, and EVERY in-budget set is GLOSSY except the matte Samsung S95D — so the mirror half is managed (brightness + lamp placement), not bought, unless you go matte (and matte S95D is QD-OLED + no Dolby Vision). Dolby Vision (Apple TV's best mode) is supported by all EXCEPT Samsung. Samsung EU 55-inch panels are reportedly WOLED not QD-OLED (verify suffix at purchase). Energy/yr is estimated from panel brightness tier (NL ~€0.35/kWh, ~4h/day) — small, doesn't move the frontier. Stand preference VERIFIED from her photos: she LIKES wide slim splayed feet, DISLIKES the center pedestal — so the C-series pedestal is penalised and the B-series/Sony wide-feet rewarded. 65-inch is affordable too (65B5 €999, 65C4 €1182) — size handled in the recommendation, frontier fixed at 55-inch to compare panels. Prices/scores are snapshots — verify before buying."
   },
@@ -480,8 +489,11 @@ button{font-family:inherit;}
       "label": "Blacks stay black in the room",
       "type": "functional",
       "direction": "more-better",
-      "weight": 0.278,
-      "range": { "min": 0, "max": 10 },
+      "weight": 0.24,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
       "rationale": "Her #1, stated three times. Two halves: neutral non-raised blacks under lamplight (WOLED polarizer wins; QD-OLED raises to gray) AND resisting a mirror reflection (all glossy here — brightness + coating help; only matte S95D truly kills it). Scored as the blend, evening/lights-on use."
     },
     {
@@ -489,17 +501,35 @@ button{font-family:inherit;}
       "label": "Apple-TV fit (Dolby Vision + processing)",
       "type": "functional",
       "direction": "more-better",
-      "weight": 0.194,
-      "range": { "min": 0, "max": 10 },
+      "weight": 0.17,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
       "rationale": "95% Apple TV 4K → Dolby Vision is its best output (LG/Sony/Philips yes; Samsung no → drops to HDR10) plus streaming upscaling/processing (Sony best)."
+    },
+    {
+      "id": "ecosystem",
+      "label": "Ecosystem fit (platform + Apple devices)",
+      "type": "functional",
+      "direction": "more-better",
+      "weight": 0.1,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
+      "rationale": "Built-in OS (webOS/Google TV/Tizen/Titan) + AirPlay 2 / HomeKit with her iPhone & iPad + how cleanly it hosts the Apple TV 4K box. Distinct from Apple-TV picture fit (the box’s Dolby Vision + processing path)."
     },
     {
       "id": "stand",
       "label": "Stand she likes (wide feet, not pedestal)",
       "type": "aesthetic",
       "direction": "more-better",
-      "weight": 0.167,
-      "range": { "min": 0, "max": 10 },
+      "weight": 0.15,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
       "rationale": "VERIFIED from her like/dislike photos: wide slim splayed edge-feet = HIGH; chunky center pedestal = LOW. Sony's repositionable feet set wide = high; wall-mount would moot it."
     },
     {
@@ -507,8 +537,11 @@ button{font-family:inherit;}
       "label": "Daytime brightness / HDR punch",
       "type": "functional",
       "direction": "more-better",
-      "weight": 0.139,
-      "range": { "min": 0, "max": 10 },
+      "weight": 0.12,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
       "rationale": "Moderate — she watches evenings (east window = morning sun, not viewing-time), so this is HDR pop + keeping blacks black next to highlights with a lamp on, not fighting direct sun. From peak HDR @10% nits."
     },
     {
@@ -516,26 +549,35 @@ button{font-family:inherit;}
       "label": "Design / finish in the room",
       "type": "aesthetic",
       "direction": "more-better",
-      "weight": 0.083,
-      "range": { "min": 0, "max": 10 },
+      "weight": 0.07,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
       "rationale": "Glassy modern room; bezel/thinness/how it reads. Ambilight glow reads premium here. Minor next to picture."
     },
     {
-      "id": "peace",
-      "label": "Peace of mind (reliability + software)",
+      "id": "brand",
+      "label": "Brand, panel pedigree & support",
       "type": "risk",
       "direction": "more-better",
-      "weight": 0.083,
-      "range": { "min": 0, "max": 10 },
-      "rationale": "Burn-in is low-risk on varied Apple-TV content (no static ticker) so not a differentiator; this is brand reliability + firmware/app stability over ~8 yrs."
+      "weight": 0.1,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
+      "rationale": "Who makes the panel (LG Display WOLED vs Samsung Display QD-OLED vs panel-buyer), brand tier/processing on that panel, reliability/QC, warranty + support in NL, and software-update longevity. Absorbs the old reliability+software (no double-count)."
     },
     {
       "id": "sound",
       "label": "Built-in sound",
       "type": "experiential",
       "direction": "more-better",
-      "weight": 0.056,
-      "range": { "min": 0, "max": 10 },
+      "weight": 0.05,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
       "rationale": "Small — thin OLEDs are modest; a soundbar can come later (all have eARC). Philips 70W leads, B-series 20W trails."
     },
     {
@@ -544,7 +586,10 @@ button{font-family:inherit;}
       "type": "anti-need",
       "direction": "unwanted",
       "weight": 0.06,
-      "range": { "min": -5, "max": 5 },
+      "range": {
+        "min": -5,
+        "max": 5
+      },
       "rationale": "She lives in Apple TV, but the set still boots to its own ad-laden home + runs ACR tracking. Harm exists even ignored → small signed dock (Tizen/FireTV heaviest, webOS/Google-TV opt-out-ish, Titan OS lightest). Not sized to price."
     }
   ],
@@ -553,273 +598,1060 @@ button{font-family:inherit;}
       "id": "b4",
       "name": "LG OLED55B4 (2024)",
       "price": 693,
-      "links": [{ "label": "Tweakers Pricewatch", "url": "https://tweakers.net/pricewatch/2072044" }],
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 40, "maintenancePerYear": 0, "expectedLifeYears": 10, "resaleValue": 0, "deliveryCost": 0, "installCost": 0, "extrasCost": 0 },
+      "links": [
+        {
+          "label": "Tweakers Pricewatch",
+          "url": "https://tweakers.net/pricewatch/2072044"
+        }
+      ],
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 40,
+        "maintenancePerYear": 0,
+        "expectedLifeYears": 10,
+        "resaleValue": 0,
+        "deliveryCost": 0,
+        "installCost": 0,
+        "extrasCost": 0
+      },
       "note": "€693 cheapest in field (HelloTV via Tweakers — specialist, confirm return window; majors ~€750). Cheapest OLED here. Stand = two wide splayed feet (her liked look). Dolby Vision yes. Downside: dimmest + most reflective LG coating — weakest exactly where she's pickiest.",
       "scores": {
-        "blacks": { "value": 4, "why": "WOLED = neutral blacks where no light falls, but the plainest glossy LG coating + ~665-nit dimness means a bright lamp washes it: RTINGS-sourced 'highly reflective… practically unwatchable' under a bright lamp. review-consensus, high confidence.", "source": "https://www.rtings.com/tv/reviews/lg/b4-oled" },
-        "appletv": { "value": 7, "why": "Dolby Vision yes; α8 processor competent for streaming, a step below C-series α9. spec + review-consensus.", "source": "https://www.rtings.com/tv/reviews/lg/b4-oled" },
-        "stand": { "value": 8, "why": "Two spindly feet near the outer edges (~1057mm on a 1228mm panel) — the wide splayed look she LIKES. spec-derived, high confidence.", "source": "https://tweakers.net/pricewatch/2072044" },
-        "bright": { "value": 4, "why": "~650-680 nits @10% — entry tier, no evo/MLA boost. review-consensus.", "source": "https://www.rtings.com/tv/reviews/lg/b4-oled" },
-        "design": { "value": 5, "why": "Entry build, thicker profile, plain. spec.", "source": "https://www.rtings.com/tv/reviews/lg/b4-oled" },
-        "peace": { "value": 6, "why": "Mature webOS + reliable LG panel; some gradient-banding reports. review-consensus.", "source": "https://www.rtings.com/tv/reviews/lg/b4-oled" },
-        "sound": { "value": 4, "why": "2.0ch ~20W — thins out loud. review-consensus.", "source": "https://www.rtings.com/tv/reviews/lg/b4-oled" },
-        "nag": { "value": -1, "why": "webOS home-screen ads + 'Live Plus' ACR, both opt-out.", "source": "https://www.rtings.com/tv/reviews/lg/b4-oled" }
+        "blacks": {
+          "value": 4,
+          "why": "WOLED = neutral blacks where no light falls, but the plainest glossy LG coating + ~665-nit dimness means a bright lamp washes it: RTINGS-sourced 'highly reflective… practically unwatchable' under a bright lamp. review-consensus, high confidence.",
+          "source": "https://www.rtings.com/tv/reviews/lg/b4-oled"
+        },
+        "appletv": {
+          "value": 7,
+          "why": "Dolby Vision yes; α8 processor competent for streaming, a step below C-series α9. spec + review-consensus.",
+          "source": "https://www.rtings.com/tv/reviews/lg/b4-oled"
+        },
+        "stand": {
+          "value": 8,
+          "why": "Two spindly feet near the outer edges (~1057mm on a 1228mm panel) — the wide splayed look she LIKES. spec-derived, high confidence.",
+          "source": "https://tweakers.net/pricewatch/2072044"
+        },
+        "bright": {
+          "value": 4,
+          "why": "~650-680 nits @10% — entry tier, no evo/MLA boost. review-consensus.",
+          "source": "https://www.rtings.com/tv/reviews/lg/b4-oled"
+        },
+        "design": {
+          "value": 5,
+          "why": "Entry build, thicker profile, plain. spec.",
+          "source": "https://www.rtings.com/tv/reviews/lg/b4-oled"
+        },
+        "sound": {
+          "value": 4,
+          "why": "2.0ch ~20W — thins out loud. review-consensus.",
+          "source": "https://www.rtings.com/tv/reviews/lg/b4-oled"
+        },
+        "nag": {
+          "value": -1,
+          "why": "webOS home-screen ads + 'Live Plus' ACR, both opt-out.",
+          "source": "https://www.rtings.com/tv/reviews/lg/b4-oled"
+        },
+        "ecosystem": {
+          "value": 8.5,
+          "why": "webOS 24; all Apple boxes ticked (AirPlay 2 + HomeKit + DV)",
+          "source": "https://www.techradar.com/televisions/lg-b4-review (2026-06-27)"
+        },
+        "brand": {
+          "value": 6.5,
+          "why": "LG Display WOLED (non-EVO, dimmest) + α8 proc; strong OLED reliability; ~5-yr webOS updates",
+          "source": "https://www.tomsguide.com/tvs/lg-b4-oled-review (2026-06-27)"
+        }
       }
     },
     {
       "id": "b5",
       "name": "LG OLED55B5 (2025)",
       "price": 749,
-      "links": [{ "label": "Tweakers Pricewatch", "url": "https://tweakers.net/pricewatch/2189916" }, { "label": "MediaMarkt €799", "url": "https://www.mediamarkt.nl/en/product/_oled55b56la-2025-1880636.html" }],
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 40, "maintenancePerYear": 0, "expectedLifeYears": 10, "resaleValue": 0, "deliveryCost": 0, "installCost": 0, "extrasCost": 0 },
+      "links": [
+        {
+          "label": "Tweakers Pricewatch",
+          "url": "https://tweakers.net/pricewatch/2189916"
+        },
+        {
+          "label": "MediaMarkt €799",
+          "url": "https://www.mediamarkt.nl/en/product/_oled55b56la-2025-1880636.html"
+        }
+      ],
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 40,
+        "maintenancePerYear": 0,
+        "expectedLifeYears": 10,
+        "resaleValue": 0,
+        "deliveryCost": 0,
+        "installCost": 0,
+        "extrasCost": 0
+      },
       "note": "€749 bol Plaza (marketplace) / €799 MediaMarkt (major, free delivery, 30-day returns — the safe buy). Newer 2025 (α8 Gen2) but same entry panel as B4. Stand = two wide feet (her liked look), with-stand width 122.8cm. Dolby Vision yes. Same dim/reflective weakness as B4.",
       "scores": {
-        "blacks": { "value": 4, "why": "WOLED neutral blacks, but 'reflections run rampant… ghostly floating reflections' and ~650 nits can't overpower ambient — 'almost impossible' in moderate light (Tom's Guide). review-consensus, high confidence.", "source": "https://www.rtings.com/tv/reviews/lg/b5-oled" },
-        "appletv": { "value": 7, "why": "Dolby Vision yes; α8 AI Gen2 — fine for Apple TV streaming, below C-series. spec.", "source": "https://www.mediamarkt.nl/en/product/_oled55b56la-2025-1880636.html" },
-        "stand": { "value": 8, "why": "Two wide-set feet at the panel edges (her liked splayed look); needs a near-full-width console — her 179cm console easily clears it. spec-derived, high confidence.", "source": "https://www.mediamarkt.nl/en/product/_oled55b56la-2025-1880636.html" },
-        "bright": { "value": 4, "why": "~630-670 nits @10% — about half the C5. review-consensus.", "source": "https://www.rtings.com/tv/reviews/lg/b5-oled" },
-        "design": { "value": 5, "why": "Entry build; plain. spec.", "source": "https://www.rtings.com/tv/reviews/lg/b5-oled" },
-        "peace": { "value": 6, "why": "webOS 25 + reliable panel; newest of the entry LGs. spec.", "source": "https://www.rtings.com/tv/reviews/lg/b5-oled" },
-        "sound": { "value": 4, "why": "~2.0ch ~20W, 'only okay'. review-consensus.", "source": "https://www.rtings.com/tv/reviews/lg/b5-oled" },
-        "nag": { "value": -1, "why": "webOS 25 ads + ACR, opt-out.", "source": "https://www.rtings.com/tv/reviews/lg/b5-oled" }
+        "blacks": {
+          "value": 4,
+          "why": "WOLED neutral blacks, but 'reflections run rampant… ghostly floating reflections' and ~650 nits can't overpower ambient — 'almost impossible' in moderate light (Tom's Guide). review-consensus, high confidence.",
+          "source": "https://www.rtings.com/tv/reviews/lg/b5-oled"
+        },
+        "appletv": {
+          "value": 7,
+          "why": "Dolby Vision yes; α8 AI Gen2 — fine for Apple TV streaming, below C-series. spec.",
+          "source": "https://www.mediamarkt.nl/en/product/_oled55b56la-2025-1880636.html"
+        },
+        "stand": {
+          "value": 8,
+          "why": "Two wide-set feet at the panel edges (her liked splayed look); needs a near-full-width console — her 179cm console easily clears it. spec-derived, high confidence.",
+          "source": "https://www.mediamarkt.nl/en/product/_oled55b56la-2025-1880636.html"
+        },
+        "bright": {
+          "value": 4,
+          "why": "~630-670 nits @10% — about half the C5. review-consensus.",
+          "source": "https://www.rtings.com/tv/reviews/lg/b5-oled"
+        },
+        "design": {
+          "value": 5,
+          "why": "Entry build; plain. spec.",
+          "source": "https://www.rtings.com/tv/reviews/lg/b5-oled"
+        },
+        "sound": {
+          "value": 4,
+          "why": "~2.0ch ~20W, 'only okay'. review-consensus.",
+          "source": "https://www.rtings.com/tv/reviews/lg/b5-oled"
+        },
+        "nag": {
+          "value": -1,
+          "why": "webOS 25 ads + ACR, opt-out.",
+          "source": "https://www.rtings.com/tv/reviews/lg/b5-oled"
+        },
+        "ecosystem": {
+          "value": 9,
+          "why": "webOS 25; same Apple set as C5 (AirPlay 2 + HomeKit + DV)",
+          "source": "https://www.techradar.com/televisions/lg-b5-review (2026-06-27)"
+        },
+        "brand": {
+          "value": 7,
+          "why": "LG Display WOLED (non-EVO) but α8 Gen2 + newest webOS 25 (longer update runway)",
+          "source": "https://www.rtings.com/tv/tools/compare/lg-b4-oled-vs-lg-b5-oled/49540/88603 (2026-06-27)"
+        }
       }
     },
     {
       "id": "p759",
       "name": "Philips 55OLED759 (2024)",
       "price": 772,
-      "links": [{ "label": "Tweakers Pricewatch", "url": "https://tweakers.net/pricewatch/2081718" }],
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 42, "maintenancePerYear": 0, "expectedLifeYears": 10, "resaleValue": 0, "deliveryCost": 0, "installCost": 0, "extrasCost": 0 },
+      "links": [
+        {
+          "label": "Tweakers Pricewatch",
+          "url": "https://tweakers.net/pricewatch/2081718"
+        }
+      ],
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 42,
+        "maintenancePerYear": 0,
+        "expectedLifeYears": 10,
+        "resaleValue": 0,
+        "deliveryCost": 0,
+        "installCost": 0,
+        "extrasCost": 0
+      },
       "note": "€772 (HelloTV via Tweakers). Entry Philips OLED, 3-sided Ambilight (a real lit-room perceived-black aid), Dolby Vision, Google TV. Spec/stand inferred from its OLED760 sibling — LOWER confidence on stand geometry; verify before buying.",
       "scores": {
-        "blacks": { "value": 6, "why": "WOLED neutral blacks + 3-sided Ambilight bias-glow eases perceived black/eye-strain in a lit room, but entry brightness (~750-800 nits) and standard glossy coating. spec-inferred from OLED760/Ambilight behaviour, medium confidence.", "source": "https://tweakers.net/pricewatch/2081718" },
-        "appletv": { "value": 7, "why": "Dolby Vision + HDR10+ + AirPlay 2; P5 entry engine. spec.", "source": "https://tweakers.net/pricewatch/2081718" },
-        "stand": { "value": 5, "why": "Stand geometry NOT visually verified for the 759 (sibling 760 has wide edge-boots, but 808/809 have center pedestals) — scored neutral pending confirmation. low confidence — VERIFY.", "source": "https://tweakers.net/pricewatch/2081718" },
-        "bright": { "value": 5, "why": "Entry OLED EX, ~750-800 nits @10% (inferred from OLED760 tier). spec-inferred, medium confidence.", "source": "https://tweakers.net/pricewatch/2081718" },
-        "design": { "value": 6, "why": "Ambilight glow reads premium in a glassy room; otherwise entry build. spec.", "source": "https://tweakers.net/pricewatch/2081718" },
-        "peace": { "value": 6, "why": "Google TV + Philips P5; occasional Ambilight flicker (firmware-fixable). review-consensus.", "source": "https://tweakers.net/pricewatch/2081718" },
-        "sound": { "value": 5, "why": "Entry 2.0ch ~20W. spec-inferred.", "source": "https://tweakers.net/pricewatch/2081718" },
-        "nag": { "value": -1, "why": "Google TV sponsored rows; AirPlay 2. Lighter than Tizen.", "source": "https://tweakers.net/pricewatch/2081718" }
+        "blacks": {
+          "value": 6,
+          "why": "WOLED neutral blacks + 3-sided Ambilight bias-glow eases perceived black/eye-strain in a lit room, but entry brightness (~750-800 nits) and standard glossy coating. spec-inferred from OLED760/Ambilight behaviour, medium confidence.",
+          "source": "https://tweakers.net/pricewatch/2081718"
+        },
+        "appletv": {
+          "value": 7,
+          "why": "Dolby Vision + HDR10+ + AirPlay 2; P5 entry engine. spec.",
+          "source": "https://tweakers.net/pricewatch/2081718"
+        },
+        "stand": {
+          "value": 5,
+          "why": "Stand geometry NOT visually verified for the 759 (sibling 760 has wide edge-boots, but 808/809 have center pedestals) — scored neutral pending confirmation. low confidence — VERIFY.",
+          "source": "https://tweakers.net/pricewatch/2081718"
+        },
+        "bright": {
+          "value": 5,
+          "why": "Entry OLED EX, ~750-800 nits @10% (inferred from OLED760 tier). spec-inferred, medium confidence.",
+          "source": "https://tweakers.net/pricewatch/2081718"
+        },
+        "design": {
+          "value": 6,
+          "why": "Ambilight glow reads premium in a glassy room; otherwise entry build. spec.",
+          "source": "https://tweakers.net/pricewatch/2081718"
+        },
+        "sound": {
+          "value": 5,
+          "why": "Entry 2.0ch ~20W. spec-inferred.",
+          "source": "https://tweakers.net/pricewatch/2081718"
+        },
+        "nag": {
+          "value": -1,
+          "why": "Google TV sponsored rows; AirPlay 2. Lighter than Tizen.",
+          "source": "https://tweakers.net/pricewatch/2081718"
+        },
+        "ecosystem": {
+          "value": 5,
+          "why": "Titan OS 2024; no confirmed AirPlay 2 / HomeKit + thin store — weakest Apple fit (medium confidence)",
+          "source": "https://www.flatpanelshd.com/news.php?id=1714037473 (2026-06-27)"
+        },
+        "brand": {
+          "value": 4.5,
+          "why": "TP Vision panel-buyer (entry LG WOLED) + oldest P5 Gen7 + Titan OS app/update doubts",
+          "source": "https://www.flatpanelshd.com/news.php?id=1714037473 (2026-06-27)"
+        }
       }
     },
     {
       "id": "c4",
       "name": "LG OLED55C4 (2024)",
       "price": 839,
-      "links": [{ "label": "Tweakers Pricewatch", "url": "https://tweakers.net/pricewatch/2061190" }],
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 48, "maintenancePerYear": 0, "expectedLifeYears": 10, "resaleValue": 0, "deliveryCost": 0, "installCost": 0, "extrasCost": 0 },
+      "links": [
+        {
+          "label": "Tweakers Pricewatch",
+          "url": "https://tweakers.net/pricewatch/2061190"
+        }
+      ],
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 48,
+        "maintenancePerYear": 0,
+        "expectedLifeYears": 10,
+        "resaleValue": 0,
+        "deliveryCost": 0,
+        "installCost": 0,
+        "extrasCost": 0
+      },
       "note": "€839 (PhoneMarket via Tweakers — specialist; LG 55C4 at majors ~€950). The value-OLED benchmark: bright WOLED + Dolby Vision for under €850. Catch: center pedestal (the stand she DISLIKES) — wall-mount would moot it.",
       "scores": {
-        "blacks": { "value": 7, "why": "WOLED neutral/deep blacks; ~1000 nits filters diffuse glare well and keeps contrast 'with room lights up' (reviewers), though glossy still mirrors a direct lamp. review-consensus, high confidence.", "source": "https://www.rtings.com/tv/reviews/lg/c4-oled" },
-        "appletv": { "value": 8, "why": "Dolby Vision yes; α9 Gen7 — strong streaming upscaling/processing. review-consensus.", "source": "https://www.rtings.com/tv/reviews/lg/c4-oled" },
-        "stand": { "value": 3, "why": "Center pedestal (slim aluminium, minimal footprint) — the chunky-central look she DISLIKES. spec-derived, high confidence.", "source": "https://www.rtings.com/tv/reviews/lg/c4-oled" },
-        "bright": { "value": 7, "why": "~1000-1065 nits @10%. lab/review-consensus.", "source": "https://www.rtings.com/tv/reviews/lg/c4-oled" },
-        "design": { "value": 6, "why": "Slim, clean LG; pedestal aside. spec.", "source": "https://www.rtings.com/tv/reviews/lg/c4-oled" },
-        "peace": { "value": 7, "why": "Mature webOS + α9; isolated panel-lottery banding reports, most clean. review-consensus.", "source": "https://www.rtings.com/tv/reviews/lg/c4-oled" },
-        "sound": { "value": 5, "why": "2.2ch 40W — 'good for its size'. review-consensus.", "source": "https://www.rtings.com/tv/reviews/lg/c4-oled" },
-        "nag": { "value": -1, "why": "webOS 24 ads + Live Plus ACR, opt-out.", "source": "https://www.rtings.com/tv/reviews/lg/c4-oled" }
+        "blacks": {
+          "value": 7,
+          "why": "WOLED neutral/deep blacks; ~1000 nits filters diffuse glare well and keeps contrast 'with room lights up' (reviewers), though glossy still mirrors a direct lamp. review-consensus, high confidence.",
+          "source": "https://www.rtings.com/tv/reviews/lg/c4-oled"
+        },
+        "appletv": {
+          "value": 8,
+          "why": "Dolby Vision yes; α9 Gen7 — strong streaming upscaling/processing. review-consensus.",
+          "source": "https://www.rtings.com/tv/reviews/lg/c4-oled"
+        },
+        "stand": {
+          "value": 3,
+          "why": "Center pedestal (slim aluminium, minimal footprint) — the chunky-central look she DISLIKES. spec-derived, high confidence.",
+          "source": "https://www.rtings.com/tv/reviews/lg/c4-oled"
+        },
+        "bright": {
+          "value": 7,
+          "why": "~1000-1065 nits @10%. lab/review-consensus.",
+          "source": "https://www.rtings.com/tv/reviews/lg/c4-oled"
+        },
+        "design": {
+          "value": 6,
+          "why": "Slim, clean LG; pedestal aside. spec.",
+          "source": "https://www.rtings.com/tv/reviews/lg/c4-oled"
+        },
+        "sound": {
+          "value": 5,
+          "why": "2.2ch 40W — 'good for its size'. review-consensus.",
+          "source": "https://www.rtings.com/tv/reviews/lg/c4-oled"
+        },
+        "nag": {
+          "value": -1,
+          "why": "webOS 24 ads + Live Plus ACR, opt-out.",
+          "source": "https://www.rtings.com/tv/reviews/lg/c4-oled"
+        },
+        "ecosystem": {
+          "value": 8.5,
+          "why": "webOS 24 + AirPlay 2 + HomeKit + DV; full app set",
+          "source": "https://www.lg.com/us/tvs/lg-oled55c4pua-oled-4k-tv (2026-06-27)"
+        },
+        "brand": {
+          "value": 8,
+          "why": "LG Display WOLED evo + Brightness Booster; α9 Gen7; proven reliability + best burn-in mitigation",
+          "source": "https://www.rtings.com/tv/reviews/lg/c4-oled (2026-06-27)"
+        }
       }
     },
     {
       "id": "s85f",
       "name": "Samsung QE55S85F (2025)",
       "price": 849,
-      "links": [{ "label": "Tweakers Pricewatch", "url": "https://tweakers.net/pricewatch/2157810" }],
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 42, "maintenancePerYear": 0, "expectedLifeYears": 10, "resaleValue": 0, "deliveryCost": 0, "installCost": 0, "extrasCost": 0 },
+      "links": [
+        {
+          "label": "Tweakers Pricewatch",
+          "url": "https://tweakers.net/pricewatch/2157810"
+        }
+      ],
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 42,
+        "maintenancePerYear": 0,
+        "expectedLifeYears": 10,
+        "resaleValue": 0,
+        "deliveryCost": 0,
+        "installCost": 0,
+        "extrasCost": 0
+      },
       "note": "€849 (MediaMarkt). EU 55-inch is WOLED (verify suffix). Repositionable feet (can sit wide — her liked look). BUT no Dolby Vision (Apple TV drops to HDR10) — the recurring Samsung mark against 95%-Apple-TV use.",
       "scores": {
-        "blacks": { "value": 6, "why": "EU 55-inch is WOLED (neutral blacks, no QD-OLED purple raise), but glossy + modest ~650-750 nits; Tom's Guide notes the AR layer makes blacks 'a little less intense' in a bright room. review-consensus, medium confidence (EU WOLED peak unverified).", "source": "https://www.rtings.com/tv/reviews/samsung/s85d-oled" },
-        "appletv": { "value": 3, "why": "No Dolby Vision (HDR10+ only) → her Apple TV DV content falls back to plain HDR10. The standing Samsung mark for her use. spec, high confidence.", "source": "https://www.rtings.com/tv/reviews/samsung/s85d-oled" },
-        "stand": { "value": 7, "why": "Two detachable feet, repositionable — slide near-center OR ~9.5in from the corners (can give her the wider stance). spec-derived.", "source": "https://www.rtings.com/tv/reviews/samsung/s85d-oled" },
-        "bright": { "value": 5, "why": "EU WOLED ~650-750 nits @10% (inferred; US S85F is the brighter QD-OLED panel). spec-inferred, low-medium confidence.", "source": "https://www.rtings.com/tv/reviews/samsung/s85d-oled" },
-        "design": { "value": 5, "why": "Clean but mid-tier Samsung build. spec.", "source": "https://www.rtings.com/tv/reviews/samsung/s85d-oled" },
-        "peace": { "value": 6, "why": "Reliable hardware; limited long-term data on the 2025 model. spec.", "source": "https://www.rtings.com/tv/reviews/samsung/s85d-oled" },
-        "sound": { "value": 4, "why": "2.0ch ~20W, light bass. review-consensus.", "source": "https://www.rtings.com/tv/reviews/samsung/s85d-oled" },
-        "nag": { "value": -2, "why": "Tizen — ad-heavy home screen + ACR ('Viewing Information Services') on by default. review-consensus.", "source": "https://www.rtings.com/tv/reviews/samsung/s85d-oled" }
+        "blacks": {
+          "value": 6,
+          "why": "EU 55-inch is WOLED (neutral blacks, no QD-OLED purple raise), but glossy + modest ~650-750 nits; Tom's Guide notes the AR layer makes blacks 'a little less intense' in a bright room. review-consensus, medium confidence (EU WOLED peak unverified).",
+          "source": "https://www.rtings.com/tv/reviews/samsung/s85d-oled"
+        },
+        "appletv": {
+          "value": 3,
+          "why": "No Dolby Vision (HDR10+ only) → her Apple TV DV content falls back to plain HDR10. The standing Samsung mark for her use. spec, high confidence.",
+          "source": "https://www.rtings.com/tv/reviews/samsung/s85d-oled"
+        },
+        "stand": {
+          "value": 7,
+          "why": "Two detachable feet, repositionable — slide near-center OR ~9.5in from the corners (can give her the wider stance). spec-derived.",
+          "source": "https://www.rtings.com/tv/reviews/samsung/s85d-oled"
+        },
+        "bright": {
+          "value": 5,
+          "why": "EU WOLED ~650-750 nits @10% (inferred; US S85F is the brighter QD-OLED panel). spec-inferred, low-medium confidence.",
+          "source": "https://www.rtings.com/tv/reviews/samsung/s85d-oled"
+        },
+        "design": {
+          "value": 5,
+          "why": "Clean but mid-tier Samsung build. spec.",
+          "source": "https://www.rtings.com/tv/reviews/samsung/s85d-oled"
+        },
+        "sound": {
+          "value": 4,
+          "why": "2.0ch ~20W, light bass. review-consensus.",
+          "source": "https://www.rtings.com/tv/reviews/samsung/s85d-oled"
+        },
+        "nag": {
+          "value": -2,
+          "why": "Tizen — ad-heavy home screen + ACR ('Viewing Information Services') on by default. review-consensus.",
+          "source": "https://www.rtings.com/tv/reviews/samsung/s85d-oled"
+        },
+        "ecosystem": {
+          "value": 6,
+          "why": "Tizen 2025 (entry); AirPlay 2 but no DV + no HomeKit",
+          "source": "https://www.techradar.com/televisions/samsung-s85f-review (2026-06-27)"
+        },
+        "brand": {
+          "value": 6.3,
+          "why": "Entry LG WOLED under Samsung badge (EU 55-inch never QD-OLED) + NQ4 Gen2; great support but not the QD-OLED you would expect, no DV (verified)",
+          "source": "https://www.oled-info.com/samsung-s85f (2026-06-27)"
+        }
       }
     },
     {
       "id": "p760",
       "name": "Philips 55OLED760 (2025)",
       "price": 849,
-      "links": [{ "label": "Tweakers Pricewatch", "url": "https://tweakers.net/pricewatch/2220960" }],
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 42, "maintenancePerYear": 0, "expectedLifeYears": 10, "resaleValue": 0, "deliveryCost": 0, "installCost": 0, "extrasCost": 0 },
+      "links": [
+        {
+          "label": "Tweakers Pricewatch",
+          "url": "https://tweakers.net/pricewatch/2220960"
+        }
+      ],
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 42,
+        "maintenancePerYear": 0,
+        "expectedLifeYears": 10,
+        "resaleValue": 0,
+        "deliveryCost": 0,
+        "installCost": 0,
+        "extrasCost": 0
+      },
       "note": "€849 (bol Plaza). 3-sided Ambilight + Dolby Vision, Titan OS (lightest ads). Stand = wide rod-like 'boots' near the edges (her liked splayed look — one of the few non-LG with that geometry). No RTINGS lab test — weakest evidence base.",
       "scores": {
-        "blacks": { "value": 6, "why": "WOLED neutral blacks + Ambilight perceived-black aid, but entry ~760 nits and glossy; no lab data to confirm reflection handling. review-consensus + spec-inferred, low-medium confidence.", "source": "https://tweakers.net/pricewatch/2220960" },
-        "appletv": { "value": 7, "why": "Dolby Vision + HDR10+; she uses the external Apple TV box so Titan OS's lack of a native app is moot. spec.", "source": "https://tweakers.net/pricewatch/2220960" },
-        "stand": { "value": 7, "why": "Wide rod-like 'boots' set near the panel edges — the splayed-edge look she LIKES. spec-derived, medium confidence.", "source": "https://tweakers.net/pricewatch/2220960" },
-        "bright": { "value": 5, "why": "~760 nits @10% / ~904 @2% — mid/entry. spec.", "source": "https://tweakers.net/pricewatch/2220960" },
-        "design": { "value": 6, "why": "3-sided Ambilight glow; entry build otherwise. spec.", "source": "https://tweakers.net/pricewatch/2220960" },
-        "peace": { "value": 5, "why": "Newer/low-volume, limited owner-defect data; Titan OS young. spec, low confidence.", "source": "https://tweakers.net/pricewatch/2220960" },
-        "sound": { "value": 5, "why": "2.0ch ~20W, thin bass. spec.", "source": "https://tweakers.net/pricewatch/2220960" },
-        "nag": { "value": -0.5, "why": "Titan OS — generally lighter ads than Google TV/Tizen; ACR specifics unverified.", "source": "https://tweakers.net/pricewatch/2220960" }
+        "blacks": {
+          "value": 6,
+          "why": "WOLED neutral blacks + Ambilight perceived-black aid, but entry ~760 nits and glossy; no lab data to confirm reflection handling. review-consensus + spec-inferred, low-medium confidence.",
+          "source": "https://tweakers.net/pricewatch/2220960"
+        },
+        "appletv": {
+          "value": 7,
+          "why": "Dolby Vision + HDR10+; she uses the external Apple TV box so Titan OS's lack of a native app is moot. spec.",
+          "source": "https://tweakers.net/pricewatch/2220960"
+        },
+        "stand": {
+          "value": 7,
+          "why": "Wide rod-like 'boots' set near the panel edges — the splayed-edge look she LIKES. spec-derived, medium confidence.",
+          "source": "https://tweakers.net/pricewatch/2220960"
+        },
+        "bright": {
+          "value": 5,
+          "why": "~760 nits @10% / ~904 @2% — mid/entry. spec.",
+          "source": "https://tweakers.net/pricewatch/2220960"
+        },
+        "design": {
+          "value": 6,
+          "why": "3-sided Ambilight glow; entry build otherwise. spec.",
+          "source": "https://tweakers.net/pricewatch/2220960"
+        },
+        "sound": {
+          "value": 5,
+          "why": "2.0ch ~20W, thin bass. spec.",
+          "source": "https://tweakers.net/pricewatch/2220960"
+        },
+        "nag": {
+          "value": -0.5,
+          "why": "Titan OS — generally lighter ads than Google TV/Tizen; ACR specifics unverified.",
+          "source": "https://tweakers.net/pricewatch/2220960"
+        },
+        "ecosystem": {
+          "value": 8,
+          "why": "Titan OS but with AirPlay 2 + HomeKit + DV (2025); leaner built-in store",
+          "source": "https://www.trustedreviews.com/reviews/philips-55oled760 (2026-06-27)"
+        },
+        "brand": {
+          "value": 5,
+          "why": "Same entry LG panel + P5 Gen7 as 759; Titan OS maturer but update longevity unproven",
+          "source": "https://www.trustedreviews.com/reviews/philips-55oled760 (2026-06-27)"
+        }
       }
     },
     {
       "id": "s90f",
       "name": "Samsung QE55S90F (2025)",
       "price": 868,
-      "links": [{ "label": "Tweakers Pricewatch", "url": "https://tweakers.net/pricewatch/2157820" }],
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 48, "maintenancePerYear": 0, "expectedLifeYears": 10, "resaleValue": 0, "deliveryCost": 0, "installCost": 0, "extrasCost": 0 },
+      "links": [
+        {
+          "label": "Tweakers Pricewatch",
+          "url": "https://tweakers.net/pricewatch/2157820"
+        }
+      ],
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 48,
+        "maintenancePerYear": 0,
+        "expectedLifeYears": 10,
+        "resaleValue": 0,
+        "deliveryCost": 0,
+        "installCost": 0,
+        "extrasCost": 0
+      },
       "note": "€868 (Plasmavisie — specialist; re-verified 2026-06-26, down from €898). EU 55-inch is WOLED (Tweakers labels it so; only 65-inch is QD-OLED — verify suffix). Center plate stand (she dislikes). No Dolby Vision. Strong panel let down for her by DV-miss + stand.",
       "scores": {
-        "blacks": { "value": 6, "why": "EU 55-inch WOLED → neutral grey (not purple) raise under ambient; glossy, no matte. Decent but not standout. spec + review-consensus, medium confidence (EU panel/peak).", "source": "https://www.rtings.com/tv/reviews/samsung/s90f-oled" },
-        "appletv": { "value": 3, "why": "No Dolby Vision (HDR10+ only) → Apple TV DV → HDR10. spec, high confidence.", "source": "https://www.rtings.com/tv/reviews/samsung/s90f-oled" },
-        "stand": { "value": 3, "why": "Slim central plate / pedestal (centered, not splayed) — the look she DISLIKES. spec-derived.", "source": "https://www.rtings.com/tv/reviews/samsung/s90f-oled" },
-        "bright": { "value": 6, "why": "EU WOLED 55-inch not separately measured; expect ~800-1000 nits, below the QD-OLED 65-inch. spec-inferred, low-medium confidence.", "source": "https://www.rtings.com/tv/reviews/samsung/s90f-oled" },
-        "design": { "value": 6, "why": "Slim premium Samsung build. spec.", "source": "https://www.rtings.com/tv/reviews/samsung/s90f-oled" },
-        "peace": { "value": 6, "why": "Reliable hardware; EU panel-lottery confusion a buyer-experience risk. spec.", "source": "https://www.rtings.com/tv/reviews/samsung/s90f-oled" },
-        "sound": { "value": 5, "why": "Mediocre, soundbar recommended. review-consensus.", "source": "https://www.rtings.com/tv/reviews/samsung/s90f-oled" },
-        "nag": { "value": -2, "why": "Tizen — heavy home ads + ACR default-on. review-consensus.", "source": "https://www.rtings.com/tv/reviews/samsung/s90f-oled" }
+        "blacks": {
+          "value": 6,
+          "why": "EU 55-inch WOLED → neutral grey (not purple) raise under ambient; glossy, no matte. Decent but not standout. spec + review-consensus, medium confidence (EU panel/peak).",
+          "source": "https://www.rtings.com/tv/reviews/samsung/s90f-oled"
+        },
+        "appletv": {
+          "value": 3,
+          "why": "No Dolby Vision (HDR10+ only) → Apple TV DV → HDR10. spec, high confidence.",
+          "source": "https://www.rtings.com/tv/reviews/samsung/s90f-oled"
+        },
+        "stand": {
+          "value": 3,
+          "why": "Slim central plate / pedestal (centered, not splayed) — the look she DISLIKES. spec-derived.",
+          "source": "https://www.rtings.com/tv/reviews/samsung/s90f-oled"
+        },
+        "bright": {
+          "value": 6,
+          "why": "EU WOLED 55-inch not separately measured; expect ~800-1000 nits, below the QD-OLED 65-inch. spec-inferred, low-medium confidence.",
+          "source": "https://www.rtings.com/tv/reviews/samsung/s90f-oled"
+        },
+        "design": {
+          "value": 6,
+          "why": "Slim premium Samsung build. spec.",
+          "source": "https://www.rtings.com/tv/reviews/samsung/s90f-oled"
+        },
+        "sound": {
+          "value": 5,
+          "why": "Mediocre, soundbar recommended. review-consensus.",
+          "source": "https://www.rtings.com/tv/reviews/samsung/s90f-oled"
+        },
+        "nag": {
+          "value": -2,
+          "why": "Tizen — heavy home ads + ACR default-on. review-consensus.",
+          "source": "https://www.rtings.com/tv/reviews/samsung/s90f-oled"
+        },
+        "ecosystem": {
+          "value": 6.5,
+          "why": "Tizen 2025 + AirPlay 2, but NO Dolby Vision (box drops to HDR10) and no HomeKit",
+          "source": "https://www.rtings.com/tv/reviews/samsung/s90f-oled (2026-06-27)"
+        },
+        "brand": {
+          "value": 7,
+          "why": "Newest NQ4 Gen3 + up-to-5-yr NL warranty + 7-yr updates, BUT EU 55-inch ships LG WOLED not QD-OLED + no Dolby Vision (verified 2026-06-27)",
+          "source": "https://www.flatpanelshd.com/samsung_s85f_oled_2025.php (2026-06-27)"
+        }
       }
     },
     {
       "id": "p808",
       "name": "Philips 55OLED808 (2023)",
       "price": 899,
-      "links": [{ "label": "Tweakers Pricewatch", "url": "https://tweakers.net/pricewatch/1939708" }],
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 48, "maintenancePerYear": 0, "expectedLifeYears": 10, "resaleValue": 0, "deliveryCost": 0, "installCost": 0, "extrasCost": 0 },
+      "links": [
+        {
+          "label": "Tweakers Pricewatch",
+          "url": "https://tweakers.net/pricewatch/1939708"
+        }
+      ],
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 48,
+        "maintenancePerYear": 0,
+        "expectedLifeYears": 10,
+        "resaleValue": 0,
+        "deliveryCost": 0,
+        "installCost": 0,
+        "extrasCost": 0
+      },
       "note": "€899 (bol Plaza). 2023 but strong: bright OLED EX + 4-sided Ambilight + Dolby Vision + best-in-Philips 70W sound. Catch: center satin-chrome swivel pedestal (she dislikes the central look, though it swivels).",
       "scores": {
-        "blacks": { "value": 8, "why": "WOLED neutral blacks + ~900-1000 nits + 4-sided Ambilight (perceived-black + eye-comfort in a lit room); reviewers said reflections 'handled well' for a glossy OLED. review-consensus, medium-high confidence.", "source": "https://www.flatpanelshd.com/review.php?subaction=showfull&id=1758196479" },
-        "appletv": { "value": 8, "why": "Dolby Vision + HDR10+ + AirPlay 2; Philips P5 processing strong for streaming. review-consensus.", "source": "https://www.flatpanelshd.com/review.php?subaction=showfull&id=1758196479" },
-        "stand": { "value": 4, "why": "Central satin-chrome 'EVO' pedestal (swivels ±15) — still the central look she dislikes, but the most refined pedestal here and it swivels. spec-derived.", "source": "https://tweakers.net/pricewatch/1939708" },
-        "bright": { "value": 7, "why": "~800-950 nits @10% (OLED EX). lab/review-consensus.", "source": "https://www.flatpanelshd.com/review.php?subaction=showfull&id=1758196479" },
-        "design": { "value": 7, "why": "4-sided Ambilight glow reads high-end in a glassy room; refined finish. spec.", "source": "https://tweakers.net/pricewatch/1939708" },
-        "peace": { "value": 6, "why": "2023 model (proven) but some firmware/UI niggles + Ambilight flicker on early units (fixable); Google TV's first Philips year. review-consensus.", "source": "https://tweakers.net/pricewatch/1939708" },
-        "sound": { "value": 7, "why": "2.1ch 70W with rear bass port — best built-in sound in the field. review-consensus.", "source": "https://tweakers.net/pricewatch/1939708" },
-        "nag": { "value": -1, "why": "Google TV sponsored rows; AirPlay 2. Lighter than Tizen.", "source": "https://tweakers.net/pricewatch/1939708" }
+        "blacks": {
+          "value": 8,
+          "why": "WOLED neutral blacks + ~900-1000 nits + 4-sided Ambilight (perceived-black + eye-comfort in a lit room); reviewers said reflections 'handled well' for a glossy OLED. review-consensus, medium-high confidence.",
+          "source": "https://www.flatpanelshd.com/review.php?subaction=showfull&id=1758196479"
+        },
+        "appletv": {
+          "value": 8,
+          "why": "Dolby Vision + HDR10+ + AirPlay 2; Philips P5 processing strong for streaming. review-consensus.",
+          "source": "https://www.flatpanelshd.com/review.php?subaction=showfull&id=1758196479"
+        },
+        "stand": {
+          "value": 4,
+          "why": "Central satin-chrome 'EVO' pedestal (swivels ±15) — still the central look she dislikes, but the most refined pedestal here and it swivels. spec-derived.",
+          "source": "https://tweakers.net/pricewatch/1939708"
+        },
+        "bright": {
+          "value": 7,
+          "why": "~800-950 nits @10% (OLED EX). lab/review-consensus.",
+          "source": "https://www.flatpanelshd.com/review.php?subaction=showfull&id=1758196479"
+        },
+        "design": {
+          "value": 7,
+          "why": "4-sided Ambilight glow reads high-end in a glassy room; refined finish. spec.",
+          "source": "https://tweakers.net/pricewatch/1939708"
+        },
+        "sound": {
+          "value": 7,
+          "why": "2.1ch 70W with rear bass port — best built-in sound in the field. review-consensus.",
+          "source": "https://tweakers.net/pricewatch/1939708"
+        },
+        "nag": {
+          "value": -1,
+          "why": "Google TV sponsored rows; AirPlay 2. Lighter than Tizen.",
+          "source": "https://tweakers.net/pricewatch/1939708"
+        },
+        "ecosystem": {
+          "value": 6,
+          "why": "Google TV + DV via box, but NO AirPlay 2 / HomeKit (2023 model)",
+          "source": "https://www.whathifi.com/reviews/philips-oled808-55oled808 (2026-06-27)"
+        },
+        "brand": {
+          "value": 5.5,
+          "why": "LG WOLED (EX) + P5 Gen7; Google TV with a real Android 12->14 upgrade delivered; oldest",
+          "source": "https://www.whathifi.com/reviews/philips-oled808-55oled808 (2026-06-27)"
+        }
       }
     },
     {
       "id": "c5",
       "name": "LG OLED55C5 (2025)",
       "price": 999,
-      "links": [{ "label": "Tweakers Pricewatch", "url": "https://tweakers.net/pricewatch/2198128" }],
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 55, "maintenancePerYear": 0, "expectedLifeYears": 10, "resaleValue": 0, "deliveryCost": 0, "installCost": 0, "extrasCost": 0 },
+      "links": [
+        {
+          "label": "Tweakers Pricewatch",
+          "url": "https://tweakers.net/pricewatch/2198128"
+        }
+      ],
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 55,
+        "maintenancePerYear": 0,
+        "expectedLifeYears": 10,
+        "resaleValue": 0,
+        "deliveryCost": 0,
+        "installCost": 0,
+        "extrasCost": 0
+      },
       "note": "€999 (Coolblue / Amazon.nl — major, free delivery, 30-day returns). Brightest WOLED here + Dolby Vision. The default 'best all-rounder' — BUT it's the exact TV in her Dislike photo: center pedestal. Picture champion, stand she rejects (wall-mount to fix).",
       "scores": {
-        "blacks": { "value": 8, "why": "WOLED neutral blacks + brightest panel (~1180 nits) overpowers ambient best of the LGs; reviewers still call glossy reflections its relative weak point (brightness compensates, coating doesn't). review-consensus, high confidence.", "source": "https://www.flatpanelshd.com/review.php?subaction=showfull&id=1760942616" },
-        "appletv": { "value": 8, "why": "Dolby Vision yes; latest α-processor — excellent streaming upscaling. review-consensus.", "source": "https://www.rtings.com/tv/reviews/lg/c5-oled" },
-        "stand": { "value": 3, "why": "Center pedestal (narrow metal blade) — this is the TV in her DISLIKE photo. spec-derived, high confidence.", "source": "https://www.rtings.com/tv/reviews/lg/c5-oled" },
-        "bright": { "value": 9, "why": "~1180 nits @10% — brightest WOLED in the field (55-inch keeps the Brightness Booster). lab-tested.", "source": "https://www.flatpanelshd.com/review.php?subaction=showfull&id=1760942616" },
-        "design": { "value": 7, "why": "Slim, premium LG; pedestal aside. spec.", "source": "https://www.rtings.com/tv/reviews/lg/c5-oled" },
-        "peace": { "value": 7, "why": "Mature webOS + latest processor + reliable LG WOLED. review-consensus.", "source": "https://www.rtings.com/tv/reviews/lg/c5-oled" },
-        "sound": { "value": 5, "why": "2.2ch 40W, widely panned — plan a soundbar. review-consensus.", "source": "https://www.rtings.com/tv/reviews/lg/c5-oled" },
-        "nag": { "value": -1, "why": "webOS 25 ads + Live Plus ACR, opt-out.", "source": "https://www.rtings.com/tv/reviews/lg/c5-oled" }
+        "blacks": {
+          "value": 8,
+          "why": "WOLED neutral blacks + brightest panel (~1180 nits) overpowers ambient best of the LGs; reviewers still call glossy reflections its relative weak point (brightness compensates, coating doesn't). review-consensus, high confidence.",
+          "source": "https://www.flatpanelshd.com/review.php?subaction=showfull&id=1760942616"
+        },
+        "appletv": {
+          "value": 8,
+          "why": "Dolby Vision yes; latest α-processor — excellent streaming upscaling. review-consensus.",
+          "source": "https://www.rtings.com/tv/reviews/lg/c5-oled"
+        },
+        "stand": {
+          "value": 3,
+          "why": "Center pedestal (narrow metal blade) — this is the TV in her DISLIKE photo. spec-derived, high confidence.",
+          "source": "https://www.rtings.com/tv/reviews/lg/c5-oled"
+        },
+        "bright": {
+          "value": 9,
+          "why": "~1180 nits @10% — brightest WOLED in the field (55-inch keeps the Brightness Booster). lab-tested.",
+          "source": "https://www.flatpanelshd.com/review.php?subaction=showfull&id=1760942616"
+        },
+        "design": {
+          "value": 7,
+          "why": "Slim, premium LG; pedestal aside. spec.",
+          "source": "https://www.rtings.com/tv/reviews/lg/c5-oled"
+        },
+        "sound": {
+          "value": 5,
+          "why": "2.2ch 40W, widely panned — plan a soundbar. review-consensus.",
+          "source": "https://www.rtings.com/tv/reviews/lg/c5-oled"
+        },
+        "nag": {
+          "value": -1,
+          "why": "webOS 25 ads + Live Plus ACR, opt-out.",
+          "source": "https://www.rtings.com/tv/reviews/lg/c5-oled"
+        },
+        "ecosystem": {
+          "value": 9,
+          "why": "webOS 25 + AirPlay 2 + HomeKit + Dolby Vision via the box; full app set incl. Apple TV app",
+          "source": "https://www.rtings.com/tv/reviews/lg/c5-oled (2026-06-27)"
+        },
+        "brand": {
+          "value": 8.5,
+          "why": "LG Display WOLED evo (brightest LG here) + α9 Gen8; best-in-class burn-in mitigation + longest LG (webOS) update runway",
+          "source": "https://www.rtings.com/tv/reviews/lg/c5-oled (2026-06-27)"
+        }
       }
     },
     {
       "id": "p809",
       "name": "Philips 55OLED809 (2024)",
       "price": 1017,
-      "links": [{ "label": "Tweakers Pricewatch", "url": "https://tweakers.net/pricewatch/2089396" }],
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 54, "maintenancePerYear": 0, "expectedLifeYears": 10, "resaleValue": 0, "deliveryCost": 0, "installCost": 0, "extrasCost": 0 },
+      "links": [
+        {
+          "label": "Tweakers Pricewatch",
+          "url": "https://tweakers.net/pricewatch/2089396"
+        }
+      ],
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 54,
+        "maintenancePerYear": 0,
+        "expectedLifeYears": 10,
+        "resaleValue": 0,
+        "deliveryCost": 0,
+        "installCost": 0,
+        "extrasCost": 0
+      },
       "note": "€1017 (HelloTV). Brightest Philips (~1088 nits) + 4-sided Ambilight + Dolby Vision. Catch: center swivel pedestal (she dislikes); rated weakest Philips on raw reflection control.",
       "scores": {
-        "blacks": { "value": 8, "why": "WOLED neutral + ~1088 nits + Ambilight perceived-black aid; but flagged the weakest Philips on raw reflection ('conceals light sources less effectively than the Panasonic Z85A'). review-consensus, medium-high confidence.", "source": "https://www.flatpanelshd.com/review.php?subaction=showfull&id=1725354313" },
-        "appletv": { "value": 8, "why": "Dolby Vision + HDR10+ + AirPlay 2; P5 processing. review-consensus.", "source": "https://www.flatpanelshd.com/review.php?subaction=showfull&id=1725354313" },
-        "stand": { "value": 4, "why": "Central metal swivel pedestal (flat base) — the central look she dislikes, with swivel. spec-derived.", "source": "https://tweakers.net/pricewatch/2089396" },
-        "bright": { "value": 8, "why": "~1088 nits @10% / ~927 Filmmaker — brightest Philips. lab-tested.", "source": "https://www.flatpanelshd.com/review.php?subaction=showfull&id=1725354313" },
-        "design": { "value": 7, "why": "4-sided Ambilight; clean. spec.", "source": "https://tweakers.net/pricewatch/2089396" },
-        "peace": { "value": 6, "why": "Ambilight flicker/LED lag on some units (firmware-fixable); Google TV can feel sluggish. review-consensus.", "source": "https://tweakers.net/pricewatch/2089396" },
-        "sound": { "value": 7, "why": "2.1ch 70W — clear dialogue, weak music bass. review-consensus.", "source": "https://tweakers.net/pricewatch/2089396" },
-        "nag": { "value": -1, "why": "Google TV sponsored rows; AirPlay 2.", "source": "https://tweakers.net/pricewatch/2089396" }
+        "blacks": {
+          "value": 8,
+          "why": "WOLED neutral + ~1088 nits + Ambilight perceived-black aid; but flagged the weakest Philips on raw reflection ('conceals light sources less effectively than the Panasonic Z85A'). review-consensus, medium-high confidence.",
+          "source": "https://www.flatpanelshd.com/review.php?subaction=showfull&id=1725354313"
+        },
+        "appletv": {
+          "value": 8,
+          "why": "Dolby Vision + HDR10+ + AirPlay 2; P5 processing. review-consensus.",
+          "source": "https://www.flatpanelshd.com/review.php?subaction=showfull&id=1725354313"
+        },
+        "stand": {
+          "value": 4,
+          "why": "Central metal swivel pedestal (flat base) — the central look she dislikes, with swivel. spec-derived.",
+          "source": "https://tweakers.net/pricewatch/2089396"
+        },
+        "bright": {
+          "value": 8,
+          "why": "~1088 nits @10% / ~927 Filmmaker — brightest Philips. lab-tested.",
+          "source": "https://www.flatpanelshd.com/review.php?subaction=showfull&id=1725354313"
+        },
+        "design": {
+          "value": 7,
+          "why": "4-sided Ambilight; clean. spec.",
+          "source": "https://tweakers.net/pricewatch/2089396"
+        },
+        "sound": {
+          "value": 7,
+          "why": "2.1ch 70W — clear dialogue, weak music bass. review-consensus.",
+          "source": "https://tweakers.net/pricewatch/2089396"
+        },
+        "nag": {
+          "value": -1,
+          "why": "Google TV sponsored rows; AirPlay 2.",
+          "source": "https://tweakers.net/pricewatch/2089396"
+        },
+        "ecosystem": {
+          "value": 8.5,
+          "why": "Google TV; first Philips OLED gen with AirPlay 2 + HomeKit; DV",
+          "source": "https://www.flatpanelshd.com/review.php?id=philips_oled809 (2026-06-27)"
+        },
+        "brand": {
+          "value": 6,
+          "why": "Brighter LG WOLED + P5 Gen8 + Google TV (Android 14 eligible); still a panel-buyer",
+          "source": "https://www.techradar.com/televisions/philips-oled809-review (2026-06-27)"
+        }
       }
     },
     {
       "id": "s90d",
       "name": "Samsung QE55S90D (2024)",
       "price": 1099,
-      "links": [{ "label": "Tweakers Pricewatch", "url": "https://tweakers.net/pricewatch/2030156" }],
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 50, "maintenancePerYear": 0, "expectedLifeYears": 10, "resaleValue": 0, "deliveryCost": 0, "installCost": 0, "extrasCost": 0 },
+      "links": [
+        {
+          "label": "Tweakers Pricewatch",
+          "url": "https://tweakers.net/pricewatch/2030156"
+        }
+      ],
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 50,
+        "maintenancePerYear": 0,
+        "expectedLifeYears": 10,
+        "resaleValue": 0,
+        "deliveryCost": 0,
+        "installCost": 0,
+        "extrasCost": 0
+      },
       "note": "€1099 (Amazon.nl Marketplace). PANEL AMBIGUOUS: Tweakers labels QD-OLED, but EU 55-inch is reportedly WOLED — if you somehow get QD-OLED you risk the gray/purple raised-black she hates. No Dolby Vision either way. Center pedestal. Hard to recommend for her.",
       "scores": {
-        "blacks": { "value": 5, "why": "Panel ambiguity is the problem: EU 55-inch reportedly WOLED (neutral) but listed QD-OLED (no polarizer → gray/purple raise under lamps = her dealbreaker). Risk-discounted because she can't be sure what she'd receive. spec, medium confidence — VERIFY suffix.", "source": "https://www.rtings.com/tv/reviews/samsung/s90d-s90dd-oled-qd-oled" },
-        "appletv": { "value": 3, "why": "No Dolby Vision (HDR10+ only). spec, high confidence.", "source": "https://www.rtings.com/tv/reviews/samsung/s90d-s90dd-oled-qd-oled" },
-        "stand": { "value": 3, "why": "Central unibody pedestal that protrudes forward (awkward for a soundbar) — the central look she dislikes. spec-derived.", "source": "https://www.rtings.com/tv/reviews/samsung/s90d-s90dd-oled-qd-oled" },
-        "bright": { "value": 6, "why": "QD-OLED version ~1000 nits @10%; EU WOLED 55-inch lower, not separately measured. spec-inferred, low-medium confidence.", "source": "https://www.rtings.com/tv/reviews/samsung/s90d-s90dd-oled-qd-oled" },
-        "design": { "value": 6, "why": "Slim premium build. spec.", "source": "https://tweakers.net/pricewatch/2030156" },
-        "peace": { "value": 6, "why": "Reliable hardware; prior-gen clearance stock; panel-lottery confusion. spec.", "source": "https://tweakers.net/pricewatch/2030156" },
-        "sound": { "value": 5, "why": "Mediocre. review-consensus.", "source": "https://www.rtings.com/tv/reviews/samsung/s90d-s90dd-oled-qd-oled" },
-        "nag": { "value": -2, "why": "Tizen — heavy ads + ACR default-on. review-consensus.", "source": "https://www.rtings.com/tv/reviews/samsung/s90d-s90dd-oled-qd-oled" }
+        "blacks": {
+          "value": 5,
+          "why": "Panel ambiguity is the problem: EU 55-inch reportedly WOLED (neutral) but listed QD-OLED (no polarizer → gray/purple raise under lamps = her dealbreaker). Risk-discounted because she can't be sure what she'd receive. spec, medium confidence — VERIFY suffix.",
+          "source": "https://www.rtings.com/tv/reviews/samsung/s90d-s90dd-oled-qd-oled"
+        },
+        "appletv": {
+          "value": 3,
+          "why": "No Dolby Vision (HDR10+ only). spec, high confidence.",
+          "source": "https://www.rtings.com/tv/reviews/samsung/s90d-s90dd-oled-qd-oled"
+        },
+        "stand": {
+          "value": 3,
+          "why": "Central unibody pedestal that protrudes forward (awkward for a soundbar) — the central look she dislikes. spec-derived.",
+          "source": "https://www.rtings.com/tv/reviews/samsung/s90d-s90dd-oled-qd-oled"
+        },
+        "bright": {
+          "value": 6,
+          "why": "QD-OLED version ~1000 nits @10%; EU WOLED 55-inch lower, not separately measured. spec-inferred, low-medium confidence.",
+          "source": "https://www.rtings.com/tv/reviews/samsung/s90d-s90dd-oled-qd-oled"
+        },
+        "design": {
+          "value": 6,
+          "why": "Slim premium build. spec.",
+          "source": "https://tweakers.net/pricewatch/2030156"
+        },
+        "sound": {
+          "value": 5,
+          "why": "Mediocre. review-consensus.",
+          "source": "https://www.rtings.com/tv/reviews/samsung/s90d-s90dd-oled-qd-oled"
+        },
+        "nag": {
+          "value": -2,
+          "why": "Tizen — heavy ads + ACR default-on. review-consensus.",
+          "source": "https://www.rtings.com/tv/reviews/samsung/s90d-s90dd-oled-qd-oled"
+        },
+        "ecosystem": {
+          "value": 6,
+          "why": "Tizen 2024 + AirPlay 2, but no DV + no HomeKit",
+          "source": "https://www.tomsguide.com/tvs/samsung-s90d-oled-tv-review (2026-06-27)"
+        },
+        "brand": {
+          "value": 6.5,
+          "why": "Up-to-5-yr NL warranty + 7-yr updates, but EU 55-inch is panel-lottery skewed to LG WOLED (QD-OLED only if suffix T) (verified)",
+          "source": "https://www.displayspecifications.com/en/news/9099bfc (2026-06-27)"
+        }
       }
     },
     {
       "id": "p810",
       "name": "Philips 55OLED810 (2025)",
       "price": 1166,
-      "links": [{ "label": "Tweakers Pricewatch", "url": "https://tweakers.net/pricewatch/2196914" }],
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 53, "maintenancePerYear": 0, "expectedLifeYears": 10, "resaleValue": 0, "deliveryCost": 0, "installCost": 0, "extrasCost": 0 },
+      "links": [
+        {
+          "label": "Tweakers Pricewatch",
+          "url": "https://tweakers.net/pricewatch/2196914"
+        }
+      ],
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 53,
+        "maintenancePerYear": 0,
+        "expectedLifeYears": 10,
+        "resaleValue": 0,
+        "deliveryCost": 0,
+        "installCost": 0,
+        "extrasCost": 0
+      },
       "note": "€1166 (tvspecialisten.nl). The strongest practical lit-room pick: ~1052 nits WOLED + 4-sided Ambilight (the only real perceived-black aid in the field) + Dolby Vision + Google TV. Catch: center oval swivel pedestal (she dislikes).",
       "scores": {
-        "blacks": { "value": 8, "why": "WOLED neutral blacks + ~1052 nits (measured) + 4-sided Ambilight that genuinely deepens PERCEIVED blacks and eases eye-strain in a lit evening room — the best practical lit-room aid here (doesn't fix a direct mirror reflection). lab-tested + review-consensus, high confidence.", "source": "https://www.flatpanelshd.com/review.php?subaction=showfull&id=1758196479" },
-        "appletv": { "value": 8, "why": "Dolby Vision + HDR10+ Adaptive + AirPlay 2 — best-tier Apple TV fit; P5 processing. review-consensus.", "source": "https://www.flatpanelshd.com/review.php?subaction=showfull&id=1758196479" },
-        "stand": { "value": 4, "why": "Central oval metal swivel pedestal (sits slightly off-wall so Ambilight can spill) — the central look she dislikes. spec-derived.", "source": "https://tweakers.net/pricewatch/2196914" },
-        "bright": { "value": 8, "why": "~1052 nits @10% (measured), ~1300 small-window. lab-tested.", "source": "https://www.flatpanelshd.com/review.php?subaction=showfull&id=1758196479" },
-        "design": { "value": 7, "why": "4-sided Ambilight glow — reads high-end in her glassy room. spec.", "source": "https://tweakers.net/pricewatch/2196914" },
-        "peace": { "value": 6, "why": "Only 2 of 4 HDMI are 2.1 (moot for Apple TV); occasional Ambilight flicker (firmware-fixable); Google TV slightly slow. review-consensus.", "source": "https://tweakers.net/pricewatch/2196914" },
-        "sound": { "value": 7, "why": "2.1ch 70W with rear bass port — best-in-Philips. review-consensus.", "source": "https://tweakers.net/pricewatch/2196914" },
-        "nag": { "value": -1, "why": "Google TV sponsored rows; AirPlay 2. Lighter than Tizen.", "source": "https://tweakers.net/pricewatch/2196914" }
+        "blacks": {
+          "value": 8,
+          "why": "WOLED neutral blacks + ~1052 nits (measured) + 4-sided Ambilight that genuinely deepens PERCEIVED blacks and eases eye-strain in a lit evening room — the best practical lit-room aid here (doesn't fix a direct mirror reflection). lab-tested + review-consensus, high confidence.",
+          "source": "https://www.flatpanelshd.com/review.php?subaction=showfull&id=1758196479"
+        },
+        "appletv": {
+          "value": 8,
+          "why": "Dolby Vision + HDR10+ Adaptive + AirPlay 2 — best-tier Apple TV fit; P5 processing. review-consensus.",
+          "source": "https://www.flatpanelshd.com/review.php?subaction=showfull&id=1758196479"
+        },
+        "stand": {
+          "value": 4,
+          "why": "Central oval metal swivel pedestal (sits slightly off-wall so Ambilight can spill) — the central look she dislikes. spec-derived.",
+          "source": "https://tweakers.net/pricewatch/2196914"
+        },
+        "bright": {
+          "value": 8,
+          "why": "~1052 nits @10% (measured), ~1300 small-window. lab-tested.",
+          "source": "https://www.flatpanelshd.com/review.php?subaction=showfull&id=1758196479"
+        },
+        "design": {
+          "value": 7,
+          "why": "4-sided Ambilight glow — reads high-end in her glassy room. spec.",
+          "source": "https://tweakers.net/pricewatch/2196914"
+        },
+        "sound": {
+          "value": 7,
+          "why": "2.1ch 70W with rear bass port — best-in-Philips. review-consensus.",
+          "source": "https://tweakers.net/pricewatch/2196914"
+        },
+        "nag": {
+          "value": -1,
+          "why": "Google TV sponsored rows; AirPlay 2. Lighter than Tizen.",
+          "source": "https://tweakers.net/pricewatch/2196914"
+        },
+        "ecosystem": {
+          "value": 9,
+          "why": "Google TV (Android 14) + AirPlay 2 + HomeKit + DV; full store",
+          "source": "https://www.flatpanelshd.com/review.php?id=philips_oled810 (2026-06-27)"
+        },
+        "brand": {
+          "value": 6.5,
+          "why": "Brightest Philips LG WOLED + P5 Gen9 (best Philips proc) + native Android 14; still a panel-buyer, P5 below Sony",
+          "source": "https://www.stereoreviewer.com/tech/tv/philips-oled810-review-the-mid-range-oled-that-gets-it-right/ (2026-06-27)"
+        }
       }
     },
     {
       "id": "sony8",
       "name": "Sony Bravia 8 / K-55XR80 (2024)",
       "price": 1199,
-      "links": [{ "label": "Tweakers Pricewatch", "url": "https://tweakers.net/pricewatch/2068836" }],
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 45, "maintenancePerYear": 0, "expectedLifeYears": 10, "resaleValue": 0, "deliveryCost": 0, "installCost": 0, "extrasCost": 0 },
+      "links": [
+        {
+          "label": "Tweakers Pricewatch",
+          "url": "https://tweakers.net/pricewatch/2068836"
+        }
+      ],
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 45,
+        "maintenancePerYear": 0,
+        "expectedLifeYears": 10,
+        "resaleValue": 0,
+        "deliveryCost": 0,
+        "installCost": 0,
+        "extrasCost": 0
+      },
       "note": "€1199 (MediaMarkt — major, free delivery, 30-day returns; price + Dolby Vision + 4-way adjustable stand re-confirmed direct 2026-06-26). The reconciler: WOLED with neutral, barely-raised blacks under lamplight, repositionable feet that set WIDE (her liked look), AND Dolby Vision + Sony's best-in-class processing. Trade: dimmer (~820 nits) and a lamp directly opposite still reflects — manage lamp placement.",
       "scores": {
-        "blacks": { "value": 8, "why": "WOLED neutral blacks (shared with the other WOLEDs here — not a solo crown); RTINGS specifically measured them 'barely raised with ambient light… deep and punchy with the lights on' — a strong answer to her 'no gray patches'. Caveat: 'glare from a lamp/window directly opposite is distracting' (the mirror half — glossy). lab-tested, high confidence.", "source": "https://www.rtings.com/tv/reviews/sony/bravia-8-oled" },
-        "appletv": { "value": 9, "why": "Dolby Vision yes + Sony's best-in-class video processing/upscaling for streaming; AirPlay 2. Best Apple-TV picture fit in the field. review-consensus, high confidence.", "source": "https://www.rtings.com/tv/reviews/sony/bravia-8-oled" },
-        "stand": { "value": 8, "why": "Two feet with 4 positions (narrow/wide x low/high) — the WIDE stance gives her the splayed-edge look she likes (and high mode clears a soundbar). spec-derived, high confidence.", "source": "https://www.rtings.com/tv/reviews/sony/bravia-8-oled" },
-        "bright": { "value": 6, "why": "~815-826 nits @10% — modest, well below the C5/Philips. lab-tested.", "source": "https://www.rtings.com/tv/reviews/sony/bravia-8-oled" },
-        "design": { "value": 7, "why": "Clean minimalist Sony; feet tuck away in narrow mode. spec.", "source": "https://www.rtings.com/tv/reviews/sony/bravia-8-oled" },
-        "peace": { "value": 6, "why": "Excellent panel reliability, but post-firmware app stutter / occasional audio dropouts reported — more software niggles than the A80L. review-consensus.", "source": "https://www.rtings.com/tv/reviews/sony/bravia-8-oled" },
-        "sound": { "value": 6, "why": "Acoustic Surface Audio+ 50W 2.1 (screen-as-speaker, can act as a center channel) — decent dialogue, weak bass. review-consensus.", "source": "https://www.rtings.com/tv/reviews/sony/bravia-8-oled" },
-        "nag": { "value": -1.5, "why": "Google TV — suggested-content rows, ads can't be fully disabled.", "source": "https://www.rtings.com/tv/reviews/sony/bravia-8-oled" }
+        "blacks": {
+          "value": 8,
+          "why": "WOLED neutral blacks (shared with the other WOLEDs here — not a solo crown); RTINGS specifically measured them 'barely raised with ambient light… deep and punchy with the lights on' — a strong answer to her 'no gray patches'. Caveat: 'glare from a lamp/window directly opposite is distracting' (the mirror half — glossy). lab-tested, high confidence.",
+          "source": "https://www.rtings.com/tv/reviews/sony/bravia-8-oled"
+        },
+        "appletv": {
+          "value": 9,
+          "why": "Dolby Vision yes + Sony's best-in-class video processing/upscaling for streaming; AirPlay 2. Best Apple-TV picture fit in the field. review-consensus, high confidence.",
+          "source": "https://www.rtings.com/tv/reviews/sony/bravia-8-oled"
+        },
+        "stand": {
+          "value": 8,
+          "why": "Two feet with 4 positions (narrow/wide x low/high) — the WIDE stance gives her the splayed-edge look she likes (and high mode clears a soundbar). spec-derived, high confidence.",
+          "source": "https://www.rtings.com/tv/reviews/sony/bravia-8-oled"
+        },
+        "bright": {
+          "value": 6,
+          "why": "~815-826 nits @10% — modest, well below the C5/Philips. lab-tested.",
+          "source": "https://www.rtings.com/tv/reviews/sony/bravia-8-oled"
+        },
+        "design": {
+          "value": 7,
+          "why": "Clean minimalist Sony; feet tuck away in narrow mode. spec.",
+          "source": "https://www.rtings.com/tv/reviews/sony/bravia-8-oled"
+        },
+        "sound": {
+          "value": 6,
+          "why": "Acoustic Surface Audio+ 50W 2.1 (screen-as-speaker, can act as a center channel) — decent dialogue, weak bass. review-consensus.",
+          "source": "https://www.rtings.com/tv/reviews/sony/bravia-8-oled"
+        },
+        "nag": {
+          "value": -1.5,
+          "why": "Google TV — suggested-content rows, ads can't be fully disabled.",
+          "source": "https://www.rtings.com/tv/reviews/sony/bravia-8-oled"
+        },
+        "ecosystem": {
+          "value": 9,
+          "why": "Google TV + AirPlay 2 + HomeKit + DV; clean BRAVIA Sync CEC for the box",
+          "source": "https://www.rtings.com/tv/reviews/sony/bravia-8-oled (2026-06-27)"
+        },
+        "brand": {
+          "value": 7.5,
+          "why": "Sony XR processing premium (best here) + good reliability, but a STANDARD bought-in LG WOLED panel + weak Google TV updates (stuck Android 12)",
+          "source": "https://www.notebookcheck.net/Sony-is-bringing-Android-TV-14-update-to-these-Bravia-TVs.1084545.0.html (2026-06-27)"
+        }
       }
     },
     {
       "id": "s95d",
       "name": "Samsung QE55S95D (2024, matte)",
       "price": 1226,
-      "links": [{ "label": "Tweakers Pricewatch", "url": "https://tweakers.net/pricewatch/2030164" }],
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 54, "maintenancePerYear": 0, "expectedLifeYears": 10, "resaleValue": 0, "deliveryCost": 0, "installCost": 0, "extrasCost": 0 },
+      "links": [
+        {
+          "label": "Tweakers Pricewatch",
+          "url": "https://tweakers.net/pricewatch/2030164"
+        }
+      ],
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 54,
+        "maintenancePerYear": 0,
+        "expectedLifeYears": 10,
+        "resaleValue": 0,
+        "deliveryCost": 0,
+        "installCost": 0,
+        "extrasCost": 0
+      },
       "note": "€1226 (HelloTV). The ONLY in-budget MATTE panel — genuinely kills the mirror reflection ('Darth Vader') half. BUT it's QD-OLED (no polarizer → blacks can raise to a gray/milky haze under bright light = her other half), has NO Dolby Vision, and a center plate stand. Solves one wish, breaks three.",
       "scores": {
-        "blacks": { "value": 6, "why": "Two-edged: matte 'Glare Free' coating is the only one here that truly kills a mirrored lamp (solves the 'see myself' half) — BUT QD-OLED has no polarizer, so under bright light blacks can raise to a slight gray/milky haze (her OTHER half). Inky + reflection-free in controlled evening light; gray-risk with lamps blazing. lab/review-consensus, high confidence.", "source": "https://www.rtings.com/tv/reviews/samsung/s90d-s90dd-oled-qd-oled" },
-        "appletv": { "value": 3, "why": "No Dolby Vision (HDR10+ only) → Apple TV DV → HDR10. spec, high confidence.", "source": "https://www.rtings.com/tv/reviews/samsung/s90d-s90dd-oled-qd-oled" },
-        "stand": { "value": 3, "why": "Central plate pedestal — the central look she dislikes. spec-derived.", "source": "https://tweakers.net/pricewatch/2030164" },
-        "bright": { "value": 10, "why": "Brightest set in the WHOLE field — QD-OLED measured ~1,600-1,700 nits @10% (matte slightly lowers perceived peak), well above the LG C5. Verified across multiple labs (Tom's Guide/TechRadar/Reviewed). lab-tested, high confidence.", "source": "https://www.tomsguide.com/tvs/samsung-s95d-oled-tv-brightness-tested-heres-the-difference-the-glare-free-screen-makes" },
-        "design": { "value": 7, "why": "Very slim 'LaserSlim' matte panel — premium look. spec.", "source": "https://tweakers.net/pricewatch/2030164" },
-        "peace": { "value": 6, "why": "Reliable; 2024 clearance stock. spec.", "source": "https://tweakers.net/pricewatch/2030164" },
-        "sound": { "value": 6, "why": "40W 2.1ch — lacks pressure. review-consensus.", "source": "https://tweakers.net/pricewatch/2030164" },
-        "nag": { "value": -2, "why": "Tizen — heavy ads + ACR default-on. review-consensus.", "source": "https://tweakers.net/pricewatch/2030164" }
+        "blacks": {
+          "value": 6,
+          "why": "Two-edged: matte 'Glare Free' coating is the only one here that truly kills a mirrored lamp (solves the 'see myself' half) — BUT QD-OLED has no polarizer, so under bright light blacks can raise to a slight gray/milky haze (her OTHER half). Inky + reflection-free in controlled evening light; gray-risk with lamps blazing. lab/review-consensus, high confidence.",
+          "source": "https://www.rtings.com/tv/reviews/samsung/s90d-s90dd-oled-qd-oled"
+        },
+        "appletv": {
+          "value": 3,
+          "why": "No Dolby Vision (HDR10+ only) → Apple TV DV → HDR10. spec, high confidence.",
+          "source": "https://www.rtings.com/tv/reviews/samsung/s90d-s90dd-oled-qd-oled"
+        },
+        "stand": {
+          "value": 3,
+          "why": "Central plate pedestal — the central look she dislikes. spec-derived.",
+          "source": "https://tweakers.net/pricewatch/2030164"
+        },
+        "bright": {
+          "value": 10,
+          "why": "Brightest set in the WHOLE field — QD-OLED measured ~1,600-1,700 nits @10% (matte slightly lowers perceived peak), well above the LG C5. Verified across multiple labs (Tom's Guide/TechRadar/Reviewed). lab-tested, high confidence.",
+          "source": "https://www.tomsguide.com/tvs/samsung-s95d-oled-tv-brightness-tested-heres-the-difference-the-glare-free-screen-makes"
+        },
+        "design": {
+          "value": 7,
+          "why": "Very slim 'LaserSlim' matte panel — premium look. spec.",
+          "source": "https://tweakers.net/pricewatch/2030164"
+        },
+        "sound": {
+          "value": 6,
+          "why": "40W 2.1ch — lacks pressure. review-consensus.",
+          "source": "https://tweakers.net/pricewatch/2030164"
+        },
+        "nag": {
+          "value": -2,
+          "why": "Tizen — heavy ads + ACR default-on. review-consensus.",
+          "source": "https://tweakers.net/pricewatch/2030164"
+        },
+        "ecosystem": {
+          "value": 6.5,
+          "why": "Tizen + One Connect (cleanest box host), but no DV + no HomeKit",
+          "source": "https://www.rtings.com/tv/reviews/samsung/s95d-oled (2026-06-27)"
+        },
+        "brand": {
+          "value": 8.5,
+          "why": "Only 55-inch guaranteed QD-OLED (Samsung Display) + best Samsung NQ4 proc + up-to-5-yr NL warranty + 7-yr Tizen updates",
+          "source": "https://www.rtings.com/tv/reviews/samsung/s95d-oled (2026-06-27)"
+        }
       }
     },
     {
       "id": "a80l",
       "name": "Sony XR-55A80L (2023)",
       "price": 1349,
-      "links": [{ "label": "Tweakers Pricewatch", "url": "https://tweakers.net/pricewatch/1927158" }],
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 44, "maintenancePerYear": 0, "expectedLifeYears": 10, "resaleValue": 0, "deliveryCost": 0, "installCost": 0, "extrasCost": 0 },
+      "links": [
+        {
+          "label": "Tweakers Pricewatch",
+          "url": "https://tweakers.net/pricewatch/1927158"
+        }
+      ],
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 44,
+        "maintenancePerYear": 0,
+        "expectedLifeYears": 10,
+        "resaleValue": 0,
+        "deliveryCost": 0,
+        "installCost": 0,
+        "extrasCost": 0
+      },
       "note": "€1349 (Sony NL) — slightly OVER the €1250 budget. Lovely WOLED with repositionable wide feet + Dolby Vision + Sony processing, but the newer Bravia 8 is brighter, cheaper (€1199) and in-budget — so this is essentially dominated by it. Included for completeness.",
       "scores": {
-        "blacks": { "value": 7, "why": "WOLED deep neutral blacks; owners say 'black level doesn't raise visibly with ambient light' (older RTINGS reflection score likely flatters direct-lamp performance). review-consensus, medium-high confidence.", "source": "https://www.rtings.com/tv/reviews/sony/a80l-a80cl-oled" },
-        "appletv": { "value": 8, "why": "Dolby Vision (to 4K60) + Sony processing; AirPlay 2. review-consensus.", "source": "https://www.rtings.com/tv/reviews/sony/a80l-a80cl-oled" },
-        "stand": { "value": 8, "why": "Two feet, 3 positions (narrow/wide/high) — wide stance gives her liked splayed look. spec-derived.", "source": "https://www.rtings.com/tv/reviews/sony/a80l-a80cl-oled" },
-        "bright": { "value": 5, "why": "~741 nits @10% (up to ~800 peak) — the dimmer end. lab-tested.", "source": "https://www.rtings.com/tv/reviews/sony/a80l-a80cl-oled" },
-        "design": { "value": 7, "why": "Clean Sony; slight panel purple tint noted. spec.", "source": "https://www.rtings.com/tv/reviews/sony/a80l-a80cl-oled" },
-        "peace": { "value": 7, "why": "Fewer systemic software complaints than the Bravia 8; proven 2023 model. review-consensus.", "source": "https://www.rtings.com/tv/reviews/sony/a80l-a80cl-oled" },
-        "sound": { "value": 6, "why": "Acoustic Surface Audio+ 2.1 — decent dialogue, weak treble at max. review-consensus.", "source": "https://www.rtings.com/tv/reviews/sony/a80l-a80cl-oled" },
-        "nag": { "value": -1.5, "why": "Google TV — ads throughout, can't fully opt out.", "source": "https://www.rtings.com/tv/reviews/sony/a80l-a80cl-oled" }
+        "blacks": {
+          "value": 7,
+          "why": "WOLED deep neutral blacks; owners say 'black level doesn't raise visibly with ambient light' (older RTINGS reflection score likely flatters direct-lamp performance). review-consensus, medium-high confidence.",
+          "source": "https://www.rtings.com/tv/reviews/sony/a80l-a80cl-oled"
+        },
+        "appletv": {
+          "value": 8,
+          "why": "Dolby Vision (to 4K60) + Sony processing; AirPlay 2. review-consensus.",
+          "source": "https://www.rtings.com/tv/reviews/sony/a80l-a80cl-oled"
+        },
+        "stand": {
+          "value": 8,
+          "why": "Two feet, 3 positions (narrow/wide/high) — wide stance gives her liked splayed look. spec-derived.",
+          "source": "https://www.rtings.com/tv/reviews/sony/a80l-a80cl-oled"
+        },
+        "bright": {
+          "value": 5,
+          "why": "~741 nits @10% (up to ~800 peak) — the dimmer end. lab-tested.",
+          "source": "https://www.rtings.com/tv/reviews/sony/a80l-a80cl-oled"
+        },
+        "design": {
+          "value": 7,
+          "why": "Clean Sony; slight panel purple tint noted. spec.",
+          "source": "https://www.rtings.com/tv/reviews/sony/a80l-a80cl-oled"
+        },
+        "sound": {
+          "value": 6,
+          "why": "Acoustic Surface Audio+ 2.1 — decent dialogue, weak treble at max. review-consensus.",
+          "source": "https://www.rtings.com/tv/reviews/sony/a80l-a80cl-oled"
+        },
+        "nag": {
+          "value": -1.5,
+          "why": "Google TV — ads throughout, can't fully opt out.",
+          "source": "https://www.rtings.com/tv/reviews/sony/a80l-a80cl-oled"
+        },
+        "ecosystem": {
+          "value": 9,
+          "why": "Google TV; near-identical Apple fit to Bravia 8 (AirPlay 2 + HomeKit + DV)",
+          "source": "https://www.rtings.com/tv/reviews/sony/a80l-a80cl-oled (2026-06-27)"
+        },
+        "brand": {
+          "value": 7,
+          "why": "Same Sony XR processing crown + good build, but older standard LG WOLED + shortest update runway (Android 12)",
+          "source": "https://www.rtings.com/tv/reviews/sony/a80l-a80cl-oled (2026-06-27)"
+        }
       }
     }
-  ]
+  ],
+  "comparisons": {
+    "c5|p808": {
+      "text": "Both have neutral WOLED blacks, but the LG C5 (€999) over the Philips 808 (€899) buys a brighter evo panel, AirPlay 2 + HomeKit (the 808 has neither), and years more software support; the 808 counters only with 4-sided Ambilight. For an iPhone/iPad home on the Apple TV box, the C5’s ecosystem + support edge is worth €100 — pick the 808 only if Ambilight matters more than Apple casting."
+    },
+    "c5|sony8": {
+      "text": "These are the top two by value, and the gap between them is the stand. The Sony Bravia 8 (€1,199) has the wide repositionable feet she likes, the best measured blacks-with-the-lights-on, and edges the C5 on overall value — but it costs €200 more, is dimmer (~820 nits, fine for evening), and has the weakest update runway (stuck on Android 12). The LG C5 (€999) is brighter, runs the newest webOS with the longest support, and ties it on Apple-ecosystem fit — but it wears the center pedestal she disliked in her photos. Pick the Sony for the stand + measured ambient blacks; pick the C5 only if she will wall-mount (which moots the stand) and wants brighter for €200 less."
+    },
+    "c4|c5": {
+      "text": "Same family, one year apart: C4 (€839) vs C5 (€999). The C5 is a little brighter (~1180 vs ~1065 nits) and adds webOS 25 with an extra year of updates; picture is otherwise near-identical. €160 for a modest brightness bump + longer support — worth it if you keep it 6+ years; the C4 is the value play if not."
+    },
+    "c5|s95d": {
+      "text": "If reflections are the dealbreaker, the Samsung S95D is the only set here with a true matte coating that kills a mirrored lamp — the C5 is glossy. But the S95D is QD-OLED (blacks raise slightly under ambient), supports no Dolby Vision (your Apple TV box falls back to HDR10), and has no HomeKit. Net: the C5 wins for an Apple-box household; weigh the S95D only if glossy reflections in your east-window room bother you more than losing Dolby Vision.",
+      "flag": "Her #1 is “no reflections AND no gray.” The S95D trades one for the other — matte kills reflections but QD-OLED lifts blacks. Worth seeing both in person before deciding."
+    },
+    "c4|p808": {
+      "text": "Two mid-frontier options ~€60 apart: the LG C4 (€839) brings AirPlay 2 + HomeKit + longer support; the Philips 808 (€899) brings 4-sided Ambilight and a touch more measured brightness but no Apple casting. For an Apple household the C4 is the better value of the two."
+    }
+  }
 };</script>
 <script>/* Value Frontier — engine v0.9.0
  * Pure compute (Node-testable) + interactive decision cockpit. Zero dependencies.
@@ -897,9 +1729,12 @@ button{font-family:inherit;}
   function kneePoint(fp) {
     if (fp.length === 0) return null;
     if (fp.length <= 2) return fp.reduce(function (a, b) { return b.y > a.y ? b : a; }).id;
-    var a = fp[0], b = fp[fp.length - 1], dx = b.x - a.x, dy = b.y - a.y, len = Math.hypot(dx, dy) || 1, best = null, bestD = -Infinity;
-    for (var i = 1; i < fp.length - 1; i++) { var p = fp[i], d = Math.abs(dy * (p.x - a.x) - dx * (p.y - a.y)) / len; if (d > bestD) { bestD = d; best = p; } }
-    return best ? best.id : a.id;
+    var a = fp[0], b = fp[fp.length - 1], dx = b.x - a.x, dy = b.y - a.y, len = Math.hypot(dx, dy) || 1, best = null, bestD = 0;
+    // SIGNED distance: positive = the point sits ABOVE the line joining cheapest↔priciest frontier ends,
+    // i.e. a genuine diminishing-returns elbow worth stopping at. If NO interior point is above that line
+    // the frontier is convex (each step up pays off *more*), so there is no elbow → recommend the top (b).
+    for (var i = 1; i < fp.length - 1; i++) { var p = fp[i], s = (dx * (p.y - a.y) - dy * (p.x - a.x)) / len; if (s > bestD) { bestD = s; best = p; } }
+    return best ? best.id : b.id;
   }
   function compute(data, state) {
     state = state || {};
@@ -1111,6 +1946,18 @@ button{font-family:inherit;}
       + '<div class="vf-wbar-track">' + segs + '</div><div class="vf-wbar-keys">' + keys + '</div>';
   };
   App.prototype.refreshWeightBar = function () { var el = this.elControls.querySelector('.vf-wbar'); if (el) el.innerHTML = this.weightBarHTML(); };
+  // restore EVERYTHING to the decision's defaults (weights, cost mode, budget, horizon, lens, sort, selection, comparison, view)
+  App.prototype.resetAll = function () {
+    this.initWants();
+    this.state.horizon = null; this.state.budgetCap = null; this.state.costMode = 'acq';
+    this.state.lensDim = null; this.state.zoomPreset = 'all'; this.state.whyOpen = false;
+    this.state.cmp = null; this.state.sortKey = 'value'; this.state.sortDir = -1;
+    this.state.tab = 'table'; this.state.selectedId = null;
+    this.renderControls();
+    if (this.elTools) Array.prototype.forEach.call(this.elTools.querySelectorAll('.vf-segp'), function (x) { x.classList.toggle('on', x.getAttribute('data-z') === 'all'); });
+    if (this.elTabs) Array.prototype.forEach.call(this.elTabs.querySelectorAll('.vf-tab'), function (x) { x.classList.toggle('vf-tab-on', x.getAttribute('data-tab') === 'table'); });
+    this.recompute();
+  };
 
   // ---------- on-page controls (docked under the chart) ----------
   App.prototype.renderControls = function () {
@@ -1130,7 +1977,7 @@ button{font-family:inherit;}
       '<button class="vf-ctrl-toggle" type="button" aria-expanded="' + (co ? 'true' : 'false') + '"><span>⚙ Adjust priorities &amp; cost</span><span class="vf-ctrl-toggle-ic">' + (co ? '▾' : '▸') + '</span></button>'
       + '<div class="vf-ctrl-inner' + (co ? '' : ' vf-collapsed') + '">'
       + '<div class="vf-wbar">' + this.weightBarHTML() + '</div>'
-      + '<div class="vf-prios"><div class="vf-prios-h">Your priorities<span class="vf-prios-sub">drag any slider (0–10) — the chart and the pick update live; the % is its share of the decision</span></div><div class="vf-wts">' + positives.map(wantSlider).join('') + '</div></div>'
+      + '<div class="vf-prios"><div class="vf-prios-h"><span>Your priorities</span><span class="vf-prios-sub">drag any slider (0–10) — the chart and the pick update live; the % is its share of the decision</span><button class="vf-reset-all" type="button" title="Restore weights and all settings to the defaults">↺ Reset all</button></div><div class="vf-wts">' + positives.map(wantSlider).join('') + '</div></div>'
       + '<div class="vf-ctrl-primary">'
       + '<div class="vf-ctrl-field"><span class="vf-ctrl-lab">Cost axis</span><div class="vf-segwrap">' + costChips + '</div></div>'
       + budgetField
@@ -1158,7 +2005,8 @@ button{font-family:inherit;}
       });
     });
     Array.prototype.forEach.call(this.elControls.querySelectorAll('input[data-pen]'), function (inp) { inp.addEventListener('input', function () { var id = inp.getAttribute('data-pen'); self.state.weights[id] = (+inp.value) / 100; self.elControls.querySelector('[data-wv="' + id + '"]').innerHTML = '<span class="vf-num">' + inp.value + '%</span>'; self.scheduleRecompute(); }); });
-    this.elControls.querySelector('.vf-reset').addEventListener('click', function () { self.initWants(); self.state.horizon = null; self.state.budgetCap = null; self.renderControls(); self.recompute(); });
+    this.elControls.querySelector('.vf-reset').addEventListener('click', function () { self.resetAll(); });
+    var resetAllBtn = this.elControls.querySelector('.vf-reset-all'); if (resetAllBtn) resetAllBtn.addEventListener('click', function () { self.resetAll(); });
   };
 
 
@@ -1481,13 +2329,22 @@ button{font-family:inherit;}
     if (mode !== 'acq') costRows += costComp('Running (PV)', function (c) { return c.pvRunning; }) + costComp('Resale credit', function (c) { return c.pvResale; }, true);
     var wins = {}; dims.forEach(function (d) { var best = -Infinity, who = []; sel.forEach(function (r) { var p = partOf(r, d.id), nn = p ? p.norm : 0; if (nn > best + 1e-9) { best = nn; who = [r.id]; } else if (Math.abs(nn - best) < 1e-9) who.push(r.id); }); if (who.length === 1) wins[who[0]] = (wins[who[0]] || 0) + 1; });
     var tallyTxt = sel.map(function (r) { return htmlEsc(firstWord(r.name)) + ' <b>' + (wins[r.id] || 0) + '</b>'; }).join(' · ');
+    // authored pairwise assessments (data.comparisons keyed by sorted "idA|idB"); graceful if absent
+    var comparisons = this.data.comparisons || {}, pairs = [];
+    for (var pi = 0; pi < sel.length; pi++) for (var pj = pi + 1; pj < sel.length; pj++) pairs.push([sel[pi], sel[pj]]);
+    var assessHTML = pairs.map(function (pr) {
+      var c = comparisons[[pr[0].id, pr[1].id].sort().join('|')]; if (!c) return '';
+      var txt = typeof c === 'string' ? c : (c.text || ''), flag = (c && c.flag) ? '<div class="vf-cmp-flag">⚠ ' + htmlEsc(c.flag) + '</div>' : '';
+      return '<div class="vf-cmp-assess"><div class="vf-cmp-assess-h">' + htmlEsc(shortName(pr[0].name)) + ' vs ' + htmlEsc(shortName(pr[1].name)) + '</div><p>' + htmlEsc(txt) + '</p>' + flag + '</div>';
+    }).filter(Boolean).join('');
+    var assessBlock = assessHTML ? '<div class="vf-cmp-assess-wrap"><div class="vf-cmp-assess-title">Assessment</div>' + assessHTML + '</div>' : '';
     this.elTabPanel.innerHTML = '<div class="vf-subcap">Choose 2–3 products to compare side by side. <b>✓</b> marks the leader on each row — value &amp; each dimension (higher wins), cost (lower wins). Outright dimension wins: ' + tallyTxt + ' of ' + dims.length + '.</div>'
       + pickers
       + '<div class="vf-cmp-wrap"><div class="vf-cmp-table" style="--n:' + N + '">'
       + head + valRow + costRow
       + '<div class="vf-cmp-section">Value by dimension <span class="vf-cmp-section-sub">raw score · bar = share of the scale</span></div>' + dimRows + antiRows
       + '<div class="vf-cmp-section">Cost breakdown <span class="vf-cmp-section-sub">' + (mode === 'acq' ? 'up front' : 'present-valued over the life') + '</span></div>' + costRows
-      + '</div></div>';
+      + '</div></div>' + assessBlock;
     this.bindCompare();
   };
   App.prototype.bindCompare = function () {

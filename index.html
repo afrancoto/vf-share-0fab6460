@@ -148,6 +148,8 @@ button{font-family:inherit;}
 .vf-prios{margin:16px 0 4px;}
 .vf-prios-h{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);display:flex;flex-wrap:wrap;gap:3px 10px;align-items:baseline;margin-bottom:12px;}
 .vf-prios-sub{font-family:var(--serif);text-transform:none;letter-spacing:0;font-size:11.5px;font-style:italic;color:var(--faint);}
+.vf-reset-all{margin-left:auto;background:none;border:1px solid var(--line);border-radius:999px;color:var(--rec);font-family:inherit;font-size:11px;letter-spacing:.02em;padding:4px 11px;cursor:pointer;white-space:nowrap;}
+.vf-reset-all:hover{border-color:var(--rec);background:var(--rec-bg);}
 .vf-ctrl-primary{display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start;margin-top:16px;padding-top:14px;border-top:1px solid var(--line2);}
 .vf-ctrl-field{display:flex;flex-direction:column;gap:8px;}
 .vf-ctrl-lab{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);}
@@ -339,6 +341,13 @@ button{font-family:inherit;}
 .vf-cmp-section-sub{font-family:var(--serif);text-transform:none;letter-spacing:0;font-style:italic;font-size:11px;color:var(--faint);}
 .vf-cmp-cost .vf-cmp-fig{color:var(--muted);}
 .vf-cmp-anti .vf-cmp-lab{color:var(--muted);}
+.vf-cmp-assess-wrap{margin-top:18px;border-top:1px solid var(--line2);padding-top:16px;}
+.vf-cmp-assess-title{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-bottom:11px;}
+.vf-cmp-assess{border-left:3px solid var(--front);padding:2px 0 2px 14px;margin-bottom:15px;}
+.vf-cmp-assess:last-child{margin-bottom:0;}
+.vf-cmp-assess-h{font-family:var(--serif);font-weight:600;font-size:14px;margin-bottom:5px;}
+.vf-cmp-assess p{font-size:13px;color:var(--muted);line-height:1.55;margin:0;}
+.vf-cmp-flag{margin-top:7px;font-size:12px;color:var(--rec);background:var(--rec-bg);border:1px solid var(--rec-border);border-radius:6px;padding:6px 9px;line-height:1.45;}
 
 /* robustness / tornado */
 .vf-tor{margin:4px 0 0;}
@@ -470,7 +479,7 @@ button{font-family:inherit;}
     "currency": "EUR",
     "horizonYears": 14,
     "discountRate": 0.05,
-    "engineVersion": "0.3.0",
+    "engineVersion": "0.9.4",
     "createdISO": "2026-06-24",
     "note": "Scores refined from owner + expert reviews (each \"why\" states basis + confidence + source), 2026-06-24. Two review-found dimensions added — lint-filter upkeep and condensate handling. Costs now include delivery + installation + stacking kit. Prices/costs are snapshots; the \"Total/Per year\" toggle and sliders are yours to adjust. Verify before buying. Cost axis normalised apples-to-apples: price = pair sticker; + free delivery, consistent install (Coolblue €60 / MediaMarkt €85 / other €90) and stacking kit (Miele €130 / AEG €70 / Bosch·Siemens €60 / budget €40); promotional cashback excluded."
   },
@@ -658,8 +667,8 @@ button{font-family:inherit;}
           "source": "https://www.mediamarkt.nl/nl/product/_beko-bm3wft3941w-energyspin-wasmachine-1877001.html"
         },
         "oversize": {
-          "value": -1,
-          "why": "Buyer's anti-need: dryer >8 kg ≈ -1, 8 kg = 0. Dryer is exactly 8 kg (washer 9 kg). 8 kg dryer = neutral; scoring -1 only if applied to the broader pair sizing... dryer is 8 kg so neutral 0 is correct, but washer 9 kg slightly oversizes for one person. Marking mild -1 for 9 kg washer being larger than a one-person need. spec-derived, high confidence.",
+          "value": 0,
+          "why": "Dryer is exactly 8 kg = the buyer’s neutral point; the 9 kg washer is not what this dimension measures (it scores dryer over-capacity). No oversize penalty. Spec-derived, high confidence.",
           "source": "https://www.mediamarkt.nl/nl/product/_beko-bm3wft3941w-energyspin-wasmachine-1877001.html"
         },
         "lint_filter_upkeep": {
@@ -837,8 +846,8 @@ button{font-family:inherit;}
       },
       "scores": {
         "longevity": {
-          "value": 8,
-          "why": "review-consensus + spec-derived (med-high confidence). Bosch dryer brand satisfaction 8.8/10 at Consumentenbond; WQG233D1NL rated 'Beste Koop' 7.5. Washer uses brushless EcoSilence Drive (10-yr motor warranty after registration), low-wear. Owners report occasional post-2yr repair costs (factory warranty only 2yr, €99 callout) which caps it short of 9. Sources: consumentenbond.nl/wasdroger/producten/bosch-wasdroger ; mediamarkt.nl product 1721616"
+          "value": 7.5,
+          "why": "Bosch Serie 6 EcoSilence brushless motor + Consumentenbond brand satisfaction ~8.8; reliability basis identical to the other Serie 6 BSH pairs, so scored level with them at 7.5 (no differentiator to rate it above its siblings). Review-consensus + spec-derived, med-high confidence. [QA 2026-06-27: aligned from 8.]"
         },
         "quiet": {
           "value": 8,
@@ -849,8 +858,8 @@ button{font-family:inherit;}
           "why": "lab/review-consensus (high confidence). Washer A energy, 1400rpm, 4D wash + SpeedPerfect + Iron Assist steam; 'best-tested' efficiency 2025. Dryer heat-pump A++ with AutoDry sensor + Sensitive Drying, Consumentenbond Beste Koop. Gentle and effective; minor mark-down for longer heat-pump cycle times some owners note. Sources: tumblereview.com/.../bosch-wqg233d1nl-56845 ; veldkampkeukens.nl best-geteste-wasmachine"
         },
         "selfclean": {
-          "value": 6,
-          "why": "spec-derived (high confidence). This is NOT a true self-cleaning condenser. MediaMarkt markets it as Serie 6 'EasyClean': the heat-exchanger is a sealed maintenance-free unit and the EasyClean fluff filter only needs emptying ~every 20 cycles rather than auto-flushing with condensate. Matches the semi/'EasyClean' ~6 anchor exactly. Sources: mediamarkt.nl 1721616 ; coolblue.nl/product/902190 (states no self-rinsing condenser)"
+          "value": 2,
+          "why": "The WQG233D1NL has a door fluff filter and is NOT a self-cleaning/auto-rinsing condenser (that is Bosch’s AutoClean tier, which this dryer is not) — it needs periodic manual condenser maintenance, exactly like the identical dryer in the i-DOS pair. Spec-derived, high confidence. [QA 2026-06-27: corrected from 6, which contradicted this same note.]"
         },
         "ease": {
           "value": 6,
@@ -945,13 +954,13 @@ button{font-family:inherit;}
           "source": "coolblue.nl"
         },
         "lint_filter_upkeep": {
-          "value": 6.5,
-          "why": "Review-consensus + spec-derived. Bosch uses a one-piece EasyClean door fluff filter with clear 'clean filter' prompting; owners on Coolblue call it 'very easy to clean'. Still a heat-pump dryer so the fine/secondary filter behind the base needs periodic cleaning, and daily door-filter pull is real faff, but access is easy and false-warning complaints are low vs fiddly multi-part designs. https://www.coolblue.nl/en/product/902190/bosch-wqg233d1nl.html",
+          "value": 7,
+          "why": "Bosch EasyClean one-piece door fluff filter with a clean-filter indicator — same dryer (WQG233D1NL) as the standard Serie 6 pair, so scored level with it at 7. Spec-derived. [QA 2026-06-27: aligned from 6.5 to match the identical dryer.]",
           "source": "coolblue.nl"
         },
         "condensate_handling": {
-          "value": 8.5,
-          "why": "Spec-derived (high confidence). A condensate drain set/hose is INCLUDED and Bosch documents converting drainage so condensate runs via hose straight to the same standpipe/drain as the washer, eliminating tank-emptying entirely - ideal for a stacked rental laundry. Falls back to an easy top tank if not plumbed. https://media3.bosch-home.com/Documents/9000713215_E.pdf",
+          "value": 9,
+          "why": "A condensate drain set/hose is INCLUDED and supports plumbed discharge — same dryer (WQG233D1NL) as the standard Serie 6 pair, scored level at 9. Spec-derived. [QA 2026-06-27: aligned from 8.5 to match the identical dryer.]",
           "source": "bosch-home.com"
         }
       },
@@ -1170,8 +1179,8 @@ button{font-family:inherit;}
           "source": "https://www.coolblue.nl/en/product/912428/siemens-wq35g2d0nl-selfcleaning.html"
         },
         "lint_filter_upkeep": {
-          "value": 8.5,
-          "why": "Strong on the dominant daily-faff theme: Siemens intelligentCleaning auto-cleans the lint filter during drying, depositing fluff into a base reservoir that needs emptying only ~once every 20 cycles instead of after every load. Major reduction in every-load filter faff vs typical door-fluff-filter dryers. Review-consensus + spec-derived; medium-high confidence (one fine filter still benefits from periodic checks).",
+          "value": 7,
+          "why": "Siemens intelligentCleaning is a self-cleaning CONDENSER feature (correctly credited under self-clean), NOT a lint-filter cleaner — the door fluff filter still needs the usual manual clearing, same as the iQ500 pair (~7). Spec-derived, med-high confidence. [QA 2026-06-27: corrected from 8.5, which mis-attributed condenser self-cleaning to the lint filter.]",
           "source": "https://www.consumentenbond.nl/wasdroger/producten/siemens/wq35g2d0nl"
         },
         "condensate_handling": {
@@ -1650,7 +1659,30 @@ button{font-family:inherit;}
       },
       "note": "30-day free returns; both units are Coolblue own-stock bought as one order with free doorstep delivery and a single install option (from EUR25) that connects to the pull-switch AND safely stacks, delivered+installed in Eindhoven NL."
     }
-  ]
+  ],
+  "comparisons": {
+    "beko|hisense": {
+      "text": "The two cheapest pairs, just €49 apart (Beko €1,262 vs Hisense €1,213). Beko edges it on what matters here: no app (Hisense carries ConnectLife WiFi, a small ding for a manual-control buyer), an 8 kg dryer instead of Hisense’s oversized 9 kg, and a single lint filter vs Hisense’s fiddlier double filter. Both are budget-tier with the shortest expected lives in the set (~9-10 yr), so neither fits a keep-for-life plan — but if cost rules, Beko is the better floor: +6 value for +€49."
+    },
+    "beko|bosch-s6-zanl": {
+      "text": "The step the recommendation turns on: +12 value for +€192 (Bosch €1,454 vs Beko €1,262). The gap is mostly longevity — the heaviest priority — where Bosch’s Serie 6 EcoSilence brushless motor lifts expected life to ~14 yr against Beko’s ~10, exactly what a keep-for-life buyer is paying for; Bosch is also quieter (71 dB spin + AntiVibration vs Beko’s 75 dB), which counts in a stacked apartment tower. €192 for the more durable, quieter no-WiFi pair is the cheapest real upgrade on the board — the knee."
+    },
+    "bosch-s6-zanl|miele-wsg363": {
+      "text": "The pivotal trade. Miele buys +11 value for +€854 (€2,308 vs €1,454): the longest life in the set (~18 yr vs 14), the quietest washer, a self-cleaning condenser, and lower running cost (€43/yr energy vs €67). On total cash outlay Bosch wins clearly — €854 is a lot up front — but across an 18-yr keep-for-life horizon the per-year (EAC) gap narrows sharply, and that is the lens on which the decision tilts to Miele. Pick Bosch if total outlay leads; pick Miele only if you commit to the full horizon."
+    },
+    "miele-stretch|miele-wsg363": {
+      "text": "Diminishing returns at the top: the stretch adds only +2 value for +€630 (€2,938 vs €2,308), and it's the worse buy to run — its 9 kg dryer is energy class C (€67/yr) versus the WSG363's A+++ 8 kg dryer (€43/yr) — so it costs more to own and more to run. Its extras (SteamCare, 25-yr motor warranty, Wash2Dry) are real but marginal for one person. The WSG363 is the smarter Miele: nearly all the value for €630 less, with no 9 kg oversize ding."
+    },
+    "bosch-s6-zanl|siemens-smartfinish": {
+      "text": "Siemens scores a shade higher on value (77.9 vs 72.9) — Bosch’s same no-WiFi advantage plus a true self-cleaning condenser and a matched one-order tower — but it asks +€868 for those 5 points (€2,322 vs €1,454). That is why it sits off the frontier: it’s nearly Miele money without Miele’s longevity (BSH ~14 yr vs Miele ~18), so the WSG363 out-values it and Bosch under-costs it. Worth it only if the one-order Coolblue stack-and-install is worth a large premium over the near-identical-value Bosch."
+    },
+    "bosch-s6-zanl|miele-stretch": {
+      "text": "The full ‘max it out’ question. The stretch Miele is the value ceiling (+13, 86 vs 73) but costs +€1,484 (€2,938 vs €1,454) — far more per extra point than the knee step. You get the best-tested wash-and-dry (owners 10/10), the longest life and a 25-yr motor warranty, but also a 9 kg dryer that’s oversized for one person, an unwanted WiFi layer, and class-C drying that runs at the same €67/yr as the Bosch (the cheaper WSG363 actually runs cheaper, at €43/yr). Justified only if you’re sure you’ll keep it for life and want the best of everything regardless of outlay; otherwise Bosch covers the core need for a fraction of the gap."
+    },
+    "bosch-s6-zanl|bosch-s8": {
+      "text": "The knee’s pricier neighbour on the frontier, and a cautionary one: the Serie 8 adds only ~2 value for +€593 (€2,047 vs €1,454). You get a marginally quieter, gentler wash (AntiVibration, sensor programmes) and Home Connect, but the same ~14-yr BSH longevity as the Serie 6 and a 9 kg dryer that’s oversized for one person. It sits on the frontier only because nothing else fills that price band — not because the step earns its keep. The Serie 6 is the better Bosch buy."
+    }
+  }
 };</script>
 <script>/* Value Frontier — engine v0.9.0
  * Pure compute (Node-testable) + interactive decision cockpit. Zero dependencies.
@@ -1728,9 +1760,12 @@ button{font-family:inherit;}
   function kneePoint(fp) {
     if (fp.length === 0) return null;
     if (fp.length <= 2) return fp.reduce(function (a, b) { return b.y > a.y ? b : a; }).id;
-    var a = fp[0], b = fp[fp.length - 1], dx = b.x - a.x, dy = b.y - a.y, len = Math.hypot(dx, dy) || 1, best = null, bestD = -Infinity;
-    for (var i = 1; i < fp.length - 1; i++) { var p = fp[i], d = Math.abs(dy * (p.x - a.x) - dx * (p.y - a.y)) / len; if (d > bestD) { bestD = d; best = p; } }
-    return best ? best.id : a.id;
+    var a = fp[0], b = fp[fp.length - 1], dx = b.x - a.x, dy = b.y - a.y, len = Math.hypot(dx, dy) || 1, best = null, bestD = 0;
+    // SIGNED distance: positive = the point sits ABOVE the line joining cheapest↔priciest frontier ends,
+    // i.e. a genuine diminishing-returns elbow worth stopping at. If NO interior point is above that line
+    // the frontier is convex (each step up pays off *more*), so there is no elbow → recommend the top (b).
+    for (var i = 1; i < fp.length - 1; i++) { var p = fp[i], s = (dx * (p.y - a.y) - dy * (p.x - a.x)) / len; if (s > bestD) { bestD = s; best = p; } }
+    return best ? best.id : b.id;
   }
   function compute(data, state) {
     state = state || {};
@@ -1942,6 +1977,18 @@ button{font-family:inherit;}
       + '<div class="vf-wbar-track">' + segs + '</div><div class="vf-wbar-keys">' + keys + '</div>';
   };
   App.prototype.refreshWeightBar = function () { var el = this.elControls.querySelector('.vf-wbar'); if (el) el.innerHTML = this.weightBarHTML(); };
+  // restore EVERYTHING to the decision's defaults (weights, cost mode, budget, horizon, lens, sort, selection, comparison, view)
+  App.prototype.resetAll = function () {
+    this.initWants();
+    this.state.horizon = null; this.state.budgetCap = null; this.state.costMode = 'acq';
+    this.state.lensDim = null; this.state.zoomPreset = 'all'; this.state.whyOpen = false;
+    this.state.cmp = null; this.state.sortKey = 'value'; this.state.sortDir = -1;
+    this.state.tab = 'table'; this.state.selectedId = null;
+    this.renderControls();
+    if (this.elTools) Array.prototype.forEach.call(this.elTools.querySelectorAll('.vf-segp'), function (x) { x.classList.toggle('on', x.getAttribute('data-z') === 'all'); });
+    if (this.elTabs) Array.prototype.forEach.call(this.elTabs.querySelectorAll('.vf-tab'), function (x) { x.classList.toggle('vf-tab-on', x.getAttribute('data-tab') === 'table'); });
+    this.recompute();
+  };
 
   // ---------- on-page controls (docked under the chart) ----------
   App.prototype.renderControls = function () {
@@ -1961,7 +2008,7 @@ button{font-family:inherit;}
       '<button class="vf-ctrl-toggle" type="button" aria-expanded="' + (co ? 'true' : 'false') + '"><span>⚙ Adjust priorities &amp; cost</span><span class="vf-ctrl-toggle-ic">' + (co ? '▾' : '▸') + '</span></button>'
       + '<div class="vf-ctrl-inner' + (co ? '' : ' vf-collapsed') + '">'
       + '<div class="vf-wbar">' + this.weightBarHTML() + '</div>'
-      + '<div class="vf-prios"><div class="vf-prios-h">Your priorities<span class="vf-prios-sub">drag any slider (0–10) — the chart and the pick update live; the % is its share of the decision</span></div><div class="vf-wts">' + positives.map(wantSlider).join('') + '</div></div>'
+      + '<div class="vf-prios"><div class="vf-prios-h"><span>Your priorities</span><span class="vf-prios-sub">drag any slider (0–10) — the chart and the pick update live; the % is its share of the decision</span><button class="vf-reset-all" type="button" title="Restore weights and all settings to the defaults">↺ Reset all</button></div><div class="vf-wts">' + positives.map(wantSlider).join('') + '</div></div>'
       + '<div class="vf-ctrl-primary">'
       + '<div class="vf-ctrl-field"><span class="vf-ctrl-lab">Cost axis</span><div class="vf-segwrap">' + costChips + '</div></div>'
       + budgetField
@@ -1989,7 +2036,8 @@ button{font-family:inherit;}
       });
     });
     Array.prototype.forEach.call(this.elControls.querySelectorAll('input[data-pen]'), function (inp) { inp.addEventListener('input', function () { var id = inp.getAttribute('data-pen'); self.state.weights[id] = (+inp.value) / 100; self.elControls.querySelector('[data-wv="' + id + '"]').innerHTML = '<span class="vf-num">' + inp.value + '%</span>'; self.scheduleRecompute(); }); });
-    this.elControls.querySelector('.vf-reset').addEventListener('click', function () { self.initWants(); self.state.horizon = null; self.state.budgetCap = null; self.renderControls(); self.recompute(); });
+    this.elControls.querySelector('.vf-reset').addEventListener('click', function () { self.resetAll(); });
+    var resetAllBtn = this.elControls.querySelector('.vf-reset-all'); if (resetAllBtn) resetAllBtn.addEventListener('click', function () { self.resetAll(); });
   };
 
 
@@ -2312,13 +2360,22 @@ button{font-family:inherit;}
     if (mode !== 'acq') costRows += costComp('Running (PV)', function (c) { return c.pvRunning; }) + costComp('Resale credit', function (c) { return c.pvResale; }, true);
     var wins = {}; dims.forEach(function (d) { var best = -Infinity, who = []; sel.forEach(function (r) { var p = partOf(r, d.id), nn = p ? p.norm : 0; if (nn > best + 1e-9) { best = nn; who = [r.id]; } else if (Math.abs(nn - best) < 1e-9) who.push(r.id); }); if (who.length === 1) wins[who[0]] = (wins[who[0]] || 0) + 1; });
     var tallyTxt = sel.map(function (r) { return htmlEsc(firstWord(r.name)) + ' <b>' + (wins[r.id] || 0) + '</b>'; }).join(' · ');
+    // authored pairwise assessments (data.comparisons keyed by sorted "idA|idB"); graceful if absent
+    var comparisons = this.data.comparisons || {}, pairs = [];
+    for (var pi = 0; pi < sel.length; pi++) for (var pj = pi + 1; pj < sel.length; pj++) pairs.push([sel[pi], sel[pj]]);
+    var assessHTML = pairs.map(function (pr) {
+      var c = comparisons[[pr[0].id, pr[1].id].sort().join('|')]; if (!c) return '';
+      var txt = typeof c === 'string' ? c : (c.text || ''), flag = (c && c.flag) ? '<div class="vf-cmp-flag">⚠ ' + htmlEsc(c.flag) + '</div>' : '';
+      return '<div class="vf-cmp-assess"><div class="vf-cmp-assess-h">' + htmlEsc(shortName(pr[0].name)) + ' vs ' + htmlEsc(shortName(pr[1].name)) + '</div><p>' + htmlEsc(txt) + '</p>' + flag + '</div>';
+    }).filter(Boolean).join('');
+    var assessBlock = assessHTML ? '<div class="vf-cmp-assess-wrap"><div class="vf-cmp-assess-title">Assessment</div>' + assessHTML + '</div>' : '';
     this.elTabPanel.innerHTML = '<div class="vf-subcap">Choose 2–3 products to compare side by side. <b>✓</b> marks the leader on each row — value &amp; each dimension (higher wins), cost (lower wins). Outright dimension wins: ' + tallyTxt + ' of ' + dims.length + '.</div>'
       + pickers
       + '<div class="vf-cmp-wrap"><div class="vf-cmp-table" style="--n:' + N + '">'
       + head + valRow + costRow
       + '<div class="vf-cmp-section">Value by dimension <span class="vf-cmp-section-sub">raw score · bar = share of the scale</span></div>' + dimRows + antiRows
       + '<div class="vf-cmp-section">Cost breakdown <span class="vf-cmp-section-sub">' + (mode === 'acq' ? 'up front' : 'present-valued over the life') + '</span></div>' + costRows
-      + '</div></div>';
+      + '</div></div>' + assessBlock;
     this.bindCompare();
   };
   App.prototype.bindCompare = function () {

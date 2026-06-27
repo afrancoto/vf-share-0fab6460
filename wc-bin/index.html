@@ -148,6 +148,8 @@ button{font-family:inherit;}
 .vf-prios{margin:16px 0 4px;}
 .vf-prios-h{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);display:flex;flex-wrap:wrap;gap:3px 10px;align-items:baseline;margin-bottom:12px;}
 .vf-prios-sub{font-family:var(--serif);text-transform:none;letter-spacing:0;font-size:11.5px;font-style:italic;color:var(--faint);}
+.vf-reset-all{margin-left:auto;background:none;border:1px solid var(--line);border-radius:999px;color:var(--rec);font-family:inherit;font-size:11px;letter-spacing:.02em;padding:4px 11px;cursor:pointer;white-space:nowrap;}
+.vf-reset-all:hover{border-color:var(--rec);background:var(--rec-bg);}
 .vf-ctrl-primary{display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start;margin-top:16px;padding-top:14px;border-top:1px solid var(--line2);}
 .vf-ctrl-field{display:flex;flex-direction:column;gap:8px;}
 .vf-ctrl-lab{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);}
@@ -339,6 +341,13 @@ button{font-family:inherit;}
 .vf-cmp-section-sub{font-family:var(--serif);text-transform:none;letter-spacing:0;font-style:italic;font-size:11px;color:var(--faint);}
 .vf-cmp-cost .vf-cmp-fig{color:var(--muted);}
 .vf-cmp-anti .vf-cmp-lab{color:var(--muted);}
+.vf-cmp-assess-wrap{margin-top:18px;border-top:1px solid var(--line2);padding-top:16px;}
+.vf-cmp-assess-title{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-bottom:11px;}
+.vf-cmp-assess{border-left:3px solid var(--front);padding:2px 0 2px 14px;margin-bottom:15px;}
+.vf-cmp-assess:last-child{margin-bottom:0;}
+.vf-cmp-assess-h{font-family:var(--serif);font-weight:600;font-size:14px;margin-bottom:5px;}
+.vf-cmp-assess p{font-size:13px;color:var(--muted);line-height:1.55;margin:0;}
+.vf-cmp-flag{margin-top:7px;font-size:12px;color:var(--rec);background:var(--rec-bg);border:1px solid var(--rec-border);border-radius:6px;padding:6px 9px;line-height:1.45;}
 
 /* robustness / tornado */
 .vf-tor{margin:4px 0 0;}
@@ -466,148 +475,683 @@ button{font-family:inherit;}
   "meta": {
     "title": "WC pedal bin",
     "slug": "wc-bin",
-    "region": "NL", "currency": "EUR",
-    "horizonYears": 8, "discountRate": 0.05,
-    "engineVersion": "0.7.0", "createdISO": "2026-06-25",
-    "note": "One of three WC pieces under a €150 trio cap. Cost is EAC (price ÷ expected life); bin-liners are common to all, so consumables=0. Pedal + soft-close + lid carries the hard screen (the lid stores pads). A footprint-fit dimension was added after the scout. Links re-verified 2026-06-25: Blokker (bankrupt Nov-2024, SKU now 404) and Mette Ditmer WENDY Sand (out of stock NL-wide) were removed; every option shown is live and in stock."
+    "region": "NL",
+    "currency": "EUR",
+    "horizonYears": 8,
+    "discountRate": 0.05,
+    "engineVersion": "0.9.4",
+    "createdISO": "2026-06-25",
+    "note": "One of three WC pieces under a €150 trio cap. Cost shown defaults to purchase + delivery (use the Per-year / Total toggle at the top of the chart for EAC); bin-liners are common to all, so consumables=0. Pedal + soft-close + lid carries the hard screen (the lid stores pads). A footprint-fit dimension was added after the scout. Links re-verified 2026-06-25: Blokker (bankrupt Nov-2024, SKU now 404) and Mette Ditmer WENDY Sand (out of stock NL-wide) were removed; every option shown is live and in stock."
   },
   "dimensions": [
-    { "id": "works",      "label": "Works — soft-close + lid + pedal", "type": "functional", "direction": "more-better", "weight": 0.22, "range": { "min": 0, "max": 10 }, "hardMin": 5, "rationale": "The top gate: a damped (silent) close, a working pedal, and a lid (it stores pads). Soft-close absence and lid-hinge failure are the category's two failure modes." },
-    { "id": "honesty",    "label": "Material honesty", "type": "social", "direction": "more-better", "weight": 0.14, "range": { "min": 0, "max": 10 }, "rationale": "Powder-coated steel ≫ ABS plastic (even soft-touch). The bin earns its 'warm anchor' read partly by being honest metal." },
-    { "id": "tone",       "label": "Warm-matte tone, monochrome", "type": "aesthetic", "direction": "more-better", "weight": 0.13, "range": { "min": 0, "max": 10 }, "rationale": "Warm sand/beige/taupe, matte, and crucially MONOCHROME — no dark hinge block or chrome pedal wire (the contrasting trim Andrea explicitly rejected)." },
-    { "id": "feel",       "label": "Tactile / build quality", "type": "experiential", "direction": "more-better", "weight": 0.12, "range": { "min": 0, "max": 10 }, "rationale": "Solidity, anti-slip base, the quality of the damped close in use." },
-    { "id": "durability", "label": "Durability / hinge life", "type": "risk", "direction": "more-better", "weight": 0.09, "range": { "min": 0, "max": 10 }, "rationale": "The soft-close hinge is the wear point; warranty and review volume are the signal. Brabantia's 10-yr guarantee anchors the top." },
-    { "id": "fit",        "label": "Compact footprint for the corner", "type": "functional", "direction": "more-better", "weight": 0.08, "range": { "min": 0, "max": 10 }, "rationale": "Added after the scout: in 1.33 m², a round ~Ø17 footprint suits the corner; a wide 5 L (26.5 cm) crowds it. Capacity over ~5 L was screened." },
-    { "id": "harmony",    "label": "Joins a warm-sand family", "type": "aesthetic", "direction": "more-better", "weight": 0.07, "range": { "min": 0, "max": 10 }, "rationale": "How quietly its tone sits with a sand dispenser + brush." },
-    { "id": "character",  "label": "Texture / character", "type": "aesthetic", "direction": "more-better", "weight": 0.07, "range": { "min": 0, "max": 10 }, "rationale": "Down-weighted on purpose — the bin is recessive infrastructure; character lives in the dispenser + brush, not here." },
-    { "id": "coolmetal",  "label": "Dark / chrome contrasting trim", "type": "anti-need", "direction": "unwanted", "weight": 0.04, "range": { "min": -5, "max": 5 }, "rationale": "A dark hinge block, chrome pedal wire, or steel-look trim breaks the monochrome warm anchor — the specific thing Andrea rejected on Brabantia's earlier trims and Zone Nova." },
-    { "id": "cheapfeel",  "label": "Visibly cheap plastic", "type": "anti-need", "direction": "unwanted", "weight": 0.025, "range": { "min": -5, "max": 5 }, "rationale": "A plastic body that visibly cheapens (e.g. a coating that goes tacky). Floor infrastructure, so weighted lightly." },
-    { "id": "fauxdouble", "label": "Faux-stone / applied read", "type": "anti-need", "direction": "unwanted", "weight": 0.015, "range": { "min": -5, "max": 5 }, "rationale": "Not really in play for bins; kept for symmetry across the trio." }
+    {
+      "id": "works",
+      "label": "Works — soft-close + lid + pedal",
+      "type": "functional",
+      "direction": "more-better",
+      "weight": 0.22,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
+      "hardMin": 5,
+      "rationale": "The top gate: a damped (silent) close, a working pedal, and a lid (it stores pads). Soft-close absence and lid-hinge failure are the category's two failure modes."
+    },
+    {
+      "id": "honesty",
+      "label": "Material honesty",
+      "type": "social",
+      "direction": "more-better",
+      "weight": 0.14,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
+      "rationale": "Powder-coated steel ≫ ABS plastic (even soft-touch). The bin earns its 'warm anchor' read partly by being honest metal."
+    },
+    {
+      "id": "tone",
+      "label": "Warm-matte tone, monochrome",
+      "type": "aesthetic",
+      "direction": "more-better",
+      "weight": 0.13,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
+      "rationale": "Warm sand/beige/taupe, matte, and crucially MONOCHROME — no dark hinge block or chrome pedal wire (the contrasting trim Andrea explicitly rejected)."
+    },
+    {
+      "id": "feel",
+      "label": "Tactile / build quality",
+      "type": "experiential",
+      "direction": "more-better",
+      "weight": 0.12,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
+      "rationale": "Solidity, anti-slip base, the quality of the damped close in use."
+    },
+    {
+      "id": "durability",
+      "label": "Durability / hinge life",
+      "type": "risk",
+      "direction": "more-better",
+      "weight": 0.09,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
+      "rationale": "The soft-close hinge is the wear point; warranty and review volume are the signal. Brabantia's 10-yr guarantee anchors the top."
+    },
+    {
+      "id": "fit",
+      "label": "Compact footprint for the corner",
+      "type": "functional",
+      "direction": "more-better",
+      "weight": 0.08,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
+      "rationale": "Added after the scout: in 1.33 m², a round ~Ø17 footprint suits the corner; a wide 5 L (26.5 cm) crowds it. Capacity over ~5 L was screened."
+    },
+    {
+      "id": "harmony",
+      "label": "Joins a warm-sand family",
+      "type": "aesthetic",
+      "direction": "more-better",
+      "weight": 0.07,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
+      "rationale": "How quietly its tone sits with a sand dispenser + brush."
+    },
+    {
+      "id": "character",
+      "label": "Texture / character",
+      "type": "aesthetic",
+      "direction": "more-better",
+      "weight": 0.07,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
+      "rationale": "Down-weighted on purpose — the bin is recessive infrastructure; character lives in the dispenser + brush, not here."
+    },
+    {
+      "id": "coolmetal",
+      "label": "Dark / chrome contrasting trim",
+      "type": "anti-need",
+      "direction": "unwanted",
+      "weight": 0.04,
+      "range": {
+        "min": -5,
+        "max": 5
+      },
+      "rationale": "A dark hinge block, chrome pedal wire, or steel-look trim breaks the monochrome warm anchor — the specific thing Andrea rejected on Brabantia's earlier trims and Zone Nova."
+    },
+    {
+      "id": "cheapfeel",
+      "label": "Visibly cheap plastic",
+      "type": "anti-need",
+      "direction": "unwanted",
+      "weight": 0.025,
+      "range": {
+        "min": -5,
+        "max": 5
+      },
+      "rationale": "A plastic body that visibly cheapens (e.g. a coating that goes tacky). Floor infrastructure, so weighted lightly."
+    },
+    {
+      "id": "fauxdouble",
+      "label": "Faux-stone / applied read",
+      "type": "anti-need",
+      "direction": "unwanted",
+      "weight": 0.015,
+      "range": {
+        "min": -5,
+        "max": 5
+      },
+      "rationale": "Not really in play for bins; kept for symmetry across the trio."
+    }
   ],
   "products": [
-    { "id": "ikea-ekoln-3l", "name": "IKEA EKOLN 3L beige", "price": 6.99,
-      "links": [{ "label": "IKEA", "url": "https://www.ikea.com/nl/nl/p/ekoln-afvalemmer-beige-70493013/" }],
+    {
+      "id": "ikea-ekoln-3l",
+      "name": "IKEA EKOLN 3L beige",
+      "price": 6.99,
+      "links": [
+        {
+          "label": "IKEA",
+          "url": "https://www.ikea.com/nl/nl/p/ekoln-afvalemmer-beige-70493013/"
+        }
+      ],
       "note": "Plastic cost anchor. 4.4★/36, soft-close praised ('perfect voor toilet'), but the coating turns tacky over time and the pedal is stiff. Verify H≤30 cm. 365-day return. Link verified live 2026-06-25 (€6.99).",
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 4, "expectedLifeYears": 6, "resaleValue": 0 },
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 0,
+        "maintenancePerYear": 0,
+        "deliveryCost": 4,
+        "expectedLifeYears": 6,
+        "resaleValue": 0
+      },
       "scores": {
-        "works":      { "value": 6, "why": "4.4★/36 — soft-close 'zacht en stil'; a stiff pedal is noted", "source": "https://www.ikea.com/nl/nl/p/ekoln-afvalemmer-beige-70493013/" },
-        "honesty":    { "value": 4, "why": "PP plastic body" },
-        "tone":       { "value": 7, "why": "warm beige, matte, monochrome" },
-        "feel":       { "value": 4, "why": "light plastic" },
-        "durability": { "value": 5, "why": "coating turns tacky over time; stiff pedal" },
-        "fit":        { "value": 8, "why": "3 L, compact (confirm H≤30)" },
-        "harmony":    { "value": 7 },
-        "character":  { "value": 4, "why": "plain" },
-        "coolmetal":  { "value": 0 },
-        "cheapfeel":  { "value": -1, "why": "plastic body, coating goes tacky" },
-        "fauxdouble": { "value": 0 } } },
-
-    { "id": "jysk-ullatti-5l", "name": "JYSK ULLATTI 5L beige", "price": 13.5,
-      "links": [{ "label": "JYSK", "url": "https://jysk.nl/badkamer/badkamerartikelen/pedaalemmers/pedaalemmer-ullatti-5l-softclose-beige" }],
+        "works": {
+          "value": 6,
+          "why": "4.4★/36 — soft-close 'zacht en stil'; a stiff pedal is noted",
+          "source": "https://www.ikea.com/nl/nl/p/ekoln-afvalemmer-beige-70493013/"
+        },
+        "honesty": {
+          "value": 4,
+          "why": "PP plastic body"
+        },
+        "tone": {
+          "value": 7,
+          "why": "warm beige, matte, monochrome"
+        },
+        "feel": {
+          "value": 4,
+          "why": "light plastic"
+        },
+        "durability": {
+          "value": 5,
+          "why": "coating turns tacky over time; stiff pedal"
+        },
+        "fit": {
+          "value": 8,
+          "why": "3 L, compact (confirm H≤30)"
+        },
+        "harmony": {
+          "value": 7
+        },
+        "character": {
+          "value": 4,
+          "why": "plain"
+        },
+        "coolmetal": {
+          "value": 0
+        },
+        "cheapfeel": {
+          "value": -1,
+          "why": "plastic body, coating goes tacky"
+        },
+        "fauxdouble": {
+          "value": 0
+        }
+      }
+    },
+    {
+      "id": "jysk-ullatti-5l",
+      "name": "JYSK ULLATTI 5L beige",
+      "price": 13.5,
+      "links": [
+        {
+          "label": "JYSK",
+          "url": "https://jysk.nl/badkamer/badkamerartikelen/pedaalemmers/pedaalemmer-ullatti-5l-softclose-beige"
+        }
+      ],
       "note": "PP + steel, beige (leans khaki/greige). Soft-close + lid-lock confirmed, hinge well-reviewed. Narrow rectangle (14 cm wide) but tall (29) and 5 L. Link verified live 2026-06-25 (€13.50, in stock).",
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 3.95, "expectedLifeYears": 8, "resaleValue": 0 },
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 0,
+        "maintenancePerYear": 0,
+        "deliveryCost": 3.95,
+        "expectedLifeYears": 8,
+        "resaleValue": 0
+      },
       "scores": {
-        "works":      { "value": 7, "why": "4.6★/29 — soft-close + lid-lock confirmed, hinge well-reviewed", "source": "https://jysk.nl/badkamer/badkamerartikelen/pedaalemmers/pedaalemmer-ullatti-5l-softclose-beige" },
-        "honesty":    { "value": 6, "why": "PP body + steel pedal" },
-        "tone":       { "value": 6, "why": "beige but leans khaki/greige" },
-        "feel":       { "value": 5, "why": "PP + steel, ok" },
-        "durability": { "value": 7, "why": "hinge well-reviewed; no material defects" },
-        "fit":        { "value": 6, "why": "narrow rectangle (14 cm) but tall (29) and 5 L" },
-        "harmony":    { "value": 6 },
-        "character":  { "value": 4 },
-        "coolmetal":  { "value": 0 }, "cheapfeel": { "value": -1, "why": "PP body, budget" }, "fauxdouble": { "value": 0 } } },
-
-    { "id": "kwantum-organic-5l", "name": "Kwantum Organic 5L beige", "price": 18.5,
-      "links": [{ "label": "Kwantum", "url": "https://www.kwantum.nl/pedaalemmer-organic-5-liter-beige-4316054" }],
+        "works": {
+          "value": 7,
+          "why": "4.6★/29 — soft-close + lid-lock confirmed, hinge well-reviewed",
+          "source": "https://jysk.nl/badkamer/badkamerartikelen/pedaalemmers/pedaalemmer-ullatti-5l-softclose-beige"
+        },
+        "honesty": {
+          "value": 6,
+          "why": "PP body + steel pedal"
+        },
+        "tone": {
+          "value": 6,
+          "why": "beige but leans khaki/greige"
+        },
+        "feel": {
+          "value": 5,
+          "why": "PP + steel, ok"
+        },
+        "durability": {
+          "value": 7,
+          "why": "hinge well-reviewed; no material defects"
+        },
+        "fit": {
+          "value": 6,
+          "why": "narrow rectangle (14 cm) but tall (29) and 5 L"
+        },
+        "harmony": {
+          "value": 6
+        },
+        "character": {
+          "value": 4
+        },
+        "coolmetal": {
+          "value": 0
+        },
+        "cheapfeel": {
+          "value": -1,
+          "why": "PP body, budget"
+        },
+        "fauxdouble": {
+          "value": 0
+        }
+      }
+    },
+    {
+      "id": "kwantum-organic-5l",
+      "name": "Kwantum Organic 5L beige",
+      "price": 18.5,
+      "links": [
+        {
+          "label": "Kwantum",
+          "url": "https://www.kwantum.nl/pedaalemmer-organic-5-liter-beige-4316054"
+        }
+      ],
       "note": "Best-rated plastic bin (4.9★/52, silent soft-close, removable inner). But ABS, and a wide 5 L (26.5 cm) footprint that pushes the tiny-corner ceiling. Link verified live 2026-06-25 (€18.50, 2–3 day delivery).",
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 2.95, "expectedLifeYears": 8, "resaleValue": 0 },
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 0,
+        "maintenancePerYear": 0,
+        "deliveryCost": 2.95,
+        "expectedLifeYears": 8,
+        "resaleValue": 0
+      },
       "scores": {
-        "works":      { "value": 8, "why": "4.9★/52 — silent soft-close, removable inner", "source": "https://www.kwantum.nl/pedaalemmer-organic-5-liter-beige-4316054" },
-        "honesty":    { "value": 4, "why": "ABS plastic" },
-        "tone":       { "value": 7, "why": "warm beige, matte, monochrome" },
-        "feel":       { "value": 5, "why": "decent ABS" },
-        "durability": { "value": 7, "why": "well-rated, no defects surfaced (ABS though)" },
-        "fit":        { "value": 4, "why": "5 L, 26.5 cm wide — pushes the corner footprint" },
-        "harmony":    { "value": 7 },
-        "character":  { "value": 5, "why": "organic rounded form" },
-        "coolmetal":  { "value": 0 }, "cheapfeel": { "value": 0, "why": "well-finished for ABS" }, "fauxdouble": { "value": 0 } } },
-
-    { "id": "brab-newicon-softbeige", "name": "Brabantia NewIcon 3L Soft Beige", "price": 23.85,
-      "links": [{ "label": "bol.com", "url": "https://www.bol.com/nl/nl/p/brabantia-newicon-prullenbak-3-l-soft-beige/9300000082477287/" }, { "label": "GAMMA", "url": "https://www.gamma.nl/assortiment/brabantia-newicon-prullenbak-3-l-soft-beige/p/B215372" }],
+        "works": {
+          "value": 8,
+          "why": "4.9★/52 — silent soft-close, removable inner",
+          "source": "https://www.kwantum.nl/pedaalemmer-organic-5-liter-beige-4316054"
+        },
+        "honesty": {
+          "value": 4,
+          "why": "ABS plastic"
+        },
+        "tone": {
+          "value": 7,
+          "why": "warm beige, matte, monochrome"
+        },
+        "feel": {
+          "value": 5,
+          "why": "decent ABS"
+        },
+        "durability": {
+          "value": 7,
+          "why": "well-rated, no defects surfaced (ABS though)"
+        },
+        "fit": {
+          "value": 4,
+          "why": "5 L, 26.5 cm wide — pushes the corner footprint"
+        },
+        "harmony": {
+          "value": 7
+        },
+        "character": {
+          "value": 5,
+          "why": "organic rounded form"
+        },
+        "coolmetal": {
+          "value": 0
+        },
+        "cheapfeel": {
+          "value": 0,
+          "why": "well-finished for ABS"
+        },
+        "fauxdouble": {
+          "value": 0
+        }
+      }
+    },
+    {
+      "id": "brab-newicon-softbeige",
+      "name": "Brabantia NewIcon 3L Soft Beige",
+      "price": 23.85,
+      "links": [
+        {
+          "label": "bol.com",
+          "url": "https://www.bol.com/nl/nl/p/brabantia-newicon-prullenbak-3-l-soft-beige/9300000082477287/"
+        },
+        {
+          "label": "GAMMA",
+          "url": "https://www.gamma.nl/assortiment/brabantia-newicon-prullenbak-3-l-soft-beige/p/B215372"
+        }
+      ],
       "note": "The category's strongest evidence — 4.8★/~826, 10-yr guarantee, silent damped close, anti-slip base. Round Ø16.8 × H26.4 = truest tiny-WC footprint. Monochrome, no dark/chrome trim. Re-verified 2026-06-25: bol.com €23.85, in stock (cheaper than GAMMA €24.99).",
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 0, "expectedLifeYears": 15, "resaleValue": 0 },
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 0,
+        "maintenancePerYear": 0,
+        "deliveryCost": 0,
+        "expectedLifeYears": 15,
+        "resaleValue": 0
+      },
       "scores": {
-        "works":      { "value": 9, "why": "4.8★/~826 — silent damped close, anti-slip base; the strongest evidence in the trio", "source": "https://www.bol.com/nl/nl/p/brabantia-newicon-prullenbak-3-l-soft-beige/9300000082477287/" },
-        "honesty":    { "value": 8, "why": "powder-coated steel (PP inner bucket hidden) — honest metal" },
-        "tone":       { "value": 8, "why": "warm soft-beige, matte, monochrome — no dark/chrome trim" },
-        "feel":       { "value": 7, "why": "solid steel, anti-slip base, the damped close feels quality" },
-        "durability": { "value": 9, "why": "10-yr guarantee; no systemic defect across ~826 reviews" },
-        "fit":        { "value": 9, "why": "round Ø16.8 × H26.4 — the truest tiny-WC footprint" },
-        "harmony":    { "value": 8, "why": "soft-beige is a clean family tone" },
-        "character":  { "value": 6, "why": "clean iconic cylinder, fingerprint-proof matte" },
-        "coolmetal":  { "value": 0, "why": "monochrome — integrated hinge/pedal, no contrasting trim" },
-        "cheapfeel":  { "value": 0 }, "fauxdouble": { "value": 0 } } },
-
-    { "id": "brab-newicon-taupe", "name": "Brabantia NewIcon 3L Satin Taupe", "price": 39.95,
-      "links": [{ "label": "HomeDeco", "url": "https://homedeco.nl/p/newicon-pedaalemmer-3-liter-kunststof-binnenemmer/" }],
+        "works": {
+          "value": 9,
+          "why": "4.8★/~826 — silent damped close, anti-slip base; the strongest evidence in the trio",
+          "source": "https://www.bol.com/nl/nl/p/brabantia-newicon-prullenbak-3-l-soft-beige/9300000082477287/"
+        },
+        "honesty": {
+          "value": 8,
+          "why": "powder-coated steel (PP inner bucket hidden) — honest metal"
+        },
+        "tone": {
+          "value": 8,
+          "why": "warm soft-beige, matte, monochrome — no dark/chrome trim"
+        },
+        "feel": {
+          "value": 7,
+          "why": "solid steel, anti-slip base, the damped close feels quality"
+        },
+        "durability": {
+          "value": 9,
+          "why": "10-yr guarantee; no systemic defect across ~826 reviews"
+        },
+        "fit": {
+          "value": 9,
+          "why": "round Ø16.8 × H26.4 — the truest tiny-WC footprint"
+        },
+        "harmony": {
+          "value": 8,
+          "why": "soft-beige is a clean family tone"
+        },
+        "character": {
+          "value": 6,
+          "why": "clean iconic cylinder, fingerprint-proof matte"
+        },
+        "coolmetal": {
+          "value": 0,
+          "why": "monochrome — integrated hinge/pedal, no contrasting trim"
+        },
+        "cheapfeel": {
+          "value": 0
+        },
+        "fauxdouble": {
+          "value": 0
+        }
+      }
+    },
+    {
+      "id": "brab-newicon-taupe",
+      "name": "Brabantia NewIcon 3L Satin Taupe",
+      "price": 39.95,
+      "links": [
+        {
+          "label": "HomeDeco",
+          "url": "https://homedeco.nl/p/newicon-pedaalemmer-3-liter-kunststof-binnenemmer/"
+        }
+      ],
       "note": "Same NewIcon body in warm satin taupe — greiger/darker than Soft Beige, pairs naturally with a taupe dispenser/brush. Over €35. Link verified live 2026-06-25 (€39.95, op voorraad).",
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 0, "expectedLifeYears": 15, "resaleValue": 0 },
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 0,
+        "maintenancePerYear": 0,
+        "deliveryCost": 0,
+        "expectedLifeYears": 15,
+        "resaleValue": 0
+      },
       "scores": {
-        "works":      { "value": 8, "why": "same NewIcon damped close (line 4.8★)", "source": "https://homedeco.nl/p/newicon-pedaalemmer-3-liter-kunststof-binnenemmer/" },
-        "honesty":    { "value": 8, "why": "powder-coated steel" },
-        "tone":       { "value": 8, "why": "warm taupe, matte satin — greiger/darker" },
-        "feel":       { "value": 7, "why": "as the NewIcon line" },
-        "durability": { "value": 9, "why": "10-yr guarantee" },
-        "fit":        { "value": 9, "why": "round Ø16.8 × H26.4" },
-        "harmony":    { "value": 8, "why": "taupe pairs naturally with a sand/taupe dispenser + brush" },
-        "character":  { "value": 6 },
-        "coolmetal":  { "value": 0 }, "cheapfeel": { "value": 0 }, "fauxdouble": { "value": 0 } } },
-
-    { "id": "brab-bo-4l", "name": "Brabantia Bo 4L Soft Beige", "price": 39.95,
-      "links": [{ "label": "bol.com", "url": "https://www.bol.com/nl/nl/p/brabantia-bo-pedaalemmer-4-l-soft-beige/9300000236011221/" }],
+        "works": {
+          "value": 8,
+          "why": "same NewIcon damped close (line 4.8★)",
+          "source": "https://homedeco.nl/p/newicon-pedaalemmer-3-liter-kunststof-binnenemmer/"
+        },
+        "honesty": {
+          "value": 8,
+          "why": "powder-coated steel"
+        },
+        "tone": {
+          "value": 8,
+          "why": "warm taupe, matte satin — greiger/darker"
+        },
+        "feel": {
+          "value": 7,
+          "why": "as the NewIcon line"
+        },
+        "durability": {
+          "value": 9,
+          "why": "10-yr guarantee"
+        },
+        "fit": {
+          "value": 9,
+          "why": "round Ø16.8 × H26.4"
+        },
+        "harmony": {
+          "value": 8,
+          "why": "taupe pairs naturally with a sand/taupe dispenser + brush"
+        },
+        "character": {
+          "value": 6
+        },
+        "coolmetal": {
+          "value": 0
+        },
+        "cheapfeel": {
+          "value": 0
+        },
+        "fauxdouble": {
+          "value": 0
+        }
+      }
+    },
+    {
+      "id": "brab-bo-4l",
+      "name": "Brabantia Bo 4L Soft Beige",
+      "price": 39.95,
+      "links": [
+        {
+          "label": "bol.com",
+          "url": "https://www.bol.com/nl/nl/p/brabantia-bo-pedaalemmer-4-l-soft-beige/9300000236011221/"
+        }
+      ],
       "note": "Steel, warm soft-beige, 4 L, squarer/taller footprint (19.9×20.8×26.8). 4.8★/16, 10-yr guarantee. Link verified live 2026-06-25 (€39.95, op voorraad).",
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 0, "expectedLifeYears": 15, "resaleValue": 0 },
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 0,
+        "maintenancePerYear": 0,
+        "deliveryCost": 0,
+        "expectedLifeYears": 15,
+        "resaleValue": 0
+      },
       "scores": {
-        "works":      { "value": 8, "why": "4.8★/16 — silent close", "source": "https://www.bol.com/nl/nl/p/brabantia-bo-pedaalemmer-4-l-soft-beige/9300000236011221/" },
-        "honesty":    { "value": 7, "why": "steel body, plastic lid/inner" },
-        "tone":       { "value": 8, "why": "warm soft-beige, matte, monochrome" },
-        "feel":       { "value": 7 },
-        "durability": { "value": 9, "why": "10-yr guarantee" },
-        "fit":        { "value": 7, "why": "squarer 4 L footprint, a touch larger than the round 3 L" },
-        "harmony":    { "value": 8 },
-        "character":  { "value": 5 },
-        "coolmetal":  { "value": 0 }, "cheapfeel": { "value": 0 }, "fauxdouble": { "value": 0 } } },
-
-    { "id": "blomus-sono-tan-3l", "name": "Blomus SONO Tan 3L", "price": 49.55,
-      "links": [{ "label": "Bath & Living", "url": "https://www.bath-living.com/products/sono-pedaalemmer-tan-3-liter" }],
+        "works": {
+          "value": 8,
+          "why": "4.8★/16 — silent close",
+          "source": "https://www.bol.com/nl/nl/p/brabantia-bo-pedaalemmer-4-l-soft-beige/9300000236011221/"
+        },
+        "honesty": {
+          "value": 7,
+          "why": "steel body, plastic lid/inner"
+        },
+        "tone": {
+          "value": 8,
+          "why": "warm soft-beige, matte, monochrome"
+        },
+        "feel": {
+          "value": 7
+        },
+        "durability": {
+          "value": 9,
+          "why": "10-yr guarantee"
+        },
+        "fit": {
+          "value": 7,
+          "why": "squarer 4 L footprint, a touch larger than the round 3 L"
+        },
+        "harmony": {
+          "value": 8
+        },
+        "character": {
+          "value": 5
+        },
+        "coolmetal": {
+          "value": 0
+        },
+        "cheapfeel": {
+          "value": 0
+        },
+        "fauxdouble": {
+          "value": 0
+        }
+      }
+    },
+    {
+      "id": "blomus-sono-tan-3l",
+      "name": "Blomus SONO Tan 3L",
+      "price": 49.55,
+      "links": [
+        {
+          "label": "Bath & Living",
+          "url": "https://www.bath-living.com/products/sono-pedaalemmer-tan-3-liter"
+        }
+      ],
       "note": "The most tactile bin — silk soft-touch in warm Tan, monochrome, Ø20×H25.5. But ABS-bodied and the soft-close hinge is the named wear point (Blomus sells a spare hinge that sells out). Link verified live 2026-06-25 (€49.55, was €59.95, same-day ship).",
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 0, "expectedLifeYears": 8, "resaleValue": 0 },
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 0,
+        "maintenancePerYear": 0,
+        "deliveryCost": 0,
+        "expectedLifeYears": 8,
+        "resaleValue": 0
+      },
       "scores": {
-        "works":      { "value": 7, "why": "pedal + soft-close (line 4.6–4.8★, small n)", "source": "https://www.bath-living.com/products/sono-pedaalemmer-tan-3-liter" },
-        "honesty":    { "value": 5, "why": "ABS plastic with a soft-touch coat" },
-        "tone":       { "value": 9, "why": "warm Tan, matte soft-touch — the warmest, fully monochrome" },
-        "feel":       { "value": 8, "why": "silk soft-touch, the most tactile bin" },
-        "durability": { "value": 6, "why": "soft-close hinge is the named wear point (spare hinge sells out)" },
-        "fit":        { "value": 7, "why": "round Ø20 — fits but at the upper width" },
-        "harmony":    { "value": 8 },
-        "character":  { "value": 7, "why": "sculpted soft-touch form, the most characterful bin" },
-        "coolmetal":  { "value": 0 }, "cheapfeel": { "value": 0, "why": "premium soft-touch despite ABS" }, "fauxdouble": { "value": 0 } } },
-
-    { "id": "zone-ume-sand-4l", "name": "Zone Denmark UME Warm Sand 4L", "price": 74.95,
-      "links": [{ "label": "Badwoondesign", "url": "https://badwoondesign.nl/product/zone-ume-prullenbak-warm-zand/" }],
+        "works": {
+          "value": 7,
+          "why": "pedal + soft-close (line 4.6–4.8★, small n)",
+          "source": "https://www.bath-living.com/products/sono-pedaalemmer-tan-3-liter"
+        },
+        "honesty": {
+          "value": 5,
+          "why": "ABS plastic with a soft-touch coat"
+        },
+        "tone": {
+          "value": 9,
+          "why": "warm Tan, matte soft-touch — the warmest, fully monochrome"
+        },
+        "feel": {
+          "value": 8,
+          "why": "silk soft-touch, the most tactile bin"
+        },
+        "durability": {
+          "value": 6,
+          "why": "soft-close hinge is the named wear point (spare hinge sells out)"
+        },
+        "fit": {
+          "value": 7,
+          "why": "round Ø20 — fits but at the upper width"
+        },
+        "harmony": {
+          "value": 8
+        },
+        "character": {
+          "value": 7,
+          "why": "sculpted soft-touch form, the most characterful bin"
+        },
+        "coolmetal": {
+          "value": 0
+        },
+        "cheapfeel": {
+          "value": 0,
+          "why": "premium soft-touch despite ABS"
+        },
+        "fauxdouble": {
+          "value": 0
+        }
+      }
+    },
+    {
+      "id": "zone-ume-sand-4l",
+      "name": "Zone Denmark UME Warm Sand 4L",
+      "price": 74.95,
+      "links": [
+        {
+          "label": "Badwoondesign",
+          "url": "https://badwoondesign.nl/product/zone-ume-prullenbak-warm-zand/"
+        }
+      ],
       "note": "Velvety soft-touch in the ideal warm sand, monochrome, compact round Ø19.5 × H22. The best tone in the set — but ABS-bodied and ~€75, well over the per-piece budget. Matches a Zone UME / sand dispenser+brush. Link verified live 2026-06-25 (€74.95, add-to-cart active; inner bucket 4 L).",
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 0, "expectedLifeYears": 9, "resaleValue": 0 },
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 0,
+        "maintenancePerYear": 0,
+        "deliveryCost": 0,
+        "expectedLifeYears": 9,
+        "resaleValue": 0
+      },
       "scores": {
-        "works":      { "value": 7, "why": "pedal + soft-close (UME line ~4.7★)", "source": "https://badwoondesign.nl/product/zone-ume-prullenbak-warm-zand/" },
-        "honesty":    { "value": 5, "why": "ABS plastic with a velvety coat" },
-        "tone":       { "value": 9, "why": "warm sand, matte, monochrome — the ideal tone" },
-        "feel":       { "value": 8, "why": "velvety soft-touch, premium" },
-        "durability": { "value": 6, "why": "ABS + soft-touch coat; line ~4.7★, thin long-term data" },
-        "fit":        { "value": 8, "why": "round Ø19.5 × H22 — compact and short" },
-        "harmony":    { "value": 9, "why": "warm sand harmonizes with almost anything" },
-        "character":  { "value": 6, "why": "soft sculpted form" },
-        "coolmetal":  { "value": 0 }, "cheapfeel": { "value": 0 }, "fauxdouble": { "value": 0 } } }
-  ]
+        "works": {
+          "value": 7,
+          "why": "pedal + soft-close (UME line ~4.7★)",
+          "source": "https://badwoondesign.nl/product/zone-ume-prullenbak-warm-zand/"
+        },
+        "honesty": {
+          "value": 5,
+          "why": "ABS plastic with a velvety coat"
+        },
+        "tone": {
+          "value": 9,
+          "why": "warm sand, matte, monochrome — the ideal tone"
+        },
+        "feel": {
+          "value": 8,
+          "why": "velvety soft-touch, premium"
+        },
+        "durability": {
+          "value": 6,
+          "why": "ABS + soft-touch coat; line ~4.7★, thin long-term data"
+        },
+        "fit": {
+          "value": 8,
+          "why": "round Ø19.5 × H22 — compact and short"
+        },
+        "harmony": {
+          "value": 9,
+          "why": "warm sand harmonizes with almost anything"
+        },
+        "character": {
+          "value": 6,
+          "why": "soft sculpted form"
+        },
+        "coolmetal": {
+          "value": 0
+        },
+        "cheapfeel": {
+          "value": 0
+        },
+        "fauxdouble": {
+          "value": 0
+        }
+      }
+    }
+  ],
+  "comparisons": {
+    "ikea-ekoln-3l|jysk-ullatti-5l": {
+      "text": "The cheapest step on the frontier: about €6 buys +4 value (€11 to €17, V56 to V60). The JYSK is the sturdier build — a steel pedal instead of pure PP (honesty 6 vs 4), a better-reviewed soft-close hinge (4.6★/29 vs 4.4★/36, works 7 vs 6), and an 8-yr vs 6-yr life. The IKEA answers on the two things a tiny WC cares about: a truer compact 3 L footprint (fit 8 vs the JYSK's narrow-but-5 L 6) and a cleaner warm beige (tone 7 vs the JYSK's khaki-leaning 6). Neither is the pick — both are out-valued upstream — but if you stopped here the JYSK is the more solid buy and the IKEA the smaller, warmer one.",
+      "flag": "IKEA dims aren't published (confirm H≤30) and its coating is reported to go tacky over time (durability 5) — verify before buying."
+    },
+    "jysk-ullatti-5l|kwantum-organic-5l": {
+      "text": "Two cheap frontier steps almost on top of each other: about €4 apart for +1 value (€17 to €21, V60 to V61). The Kwantum has the best soft-close evidence of any plastic bin here (4.9★/52, works 8 vs 7), but it's a wide 5 L that eats the corner (fit 4 vs the JYSK's narrower 6) and plain ABS rather than the JYSK's PP-plus-steel-pedal (honesty 4 vs 6). The two nearly cancel — you pay €4 for a quieter close and hand back footprint and material. Both are stepping stones; the real jump is the next one."
+    },
+    "brab-newicon-softbeige|kwantum-organic-5l": {
+      "text": "This is the decision. For about €3 more than the Kwantum (€21 to €24) the Brabantia jumps +21 value (V61 to V82) — and it wins on every dimension, so it isn't a trade. Honest powder-coated steel vs ABS (honesty 8 vs 4), the truest tiny-corner footprint at Ø16.8 cm vs the Kwantum's wide 26.5 cm 5 L (fit 9 vs 4), the deepest evidence in the category (4.8★ across ~826 reviews vs 52, works 9 vs 8), and a 10-yr guarantee on a 15-yr life vs 8 (durability 9 vs 7). The frontier curves up exactly here: the earlier steps bought ~1 value per euro, this one buys roughly 7. Paying €3 to move from the best plastic bin to the category's strongest steel one is the clearest call in the set — which is why the Brabantia is the pick."
+    },
+    "brab-newicon-softbeige|brab-newicon-taupe": {
+      "text": "The same Brabantia NewIcon body in two tones, €16 apart (€24 vs €40). On the data the Soft Beige strictly wins — same steel, same Ø16.8 cm footprint, same 10-yr guarantee and 15-yr life — but it costs less and carries the category's deepest proof (4.8★/~826 on the bol listing). So this isn't a value question, it's a colour one: choose the Satin Taupe only if its greiger, darker tone is the one your dispenser and brush need to pair with; otherwise the Soft Beige is the identical bin for €16 less.",
+      "flag": "The V82-vs-V79 gap is one point of works (9 vs 8), and that's review volume on each colour's listing — not a real difference in the close. Physically it's the same bin."
+    },
+    "blomus-sono-tan-3l|brab-newicon-softbeige": {
+      "text": "The pick against the prettiest bin in the set. The Blomus is the most tactile — silk soft-touch in the warmest Tan (tone 9 vs 8, feel 8 vs 7, character 7 vs 6) — but it's ABS over a soft-close hinge that is its named wear point (Blomus sells a spare that sells out; durability 6 vs 9). At about €50 it's more than double the €24 Brabantia, for −11 value (V71 vs V82). The Brabantia gives up a little warmth and wins everything structural: honest steel (honesty 8 vs 5), the tighter footprint (fit 9 vs 7), and the best longevity here (15-yr life + 10-yr guarantee). Paying double for a warmer skin over a weaker hinge is the wrong trade — the Brabantia is both cheaper and higher value, so it dominates outright.",
+      "flag": "If you weight pure tone and tactility far above build and price, the Blomus is the warmest, most characterful object — that's the only frame in which it wins."
+    }
+  }
 };</script>
 <script>/* Value Frontier — engine v0.9.0
  * Pure compute (Node-testable) + interactive decision cockpit. Zero dependencies.
@@ -685,9 +1229,12 @@ button{font-family:inherit;}
   function kneePoint(fp) {
     if (fp.length === 0) return null;
     if (fp.length <= 2) return fp.reduce(function (a, b) { return b.y > a.y ? b : a; }).id;
-    var a = fp[0], b = fp[fp.length - 1], dx = b.x - a.x, dy = b.y - a.y, len = Math.hypot(dx, dy) || 1, best = null, bestD = -Infinity;
-    for (var i = 1; i < fp.length - 1; i++) { var p = fp[i], d = Math.abs(dy * (p.x - a.x) - dx * (p.y - a.y)) / len; if (d > bestD) { bestD = d; best = p; } }
-    return best ? best.id : a.id;
+    var a = fp[0], b = fp[fp.length - 1], dx = b.x - a.x, dy = b.y - a.y, len = Math.hypot(dx, dy) || 1, best = null, bestD = 0;
+    // SIGNED distance: positive = the point sits ABOVE the line joining cheapest↔priciest frontier ends,
+    // i.e. a genuine diminishing-returns elbow worth stopping at. If NO interior point is above that line
+    // the frontier is convex (each step up pays off *more*), so there is no elbow → recommend the top (b).
+    for (var i = 1; i < fp.length - 1; i++) { var p = fp[i], s = (dx * (p.y - a.y) - dy * (p.x - a.x)) / len; if (s > bestD) { bestD = s; best = p; } }
+    return best ? best.id : b.id;
   }
   function compute(data, state) {
     state = state || {};
@@ -899,6 +1446,18 @@ button{font-family:inherit;}
       + '<div class="vf-wbar-track">' + segs + '</div><div class="vf-wbar-keys">' + keys + '</div>';
   };
   App.prototype.refreshWeightBar = function () { var el = this.elControls.querySelector('.vf-wbar'); if (el) el.innerHTML = this.weightBarHTML(); };
+  // restore EVERYTHING to the decision's defaults (weights, cost mode, budget, horizon, lens, sort, selection, comparison, view)
+  App.prototype.resetAll = function () {
+    this.initWants();
+    this.state.horizon = null; this.state.budgetCap = null; this.state.costMode = 'acq';
+    this.state.lensDim = null; this.state.zoomPreset = 'all'; this.state.whyOpen = false;
+    this.state.cmp = null; this.state.sortKey = 'value'; this.state.sortDir = -1;
+    this.state.tab = 'table'; this.state.selectedId = null;
+    this.renderControls();
+    if (this.elTools) Array.prototype.forEach.call(this.elTools.querySelectorAll('.vf-segp'), function (x) { x.classList.toggle('on', x.getAttribute('data-z') === 'all'); });
+    if (this.elTabs) Array.prototype.forEach.call(this.elTabs.querySelectorAll('.vf-tab'), function (x) { x.classList.toggle('vf-tab-on', x.getAttribute('data-tab') === 'table'); });
+    this.recompute();
+  };
 
   // ---------- on-page controls (docked under the chart) ----------
   App.prototype.renderControls = function () {
@@ -918,7 +1477,7 @@ button{font-family:inherit;}
       '<button class="vf-ctrl-toggle" type="button" aria-expanded="' + (co ? 'true' : 'false') + '"><span>⚙ Adjust priorities &amp; cost</span><span class="vf-ctrl-toggle-ic">' + (co ? '▾' : '▸') + '</span></button>'
       + '<div class="vf-ctrl-inner' + (co ? '' : ' vf-collapsed') + '">'
       + '<div class="vf-wbar">' + this.weightBarHTML() + '</div>'
-      + '<div class="vf-prios"><div class="vf-prios-h">Your priorities<span class="vf-prios-sub">drag any slider (0–10) — the chart and the pick update live; the % is its share of the decision</span></div><div class="vf-wts">' + positives.map(wantSlider).join('') + '</div></div>'
+      + '<div class="vf-prios"><div class="vf-prios-h"><span>Your priorities</span><span class="vf-prios-sub">drag any slider (0–10) — the chart and the pick update live; the % is its share of the decision</span><button class="vf-reset-all" type="button" title="Restore weights and all settings to the defaults">↺ Reset all</button></div><div class="vf-wts">' + positives.map(wantSlider).join('') + '</div></div>'
       + '<div class="vf-ctrl-primary">'
       + '<div class="vf-ctrl-field"><span class="vf-ctrl-lab">Cost axis</span><div class="vf-segwrap">' + costChips + '</div></div>'
       + budgetField
@@ -946,7 +1505,8 @@ button{font-family:inherit;}
       });
     });
     Array.prototype.forEach.call(this.elControls.querySelectorAll('input[data-pen]'), function (inp) { inp.addEventListener('input', function () { var id = inp.getAttribute('data-pen'); self.state.weights[id] = (+inp.value) / 100; self.elControls.querySelector('[data-wv="' + id + '"]').innerHTML = '<span class="vf-num">' + inp.value + '%</span>'; self.scheduleRecompute(); }); });
-    this.elControls.querySelector('.vf-reset').addEventListener('click', function () { self.initWants(); self.state.horizon = null; self.state.budgetCap = null; self.renderControls(); self.recompute(); });
+    this.elControls.querySelector('.vf-reset').addEventListener('click', function () { self.resetAll(); });
+    var resetAllBtn = this.elControls.querySelector('.vf-reset-all'); if (resetAllBtn) resetAllBtn.addEventListener('click', function () { self.resetAll(); });
   };
 
 
@@ -1269,13 +1829,22 @@ button{font-family:inherit;}
     if (mode !== 'acq') costRows += costComp('Running (PV)', function (c) { return c.pvRunning; }) + costComp('Resale credit', function (c) { return c.pvResale; }, true);
     var wins = {}; dims.forEach(function (d) { var best = -Infinity, who = []; sel.forEach(function (r) { var p = partOf(r, d.id), nn = p ? p.norm : 0; if (nn > best + 1e-9) { best = nn; who = [r.id]; } else if (Math.abs(nn - best) < 1e-9) who.push(r.id); }); if (who.length === 1) wins[who[0]] = (wins[who[0]] || 0) + 1; });
     var tallyTxt = sel.map(function (r) { return htmlEsc(firstWord(r.name)) + ' <b>' + (wins[r.id] || 0) + '</b>'; }).join(' · ');
+    // authored pairwise assessments (data.comparisons keyed by sorted "idA|idB"); graceful if absent
+    var comparisons = this.data.comparisons || {}, pairs = [];
+    for (var pi = 0; pi < sel.length; pi++) for (var pj = pi + 1; pj < sel.length; pj++) pairs.push([sel[pi], sel[pj]]);
+    var assessHTML = pairs.map(function (pr) {
+      var c = comparisons[[pr[0].id, pr[1].id].sort().join('|')]; if (!c) return '';
+      var txt = typeof c === 'string' ? c : (c.text || ''), flag = (c && c.flag) ? '<div class="vf-cmp-flag">⚠ ' + htmlEsc(c.flag) + '</div>' : '';
+      return '<div class="vf-cmp-assess"><div class="vf-cmp-assess-h">' + htmlEsc(shortName(pr[0].name)) + ' vs ' + htmlEsc(shortName(pr[1].name)) + '</div><p>' + htmlEsc(txt) + '</p>' + flag + '</div>';
+    }).filter(Boolean).join('');
+    var assessBlock = assessHTML ? '<div class="vf-cmp-assess-wrap"><div class="vf-cmp-assess-title">Assessment</div>' + assessHTML + '</div>' : '';
     this.elTabPanel.innerHTML = '<div class="vf-subcap">Choose 2–3 products to compare side by side. <b>✓</b> marks the leader on each row — value &amp; each dimension (higher wins), cost (lower wins). Outright dimension wins: ' + tallyTxt + ' of ' + dims.length + '.</div>'
       + pickers
       + '<div class="vf-cmp-wrap"><div class="vf-cmp-table" style="--n:' + N + '">'
       + head + valRow + costRow
       + '<div class="vf-cmp-section">Value by dimension <span class="vf-cmp-section-sub">raw score · bar = share of the scale</span></div>' + dimRows + antiRows
       + '<div class="vf-cmp-section">Cost breakdown <span class="vf-cmp-section-sub">' + (mode === 'acq' ? 'up front' : 'present-valued over the life') + '</span></div>' + costRows
-      + '</div></div>';
+      + '</div></div>' + assessBlock;
     this.bindCompare();
   };
   App.prototype.bindCompare = function () {

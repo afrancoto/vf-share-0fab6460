@@ -148,6 +148,8 @@ button{font-family:inherit;}
 .vf-prios{margin:16px 0 4px;}
 .vf-prios-h{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);display:flex;flex-wrap:wrap;gap:3px 10px;align-items:baseline;margin-bottom:12px;}
 .vf-prios-sub{font-family:var(--serif);text-transform:none;letter-spacing:0;font-size:11.5px;font-style:italic;color:var(--faint);}
+.vf-reset-all{margin-left:auto;background:none;border:1px solid var(--line);border-radius:999px;color:var(--rec);font-family:inherit;font-size:11px;letter-spacing:.02em;padding:4px 11px;cursor:pointer;white-space:nowrap;}
+.vf-reset-all:hover{border-color:var(--rec);background:var(--rec-bg);}
 .vf-ctrl-primary{display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start;margin-top:16px;padding-top:14px;border-top:1px solid var(--line2);}
 .vf-ctrl-field{display:flex;flex-direction:column;gap:8px;}
 .vf-ctrl-lab{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);}
@@ -339,6 +341,13 @@ button{font-family:inherit;}
 .vf-cmp-section-sub{font-family:var(--serif);text-transform:none;letter-spacing:0;font-style:italic;font-size:11px;color:var(--faint);}
 .vf-cmp-cost .vf-cmp-fig{color:var(--muted);}
 .vf-cmp-anti .vf-cmp-lab{color:var(--muted);}
+.vf-cmp-assess-wrap{margin-top:18px;border-top:1px solid var(--line2);padding-top:16px;}
+.vf-cmp-assess-title{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-bottom:11px;}
+.vf-cmp-assess{border-left:3px solid var(--front);padding:2px 0 2px 14px;margin-bottom:15px;}
+.vf-cmp-assess:last-child{margin-bottom:0;}
+.vf-cmp-assess-h{font-family:var(--serif);font-weight:600;font-size:14px;margin-bottom:5px;}
+.vf-cmp-assess p{font-size:13px;color:var(--muted);line-height:1.55;margin:0;}
+.vf-cmp-flag{margin-top:7px;font-size:12px;color:var(--rec);background:var(--rec-bg);border:1px solid var(--rec-border);border-radius:6px;padding:6px 9px;line-height:1.45;}
 
 /* robustness / tornado */
 .vf-tor{margin:4px 0 0;}
@@ -466,185 +475,826 @@ button{font-family:inherit;}
   "meta": {
     "title": "WC soap dispenser",
     "slug": "wc-dispenser",
-    "region": "NL", "currency": "EUR",
-    "horizonYears": 8, "discountRate": 0.05,
-    "engineVersion": "0.7.0", "createdISO": "2026-06-25",
-    "note": "One of three WC pieces under a €150 trio cap. Cost shown is EAC (price amortised over expected life); soap is common to all, so consumables=0 — the real cost driver is price ÷ life. Pump reliability carries the hard screen. Links re-verified 2026-06-25: Zone Ume Warm Sand (manual) was removed — out of stock NL-wide. Wenko Pion's price/stock could not be auto-verified (shop blocks bots) — verify before ordering. Zara Home Terracotta added 2026-06-26 on request (warm-character outlier; price verified, pump unverified)."
+    "region": "NL",
+    "currency": "EUR",
+    "horizonYears": 8,
+    "discountRate": 0.05,
+    "engineVersion": "0.9.4",
+    "createdISO": "2026-06-25",
+    "note": "One of three WC pieces under a €150 trio cap. Cost shown defaults to purchase + delivery (use the Per-year / Total toggle for EAC); soap is common to all, so consumables=0. Pump reliability carries the hard screen. Links re-verified 2026-06-25: Zone Ume Warm Sand (manual) was removed — out of stock NL-wide. Wenko Pion's price/stock could not be auto-verified (shop blocks bots) — verify before ordering. Zara Home Terracotta added 2026-06-26 on request (warm-character outlier; price verified, pump unverified)."
   },
   "dimensions": [
-    { "id": "works",      "label": "Works — pump reliability", "type": "functional", "direction": "more-better", "weight": 0.24, "range": { "min": 0, "max": 10 }, "hardMin": 5, "rationale": "The top gate: does it dispense cleanly without rusting, seizing, dribbling, or firing soap onto the wrist. Metal pumps rusting into the soap is the category's #1 failure." },
-    { "id": "honesty",    "label": "Material honesty", "type": "social", "direction": "more-better", "weight": 0.17, "range": { "min": 0, "max": 10 }, "rationale": "Real stone/ceramic/stoneware ≫ faux-stone resin ≫ plastic. Ethos-core ('plastic = absolutely no'); honest materials carry the imitation tile." },
-    { "id": "feel",       "label": "Tactile / premium feel", "type": "experiential", "direction": "more-better", "weight": 0.14, "range": { "min": 0, "max": 10 }, "rationale": "Touched at every hand-wash — heft, soft-touch, fingerprint resistance. 'Feels cheap' was an explicit reject." },
-    { "id": "tone",       "label": "Warm-matte tone under 2700K", "type": "aesthetic", "direction": "more-better", "weight": 0.13, "range": { "min": 0, "max": 10 }, "rationale": "Warm sand/greige/taupe, matte; warmth that the cool greige tile lacks. A bright/cool pump cools the read." },
-    { "id": "character",  "label": "Texture / character", "type": "aesthetic", "direction": "more-better", "weight": 0.11, "range": { "min": 0, "max": 10 }, "rationale": "The 'play layer' — chiselled/reactive/real-stone texture, character from how the material is made, never a printed motif." },
-    { "id": "harmony",    "label": "Joins a warm-sand family", "type": "aesthetic", "direction": "more-better", "weight": 0.07, "range": { "min": 0, "max": 10 }, "rationale": "How easily its tone sits with a plain warm brush + bin as one 'collected' family (vs an outlier tone or busy surface that fights them)." },
-    { "id": "durability", "label": "Durability / defect-freedom", "type": "risk", "direction": "more-better", "weight": 0.06, "range": { "min": 0, "max": 10 }, "rationale": "Holds its finish over years — no coating wear, chip, or pump rust." },
-    { "id": "coolmetal",  "label": "Cool / 3rd-metal note", "type": "anti-need", "direction": "unwanted", "weight": 0.04, "range": { "min": -5, "max": 5 }, "rationale": "A bright or gold/brass pump adds a metal note. Chrome-family (the fixed tap is chrome) is near-neutral; a gold pump over-repeats brass into theme — penalised." },
-    { "id": "cheapfeel",  "label": "Plastic ethos-dissonance", "type": "anti-need", "direction": "unwanted", "weight": 0.025, "range": { "min": -5, "max": 5 }, "rationale": "A plastic body at the touched sink reads dissonant even if it works — the non-monetary harm, sized to the daily dissonance, not the money saved." },
-    { "id": "fauxdouble", "label": "Faux-stone / applied read", "type": "anti-need", "direction": "unwanted", "weight": 0.015, "range": { "min": -5, "max": 5 }, "rationale": "Stone-look resin reads slightly 'applied' rather than honest; mild." }
+    {
+      "id": "works",
+      "label": "Works — pump reliability",
+      "type": "functional",
+      "direction": "more-better",
+      "weight": 0.24,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
+      "hardMin": 5,
+      "rationale": "The top gate: does it dispense cleanly without rusting, seizing, dribbling, or firing soap onto the wrist. Metal pumps rusting into the soap is the category's #1 failure."
+    },
+    {
+      "id": "honesty",
+      "label": "Material honesty",
+      "type": "social",
+      "direction": "more-better",
+      "weight": 0.17,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
+      "rationale": "Real stone/ceramic/stoneware ≫ faux-stone resin ≫ plastic. Ethos-core ('plastic = absolutely no'); honest materials carry the imitation tile."
+    },
+    {
+      "id": "feel",
+      "label": "Tactile / premium feel",
+      "type": "experiential",
+      "direction": "more-better",
+      "weight": 0.14,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
+      "rationale": "Touched at every hand-wash — heft, soft-touch, fingerprint resistance. 'Feels cheap' was an explicit reject."
+    },
+    {
+      "id": "tone",
+      "label": "Warm-matte tone under 2700K",
+      "type": "aesthetic",
+      "direction": "more-better",
+      "weight": 0.13,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
+      "rationale": "Warm sand/greige/taupe, matte; warmth that the cool greige tile lacks. A bright/cool pump cools the read."
+    },
+    {
+      "id": "character",
+      "label": "Texture / character",
+      "type": "aesthetic",
+      "direction": "more-better",
+      "weight": 0.11,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
+      "rationale": "The 'play layer' — chiselled/reactive/real-stone texture, character from how the material is made, never a printed motif."
+    },
+    {
+      "id": "harmony",
+      "label": "Joins a warm-sand family",
+      "type": "aesthetic",
+      "direction": "more-better",
+      "weight": 0.07,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
+      "rationale": "How easily its tone sits with a plain warm brush + bin as one 'collected' family (vs an outlier tone or busy surface that fights them)."
+    },
+    {
+      "id": "durability",
+      "label": "Durability / defect-freedom",
+      "type": "risk",
+      "direction": "more-better",
+      "weight": 0.06,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
+      "rationale": "Holds its finish over years — no coating wear, chip, or pump rust."
+    },
+    {
+      "id": "coolmetal",
+      "label": "Cool / 3rd-metal note",
+      "type": "anti-need",
+      "direction": "unwanted",
+      "weight": 0.04,
+      "range": {
+        "min": -5,
+        "max": 5
+      },
+      "rationale": "A bright or gold/brass pump adds a metal note. Chrome-family (the fixed tap is chrome) is near-neutral; a gold pump over-repeats brass into theme — penalised."
+    },
+    {
+      "id": "cheapfeel",
+      "label": "Plastic ethos-dissonance",
+      "type": "anti-need",
+      "direction": "unwanted",
+      "weight": 0.025,
+      "range": {
+        "min": -5,
+        "max": 5
+      },
+      "rationale": "A plastic body at the touched sink reads dissonant even if it works — the non-monetary harm, sized to the daily dissonance, not the money saved."
+    },
+    {
+      "id": "fauxdouble",
+      "label": "Faux-stone / applied read",
+      "type": "anti-need",
+      "direction": "unwanted",
+      "weight": 0.015,
+      "range": {
+        "min": -5,
+        "max": 5
+      },
+      "rationale": "Stone-look resin reads slightly 'applied' rather than honest; mild."
+    }
   ],
   "products": [
-    { "id": "jysk-torup", "name": "JYSK Torup Beige Steen", "price": 7.5,
-      "links": [{ "label": "JYSK", "url": "https://jysk.nl/badkamer/badkamerartikelen/zeepdispensers/zeepdispenser-torup-beige-steen" }],
+    {
+      "id": "jysk-torup",
+      "name": "JYSK Torup Beige Steen",
+      "price": 7.5,
+      "links": [
+        {
+          "label": "JYSK",
+          "url": "https://jysk.nl/badkamer/badkamerartikelen/zeepdispensers/zeepdispenser-torup-beige-steen"
+        }
+      ],
       "note": "Gold pump (over-repeats brass) + ~30% one-star with solvent-odour complaints. Unlimited returns. Link verified live 2026-06-25: €7.50 sale (reg €9.99) ends 28 Jun.",
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 0, "expectedLifeYears": 6, "resaleValue": 0 },
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 0,
+        "maintenancePerYear": 0,
+        "deliveryCost": 0,
+        "expectedLifeYears": 6,
+        "resaleValue": 0
+      },
       "scores": {
-        "works":      { "value": 4, "why": "3.5★/20 with ~30% one-star — pump/odour complaints put it below the works floor", "source": "https://jysk.nl/badkamer/badkamerartikelen/zeepdispensers/zeepdispenser-torup-beige-steen" },
-        "honesty":    { "value": 4, "why": "ABS + recycled PE + polyresin + sand — composite faux-stone" },
-        "feel":       { "value": 4, "why": "light composite, reads cheap" },
-        "tone":       { "value": 5, "why": "beige body but a gold pump pulls it off-register" },
-        "character":  { "value": 5, "why": "stone-look surface, modest" },
-        "harmony":    { "value": 6 },
-        "durability": { "value": 5, "why": "odour/quality complaints in reviews" },
-        "coolmetal":  { "value": -2, "why": "gold pump over-repeats brass into theme, inches from the chrome tap" },
-        "cheapfeel":  { "value": -2, "why": "composite plastic body at the touched sink" },
-        "fauxdouble": { "value": -1, "why": "faux-stone look" } } },
-
-    { "id": "xenos-sand", "name": "Xenos Zeeppomp Sand", "price": 8.99,
-      "links": [{ "label": "Xenos", "url": "https://www.xenos.nl/zeeppomp-sand-zand-d8x18-5-cm-585561" }],
+        "works": {
+          "value": 4,
+          "why": "3.5★/20 with ~30% one-star — pump/odour complaints put it below the works floor",
+          "source": "https://jysk.nl/badkamer/badkamerartikelen/zeepdispensers/zeepdispenser-torup-beige-steen"
+        },
+        "honesty": {
+          "value": 4,
+          "why": "ABS + recycled PE + polyresin + sand — composite faux-stone"
+        },
+        "feel": {
+          "value": 4,
+          "why": "light composite, reads cheap"
+        },
+        "tone": {
+          "value": 5,
+          "why": "beige body but a gold pump pulls it off-register"
+        },
+        "character": {
+          "value": 5,
+          "why": "stone-look surface, modest"
+        },
+        "harmony": {
+          "value": 6
+        },
+        "durability": {
+          "value": 5,
+          "why": "odour/quality complaints in reviews"
+        },
+        "coolmetal": {
+          "value": -2,
+          "why": "gold pump over-repeats brass into theme, inches from the chrome tap"
+        },
+        "cheapfeel": {
+          "value": -2,
+          "why": "composite plastic body at the touched sink"
+        },
+        "fauxdouble": {
+          "value": -1,
+          "why": "faux-stone look"
+        }
+      }
+    },
+    {
+      "id": "xenos-sand",
+      "name": "Xenos Zeeppomp Sand",
+      "price": 8.99,
+      "links": [
+        {
+          "label": "Xenos",
+          "url": "https://www.xenos.nl/zeeppomp-sand-zand-d8x18-5-cm-585561"
+        }
+      ],
       "note": "Cheapest matched-tone option; material likely dolomite/stoneware (unconfirmed). Taller silhouette (18.5 cm). Link verified live 2026-06-25 (€8.99, op voorraad).",
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 3.95, "expectedLifeYears": 9, "resaleValue": 0 },
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 0,
+        "maintenancePerYear": 0,
+        "deliveryCost": 3.95,
+        "expectedLifeYears": 9,
+        "resaleValue": 0
+      },
       "scores": {
-        "works":      { "value": 6, "why": "matched-tone pump, 1 positive review — spec-level confidence", "source": "https://www.xenos.nl/zeeppomp-sand-zand-d8x18-5-cm-585561" },
-        "honesty":    { "value": 7, "why": "likely dolomite/stoneware — honest mineral (material unconfirmed)" },
-        "feel":       { "value": 5, "why": "plain matte mineral, budget feel" },
-        "tone":       { "value": 8, "why": "warm sand, matte, fully matched pump" },
-        "character":  { "value": 4, "why": "plain cylinder, little texture" },
-        "harmony":    { "value": 8, "why": "clean sand reads with anything" },
-        "durability": { "value": 6, "why": "ceramic-ish, chip risk, thin data" },
-        "coolmetal":  { "value": 0 }, "cheapfeel": { "value": 0 }, "fauxdouble": { "value": 0 } } },
-
-    { "id": "hema-zand", "name": "HEMA Mat Keramiek Zand", "price": 9.99,
-      "links": [{ "label": "HEMA", "url": "https://www.hema.nl/wonen-slapen/badkamer/badkamer-accessoires/zeeppompjes/zeeppomp-mat-keramiek-zand-8x15-80330114.html" }],
+        "works": {
+          "value": 6,
+          "why": "matched-tone pump, 1 positive review — spec-level confidence",
+          "source": "https://www.xenos.nl/zeeppomp-sand-zand-d8x18-5-cm-585561"
+        },
+        "honesty": {
+          "value": 7,
+          "why": "likely dolomite/stoneware — honest mineral (material unconfirmed)"
+        },
+        "feel": {
+          "value": 5,
+          "why": "plain matte mineral, budget feel"
+        },
+        "tone": {
+          "value": 8,
+          "why": "warm sand, matte, fully matched pump"
+        },
+        "character": {
+          "value": 4,
+          "why": "plain cylinder, little texture"
+        },
+        "harmony": {
+          "value": 8,
+          "why": "clean sand reads with anything"
+        },
+        "durability": {
+          "value": 6,
+          "why": "ceramic-ish, chip risk, thin data"
+        },
+        "coolmetal": {
+          "value": 0
+        },
+        "cheapfeel": {
+          "value": 0
+        },
+        "fauxdouble": {
+          "value": 0
+        }
+      }
+    },
+    {
+      "id": "hema-zand",
+      "name": "HEMA Mat Keramiek Zand",
+      "price": 9.99,
+      "links": [
+        {
+          "label": "HEMA",
+          "url": "https://www.hema.nl/wonen-slapen/badkamer/badkamer-accessoires/zeeppompjes/zeeppomp-mat-keramiek-zand-8x15-80330114.html"
+        }
+      ],
       "note": "The clean matte-sand budget benchmark. Plastic pump = no rust. Pickup free; home delivery ~€3.95. Link verified live 2026-06-25 (€9.99, 1–3 days).",
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 3.95, "expectedLifeYears": 10, "resaleValue": 0 },
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 0,
+        "maintenancePerYear": 0,
+        "deliveryCost": 3.95,
+        "expectedLifeYears": 10,
+        "resaleValue": 0
+      },
       "scores": {
-        "works":      { "value": 6, "why": "matched plastic pump (no-rust), no reviews yet — spec-level", "source": "https://www.hema.nl/wonen-slapen/badkamer/badkamer-accessoires/zeeppompjes/zeeppomp-mat-keramiek-zand-8x15-80330114.html" },
-        "honesty":    { "value": 8, "why": "84% ceramic — honest material" },
-        "feel":       { "value": 5, "why": "matte ceramic, budget benchmark" },
-        "tone":       { "value": 8, "why": "warm sand, genuinely matte, matched pump" },
-        "character":  { "value": 4, "why": "plain form, minimal texture" },
-        "harmony":    { "value": 8 },
-        "durability": { "value": 7, "why": "ceramic holds finish; chip risk if dropped" },
-        "coolmetal":  { "value": 0 }, "cheapfeel": { "value": 0 }, "fauxdouble": { "value": 0 } } },
-
-    { "id": "mdm-creme", "name": "Maisons du Monde crème dolomite", "price": 9.99,
-      "links": [{ "label": "Maisons du Monde", "url": "https://www.maisonsdumonde.com/NL/nl/p/cremekleurige-en-beige-zeepdispenser-240726.htm" }],
+        "works": {
+          "value": 6,
+          "why": "matched plastic pump (no-rust), no reviews yet — spec-level",
+          "source": "https://www.hema.nl/wonen-slapen/badkamer/badkamer-accessoires/zeeppompjes/zeeppomp-mat-keramiek-zand-8x15-80330114.html"
+        },
+        "honesty": {
+          "value": 8,
+          "why": "84% ceramic — honest material"
+        },
+        "feel": {
+          "value": 5,
+          "why": "matte ceramic, budget benchmark"
+        },
+        "tone": {
+          "value": 8,
+          "why": "warm sand, genuinely matte, matched pump"
+        },
+        "character": {
+          "value": 4,
+          "why": "plain form, minimal texture"
+        },
+        "harmony": {
+          "value": 8
+        },
+        "durability": {
+          "value": 7,
+          "why": "ceramic holds finish; chip risk if dropped"
+        },
+        "coolmetal": {
+          "value": 0
+        },
+        "cheapfeel": {
+          "value": 0
+        },
+        "fauxdouble": {
+          "value": 0
+        }
+      }
+    },
+    {
+      "id": "mdm-creme",
+      "name": "Maisons du Monde crème dolomite",
+      "price": 9.99,
+      "links": [
+        {
+          "label": "Maisons du Monde",
+          "url": "https://www.maisonsdumonde.com/NL/nl/p/cremekleurige-en-beige-zeepdispenser-240726.htm"
+        }
+      ],
       "note": "Dolomite (real stone-ceramic), warm cream. Inox pump = small rust risk long-term. Page bot-blocks; price €9.99 confirmed via search 2026-06-25, stock not directly checked.",
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 5, "expectedLifeYears": 9, "resaleValue": 0 },
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 0,
+        "maintenancePerYear": 0,
+        "deliveryCost": 5,
+        "expectedLifeYears": 9,
+        "resaleValue": 0
+      },
       "scores": {
-        "works":      { "value": 5, "why": "inox steel pump, no reviews — minor long-term rust risk on a steel pump", "source": "https://www.maisonsdumonde.com/NL/nl/p/cremekleurige-en-beige-zeepdispenser-240726.htm" },
-        "honesty":    { "value": 8, "why": "dolomite — real stone-ceramic" },
-        "feel":       { "value": 6, "why": "dolomite has real weight and cool touch" },
-        "tone":       { "value": 8, "why": "warm cream, matte; inox pump slightly cool" },
-        "character":  { "value": 5, "why": "simple dolomite form" },
-        "harmony":    { "value": 7, "why": "cream is a touch lighter than sand" },
-        "durability": { "value": 6, "why": "dolomite can chip; steel pump rust risk" },
-        "coolmetal":  { "value": -1, "why": "inox pump joins the chrome-tap family but adds a small bright note" },
-        "cheapfeel":  { "value": 0 }, "fauxdouble": { "value": 0 } } },
-
-    { "id": "hm-speckled", "name": "H&M Home stoneware, beige speckled", "price": 12.99,
-      "links": [{ "label": "H&M Home", "url": "https://www2.hm.com/nl_nl/productpage.1201543002.html" }],
+        "works": {
+          "value": 5,
+          "why": "inox steel pump, no reviews — minor long-term rust risk on a steel pump",
+          "source": "https://www.maisonsdumonde.com/NL/nl/p/cremekleurige-en-beige-zeepdispenser-240726.htm"
+        },
+        "honesty": {
+          "value": 8,
+          "why": "dolomite — real stone-ceramic"
+        },
+        "feel": {
+          "value": 6,
+          "why": "dolomite has real weight and cool touch"
+        },
+        "tone": {
+          "value": 8,
+          "why": "warm cream, matte; inox pump slightly cool"
+        },
+        "character": {
+          "value": 5,
+          "why": "simple dolomite form"
+        },
+        "harmony": {
+          "value": 7,
+          "why": "cream is a touch lighter than sand"
+        },
+        "durability": {
+          "value": 6,
+          "why": "dolomite can chip; steel pump rust risk"
+        },
+        "coolmetal": {
+          "value": -1,
+          "why": "inox pump joins the chrome-tap family but adds a small bright note"
+        },
+        "cheapfeel": {
+          "value": 0
+        },
+        "fauxdouble": {
+          "value": 0
+        }
+      }
+    },
+    {
+      "id": "hm-speckled",
+      "name": "H&M Home stoneware, beige speckled",
+      "price": 12.99,
+      "links": [
+        {
+          "label": "H&M Home",
+          "url": "https://www2.hm.com/nl_nl/productpage.1201543002.html"
+        }
+      ],
       "note": "Small (Ø7.5×11). Reactive speckle = made-texture (not a printed motif). Plastic pump = no rust. Confirm the speckle doesn't read busy against the marble-look tile. Page 403-blocks; price €12.99 confirmed via search 2026-06-25, online order only (not in stores).",
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 4.99, "expectedLifeYears": 10, "resaleValue": 0 },
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 0,
+        "maintenancePerYear": 0,
+        "deliveryCost": 4.99,
+        "expectedLifeYears": 10,
+        "resaleValue": 0
+      },
       "scores": {
-        "works":      { "value": 6, "why": "plastic pump (no-rust), no reviews — spec-level", "source": "https://www2.hm.com/nl_nl/productpage.1201543002.html" },
-        "honesty":    { "value": 8, "why": "glazed stoneware — honest" },
-        "feel":       { "value": 6, "why": "small glazed stoneware, textured surface" },
-        "tone":       { "value": 7, "why": "warm beige, matte glaze" },
-        "character":  { "value": 7, "why": "reactive speckle is genuine made-texture, good Japandi character" },
-        "harmony":    { "value": 6, "why": "speckle could fight a plain brush/bin if too busy" },
-        "durability": { "value": 7, "why": "glazed stoneware holds up" },
-        "coolmetal":  { "value": 0 }, "cheapfeel": { "value": 0 }, "fauxdouble": { "value": 0 } } },
-
-    { "id": "zarahome-terracotta", "name": "Zara Home Terracotta zeeppompje", "price": 13.99,
-      "links": [{ "label": "Zara Home NL", "url": "https://www.zarahome.com/nl/badkamer/accessoires-c1020207524.html" }],
+        "works": {
+          "value": 6,
+          "why": "plastic pump (no-rust), no reviews — spec-level",
+          "source": "https://www2.hm.com/nl_nl/productpage.1201543002.html"
+        },
+        "honesty": {
+          "value": 8,
+          "why": "glazed stoneware — honest"
+        },
+        "feel": {
+          "value": 6,
+          "why": "small glazed stoneware, textured surface"
+        },
+        "tone": {
+          "value": 7,
+          "why": "warm beige, matte glaze"
+        },
+        "character": {
+          "value": 7,
+          "why": "reactive speckle is genuine made-texture, good Japandi character"
+        },
+        "harmony": {
+          "value": 6,
+          "why": "speckle could fight a plain brush/bin if too busy"
+        },
+        "durability": {
+          "value": 7,
+          "why": "glazed stoneware holds up"
+        },
+        "coolmetal": {
+          "value": 0
+        },
+        "cheapfeel": {
+          "value": 0
+        },
+        "fauxdouble": {
+          "value": 0
+        }
+      }
+    },
+    {
+      "id": "zarahome-terracotta",
+      "name": "Zara Home Terracotta zeeppompje",
+      "price": 13.99,
+      "links": [
+        {
+          "label": "Zara Home NL",
+          "url": "https://www.zarahome.com/nl/badkamer/accessoires-c1020207524.html"
+        }
+      ],
       "note": "Added on request (Andrea's Zara Home lane). Warm terracotta earthenware, matte. Price €13.99 (was €19.99, −30%) verified live via Chrome 2026-06-26 on the Zara Home NL category page; the product page kept routing to Zara's error page so PUMP MATERIAL, exact dims and capacity are NOT confirmed — verify before buying (the sibling 'met structuur' SKU uses a silver metal pump; if this one does too, expect a minor long-term rust risk + a small cool note). ⚠ HARMONY OUTLIER: terracotta is a saturated warm tone → a second focal note competing with the brass mirror, not a recessive warm-sand family member (same flag as the Zone UME terracotta brush). On the chart so its position is visible — a deliberate taste choice, not a frontier winner.",
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 4.95, "expectedLifeYears": 9, "resaleValue": 0 },
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 0,
+        "maintenancePerYear": 0,
+        "deliveryCost": 4.95,
+        "expectedLifeYears": 9,
+        "resaleValue": 0
+      },
       "scores": {
-        "works":      { "value": 6, "why": "earthenware dispenser, thin reviews — spec-level; pump material unverified (sibling SKU uses a silver metal pump → possible minor rust risk)", "source": "https://www.zarahome.com/nl/badkamer/accessoires-c1020207524.html (2026-06-26)" },
-        "honesty":    { "value": 8, "why": "real terracotta earthenware — honest mineral material" },
-        "feel":       { "value": 6, "why": "earthenware heft, matte; decent Zara Home mid-feel" },
-        "tone":       { "value": 8, "why": "emphatically warm + matte — the warmest tone in the set, though a saturated terracotta hue, not sand" },
-        "character":  { "value": 7, "why": "warm matte terracotta clay reads handmade/Mediterranean — genuine made-character" },
-        "harmony":    { "value": 4, "why": "warm-family-adjacent but a saturated statement → a focal note, not a recessive warm-sand family member" },
-        "durability": { "value": 6, "why": "earthenware, chip risk; Zara Home durability data thin" },
-        "coolmetal":  { "value": 0, "why": "pump material unconfirmed — neutral pending verification (would be −1 if it shares the sibling SKU's silver metal pump)" },
-        "cheapfeel":  { "value": 0 }, "fauxdouble": { "value": 0 } } },
-
-    { "id": "wenko-pion", "name": "Wenko Pion Beige (ceramic)", "price": 14.99,
-      "links": [{ "label": "Wenko", "url": "https://shop.wenko.nl/Badkamer/Badkameraccessoires/Zeepdispenser/Zeepdispenser-Pion-Beige-keramiek" }],
+        "works": {
+          "value": 6,
+          "why": "earthenware dispenser, thin reviews — spec-level; pump material unverified (sibling SKU uses a silver metal pump → possible minor rust risk)",
+          "source": "https://www.zarahome.com/nl/badkamer/accessoires-c1020207524.html (2026-06-26)"
+        },
+        "honesty": {
+          "value": 8,
+          "why": "real terracotta earthenware — honest mineral material"
+        },
+        "feel": {
+          "value": 6,
+          "why": "earthenware heft, matte; decent Zara Home mid-feel"
+        },
+        "tone": {
+          "value": 8,
+          "why": "emphatically warm + matte — the warmest tone in the set, though a saturated terracotta hue, not sand"
+        },
+        "character": {
+          "value": 7,
+          "why": "warm matte terracotta clay reads handmade/Mediterranean — genuine made-character"
+        },
+        "harmony": {
+          "value": 4,
+          "why": "warm-family-adjacent but a saturated statement → a focal note, not a recessive warm-sand family member"
+        },
+        "durability": {
+          "value": 6,
+          "why": "earthenware, chip risk; Zara Home durability data thin"
+        },
+        "coolmetal": {
+          "value": 0,
+          "why": "pump material unconfirmed — neutral pending verification (would be −1 if it shares the sibling SKU's silver metal pump)"
+        },
+        "cheapfeel": {
+          "value": 0
+        },
+        "fauxdouble": {
+          "value": 0
+        }
+      }
+    },
+    {
+      "id": "wenko-pion",
+      "name": "Wenko Pion Beige (ceramic)",
+      "price": 14.99,
+      "links": [
+        {
+          "label": "Wenko",
+          "url": "https://shop.wenko.nl/Badkamer/Badkameraccessoires/Zeepdispenser/Zeepdispenser-Pion-Beige-keramiek"
+        }
+      ],
       "note": "Faceted/triangular form = distinct character. Footprint 11.5 cm is near the 11 cm sink-zone limit — check the fit. ⚠ Link/title resolve live (2026-06-25) but Wenko's shop blocks automated checks → price €14.99 and stock NOT independently verified; confirm before ordering. No clean NL alternative carries the beige Pion.",
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 0, "expectedLifeYears": 10, "resaleValue": 0 },
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 0,
+        "maintenancePerYear": 0,
+        "deliveryCost": 0,
+        "expectedLifeYears": 10,
+        "resaleValue": 0
+      },
       "scores": {
-        "works":      { "value": 6, "why": "light-press dosing head, no defect reports — spec-level", "source": "https://shop.wenko.nl/Badkamer/Badkameraccessoires/Zeepdispenser/Zeepdispenser-Pion-Beige-keramiek" },
-        "honesty":    { "value": 8, "why": "ceramic" },
-        "feel":       { "value": 6, "why": "sculptural faceted ceramic" },
-        "tone":       { "value": 8, "why": "warm natural beige, matte" },
-        "character":  { "value": 7, "why": "faceted form is a distinct, intentional character" },
-        "harmony":    { "value": 7, "why": "the assertive form is a touch un-recessive for infrastructure" },
-        "durability": { "value": 7 },
-        "coolmetal":  { "value": 0 }, "cheapfeel": { "value": 0 }, "fauxdouble": { "value": 0 } } },
-
-    { "id": "wenko-puro", "name": "Wenko Puro Beige (faux-stone)", "price": 16.89,
-      "links": [{ "label": "GAMMA", "url": "https://www.gamma.nl/assortiment/wenko-zeepdispenser-puro-beige/p/B554194" }],
+        "works": {
+          "value": 6,
+          "why": "light-press dosing head, no defect reports — spec-level",
+          "source": "https://shop.wenko.nl/Badkamer/Badkameraccessoires/Zeepdispenser/Zeepdispenser-Pion-Beige-keramiek"
+        },
+        "honesty": {
+          "value": 8,
+          "why": "ceramic"
+        },
+        "feel": {
+          "value": 6,
+          "why": "sculptural faceted ceramic"
+        },
+        "tone": {
+          "value": 8,
+          "why": "warm natural beige, matte"
+        },
+        "character": {
+          "value": 7,
+          "why": "faceted form is a distinct, intentional character"
+        },
+        "harmony": {
+          "value": 7,
+          "why": "the assertive form is a touch un-recessive for infrastructure"
+        },
+        "durability": {
+          "value": 7
+        },
+        "coolmetal": {
+          "value": 0
+        },
+        "cheapfeel": {
+          "value": 0
+        },
+        "fauxdouble": {
+          "value": 0
+        }
+      }
+    },
+    {
+      "id": "wenko-puro",
+      "name": "Wenko Puro Beige (faux-stone)",
+      "price": 16.89,
+      "links": [
+        {
+          "label": "GAMMA",
+          "url": "https://www.gamma.nl/assortiment/wenko-zeepdispenser-puro-beige/p/B554194"
+        }
+      ],
       "note": "Faux-stone polyresin (ground stone + resin) — moisture-resistant, colorfast. The faux-stone cost anchor. Delivery €4.95 (free >€50), 30-day returns. Link verified live 2026-06-25 (€16.89, limited stock).",
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 4.95, "expectedLifeYears": 7, "resaleValue": 0 },
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 0,
+        "maintenancePerYear": 0,
+        "deliveryCost": 4.95,
+        "expectedLifeYears": 7,
+        "resaleValue": 0
+      },
       "scores": {
-        "works":      { "value": 7, "why": "matched pump, 4.6★/5 (small-n) positive", "source": "https://www.gamma.nl/assortiment/wenko-zeepdispenser-puro-beige/p/B554194" },
-        "honesty":    { "value": 5, "why": "polyresin/polystone — part stone, part resin; mid honesty" },
-        "feel":       { "value": 5, "why": "resin-stone, decent for the price" },
-        "tone":       { "value": 7, "why": "warm beige, matte" },
-        "character":  { "value": 6, "why": "natural stone-look surface" },
-        "harmony":    { "value": 8 },
-        "durability": { "value": 7, "why": "moisture-resistant, colorfast" },
-        "coolmetal":  { "value": 0 }, "cheapfeel": { "value": -1, "why": "resin content reads a little less honest in hand" }, "fauxdouble": { "value": -1, "why": "stone-look resin, mild applied read" } } },
-
-    { "id": "kela-talus", "name": "Kela Talus Beige (plastic)", "price": 18.95,
-      "links": [{ "label": "Badkamerstore", "url": "https://www.badkamerstore.nl/zeepdispenser-kela-talus-beige.html" }],
+        "works": {
+          "value": 7,
+          "why": "matched pump, 4.6★/5 (small-n) positive",
+          "source": "https://www.gamma.nl/assortiment/wenko-zeepdispenser-puro-beige/p/B554194"
+        },
+        "honesty": {
+          "value": 5,
+          "why": "polyresin/polystone — part stone, part resin; mid honesty"
+        },
+        "feel": {
+          "value": 5,
+          "why": "resin-stone, decent for the price"
+        },
+        "tone": {
+          "value": 7,
+          "why": "warm beige, matte"
+        },
+        "character": {
+          "value": 6,
+          "why": "natural stone-look surface"
+        },
+        "harmony": {
+          "value": 8
+        },
+        "durability": {
+          "value": 7,
+          "why": "moisture-resistant, colorfast"
+        },
+        "coolmetal": {
+          "value": 0
+        },
+        "cheapfeel": {
+          "value": -1,
+          "why": "resin content reads a little less honest in hand"
+        },
+        "fauxdouble": {
+          "value": -1,
+          "why": "stone-look resin, mild applied read"
+        }
+      }
+    },
+    {
+      "id": "kela-talus",
+      "name": "Kela Talus Beige (plastic)",
+      "price": 18.95,
+      "links": [
+        {
+          "label": "Badkamerstore",
+          "url": "https://www.badkamerstore.nl/zeepdispenser-kela-talus-beige.html"
+        }
+      ],
       "note": "Plastic (polycarbonate, faux-stone look), silver/chrome pump. The plastic cost anchor — kept to show the frontier's low end. Free returns, 2-yr warranty. Link verified live 2026-06-25 (€18.95, in stock).",
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 4, "expectedLifeYears": 5, "resaleValue": 0 },
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 0,
+        "maintenancePerYear": 0,
+        "deliveryCost": 4,
+        "expectedLifeYears": 5,
+        "resaleValue": 0
+      },
       "scores": {
-        "works":      { "value": 5, "why": "chrome pump, function unproven (2 reviews)", "source": "https://www.badkamerstore.nl/zeepdispenser-kela-talus-beige.html" },
-        "honesty":    { "value": 3, "why": "polycarbonate faux-stone — plastic" },
-        "feel":       { "value": 4, "why": "plastic — light, reads cheap in the hand" },
-        "tone":       { "value": 6, "why": "warm beige but matte-ish + silver pump cools it" },
-        "character":  { "value": 4, "why": "flat faux-stone look" },
-        "harmony":    { "value": 6 },
-        "durability": { "value": 6, "why": "colorfast plastic, low rust, but light" },
-        "coolmetal":  { "value": -1, "why": "silver/chrome pump, small bright note" },
-        "cheapfeel":  { "value": -2, "why": "plastic body at the touched sink — daily ethos dissonance" },
-        "fauxdouble": { "value": -1, "why": "faux-stone look leans applied" } } },
-
-    { "id": "blomus-sono", "name": "Blomus Sono Tan", "price": 34.95,
-      "links": [{ "label": "Blomus-athome", "url": "https://www.blomus-athome.nl/nl/zeepdoseerder-sono-tan.html" }],
+        "works": {
+          "value": 5,
+          "why": "chrome pump, function unproven (2 reviews)",
+          "source": "https://www.badkamerstore.nl/zeepdispenser-kela-talus-beige.html"
+        },
+        "honesty": {
+          "value": 3,
+          "why": "polycarbonate faux-stone — plastic"
+        },
+        "feel": {
+          "value": 4,
+          "why": "plastic — light, reads cheap in the hand"
+        },
+        "tone": {
+          "value": 6,
+          "why": "warm beige but matte-ish + silver pump cools it"
+        },
+        "character": {
+          "value": 4,
+          "why": "flat faux-stone look"
+        },
+        "harmony": {
+          "value": 6
+        },
+        "durability": {
+          "value": 6,
+          "why": "colorfast plastic, low rust, but light"
+        },
+        "coolmetal": {
+          "value": -1,
+          "why": "silver/chrome pump, small bright note"
+        },
+        "cheapfeel": {
+          "value": -2,
+          "why": "plastic body at the touched sink — daily ethos dissonance"
+        },
+        "fauxdouble": {
+          "value": -1,
+          "why": "faux-stone look leans applied"
+        }
+      }
+    },
+    {
+      "id": "blomus-sono",
+      "name": "Blomus Sono Tan",
+      "price": 34.95,
+      "links": [
+        {
+          "label": "Blomus-athome",
+          "url": "https://www.blomus-athome.nl/nl/zeepdoseerder-sono-tan.html"
+        }
+      ],
       "note": "Ceramic with silk-matte soft-touch coat; plastic+silicone pump head means NO metal to rust — sidesteps the category's #1 failure. Best in-hand feel. 2-yr warranty, free returns, next-day. Tan = warmest of the SONO colourways. Link verified live 2026-06-25 (€34.95, op voorraad).",
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 0, "expectedLifeYears": 8, "resaleValue": 0 },
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 0,
+        "maintenancePerYear": 0,
+        "deliveryCost": 0,
+        "expectedLifeYears": 8,
+        "resaleValue": 0
+      },
       "scores": {
-        "works":      { "value": 8, "why": "no-metal pump (plastic + silicone seal) avoids the rust failure; clean reviews, design-led dosing", "source": "https://www.blomus-athome.nl/nl/zeepdoseerder-sono-tan.html" },
-        "honesty":    { "value": 7, "why": "ceramic body, but a soft-touch coating over it (not bare stone)" },
-        "feel":       { "value": 9, "why": "silk-matte soft-touch, velvety, fingerprint-resistant — best in-hand feel in the set" },
-        "tone":       { "value": 9, "why": "warm tan, matte velvety, fully matched pump — the warmest" },
-        "character":  { "value": 6, "why": "smooth soft-touch — refined; character from finish, not grain" },
-        "harmony":    { "value": 8, "why": "tan is a clean family tone" },
-        "durability": { "value": 7, "why": "no-rust pump; soft-touch coat could wear over many years" },
-        "coolmetal":  { "value": 0 }, "cheapfeel": { "value": 0, "why": "premium feel — no dissonance despite the coating" }, "fauxdouble": { "value": 0 } } },
-
-    { "id": "aquanova-conor", "name": "Aquanova Conor Beige (small)", "price": 50,
-      "links": [{ "label": "Sanitairwinkel", "url": "https://www.sanitairwinkel.nl/p/75637381/conor-zeepdispenser-beige" }],
+        "works": {
+          "value": 8,
+          "why": "no-metal pump (plastic + silicone seal) avoids the rust failure; clean reviews, design-led dosing",
+          "source": "https://www.blomus-athome.nl/nl/zeepdoseerder-sono-tan.html"
+        },
+        "honesty": {
+          "value": 7,
+          "why": "ceramic body, but a soft-touch coating over it (not bare stone)"
+        },
+        "feel": {
+          "value": 9,
+          "why": "silk-matte soft-touch, velvety, fingerprint-resistant — best in-hand feel in the set"
+        },
+        "tone": {
+          "value": 9,
+          "why": "warm tan, matte velvety, fully matched pump — the warmest"
+        },
+        "character": {
+          "value": 6,
+          "why": "smooth soft-touch — refined; character from finish, not grain"
+        },
+        "harmony": {
+          "value": 8,
+          "why": "tan is a clean family tone"
+        },
+        "durability": {
+          "value": 7,
+          "why": "no-rust pump; soft-touch coat could wear over many years"
+        },
+        "coolmetal": {
+          "value": 0
+        },
+        "cheapfeel": {
+          "value": 0,
+          "why": "premium feel — no dissonance despite the coating"
+        },
+        "fauxdouble": {
+          "value": 0
+        }
+      }
+    },
+    {
+      "id": "aquanova-conor",
+      "name": "Aquanova Conor Beige (small)",
+      "price": 50,
+      "links": [
+        {
+          "label": "Sanitairwinkel",
+          "url": "https://www.sanitairwinkel.nl/p/75637381/conor-zeepdispenser-beige"
+        }
+      ],
       "note": "Real natural stone, each piece unique; brushed-stainless pump with no rust reports (unlike the failing Ugo stoneware line). Tall at 20.5 cm — check clearance to the mirror. Just over the per-piece budget. Page bot-blocks; product + ~€50 confirmed via search 2026-06-25 (also at badmatten.nl / badkamerxxl.nl).",
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 5, "expectedLifeYears": 18, "resaleValue": 0 },
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 0,
+        "maintenancePerYear": 0,
+        "deliveryCost": 5,
+        "expectedLifeYears": 18,
+        "resaleValue": 0
+      },
       "scores": {
-        "works":      { "value": 7, "why": "brushed-stainless pump, no rust reports — distinct from the failing Ugo line", "source": "https://www.sanitairwinkel.nl/p/75637381/conor-zeepdispenser-beige" },
-        "honesty":    { "value": 10, "why": "real natural stone, each piece unique — the honest benchmark" },
-        "feel":       { "value": 9, "why": "real stone heft and cool touch" },
-        "tone":       { "value": 8, "why": "warm greige natural stone; brushed pump slightly cool" },
-        "character":  { "value": 9, "why": "raw natural-stone grain, unique per piece — the most character" },
-        "harmony":    { "value": 7, "why": "unique grain → a slightly less predictable match" },
-        "durability": { "value": 9, "why": "real stone, 10 y+; no rust reports" },
-        "coolmetal":  { "value": -1, "why": "brushed-stainless pump joins the chrome family, small note" },
-        "cheapfeel":  { "value": 0 }, "fauxdouble": { "value": 0 } } }
-  ]
+        "works": {
+          "value": 7,
+          "why": "brushed-stainless pump, no rust reports — distinct from the failing Ugo line",
+          "source": "https://www.sanitairwinkel.nl/p/75637381/conor-zeepdispenser-beige"
+        },
+        "honesty": {
+          "value": 10,
+          "why": "real natural stone, each piece unique — the honest benchmark"
+        },
+        "feel": {
+          "value": 9,
+          "why": "real stone heft and cool touch"
+        },
+        "tone": {
+          "value": 8,
+          "why": "warm greige natural stone; brushed pump slightly cool"
+        },
+        "character": {
+          "value": 9,
+          "why": "raw natural-stone grain, unique per piece — the most character"
+        },
+        "harmony": {
+          "value": 7,
+          "why": "unique grain → a slightly less predictable match"
+        },
+        "durability": {
+          "value": 9,
+          "why": "real stone, 10 y+; no rust reports"
+        },
+        "coolmetal": {
+          "value": -1,
+          "why": "brushed-stainless pump joins the chrome family, small note"
+        },
+        "cheapfeel": {
+          "value": 0
+        },
+        "fauxdouble": {
+          "value": 0
+        }
+      }
+    }
+  ],
+  "comparisons": {
+    "hema-zand|xenos-sand": {
+      "text": "Near-twin warm-sand budget benchmarks €1 apart. The step to HEMA (€14, V64) over Xenos (€13, V62) buys verified honesty: 84% ceramic and a confirmed no-rust plastic pump (honesty 8, works 6), where Xenos rests on an unconfirmed 'likely dolomite' body and a pump whose material isn't pinned down (honesty 7). HEMA also edges durability (7 vs 6). They tie on tone (8), feel (5) and character (4); Xenos counters only with a taller silhouette and the €1 saving. For a euro, HEMA is the cleaner buy."
+    },
+    "hema-zand|wenko-pion": {
+      "text": "The €1 step from HEMA (€14, V64) to the pick, Wenko Pion (€15, V69), buys character: the faceted triangular ceramic lifts character 4→7 and feel 5→6, where HEMA is a clean but plain cylinder. They are identical on what matters most — works 6, honesty 8 (both ceramic), tone 8, durability 7. The one thing HEMA wins is harmony (8 vs 7): its plainness recedes, while the Pion's assertive form asks to be noticed. For a euro, the Pion's distinct shape is the better value unless you want the dispenser to disappear.",
+      "flag": "The Pion's 11.5 cm footprint sits right at the ~11 cm sink-zone limit — measure before ordering. Its price/stock also couldn't be auto-verified (Wenko's shop blocks bots)."
+    },
+    "blomus-sono|wenko-pion": {
+      "text": "The budget-end 'spend up?' call: €20 roughly doubles the price (€15→€35) for +9 value. Blomus Sono's gains land in the heaviest dimensions — works 6→8 (a no-metal plastic+silicone pump that sidesteps the category's #1 failure, backed by clean reviews vs the Pion's spec-level confidence) and feel 6→9 (its silk-matte soft-touch is the best in-hand feel in the set), plus small steps on tone (8→9) and harmony (7→8). The Pion answers on honesty (8 vs 7: bare ceramic vs a soft-touch coating over ceramic) and character (7 vs 6: its faceted form vs Blomus's smooth refinement). If proven pump reliability and feel justify doubling the spend, Sono is the upgrade; if bare-material honesty and a sculptural shape matter more, the €15 Pion holds."
+    },
+    "aquanova-conor|blomus-sono": {
+      "text": "The top two, €20 apart (€35→€55) for +5 value. Aquanova Conor is the honesty and character champion — real natural stone, unique per piece (honesty 10, character 9, durability 9, 18-year life vs 8). But spending up here steps DOWN on the decisive gate: works 8→7, because Blomus's no-metal pump is rust-proof while Conor's brushed-stainless pump carries a small rust risk and a cool-metal note (coolmetal −1). Blomus also runs warmer (tone 9 vs 8, warm tan vs greige) and coordinates more easily (harmony 8 vs 7). The €20 buys real-stone soul and longevity, not reliability or warmth.",
+      "flag": "Paying €20 more for Conor slightly lowers pump reliability (works 8→7) — the one dimension carrying the hard screen. Conor is also 20.5 cm tall; check mirror clearance."
+    },
+    "aquanova-conor|wenko-pion": {
+      "text": "The full spend-up question: the pick at €15 is roughly a quarter of Conor's €55, for +14 value. Every gain is the gap between good ceramic and real natural stone — feel 6→9, honesty 8→10, character 7→9, durability 7→9 (and an 18-year life vs 10) — plus a modest works bump (6→7: a brushed-stainless pump with a market track record vs the Pion's spec-level confidence). What €40 does NOT buy is tone or harmony (both flat — Conor's greige is, if anything, a touch cooler than the Pion's warm beige), and you pick up a faint cool-metal note (coolmetal −1) from the stainless pump. The knee sits at the Pion because the climb from €15 to €55 is long and shallow (+14 for +€40) while the first euros already bought the warm-sand essentials; Conor is the buy only if real-stone soul and longevity are worth nearly 4× on one touched piece.",
+      "flag": "Conor is ~€50 — over the per-piece budget and pressing the €150 trio cap. At 20.5 cm it is tall for the small sink zone; check mirror clearance before spending up."
+    }
+  }
 };</script>
 <script>/* Value Frontier — engine v0.9.0
  * Pure compute (Node-testable) + interactive decision cockpit. Zero dependencies.
@@ -722,9 +1372,12 @@ button{font-family:inherit;}
   function kneePoint(fp) {
     if (fp.length === 0) return null;
     if (fp.length <= 2) return fp.reduce(function (a, b) { return b.y > a.y ? b : a; }).id;
-    var a = fp[0], b = fp[fp.length - 1], dx = b.x - a.x, dy = b.y - a.y, len = Math.hypot(dx, dy) || 1, best = null, bestD = -Infinity;
-    for (var i = 1; i < fp.length - 1; i++) { var p = fp[i], d = Math.abs(dy * (p.x - a.x) - dx * (p.y - a.y)) / len; if (d > bestD) { bestD = d; best = p; } }
-    return best ? best.id : a.id;
+    var a = fp[0], b = fp[fp.length - 1], dx = b.x - a.x, dy = b.y - a.y, len = Math.hypot(dx, dy) || 1, best = null, bestD = 0;
+    // SIGNED distance: positive = the point sits ABOVE the line joining cheapest↔priciest frontier ends,
+    // i.e. a genuine diminishing-returns elbow worth stopping at. If NO interior point is above that line
+    // the frontier is convex (each step up pays off *more*), so there is no elbow → recommend the top (b).
+    for (var i = 1; i < fp.length - 1; i++) { var p = fp[i], s = (dx * (p.y - a.y) - dy * (p.x - a.x)) / len; if (s > bestD) { bestD = s; best = p; } }
+    return best ? best.id : b.id;
   }
   function compute(data, state) {
     state = state || {};
@@ -936,6 +1589,18 @@ button{font-family:inherit;}
       + '<div class="vf-wbar-track">' + segs + '</div><div class="vf-wbar-keys">' + keys + '</div>';
   };
   App.prototype.refreshWeightBar = function () { var el = this.elControls.querySelector('.vf-wbar'); if (el) el.innerHTML = this.weightBarHTML(); };
+  // restore EVERYTHING to the decision's defaults (weights, cost mode, budget, horizon, lens, sort, selection, comparison, view)
+  App.prototype.resetAll = function () {
+    this.initWants();
+    this.state.horizon = null; this.state.budgetCap = null; this.state.costMode = 'acq';
+    this.state.lensDim = null; this.state.zoomPreset = 'all'; this.state.whyOpen = false;
+    this.state.cmp = null; this.state.sortKey = 'value'; this.state.sortDir = -1;
+    this.state.tab = 'table'; this.state.selectedId = null;
+    this.renderControls();
+    if (this.elTools) Array.prototype.forEach.call(this.elTools.querySelectorAll('.vf-segp'), function (x) { x.classList.toggle('on', x.getAttribute('data-z') === 'all'); });
+    if (this.elTabs) Array.prototype.forEach.call(this.elTabs.querySelectorAll('.vf-tab'), function (x) { x.classList.toggle('vf-tab-on', x.getAttribute('data-tab') === 'table'); });
+    this.recompute();
+  };
 
   // ---------- on-page controls (docked under the chart) ----------
   App.prototype.renderControls = function () {
@@ -955,7 +1620,7 @@ button{font-family:inherit;}
       '<button class="vf-ctrl-toggle" type="button" aria-expanded="' + (co ? 'true' : 'false') + '"><span>⚙ Adjust priorities &amp; cost</span><span class="vf-ctrl-toggle-ic">' + (co ? '▾' : '▸') + '</span></button>'
       + '<div class="vf-ctrl-inner' + (co ? '' : ' vf-collapsed') + '">'
       + '<div class="vf-wbar">' + this.weightBarHTML() + '</div>'
-      + '<div class="vf-prios"><div class="vf-prios-h">Your priorities<span class="vf-prios-sub">drag any slider (0–10) — the chart and the pick update live; the % is its share of the decision</span></div><div class="vf-wts">' + positives.map(wantSlider).join('') + '</div></div>'
+      + '<div class="vf-prios"><div class="vf-prios-h"><span>Your priorities</span><span class="vf-prios-sub">drag any slider (0–10) — the chart and the pick update live; the % is its share of the decision</span><button class="vf-reset-all" type="button" title="Restore weights and all settings to the defaults">↺ Reset all</button></div><div class="vf-wts">' + positives.map(wantSlider).join('') + '</div></div>'
       + '<div class="vf-ctrl-primary">'
       + '<div class="vf-ctrl-field"><span class="vf-ctrl-lab">Cost axis</span><div class="vf-segwrap">' + costChips + '</div></div>'
       + budgetField
@@ -983,7 +1648,8 @@ button{font-family:inherit;}
       });
     });
     Array.prototype.forEach.call(this.elControls.querySelectorAll('input[data-pen]'), function (inp) { inp.addEventListener('input', function () { var id = inp.getAttribute('data-pen'); self.state.weights[id] = (+inp.value) / 100; self.elControls.querySelector('[data-wv="' + id + '"]').innerHTML = '<span class="vf-num">' + inp.value + '%</span>'; self.scheduleRecompute(); }); });
-    this.elControls.querySelector('.vf-reset').addEventListener('click', function () { self.initWants(); self.state.horizon = null; self.state.budgetCap = null; self.renderControls(); self.recompute(); });
+    this.elControls.querySelector('.vf-reset').addEventListener('click', function () { self.resetAll(); });
+    var resetAllBtn = this.elControls.querySelector('.vf-reset-all'); if (resetAllBtn) resetAllBtn.addEventListener('click', function () { self.resetAll(); });
   };
 
 
@@ -1306,13 +1972,22 @@ button{font-family:inherit;}
     if (mode !== 'acq') costRows += costComp('Running (PV)', function (c) { return c.pvRunning; }) + costComp('Resale credit', function (c) { return c.pvResale; }, true);
     var wins = {}; dims.forEach(function (d) { var best = -Infinity, who = []; sel.forEach(function (r) { var p = partOf(r, d.id), nn = p ? p.norm : 0; if (nn > best + 1e-9) { best = nn; who = [r.id]; } else if (Math.abs(nn - best) < 1e-9) who.push(r.id); }); if (who.length === 1) wins[who[0]] = (wins[who[0]] || 0) + 1; });
     var tallyTxt = sel.map(function (r) { return htmlEsc(firstWord(r.name)) + ' <b>' + (wins[r.id] || 0) + '</b>'; }).join(' · ');
+    // authored pairwise assessments (data.comparisons keyed by sorted "idA|idB"); graceful if absent
+    var comparisons = this.data.comparisons || {}, pairs = [];
+    for (var pi = 0; pi < sel.length; pi++) for (var pj = pi + 1; pj < sel.length; pj++) pairs.push([sel[pi], sel[pj]]);
+    var assessHTML = pairs.map(function (pr) {
+      var c = comparisons[[pr[0].id, pr[1].id].sort().join('|')]; if (!c) return '';
+      var txt = typeof c === 'string' ? c : (c.text || ''), flag = (c && c.flag) ? '<div class="vf-cmp-flag">⚠ ' + htmlEsc(c.flag) + '</div>' : '';
+      return '<div class="vf-cmp-assess"><div class="vf-cmp-assess-h">' + htmlEsc(shortName(pr[0].name)) + ' vs ' + htmlEsc(shortName(pr[1].name)) + '</div><p>' + htmlEsc(txt) + '</p>' + flag + '</div>';
+    }).filter(Boolean).join('');
+    var assessBlock = assessHTML ? '<div class="vf-cmp-assess-wrap"><div class="vf-cmp-assess-title">Assessment</div>' + assessHTML + '</div>' : '';
     this.elTabPanel.innerHTML = '<div class="vf-subcap">Choose 2–3 products to compare side by side. <b>✓</b> marks the leader on each row — value &amp; each dimension (higher wins), cost (lower wins). Outright dimension wins: ' + tallyTxt + ' of ' + dims.length + '.</div>'
       + pickers
       + '<div class="vf-cmp-wrap"><div class="vf-cmp-table" style="--n:' + N + '">'
       + head + valRow + costRow
       + '<div class="vf-cmp-section">Value by dimension <span class="vf-cmp-section-sub">raw score · bar = share of the scale</span></div>' + dimRows + antiRows
       + '<div class="vf-cmp-section">Cost breakdown <span class="vf-cmp-section-sub">' + (mode === 'acq' ? 'up front' : 'present-valued over the life') + '</span></div>' + costRows
-      + '</div></div>';
+      + '</div></div>' + assessBlock;
     this.bindCompare();
   };
   App.prototype.bindCompare = function () {

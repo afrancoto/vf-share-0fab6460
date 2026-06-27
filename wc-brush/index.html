@@ -148,6 +148,8 @@ button{font-family:inherit;}
 .vf-prios{margin:16px 0 4px;}
 .vf-prios-h{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);display:flex;flex-wrap:wrap;gap:3px 10px;align-items:baseline;margin-bottom:12px;}
 .vf-prios-sub{font-family:var(--serif);text-transform:none;letter-spacing:0;font-size:11.5px;font-style:italic;color:var(--faint);}
+.vf-reset-all{margin-left:auto;background:none;border:1px solid var(--line);border-radius:999px;color:var(--rec);font-family:inherit;font-size:11px;letter-spacing:.02em;padding:4px 11px;cursor:pointer;white-space:nowrap;}
+.vf-reset-all:hover{border-color:var(--rec);background:var(--rec-bg);}
 .vf-ctrl-primary{display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start;margin-top:16px;padding-top:14px;border-top:1px solid var(--line2);}
 .vf-ctrl-field{display:flex;flex-direction:column;gap:8px;}
 .vf-ctrl-lab{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);}
@@ -339,6 +341,13 @@ button{font-family:inherit;}
 .vf-cmp-section-sub{font-family:var(--serif);text-transform:none;letter-spacing:0;font-style:italic;font-size:11px;color:var(--faint);}
 .vf-cmp-cost .vf-cmp-fig{color:var(--muted);}
 .vf-cmp-anti .vf-cmp-lab{color:var(--muted);}
+.vf-cmp-assess-wrap{margin-top:18px;border-top:1px solid var(--line2);padding-top:16px;}
+.vf-cmp-assess-title{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-bottom:11px;}
+.vf-cmp-assess{border-left:3px solid var(--front);padding:2px 0 2px 14px;margin-bottom:15px;}
+.vf-cmp-assess:last-child{margin-bottom:0;}
+.vf-cmp-assess-h{font-family:var(--serif);font-weight:600;font-size:14px;margin-bottom:5px;}
+.vf-cmp-assess p{font-size:13px;color:var(--muted);line-height:1.55;margin:0;}
+.vf-cmp-flag{margin-top:7px;font-size:12px;color:var(--rec);background:var(--rec-bg);border:1px solid var(--rec-border);border-radius:6px;padding:6px 9px;line-height:1.45;}
 
 /* robustness / tornado */
 .vf-tor{margin:4px 0 0;}
@@ -466,216 +475,947 @@ button{font-family:inherit;}
   "meta": {
     "title": "WC toilet brush",
     "slug": "wc-brush",
-    "region": "NL", "currency": "EUR",
-    "horizonYears": 8, "discountRate": 0.05,
-    "engineVersion": "0.7.0", "createdISO": "2026-06-25",
-    "note": "One of three WC pieces under a €150 trio cap. Cost is EAC (price ÷ expected life); replacement heads are sub-€1/yr and common, so consumables=0. Head-retention / holder stability carries the hard screen. Links re-verified 2026-06-25: Leen Bakker NL is trading (only the Belgian arm went bankrupt); the House Doctor marble+brass brush is now sourced from an NL reseller (free ship, no DK-only blocker); the Aquanova Ugo Ginger link was corrected (the old one was the wrong colour)."
+    "region": "NL",
+    "currency": "EUR",
+    "horizonYears": 8,
+    "discountRate": 0.05,
+    "engineVersion": "0.9.4",
+    "createdISO": "2026-06-25",
+    "note": "One of three WC pieces under a €150 trio cap. Cost shown defaults to purchase + delivery (use the Per-year / Total toggle for EAC); replacement heads are sub-€1/yr and common, so consumables=0. Head-retention / holder stability carries the hard screen. Links re-verified 2026-06-25: Leen Bakker NL is trading (only the Belgian arm went bankrupt); the House Doctor marble+brass brush is now sourced from an NL reseller (free ship, no DK-only blocker); the Aquanova Ugo Ginger link was corrected (the old one was the wrong colour)."
   },
   "dimensions": [
-    { "id": "works",      "label": "Works — head-retention & stability", "type": "functional", "direction": "more-better", "weight": 0.22, "range": { "min": 0, "max": 10 }, "hardMin": 5, "rationale": "Top gate: the head stays on the handle, the handle doesn't snap, the holder is stable, the lid doesn't dip in the water. Head-detachment is the #1 brush failure." },
-    { "id": "honesty",    "label": "Material honesty", "type": "social", "direction": "more-better", "weight": 0.15, "range": { "min": 0, "max": 10 }, "rationale": "Real stone/marble/stoneware/ceramic ≫ faux-stone resin ≫ plastic." },
-    { "id": "feel",       "label": "Tactile / premium feel", "type": "experiential", "direction": "more-better", "weight": 0.12, "range": { "min": 0, "max": 10 }, "rationale": "Heft and surface in the hand; a heavy stone holder reads 'wertig'." },
-    { "id": "tone",       "label": "Warm-matte tone under 2700K", "type": "aesthetic", "direction": "more-better", "weight": 0.12, "range": { "min": 0, "max": 10 }, "rationale": "Warm sand/greige/taupe, matte; an exposed shiny rod or a strong colour pulls it off-register." },
-    { "id": "character",  "label": "Texture / character", "type": "aesthetic", "direction": "more-better", "weight": 0.10, "range": { "min": 0, "max": 10 }, "rationale": "Real-stone grain, reactive glaze, a brass rod — the play layer, never a printed motif." },
-    { "id": "conceal",    "label": "Conceals the bristles", "type": "functional", "direction": "more-better", "weight": 0.07, "range": { "min": 0, "max": 10 }, "rationale": "A lid/canister hiding the bristles is tidier — valued, but open-with-a-matched-handle is acceptable, so this is mid-weight, not a screen." },
-    { "id": "harmony",    "label": "Joins a warm-sand family", "type": "aesthetic", "direction": "more-better", "weight": 0.06, "range": { "min": 0, "max": 10 }, "rationale": "How quietly its tone sits with a plain sand dispenser + bin (vs an outlier colour that becomes a second focal note)." },
-    { "id": "durability", "label": "Durability / defect-freedom", "type": "risk", "direction": "more-better", "weight": 0.08, "range": { "min": 0, "max": 10 }, "rationale": "No rod-rust, head loosening, or coating wear over years; a replaceable head extends life." },
-    { "id": "coolmetal",  "label": "Cool / 3rd-metal note", "type": "anti-need", "direction": "unwanted", "weight": 0.04, "range": { "min": -5, "max": 5 }, "rationale": "A visible shiny chrome/steel rod on the floor adds a cool 3rd-metal note. A brass rod echoing the mirror is the intended accent → not penalised." },
-    { "id": "cheapfeel",  "label": "Plastic dissonance", "type": "anti-need", "direction": "unwanted", "weight": 0.025, "range": { "min": -5, "max": 5 }, "rationale": "A plastic brush reads cheap even if it works — the non-monetary harm." },
-    { "id": "fauxdouble", "label": "Faux-stone / applied read", "type": "anti-need", "direction": "unwanted", "weight": 0.015, "range": { "min": -5, "max": 5 }, "rationale": "Stone-look resin reads slightly applied; mild." }
+    {
+      "id": "works",
+      "label": "Works — head-retention & stability",
+      "type": "functional",
+      "direction": "more-better",
+      "weight": 0.22,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
+      "hardMin": 5,
+      "rationale": "Top gate: the head stays on the handle, the handle doesn't snap, the holder is stable, the lid doesn't dip in the water. Head-detachment is the #1 brush failure."
+    },
+    {
+      "id": "honesty",
+      "label": "Material honesty",
+      "type": "social",
+      "direction": "more-better",
+      "weight": 0.15,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
+      "rationale": "Real stone/marble/stoneware/ceramic ≫ faux-stone resin ≫ plastic."
+    },
+    {
+      "id": "feel",
+      "label": "Tactile / premium feel",
+      "type": "experiential",
+      "direction": "more-better",
+      "weight": 0.12,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
+      "rationale": "Heft and surface in the hand; a heavy stone holder reads 'wertig'."
+    },
+    {
+      "id": "tone",
+      "label": "Warm-matte tone under 2700K",
+      "type": "aesthetic",
+      "direction": "more-better",
+      "weight": 0.12,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
+      "rationale": "Warm sand/greige/taupe, matte; an exposed shiny rod or a strong colour pulls it off-register."
+    },
+    {
+      "id": "character",
+      "label": "Texture / character",
+      "type": "aesthetic",
+      "direction": "more-better",
+      "weight": 0.1,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
+      "rationale": "Real-stone grain, reactive glaze, a brass rod — the play layer, never a printed motif."
+    },
+    {
+      "id": "conceal",
+      "label": "Conceals the bristles",
+      "type": "functional",
+      "direction": "more-better",
+      "weight": 0.07,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
+      "rationale": "A lid/canister hiding the bristles is tidier — valued, but open-with-a-matched-handle is acceptable, so this is mid-weight, not a screen."
+    },
+    {
+      "id": "harmony",
+      "label": "Joins a warm-sand family",
+      "type": "aesthetic",
+      "direction": "more-better",
+      "weight": 0.06,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
+      "rationale": "How quietly its tone sits with a plain sand dispenser + bin (vs an outlier colour that becomes a second focal note)."
+    },
+    {
+      "id": "durability",
+      "label": "Durability / defect-freedom",
+      "type": "risk",
+      "direction": "more-better",
+      "weight": 0.08,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
+      "rationale": "No rod-rust, head loosening, or coating wear over years; a replaceable head extends life."
+    },
+    {
+      "id": "coolmetal",
+      "label": "Cool / 3rd-metal note",
+      "type": "anti-need",
+      "direction": "unwanted",
+      "weight": 0.04,
+      "range": {
+        "min": -5,
+        "max": 5
+      },
+      "rationale": "A visible shiny chrome/steel rod on the floor adds a cool 3rd-metal note. A brass rod echoing the mirror is the intended accent → not penalised."
+    },
+    {
+      "id": "cheapfeel",
+      "label": "Plastic dissonance",
+      "type": "anti-need",
+      "direction": "unwanted",
+      "weight": 0.025,
+      "range": {
+        "min": -5,
+        "max": 5
+      },
+      "rationale": "A plastic brush reads cheap even if it works — the non-monetary harm."
+    },
+    {
+      "id": "fauxdouble",
+      "label": "Faux-stone / applied read",
+      "type": "anti-need",
+      "direction": "unwanted",
+      "weight": 0.015,
+      "range": {
+        "min": -5,
+        "max": 5
+      },
+      "rationale": "Stone-look resin reads slightly applied; mild."
+    }
   ],
   "products": [
-    { "id": "msv-beige-2pk", "name": "MSV beige (per unit of 2-pack)", "price": 14.0,
-      "links": [{ "label": "bol.com", "url": "https://www.bol.com/nl/nl/p/msv-toiletborstel-houder-wc-borstel-2x-beige-kunststof-35-cm/9300000145045163/" }],
+    {
+      "id": "msv-beige-2pk",
+      "name": "MSV beige (per unit of 2-pack)",
+      "price": 14,
+      "links": [
+        {
+          "label": "bol.com",
+          "url": "https://www.bol.com/nl/nl/p/msv-toiletborstel-houder-wc-borstel-2x-beige-kunststof-35-cm/9300000145045163/"
+        }
+      ],
       "note": "Sold as a 2-pack (€27.99 on the .nl listing, verified 2026-06-25); per-unit price shown. Plastic + steel rod, open. Kept as the plastic cost anchor.",
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 0, "expectedLifeYears": 5, "resaleValue": 0 },
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 0,
+        "maintenancePerYear": 0,
+        "deliveryCost": 0,
+        "expectedLifeYears": 5,
+        "resaleValue": 0
+      },
       "scores": {
-        "works":      { "value": 3, "why": "1.0★/2 — water seeps at the base; below the works floor", "source": "https://www.bol.com/nl/nl/p/msv-toiletborstel-houder-wc-borstel-2x-beige-kunststof-35-cm/9300000145045163/" },
-        "honesty":    { "value": 3, "why": "polypropylene plastic + steel rod" },
-        "feel":       { "value": 3, "why": "plastic, light" },
-        "tone":       { "value": 6, "why": "beige but plastic" },
-        "character":  { "value": 3, "why": "plain plastic" },
-        "conceal":    { "value": 3, "why": "open holder, bristles + rod visible" },
-        "harmony":    { "value": 6 },
-        "durability": { "value": 4, "why": "water seeps; light build" },
-        "coolmetal":  { "value": -1, "why": "exposed steel rod" },
-        "cheapfeel":  { "value": -2, "why": "plastic brush, reads cheap" },
-        "fauxdouble": { "value": 0 } } },
-
-    { "id": "ikea-ekoln", "name": "IKEA EKOLN beige", "price": 7.99,
-      "links": [{ "label": "IKEA", "url": "https://www.ikea.com/nl/nl/p/ekoln-toiletborstel-beige-90493007/" }],
+        "works": {
+          "value": 3,
+          "why": "1.0★/2 — water seeps at the base; below the works floor",
+          "source": "https://www.bol.com/nl/nl/p/msv-toiletborstel-houder-wc-borstel-2x-beige-kunststof-35-cm/9300000145045163/"
+        },
+        "honesty": {
+          "value": 3,
+          "why": "polypropylene plastic + steel rod"
+        },
+        "feel": {
+          "value": 3,
+          "why": "plastic, light"
+        },
+        "tone": {
+          "value": 6,
+          "why": "beige but plastic"
+        },
+        "character": {
+          "value": 3,
+          "why": "plain plastic"
+        },
+        "conceal": {
+          "value": 3,
+          "why": "open holder, bristles + rod visible"
+        },
+        "harmony": {
+          "value": 6
+        },
+        "durability": {
+          "value": 4,
+          "why": "water seeps; light build"
+        },
+        "coolmetal": {
+          "value": -1,
+          "why": "exposed steel rod"
+        },
+        "cheapfeel": {
+          "value": -2,
+          "why": "plastic brush, reads cheap"
+        },
+        "fauxdouble": {
+          "value": 0
+        }
+      }
+    },
+    {
+      "id": "ikea-ekoln",
+      "name": "IKEA EKOLN beige",
+      "price": 7.99,
+      "links": [
+        {
+          "label": "IKEA",
+          "url": "https://www.ikea.com/nl/nl/p/ekoln-toiletborstel-beige-90493007/"
+        }
+      ],
       "note": "Glazed earthenware cup, open, silver steel rod. Cheap warm anchor but the rod rusts and the head works loose (2.9★). Link verified live 2026-06-25.",
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 4, "expectedLifeYears": 5, "resaleValue": 0 },
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 0,
+        "maintenancePerYear": 0,
+        "deliveryCost": 4,
+        "expectedLifeYears": 5,
+        "resaleValue": 0
+      },
       "scores": {
-        "works":      { "value": 4, "why": "2.9★/46 — head and rod work loose over time; below the works floor", "source": "https://www.ikea.com/nl/nl/p/ekoln-toiletborstel-beige-90493007/" },
-        "honesty":    { "value": 7, "why": "glazed earthenware cup — honest body" },
-        "feel":       { "value": 5, "why": "glazed earthenware, plain" },
-        "tone":       { "value": 7, "why": "warm beige; silver rod cools it" },
-        "character":  { "value": 4, "why": "plain cup" },
-        "conceal":    { "value": 3, "why": "open cup, bristles + steel rod visible" },
-        "harmony":    { "value": 6 },
-        "durability": { "value": 4, "why": "rod rusts, head works loose (2.9★/46)" },
-        "coolmetal":  { "value": -2, "why": "exposed silver steel rod that also rusts = a cool note on the floor" },
-        "cheapfeel":  { "value": 0 }, "fauxdouble": { "value": 0 } } },
-
-    { "id": "hema-mat-zand", "name": "HEMA mat zand (earthenware)", "price": 18.49,
-      "links": [{ "label": "HEMA", "url": "https://www.hema.nl/wonen-slapen/badkamer/badkamer-accessoires/toiletborstelhouders/toiletborstelhouder-mat-zand-9.5x22-80330029.html" }],
+        "works": {
+          "value": 4,
+          "why": "2.9★/46 — head and rod work loose over time; below the works floor",
+          "source": "https://www.ikea.com/nl/nl/p/ekoln-toiletborstel-beige-90493007/"
+        },
+        "honesty": {
+          "value": 7,
+          "why": "glazed earthenware cup — honest body"
+        },
+        "feel": {
+          "value": 5,
+          "why": "glazed earthenware, plain"
+        },
+        "tone": {
+          "value": 7,
+          "why": "warm beige; silver rod cools it"
+        },
+        "character": {
+          "value": 4,
+          "why": "plain cup"
+        },
+        "conceal": {
+          "value": 3,
+          "why": "open cup, bristles + steel rod visible"
+        },
+        "harmony": {
+          "value": 6
+        },
+        "durability": {
+          "value": 4,
+          "why": "rod rusts, head works loose (2.9★/46)"
+        },
+        "coolmetal": {
+          "value": -2,
+          "why": "exposed silver steel rod that also rusts = a cool note on the floor"
+        },
+        "cheapfeel": {
+          "value": 0
+        },
+        "fauxdouble": {
+          "value": 0
+        }
+      }
+    },
+    {
+      "id": "hema-mat-zand",
+      "name": "HEMA mat zand (earthenware)",
+      "price": 18.49,
+      "links": [
+        {
+          "label": "HEMA",
+          "url": "https://www.hema.nl/wonen-slapen/badkamer/badkamer-accessoires/toiletborstelhouders/toiletborstelhouder-mat-zand-9.5x22-80330029.html"
+        }
+      ],
       "note": "Earthenware, sand, conceals the bristles, matched rod, replacement head €4.29. The safest cheap style match. Link verified live 2026-06-25 (€18.49, 1–3 werkdagen).",
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 3.95, "expectedLifeYears": 10, "resaleValue": 0 },
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 0,
+        "maintenancePerYear": 0,
+        "deliveryCost": 3.95,
+        "expectedLifeYears": 10,
+        "resaleValue": 0
+      },
       "scores": {
-        "works":      { "value": 6, "why": "conventional concealing design, matched rod; no reviews yet — spec-level", "source": "https://www.hema.nl/wonen-slapen/badkamer/badkamer-accessoires/toiletborstelhouders/toiletborstelhouder-mat-zand-9.5x22-80330029.html" },
-        "honesty":    { "value": 8, "why": "earthenware" },
-        "feel":       { "value": 6, "why": "matte earthenware, decent heft" },
-        "tone":       { "value": 8, "why": "warm sand, matte, matched rod" },
-        "character":  { "value": 5, "why": "clean concealing canister, modest" },
-        "conceal":    { "value": 8, "why": "lid/canister conceals the bristles" },
-        "harmony":    { "value": 8 },
-        "durability": { "value": 6, "why": "earthenware; no review data; replaceable head helps" },
-        "coolmetal":  { "value": 0 }, "cheapfeel": { "value": 0 }, "fauxdouble": { "value": 0 } } },
-
-    { "id": "brabantia-renew", "name": "Brabantia ReNew Soft Beige", "price": 22.39,
-      "links": [{ "label": "bol.com", "url": "https://www.bol.com/nl/nl/p/brabantia-renew-wc-borstel-met-houder-soft-beige/9300000114095207/" }],
+        "works": {
+          "value": 6,
+          "why": "conventional concealing design, matched rod; no reviews yet — spec-level",
+          "source": "https://www.hema.nl/wonen-slapen/badkamer/badkamer-accessoires/toiletborstelhouders/toiletborstelhouder-mat-zand-9.5x22-80330029.html"
+        },
+        "honesty": {
+          "value": 8,
+          "why": "earthenware"
+        },
+        "feel": {
+          "value": 6,
+          "why": "matte earthenware, decent heft"
+        },
+        "tone": {
+          "value": 8,
+          "why": "warm sand, matte, matched rod"
+        },
+        "character": {
+          "value": 5,
+          "why": "clean concealing canister, modest"
+        },
+        "conceal": {
+          "value": 8,
+          "why": "lid/canister conceals the bristles"
+        },
+        "harmony": {
+          "value": 8
+        },
+        "durability": {
+          "value": 6,
+          "why": "earthenware; no review data; replaceable head helps"
+        },
+        "coolmetal": {
+          "value": 0
+        },
+        "cheapfeel": {
+          "value": 0
+        },
+        "fauxdouble": {
+          "value": 0
+        }
+      }
+    },
+    {
+      "id": "brabantia-renew",
+      "name": "Brabantia ReNew Soft Beige",
+      "price": 22.39,
+      "links": [
+        {
+          "label": "bol.com",
+          "url": "https://www.bol.com/nl/nl/p/brabantia-renew-wc-borstel-met-houder-soft-beige/9300000114095207/"
+        }
+      ],
       "note": "Powder-coated metal (not stone), warm soft-beige satin, semi-open, steel rod. The best review base in the set, but one rust-inside report and the head is wide for some bowls. Link verified live 2026-06-25 (€22.39, op voorraad, '100+ verkocht').",
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 0, "expectedLifeYears": 9, "resaleValue": 0 },
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 0,
+        "maintenancePerYear": 0,
+        "deliveryCost": 0,
+        "expectedLifeYears": 9,
+        "resaleValue": 0
+      },
       "scores": {
-        "works":      { "value": 7, "why": "4.3★/86 — solid build; minor rust-inside report + head wide for some bowls", "source": "https://www.bol.com/nl/nl/p/brabantia-renew-wc-borstel-met-houder-soft-beige/9300000114095207/" },
-        "honesty":    { "value": 6, "why": "powder-coated steel — honest metal, not stone" },
-        "feel":       { "value": 6, "why": "powder-coated metal, solid" },
-        "tone":       { "value": 8, "why": "warm soft-beige, satin metal" },
-        "character":  { "value": 5, "why": "plain metal cylinder" },
-        "conceal":    { "value": 5, "why": "semi-open holder" },
-        "harmony":    { "value": 8 },
-        "durability": { "value": 7, "why": "solid; isolated rust-inside report" },
-        "coolmetal":  { "value": -1, "why": "visible satin-steel rod, small cool note" },
-        "cheapfeel":  { "value": 0 }, "fauxdouble": { "value": 0 } } },
-
-    { "id": "spirella-akira", "name": "Spirella Akira mat taupe", "price": 24,
-      "links": [{ "label": "amazon.nl", "url": "https://www.amazon.nl/Spirella-Wc-borstel-toiletborstel-hygi%C3%ABnische-houder/dp/B07GFNVC3C" }],
+        "works": {
+          "value": 7,
+          "why": "4.3★/86 — solid build; minor rust-inside report + head wide for some bowls",
+          "source": "https://www.bol.com/nl/nl/p/brabantia-renew-wc-borstel-met-houder-soft-beige/9300000114095207/"
+        },
+        "honesty": {
+          "value": 6,
+          "why": "powder-coated steel — honest metal, not stone"
+        },
+        "feel": {
+          "value": 6,
+          "why": "powder-coated metal, solid"
+        },
+        "tone": {
+          "value": 8,
+          "why": "warm soft-beige, satin metal"
+        },
+        "character": {
+          "value": 5,
+          "why": "plain metal cylinder"
+        },
+        "conceal": {
+          "value": 5,
+          "why": "semi-open holder"
+        },
+        "harmony": {
+          "value": 8
+        },
+        "durability": {
+          "value": 7,
+          "why": "solid; isolated rust-inside report"
+        },
+        "coolmetal": {
+          "value": -1,
+          "why": "visible satin-steel rod, small cool note"
+        },
+        "cheapfeel": {
+          "value": 0
+        },
+        "fauxdouble": {
+          "value": 0
+        }
+      }
+    },
+    {
+      "id": "spirella-akira",
+      "name": "Spirella Akira mat taupe",
+      "price": 24,
+      "links": [
+        {
+          "label": "amazon.nl",
+          "url": "https://www.amazon.nl/Spirella-Wc-borstel-toiletborstel-hygi%C3%ABnische-houder/dp/B07GFNVC3C"
+        }
+      ],
       "note": "Steel + plastic canister, matte taupe, lidded (conceals, rod hidden). Deep link resolves to the correct taupe variant (2026-06-25) but Amazon blocks scraping → the ~€24 price + stock are NOT verified; confirm before relying on it.",
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 0, "expectedLifeYears": 8, "resaleValue": 0 },
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 0,
+        "maintenancePerYear": 0,
+        "deliveryCost": 0,
+        "expectedLifeYears": 8,
+        "resaleValue": 0
+      },
       "scores": {
-        "works":      { "value": 7, "why": "sibling colours 5★/4–5 with good head-retention (taupe unproven)", "source": "https://www.amazon.nl/Spirella-Wc-borstel-toiletborstel-hygi%C3%ABnische-houder/dp/B07GFNVC3C" },
-        "honesty":    { "value": 5, "why": "steel + plastic canister" },
-        "feel":       { "value": 6, "why": "matte canister, fine" },
-        "tone":       { "value": 8, "why": "matte taupe — the nicest cheap tone" },
-        "character":  { "value": 5, "why": "plain canister" },
-        "conceal":    { "value": 8, "why": "lidded canister conceals; rod hidden" },
-        "harmony":    { "value": 8 },
-        "durability": { "value": 6, "why": "steel canister; taupe finish unproven" },
-        "coolmetal":  { "value": 0, "why": "canister hides any metal" },
-        "cheapfeel":  { "value": 0 }, "fauxdouble": { "value": 0 } } },
-
-    { "id": "leenbakker-zeller", "name": "Zeller Structure ceramic beige", "price": 29.49,
-      "links": [{ "label": "Leen Bakker", "url": "https://www.leenbakker.nl/woonaccessoires/badkamer-en-accessoires/toiletaccessoires/wc-borstels/zeller-toiletborstel-met-wc-borstel-houder-keramiek-beige" }, { "label": "Praxis (backup)", "url": "https://www.praxis.nl/badkamer-keuken-wonen/toilet/wc-accessoires/toiletborstels-houders/zeller-toiletborstel-met-wc-borstel-houder-keramiek-beige-31-cm/10150929" }],
+        "works": {
+          "value": 7,
+          "why": "sibling colours 5★/4–5 with good head-retention (taupe unproven)",
+          "source": "https://www.amazon.nl/Spirella-Wc-borstel-toiletborstel-hygi%C3%ABnische-houder/dp/B07GFNVC3C"
+        },
+        "honesty": {
+          "value": 5,
+          "why": "steel + plastic canister"
+        },
+        "feel": {
+          "value": 6,
+          "why": "matte canister, fine"
+        },
+        "tone": {
+          "value": 8,
+          "why": "matte taupe — the nicest cheap tone"
+        },
+        "character": {
+          "value": 5,
+          "why": "plain canister"
+        },
+        "conceal": {
+          "value": 8,
+          "why": "lidded canister conceals; rod hidden"
+        },
+        "harmony": {
+          "value": 8
+        },
+        "durability": {
+          "value": 6,
+          "why": "steel canister; taupe finish unproven"
+        },
+        "coolmetal": {
+          "value": 0,
+          "why": "canister hides any metal"
+        },
+        "cheapfeel": {
+          "value": 0
+        },
+        "fauxdouble": {
+          "value": 0
+        }
+      }
+    },
+    {
+      "id": "leenbakker-zeller",
+      "name": "Zeller Structure ceramic beige",
+      "price": 29.49,
+      "links": [
+        {
+          "label": "Leen Bakker",
+          "url": "https://www.leenbakker.nl/woonaccessoires/badkamer-en-accessoires/toiletaccessoires/wc-borstels/zeller-toiletborstel-met-wc-borstel-houder-keramiek-beige"
+        },
+        {
+          "label": "Praxis (backup)",
+          "url": "https://www.praxis.nl/badkamer-keuken-wonen/toilet/wc-accessoires/toiletborstels-houders/zeller-toiletborstel-met-wc-borstel-houder-keramiek-beige-31-cm/10150929"
+        }
+      ],
       "note": "Ceramic, beige, 'Structure' textured surface, drip-tray holder. No reviews; matte not confirmed. Re-verified 2026-06-25: Leen Bakker NL is trading (only the Belgian arm went bankrupt; NL chain acquired Apr-2026, online continues). Same product also live at Praxis (backup). Prices are JS-rendered; ~€29.49 is the cross-retailer figure.",
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 0, "expectedLifeYears": 9, "resaleValue": 0 },
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 0,
+        "maintenancePerYear": 0,
+        "deliveryCost": 0,
+        "expectedLifeYears": 9,
+        "resaleValue": 0
+      },
       "scores": {
-        "works":      { "value": 5, "why": "no track record (0 reviews); conventional design", "source": "https://www.leenbakker.nl/woonaccessoires/badkamer-en-accessoires/toiletaccessoires/wc-borstels/zeller-toiletborstel-met-wc-borstel-houder-keramiek-beige" },
-        "honesty":    { "value": 8, "why": "ceramic" },
-        "feel":       { "value": 6, "why": "ceramic with drip tray" },
-        "tone":       { "value": 7, "why": "beige; matte unconfirmed" },
-        "character":  { "value": 6, "why": "textured 'Structure' surface" },
-        "conceal":    { "value": 5, "why": "drip-tray holder, partly open" },
-        "harmony":    { "value": 7 },
-        "durability": { "value": 6, "why": "ceramic; no review data" },
-        "coolmetal":  { "value": -1, "why": "likely a visible metal rod" },
-        "cheapfeel":  { "value": 0 }, "fauxdouble": { "value": 0 } } },
-
-    { "id": "kela-talus", "name": "Kela Talus beige (stone)", "price": 35.10,
-      "links": [{ "label": "bol.com", "url": "https://www.bol.com/nl/p/talus-toiletborstel-houder-beige-kela/9200000132540578/" }],
+        "works": {
+          "value": 5,
+          "why": "no track record (0 reviews); conventional design",
+          "source": "https://www.leenbakker.nl/woonaccessoires/badkamer-en-accessoires/toiletaccessoires/wc-borstels/zeller-toiletborstel-met-wc-borstel-houder-keramiek-beige"
+        },
+        "honesty": {
+          "value": 8,
+          "why": "ceramic"
+        },
+        "feel": {
+          "value": 6,
+          "why": "ceramic with drip tray"
+        },
+        "tone": {
+          "value": 7,
+          "why": "beige; matte unconfirmed"
+        },
+        "character": {
+          "value": 6,
+          "why": "textured 'Structure' surface"
+        },
+        "conceal": {
+          "value": 5,
+          "why": "drip-tray holder, partly open"
+        },
+        "harmony": {
+          "value": 7
+        },
+        "durability": {
+          "value": 6,
+          "why": "ceramic; no review data"
+        },
+        "coolmetal": {
+          "value": -1,
+          "why": "likely a visible metal rod"
+        },
+        "cheapfeel": {
+          "value": 0
+        },
+        "fauxdouble": {
+          "value": 0
+        }
+      }
+    },
+    {
+      "id": "kela-talus",
+      "name": "Kela Talus beige (stone)",
+      "price": 35.1,
+      "links": [
+        {
+          "label": "bol.com",
+          "url": "https://www.bol.com/nl/p/talus-toiletborstel-houder-beige-kela/9200000132540578/"
+        }
+      ],
       "note": "Polyresin + natural-stone, beige, open holder, matched handle, replaceable head. Tall (45 cm). Only 1 review. Link verified live 2026-06-25 (€35.10, op voorraad; 2-pack 10% off).",
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 0, "expectedLifeYears": 12, "resaleValue": 0 },
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 0,
+        "maintenancePerYear": 0,
+        "deliveryCost": 0,
+        "expectedLifeYears": 12,
+        "resaleValue": 0
+      },
       "scores": {
-        "works":      { "value": 6, "why": "heavy stone holder, replaceable head; 1 review (thin)", "source": "https://www.bol.com/nl/p/talus-toiletborstel-houder-beige-kela/9200000132540578/" },
-        "honesty":    { "value": 6, "why": "polyresin with natural-stone content" },
-        "feel":       { "value": 7, "why": "stone content gives real heft" },
-        "tone":       { "value": 8, "why": "warm beige, matte" },
-        "character":  { "value": 7, "why": "natural-stone surface, heavy" },
-        "conceal":    { "value": 3, "why": "open holder, bristles visible" },
-        "harmony":    { "value": 8 },
-        "durability": { "value": 7, "why": "stone holder durable; replaceable head" },
-        "coolmetal":  { "value": 0, "why": "matched handle, no exposed cool metal" },
-        "cheapfeel":  { "value": 0 }, "fauxdouble": { "value": -1, "why": "part-resin stone-look reads slightly applied" } } },
-
-    { "id": "ridder-little-rock", "name": "Ridder Little Rock beige", "price": 47.98,
-      "links": [{ "label": "Sanitino", "url": "https://www.sanitino.nl/sapho-ridder-little-rock-toiletborstel-beige-22190409" }],
+        "works": {
+          "value": 6,
+          "why": "heavy stone holder, replaceable head; 1 review (thin)",
+          "source": "https://www.bol.com/nl/p/talus-toiletborstel-houder-beige-kela/9200000132540578/"
+        },
+        "honesty": {
+          "value": 6,
+          "why": "polyresin with natural-stone content"
+        },
+        "feel": {
+          "value": 7,
+          "why": "stone content gives real heft"
+        },
+        "tone": {
+          "value": 8,
+          "why": "warm beige, matte"
+        },
+        "character": {
+          "value": 7,
+          "why": "natural-stone surface, heavy"
+        },
+        "conceal": {
+          "value": 3,
+          "why": "open holder, bristles visible"
+        },
+        "harmony": {
+          "value": 8
+        },
+        "durability": {
+          "value": 7,
+          "why": "stone holder durable; replaceable head"
+        },
+        "coolmetal": {
+          "value": 0,
+          "why": "matched handle, no exposed cool metal"
+        },
+        "cheapfeel": {
+          "value": 0
+        },
+        "fauxdouble": {
+          "value": -1,
+          "why": "part-resin stone-look reads slightly applied"
+        }
+      }
+    },
+    {
+      "id": "ridder-little-rock",
+      "name": "Ridder Little Rock beige",
+      "price": 47.98,
+      "links": [
+        {
+          "label": "Sanitino",
+          "url": "https://www.sanitino.nl/sapho-ridder-little-rock-toiletborstel-beige-22190409"
+        }
+      ],
       "note": "Faux-stone polyresin, sand/ecru, rubber lid conceals + cuts splash, steel rod (hidden), replaceable head, 2-yr warranty. No reviews; heavy. Link verified live 2026-06-25 (€47.98 incl. BTW, ~5 werkdagen).",
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 4, "expectedLifeYears": 11, "resaleValue": 0 },
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 0,
+        "maintenancePerYear": 0,
+        "deliveryCost": 4,
+        "expectedLifeYears": 11,
+        "resaleValue": 0
+      },
       "scores": {
-        "works":      { "value": 6, "why": "concealing rubber lid, heavy holder, 2-yr warranty; no reviews — spec-level", "source": "https://www.sanitino.nl/sapho-ridder-little-rock-toiletborstel-beige-22190409" },
-        "honesty":    { "value": 5, "why": "faux-stone polyresin" },
-        "feel":       { "value": 7, "why": "heavy, 'feels like a real pebble' (per the line)" },
-        "tone":       { "value": 8, "why": "warm sand/ecru, matte" },
-        "character":  { "value": 7, "why": "'real pebble' faux-stone texture" },
-        "conceal":    { "value": 9, "why": "rubber lid fully conceals + cuts splash" },
-        "harmony":    { "value": 8 },
-        "durability": { "value": 7, "why": "heavy, 2-yr warranty, replaceable head" },
-        "coolmetal":  { "value": 0, "why": "steel rod hidden by the lid" },
-        "cheapfeel":  { "value": 0 }, "fauxdouble": { "value": -1, "why": "faux-stone polyresin, mild applied read" } } },
-
-    { "id": "blomus-sono", "name": "Blomus SONO Satellite taupe", "price": 49.95,
-      "links": [{ "label": "bol.com", "url": "https://www.bol.com/nl/p/blomus-toiletborstelhouder-sono-satellite/9200000092086875/" }],
+        "works": {
+          "value": 6,
+          "why": "concealing rubber lid, heavy holder, 2-yr warranty; no reviews — spec-level",
+          "source": "https://www.sanitino.nl/sapho-ridder-little-rock-toiletborstel-beige-22190409"
+        },
+        "honesty": {
+          "value": 5,
+          "why": "faux-stone polyresin"
+        },
+        "feel": {
+          "value": 7,
+          "why": "heavy, 'feels like a real pebble' (per the line)"
+        },
+        "tone": {
+          "value": 8,
+          "why": "warm sand/ecru, matte"
+        },
+        "character": {
+          "value": 7,
+          "why": "'real pebble' faux-stone texture"
+        },
+        "conceal": {
+          "value": 9,
+          "why": "rubber lid fully conceals + cuts splash"
+        },
+        "harmony": {
+          "value": 8
+        },
+        "durability": {
+          "value": 7,
+          "why": "heavy, 2-yr warranty, replaceable head"
+        },
+        "coolmetal": {
+          "value": 0,
+          "why": "steel rod hidden by the lid"
+        },
+        "cheapfeel": {
+          "value": 0
+        },
+        "fauxdouble": {
+          "value": -1,
+          "why": "faux-stone polyresin, mild applied read"
+        }
+      }
+    },
+    {
+      "id": "blomus-sono",
+      "name": "Blomus SONO Satellite taupe",
+      "price": 49.95,
+      "links": [
+        {
+          "label": "bol.com",
+          "url": "https://www.bol.com/nl/p/blomus-toiletborstelhouder-sono-satellite/9200000092086875/"
+        }
+      ],
       "note": "Ceramic + soft-touch, taupe, silicone lid conceals, polished steel rod hidden by the lid. 30-day returns, free shipping. 1 review (line is well-built). Link verified live 2026-06-25 (€49.95, op voorraad).",
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 0, "expectedLifeYears": 9, "resaleValue": 0 },
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 0,
+        "maintenancePerYear": 0,
+        "deliveryCost": 0,
+        "expectedLifeYears": 9,
+        "resaleValue": 0
+      },
       "scores": {
-        "works":      { "value": 7, "why": "heavy ceramic, silicone lid conceals; 1 review but line is well-built", "source": "https://www.bol.com/nl/p/blomus-toiletborstelhouder-sono-satellite/9200000092086875/" },
-        "honesty":    { "value": 7, "why": "ceramic body, soft-touch coat" },
-        "feel":       { "value": 8, "why": "soft-touch matte, premium hand-feel" },
-        "tone":       { "value": 8, "why": "warm taupe, matte soft-touch" },
-        "character":  { "value": 6, "why": "refined smooth; character from finish" },
-        "conceal":    { "value": 9, "why": "silicone lid conceals the bristles" },
-        "harmony":    { "value": 8 },
-        "durability": { "value": 7, "why": "ceramic + soft-touch coat" },
-        "coolmetal":  { "value": 0, "why": "polished steel rod hidden by the lid → no visible cool note" },
-        "cheapfeel":  { "value": 0 }, "fauxdouble": { "value": 0 } } },
-
-    { "id": "aquanova-ugo", "name": "Aquanova Ugo Ginger (stoneware)", "price": 47.95,
-      "links": [{ "label": "Etrias", "url": "https://www.etrias.nl/toiletborstelhouder-aquanova-ugo-ginger.html" }],
+        "works": {
+          "value": 7,
+          "why": "heavy ceramic, silicone lid conceals; 1 review but line is well-built",
+          "source": "https://www.bol.com/nl/p/blomus-toiletborstelhouder-sono-satellite/9200000092086875/"
+        },
+        "honesty": {
+          "value": 7,
+          "why": "ceramic body, soft-touch coat"
+        },
+        "feel": {
+          "value": 8,
+          "why": "soft-touch matte, premium hand-feel"
+        },
+        "tone": {
+          "value": 8,
+          "why": "warm taupe, matte soft-touch"
+        },
+        "character": {
+          "value": 6,
+          "why": "refined smooth; character from finish"
+        },
+        "conceal": {
+          "value": 9,
+          "why": "silicone lid conceals the bristles"
+        },
+        "harmony": {
+          "value": 8
+        },
+        "durability": {
+          "value": 7,
+          "why": "ceramic + soft-touch coat"
+        },
+        "coolmetal": {
+          "value": 0,
+          "why": "polished steel rod hidden by the lid → no visible cool note"
+        },
+        "cheapfeel": {
+          "value": 0
+        },
+        "fauxdouble": {
+          "value": 0
+        }
+      }
+    },
+    {
+      "id": "aquanova-ugo",
+      "name": "Aquanova Ugo Ginger (stoneware)",
+      "price": 47.95,
+      "links": [
+        {
+          "label": "Etrias",
+          "url": "https://www.etrias.nl/toiletborstelhouder-aquanova-ugo-ginger.html"
+        }
+      ],
       "note": "Handcrafted glazed stoneware, ginger / warm beige-brown, conceals into the holder. Re-verified 2026-06-25: the old fonQ link was the wrong colour (Forest Green); the Ginger variant is live at Etrias (€47.95, was €59.95). Reviews thin and mixed.",
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 0, "expectedLifeYears": 10, "resaleValue": 0 },
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 0,
+        "maintenancePerYear": 0,
+        "deliveryCost": 0,
+        "expectedLifeYears": 10,
+        "resaleValue": 0
+      },
       "scores": {
-        "works":      { "value": 5, "why": "mixed thin reviews (5★/1 at one shop, 3★/2 at another)", "source": "https://www.etrias.nl/toiletborstelhouder-aquanova-ugo-ginger.html" },
-        "honesty":    { "value": 8, "why": "handcrafted glazed stoneware" },
-        "feel":       { "value": 7, "why": "handcrafted glazed stoneware, warm" },
-        "tone":       { "value": 7, "why": "ginger-brown is warm but deeper than sand" },
-        "character":  { "value": 8, "why": "handcrafted glaze, warm Mediterranean character" },
-        "conceal":    { "value": 8, "why": "brush conceals into the holder" },
-        "harmony":    { "value": 6, "why": "deeper ginger is a slight outlier vs a sand family" },
-        "durability": { "value": 6, "why": "stoneware; the Ugo dispenser had defects but the brush is a separate piece — thin data" },
-        "coolmetal":  { "value": 0 }, "cheapfeel": { "value": 0 }, "fauxdouble": { "value": 0 } } },
-
-    { "id": "housedoctor-hdable", "name": "House Doctor HDAble Brown (marble + brass)", "price": 54.95,
-      "links": [{ "label": "Het Adres Webshop (NL)", "url": "https://www.hetadreswebshop.nl/products/toiletborstel-able-bruin" }],
+        "works": {
+          "value": 5,
+          "why": "mixed thin reviews (5★/1 at one shop, 3★/2 at another)",
+          "source": "https://www.etrias.nl/toiletborstelhouder-aquanova-ugo-ginger.html"
+        },
+        "honesty": {
+          "value": 8,
+          "why": "handcrafted glazed stoneware"
+        },
+        "feel": {
+          "value": 7,
+          "why": "handcrafted glazed stoneware, warm"
+        },
+        "tone": {
+          "value": 7,
+          "why": "ginger-brown is warm but deeper than sand"
+        },
+        "character": {
+          "value": 8,
+          "why": "handcrafted glaze, warm Mediterranean character"
+        },
+        "conceal": {
+          "value": 8,
+          "why": "brush conceals into the holder"
+        },
+        "harmony": {
+          "value": 6,
+          "why": "deeper ginger is a slight outlier vs a sand family"
+        },
+        "durability": {
+          "value": 6,
+          "why": "stoneware; the Ugo dispenser had defects but the brush is a separate piece — thin data"
+        },
+        "coolmetal": {
+          "value": 0
+        },
+        "cheapfeel": {
+          "value": 0
+        },
+        "fauxdouble": {
+          "value": 0
+        }
+      }
+    },
+    {
+      "id": "housedoctor-hdable",
+      "name": "House Doctor HDAble Brown (marble + brass)",
+      "price": 54.95,
+      "links": [
+        {
+          "label": "Het Adres Webshop (NL)",
+          "url": "https://www.hetadreswebshop.nl/products/toiletborstel-able-bruin"
+        }
+      ],
       "note": "Real brown marble holder + brushed-brass rod that echoes the brass mirror. Open. Heavy (1.3 kg). Re-verified 2026-06-25: House Doctor's own shop is Denmark-only, so sourced from NL reseller Het Adres Webshop — €54.95, free shipping >€30, next-day. Verify the brown reads warm (not dark) under 2700K.",
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 0, "expectedLifeYears": 15, "resaleValue": 0 },
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 0,
+        "maintenancePerYear": 0,
+        "deliveryCost": 0,
+        "expectedLifeYears": 15,
+        "resaleValue": 0
+      },
       "scores": {
-        "works":      { "value": 6, "why": "real-marble holder, heavy and stable; no reviews — spec-level", "source": "https://www.hetadreswebshop.nl/products/toiletborstel-able-bruin" },
-        "honesty":    { "value": 10, "why": "real brown marble — the honest benchmark" },
-        "feel":       { "value": 9, "why": "real marble heft (1.3 kg), cool stone touch" },
-        "tone":       { "value": 7, "why": "warm brown marble + brass rod — verify it reads warm, not dark, under 2700K" },
-        "character":  { "value": 9, "why": "real marble veining + a brass rod = the most character; echoes the brass mirror" },
-        "conceal":    { "value": 3, "why": "open marble cup, brush visible (the rod is the feature)" },
-        "harmony":    { "value": 6, "why": "dark marble + brass is a deliberate accent, not a quiet family member — harmony depends on running the brass story intentionally" },
-        "durability": { "value": 8, "why": "real marble + stainless rod, heavy; no rust expected" },
-        "coolmetal":  { "value": 0, "why": "the rod is brass — it echoes the brass mirror (the intended accent), not a cool 3rd-metal note" },
-        "cheapfeel":  { "value": 0 }, "fauxdouble": { "value": 0, "why": "real marble (brown), not a faux-marble doubling of the greige tile — deliberate contrast" } } },
-
-    { "id": "zone-ume", "name": "Zone Denmark Ume Terracotta", "price": 57.95,
-      "links": [{ "label": "bol.com", "url": "https://www.bol.com/nl/nl/p/zone-denmark-ume-toiletborstel-terracotta/9300000174449909/" }],
+        "works": {
+          "value": 6,
+          "why": "real-marble holder, heavy and stable; no reviews — spec-level",
+          "source": "https://www.hetadreswebshop.nl/products/toiletborstel-able-bruin"
+        },
+        "honesty": {
+          "value": 10,
+          "why": "real brown marble — the honest benchmark"
+        },
+        "feel": {
+          "value": 9,
+          "why": "real marble heft (1.3 kg), cool stone touch"
+        },
+        "tone": {
+          "value": 7,
+          "why": "warm brown marble + brass rod — verify it reads warm, not dark, under 2700K"
+        },
+        "character": {
+          "value": 9,
+          "why": "real marble veining + a brass rod = the most character; echoes the brass mirror"
+        },
+        "conceal": {
+          "value": 3,
+          "why": "open marble cup, brush visible (the rod is the feature)"
+        },
+        "harmony": {
+          "value": 6,
+          "why": "dark marble + brass is a deliberate accent, not a quiet family member — harmony depends on running the brass story intentionally"
+        },
+        "durability": {
+          "value": 8,
+          "why": "real marble + stainless rod, heavy; no rust expected"
+        },
+        "coolmetal": {
+          "value": 0,
+          "why": "the rod is brass — it echoes the brass mirror (the intended accent), not a cool 3rd-metal note"
+        },
+        "cheapfeel": {
+          "value": 0
+        },
+        "fauxdouble": {
+          "value": 0,
+          "why": "real marble (brown), not a faux-marble doubling of the greige tile — deliberate contrast"
+        }
+      }
+    },
+    {
+      "id": "zone-ume",
+      "name": "Zone Denmark Ume Terracotta",
+      "price": 57.95,
+      "links": [
+        {
+          "label": "bol.com",
+          "url": "https://www.bol.com/nl/nl/p/zone-denmark-ume-toiletborstel-terracotta/9300000174449909/"
+        }
+      ],
       "note": "Stoneware soft-touch, terracotta, open holder with an inner water cup, matched-tone handle (no exposed chrome). The Ume line is functionally bulletproof (warm-sand variant 9.1/10 over 5,735 reviews — but that colour is €84.64). Top of the budget. Link verified live 2026-06-25 (€57.95, in huis uiterlijk 29 juni).",
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 0, "expectedLifeYears": 11, "resaleValue": 0 },
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 0,
+        "maintenancePerYear": 0,
+        "deliveryCost": 0,
+        "expectedLifeYears": 11,
+        "resaleValue": 0
+      },
       "scores": {
-        "works":      { "value": 8, "why": "Ume line is functionally bulletproof (warm-sand variant 9.1/10 over 5,735 reviews); matched handle, inner water cup", "source": "https://www.bol.com/nl/nl/p/zone-denmark-ume-toiletborstel-terracotta/9300000174449909/" },
-        "honesty":    { "value": 8, "why": "stoneware" },
-        "feel":       { "value": 8, "why": "soft-touch matte stoneware, premium" },
-        "tone":       { "value": 6, "why": "terracotta is warm-Med but a strong colour — pulls away from a quiet sand family (the warm-sand colour is over budget)" },
-        "character":  { "value": 7, "why": "soft-touch + terracotta colour = character" },
-        "conceal":    { "value": 4, "why": "open holder with inner cup; bristles visible" },
-        "harmony":    { "value": 5, "why": "terracotta is the family outlier — it would become a second focal note" },
-        "durability": { "value": 8, "why": "Ume line durability strongly evidenced (5,735 reviews)" },
-        "coolmetal":  { "value": 0, "why": "matched stoneware handle, no exposed metal" },
-        "cheapfeel":  { "value": 0 }, "fauxdouble": { "value": 0 } } }
-  ]
+        "works": {
+          "value": 8,
+          "why": "Ume line is functionally bulletproof (warm-sand variant 9.1/10 over 5,735 reviews); matched handle, inner water cup",
+          "source": "https://www.bol.com/nl/nl/p/zone-denmark-ume-toiletborstel-terracotta/9300000174449909/"
+        },
+        "honesty": {
+          "value": 8,
+          "why": "stoneware"
+        },
+        "feel": {
+          "value": 8,
+          "why": "soft-touch matte stoneware, premium"
+        },
+        "tone": {
+          "value": 6,
+          "why": "terracotta is warm-Med but a strong colour — pulls away from a quiet sand family (the warm-sand colour is over budget)"
+        },
+        "character": {
+          "value": 7,
+          "why": "soft-touch + terracotta colour = character"
+        },
+        "conceal": {
+          "value": 4,
+          "why": "open holder with inner cup; bristles visible"
+        },
+        "harmony": {
+          "value": 5,
+          "why": "terracotta is the family outlier — it would become a second focal note"
+        },
+        "durability": {
+          "value": 8,
+          "why": "Ume line durability strongly evidenced (5,735 reviews)"
+        },
+        "coolmetal": {
+          "value": 0,
+          "why": "matched stoneware handle, no exposed metal"
+        },
+        "cheapfeel": {
+          "value": 0
+        },
+        "fauxdouble": {
+          "value": 0
+        }
+      }
+    }
+  ],
+  "comparisons": {
+    "brabantia-renew|hema-mat-zand": {
+      "text": "At the same ~€22, this is proof versus polish. Brabantia is the only option in the set with a real track record (works 7, 4.3★ over 86 reviews), but it's powder-coated metal rather than stone (honesty 6), sits semi-open so the bristles show (conceal 5), and leaves a small cool steel rod on view (coolmetal −1). HEMA is warm matte earthenware (honesty 8) with a matched rod and a lid that hides the bristles (conceal 8), which is why it edges ahead at +3 value (67 vs 64) for the same money. The catch is that HEMA has zero reviews, so its works 6 is a spec-level estimate, not proven.",
+      "flag": "HEMA wins on paper, but Brabantia is the only frontier option with real durability evidence — you're trading a proven build for a better-looking, unproven one."
+    },
+    "blomus-sono|hema-mat-zand": {
+      "text": "Paying €28 more (€22 → €50) for +6 value (67 → 73) buys a real step up in material and finish: Blomus is soft-touch ceramic with premium hand-feel (feel 8 vs 6, honesty 7) and a silicone lid that fully conceals the bristles (conceal 9 vs 8). But both already clear the brief — warm matte tone (both tone 8) and hidden bristles — so HEMA delivers the look for less than half the price. The frontier knee sits at HEMA precisely because that +6 costs more than double; Blomus is the upgrade only if the hand-feel and the better lid are worth €28 to you."
+    },
+    "blomus-sono|housedoctor-hdable": {
+      "text": "The top two by value, €5 apart and within about 1.5 points (73 vs 75) — a genuine near-tie that comes down to philosophy. Blomus (€50) is the one that disappears: soft-touch ceramic, a silicone lid that hides the bristles (conceal 9), a quiet taupe that sits calmly in a sand family (harmony 8). House Doctor (€55) is the opposite — real brown marble (honesty 10, feel 9) with a brass rod that echoes the brass mirror (character 9), but an open cup leaves the brush on show (conceal 3) and the dark-marble-plus-brass reads as a deliberate accent rather than a quiet family member (harmony 6). Pick Blomus to conceal and recede; pick House Doctor to make the brush a material feature.",
+      "flag": "House Doctor's tone 7 and harmony 6 assume the brown marble reads warm, not dark, under 2700K — unverified. If it reads dark, it slips behind Blomus."
+    },
+    "hema-mat-zand|housedoctor-hdable": {
+      "text": "This is the spend-up question: +€33 (€22 → €55) for +7 value (67 → 75), the biggest single value jump in the set. House Doctor is the honesty-and-feel champion — real marble (honesty 10 vs 8, feel 9 vs 6), marble veining plus a brass rod echoing the mirror (character 9 vs 5), and the longest life (15 yr). But it surrenders the two things HEMA does cheaply: it conceals nothing (open cup, conceal 3 vs 8) and its marble-and-brass is a statement, not a quiet sand member (harmony 6 vs 8). HEMA is the value pick; House Doctor earns the €33 only if you want the brush to be a feature and will run the brass story on purpose."
+    },
+    "hema-mat-zand|zone-ume": {
+      "text": "Zone Ume has the best-proven function in the whole set — works 8, from the Ume line's 9.1/10 over 5,735 reviews — against HEMA's unproven spec-level works 6. Yet it isn't recommended because it's off the frontier: at €58 it's beaten outright by Blomus (€50, value 73 vs Ume's 71), which is both cheaper and higher-value. Two things sink it despite the bulletproof build: this terracotta is a strong colour that fights a quiet sand family (tone 6, harmony 5 — the warm-sand version that would score higher is €84, over budget), and the open holder leaves the bristles visible (conceal 4). If proven durability is your single priority, Ume is the safest buy; on the whole-picture weighting it loses to both HEMA (€36 cheaper, near-equal value) and Blomus."
+    }
+  }
 };</script>
 <script>/* Value Frontier — engine v0.9.0
  * Pure compute (Node-testable) + interactive decision cockpit. Zero dependencies.
@@ -753,9 +1493,12 @@ button{font-family:inherit;}
   function kneePoint(fp) {
     if (fp.length === 0) return null;
     if (fp.length <= 2) return fp.reduce(function (a, b) { return b.y > a.y ? b : a; }).id;
-    var a = fp[0], b = fp[fp.length - 1], dx = b.x - a.x, dy = b.y - a.y, len = Math.hypot(dx, dy) || 1, best = null, bestD = -Infinity;
-    for (var i = 1; i < fp.length - 1; i++) { var p = fp[i], d = Math.abs(dy * (p.x - a.x) - dx * (p.y - a.y)) / len; if (d > bestD) { bestD = d; best = p; } }
-    return best ? best.id : a.id;
+    var a = fp[0], b = fp[fp.length - 1], dx = b.x - a.x, dy = b.y - a.y, len = Math.hypot(dx, dy) || 1, best = null, bestD = 0;
+    // SIGNED distance: positive = the point sits ABOVE the line joining cheapest↔priciest frontier ends,
+    // i.e. a genuine diminishing-returns elbow worth stopping at. If NO interior point is above that line
+    // the frontier is convex (each step up pays off *more*), so there is no elbow → recommend the top (b).
+    for (var i = 1; i < fp.length - 1; i++) { var p = fp[i], s = (dx * (p.y - a.y) - dy * (p.x - a.x)) / len; if (s > bestD) { bestD = s; best = p; } }
+    return best ? best.id : b.id;
   }
   function compute(data, state) {
     state = state || {};
@@ -967,6 +1710,18 @@ button{font-family:inherit;}
       + '<div class="vf-wbar-track">' + segs + '</div><div class="vf-wbar-keys">' + keys + '</div>';
   };
   App.prototype.refreshWeightBar = function () { var el = this.elControls.querySelector('.vf-wbar'); if (el) el.innerHTML = this.weightBarHTML(); };
+  // restore EVERYTHING to the decision's defaults (weights, cost mode, budget, horizon, lens, sort, selection, comparison, view)
+  App.prototype.resetAll = function () {
+    this.initWants();
+    this.state.horizon = null; this.state.budgetCap = null; this.state.costMode = 'acq';
+    this.state.lensDim = null; this.state.zoomPreset = 'all'; this.state.whyOpen = false;
+    this.state.cmp = null; this.state.sortKey = 'value'; this.state.sortDir = -1;
+    this.state.tab = 'table'; this.state.selectedId = null;
+    this.renderControls();
+    if (this.elTools) Array.prototype.forEach.call(this.elTools.querySelectorAll('.vf-segp'), function (x) { x.classList.toggle('on', x.getAttribute('data-z') === 'all'); });
+    if (this.elTabs) Array.prototype.forEach.call(this.elTabs.querySelectorAll('.vf-tab'), function (x) { x.classList.toggle('vf-tab-on', x.getAttribute('data-tab') === 'table'); });
+    this.recompute();
+  };
 
   // ---------- on-page controls (docked under the chart) ----------
   App.prototype.renderControls = function () {
@@ -986,7 +1741,7 @@ button{font-family:inherit;}
       '<button class="vf-ctrl-toggle" type="button" aria-expanded="' + (co ? 'true' : 'false') + '"><span>⚙ Adjust priorities &amp; cost</span><span class="vf-ctrl-toggle-ic">' + (co ? '▾' : '▸') + '</span></button>'
       + '<div class="vf-ctrl-inner' + (co ? '' : ' vf-collapsed') + '">'
       + '<div class="vf-wbar">' + this.weightBarHTML() + '</div>'
-      + '<div class="vf-prios"><div class="vf-prios-h">Your priorities<span class="vf-prios-sub">drag any slider (0–10) — the chart and the pick update live; the % is its share of the decision</span></div><div class="vf-wts">' + positives.map(wantSlider).join('') + '</div></div>'
+      + '<div class="vf-prios"><div class="vf-prios-h"><span>Your priorities</span><span class="vf-prios-sub">drag any slider (0–10) — the chart and the pick update live; the % is its share of the decision</span><button class="vf-reset-all" type="button" title="Restore weights and all settings to the defaults">↺ Reset all</button></div><div class="vf-wts">' + positives.map(wantSlider).join('') + '</div></div>'
       + '<div class="vf-ctrl-primary">'
       + '<div class="vf-ctrl-field"><span class="vf-ctrl-lab">Cost axis</span><div class="vf-segwrap">' + costChips + '</div></div>'
       + budgetField
@@ -1014,7 +1769,8 @@ button{font-family:inherit;}
       });
     });
     Array.prototype.forEach.call(this.elControls.querySelectorAll('input[data-pen]'), function (inp) { inp.addEventListener('input', function () { var id = inp.getAttribute('data-pen'); self.state.weights[id] = (+inp.value) / 100; self.elControls.querySelector('[data-wv="' + id + '"]').innerHTML = '<span class="vf-num">' + inp.value + '%</span>'; self.scheduleRecompute(); }); });
-    this.elControls.querySelector('.vf-reset').addEventListener('click', function () { self.initWants(); self.state.horizon = null; self.state.budgetCap = null; self.renderControls(); self.recompute(); });
+    this.elControls.querySelector('.vf-reset').addEventListener('click', function () { self.resetAll(); });
+    var resetAllBtn = this.elControls.querySelector('.vf-reset-all'); if (resetAllBtn) resetAllBtn.addEventListener('click', function () { self.resetAll(); });
   };
 
 
@@ -1337,13 +2093,22 @@ button{font-family:inherit;}
     if (mode !== 'acq') costRows += costComp('Running (PV)', function (c) { return c.pvRunning; }) + costComp('Resale credit', function (c) { return c.pvResale; }, true);
     var wins = {}; dims.forEach(function (d) { var best = -Infinity, who = []; sel.forEach(function (r) { var p = partOf(r, d.id), nn = p ? p.norm : 0; if (nn > best + 1e-9) { best = nn; who = [r.id]; } else if (Math.abs(nn - best) < 1e-9) who.push(r.id); }); if (who.length === 1) wins[who[0]] = (wins[who[0]] || 0) + 1; });
     var tallyTxt = sel.map(function (r) { return htmlEsc(firstWord(r.name)) + ' <b>' + (wins[r.id] || 0) + '</b>'; }).join(' · ');
+    // authored pairwise assessments (data.comparisons keyed by sorted "idA|idB"); graceful if absent
+    var comparisons = this.data.comparisons || {}, pairs = [];
+    for (var pi = 0; pi < sel.length; pi++) for (var pj = pi + 1; pj < sel.length; pj++) pairs.push([sel[pi], sel[pj]]);
+    var assessHTML = pairs.map(function (pr) {
+      var c = comparisons[[pr[0].id, pr[1].id].sort().join('|')]; if (!c) return '';
+      var txt = typeof c === 'string' ? c : (c.text || ''), flag = (c && c.flag) ? '<div class="vf-cmp-flag">⚠ ' + htmlEsc(c.flag) + '</div>' : '';
+      return '<div class="vf-cmp-assess"><div class="vf-cmp-assess-h">' + htmlEsc(shortName(pr[0].name)) + ' vs ' + htmlEsc(shortName(pr[1].name)) + '</div><p>' + htmlEsc(txt) + '</p>' + flag + '</div>';
+    }).filter(Boolean).join('');
+    var assessBlock = assessHTML ? '<div class="vf-cmp-assess-wrap"><div class="vf-cmp-assess-title">Assessment</div>' + assessHTML + '</div>' : '';
     this.elTabPanel.innerHTML = '<div class="vf-subcap">Choose 2–3 products to compare side by side. <b>✓</b> marks the leader on each row — value &amp; each dimension (higher wins), cost (lower wins). Outright dimension wins: ' + tallyTxt + ' of ' + dims.length + '.</div>'
       + pickers
       + '<div class="vf-cmp-wrap"><div class="vf-cmp-table" style="--n:' + N + '">'
       + head + valRow + costRow
       + '<div class="vf-cmp-section">Value by dimension <span class="vf-cmp-section-sub">raw score · bar = share of the scale</span></div>' + dimRows + antiRows
       + '<div class="vf-cmp-section">Cost breakdown <span class="vf-cmp-section-sub">' + (mode === 'acq' ? 'up front' : 'present-valued over the life') + '</span></div>' + costRows
-      + '</div></div>';
+      + '</div></div>' + assessBlock;
     this.bindCompare();
   };
   App.prototype.bindCompare = function () {
