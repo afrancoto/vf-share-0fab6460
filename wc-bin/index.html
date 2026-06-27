@@ -312,6 +312,34 @@ button{font-family:inherit;}
 .vf-b-dom{background:var(--line2);color:var(--faint);border-color:var(--line);}
 .vf-b-screen{background:var(--line3);color:#9a8f86;border-color:var(--screen);}
 
+/* head-to-head compare */
+.vf-cmp-pick{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px;}
+@media(max-width:560px){.vf-cmp-pick{grid-template-columns:1fr;}}
+.vf-cmp-sel{font-family:inherit;font-size:13px;padding:9px 11px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);width:100%;cursor:pointer;}
+.vf-cmp-sel:hover{border-color:var(--dom);}
+.vf-cmp-wrap{border:1px solid var(--line);border-radius:10px;overflow-x:auto;background:var(--card);}
+.vf-cmp-table{min-width:480px;}
+.vf-cmp-row{display:grid;grid-template-columns:minmax(140px,1.3fr) repeat(var(--n),1fr);border-bottom:1px solid var(--line2);}
+.vf-cmp-row:last-child{border-bottom:none;}
+.vf-cmp-lab{position:sticky;left:0;background:var(--card);padding:9px 12px;font-size:12.5px;color:var(--ink);display:flex;flex-direction:column;gap:1px;justify-content:center;box-shadow:1px 0 0 var(--line2);z-index:1;}
+.vf-cmp-lab-sub{font-size:9px;color:var(--faint);font-family:var(--mono);text-transform:uppercase;letter-spacing:.04em;}
+.vf-cmp-cell{position:relative;padding:9px 12px;display:flex;align-items:center;justify-content:flex-end;gap:5px;border-left:1px solid var(--line3);min-width:0;}
+.vf-cmp-fig{font-variant-numeric:tabular-nums;font-size:13px;color:var(--ink);position:relative;}
+.vf-cmp-bar{position:absolute;left:8px;bottom:5px;height:4px;border-radius:2px;opacity:.4;max-width:calc(100% - 44px);}
+.vf-cmp-win{background:var(--rec-bg);}
+.vf-cmp-win .vf-cmp-fig{font-weight:700;color:var(--rec);}
+.vf-cmp-tick{color:var(--rec);font-size:11px;line-height:1;}
+.vf-cmp-h{background:var(--head);border-bottom:1px solid var(--line);}
+.vf-cmp-h .vf-cmp-lab{background:var(--head);box-shadow:1px 0 0 var(--line);}
+.vf-cmp-name{flex-direction:column;align-items:flex-end;gap:3px;font-family:var(--serif);font-weight:600;font-size:13.5px;line-height:1.16;text-align:right;}
+.vf-cmp-badge{font-family:var(--mono);font-size:8.5px;letter-spacing:.04em;text-transform:uppercase;font-weight:400;}
+.vf-cmp-sum{background:#faf8f3;}
+.vf-cmp-sum .vf-cmp-lab{background:#faf8f3;font-weight:600;}
+.vf-cmp-section{padding:8px 12px;background:var(--head);font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);border-bottom:1px solid var(--line2);border-top:1px solid var(--line);display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;}
+.vf-cmp-section-sub{font-family:var(--serif);text-transform:none;letter-spacing:0;font-style:italic;font-size:11px;color:var(--faint);}
+.vf-cmp-cost .vf-cmp-fig{color:var(--muted);}
+.vf-cmp-anti .vf-cmp-lab{color:var(--muted);}
+
 /* robustness / tornado */
 .vf-tor{margin:4px 0 0;}
 .vf-tor-row{display:grid;grid-template-columns:170px 1fr 46px;gap:10px;align-items:center;padding:4px 0;}
@@ -719,7 +747,7 @@ button{font-family:inherit;}
     var self = this;
     this.data = data; this.root = root;
     this.state = { weights: {}, wants: {}, lensDim: null, selectedId: null, hoveredId: null,
-      costMode: 'acq', horizon: null, budgetCap: null, zoomPreset: 'all', tab: 'table', sortKey: 'value', sortDir: -1 };
+      costMode: 'acq', horizon: null, budgetCap: null, zoomPreset: 'all', tab: 'table', sortKey: 'value', sortDir: -1, cmp: null };
     this.dotEls = {};
     this.initWants();
     this.readHash();
@@ -787,6 +815,8 @@ button{font-family:inherit;}
       if (q.lens) s.lensDim = q.lens;
       if (q.sel) s.selectedId = q.sel;
       if (q.b) s.budgetCap = +q.b || null;
+      if (q.cmp) s.cmp = q.cmp.split(',');
+      if (q.tab) s.tab = q.tab;
       if (q.w) q.w.split(',').forEach(function (pair) { var p = pair.split(':'); if (p[0]) s.wants[p[0]] = +p[1]; });
       if (q.p) q.p.split(',').forEach(function (pair) { var p = pair.split(':'); if (p[0]) s.weights[p[0]] = (+p[1]) / 100; });
       this.syncWeights();
@@ -801,6 +831,8 @@ button{font-family:inherit;}
       if (s.lensDim) parts.push('lens=' + encodeURIComponent(s.lensDim));
       if (s.selectedId && s.selectedId !== this.result.recommendedId) parts.push('sel=' + encodeURIComponent(s.selectedId));
       if (s.budgetCap != null) parts.push('b=' + Math.round(s.budgetCap));
+      if (s.tab && s.tab !== 'table') parts.push('tab=' + s.tab);
+      if (s.cmp && s.cmp.filter(Boolean).length) parts.push('cmp=' + encodeURIComponent(s.cmp.filter(Boolean).join(',')));
       var wd = this.posDims().map(function (d) { return d.id + ':' + (s.wants[d.id] || 0); }).join(',');
       if (wd) parts.push('w=' + encodeURIComponent(wd));
       var pd = this.antiDims().map(function (d) { return d.id + ':' + Math.round((s.weights[d.id] || 0) * 100); }).filter(function (x) { return !/:0$/.test(x); }).join(',');
@@ -1112,21 +1144,21 @@ button{font-family:inherit;}
 
   // ---------- tabs ----------
   App.prototype.buildTabs = function () {
-    var self = this;
+    var self = this, cur = this.state.tab || 'table';
+    var defs = [['table', 'Compare all options'], ['compare', 'Head-to-head'], ['robust', 'How solid is the pick'], ['score', 'How it’s scored']];
     this.elTabs.innerHTML = '<div class="vf-tabnav" role="tablist">'
-      + '<button class="vf-tab vf-tab-on" data-tab="table" role="tab">Compare all options</button>'
-      + '<button class="vf-tab" data-tab="robust" role="tab">How solid is the pick</button>'
-      + '<button class="vf-tab" data-tab="score" role="tab">How it’s scored</button>'
+      + defs.map(function (t) { return '<button class="vf-tab' + (t[0] === cur ? ' vf-tab-on' : '') + '" data-tab="' + t[0] + '" role="tab">' + t[1] + '</button>'; }).join('')
       + '</div><div class="vf-tabpanel"></div>';
     this.elTabPanel = this.elTabs.querySelector('.vf-tabpanel');
     Array.prototype.forEach.call(this.elTabs.querySelectorAll('.vf-tab'), function (b) {
-      b.addEventListener('click', function () { self.state.tab = b.getAttribute('data-tab'); Array.prototype.forEach.call(self.elTabs.querySelectorAll('.vf-tab'), function (x) { x.classList.toggle('vf-tab-on', x === b); }); self.renderTabPanel(); });
+      b.addEventListener('click', function () { self.state.tab = b.getAttribute('data-tab'); Array.prototype.forEach.call(self.elTabs.querySelectorAll('.vf-tab'), function (x) { x.classList.toggle('vf-tab-on', x === b); }); self.renderTabPanel(); self.writeHash(); });
     });
   };
   App.prototype.renderTabPanel = function () {
     var t = this.state.tab;
     if (t === 'score') this.renderScoring();
     else if (t === 'robust') this.renderRobust();
+    else if (t === 'compare') this.renderCompare();
     else this.renderTableLens();
   };
 
@@ -1187,6 +1219,71 @@ button{font-family:inherit;}
     this.markRows();
   };
   App.prototype.markRows = function () { var sel = this.state.selectedId; if (this.elTabPanel) Array.prototype.forEach.call(this.elTabPanel.querySelectorAll('.vf-tl-row[data-id]'), function (el) { el.classList.toggle('vf-tl-sel', el.getAttribute('data-id') === sel); }); };
+
+  // ---------- head-to-head: compare 2–3 chosen products ----------
+  App.prototype.cmpDefault = function () {
+    var pk = this.pickIds(), self = this, out = [];
+    if (pk.rec) out.push(pk.rec);
+    [pk.pricier, pk.cheaper].filter(Boolean).map(function (id) { return self.byId(id); }).sort(function (a, b) { return b.plot - a.plot; })
+      .forEach(function (r) { if (out.indexOf(r.id) < 0) out.push(r.id); });
+    if (out.length < 2) this.result.rows.slice().sort(function (a, b) { return b.plot - a.plot; }).forEach(function (r) { if (out.length < 3 && out.indexOf(r.id) < 0) out.push(r.id); });
+    return out.slice(0, 3);
+  };
+  App.prototype.renderCompare = function () {
+    var self = this, res = this.result, dims = this.posDims(), antis = this.antiDims(), mode = this.state.costMode;
+    if (!this.state.cmp || !this.state.cmp.filter(Boolean).length) this.state.cmp = this.cmpDefault();
+    var slots = [this.state.cmp[0] || '', this.state.cmp[1] || '', this.state.cmp[2] || ''].map(function (id) { return self.byId(id) ? id : ''; });
+    this.state.cmp = slots;
+    var allByValue = res.rows.slice().sort(function (a, b) { return b.plot - a.plot; });
+    function optionsFor(selId, allowNone) {
+      return (allowNone ? '<option value=""' + (!selId ? ' selected' : '') + '>— none —</option>' : '')
+        + allByValue.map(function (r) { return '<option value="' + r.id + '"' + (r.id === selId ? ' selected' : '') + '>' + htmlEsc(shortName(r.name)) + '</option>'; }).join('');
+    }
+    var pickers = '<div class="vf-cmp-pick">'
+      + '<select class="vf-cmp-sel" data-slot="0" aria-label="First product">' + optionsFor(slots[0], false) + '</select>'
+      + '<select class="vf-cmp-sel" data-slot="1" aria-label="Second product">' + optionsFor(slots[1], false) + '</select>'
+      + '<select class="vf-cmp-sel" data-slot="2" aria-label="Third product (optional)">' + optionsFor(slots[2], true) + '</select>'
+      + '</div>';
+    var sel = slots.filter(Boolean).map(function (id) { return self.byId(id); }).filter(Boolean), N = sel.length;
+    if (N < 2) { this.elTabPanel.innerHTML = '<div class="vf-subcap">Choose at least two products to compare side by side.</div>' + pickers; this.bindCompare(); return; }
+    function rowCells(getVal, fmt, betterIsMax, barColor, barNormFn) {
+      var vals = sel.map(getVal), nn = vals.filter(function (v) { return v != null; });
+      var distinct = nn.filter(function (v, i, a) { return a.indexOf(v) === i; });
+      var best = distinct.length > 1 ? (betterIsMax ? Math.max.apply(null, nn) : Math.min.apply(null, nn)) : null;
+      return sel.map(function (r, i) {
+        var v = vals[i], win = (best != null && v === best);
+        var bar = barNormFn ? '<span class="vf-cmp-bar" style="width:' + (barNormFn(r) * 100).toFixed(0) + '%;background:' + barColor + '"></span>' : '';
+        return '<div class="vf-cmp-cell' + (win ? ' vf-cmp-win' : '') + '">' + bar + '<span class="vf-cmp-fig vf-num">' + fmt(v, r) + '</span>' + (win ? '<span class="vf-cmp-tick">✓</span>' : '') + '</div>';
+      }).join('');
+    }
+    function labCell(t, sub) { return '<div class="vf-cmp-lab">' + htmlEsc(t) + (sub ? '<span class="vf-cmp-lab-sub">' + htmlEsc(sub) + '</span>' : '') + '</div>'; }
+    function row(cls, lab, cells) { return '<div class="vf-cmp-row' + (cls ? ' ' + cls : '') + '">' + lab + cells + '</div>'; }
+    var partOf = function (r, id) { return r.parts.filter(function (q) { return q.id === id; })[0]; };
+    var head = row('vf-cmp-h', '<div class="vf-cmp-lab"></div>', sel.map(function (r) { var si = statusInfo(r); return '<div class="vf-cmp-cell vf-cmp-name">' + (r.recommended ? '<span class="vf-row-star">★</span> ' : '') + htmlEsc(shortName(r.name)) + '<span class="vf-cmp-badge" style="color:' + si.tag + '">' + si.label + '</span></div>'; }).join(''));
+    var valRow = row('vf-cmp-sum', labCell('Value to you', 'higher is better'), rowCells(function (r) { return r.plot; }, function (v) { return v.toFixed(1); }, true, null, null));
+    var costRow = row('vf-cmp-sum', labCell(this.costLabel(), 'lower is better'), rowCells(function (r) { return r.costX; }, function (v) { return self.money({ costX: v }); }, false, null, null));
+    var dimRows = dims.map(function (d) { return row('', labCell(d.label), rowCells(function (r) { var p = partOf(r, d.id); return p ? p.raw : null; }, function (v) { return v; }, true, '#5f7a55', function (r) { var p = partOf(r, d.id); return p ? p.norm : 0; })); }).join('');
+    var antiRows = antis.map(function (d) { return row('vf-cmp-anti', labCell(d.label, 'unwanted'), rowCells(function (r) { var p = partOf(r, d.id); return p ? p.raw : 0; }, function (v) { return v; }, true, null, null)); }).join('');
+    function costComp(lab, getAmt, neg) { return row('vf-cmp-cost', labCell(lab), sel.map(function (r) { var a = getAmt(r.costDetail); return '<div class="vf-cmp-cell"><span class="vf-cmp-fig vf-num">' + (a ? (neg ? '−' : '') + fmtMoney(Math.abs(a)) : '—') + '</span></div>'; }).join('')); }
+    var costRows = costComp('Purchase price', function (c) { return c.price; }) + costComp('Delivery', function (c) { return c.delivery; }) + costComp('Installation', function (c) { return c.install; }) + costComp('Kit & fees', function (c) { return c.extras; });
+    if (mode !== 'acq') costRows += costComp('Running (PV)', function (c) { return c.pvRunning; }) + costComp('Resale credit', function (c) { return c.pvResale; }, true);
+    var wins = {}; dims.forEach(function (d) { var best = -Infinity, who = []; sel.forEach(function (r) { var p = partOf(r, d.id), nn = p ? p.norm : 0; if (nn > best + 1e-9) { best = nn; who = [r.id]; } else if (Math.abs(nn - best) < 1e-9) who.push(r.id); }); if (who.length === 1) wins[who[0]] = (wins[who[0]] || 0) + 1; });
+    var tallyTxt = sel.map(function (r) { return htmlEsc(firstWord(r.name)) + ' <b>' + (wins[r.id] || 0) + '</b>'; }).join(' · ');
+    this.elTabPanel.innerHTML = '<div class="vf-subcap">Choose 2–3 products to compare side by side. <b>✓</b> marks the leader on each row — value &amp; each dimension (higher wins), cost (lower wins). Outright dimension wins: ' + tallyTxt + ' of ' + dims.length + '.</div>'
+      + pickers
+      + '<div class="vf-cmp-wrap"><div class="vf-cmp-table" style="--n:' + N + '">'
+      + head + valRow + costRow
+      + '<div class="vf-cmp-section">Value by dimension <span class="vf-cmp-section-sub">raw score · bar = share of the scale</span></div>' + dimRows + antiRows
+      + '<div class="vf-cmp-section">Cost breakdown <span class="vf-cmp-section-sub">' + (mode === 'acq' ? 'up front' : 'present-valued over the life') + '</span></div>' + costRows
+      + '</div></div>';
+    this.bindCompare();
+  };
+  App.prototype.bindCompare = function () {
+    var self = this;
+    Array.prototype.forEach.call(this.elTabPanel.querySelectorAll('.vf-cmp-sel'), function (s) {
+      s.addEventListener('change', function () { var slot = +s.getAttribute('data-slot'), cmp = (self.state.cmp || []).slice(); cmp[slot] = s.value || ''; self.state.cmp = [cmp[0] || '', cmp[1] || '', cmp[2] || '']; self.writeHash(); self.renderCompare(); });
+    });
+  };
 
   App.prototype.renderRobust = function () {
     var res = this.result, rows = res.rows, self = this;
