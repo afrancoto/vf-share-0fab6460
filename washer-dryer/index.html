@@ -165,6 +165,10 @@ button{font-family:inherit;}
 .vf-prios{margin:16px 0 4px;}
 .vf-prios-h{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);display:flex;flex-wrap:wrap;gap:3px 10px;align-items:baseline;margin-bottom:12px;}
 .vf-prios-sub{font-family:var(--serif);text-transform:none;letter-spacing:0;font-size:11.5px;font-style:italic;color:var(--faint);}
+/* penalties — surfaced right under the priorities (separate signed docks, not part of the 100% pie) */
+.vf-pens{margin:15px 0 2px;padding-top:14px;border-top:1px dashed var(--line);}
+.vf-pens-h{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);display:flex;flex-wrap:wrap;gap:3px 10px;align-items:baseline;margin-bottom:11px;}
+.vf-pens-sub{font-family:var(--serif);text-transform:none;letter-spacing:0;font-size:11.5px;font-style:italic;color:var(--faint);}
 .vf-reset-all{margin-left:auto;background:none;border:1px solid var(--line);border-radius:999px;color:var(--rec);font-family:inherit;font-size:11px;letter-spacing:.02em;padding:4px 11px;cursor:pointer;white-space:nowrap;}
 .vf-reset-all:hover{border-color:var(--rec);background:var(--rec-bg);}
 .vf-ctrl-primary{display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start;margin-top:16px;padding-top:14px;border-top:1px solid var(--line2);}
@@ -506,7 +510,7 @@ button{font-family:inherit;}
     "currency": "EUR",
     "horizonYears": 14,
     "discountRate": 0.05,
-    "engineVersion": "0.9.4",
+    "engineVersion": "0.9.5",
     "createdISO": "2026-06-24",
     "note": "Scores refined from owner + expert reviews (each \"why\" states basis + confidence + source), 2026-06-24. Two review-found dimensions added — lint-filter upkeep and condensate handling. Costs now include delivery + installation + stacking kit. Prices/costs are snapshots; the \"Total/Per year\" toggle and sliders are yours to adjust. Verify before buying. Cost axis normalised apples-to-apples: price = pair sticker; + free delivery, consistent install (Coolblue €60 / MediaMarkt €85 / other €90) and stacking kit (Miele €130 / AEG €70 / Bosch·Siemens €60 / budget €40); promotional cashback excluded."
   },
@@ -2043,14 +2047,14 @@ button{font-family:inherit;}
       + '<div class="vf-ctrl-inner' + (co ? '' : ' vf-collapsed') + '">'
       + '<div class="vf-wbar">' + this.weightBarHTML() + '</div>'
       + '<div class="vf-prios"><div class="vf-prios-h"><span>Your priorities</span><span class="vf-prios-sub">drag any slider (0–10) — the chart and the pick update live; the % is its share of the decision</span><button class="vf-reset-all" type="button" title="Restore weights and all settings to the defaults">↺ Reset all</button></div><div class="vf-wts">' + positives.map(wantSlider).join('') + '</div></div>'
+      + (antis.length ? '<div class="vf-pens"><div class="vf-pens-h"><span>Things you didn&rsquo;t want</span><span class="vf-pens-sub">how hard to dock a feature you&rsquo;ll never use &mdash; drag to 0 to ignore it entirely</span></div><div class="vf-wts">' + antis.map(penSlider).join('') + '</div></div>' : '')
       + '<div class="vf-ctrl-primary">'
       + '<div class="vf-ctrl-field"><span class="vf-ctrl-lab">Cost axis</span><div class="vf-segwrap">' + costChips + '</div></div>'
       + budgetField
       + '<div class="vf-ctrl-field"><span class="vf-ctrl-lab">Colour points by</span><div class="vf-chips">' + lensChips + '</div></div>'
       + '</div>'
-      + '<details class="vf-adv"><summary>More — time horizon, penalties &amp; reset</summary><div class="vf-adv-body">'
+      + '<details class="vf-adv"><summary>More — time horizon &amp; reset</summary><div class="vf-adv-body">'
       + '<div class="vf-ctrl-field vf-ctrl-row"><span class="vf-ctrl-lab">Spread cost over</span><div class="vf-chips">' + horChips + '</div></div>'
-      + (antis.length ? '<div class="vf-wgroup"><div class="vf-wgroup-h">Penalties<span class="vf-wgroup-sub">how hard to dock things you didn’t want — 0 = ignore</span></div><div class="vf-wts">' + antis.map(penSlider).join('') + '</div></div>' : '')
       + '<button class="vf-reset" type="button">Reset to defaults</button>'
       + '</div></details>'
       + '</div>';

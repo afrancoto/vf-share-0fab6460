@@ -165,6 +165,10 @@ button{font-family:inherit;}
 .vf-prios{margin:16px 0 4px;}
 .vf-prios-h{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);display:flex;flex-wrap:wrap;gap:3px 10px;align-items:baseline;margin-bottom:12px;}
 .vf-prios-sub{font-family:var(--serif);text-transform:none;letter-spacing:0;font-size:11.5px;font-style:italic;color:var(--faint);}
+/* penalties — surfaced right under the priorities (separate signed docks, not part of the 100% pie) */
+.vf-pens{margin:15px 0 2px;padding-top:14px;border-top:1px dashed var(--line);}
+.vf-pens-h{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);display:flex;flex-wrap:wrap;gap:3px 10px;align-items:baseline;margin-bottom:11px;}
+.vf-pens-sub{font-family:var(--serif);text-transform:none;letter-spacing:0;font-size:11.5px;font-style:italic;color:var(--faint);}
 .vf-reset-all{margin-left:auto;background:none;border:1px solid var(--line);border-radius:999px;color:var(--rec);font-family:inherit;font-size:11px;letter-spacing:.02em;padding:4px 11px;cursor:pointer;white-space:nowrap;}
 .vf-reset-all:hover{border-color:var(--rec);background:var(--rec-bg);}
 .vf-ctrl-primary{display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start;margin-top:16px;padding-top:14px;border-top:1px solid var(--line2);}
@@ -506,7 +510,7 @@ button{font-family:inherit;}
     "currency": "EUR",
     "horizonYears": 8,
     "discountRate": 0.05,
-    "engineVersion": "0.9.4",
+    "engineVersion": "0.9.5",
     "createdISO": "2026-06-26",
     "note": "55-inch OLED field, NL, prices = live Tweakers Pricewatch lowest in-stock (fetched 2026-06-26); majors (Coolblue/MediaMarkt) often ~€30-50 more but with 30-day returns — see each product note. Her #1 ('blacks stay black, no gray patches, no mirror reflection') splits in two: (a) gray/washed blacks under ambient light = decided by WOLED (polarizer, neutral) vs QD-OLED (no polarizer, raises to gray/purple) → all picks are WOLED except the QD-OLED S95D and S90C-class; (b) mirror reflection of a lamp = decided by coating, and EVERY in-budget set is GLOSSY except the matte Samsung S95D — so the mirror half is managed (brightness + lamp placement), not bought, unless you go matte (and matte S95D is QD-OLED + no Dolby Vision). Dolby Vision (Apple TV's best mode) is supported by all EXCEPT Samsung. Samsung EU 55-inch panels are reportedly WOLED not QD-OLED (verify suffix at purchase). Energy/yr is estimated from panel brightness tier (NL ~€0.35/kWh, ~4h/day) — small, doesn't move the frontier. Stand preference VERIFIED from her photos: she LIKES wide slim splayed feet, DISLIKES the center pedestal — so the C-series pedestal is penalised and the B-series/Sony wide-feet rewarded. 65-inch is affordable too (65B5 €999, 65C4 €1182) — size handled in the recommendation, frontier fixed at 55-inch to compare panels. Prices/scores are snapshots — verify before buying."
   },
@@ -1180,8 +1184,12 @@ button{font-family:inherit;}
     {
       "id": "c5",
       "name": "LG OLED55C5 (2025)",
-      "price": 999,
+      "price": 1099,
       "links": [
+        {
+          "label": "MediaMarkt €1099",
+          "url": "https://www.mediamarkt.nl/nl/product/_lg-oled55c54laaeu-2025-1880630.html"
+        },
         {
           "label": "Tweakers Pricewatch",
           "url": "https://tweakers.net/pricewatch/2198128"
@@ -1197,7 +1205,7 @@ button{font-family:inherit;}
         "installCost": 0,
         "extrasCost": 0
       },
-      "note": "€999 (Coolblue / Amazon.nl — major, free delivery, 30-day returns). Brightest WOLED here + Dolby Vision. The default 'best all-rounder' — BUT it's the exact TV in her Dislike photo: center pedestal. Picture champion, stand she rejects (wall-mount to fix).",
+      "note": "€1099 (MediaMarkt — major, free delivery, 30-day returns; verified live 2026-06-27). The standing NL major-retailer price (Coolblue ~€1079); the €929–999 figures seen earlier are promo / Amazon-marketplace lows, not the shelf price. Brightest WOLED here + Dolby Vision — the default 'best all-rounder', BUT it is the exact TV in her Dislike photo: centre pedestal (also crowds a soundbar at 55\"). Picture champion, stand she rejects (wall-mount to fix).",
       "scores": {
         "blacks": {
           "value": 8,
@@ -1225,8 +1233,8 @@ button{font-family:inherit;}
           "source": "https://www.rtings.com/tv/reviews/lg/c5-oled"
         },
         "sound": {
-          "value": 5,
-          "why": "2.2ch 40W, widely panned — plan a soundbar. review-consensus.",
+          "value": 4,
+          "why": "2.2ch 40W downward-firing — widely panned as the C5's weak point; plan a soundbar (which the Sony's screen-speaker doesn't need as urgently). review-consensus.",
           "source": "https://www.rtings.com/tv/reviews/lg/c5-oled"
         },
         "nag": {
@@ -1496,7 +1504,7 @@ button{font-family:inherit;}
         },
         "bright": {
           "value": 6,
-          "why": "~815-826 nits @10% — modest, well below the C5/Philips. lab-tested.",
+          "why": "~750–815 nits @10% (AVForums 747 at accurate panel-High; Tom's Guide/TechRadar ~815) — modest, well below the C5; dim in bright HDR scenes out of the box. lab-tested.",
           "source": "https://www.rtings.com/tv/reviews/sony/bravia-8-oled"
         },
         "design": {
@@ -1505,8 +1513,8 @@ button{font-family:inherit;}
           "source": "https://www.rtings.com/tv/reviews/sony/bravia-8-oled"
         },
         "sound": {
-          "value": 6,
-          "why": "Acoustic Surface Audio+ 50W 2.1 (screen-as-speaker, can act as a center channel) — decent dialogue, weak bass. review-consensus.",
+          "value": 7,
+          "why": "Acoustic Surface Audio+ (screen-as-speaker via actuators) — best-in-class built-in TV audio (What Hi-Fi gives it sound decisively over the C5); can act as a centre channel with a Sony soundbar. review-consensus.",
           "source": "https://www.rtings.com/tv/reviews/sony/bravia-8-oled"
         },
         "nag": {
@@ -1667,13 +1675,13 @@ button{font-family:inherit;}
   ],
   "comparisons": {
     "c5|p808": {
-      "text": "Both have neutral WOLED blacks, but the LG C5 (€999) over the Philips 808 (€899) buys a brighter evo panel, AirPlay 2 + HomeKit (the 808 has neither), and years more software support; the 808 counters only with 4-sided Ambilight. For an iPhone/iPad home on the Apple TV box, the C5’s ecosystem + support edge is worth €100 — pick the 808 only if Ambilight matters more than Apple casting."
+      "text": "Both have neutral WOLED blacks, but the LG C5 (€1,099) over the Philips 808 (€899) buys a brighter evo panel, AirPlay 2 + HomeKit (the 808 has neither), and years more software support; the 808 counters with 4-sided Ambilight and notably better built-in sound. For an iPhone/iPad home on the Apple TV box, the C5’s ecosystem + support edge is usually worth the €200 — pick the 808 only if Ambilight + sound matter more than Apple casting and longevity."
     },
     "c5|sony8": {
-      "text": "These are the top two by value, and the gap between them is the stand. The Sony Bravia 8 (€1,199) has the wide repositionable feet she likes, the best measured blacks-with-the-lights-on, and edges the C5 on overall value — but it costs €200 more, is dimmer (~820 nits, fine for evening), and has the weakest update runway (stuck on Android 12). The LG C5 (€999) is brighter, runs the newest webOS with the longest support, and ties it on Apple-ecosystem fit — but it wears the center pedestal she disliked in her photos. Pick the Sony for the stand + measured ambient blacks; pick the C5 only if she will wall-mount (which moots the stand) and wants brighter for €200 less."
+      "text": "These are the top two by value, and the gap between them is the stand and the sound. The Sony Bravia 8 (€1,199) has the wide repositionable feet she likes, the best measured blacks-with-the-lights-on, and best-in-class built-in audio (Acoustic Surface) — it edges the C5 on overall value for only €100 more, though it is dimmer (~750–815 nits, fine for evening) and has the weakest update runway (Android 12). The LG C5 (€1,099) is brighter and runs the newest webOS with the longest support, and ties on Apple-ecosystem fit — but it wears the center pedestal she disliked and its 40 W downward-firing sound is the panned weak point (plan a soundbar). Pick the Sony for the stand + sound + measured ambient blacks; pick the C5 only if she will wall-mount (mooting the stand) and wants brighter for €100 less."
     },
     "c4|c5": {
-      "text": "Same family, one year apart: C4 (€839) vs C5 (€999). The C5 is a little brighter (~1180 vs ~1065 nits) and adds webOS 25 with an extra year of updates; picture is otherwise near-identical. €160 for a modest brightness bump + longer support — worth it if you keep it 6+ years; the C4 is the value play if not."
+      "text": "Same family, one year apart: C4 (€839) vs C5 (€1,099). The C5 is a little brighter (~1180 vs ~1065 nits) and adds webOS 25 with an extra year of updates; picture is otherwise near-identical. €260 for a modest brightness bump + longer support — worth it if you keep it 6+ years; the C4 is the value play (and the engine’s value-knee) if not — both share the same pedestal and similar sound."
     },
     "c5|s95d": {
       "text": "If reflections are the dealbreaker, the Samsung S95D is the only set here with a true matte coating that kills a mirrored lamp — the C5 is glossy. But the S95D is QD-OLED (blacks raise slightly under ambient), supports no Dolby Vision (your Apple TV box falls back to HDR10), and has no HomeKit. Net: the C5 wins for an Apple-box household; weigh the S95D only if glossy reflections in your east-window room bother you more than losing Dolby Vision.",
@@ -2016,14 +2024,14 @@ button{font-family:inherit;}
       + '<div class="vf-ctrl-inner' + (co ? '' : ' vf-collapsed') + '">'
       + '<div class="vf-wbar">' + this.weightBarHTML() + '</div>'
       + '<div class="vf-prios"><div class="vf-prios-h"><span>Your priorities</span><span class="vf-prios-sub">drag any slider (0–10) — the chart and the pick update live; the % is its share of the decision</span><button class="vf-reset-all" type="button" title="Restore weights and all settings to the defaults">↺ Reset all</button></div><div class="vf-wts">' + positives.map(wantSlider).join('') + '</div></div>'
+      + (antis.length ? '<div class="vf-pens"><div class="vf-pens-h"><span>Things you didn&rsquo;t want</span><span class="vf-pens-sub">how hard to dock a feature you&rsquo;ll never use &mdash; drag to 0 to ignore it entirely</span></div><div class="vf-wts">' + antis.map(penSlider).join('') + '</div></div>' : '')
       + '<div class="vf-ctrl-primary">'
       + '<div class="vf-ctrl-field"><span class="vf-ctrl-lab">Cost axis</span><div class="vf-segwrap">' + costChips + '</div></div>'
       + budgetField
       + '<div class="vf-ctrl-field"><span class="vf-ctrl-lab">Colour points by</span><div class="vf-chips">' + lensChips + '</div></div>'
       + '</div>'
-      + '<details class="vf-adv"><summary>More — time horizon, penalties &amp; reset</summary><div class="vf-adv-body">'
+      + '<details class="vf-adv"><summary>More — time horizon &amp; reset</summary><div class="vf-adv-body">'
       + '<div class="vf-ctrl-field vf-ctrl-row"><span class="vf-ctrl-lab">Spread cost over</span><div class="vf-chips">' + horChips + '</div></div>'
-      + (antis.length ? '<div class="vf-wgroup"><div class="vf-wgroup-h">Penalties<span class="vf-wgroup-sub">how hard to dock things you didn’t want — 0 = ignore</span></div><div class="vf-wts">' + antis.map(penSlider).join('') + '</div></div>' : '')
       + '<button class="vf-reset" type="button">Reset to defaults</button>'
       + '</div></details>'
       + '</div>';
