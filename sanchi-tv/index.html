@@ -24,66 +24,69 @@
 html,body{margin:0;padding:0;background:var(--bg);}
 ::selection{background:var(--ring);}
 body{color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;line-height:1.5;}
-#vf-app{max-width:1200px;margin:0 auto;padding:0 28px 64px;}
+#vf-app{max-width:1220px;margin:0 auto;padding:0 28px 64px;}
 .vf-num{font-variant-numeric:tabular-nums;}
 h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:-.01em;color:var(--ink);margin:0;}
 button{font-family:inherit;}
 :focus-visible{outline:2px solid var(--rec);outline-offset:2px;border-radius:3px;}
 
 /* ---------- TOP ---------- */
-.vf-top{padding:38px 0 18px;}
-.vf-kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:13px;}
-.vf-h1{font-size:38px;line-height:1.04;}
-.vf-sub{font-size:15px;color:var(--muted);max-width:660px;line-height:1.55;margin:10px 0 0;}
+.vf-top{padding:34px 0 8px;}
+.vf-kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:11px;}
+.vf-h1{font-size:34px;line-height:1.05;}
 
-/* ---------- WORKSPACE: chart | detail ---------- */
-.vf-workspace{display:grid;grid-template-columns:1.55fr 1fr;gap:26px;align-items:start;}
-@media(max-width:980px){.vf-workspace{grid-template-columns:1fr;gap:20px;}}
-.vf-chart-col{min-width:0;}
+/* ---------- VERDICT (live so-what) ---------- */
+.vf-verdict{margin:14px 0 22px;border-left:3px solid var(--rec);padding:2px 0 2px 16px;}
+.vf-verdict-head{font-size:17px;line-height:1.5;color:var(--ink);max-width:860px;}
+.vf-verdict-head b{font-weight:600;}
+.vf-verdict-lead{font-family:var(--serif);font-weight:600;font-size:19px;color:var(--rec);}
+.vf-verdict-flip{font-size:13px;color:var(--muted);line-height:1.5;margin-top:8px;max-width:860px;}
+.vf-verdict-flip b{color:var(--ink);font-weight:600;}
 
-.vf-charthead{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:8px;}
-.vf-h2{font-size:20px;}
-.vf-h2-sub{font-family:var(--sans);font-weight:400;font-size:14px;color:var(--faint);letter-spacing:0;}
-.vf-cap{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:5px;}
-.vf-cap-key{display:inline-flex;align-items:center;gap:5px;}
-.vf-kp{font-weight:700;font-size:12px;line-height:1;}
-.vf-kp-rec{color:var(--rec);}
-.vf-kp-sel{color:var(--ink);}
-.vf-legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);align-items:center;}
-.vf-lg{display:inline-flex;align-items:center;gap:6px;}
-.vf-dot{width:10px;height:10px;border-radius:50%;display:inline-block;}
-.vf-dot-rec{width:11px;height:11px;background:var(--rec);box-shadow:0 0 0 3px var(--ring);}
-.vf-dot-front{background:var(--front);}
-.vf-dot-dom{width:9px;height:9px;background:var(--dom);}
+/* ---------- WORKSPACE: chart-col | inspector ---------- */
+.vf-workspace{display:grid;grid-template-columns:1.5fr 1fr;gap:26px;align-items:start;}
+@media(max-width:980px){.vf-workspace{grid-template-columns:1fr;gap:22px;}}
+.vf-chart-col{min-width:0;display:flex;flex-direction:column;}
+
+.vf-charthead{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:9px;}
+.vf-h2{font-size:19px;}
+.vf-h2-sub{font-family:var(--sans);font-weight:400;font-size:13.5px;color:var(--faint);letter-spacing:0;}
+.vf-cap{font-size:12px;color:var(--muted);margin-top:5px;line-height:1.45;max-width:560px;}
 .vf-legend-heat{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--muted);}
 .vf-heat-lab{font-weight:600;color:var(--ink);}
 .vf-heat-bar{width:78px;height:9px;border-radius:5px;background:linear-gradient(90deg,rgb(233,226,216),rgb(184,67,15));border:1px solid var(--line);}
 .vf-heat-ends{font-family:var(--mono);font-size:9px;letter-spacing:.04em;color:var(--faint);}
 
 .vf-card{position:relative;border:1px solid var(--line);border-radius:12px;background:var(--card);padding:10px 12px 4px 4px;box-shadow:0 1px 3px rgba(28,26,23,.03);}
-.vf-chart-tools{position:absolute;top:10px;right:12px;display:flex;gap:4px;z-index:3;}
-.vf-tool{width:28px;height:28px;border:1px solid var(--line);background:var(--card);color:var(--muted);border-radius:6px;cursor:pointer;font-size:15px;line-height:1;display:flex;align-items:center;justify-content:center;}
+.vf-chart-tools{position:absolute;top:10px;right:12px;display:flex;gap:6px;z-index:3;align-items:center;}
+.vf-tool{width:30px;height:28px;border:1px solid var(--line);background:var(--card);color:var(--muted);border-radius:6px;cursor:pointer;font-size:15px;line-height:1;display:flex;align-items:center;justify-content:center;}
 .vf-tool:hover{border-color:var(--dom);color:var(--ink);}
 .vf-tool-adjust{width:auto;padding:0 11px;gap:6px;color:var(--ink);border-color:var(--dom);font-weight:500;}
 .vf-tool-adjust .vf-tool-ic{font-size:14px;}
 .vf-tool-adjust .vf-tool-tx{font-size:12.5px;}
+.vf-seg-presets{display:inline-flex;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--card);}
+.vf-segp{font-size:11.5px;border:none;background:none;color:var(--muted);padding:0 10px;height:28px;cursor:pointer;border-right:1px solid var(--line);}
+.vf-segp:last-child{border-right:none;}
+.vf-segp:hover{color:var(--ink);}
+.vf-segp.on{background:var(--ink);color:#fff;}
 .vf-card:fullscreen,.vf-card.vf-fs{display:flex;flex-direction:column;justify-content:center;padding:28px;background:var(--bg);}
-.vf-card:fullscreen .vf-plot{width:100%;max-width:1500px;margin:0 auto;}
-.vf-card:fullscreen .vf-svg{max-height:88vh;}
+.vf-card:fullscreen .vf-plot,.vf-card.vf-fs .vf-plot{width:100%;max-width:1500px;margin:0 auto;}
+.vf-card:fullscreen .vf-svg,.vf-card.vf-fs .vf-svg{max-height:88vh;}
 
 /* chart svg */
 .vf-plot{position:relative;}
-.vf-svg{display:block;width:100%;height:auto;}
-.vf-card .vf-svg{cursor:grab;touch-action:pan-y;}
-.vf-card .vf-svg:active{cursor:grabbing;}
+.vf-svg{display:block;width:100%;height:auto;touch-action:manipulation;}
 .vf-grid{stroke:var(--hair);stroke-width:1;}
 .vf-tick{fill:var(--faint);font-size:11px;font-family:var(--mono);text-anchor:middle;}
 .vf-tick-y{text-anchor:end;}
 .vf-axhint{fill:var(--faint);font-size:10px;font-family:var(--mono);letter-spacing:.1em;text-anchor:start;}
 .vf-axhint-r{text-anchor:end;}
 .vf-frontier{fill:none;stroke:var(--front);stroke-width:2;stroke-linejoin:round;opacity:.85;}
+.vf-frontier-cap{fill:var(--front);font-size:10.5px;font-family:var(--mono);letter-spacing:.02em;text-anchor:end;opacity:.9;}
+.vf-budgetline{stroke:var(--rec);stroke-width:1.3;stroke-dasharray:4 4;opacity:.6;}
+.vf-budget-lab{fill:var(--rec);font-size:10px;font-family:var(--mono);letter-spacing:.03em;}
 .vf-pt-g{cursor:pointer;}
-.vf-pt{stroke:#fff;stroke-width:1.5;transition:r .12s ease;}
+.vf-pt{stroke:#fff;stroke-width:1.5;transition:opacity .12s ease;}
 .vf-pt-rec{fill:var(--rec);}
 .vf-pt-front{fill:var(--front);}
 .vf-pt-dom{fill:var(--dom);}
@@ -91,16 +94,28 @@ button{font-family:inherit;}
 .vf-pt-lens{stroke:#fff;stroke-width:1.5;}
 .vf-pt-selring{fill:none;stroke:var(--ink);stroke-width:2;opacity:.75;}
 .vf-pt-recring{fill:none;stroke:var(--rec);stroke-width:1.5;opacity:.45;}
-.vf-pt-lab{fill:var(--ink);font-size:12px;font-weight:600;font-family:var(--serif);}
+.vf-pt-lab{fill:var(--ink);font-size:12px;font-weight:600;font-family:var(--serif);paint-order:stroke;stroke:var(--bg);stroke-width:3px;}
 .vf-pt-lab-rec{fill:var(--rec);}
-.vf-pt-sublab{fill:var(--muted);font-size:9.5px;font-family:var(--mono);letter-spacing:.03em;}
+.vf-pt-sublab{fill:var(--muted);font-size:9.5px;font-family:var(--mono);letter-spacing:.02em;paint-order:stroke;stroke:var(--bg);stroke-width:3px;}
+.vf-svg.vf-hovering .vf-pt-g:not(.vf-pt-hot) .vf-pt{opacity:.28;}
+.vf-svg.vf-hovering .vf-pt-g:not(.vf-pt-hot) .vf-pt-lab,.vf-svg.vf-hovering .vf-pt-g:not(.vf-pt-hot) .vf-pt-sublab{opacity:.35;}
+.vf-pt-g.vf-pt-hot .vf-pt{stroke-width:2.5;}
 .vf-axisnote{font-size:10.5px;font-family:var(--mono);color:var(--faint);text-align:center;margin:6px 8px 4px;}
+
+/* custom tooltip */
+.vf-tip{position:absolute;z-index:5;pointer-events:none;background:var(--ink);color:#fff;border-radius:8px;padding:9px 11px;min-width:140px;box-shadow:0 6px 20px rgba(28,26,23,.22);font-size:12px;}
+.vf-tip-name{font-family:var(--serif);font-weight:600;font-size:13px;margin-bottom:5px;line-height:1.2;}
+.vf-tip-row{display:flex;justify-content:space-between;gap:14px;color:#d9d4cb;padding:1px 0;}
+.vf-tip-row b{color:#fff;}
+.vf-tip-status{font-family:var(--mono);font-size:9.5px;letter-spacing:.04em;text-transform:uppercase;margin-top:6px;filter:brightness(1.5);}
+.vf-tip-hint{font-size:9.5px;color:#a8a299;margin-top:3px;}
 
 /* ---------- PICKS row ---------- */
 .vf-picks{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px;}
 @media(max-width:560px){.vf-picks{grid-template-columns:1fr;}}
 .vf-pick{display:block;width:100%;text-align:left;border:1px solid var(--line);border-radius:11px;background:var(--card);padding:12px 14px;cursor:pointer;transition:border-color .12s,box-shadow .12s;font-family:inherit;}
 .vf-pick:hover{border-color:var(--dom);}
+.vf-pick.vf-brush-hot{border-color:var(--ink);}
 .vf-pick-sel{box-shadow:0 0 0 2px var(--ink);}
 .vf-pick-rec{background:var(--rec-bg);border-color:var(--rec-border);}
 .vf-pick-rec.vf-pick-sel{box-shadow:0 0 0 2px var(--rec);}
@@ -114,9 +129,61 @@ button{font-family:inherit;}
 .vf-pick-why{font-size:11.5px;color:var(--muted);line-height:1.4;margin-top:7px;}
 .vf-pick-empty{grid-column:1/-1;color:var(--muted);font-size:13px;padding:16px;text-align:center;}
 
-/* ---------- DETAIL rail ---------- */
-.vf-detail{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:22px 24px;}
-.vf-detail-top{padding-bottom:16px;border-bottom:1px solid var(--hair);}
+/* ---------- ON-PAGE CONTROLS (docked under the chart) ---------- */
+.vf-controls-slot{margin-top:16px;}
+.vf-controls{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:14px 16px;}
+.vf-wbar{margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--line2);}
+.vf-wbar-h{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-bottom:8px;display:flex;flex-wrap:wrap;gap:3px 10px;align-items:baseline;}
+.vf-wbar-sub{font-family:var(--serif);text-transform:none;letter-spacing:0;font-size:11.5px;font-style:italic;color:var(--faint);}
+.vf-wbar-track{display:flex;height:15px;border-radius:5px;overflow:hidden;background:var(--track);border:1px solid var(--line);}
+.vf-wbar-seg{height:100%;cursor:pointer;transition:filter .12s;border-right:1px solid rgba(255,255,255,.55);}
+.vf-wbar-seg:last-child{border-right:none;}
+.vf-wbar-seg:hover{filter:brightness(1.12) saturate(1.2);}
+.vf-wbar-seg.on{box-shadow:inset 0 0 0 2px var(--ink);}
+.vf-wbar-keys{display:flex;flex-wrap:wrap;gap:5px 14px;margin-top:9px;}
+.vf-wbar-key{font-size:11px;color:var(--muted);display:inline-flex;align-items:center;gap:5px;}
+.vf-wbar-key b{color:var(--ink);}
+.vf-wbar-sw{width:9px;height:9px;border-radius:2px;display:inline-block;}
+.vf-ctrl-primary{display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start;}
+.vf-ctrl-field{display:flex;flex-direction:column;gap:8px;}
+.vf-ctrl-lab{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);}
+.vf-ctrl-hint{text-transform:none;letter-spacing:0;font-family:var(--serif);font-style:italic;font-size:11px;color:var(--faint);}
+.vf-segwrap{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--bg);width:fit-content;}
+.vf-seg{font-size:12.5px;border:none;background:none;color:var(--muted);padding:7px 15px;cursor:pointer;border-right:1px solid var(--line);}
+.vf-seg:last-child{border-right:none;}
+.vf-seg:hover{color:var(--ink);}
+.vf-seg.on{background:var(--ink);color:#fff;}
+.vf-budget-field{min-width:180px;}
+.vf-budget-row{display:flex;align-items:center;gap:10px;}
+.vf-budget-row input[type=range]{flex:1;accent-color:var(--rec);height:4px;cursor:pointer;min-width:110px;}
+.vf-budget-val{font-family:var(--mono);font-size:12px;color:var(--rec);min-width:64px;}
+.vf-chips{display:flex;gap:7px;flex-wrap:wrap;}
+.vf-chip{font-size:12px;border:1px solid var(--line);background:var(--bg);color:var(--muted);padding:5px 12px;border-radius:999px;cursor:pointer;}
+.vf-chip:hover{border-color:var(--dom);color:var(--ink);}
+.vf-chip-on{background:var(--ink);color:#fff;border-color:var(--ink);}
+.vf-adv{margin-top:14px;border-top:1px solid var(--line2);padding-top:12px;}
+.vf-adv>summary{cursor:pointer;list-style:none;font-size:12.5px;color:var(--rec);font-weight:500;}
+.vf-adv>summary::-webkit-details-marker{display:none;}
+.vf-adv>summary::before{content:"▸ ";color:var(--faint);}
+.vf-adv[open]>summary::before{content:"▾ ";}
+.vf-adv-body{margin-top:12px;}
+.vf-ctrl-row{flex-direction:row;align-items:baseline;gap:12px;flex-wrap:wrap;}
+.vf-wgroup{margin-top:16px;}
+.vf-wgroup-h{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);display:flex;flex-wrap:wrap;gap:3px 10px;align-items:baseline;}
+.vf-wgroup-sub{font-family:var(--serif);text-transform:none;letter-spacing:0;font-size:11.5px;font-style:italic;color:var(--faint);flex-basis:100%;}
+.vf-wts{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:6px 24px;margin-top:14px;align-items:center;}
+.vf-wt{display:grid;grid-template-columns:1fr 92px;align-items:center;gap:10px;font-size:12.5px;color:var(--muted);}
+.vf-wt-lab{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.vf-wt input[type=range]{grid-column:1 / -1;grid-row:2;width:100%;accent-color:var(--rec);height:4px;cursor:pointer;}
+.vf-wt-val{grid-column:2;grid-row:1;font-variant-numeric:tabular-nums;color:var(--muted);text-align:right;font-family:var(--mono);font-size:11px;}
+.vf-wt-val b{color:var(--ink);}
+.vf-wt-pct{color:var(--rec);font-weight:600;}
+.vf-reset{grid-column:1 / -1;justify-self:start;margin-top:8px;font-size:12px;color:var(--rec);background:none;border:none;cursor:pointer;text-decoration:underline;padding:4px 0;}
+
+/* ---------- INSPECTOR rail (scrolls in its own column) ---------- */
+.vf-detail{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:20px 22px;align-self:start;position:sticky;top:14px;max-height:calc(100vh - 28px);max-height:calc(100dvh - 28px);overflow-y:auto;-webkit-overflow-scrolling:touch;}
+@media(max-width:980px){.vf-detail{position:static;max-height:none;overflow:visible;}}
+.vf-detail-top{padding-bottom:15px;border-bottom:1px solid var(--hair);}
 .vf-detail-tagline{display:flex;align-items:center;gap:9px;margin-bottom:9px;flex-wrap:wrap;}
 .vf-detail-view{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);}
 .vf-detail-name{font-family:var(--serif);font-size:21px;font-weight:600;line-height:1.14;}
@@ -124,7 +191,11 @@ button{font-family:inherit;}
 .vf-stat-lab{font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin-bottom:3px;font-family:var(--mono);}
 .vf-stat-val{font-family:var(--serif);font-size:25px;font-weight:600;line-height:1;}
 .vf-stat-cost{color:var(--rec);}
+.vf-vsrec{font-size:12px;color:var(--muted);margin-top:12px;}
+.vf-vsrec b{color:var(--ink);font-variant-numeric:tabular-nums;}
 .vf-pnote{font-size:12.5px;color:var(--muted);font-style:italic;margin:14px 0 0;line-height:1.45;}
+.vf-flaws{font-size:12.5px;color:var(--muted);margin:13px 0 0;line-height:1.45;}
+.vf-flaws-lab{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);}
 .vf-buy{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:14px 0 0;}
 .vf-buy-lab{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);}
 .vf-buy-link{font-size:13px;color:var(--rec);text-decoration:none;border-bottom:1px solid var(--ring);}
@@ -147,6 +218,11 @@ button{font-family:inherit;}
 .vf-wf-bar.neg{background:var(--rec);}
 .vf-wf-bar.total{background:var(--ink);}
 .vf-wf-why{font-size:11.5px;color:var(--faint);margin-top:5px;font-style:italic;line-height:1.4;}
+.vf-conf{font-family:var(--mono);font-style:normal;font-size:8.5px;letter-spacing:.04em;text-transform:uppercase;padding:1px 5px;border-radius:4px;margin-right:5px;vertical-align:1px;border:1px solid;}
+.vf-conf-tested{background:#eef2ea;color:var(--front);border-color:#dde6d6;}
+.vf-conf-reviews{background:#fbf3ee;color:var(--rec);border-color:var(--rec-border);}
+.vf-conf-spec{background:var(--line3);color:var(--muted);border-color:var(--line);}
+.vf-conf-est{background:var(--line3);color:var(--faint);border-color:var(--line);}
 .vf-wf-total{border-bottom:none;border-top:1.5px solid var(--line);margin-top:4px;padding-top:9px;}
 .vf-wf-total .vf-wf-lab{font-weight:600;font-family:var(--serif);font-size:14px;}
 .vf-wf-total .vf-wf-amt{font-family:var(--serif);font-size:15px;color:var(--ink);}
@@ -163,64 +239,38 @@ button{font-family:inherit;}
 .vf-cb-total .vf-cb-lab{font-weight:600;font-size:12.5px;}
 .vf-cb-total .vf-cb-amt{font-family:var(--serif);font-size:16px;font-weight:600;color:var(--rec);}
 
-/* ---------- CONTROLS (on page; rides into fullscreen drawer) ---------- */
-.vf-controls-slot{margin-top:26px;}
-.vf-controls{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:15px 18px;}
-.vf-ctrl-primary{display:flex;gap:30px;flex-wrap:wrap;align-items:flex-start;}
-.vf-ctrl-field{display:flex;flex-direction:column;gap:8px;}
-.vf-ctrl-lab{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);}
-.vf-segwrap{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--bg);width:fit-content;}
-.vf-seg{font-size:12.5px;border:none;background:none;color:var(--muted);padding:7px 15px;cursor:pointer;border-right:1px solid var(--line);}
-.vf-seg:last-child{border-right:none;}
-.vf-seg:hover{color:var(--ink);}
-.vf-seg.on{background:var(--ink);color:#fff;}
-.vf-chips{display:flex;gap:7px;flex-wrap:wrap;}
-.vf-chip{font-size:12px;border:1px solid var(--line);background:var(--bg);color:var(--muted);padding:5px 12px;border-radius:999px;cursor:pointer;}
-.vf-chip:hover{border-color:var(--dom);color:var(--ink);}
-.vf-chip-on{background:var(--ink);color:#fff;border-color:var(--ink);}
-.vf-adv{margin-top:15px;border-top:1px solid var(--line2);padding-top:12px;}
-.vf-adv>summary{cursor:pointer;list-style:none;font-size:12.5px;color:var(--rec);font-weight:500;}
-.vf-adv>summary::-webkit-details-marker{display:none;}
-.vf-adv>summary::before{content:"▸ ";color:var(--faint);}
-.vf-adv[open]>summary::before{content:"▾ ";}
-.vf-adv-body{margin-top:12px;}
-.vf-adv-body .vf-ctrl-field{flex-direction:row;align-items:baseline;gap:12px;flex-wrap:wrap;}
-.vf-wgroup{margin-top:16px;}
-.vf-wgroup-h{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);display:flex;flex-wrap:wrap;gap:3px 10px;align-items:baseline;}
-.vf-wgroup-sub{font-family:var(--serif);text-transform:none;letter-spacing:0;font-size:11.5px;font-style:italic;color:var(--faint);flex-basis:100%;}
-.vf-wts{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:6px 24px;margin-top:14px;align-items:center;}
-.vf-wt{display:grid;grid-template-columns:1fr 92px;align-items:center;gap:10px;font-size:12.5px;color:var(--muted);}
-.vf-wt-lab{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-.vf-wt input[type=range]{grid-column:1 / -1;grid-row:2;width:100%;accent-color:var(--rec);height:4px;cursor:pointer;}
-.vf-wt-val{grid-column:2;grid-row:1;font-variant-numeric:tabular-nums;color:var(--muted);text-align:right;font-family:var(--mono);font-size:11px;}
-.vf-wt-val b{color:var(--ink);}
-.vf-wt-pct{color:var(--rec);font-weight:600;}
-.vf-reset{grid-column:1 / -1;justify-self:start;margin-top:8px;font-size:12px;color:var(--rec);background:none;border:none;cursor:pointer;text-decoration:underline;padding:4px 0;}
-
 /* ---------- TABS ---------- */
-.vf-tabs{margin-top:36px;}
+.vf-tabs{margin-top:40px;}
 .vf-tabnav{display:flex;gap:2px;border-bottom:1px solid var(--line);flex-wrap:wrap;}
 .vf-tab{font-family:var(--serif);font-size:14.5px;font-weight:600;color:var(--muted);background:none;border:none;border-bottom:2px solid transparent;padding:9px 15px;cursor:pointer;margin-bottom:-1px;}
 .vf-tab:hover{color:var(--ink);}
 .vf-tab-on{color:var(--ink);border-bottom-color:var(--rec);}
 .vf-tabpanel{padding:20px 0 0;}
-.vf-subcap{font-size:12.5px;color:var(--muted);margin-bottom:14px;line-height:1.5;}
+.vf-subcap{font-size:12.5px;color:var(--muted);margin-bottom:14px;line-height:1.5;max-width:760px;}
 
-/* table */
-.vf-table{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--card);}
-.vf-thead,.vf-row{display:grid;grid-template-columns:1fr 64px 84px;gap:8px;align-items:center;}
-.vf-thead{padding:9px 16px;border-bottom:1px solid var(--line);background:var(--head);font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);}
-.vf-thead .r,.vf-row .fig{text-align:right;}
-.vf-row{padding:11px 16px;cursor:pointer;border-bottom:1px solid var(--line2);border-left:2px solid transparent;}
-.vf-row:last-child{border-bottom:none;}
-.vf-row:hover{background:#1c1a170a;}
-.vf-row-sel{background:var(--rec-bg);border-left-color:var(--ink);}
-.vf-row-rec.vf-row-sel{border-left-color:var(--rec);}
-.vf-row-name{font-size:13.5px;font-weight:500;line-height:1.3;display:flex;align-items:center;gap:7px;flex-wrap:wrap;}
+/* Table-Lens matrix */
+.vf-tl{border:1px solid var(--line);border-radius:10px;overflow-x:auto;background:var(--card);}
+.vf-tl-row{display:grid;grid-template-columns:minmax(168px,1.7fr) repeat(var(--vf-tl-cols),minmax(58px,1fr));align-items:stretch;min-width:680px;border-bottom:1px solid var(--line2);}
+.vf-tl-row:last-child{border-bottom:none;}
+.vf-tl-head{position:sticky;top:0;background:var(--head);z-index:2;border-bottom:1px solid var(--line);}
+.vf-tl-h{font-family:var(--mono);font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--faint);padding:9px 8px;cursor:pointer;user-select:none;display:flex;align-items:center;}
+.vf-tl-cell.vf-tl-h{justify-content:flex-end;text-align:right;}
+.vf-tl-h:hover{color:var(--ink);}
+.vf-tl-h-on{color:var(--rec);}
+.vf-tl-name{position:sticky;left:0;background:var(--card);z-index:1;padding:10px 12px;font-size:13px;font-weight:500;line-height:1.25;display:flex;align-items:center;gap:7px;flex-wrap:wrap;border-right:1px solid var(--line2);}
+.vf-tl-head .vf-tl-name{background:var(--head);}
+.vf-tl-cell{position:relative;padding:8px;display:flex;align-items:center;justify-content:flex-end;gap:6px;border-left:1px solid var(--line3);}
+.vf-tl-bar{position:absolute;left:6px;bottom:5px;height:4px;border-radius:2px;background:var(--front);opacity:.5;max-width:calc(100% - 12px);}
+.vf-tl-bar.neg{background:var(--rec);opacity:.45;}
+.vf-tl-fig{position:relative;font-size:12.5px;color:var(--ink);font-variant-numeric:tabular-nums;}
+.vf-tl-row[data-id]{cursor:pointer;}
+.vf-tl-row[data-id]:hover,.vf-tl-row.vf-brush-hot{background:#1c1a170a;}
+.vf-tl-row[data-id]:hover .vf-tl-name,.vf-tl-row.vf-brush-hot .vf-tl-name{background:#f6f4ef;}
+.vf-tl-rec .vf-tl-name{font-weight:600;}
+.vf-tl-dim{opacity:.6;}
+.vf-tl-sel{background:var(--rec-bg) !important;}
+.vf-tl-sel .vf-tl-name{background:var(--rec-bg) !important;box-shadow:inset 3px 0 0 var(--rec);}
 .vf-row-star{color:var(--rec);}
-.vf-row-rec .vf-row-name{font-weight:600;}
-.vf-row-screen .vf-row-name{color:var(--faint);}
-.vf-row .fig{font-size:13.5px;color:var(--ink);}
 .vf-badge{font-family:var(--mono);font-size:9px;letter-spacing:.04em;text-transform:uppercase;padding:2px 7px;border-radius:4px;white-space:nowrap;border:1px solid;}
 .vf-b-rec{background:var(--rec);color:#fff;border-color:var(--rec);}
 .vf-b-front{background:#eef2ea;color:var(--front);border-color:#dde6d6;}
@@ -239,7 +289,7 @@ button{font-family:inherit;}
 .vf-tor-amt{font-size:12px;font-variant-numeric:tabular-nums;font-weight:600;text-align:right;}
 .vf-tor-axis{display:flex;justify-content:space-between;font-family:var(--mono);font-size:9px;letter-spacing:.04em;text-transform:uppercase;color:var(--faint);margin:7px 0 0;padding:0 46px 0 180px;}
 .vf-tor-axis span{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.vf-wwhtbt{font-size:13px;color:var(--muted);line-height:1.55;margin:16px 0 2px;}
+.vf-wwhtbt{font-size:13px;color:var(--muted);line-height:1.55;margin:16px 0 2px;max-width:760px;}
 
 /* scoring tab */
 .vf-scroll{overflow-x:auto;}
@@ -254,7 +304,7 @@ button{font-family:inherit;}
 /* ---------- CONTROLS DRAWER (fullscreen only) ---------- */
 .vf-drawer-backdrop{position:fixed;inset:0;background:rgba(28,26,23,.20);opacity:0;visibility:hidden;transition:opacity .2s ease;z-index:59;}
 .vf-card.vf-drawer-on .vf-drawer-backdrop{opacity:1;visibility:visible;}
-.vf-drawer{position:fixed;top:0;right:0;height:100%;width:min(380px,92vw);background:var(--card);border-left:1px solid var(--line);box-shadow:-12px 0 30px rgba(28,26,23,.14);z-index:60;display:none;flex-direction:column;}
+.vf-drawer{position:fixed;top:0;right:0;height:100%;width:min(390px,92vw);background:var(--card);border-left:1px solid var(--line);box-shadow:-12px 0 30px rgba(28,26,23,.14);z-index:60;display:none;flex-direction:column;}
 .vf-card.vf-drawer-on .vf-drawer{display:flex;animation:vf-din-x .2s ease both;}
 .vf-card.vf-drawer-on .vf-chart-tools{display:none;}
 @keyframes vf-din-x{from{transform:translateX(24px);opacity:0;}to{transform:translateX(0);opacity:1;}}
@@ -267,28 +317,78 @@ button{font-family:inherit;}
 .vf-drawer-body .vf-controls{border:none;background:none;padding:12px 0 0;}
 
 /* ---------- responsive ---------- */
-@media(max-width:520px){
-  #vf-app{padding:0 16px 56px;}
-  .vf-h1{font-size:30px;}
-  .vf-stat{gap:22px;}
-  .vf-tool{width:40px;height:40px;font-size:18px;}
-  .vf-chip{padding:9px 14px;font-size:13px;}
-  .vf-seg{padding:9px 14px;font-size:13px;}
+@media(max-width:980px){
+  /* lead with the answer: picks above the chart */
+  .vf-chart-col .vf-picks{order:-1;margin-top:0;margin-bottom:14px;}
+}
+
+/* ===== mobile density pass — everything compacts so it stops being a long scroll ===== */
+@media(max-width:640px){
+  #vf-app{padding:0 14px 48px;}
+  .vf-top{padding:22px 0 2px;}
+  .vf-kicker{margin-bottom:7px;}
+  .vf-h1{font-size:26px;}
+
+  /* verdict: tighter, but still the lead */
+  .vf-verdict{margin:9px 0 13px;padding-left:12px;}
+  .vf-verdict-head{font-size:14.5px;line-height:1.42;}
+  .vf-verdict-lead{font-size:15.5px;}
+  .vf-verdict-flip{font-size:11.5px;margin-top:6px;}
+
+  /* picks: compact cards; the verdict already carries the reasoning, so drop the why-line */
+  .vf-picks{gap:7px;margin-bottom:12px;}
+  .vf-pick{padding:8px 12px;border-radius:9px;}
+  .vf-pick-tag{font-size:9.5px;}
+  .vf-pick-name{font-size:13.5px;margin:2px 0 4px;}
+  .vf-pick-fig{gap:8px;}
+  .vf-pick-fig>.vf-num{font-size:15.5px;}
+  .vf-pick-why{display:none;}
+
+  /* chart header + tools: stop the overlap (icon-only adjust, compact cluster pinned to the empty top-right) */
+  .vf-charthead{margin-bottom:5px;}
+  .vf-h2{font-size:17px;}
+  .vf-cap{font-size:11px;margin-top:3px;}
+  .vf-chart-tools{gap:4px;top:8px;right:8px;}
+  .vf-tool{width:32px;height:30px;font-size:15px;}
+  .vf-tool-adjust{width:32px;padding:0;}
+  .vf-tool-adjust .vf-tool-tx{display:none;}
+  .vf-segp{padding:0 8px;font-size:11px;height:30px;}
+
+  /* controls: compact; the lens list becomes ONE swipeable row instead of 7 stacked chips */
+  .vf-controls{padding:12px 13px;}
+  .vf-controls-slot{margin-top:12px;}
+  .vf-wbar{margin-bottom:11px;padding-bottom:11px;}
+  .vf-wbar-keys{gap:3px 10px;}
+  .vf-wbar-key{font-size:10px;}
+  .vf-ctrl-primary{gap:15px;}
+  .vf-ctrl-primary .vf-chips{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:3px;scrollbar-width:none;}
+  .vf-ctrl-primary .vf-chips::-webkit-scrollbar{display:none;}
+  .vf-ctrl-primary .vf-chip{flex:0 0 auto;}
+  .vf-chip{padding:7px 12px;font-size:12px;}
+  .vf-seg{padding:8px 14px;font-size:12.5px;}
+
+  /* inspector: tighter */
+  .vf-detail{padding:16px 16px;}
+  .vf-detail-name{font-size:19px;}
+  .vf-stat{gap:20px;margin-top:12px;}
+  .vf-stat-val{font-size:22px;}
+
+  /* tabs */
+  .vf-tabs{margin-top:26px;}
+  .vf-tab{font-size:13.5px;padding:8px 12px;}
   .vf-tor-row{grid-template-columns:104px 1fr 40px;}
   .vf-tor-lab{font-size:11.5px;}
   .vf-tor-axis{padding-left:114px;padding-right:40px;}
 }
+
 @media(max-width:560px){
   .vf-drawer{top:auto;bottom:0;left:0;right:0;width:100%;height:auto;max-height:86vh;border-left:none;border-top:1px solid var(--line);border-radius:16px 16px 0 0;box-shadow:0 -12px 30px rgba(28,26,23,.16);}
   .vf-card.vf-drawer-on .vf-drawer{animation-name:vf-din-y;}
 }
-@media(max-width:400px){
-  .vf-h1{font-size:27px;}
+@media(max-width:420px){
+  .vf-h1{font-size:24px;}
   .vf-tor-row{grid-template-columns:84px 1fr 34px;gap:6px;}
   .vf-tor-axis{padding-left:90px;padding-right:34px;font-size:8px;}
-  .vf-thead,.vf-row{grid-template-columns:1fr 52px 70px;gap:6px;}
-  .vf-tool-adjust .vf-tool-tx{display:none;}
-  .vf-tool-adjust{width:40px;padding:0;}
 }
 @media (prefers-reduced-motion: reduce){*{transition:none !important;animation:none !important;}}
 </style>
@@ -654,15 +754,22 @@ button{font-family:inherit;}
     }
   ]
 };</script>
-<script>/* Value Frontier — engine v0.8.0
- * Pure compute (Node-testable) + interactive workspace UI. Zero dependencies.
- * 0.8: workspace layout — chart + selected-detail side-by-side; controls live on
- *   the page (and ride into fullscreen); cost defaults to PURCHASE; a value
- *   dimension acts as a heat LENS (recolors points, never re-ranks the frontier);
- *   the picks are labelled on the chart; selected (clicked) is visually distinct
- *   from the recommended pick; cost gets a breakdown viz with parity to value;
- *   secondary depth (all options · how it's scored · robustness) lives in tabs.
- *   Pure finance/value/frontier/knee math is unchanged from 0.7.
+<script>/* Value Frontier — engine v0.9.0
+ * Pure compute (Node-testable) + interactive decision cockpit. Zero dependencies.
+ * 0.9: research-backed redesign. The fix is structural, not cosmetic —
+ *   CONTAINMENT (height-capped workspace; the inspector scrolls in its own
+ *   column, the document doesn't) + ADJACENCY (controls dock directly under the
+ *   chart, so reweight→see-it-move happens in one viewport). On top of that:
+ *   a live plain-language VERDICT headline + flip-point; role-labelled picks;
+ *   a self-explaining chart (start-with-gray, frontier caption, knee callout,
+ *   your-budget line, tiered direct labels carrying a consequence, collision-
+ *   aware placement); a custom touch-aware tooltip (replaces the invisible-on-
+ *   touch native <title>); brushing & linking (hover highlights everywhere,
+ *   click pins the inspector); a sortable Table-Lens matrix; a hard BUDGET
+ *   filter (greys out over-budget dots, distinct from soft weights); a live
+ *   weight bar; and shareable URL-hash state. Pan/zoom → Fit/Frontier presets.
+ *   Pure finance/value/frontier/knee math is unchanged from 0.7/0.8 apart from
+ *   a budget screen (over-budget options are excluded from the frontier).
  */
 (function (global) {
   'use strict';
@@ -731,21 +838,23 @@ button{font-family:inherit;}
     state = state || {};
     var meta = data.meta || {}, r = meta.discountRate != null ? meta.discountRate : 0.05, fallback = meta.horizonYears || 5, dims = data.dimensions || [];
     var cmode = state.costMode || 'acq', pickCost = function (c) { return cmode === 'acq' ? c.acquisition : cmode === 'total' ? c.npv : c.eac; };
+    var cap = (state.budgetCap != null) ? state.budgetCap : null; // budget is a PURCHASE (acquisition) ceiling, stable across cost modes
     var rows = (data.products || []).map(function (p) {
       var parts = valueParts(p, dims, state.weights), val = parts.reduce(function (s, x) { return s + x.contribution; }, 0);
       var c = eacCost(p, r, fallback, state.horizon), s = screenProduct(p, dims);
+      var over = (cap != null && c.acquisition > cap + 1e-6);
       return { id: p.id, name: p.name, price: p.price, links: p.links || [], note: p.note || '', parts: parts, value: val, plot: val,
         eac: c.eac, life: c.life, costX: pickCost(c), costDetail: { price: c.price, delivery: c.delivery, install: c.install, extras: c.extras, acquisition: c.acquisition, energy: c.energy, consumables: c.consumables, maintenance: c.maintenance, running: c.running, life: c.life, fullLife: c.fullLife, npv: c.npv, resale: c.resale, pvRunning: c.pvRunning, pvResale: c.pvResale },
-        screenedOut: s.screenedOut, screenReason: s.reason, onFrontier: false, recommended: false };
+        screenedOut: s.screenedOut, screenReason: s.reason, overBudget: over, onFrontier: false, recommended: false };
     });
-    var live = rows.filter(function (x) { return !x.screenedOut; });
+    var live = rows.filter(function (x) { return !x.screenedOut && !x.overBudget; });
     var front = markFrontier(live.map(function (x) { return { id: x.id, x: x.costX, y: x.plot }; }));
     rows.forEach(function (x) { x.onFrontier = !!front[x.id]; });
     var fp = rows.filter(function (x) { return x.onFrontier; }).map(function (x) { return { id: x.id, x: x.costX, y: x.plot }; }).sort(function (a, b) { return a.x - b.x; });
     var recId = kneePoint(fp);
     rows.forEach(function (x) { x.recommended = (x.id === recId); });
     var xs = rows.map(function (x) { return x.costX; }), ys = rows.map(function (x) { return x.plot; });
-    return { rows: rows, recommendedId: recId, discountRate: r, meta: meta, costMode: cmode, frontierIdsByCost: fp.map(function (p) { return p.id; }),
+    return { rows: rows, recommendedId: recId, discountRate: r, meta: meta, costMode: cmode, budgetCap: cap, frontierIdsByCost: fp.map(function (p) { return p.id; }),
       bounds: { xMin: Math.min.apply(null, xs), xMax: Math.max.apply(null, xs), yMin: Math.min.apply(null, ys), yMax: Math.max.apply(null, ys) } };
   }
 
@@ -759,123 +868,235 @@ button{font-family:inherit;}
   function div(c) { var e = document.createElement('div'); if (c) e.className = c; return e; }
   function lerp(a, b, t) { return a + (b - a) * t; }
   function heat(t) { t = Math.max(0, Math.min(1, t)); return 'rgb(' + Math.round(lerp(233, 184, t)) + ',' + Math.round(lerp(226, 67, t)) + ',' + Math.round(lerp(216, 15, t)) + ')'; }
+  var PALETTE = ['#b8430f', '#5f7a55', '#c98a3f', '#6a7f9a', '#9a6a7a', '#7a8a4f', '#8a6a4f', '#4f8a8a', '#a06a9a', '#6a9a6a'];
   function statusInfo(r) {
     if (r.screenedOut) return { label: 'Screened out', badge: 'vf-b-screen', tag: '#9a8f86' };
+    if (r.overBudget) return { label: 'Over budget', badge: 'vf-b-screen', tag: '#9a8f86' };
     if (r.recommended) return { label: 'Our pick', badge: 'vf-b-rec', tag: '#b8430f' };
     if (r.onFrontier) return { label: 'Best-in-class for its price', badge: 'vf-b-front', tag: '#5f7a55' };
     return { label: 'Beaten by a better-value option', badge: 'vf-b-dom', tag: '#9a958c' };
   }
+  function confidenceOf(why) {
+    var w = (why || '').toLowerCase();
+    if (/lab|tested|consumentenbond|rtings|measured|nits|hardware\.info/.test(w)) return { k: 'tested', t: 'lab/measured' };
+    if (/review|owner|reddit|forum|youtube|tweakers|consensus|users|reports?/.test(w)) return { k: 'reviews', t: 'review consensus' };
+    if (/spec|panel|woled|qd-?oled|datasheet|rated|claimed/.test(w)) return { k: 'spec', t: 'spec-derived' };
+    if (!w) return null;
+    return { k: 'est', t: 'estimated' };
+  }
   function shortName(s) { return s.length > 26 ? s.slice(0, 24) + '…' : s; }
+  function firstWord(s) { return String(s || '').split(/\s+/)[0]; }
 
   // ===================== reactive app =====================
   function App(data, root) {
     var self = this;
     this.data = data; this.root = root;
-    this.state = { weights: {}, wants: {}, lensDim: null, selectedId: null, costMode: 'acq', horizon: null, zoom: null, tab: 'all' };
+    this.state = { weights: {}, wants: {}, lensDim: null, selectedId: null, hoveredId: null,
+      costMode: 'acq', horizon: null, budgetCap: null, zoomPreset: 'all', tab: 'table', sortKey: 'value', sortDir: -1 };
+    this.dotEls = {};
     this.initWants();
+    this.readHash();
     root.innerHTML = '';
     this.elHead = div('vf-top'); root.appendChild(this.elHead);
+    this.elVerdict = div('vf-verdict'); root.appendChild(this.elVerdict);
     var ws = div('vf-workspace'); root.appendChild(ws);
     var cc = div('vf-chart-col'); ws.appendChild(cc);
     this.elChartHead = div('vf-charthead'); cc.appendChild(this.elChartHead);
     this.elCard = div('vf-card'); cc.appendChild(this.elCard);
     this.elTools = div('vf-chart-tools'); this.elCard.appendChild(this.elTools);
     this.elPlot = div('vf-plot'); this.elCard.appendChild(this.elPlot);
+    this.elTip = div('vf-tip'); this.elTip.style.display = 'none'; this.elPlot.appendChild(this.elTip);
     this.elPicks = div('vf-picks'); cc.appendChild(this.elPicks);
-    this.elDetail = div('vf-detail'); ws.appendChild(this.elDetail);
-    this.elControlsSlot = div('vf-controls-slot'); root.appendChild(this.elControlsSlot);
+    this.elControlsSlot = div('vf-controls-slot'); cc.appendChild(this.elControlsSlot);
     this.elControls = div('vf-controls'); this.elControlsSlot.appendChild(this.elControls);
+    this.elInspector = div('vf-detail'); ws.appendChild(this.elInspector);
     this.elTabs = div('vf-tabs'); root.appendChild(this.elTabs);
     this.buildDrawer();
     this.buildChartTools();
     this.buildTabs();
-    this.setupChartPan();
     document.addEventListener('fullscreenchange', function () { self.onFsChange(); });
-    this.renderHead(); this.renderControls(); this.recompute(); this.select(this.result.recommendedId);
+    this.renderHead(); this.renderControls(); this.recompute();
+    this.select(this.state.selectedId || this.result.recommendedId, true);
   }
+  App.prototype.posDims = function () { return (this.data.dimensions || []).filter(function (d) { return d.direction !== 'unwanted'; }); };
+  App.prototype.antiDims = function () { return (this.data.dimensions || []).filter(function (d) { return d.direction === 'unwanted'; }); };
   App.prototype.lensObj = function () { var id = this.state.lensDim; return id ? (this.data.dimensions || []).filter(function (d) { return d.id === id; })[0] : null; };
   App.prototype.byId = function (id) { return this.result.rows.filter(function (r) { return r.id === id; })[0]; };
   App.prototype.costLabel = function () { var m = this.state.costMode; return m === 'acq' ? 'Purchase cost' : m === 'eac' ? 'Cost per year' : 'Total cost of ownership'; };
   App.prototype.money = function (r) { return fmtMoney(r.costX) + (this.state.costMode === 'eac' ? '/yr' : ''); };
+  App.prototype.unitTail = function () { return this.state.costMode === 'eac' ? '/yr' : ''; };
   App.prototype.pickIds = function () {
     var fp = this.result.frontierIdsByCost, ki = fp.indexOf(this.result.recommendedId);
     return { cheaper: ki > 0 ? fp[ki - 1] : null, rec: this.result.recommendedId, pricier: (ki >= 0 && ki < fp.length - 1) ? fp[ki + 1] : null };
+  };
+  App.prototype.runnerUp = function () { var p = this.pickIds(); return p.cheaper || p.pricier || null; };
+  App.prototype.priceBounds = function () {
+    var acqs = (this.data.products || []).map(function (p) { var c = p.costs || {}; return (p.price || 0) + (c.deliveryCost || 0) + (c.installCost || 0) + (c.extrasCost || 0); });
+    return { min: Math.min.apply(null, acqs), max: Math.max.apply(null, acqs) };
   };
 
   App.prototype.recompute = function () {
     this.syncWeights();
     this.result = compute(this.data, this.state);
-    if (!this.state.selectedId || !this.result.rows.some(function (r) { return r.id === this.state.selectedId; }, this)) this.state.selectedId = this.result.recommendedId;
-    this.renderChartHead(); this.renderChart(); this.renderPicks(); this.renderDetail(); this.renderTabPanel();
+    var rows = this.result.rows, sel = this.state.selectedId;
+    if (!sel || !rows.some(function (r) { return r.id === sel; })) this.state.selectedId = this.result.recommendedId || (rows[0] && rows[0].id) || null;
+    this.writeHash();
+    this.renderVerdict(); this.renderChartHead(); this.renderChart(); this.renderPicks(); this.renderInspector(); this.renderTabPanel();
   };
   App.prototype.scheduleChart = function () { var self = this; if (self._chartRAF) return; var raf = global.requestAnimationFrame || function (f) { return setTimeout(f, 16); }; self._chartRAF = raf(function () { self._chartRAF = null; self.renderChart(); }); };
   App.prototype.scheduleRecompute = function () { var self = this; if (self._recRAF) return; var raf = global.requestAnimationFrame || function (f) { return setTimeout(f, 16); }; self._recRAF = raf(function () { self._recRAF = null; self.recompute(); }); };
-  App.prototype.select = function (id) { if (!id) return; this.state.selectedId = id; this.renderDetail(); this.renderChart(); this.renderPicks(); this.markRows(); };
-  App.prototype.applyLens = function () { this.renderChartHead(); this.renderChart(); this.renderDetail(); };
+  App.prototype.select = function (id, silent) { if (!id) return; this.state.selectedId = id; this.renderInspector(); this.renderChart(); this.renderPicks(); this.markRows(); if (!silent) this.writeHash(); };
+  App.prototype.applyLens = function () { this.renderChartHead(); this.renderChart(); this.renderInspector(); this.renderTabPanel(); this.writeHash(); };
+
+  // ---------- shareable URL-hash state ----------
+  App.prototype.readHash = function () {
+    try {
+      var h = (global.location && global.location.hash || '').replace(/^#/, ''); if (!h) return;
+      var q = {}; h.split('&').forEach(function (kv) { var i = kv.indexOf('='); if (i < 0) return; q[decodeURIComponent(kv.slice(0, i))] = decodeURIComponent(kv.slice(i + 1)); });
+      var s = this.state;
+      if (q.cm) s.costMode = q.cm;
+      if (q.hz) s.horizon = +q.hz || null;
+      if (q.lens) s.lensDim = q.lens;
+      if (q.sel) s.selectedId = q.sel;
+      if (q.b) s.budgetCap = +q.b || null;
+      if (q.w) q.w.split(',').forEach(function (pair) { var p = pair.split(':'); if (p[0]) s.wants[p[0]] = +p[1]; });
+      if (q.p) q.p.split(',').forEach(function (pair) { var p = pair.split(':'); if (p[0]) s.weights[p[0]] = (+p[1]) / 100; });
+      this.syncWeights();
+    } catch (e) {}
+  };
+  App.prototype.writeHash = function () {
+    if (this._noHash) return;
+    try {
+      var s = this.state, self = this, parts = [];
+      if (s.costMode !== 'acq') parts.push('cm=' + s.costMode);
+      if (s.horizon) parts.push('hz=' + s.horizon);
+      if (s.lensDim) parts.push('lens=' + encodeURIComponent(s.lensDim));
+      if (s.selectedId && s.selectedId !== this.result.recommendedId) parts.push('sel=' + encodeURIComponent(s.selectedId));
+      if (s.budgetCap != null) parts.push('b=' + Math.round(s.budgetCap));
+      var wd = this.posDims().map(function (d) { return d.id + ':' + (s.wants[d.id] || 0); }).join(',');
+      if (wd) parts.push('w=' + encodeURIComponent(wd));
+      var pd = this.antiDims().map(function (d) { return d.id + ':' + Math.round((s.weights[d.id] || 0) * 100); }).filter(function (x) { return !/:0$/.test(x); }).join(',');
+      if (pd) parts.push('p=' + encodeURIComponent(pd));
+      var hash = parts.length ? '#' + parts.join('&') : '';
+      if (global.history && global.history.replaceState) global.history.replaceState(null, '', (global.location.pathname || '') + (global.location.search || '') + hash);
+    } catch (e) {}
+  };
 
   // ---------- head ----------
   App.prototype.renderHead = function () {
     var meta = this.data.meta || {};
-    this.elHead.innerHTML = '<div class="vf-kicker">Purchase decision</div><h1 class="vf-h1">' + htmlEsc(meta.title || 'Value Frontier') + '</h1>'
-      + '<p class="vf-sub">Every option placed by what it’s worth to you (up) against what it costs (right). The line is the efficient frontier; the ★ is where paying more stops buying much.</p>';
+    this.elHead.innerHTML = '<div class="vf-kicker">Purchase decision</div><h1 class="vf-h1">' + htmlEsc(meta.title || 'Value Frontier') + '</h1>';
+  };
+
+  // ---------- live verdict headline + flip-point ----------
+  App.prototype.renderVerdict = function () {
+    var res = this.result, p = this.pickIds(), rec = p.rec ? this.byId(p.rec) : null, self = this;
+    if (!rec) {
+      var why = res.budgetCap != null ? 'No option lands at or under ' + fmtMoney(res.budgetCap) + ' that also clears your minimums.' : 'Nothing clears your hard minimums.';
+      this.elVerdict.innerHTML = '<div class="vf-verdict-head"><span class="vf-verdict-lead">No pick yet.</span> ' + why + ' Loosen the budget or a dealbreaker below.</div>';
+      return;
+    }
+    var bits = '';
+    if (p.cheaper) { var ch = this.byId(p.cheaper); var ratio = rec.plot > 0 ? Math.round(ch.plot / rec.plot * 100) : 0; bits += ' The cheaper <b>' + htmlEsc(shortName(ch.name)) + '</b> keeps ' + ratio + '% of the value for ' + fmtMoney(rec.costX - ch.costX) + this.unitTail() + ' less.'; }
+    if (p.pricier) { var pr = this.byId(p.pricier); bits += ' Paying ' + fmtMoney(pr.costX - rec.costX) + this.unitTail() + ' more (<b>' + htmlEsc(shortName(pr.name)) + '</b>) buys +' + (pr.plot - rec.plot).toFixed(0) + ' value.'; }
+    var head = '<span class="vf-verdict-lead">' + htmlEsc(rec.name) + ' is the pick</span> — the best value for the money (the knee of the frontier).' + bits;
+    var flip = this.flipSentence();
+    this.elVerdict.innerHTML = '<div class="vf-verdict-head">' + head + '</div>' + (flip ? '<div class="vf-verdict-flip">' + flip + '</div>' : '');
+  };
+  App.prototype.flipSentence = function () {
+    var res = this.result, rec = res.recommendedId ? this.byId(res.recommendedId) : null, ruId = this.runnerUp(), ru = ruId ? this.byId(ruId) : null;
+    if (!rec || !ru) return '';
+    var diffs = rec.parts.map(function (p, i) { return { label: p.label, d: p.contribution - (ru.parts[i] ? ru.parts[i].contribution : 0) }; }).filter(function (x) { return Math.abs(x.d) > 0.05; }).sort(function (a, b) { return Math.abs(b.d) - Math.abs(a.d); });
+    var edge = diffs.filter(function (x) { return x.d > 0; }).slice(0, 2).map(function (x) { return x.label.toLowerCase(); }).join(' and ');
+    var costD = rec.costX - ru.costX, unit = this.unitTail();
+    var tail = costD > 0 ? ', or if its ' + fmtMoney(costD) + unit + ' premium over ' + htmlEsc(firstWord(ru.name)) + ' isn’t worth it to you' : '';
+    return '<b>Flip-point:</b> stays the pick unless ' + (edge ? 'its edge on ' + edge + ' closes' : 'the gap to ' + htmlEsc(firstWord(ru.name)) + ' closes') + tail + '. Past that, the runner-up wins — a sign to stop fiddling.';
   };
 
   // ---------- weights ----------
   App.prototype.initWants = function () {
-    var self = this, pos = (this.data.dimensions || []).filter(function (d) { return d.direction !== 'unwanted'; });
+    var self = this, pos = this.posDims();
     var maxW = Math.max.apply(null, pos.map(function (d) { return d.weight || 0; })) || 1;
     pos.forEach(function (d) { self.state.wants[d.id] = Math.max(1, Math.round((d.weight || 0) / maxW * 10)); });
-    (this.data.dimensions || []).filter(function (d) { return d.direction === 'unwanted'; }).forEach(function (d) { self.state.weights[d.id] = d.weight || 0; });
+    this.antiDims().forEach(function (d) { self.state.weights[d.id] = d.weight || 0; });
     this.syncWeights();
   };
   App.prototype.syncWeights = function () {
-    var self = this, pos = (this.data.dimensions || []).filter(function (d) { return d.direction !== 'unwanted'; });
+    var self = this, pos = this.posDims();
     var sum = pos.reduce(function (s, d) { return s + (self.state.wants[d.id] || 0); }, 0) || 1;
     pos.forEach(function (d) { self.state.weights[d.id] = (self.state.wants[d.id] || 0) / sum; });
   };
 
-  // ---------- on-page controls (cost · lens · horizon · priorities) ----------
+  // ---------- live weight bar (the 100-point recipe, always visible) ----------
+  App.prototype.weightBarHTML = function () {
+    var self = this, pos = this.posDims(), ld = this.state.lensDim;
+    var segs = pos.map(function (d, i) {
+      var w = self.state.weights[d.id] || 0, color = PALETTE[i % PALETTE.length];
+      return '<span class="vf-wbar-seg' + (ld === d.id ? ' on' : '') + '" data-lens="' + d.id + '" title="' + htmlEsc(d.label) + ' — ' + pct(w) + '" style="width:' + (w * 100).toFixed(2) + '%;background:' + color + '"></span>';
+    }).join('');
+    var keys = pos.map(function (d, i) { var w = self.state.weights[d.id] || 0; if (w < 0.06) return ''; return '<span class="vf-wbar-key"><span class="vf-wbar-sw" style="background:' + PALETTE[i % PALETTE.length] + '"></span>' + htmlEsc(d.label) + ' <b class="vf-num">' + pct(w) + '</b></span>'; }).join('');
+    return '<div class="vf-wbar-h">Your priorities <span class="vf-wbar-sub">share of the decision — always totals 100%. Click a slice to colour the chart by it.</span></div>'
+      + '<div class="vf-wbar-track">' + segs + '</div><div class="vf-wbar-keys">' + keys + '</div>';
+  };
+  App.prototype.refreshWeightBar = function () { var el = this.elControls.querySelector('.vf-wbar'); if (el) { el.innerHTML = this.weightBarHTML(); this.bindWeightBar(); } };
+  App.prototype.bindWeightBar = function () {
+    var self = this;
+    Array.prototype.forEach.call(this.elControls.querySelectorAll('.vf-wbar-seg'), function (s) {
+      s.addEventListener('click', function () { var id = s.getAttribute('data-lens'); self.state.lensDim = (self.state.lensDim === id) ? null : id; self.renderControls(); self.applyLens(); });
+    });
+  };
+
+  // ---------- on-page controls (docked under the chart) ----------
   App.prototype.renderControls = function () {
     var self = this, dims = this.data.dimensions || [], cm = this.state.costMode, ld = this.state.lensDim;
-    var positives = dims.filter(function (d) { return d.direction !== 'unwanted'; }), antis = dims.filter(function (d) { return d.direction === 'unwanted'; });
+    var positives = this.posDims(), antis = this.antiDims(), pb = this.priceBounds();
+    var step = Math.max(10, Math.round((pb.max - pb.min) / 40 / 10) * 10);
+    var capVal = this.state.budgetCap != null ? this.state.budgetCap : pb.max;
     var costChips = '<button class="vf-seg ' + (cm === 'acq' ? 'on' : '') + '" data-cost="acq">Purchase</button><button class="vf-seg ' + (cm === 'eac' ? 'on' : '') + '" data-cost="eac">Per year</button><button class="vf-seg ' + (cm === 'total' ? 'on' : '') + '" data-cost="total">Total</button>';
-    var lensChips = '<button class="vf-chip ' + (!ld ? 'vf-chip-on' : '') + '" data-lens="">Off (status)</button>' + positives.map(function (d) { return '<button class="vf-chip ' + (ld === d.id ? 'vf-chip-on' : '') + '" data-lens="' + d.id + '">' + htmlEsc(d.label) + '</button>'; }).join('');
+    var lensChips = '<button class="vf-chip ' + (!ld ? 'vf-chip-on' : '') + '" data-lens="">Off</button>' + positives.map(function (d) { return '<button class="vf-chip ' + (ld === d.id ? 'vf-chip-on' : '') + '" data-lens="' + d.id + '">' + htmlEsc(d.label) + '</button>'; }).join('');
     var hz = (this.state.horizon || '') + '', horChips = ['', '5', '8', '10', '15', '20'].map(function (v) { return '<button class="vf-chip ' + (hz === v ? 'vf-chip-on' : '') + '" data-hor="' + v + '">' + (v ? v + ' yr' : 'Each model’s life') + '</button>'; }).join('');
     function wantSlider(d) { var sc = self.state.wants[d.id] || 0, pc = Math.round((self.state.weights[d.id] || 0) * 100); return '<label class="vf-wt"><span class="vf-wt-lab">' + htmlEsc(d.label) + '</span><input type="range" min="0" max="10" step="1" value="' + sc + '" data-pri="' + d.id + '" aria-label="' + htmlEsc(d.label) + '"><span class="vf-wt-val" data-wv="' + d.id + '"><b class="vf-num">' + sc + '</b>/10 · <span class="vf-wt-pct vf-num">' + pc + '%</span></span></label>'; }
     function penSlider(d) { var w = Math.round((self.state.weights[d.id] || 0) * 100); return '<label class="vf-wt"><span class="vf-wt-lab">' + htmlEsc(d.label) + '</span><input type="range" min="0" max="30" value="' + w + '" data-pen="' + d.id + '" aria-label="' + htmlEsc(d.label) + '"><span class="vf-wt-val" data-wv="' + d.id + '"><span class="vf-num">' + w + '%</span></span></label>'; }
+    var budgetField = '<div class="vf-ctrl-field vf-budget-field"><span class="vf-ctrl-lab">Max budget <span class="vf-ctrl-hint">(purchase) — greys out the rest</span></span>'
+      + '<div class="vf-budget-row"><input type="range" min="' + Math.floor(pb.min) + '" max="' + Math.ceil(pb.max) + '" step="' + step + '" value="' + Math.round(capVal) + '" data-budget aria-label="Maximum budget"><span class="vf-budget-val vf-num" data-budgetval>' + (this.state.budgetCap != null ? fmtMoney(this.state.budgetCap) : 'no cap') + '</span></div></div>';
     this.elControls.innerHTML =
-      '<div class="vf-ctrl-primary">'
-      + '<div class="vf-ctrl-field"><span class="vf-ctrl-lab">Cost shown</span><div class="vf-segwrap">' + costChips + '</div></div>'
+      '<div class="vf-wbar">' + this.weightBarHTML() + '</div>'
+      + '<div class="vf-ctrl-primary">'
+      + '<div class="vf-ctrl-field"><span class="vf-ctrl-lab">Cost axis</span><div class="vf-segwrap">' + costChips + '</div></div>'
+      + budgetField
       + '<div class="vf-ctrl-field"><span class="vf-ctrl-lab">Colour points by</span><div class="vf-chips">' + lensChips + '</div></div>'
       + '</div>'
-      + '<details class="vf-adv"><summary>Adjust your priorities &amp; time horizon — the pick updates live</summary><div class="vf-adv-body">'
-      + '<div class="vf-ctrl-field"><span class="vf-ctrl-lab">Spread cost over</span><div class="vf-chips">' + horChips + '</div></div>'
-      + '<div class="vf-wgroup"><div class="vf-wgroup-h">How much each matters<span class="vf-wgroup-sub">drag 0–10; the % is its share of the decision — they always total 100%</span></div><div class="vf-wts">' + positives.map(wantSlider).join('') + '</div></div>'
+      + '<details class="vf-adv"><summary>Fine-tune your priorities &amp; time horizon — the pick updates live</summary><div class="vf-adv-body">'
+      + '<div class="vf-ctrl-field vf-ctrl-row"><span class="vf-ctrl-lab">Spread cost over</span><div class="vf-chips">' + horChips + '</div></div>'
+      + '<div class="vf-wgroup"><div class="vf-wgroup-h">How much each matters<span class="vf-wgroup-sub">drag 0–10; the % above is its share of the decision — they always total 100%</span></div><div class="vf-wts">' + positives.map(wantSlider).join('') + '</div></div>'
       + (antis.length ? '<div class="vf-wgroup"><div class="vf-wgroup-h">Penalties<span class="vf-wgroup-sub">how hard to dock things you didn’t want — 0 = ignore</span></div><div class="vf-wts">' + antis.map(penSlider).join('') + '</div></div>' : '')
       + '<button class="vf-reset" type="button">Reset to defaults</button>'
       + '</div></details>';
+    this.bindWeightBar();
     Array.prototype.forEach.call(this.elControls.querySelectorAll('[data-cost]'), function (b) { b.addEventListener('click', function () { self.state.costMode = b.getAttribute('data-cost'); Array.prototype.forEach.call(self.elControls.querySelectorAll('[data-cost]'), function (x) { x.classList.toggle('on', x === b); }); self.recompute(); }); });
-    Array.prototype.forEach.call(this.elControls.querySelectorAll('[data-lens]'), function (b) { b.addEventListener('click', function () { self.state.lensDim = b.getAttribute('data-lens') || null; Array.prototype.forEach.call(self.elControls.querySelectorAll('[data-lens]'), function (x) { x.classList.toggle('vf-chip-on', x === b); }); self.applyLens(); }); });
+    Array.prototype.forEach.call(this.elControls.querySelectorAll('[data-lens]'), function (b) { b.addEventListener('click', function () { self.state.lensDim = b.getAttribute('data-lens') || null; Array.prototype.forEach.call(self.elControls.querySelectorAll('[data-lens]'), function (x) { x.classList.toggle('vf-chip-on', x === b); }); self.refreshWeightBar(); self.applyLens(); }); });
     Array.prototype.forEach.call(this.elControls.querySelectorAll('[data-hor]'), function (b) { b.addEventListener('click', function () { var v = b.getAttribute('data-hor'); self.state.horizon = v ? +v : null; Array.prototype.forEach.call(self.elControls.querySelectorAll('[data-hor]'), function (x) { x.classList.toggle('vf-chip-on', x === b); }); self.recompute(); }); });
+    var budget = this.elControls.querySelector('[data-budget]'), budgetVal = this.elControls.querySelector('[data-budgetval]');
+    if (budget) budget.addEventListener('input', function () { var v = +budget.value; self.state.budgetCap = (v >= Math.ceil(pb.max)) ? null : v; budgetVal.textContent = self.state.budgetCap != null ? fmtMoney(self.state.budgetCap) : 'no cap'; self.scheduleRecompute(); });
     var priIds = positives.map(function (d) { return d.id; });
     Array.prototype.forEach.call(this.elControls.querySelectorAll('input[data-pri]'), function (inp) {
       inp.addEventListener('input', function () {
         self.state.wants[inp.getAttribute('data-pri')] = +inp.value; self.syncWeights();
         priIds.forEach(function (pid) { var el = self.elControls.querySelector('[data-wv="' + pid + '"]'); if (el) el.innerHTML = '<b class="vf-num">' + (self.state.wants[pid] || 0) + '</b>/10 · <span class="vf-wt-pct vf-num">' + Math.round((self.state.weights[pid] || 0) * 100) + '%</span>'; });
-        self.scheduleRecompute();
+        self.refreshWeightBar(); self.scheduleRecompute();
       });
     });
     Array.prototype.forEach.call(this.elControls.querySelectorAll('input[data-pen]'), function (inp) { inp.addEventListener('input', function () { var id = inp.getAttribute('data-pen'); self.state.weights[id] = (+inp.value) / 100; self.elControls.querySelector('[data-wv="' + id + '"]').innerHTML = '<span class="vf-num">' + inp.value + '%</span>'; self.scheduleRecompute(); }); });
-    this.elControls.querySelector('.vf-reset').addEventListener('click', function () { self.initWants(); self.state.horizon = null; self.renderControls(); self.recompute(); });
+    this.elControls.querySelector('.vf-reset').addEventListener('click', function () { self.initWants(); self.state.horizon = null; self.state.budgetCap = null; self.renderControls(); self.recompute(); });
   };
 
   // ---------- picks row (cheaper · the pick · more value) ----------
   App.prototype.renderPicks = function () {
-    var self = this, res = this.result, sel = this.state.selectedId, p = this.pickIds(), rec = this.byId(p.rec);
-    if (!rec) { this.elPicks.innerHTML = '<div class="vf-pick vf-pick-empty">Nothing clears your minimums — relax a hard requirement.</div>'; return; }
+    var self = this, sel = this.state.selectedId, p = this.pickIds(), rec = p.rec ? this.byId(p.rec) : null;
+    if (!rec) { this.elPicks.innerHTML = '<div class="vf-pick vf-pick-empty">Nothing clears your filters — relax the budget or a hard requirement.</div>'; return; }
     function card(id, kind, lab, sub) {
       var r = self.byId(id); if (!r) return '';
-      return '<button class="vf-pick vf-pick-' + kind + (sel === id ? ' vf-pick-sel' : '') + '" data-id="' + id + '"><div class="vf-pick-tag">' + lab + '</div>'
+      return '<button class="vf-pick vf-pick-' + kind + (sel === id ? ' vf-pick-sel' : '') + '" data-id="' + id + '" data-brush="' + id + '"><div class="vf-pick-tag">' + lab + '</div>'
         + '<div class="vf-pick-name">' + htmlEsc(shortName(r.name)) + '</div>'
         + '<div class="vf-pick-fig"><span class="vf-num">' + self.money(r) + '</span><span class="vf-pick-val">value <b class="vf-num">' + r.plot.toFixed(0) + '</b></span></div>'
         + '<div class="vf-pick-why">' + sub + '</div></button>';
@@ -885,96 +1106,180 @@ button{font-family:inherit;}
     h += card(p.rec, 'rec', '★ The pick', 'best value for money — the knee of the frontier');
     if (p.pricier) { var pr = this.byId(p.pricier); h += card(p.pricier, 'alt', 'More value', '+' + (pr.plot - rec.plot).toFixed(0) + ' value for +' + fmtMoney(pr.costX - rec.costX) + this.unitTail()); }
     this.elPicks.innerHTML = h;
-    Array.prototype.forEach.call(this.elPicks.querySelectorAll('.vf-pick'), function (el) { if (el.getAttribute('data-id')) el.addEventListener('click', function () { self.select(el.getAttribute('data-id')); }); });
+    Array.prototype.forEach.call(this.elPicks.querySelectorAll('.vf-pick'), function (el) {
+      var id = el.getAttribute('data-id'); if (!id) return;
+      el.addEventListener('click', function () { self.select(id); });
+      el.addEventListener('mouseenter', function () { self.highlight(id); });
+      el.addEventListener('mouseleave', function () { self.highlight(null); });
+    });
   };
-  App.prototype.unitTail = function () { return this.state.costMode === 'eac' ? '/yr' : ''; };
 
   // ---------- chart head ----------
   App.prototype.renderChartHead = function () {
     var lens = this.lensObj();
     var h = '<div class="vf-ch-l"><h2 class="vf-h2">Value <span class="vf-h2-sub">vs ' + htmlEsc(this.costLabel()) + '</span></h2>'
-      + '<div class="vf-cap"><span class="vf-cap-key"><span class="vf-kp vf-kp-rec">★</span> our pick</span><span class="vf-cap-key"><span class="vf-kp vf-kp-sel">◯</span> what you clicked</span><span class="vf-cap-key">hover a dot for details</span></div></div>';
-    if (lens) {
-      h += '<div class="vf-legend vf-legend-heat"><span class="vf-heat-lab">' + htmlEsc(lens.label) + '</span><span class="vf-heat-bar"></span><span class="vf-heat-ends">low → high</span></div>';
-    } else {
-      h += '<div class="vf-legend"><span class="vf-lg"><span class="vf-dot vf-dot-rec"></span>Pick</span><span class="vf-lg"><span class="vf-dot vf-dot-front"></span>Frontier</span><span class="vf-lg"><span class="vf-dot vf-dot-dom"></span>Beaten</span></div>';
-    }
+      + '<div class="vf-cap">Up = worth more to you · right = costs more. The line is the best deal at each price; the ★ is where paying more stops buying much.</div></div>';
+    if (lens) h += '<div class="vf-legend vf-legend-heat"><span class="vf-heat-lab">' + htmlEsc(lens.label) + '</span><span class="vf-heat-bar"></span><span class="vf-heat-ends">low → high</span></div>';
     this.elChartHead.innerHTML = h;
   };
 
   // ---------- chart ----------
   App.prototype.curDomain = function () {
-    var b = this.result.bounds, padX = (b.xMax - b.xMin) * 0.12 || 1, padY = (b.yMax - b.yMin) * 0.18 || 1, z = this.state.zoom;
-    return z ? { x0: z.x0, x1: z.x1, y0: z.y0, y1: z.y1 } : { x0: b.xMin - padX, x1: b.xMax + padX, y0: b.yMin - padY, y1: b.yMax + padY };
+    var b = this.result.bounds, rows = this.result.rows;
+    if (this.state.zoomPreset === 'frontier') {
+      var fr = rows.filter(function (r) { return r.onFrontier || r.recommended; });
+      if (fr.length >= 2) { var xs = fr.map(function (r) { return r.costX; }), ys = fr.map(function (r) { return r.plot; }); b = { xMin: Math.min.apply(null, xs), xMax: Math.max.apply(null, xs), yMin: Math.min.apply(null, ys), yMax: Math.max.apply(null, ys) }; }
+    }
+    var padX = (b.xMax - b.xMin) * 0.14 || 1, padY = (b.yMax - b.yMin) * 0.18 || 1;
+    return { x0: b.xMin - padX, x1: b.xMax + padX, y0: b.yMin - padY, y1: b.yMax + padY };
   };
   App.prototype.renderChart = function () {
     var res = this.result, sel = this.state.selectedId, self = this, lens = this.lensObj(), p = this.pickIds();
-    var W = 960, H = 600, m = { l: 60, r: 26, t: 34, b: 56 }, iw = W - m.l - m.r, ih = H - m.t - m.b;
+    var W = 960, H = 600, m = { l: 60, r: 26, t: 36, b: 56 }, iw = W - m.l - m.r, ih = H - m.t - m.b;
     var dm = this.curDomain(), x0 = dm.x0, x1 = dm.x1, y0 = dm.y0, y1 = dm.y1;
     var sx = function (v) { return m.l + (v - x0) / (x1 - x0) * iw; }, sy = function (v) { return m.t + (1 - (v - y0) / (y1 - y0)) * ih; };
     var svg = svgEl('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'vf-svg', role: 'img', 'aria-label': 'Value versus cost scatter with efficient frontier' });
     ticks(x0, x1, 5).forEach(function (t) { svg.appendChild(svgEl('line', { x1: sx(t), y1: m.t, x2: sx(t), y2: m.t + ih, class: 'vf-grid' })); svg.appendChild(svgText(sx(t), m.t + ih + 22, '€' + Math.round(t).toLocaleString(), 'vf-tick')); });
     ticks(y0, y1, 5).forEach(function (t) { svg.appendChild(svgEl('line', { x1: m.l, y1: sy(t), x2: m.l + iw, y2: sy(t), class: 'vf-grid' })); svg.appendChild(svgText(m.l - 10, sy(t) + 4, Math.round(t), 'vf-tick vf-tick-y')); });
-    svg.appendChild(svgText(m.l, m.t - 14, 'VALUE TO YOU →', 'vf-axhint'));
+    svg.appendChild(svgText(m.l, m.t - 16, 'VALUE TO YOU →', 'vf-axhint'));
     svg.appendChild(svgText(m.l + iw, m.t + ih + 42, (this.costLabel().toUpperCase()) + ' →', 'vf-axhint vf-axhint-r'));
+    // your-budget reference line (purchase mode only — budget is an acquisition ceiling)
+    if (res.budgetCap != null && this.state.costMode === 'acq' && res.budgetCap >= x0 && res.budgetCap <= x1) {
+      var bx = sx(res.budgetCap);
+      svg.appendChild(svgEl('line', { x1: bx, y1: m.t, x2: bx, y2: m.t + ih, class: 'vf-budgetline' }));
+      var bl = svgText(bx - 6, m.t + 14, 'your budget ' + fmtMoney(res.budgetCap), 'vf-budget-lab'); bl.setAttribute('text-anchor', 'end'); svg.appendChild(bl);
+    }
+    // frontier path + caption
     var fr = res.rows.filter(function (r) { return r.onFrontier; }).map(function (r) { return { x: r.costX, y: r.plot }; }).sort(function (a, b) { return a.x - b.x; });
-    if (fr.length >= 2) { var d = 'M ' + sx(fr[0].x) + ' ' + sy(fr[0].y); for (var i = 1; i < fr.length; i++) d += ' L ' + sx(fr[i].x) + ' ' + sy(fr[i - 1].y) + ' L ' + sx(fr[i].x) + ' ' + sy(fr[i].y); svg.appendChild(svgEl('path', { d: d, class: 'vf-frontier' })); }
+    if (fr.length >= 2) {
+      var d = 'M ' + sx(fr[0].x) + ' ' + sy(fr[0].y); for (var i = 1; i < fr.length; i++) d += ' L ' + sx(fr[i].x) + ' ' + sy(fr[i - 1].y) + ' L ' + sx(fr[i].x) + ' ' + sy(fr[i].y); svg.appendChild(svgEl('path', { d: d, class: 'vf-frontier' }));
+      var top = fr[fr.length - 1]; svg.appendChild(svgText(Math.min(sx(top.x), m.l + iw - 4), Math.max(sy(top.y) - 10, m.t + 12), 'best value at each price ↗', 'vf-frontier-cap'));
+    }
+    // points (start gray; pick saturated). collect labels for collision pass.
+    this.dotEls = {}; var labelJobs = [], placed = [];
     res.rows.forEach(function (r) {
-      var cx = sx(r.costX), cy = sy(r.plot), g = svgEl('g', { class: 'vf-pt-g' }), isSel = r.id === sel, isRec = r.recommended;
+      var cx = sx(r.costX), cy = sy(r.plot), g = svgEl('g', { class: 'vf-pt-g', 'data-id': r.id }), isSel = r.id === sel, isRec = r.recommended;
       if (isSel) g.appendChild(svgEl('circle', { cx: cx, cy: cy, r: 15, class: 'vf-pt-selring' }));
       if (isRec) g.appendChild(svgEl('circle', { cx: cx, cy: cy, r: isSel ? 19 : 13, class: 'vf-pt-recring' }));
-      var lensPart = lens ? r.parts.filter(function (p) { return p.id === lens.id; })[0] : null;
-      var rad = isRec ? 8 : r.onFrontier ? 6 : 5, cls = 'vf-pt ', attrs = { cx: cx, cy: cy, r: rad, tabindex: '0', role: 'button' };
-      if (lens && !r.screenedOut) { cls += 'vf-pt-lens'; attrs.style = 'fill:' + heat(lensPart ? lensPart.norm : 0); }
-      else cls += r.screenedOut ? 'vf-pt-screen' : isRec ? 'vf-pt-rec' : r.onFrontier ? 'vf-pt-front' : 'vf-pt-dom';
-      attrs['class'] = cls; var c = svgEl('circle', attrs); g.appendChild(c);
-      var ti = svgEl('title'); ti.textContent = r.name + '\n' + 'value ' + r.plot.toFixed(1) + ' · ' + self.money(r) + (lensPart ? '\n' + lens.label + ': ' + lensPart.raw : ''); g.appendChild(ti);
-      var label = null, sub = null;
-      if (isRec) { label = shortName(r.name); sub = '★ the pick · best value'; }
-      else if (r.id === p.cheaper) { label = shortName(r.name); sub = 'cheaper'; }
-      else if (r.id === p.pricier) { label = shortName(r.name); sub = 'more value'; }
+      var lensPart = lens ? r.parts.filter(function (q) { return q.id === lens.id; })[0] : null;
+      var dim = r.screenedOut || r.overBudget, rad = isRec ? 8 : r.onFrontier ? 6 : 5, cls = 'vf-pt ', attrs = { cx: cx, cy: cy, r: rad, tabindex: '0', role: 'button' };
+      if (lens && !dim) { cls += 'vf-pt-lens'; attrs.style = 'fill:' + heat(lensPart ? lensPart.norm : 0); }
+      else cls += dim ? 'vf-pt-screen' : isRec ? 'vf-pt-rec' : r.onFrontier ? 'vf-pt-front' : 'vf-pt-dom';
+      attrs['class'] = cls; var c = svgEl('circle', attrs); g.appendChild(c); self.dotEls[r.id] = g;
+      var label = null, sub = null, pr2;
+      if (isRec) { label = shortName(r.name); sub = '★ best value'; }
+      else if (r.id === p.cheaper) { label = shortName(r.name); var recR = self.byId(p.rec); sub = '−' + fmtMoney(recR.costX - r.costX) + self.unitTail() + ' · −' + (recR.plot - r.plot).toFixed(0) + ' val'; }
+      else if (r.id === p.pricier) { label = shortName(r.name); var recR2 = self.byId(p.rec); sub = '+' + fmtMoney(r.costX - recR2.costX) + self.unitTail() + ' · +' + (r.plot - recR2.plot).toFixed(0) + ' val'; }
       else if (isSel) { label = shortName(r.name); sub = 'viewing'; }
-      if (label) {
-        var right = cx < (m.l + iw * 0.66), lx = right ? cx + 14 : cx - 14, anc = right ? 'start' : 'end';
-        var t1 = svgText(lx, cy - 3, label, 'vf-pt-lab' + (isRec ? ' vf-pt-lab-rec' : '')); t1.setAttribute('text-anchor', anc); g.appendChild(t1);
-        var t2 = svgText(lx, cy + 11, sub, 'vf-pt-sublab'); t2.setAttribute('text-anchor', anc); g.appendChild(t2);
-      }
-      g.addEventListener('click', function () { self.select(r.id); });
-      g.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); self.select(r.id); } });
+      if (label) labelJobs.push({ id: r.id, g: g, cx: cx, cy: cy, label: label, sub: sub, isRec: isRec, prio: isRec ? 0 : (isSel ? 3 : 1) });
+      self.bindDot(g, r);
       svg.appendChild(g);
     });
-    this.elPlot.innerHTML = ''; this.elPlot.appendChild(svg);
+    // collision-aware label placement (greedy, priority order)
+    labelJobs.sort(function (a, b) { return a.prio - b.prio; });
+    labelJobs.forEach(function (j) {
+      var wEst = Math.max(j.label.length, (j.sub || '').length) * 6.4 + 6, hEst = 26;
+      var cands = [];
+      var preferRight = j.cx < (m.l + iw * 0.62);
+      // [dx, anchor, dyTop]  — top of the 2-line box relative to cy
+      var hor = preferRight ? [[13, 'start'], [-13, 'end']] : [[-13, 'end'], [13, 'start']];
+      var ver = [-9, -30, 12, -50, 30];
+      hor.forEach(function (hh) { ver.forEach(function (vy) { cands.push({ dx: hh[0], anchor: hh[1], top: j.cy + vy }); }); });
+      var chosen = null;
+      for (var ci = 0; ci < cands.length && !chosen; ci++) {
+        var cd = cands[ci], left = cd.anchor === 'start' ? j.cx + cd.dx : j.cx + cd.dx - wEst;
+        var box = { x0: left, y0: cd.top, x1: left + wEst, y1: cd.top + hEst };
+        if (box.x0 < m.l - 2 || box.x1 > m.l + iw + 2 || box.y0 < m.t + 2 || box.y1 > m.t + ih - 2) continue;
+        var hit = false; for (var pi = 0; pi < placed.length; pi++) { var q = placed[pi]; if (!(box.x1 < q.x0 || box.x0 > q.x1 || box.y1 < q.y0 || box.y0 > q.y1)) { hit = true; break; } }
+        if (!hit) chosen = cd;
+      }
+      if (!chosen) return; // overflow → tooltip only
+      var lx = j.cx + chosen.dx, ty = chosen.top, anc = chosen.anchor;
+      var t1 = svgText(lx, ty + 11, j.label, 'vf-pt-lab' + (j.isRec ? ' vf-pt-lab-rec' : '')); t1.setAttribute('text-anchor', anc); j.g.appendChild(t1);
+      if (j.sub) { var t2 = svgText(lx, ty + 23, j.sub, 'vf-pt-sublab'); t2.setAttribute('text-anchor', anc); j.g.appendChild(t2); }
+      var left2 = anc === 'start' ? lx : lx - wEst;
+      placed.push({ x0: left2, y0: ty, x1: left2 + wEst, y1: ty + hEst });
+    });
+    this.elPlot.insertBefore(svg, this.elTip);
+    // remove any prior svg (keep tip element)
+    var olds = this.elPlot.querySelectorAll('.vf-svg'); if (olds.length > 1) olds[0].parentNode.removeChild(olds[0]);
+    var oldNote = this.elPlot.querySelector('.vf-axisnote'); if (oldNote) oldNote.parentNode.removeChild(oldNote);
     if (y0 > 0.5) { var note = div('vf-axisnote'); note.textContent = 'value axis starts at ' + Math.round(Math.max(0, y0)) + ', not 0 — the spread is real but modest'; this.elPlot.appendChild(note); }
+    this.applyHighlight();
+  };
+  App.prototype.bindDot = function (g, r) {
+    var self = this;
+    g.addEventListener('click', function () { self.select(r.id); });
+    g.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); self.select(r.id); } });
+    g.addEventListener('mouseenter', function (e) { self.highlight(r.id); self.showTip(r, e); });
+    g.addEventListener('mousemove', function (e) { self.showTip(r, e); });
+    g.addEventListener('mouseleave', function () { self.highlight(null); self.hideTip(); });
+    g.addEventListener('focus', function () { self.highlight(r.id); });
+    g.addEventListener('blur', function () { self.highlight(null); self.hideTip(); });
   };
 
-  // ---------- detail rail ----------
-  App.prototype.renderDetail = function () {
-    var res = this.result, r = res.rows.filter(function (x) { return x.id === this.state.selectedId; }, this)[0], lens = this.state.lensDim;
-    if (!r) { this.elDetail.innerHTML = ''; return; }
-    var si = statusInfo(r), self = this;
+  // ---------- brushing & linking ----------
+  App.prototype.highlight = function (id) {
+    if (this.state.hoveredId === id) return;
+    this.state.hoveredId = id; this.applyHighlight();
+  };
+  App.prototype.applyHighlight = function () {
+    var id = this.state.hoveredId, svg = this.elPlot.querySelector('.vf-svg');
+    if (svg) {
+      svg.classList.toggle('vf-hovering', !!id);
+      Array.prototype.forEach.call(svg.querySelectorAll('.vf-pt-g'), function (g) { g.classList.toggle('vf-pt-hot', g.getAttribute('data-id') === id); });
+    }
+    if (this.elTabPanel) Array.prototype.forEach.call(this.elTabPanel.querySelectorAll('[data-brush]'), function (el) { el.classList.toggle('vf-brush-hot', el.getAttribute('data-brush') === id); });
+    Array.prototype.forEach.call(this.elPicks.querySelectorAll('[data-brush]'), function (el) { el.classList.toggle('vf-brush-hot', el.getAttribute('data-brush') === id); });
+  };
+  App.prototype.showTip = function (r, e) {
+    var lens = this.lensObj(), lensPart = lens ? r.parts.filter(function (q) { return q.id === lens.id; })[0] : null;
+    var si = statusInfo(r);
+    var h = '<div class="vf-tip-name">' + htmlEsc(r.name) + '</div><div class="vf-tip-row"><span>value</span><b class="vf-num">' + r.plot.toFixed(1) + '</b></div><div class="vf-tip-row"><span>' + htmlEsc(this.costLabel().toLowerCase()) + '</span><b class="vf-num">' + this.money(r) + '</b></div>'
+      + (lensPart ? '<div class="vf-tip-row"><span>' + htmlEsc(lens.label.toLowerCase()) + '</span><b class="vf-num">' + lensPart.raw + '</b></div>' : '')
+      + '<div class="vf-tip-status" style="color:' + si.tag + '">' + si.label + '</div><div class="vf-tip-hint">click to inspect</div>';
+    this.elTip.innerHTML = h; this.elTip.style.display = 'block';
+    var host = this.elPlot.getBoundingClientRect(), tw = this.elTip.offsetWidth, th = this.elTip.offsetHeight;
+    var x = (e.clientX - host.left) + 14, y = (e.clientY - host.top) - th - 8;
+    if (x + tw > host.width - 4) x = (e.clientX - host.left) - tw - 14; if (x < 4) x = 4;
+    if (y < 4) y = (e.clientY - host.top) + 16; if (y + th > host.height - 4) y = host.height - th - 4;
+    this.elTip.style.left = x + 'px'; this.elTip.style.top = y + 'px';
+  };
+  App.prototype.hideTip = function () { this.elTip.style.display = 'none'; };
+
+  // ---------- inspector (pinned option) ----------
+  App.prototype.renderInspector = function () {
+    var res = this.result, r = res.rows.filter(function (x) { return x.id === this.state.selectedId; }, this)[0], lens = this.state.lensDim, self = this;
+    if (!r) { this.elInspector.innerHTML = ''; return; }
+    var si = statusInfo(r);
     var ordered = r.parts.slice().sort(function (a, b) { if ((a.contribution < 0) !== (b.contribution < 0)) return a.contribution < 0 ? 1 : -1; return Math.abs(b.contribution) - Math.abs(a.contribution); });
     var cum = 0, steps = ordered.map(function (p) { var before = cum; cum += p.contribution; return { p: p, before: before, after: cum }; });
     var hi = Math.max(r.value, 0), lo = 0;
     steps.forEach(function (s) { hi = Math.max(hi, s.before, s.after); lo = Math.min(lo, s.before, s.after); });
     var span = (hi - lo) || 1, xp = function (v) { return (v - lo) / span * 100; };
     var brk = steps.map(function (s) {
-      var p = s.p, neg = p.contribution < 0, L = xp(Math.min(s.before, s.after)), Wd = Math.abs(p.contribution) / span * 100, on = lens && p.id === lens;
+      var p = s.p, neg = p.contribution < 0, L = xp(Math.min(s.before, s.after)), Wd = Math.abs(p.contribution) / span * 100, on = lens && p.id === lens, cf = confidenceOf(p.why);
       return '<div class="vf-wf' + (on ? ' vf-wf-lenson' : '') + '"><div class="vf-wf-head"><span class="vf-wf-lab">' + htmlEsc(p.label) + '</span><span class="vf-wf-meta vf-num">' + (p.anti ? 'level ' : 'score ') + p.raw + ' · w ' + pct(p.weight) + '</span><span class="vf-wf-amt ' + (neg ? 'vf-amt-neg' : 'vf-amt-pos') + '">' + (neg ? '' : '+') + p.contribution.toFixed(1) + '</span></div>'
         + '<div class="vf-wf-track"><span class="vf-wf-bar ' + (neg ? 'neg' : 'pos') + '" style="left:' + L.toFixed(1) + '%;width:' + Math.max(Wd, 0.7).toFixed(1) + '%"></span></div>'
-        + (p.why ? '<div class="vf-wf-why">' + htmlEsc(p.why) + (p.source ? ' <a class="vf-br-src" href="' + htmlEsc(p.source) + '" target="_blank" rel="noopener">source ↗</a>' : '') + '</div>' : '') + '</div>';
+        + (p.why ? '<div class="vf-wf-why">' + (cf ? '<span class="vf-conf vf-conf-' + cf.k + '" title="' + cf.t + '">' + cf.k + '</span>' : '') + htmlEsc(p.why) + (p.source ? ' <a class="vf-br-src" href="' + htmlEsc(p.source) + '" target="_blank" rel="noopener">source ↗</a>' : '') + '</div>' : '') + '</div>';
     }).join('');
     brk += '<div class="vf-wf vf-wf-total"><div class="vf-wf-head"><span class="vf-wf-lab">Total value</span><span class="vf-wf-meta"></span><span class="vf-wf-amt vf-num">' + r.value.toFixed(1) + '</span></div><div class="vf-wf-track"><span class="vf-wf-bar total" style="left:' + xp(Math.min(0, r.value)).toFixed(1) + '%;width:' + Math.abs(r.value / span * 100).toFixed(1) + '%"></span></div></div>';
+    // weakest-on (flaws but not dealbreakers): two lowest-normalised wanted dims
+    var weak = r.parts.filter(function (p) { return !p.anti && p.weight > 0.01; }).sort(function (a, b) { return a.norm - b.norm; }).slice(0, 2).filter(function (p) { return p.norm < 0.75; });
+    var flaws = weak.length ? '<div class="vf-flaws"><span class="vf-flaws-lab">Weakest on</span> ' + weak.map(function (p) { return htmlEsc(p.label) + ' (' + p.raw + ')'; }).join(', ') + ' — small given your weights.</div>' : '';
     var links = (r.links && r.links.length) ? '<div class="vf-buy"><span class="vf-buy-lab">Buy / view</span>' + r.links.map(function (l) { return '<a class="vf-buy-link" href="' + htmlEsc(l.url) + '" target="_blank" rel="noopener">' + htmlEsc(l.label) + ' ↗</a>'; }).join('') + '</div>' : '';
     var costFig = this.state.costMode === 'eac' ? 'Per year to own' : this.state.costMode === 'acq' ? 'To buy now' : 'Total to own';
-    this.elDetail.innerHTML = '<div class="vf-detail-top"><div class="vf-detail-tagline"><span class="vf-badge ' + si.badge + '">' + si.label + '</span><span class="vf-detail-view">you’re viewing</span></div>'
+    var vsRec = '';
+    if (!r.recommended && res.recommendedId) { var rec = this.byId(res.recommendedId); vsRec = '<div class="vf-vsrec">vs the pick (' + htmlEsc(shortName(rec.name)) + '): <b>' + (r.plot - rec.plot >= 0 ? '+' : '') + (r.plot - rec.plot).toFixed(0) + '</b> value, <b>' + (r.costX - rec.costX >= 0 ? '+' : '−') + fmtMoney(Math.abs(r.costX - rec.costX)) + this.unitTail() + '</b></div>'; }
+    this.elInspector.innerHTML = '<div class="vf-detail-top"><div class="vf-detail-tagline"><span class="vf-badge ' + si.badge + '">' + si.label + '</span><span class="vf-detail-view">you’re viewing</span></div>'
       + '<div class="vf-detail-name">' + htmlEsc(r.name) + '</div>'
-      + '<div class="vf-stat"><div class="vf-stat-b"><div class="vf-stat-lab">Value to you</div><div class="vf-stat-val vf-num">' + r.value.toFixed(1) + '</div></div><div class="vf-stat-b"><div class="vf-stat-lab">' + costFig + '</div><div class="vf-stat-val vf-num vf-stat-cost">' + this.money(r) + '</div></div></div></div>'
-      + (r.note ? '<div class="vf-pnote">' + htmlEsc(r.note) + '</div>' : '') + links
+      + '<div class="vf-stat"><div class="vf-stat-b"><div class="vf-stat-lab">Value to you</div><div class="vf-stat-val vf-num">' + r.value.toFixed(1) + '</div></div><div class="vf-stat-b"><div class="vf-stat-lab">' + costFig + '</div><div class="vf-stat-val vf-num vf-stat-cost">' + this.money(r) + '</div></div></div>' + vsRec + '</div>'
+      + (r.note ? '<div class="vf-pnote">' + htmlEsc(r.note) + '</div>' : '') + flaws + links
       + '<div class="vf-col"><div class="vf-col-h">Why this value <span class="vf-col-sub">each dimension adds or subtracts to the total</span></div>' + brk + '</div>'
       + '<div class="vf-col"><div class="vf-col-h">Why this cost <span class="vf-col-sub">where the money goes' + (this.state.costMode === 'acq' ? ' up front' : ', present-valued at ' + (res.discountRate * 100).toFixed(0) + '%') + '</span></div>' + this.renderCostBars(r) + '</div>';
   };
   App.prototype.renderCostBars = function (r) {
-    var c = r.costDetail, mode = this.state.costMode, rr = this.result.discountRate, comps = [];
+    var c = r.costDetail, mode = this.state.costMode, comps = [];
     comps.push({ lab: 'Purchase price', amt: c.price });
     if (c.delivery) comps.push({ lab: 'Delivery', amt: c.delivery });
     if (c.install) comps.push({ lab: 'Installation', amt: c.install });
@@ -998,7 +1303,7 @@ button{font-family:inherit;}
   App.prototype.buildTabs = function () {
     var self = this;
     this.elTabs.innerHTML = '<div class="vf-tabnav" role="tablist">'
-      + '<button class="vf-tab vf-tab-on" data-tab="all" role="tab">All options</button>'
+      + '<button class="vf-tab vf-tab-on" data-tab="table" role="tab">Compare all options</button>'
       + '<button class="vf-tab" data-tab="robust" role="tab">How solid is the pick</button>'
       + '<button class="vf-tab" data-tab="score" role="tab">How it’s scored</button>'
       + '</div><div class="vf-tabpanel"></div>';
@@ -1011,35 +1316,61 @@ button{font-family:inherit;}
     var t = this.state.tab;
     if (t === 'score') this.renderScoring();
     else if (t === 'robust') this.renderRobust();
-    else this.renderTable();
+    else this.renderTableLens();
   };
 
-  App.prototype.renderTable = function () {
-    var self = this, res = this.result, ranked = res.rows.slice().sort(function (a, b) { return b.plot - a.plot; });
-    var costHdr = res.costMode === 'eac' ? '€/yr' : res.costMode === 'acq' ? 'Buy €' : 'Total €';
-    var h = '<div class="vf-subcap">All ' + res.rows.length + ' options, best value first. Click any row to inspect it above — it syncs with the chart.</div>'
-      + '<div class="vf-table"><div class="vf-thead"><div>Option</div><div class="r">Value</div><div class="r">' + costHdr + '</div></div>';
-    ranked.forEach(function (r) {
-      var si = statusInfo(r);
-      h += '<div class="vf-row' + (r.screenedOut ? ' vf-row-screen' : '') + (r.recommended ? ' vf-row-rec' : '') + '" data-id="' + r.id + '" tabindex="0" role="button"><div class="vf-row-name">' + (r.recommended ? '<span class="vf-row-star">★</span>' : '') + htmlEsc(r.name) + '<span class="vf-badge ' + si.badge + '">' + si.label + '</span></div><div class="fig vf-num">' + r.plot.toFixed(1) + '</div><div class="fig vf-num">' + fmtMoney(r.costX) + '</div></div>';
+  // ---------- Table-Lens: sortable matrix, cell = number + mini-bar ----------
+  App.prototype.renderTableLens = function () {
+    var self = this, res = this.result, dims = this.posDims(), antis = this.antiDims();
+    var cols = [{ key: 'value', label: 'Value', kind: 'value' }, { key: 'cost', label: this.state.costMode === 'eac' ? '€/yr' : this.state.costMode === 'acq' ? 'Buy €' : 'Total €', kind: 'cost' }]
+      .concat(dims.map(function (d, i) { return { key: 'dim:' + d.id, label: d.label, kind: 'dim', dim: d, color: PALETTE[i % PALETTE.length] }; }))
+      .concat(antis.map(function (d) { return { key: 'dim:' + d.id, label: d.label, kind: 'anti', dim: d }; }));
+    var sortKey = this.state.sortKey, sortDir = this.state.sortDir;
+    function metric(r) {
+      if (sortKey === 'value') return r.plot;
+      if (sortKey === 'cost') return r.costX;
+      if (sortKey.indexOf('dim:') === 0) { var id = sortKey.slice(4), pp = r.parts.filter(function (q) { return q.id === id; })[0]; return pp ? pp.norm : 0; }
+      return r.plot;
+    }
+    var ranked = res.rows.slice().sort(function (a, b) { return (metric(a) - metric(b)) * sortDir; });
+    // header
+    var arrow = function (k) { return sortKey === k ? (sortDir < 0 ? ' ▾' : ' ▴') : ''; };
+    var head = '<div class="vf-tl-row vf-tl-head"><div class="vf-tl-name vf-tl-h" data-sort="name">Option</div>'
+      + cols.map(function (c) { return '<div class="vf-tl-cell vf-tl-h' + (sortKey === c.key ? ' vf-tl-h-on' : '') + '" data-sort="' + c.key + '" title="sort by ' + htmlEsc(c.label) + '">' + htmlEsc(c.label) + arrow(c.key) + '</div>'; }).join('') + '</div>';
+    var body = ranked.map(function (r) {
+      var si = statusInfo(r), cells = cols.map(function (c) {
+        if (c.kind === 'value') { var wv = res.bounds.yMax > 0 ? Math.max(0, r.plot) / res.bounds.yMax * 100 : 0; return '<div class="vf-tl-cell"><span class="vf-tl-bar" style="width:' + wv.toFixed(0) + '%;background:#5f7a55"></span><span class="vf-tl-fig vf-num">' + r.plot.toFixed(0) + '</span></div>'; }
+        if (c.kind === 'cost') { return '<div class="vf-tl-cell"><span class="vf-tl-fig vf-num">' + fmtMoney(r.costX) + '</span></div>'; }
+        var pp = r.parts.filter(function (q) { return q.id === c.dim.id; })[0], norm = pp ? pp.norm : 0, raw = pp ? pp.raw : '';
+        if (c.kind === 'anti') { var bad = norm < 0; return '<div class="vf-tl-cell">' + (bad ? '<span class="vf-tl-bar neg" style="width:' + Math.min(100, Math.abs(norm) * 100).toFixed(0) + '%"></span>' : '') + '<span class="vf-tl-fig vf-num">' + raw + '</span></div>'; }
+        return '<div class="vf-tl-cell"><span class="vf-tl-bar" style="width:' + (norm * 100).toFixed(0) + '%;background:' + c.color + '"></span><span class="vf-tl-fig vf-num">' + raw + '</span></div>';
+      }).join('');
+      return '<div class="vf-tl-row' + (r.recommended ? ' vf-tl-rec' : '') + ((r.screenedOut || r.overBudget) ? ' vf-tl-dim' : '') + '" data-id="' + r.id + '" data-brush="' + r.id + '" tabindex="0" role="button"><div class="vf-tl-name">' + (r.recommended ? '<span class="vf-row-star">★</span>' : '') + htmlEsc(r.name) + '<span class="vf-badge ' + si.badge + '">' + si.label + '</span></div>' + cells + '</div>';
+    }).join('');
+    this.elTabPanel.innerHTML = '<div class="vf-subcap">Every option as a matrix — cell = score with a mini-bar. Click a column to sort (e.g. find the best blacks in one click); click a row to inspect it above. Hover anything to find it on the chart.</div>'
+      + '<div class="vf-tl" style="--vf-tl-cols:' + cols.length + '">' + head + body + '</div>';
+    var setSort = function (k) { if (self.state.sortKey === k) self.state.sortDir = -self.state.sortDir; else { self.state.sortKey = k; self.state.sortDir = (k === 'cost') ? 1 : -1; } self.renderTableLens(); };
+    Array.prototype.forEach.call(this.elTabPanel.querySelectorAll('[data-sort]'), function (el) { var k = el.getAttribute('data-sort'); if (k === 'name') return; el.addEventListener('click', function () { setSort(k); }); });
+    Array.prototype.forEach.call(this.elTabPanel.querySelectorAll('.vf-tl-row[data-id]'), function (el) {
+      var id = el.getAttribute('data-id');
+      el.addEventListener('click', function () { self.select(id); });
+      el.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); self.select(id); } });
+      el.addEventListener('mouseenter', function () { self.highlight(id); });
+      el.addEventListener('mouseleave', function () { self.highlight(null); });
     });
-    h += '</div>';
-    this.elTabPanel.innerHTML = h;
-    Array.prototype.forEach.call(this.elTabPanel.querySelectorAll('.vf-row'), function (el) { el.addEventListener('click', function () { self.select(el.getAttribute('data-id')); }); el.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); self.select(el.getAttribute('data-id')); } }); });
     this.markRows();
   };
-  App.prototype.markRows = function () { var sel = this.state.selectedId; if (this.elTabPanel) Array.prototype.forEach.call(this.elTabPanel.querySelectorAll('.vf-row'), function (el) { el.classList.toggle('vf-row-sel', el.getAttribute('data-id') === sel); }); };
+  App.prototype.markRows = function () { var sel = this.state.selectedId; if (this.elTabPanel) Array.prototype.forEach.call(this.elTabPanel.querySelectorAll('.vf-tl-row[data-id]'), function (el) { el.classList.toggle('vf-tl-sel', el.getAttribute('data-id') === sel); }); };
 
   App.prototype.renderRobust = function () {
-    var res = this.result, rows = res.rows, fp = res.frontierIdsByCost, self = this;
+    var res = this.result, rows = res.rows, self = this;
     function byId(id) { return rows.filter(function (r) { return r.id === id; })[0]; }
-    var rec = byId(res.recommendedId), ki = fp.indexOf(res.recommendedId);
-    var ru = ki > 0 ? byId(fp[ki - 1]) : (ki >= 0 && ki < fp.length - 1 ? byId(fp[ki + 1]) : null);
+    var rec = byId(res.recommendedId), ruId = this.runnerUp(), ru = ruId ? byId(ruId) : null;
     if (!rec || !ru) { this.elTabPanel.innerHTML = '<div class="vf-subcap">Not enough frontier options to compare robustness.</div>'; return; }
     var diffs = rec.parts.map(function (p, i) { return { label: p.label, d: p.contribution - (ru.parts[i] ? ru.parts[i].contribution : 0) }; })
       .filter(function (x) { return Math.abs(x.d) > 0.05; }).sort(function (a, b) { return Math.abs(b.d) - Math.abs(a.d); }).slice(0, 8);
     var maxAbs = Math.max.apply(null, diffs.map(function (x) { return Math.abs(x.d); })) || 1;
-    var net = rec.value - ru.value, costD = rec.costX - ru.costX, unit = this.state.costMode === 'eac' ? '/yr' : '';
+    var net = rec.value - ru.value, costD = rec.costX - ru.costX, unit = this.unitTail();
     var trows = diffs.map(function (x) {
       var ahead = x.d >= 0, w = (Math.abs(x.d) / maxAbs * 50).toFixed(1);
       return '<div class="vf-tor-row"><div class="vf-tor-lab">' + htmlEsc(x.label) + '</div><div class="vf-tor-track"><span class="vf-tor-bar ' + (ahead ? 'pos' : 'neg') + '" style="' + (ahead ? 'left:50%;width:' + w + '%' : 'right:50%;width:' + w + '%') + '"></span></div><div class="vf-tor-amt ' + (ahead ? 'vf-amt-pos' : 'vf-amt-neg') + '">' + (ahead ? '+' : '') + x.d.toFixed(1) + '</div></div>';
@@ -1052,7 +1383,7 @@ button{font-family:inherit;}
       + 'It would shift to ' + htmlEsc(ru.name) + ' if that edge closed' + (costD > 0 ? ', or if the ' + fmtMoney(costD) + unit + ' premium isn’t worth it to you' : '') + '.';
     this.elTabPanel.innerHTML = '<div class="vf-subcap">What the pick beats its runner-up on, and what would flip it.</div>'
       + '<div class="vf-tor">' + trows + '</div>'
-      + '<div class="vf-tor-axis"><span>← ' + htmlEsc(ru.name.split(' ')[0]) + ' ahead</span><span>' + htmlEsc(rec.name.split(' ')[0]) + ' ahead →</span></div>'
+      + '<div class="vf-tor-axis"><span>← ' + htmlEsc(firstWord(ru.name)) + ' ahead</span><span>' + htmlEsc(firstWord(rec.name)) + ' ahead →</span></div>'
       + '<p class="vf-wwhtbt">' + wwhtbt + '</p>';
   };
 
@@ -1064,38 +1395,20 @@ button{font-family:inherit;}
       + (note ? '<div class="vf-note"><div class="vf-note-h">Notes &amp; caveats</div>' + htmlEsc(note) + '</div>' : '');
   };
 
-  // ---------- chart pan / zoom / fullscreen / drawer ----------
-  App.prototype.setupChartPan = function () {
-    var self = this, el = this.elPlot, W = 960, H = 600, iw = 874, ih = 510;
-    el.addEventListener('pointerdown', function (e) { if (!self.result) return; self._pan = { id: e.pointerId, mx: e.clientX, my: e.clientY, dom: self.curDomain(), moved: false }; });
-    el.addEventListener('pointermove', function (e) {
-      if (!self._pan || self._pan.id !== e.pointerId) return;
-      var svg = el.querySelector('.vf-svg'); if (!svg) return;
-      var rect = svg.getBoundingClientRect(), d = self._pan.dom, rx = e.clientX - self._pan.mx, ry = e.clientY - self._pan.my;
-      if (!self._pan.moved) { if (Math.abs(rx) + Math.abs(ry) < 8) return; self._pan.moved = true; try { el.setPointerCapture(e.pointerId); } catch (err) {} }
-      e.preventDefault();
-      var ddx = rx / rect.width * W / iw * (d.x1 - d.x0), ddy = ry / rect.height * H / ih * (d.y1 - d.y0);
-      self.state.zoom = { x0: d.x0 - ddx, x1: d.x1 - ddx, y0: d.y0 + ddy, y1: d.y1 + ddy }; self.scheduleChart();
-    });
-    var endPan = function (e) { if (self._pan && self._pan.id === e.pointerId) self._pan = null; };
-    el.addEventListener('pointerup', endPan); el.addEventListener('pointercancel', endPan);
-  };
-  App.prototype.zoomBy = function (k) {
-    var d = this.curDomain(), cx = (d.x0 + d.x1) / 2, cy = (d.y0 + d.y1) / 2;
-    this.state.zoom = { x0: cx - (cx - d.x0) * k, x1: cx + (d.x1 - cx) * k, y0: cy - (cy - d.y0) * k, y1: cy + (d.y1 - cy) * k };
-    this.renderChart();
-  };
+  // ---------- chart view presets / fullscreen / drawer ----------
   App.prototype.buildChartTools = function () {
     var self = this;
-    this.elTools.innerHTML = '<button class="vf-tool vf-tool-adjust" type="button" data-z="adjust" title="Adjust priorities &amp; cost"><span class="vf-tool-ic">⚙</span><span class="vf-tool-tx">Adjust</span></button><button class="vf-tool" type="button" data-z="out" title="Zoom out">−</button><button class="vf-tool" type="button" data-z="in" title="Zoom in">+</button><button class="vf-tool" type="button" data-z="reset" title="Reset zoom">↺</button><button class="vf-tool" type="button" data-z="full" title="Full screen">⤢</button>';
-    var on = function (k, fn) { self.elTools.querySelector('[data-z="' + k + '"]').addEventListener('click', fn); };
+    this.elTools.innerHTML = '<button class="vf-tool vf-tool-adjust" type="button" data-z="adjust" title="Adjust priorities &amp; cost"><span class="vf-tool-ic">⚙</span><span class="vf-tool-tx">Adjust</span></button>'
+      + '<div class="vf-seg-presets"><button class="vf-segp on" type="button" data-z="all">Fit all</button><button class="vf-segp" type="button" data-z="frontier">Frontier</button></div>'
+      + '<button class="vf-tool" type="button" data-z="full" title="Full screen">⤢</button>';
+    var on = function (k, fn) { var b = self.elTools.querySelector('[data-z="' + k + '"]'); if (b) b.addEventListener('click', fn); };
     on('adjust', function () {
       if (document.fullscreenElement) self.toggleDrawer();
       else { var d = self.elControls.querySelector('.vf-adv'); if (d) d.open = true; self.elControls.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
     });
-    on('in', function () { self.zoomBy(0.8); });
-    on('out', function () { self.zoomBy(1.25); });
-    on('reset', function () { self.state.zoom = null; self.renderChart(); });
+    var setPreset = function (p) { self.state.zoomPreset = p; Array.prototype.forEach.call(self.elTools.querySelectorAll('.vf-segp'), function (x) { x.classList.toggle('on', x.getAttribute('data-z') === p); }); self.renderChart(); };
+    on('all', function () { setPreset('all'); });
+    on('frontier', function () { setPreset('frontier'); });
     on('full', function () { self.toggleFull(); });
   };
   App.prototype.buildDrawer = function () {
@@ -1141,7 +1454,7 @@ button{font-family:inherit;}
     try { if (data.meta && data.meta.title) document.title = 'Value Frontier — ' + data.meta.title; global.__VF_APP = new App(data, root); }
     catch (e) { root.innerHTML = '<pre class="vf-error">Engine error: ' + (e && e.message) + '</pre>'; }
   }
-  var api = { compute: compute, crf: crf, annuityFactor: annuityFactor, eacCost: eacCost, valueParts: valueParts, normDim: normDim, markFrontier: markFrontier, kneePoint: kneePoint, version: '0.8.0' };
+  var api = { compute: compute, crf: crf, annuityFactor: annuityFactor, eacCost: eacCost, valueParts: valueParts, normDim: normDim, markFrontier: markFrontier, kneePoint: kneePoint, version: '0.9.0' };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else { global.ValueFrontier = api; if (typeof document !== 'undefined') { if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot(); } }
 })(typeof window !== 'undefined' ? window : globalThis);
