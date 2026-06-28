@@ -297,13 +297,13 @@ button{font-family:inherit;}
 
 /* Table-Lens matrix */
 .vf-tl{border:1px solid var(--line);border-radius:var(--r-card);overflow-x:auto;background:var(--card);box-shadow:var(--sh-1);}
-.vf-tl-row{display:grid;grid-template-columns:minmax(168px,1.7fr) 48px repeat(var(--vf-tl-cols),minmax(58px,1fr));align-items:stretch;min-width:720px;border-bottom:1px solid var(--line2);}
+.vf-tl-row{display:grid;grid-template-columns:minmax(168px,1.7fr) 48px repeat(var(--vf-tl-cols),minmax(66px,1fr));align-items:stretch;min-width:720px;border-bottom:1px solid var(--line2);}
 .vf-tl-row[data-id]:nth-child(even){background:#1c1a1705;}
 .vf-tl-row[data-id]:nth-child(even) .vf-tl-name{background:#faf9f6;}
 .vf-tl-row:last-child{border-bottom:none;}
 .vf-tl-head{position:sticky;top:var(--appbar-h);background:var(--head);z-index:2;border-bottom:1px solid var(--line);}
 .vf-tl-h{font-family:var(--mono);font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--faint);padding:9px 8px;cursor:pointer;user-select:none;display:flex;align-items:center;}
-.vf-tl-cell.vf-tl-h{justify-content:flex-end;text-align:right;}
+.vf-tl-cell.vf-tl-h{justify-content:flex-end;text-align:right;min-width:0;overflow:hidden;overflow-wrap:anywhere;line-height:1.2;}
 .vf-tl-h:hover{color:var(--ink);}
 .vf-tl-h-on{color:var(--rec);}
 .vf-tl-name{position:sticky;left:0;background:var(--card);z-index:1;padding:10px 14px 10px 12px;font-size:13px;font-weight:500;line-height:1.25;display:flex;align-items:center;gap:8px;min-width:0;box-shadow:1px 0 0 var(--line2);}
@@ -580,7 +580,7 @@ button{font-family:inherit;}
     "discountRate": 0.05,
     "engineVersion": "0.9.5",
     "createdISO": "2026-06-25",
-    "note": "One of three WC pieces under a €150 trio cap. RE-SCOUTED 2026-06-27 with a hard NO-PLASTIC rule (body must be powder-coated steel / metal). Removed for plastic bodies: IKEA EKOLN (PP), JYSK Ullatti (PP), Kwantum Organic (ABS), Blomus SONO Tan (ABS), Zone UME (ABS). Also excluded: Zone Sensu Sand €50.90 ('Kunststof' — plastic; the interior-design repo's own pick), Wesco Mini Master €95 (cost), EKO Belle/Luna/Serene (cool stainless RVS), Mette Ditmer Walther (10 L). ADDED 2026-06-27 a 'front-of-house design presence' dimension — the WC is visible when guests enter the apartment, so the bin is partly on show. Cost defaults to purchase + delivery (Per-year / Total toggle gives EAC); liners common to all → consumables=0. Pedal + soft-close + lid carries the hard screen."
+    "note": "One of three WC pieces under a €150 trio cap. RE-SCOUTED 2026-06-27 with a hard NO-PLASTIC rule (body must be powder-coated steel / metal). Removed for plastic bodies: IKEA EKOLN (PP), JYSK Ullatti (PP), Kwantum Organic (ABS), Blomus SONO Tan (ABS), Zone UME (ABS). Also excluded: Zone Sensu Sand €50.90 ('Kunststof' — plastic; the interior-design repo's own pick), Wesco Mini Master €95 (cost), EKO Belle/Luna/Serene (cool stainless RVS), Mette Ditmer Walther (10 L). ADDED 2026-06-27 a 'front-of-house design presence' dimension — the WC is visible when guests enter the apartment, so the bin is partly on show. Cost defaults to purchase + delivery (Per-year / Total toggle gives EAC); liners common to all → consumables=0. Pedal + soft-close + lid carries the hard screen. SWEEP 2026-06-28 (bol.com + amazon.nl + fonq.nl, via product-search): added 5 — Blomus TUBO Taupe (steel, taupe, Ø17, smart-close; the headline find, undercuts Zone Solo by ~€10), stardis sand-beige (stainless, 4.7★/356), kela Mats beige (budget steel; rust + lid-defect flags), Erreke beige (budget steel), CASA di Elturo taupe (metal, zero reviews/unproven). Fails excluded: simplehuman Round (cool brushed steel/white only), SONGMICS (black+silver), TATAY (gold), stardis satin (cool stainless), MSV + Blomus SONO (plastic), Blomus TUBO brass/rose/anthracite (wrong tone), Zone Nova taupe (broken lids + steel-look trim)."
   },
   "dimensions": [
     {
@@ -866,6 +866,145 @@ button{font-family:inherit;}
       }
     },
     {
+      "id": "kela-mats-beige-3l",
+      "name": "kela Mats Pedaalemmer 3L beige (metaal)",
+      "price": 17.99,
+      "links": [
+        {
+          "label": "bol.com",
+          "url": "https://www.bol.com/nl/nl/p/pedaal-afvalemmer-3-l-beige-kela-mats/9300000038442671/"
+        },
+        {
+          "label": "amazon.nl",
+          "url": "https://www.amazon.nl/dp/B093T3J1YQ"
+        }
+      ],
+      "note": "Sweep 2026-06-28 (bol + amazon, product-search). kela's Mats line IS a pedal bin (bol: 'Pedaal afvalemmer 3 l beige'); metal, warm beige, Ø17, silent-close, removable inner. Cheaper on bol (€17.99) than Amazon (€29.10, kela 23619). 4.6★/5 on bol — BUT the budget-steel failure flags are present: one owner's lid 'zit scheef, valt niet te herstellen' (sits crooked, unrepairable), and a German review reads 'Leider schnell rostig' (quickly rusty). Budget-steel tier alongside the 5five and Urban Living; a recognised homeware brand, but the same rust/hinge risk.",
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 0,
+        "maintenancePerYear": 0,
+        "deliveryCost": 1.99,
+        "expectedLifeYears": 5,
+        "resaleValue": 0
+      },
+      "scores": {
+        "works": {
+          "value": 6,
+          "why": "silent-close pedal confirmed, but one bol review reports a lid that sits crooked and can't be fixed — close reliability is uneven",
+          "source": "https://www.bol.com/nl/nl/p/pedaal-afvalemmer-3-l-beige-kela-mats/9300000038442671/"
+        },
+        "honesty": {
+          "value": 7,
+          "why": "powder-coated steel — honest metal, budget gauge"
+        },
+        "tone": {
+          "value": 7,
+          "why": "warm beige, matte, monochrome (the hidden inner bucket is black)"
+        },
+        "feel": {
+          "value": 6,
+          "why": "kela build, 'mooi gemaakt' per reviews, but one defective unit surfaced"
+        },
+        "presence": {
+          "value": 5,
+          "why": "a recognised homeware brand and a tidy small cylinder — a notch above the no-name budget bins, but no real design signal"
+        },
+        "durability": {
+          "value": 5,
+          "why": "rust complaint + a lid defect = the cheap-steel failure mode; the kela brand a slight reassurance over no-name"
+        },
+        "fit": {
+          "value": 8,
+          "why": "Ø17 — compact, good for the corner"
+        },
+        "harmony": {
+          "value": 7
+        },
+        "character": {
+          "value": 4,
+          "why": "plain budget cylinder with a small handle detail"
+        },
+        "coolmetal": {
+          "value": 0
+        },
+        "cheapfeel": {
+          "value": -1,
+          "why": "rust + lid-defect reports point to thin budget steel"
+        },
+        "fauxdouble": {
+          "value": 0
+        }
+      }
+    },
+    {
+      "id": "erreke-beige-3l",
+      "name": "Erreke Pedaalemmer Badkamer 3L beige (staal)",
+      "price": 18.9,
+      "links": [
+        {
+          "label": "amazon.nl",
+          "url": "https://www.amazon.nl/dp/B0G4VX1FX5"
+        }
+      ],
+      "note": "Sweep 2026-06-28 (amazon, product-search). Powder-coated steel body with a matte anti-fingerprint coating, warm beige, soft-close, removable inner; rectangular 21.5×17×24. 4.5★/12 (EU-pooled reviews, positive: 'compacte et de bonne qualité de fabrication'). Direct alternative to the Urban Living Toulon at the same €18-19 budget-steel tier — slightly larger rectangular footprint, similar modest review confidence.",
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 0,
+        "maintenancePerYear": 0,
+        "deliveryCost": 1.99,
+        "expectedLifeYears": 8,
+        "resaleValue": 0
+      },
+      "scores": {
+        "works": {
+          "value": 7,
+          "why": "soft-close confirmed; 4.5★/12 EU-pooled with no close failures surfaced",
+          "source": "https://www.amazon.nl/dp/B0G4VX1FX5"
+        },
+        "honesty": {
+          "value": 7,
+          "why": "powder-coated steel body (budget brand), plastic inner"
+        },
+        "tone": {
+          "value": 7,
+          "why": "warm beige, matte anti-fingerprint coating, monochrome"
+        },
+        "feel": {
+          "value": 6,
+          "why": "matte anti-fingerprint steel; reviews praise the build"
+        },
+        "presence": {
+          "value": 5,
+          "why": "clean modern rectangular form, but a budget brand with no design pedigree"
+        },
+        "durability": {
+          "value": 6,
+          "why": "no failures across 12 pooled reviews, but thin sample + budget brand → modest confidence"
+        },
+        "fit": {
+          "value": 7,
+          "why": "rectangular 21.5×17×24 — compact but a touch larger than the round budget bins"
+        },
+        "harmony": {
+          "value": 7
+        },
+        "character": {
+          "value": 4,
+          "why": "plain rectangular cylinder"
+        },
+        "coolmetal": {
+          "value": 0
+        },
+        "cheapfeel": {
+          "value": 0
+        },
+        "fauxdouble": {
+          "value": 0
+        }
+      }
+    },
+    {
       "id": "brab-newicon-softbeige",
       "name": "Brabantia NewIcon 3L Soft Beige",
       "price": 23.85,
@@ -1005,6 +1144,150 @@ button{font-family:inherit;}
       }
     },
     {
+      "id": "casa-elturo-taupe-3l",
+      "name": "CASA di Elturo Pedaalemmer 3L taupe (metaal)",
+      "price": 24.95,
+      "links": [
+        {
+          "label": "bol.com",
+          "url": "https://www.bol.com/nl/nl/p/pedaalemmer-3-liter-h24-cm-taupe-metaal-softclose-compacte-vuilnisbak-voor-badkamer-of-toilet/9300000239657034/"
+        }
+      ],
+      "note": "Sweep 2026-06-28 (bol, product-search). Metal body (bol breadcrumb 'Metaal'), taupe, softclose, H24, removable inner. Generic seller (CASA DI ELTURO) with ZERO reviews — the only unproven 'works' in the set; soft-close is labelled but unconfirmed. Taupe option, but dominated by the Blomus TUBO Taupe at €26 (steel, design brand, smart-close proven on the line).",
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 0,
+        "maintenancePerYear": 0,
+        "deliveryCost": 0,
+        "expectedLifeYears": 6,
+        "resaleValue": 0
+      },
+      "scores": {
+        "works": {
+          "value": 5,
+          "why": "labelled pedal + softclose + lid, but ZERO reviews — meets the gate on the listing's claim only, no evidence the close actually works",
+          "source": "https://www.bol.com/nl/nl/p/pedaalemmer-3-liter-h24-cm-taupe-metaal-softclose-compacte-vuilnisbak-voor-badkamer-of-toilet/9300000239657034/"
+        },
+        "honesty": {
+          "value": 6,
+          "why": "breadcrumb says 'Metaal' — honest metal, but gauge/build unverified, generic seller"
+        },
+        "tone": {
+          "value": 7,
+          "why": "taupe, matte implied, monochrome — but finish unverified (no review photos)"
+        },
+        "feel": {
+          "value": 5,
+          "why": "unknown build, generic"
+        },
+        "presence": {
+          "value": 4,
+          "why": "a generic no-name taupe cylinder — no brand or design signal"
+        },
+        "durability": {
+          "value": 4,
+          "why": "zero reviews, generic seller, no stated warranty — unknown, low confidence"
+        },
+        "fit": {
+          "value": 7,
+          "why": "H24, 3L, compact — but width not published"
+        },
+        "harmony": {
+          "value": 7
+        },
+        "character": {
+          "value": 4,
+          "why": "plain cylinder"
+        },
+        "coolmetal": {
+          "value": 0
+        },
+        "cheapfeel": {
+          "value": 0
+        },
+        "fauxdouble": {
+          "value": 0
+        }
+      }
+    },
+    {
+      "id": "blomus-tubo-taupe-3l",
+      "name": "Blomus TUBO Pedaalemmer 3L Taupe (steel)",
+      "price": 25.95,
+      "links": [
+        {
+          "label": "prullenbakkenstore",
+          "url": "https://www.prullenbakkenstore.com/pedaalemmer-blomus-tubo-taupe-3-l"
+        },
+        {
+          "label": "fonq.nl",
+          "url": "https://www.fonq.nl/product/blomus-tubo-pedaalemmer/333222/"
+        },
+        {
+          "label": "afvalbakkenwinkel (€21.24 sale)",
+          "url": "https://www.afvalbakkenwinkel.nl/product/blomus-tubo-pedaalemmer-3-liter-taupe/"
+        }
+      ],
+      "note": "Sweep 2026-06-28 (fonq, product-search) — the headline find. Powder-coated STEEL, matte taupe, round Ø17 × H24.5, smart-close (silent), removable inner bucket, monochrome (single all-over powder coat, integrated pedal plate). Blomus = an established German design brand → real front-of-house presence. The decision had only seen TUBO in shiny brass (rejected on tone); the taupe matte version passes the screen and undercuts Zone Solo Taupe (€36) by ~€10 at an identical footprint. ~€25.95 (afvalbakkenwinkel €21.24 on sale). Also comes in soft-rose / anthracite / brass / burned-metal — only the taupe is warm-matte-monochrome.",
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 0,
+        "maintenancePerYear": 0,
+        "deliveryCost": 1.99,
+        "expectedLifeYears": 12,
+        "resaleValue": 0
+      },
+      "scores": {
+        "works": {
+          "value": 8,
+          "why": "smart-close (silent) is well-regarded across the TUBO line and the close is damped; specific taupe-variant review volume is thinner than Brabantia's",
+          "source": "https://www.prullenbakkenstore.com/pedaalemmer-blomus-tubo-taupe-3-l"
+        },
+        "honesty": {
+          "value": 8,
+          "why": "powder-coated steel — honest metal, solid Blomus build"
+        },
+        "tone": {
+          "value": 8,
+          "why": "warm taupe, matte, monochrome — single all-over powder coat"
+        },
+        "feel": {
+          "value": 7,
+          "why": "Blomus premium build, damped smart-close"
+        },
+        "presence": {
+          "value": 8,
+          "why": "Blomus is a recognised design brand and TUBO is a clean iconic tube — reads as a considered design object to a guest, on par with the NewIcon"
+        },
+        "durability": {
+          "value": 7,
+          "why": "powder-coated steel, no systemic defect on the line; but no 10-yr Brabantia-style guarantee and thin taupe-variant review data"
+        },
+        "fit": {
+          "value": 9,
+          "why": "round Ø17 × H24.5 — matches the tiny-corner footprint, a touch shorter than the Brabantia"
+        },
+        "harmony": {
+          "value": 8,
+          "why": "taupe pairs with a taupe/sand dispenser + brush"
+        },
+        "character": {
+          "value": 6,
+          "why": "clean minimalist tube"
+        },
+        "coolmetal": {
+          "value": 0,
+          "why": "monochrome — integrated same-colour pedal, no contrasting trim"
+        },
+        "cheapfeel": {
+          "value": 0
+        },
+        "fauxdouble": {
+          "value": 0
+        }
+      }
+    },
+    {
       "id": "zone-solo-taupe-3l",
       "name": "Zone Denmark Solo Taupe 3L (steel)",
       "price": 36.19,
@@ -1060,6 +1343,73 @@ button{font-family:inherit;}
         "character": {
           "value": 6,
           "why": "clean Scandinavian cylinder"
+        },
+        "coolmetal": {
+          "value": 0
+        },
+        "cheapfeel": {
+          "value": 0
+        },
+        "fauxdouble": {
+          "value": 0
+        }
+      }
+    },
+    {
+      "id": "stardis-sandbeige-3l",
+      "name": "stardis Pedaalemmer 3L sand beige (rvs, mat)",
+      "price": 38.95,
+      "links": [
+        {
+          "label": "amazon.nl",
+          "url": "https://www.amazon.nl/dp/B0CPB8NVP5"
+        }
+      ],
+      "note": "Sweep 2026-06-28 (amazon, product-search). Cylindrical stainless-steel body, matte sand beige, softclose klapdeksel, removable inner. 4.7★/356 — by far the deepest review base of any new find (reviews confirm it's a pedal bin and 'stabil und leise'). Premium tier (≈€39, like the Brabantia Bo / NewIcon Taupe), but a generic brand with no warranty or design pedigree. Also offered in taupe. Material list mixes ABS (inner) + stainless steel — the body is the matte stainless named in the title.",
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 0,
+        "maintenancePerYear": 0,
+        "deliveryCost": 0,
+        "expectedLifeYears": 12,
+        "resaleValue": 0
+      },
+      "scores": {
+        "works": {
+          "value": 8,
+          "why": "softclose flip-lid, pedal confirmed in reviews; 4.7★/356 is the strongest volume in the new set",
+          "source": "https://www.amazon.nl/dp/B0CPB8NVP5"
+        },
+        "honesty": {
+          "value": 7,
+          "why": "stainless-steel body (matte), plastic inner — honest metal, but a generic build"
+        },
+        "tone": {
+          "value": 8,
+          "why": "warm sand beige, matte, monochrome cylinder"
+        },
+        "feel": {
+          "value": 7,
+          "why": "'stabil und leise' across 356 reviews — solid for the tier"
+        },
+        "presence": {
+          "value": 5,
+          "why": "a clean matte cylinder, but an unbranded 'stardis' — no design signal a guest would read"
+        },
+        "durability": {
+          "value": 7,
+          "why": "4.7★/356 with no systemic defect is a strong durability signal; stainless resists rust, but no stated warranty"
+        },
+        "fit": {
+          "value": 8,
+          "why": "compact 3L cylinder for the corner (exact diameter not published)"
+        },
+        "harmony": {
+          "value": 8
+        },
+        "character": {
+          "value": 5,
+          "why": "clean but generic cylinder"
         },
         "coolmetal": {
           "value": 0
@@ -1221,6 +1571,14 @@ button{font-family:inherit;}
     "brab-newicon-softbeige|brab-newicon-taupe": {
       "text": "The same Brabantia NewIcon body in two tones, €16 apart (€24 vs €40). Same steel, same Ø16.8 cm footprint, same 10-yr guarantee and 15-yr life, near-identical on show — but the Soft Beige costs less and carries the category's deepest proof (4.8★/~826 on the bol listing). So this isn't a value question, it's a colour one: choose the Satin Taupe only if its greiger, darker tone is the one your dispenser and brush need to pair with; otherwise the Soft Beige is the identical bin for €16 less.",
       "flag": "Physically it's the same bin — the small value gap is just review volume on each colour's listing, not a real difference in the close."
+    },
+    "brab-newicon-softbeige|blomus-tubo-taupe-3l": {
+      "text": "The new taupe contender. For ~€2 more than the Soft Beige (€24 → €26) the Blomus TUBO gives you the taupe family and arguably a touch more design-object presence — same powder-coated steel, near-identical round Ø17 footprint, silent smart-close. But it can't match what wins the Brabantia the knee: the category's deepest proof (4.8★/~826 vs thin taupe-variant data, works 9 vs 8) and the 10-yr guarantee on a 15-yr life (durability 9 vs 7). So the TUBO isn't a value upset — it's the taupe alternative for when the trio needs to commit to taupe and you want a design brand at €26 rather than Zone's €36.",
+      "flag": "TUBO commits the trio to the taupe family; its smart-close is proven on the line but thin on the taupe variant specifically."
+    },
+    "blomus-tubo-taupe-3l|zone-solo-taupe-3l": {
+      "text": "Two taupe steel design bins at the same tight Ø17 footprint — but the Blomus TUBO is €10 cheaper (€26 vs €36) for essentially the same proposition: powder-coated steel, matte taupe, monochrome, a silent damped close, a recognised design brand. Zone Denmark edges it on pure design cachet (presence 9 vs 8 — the Zone is the set's showpiece) and both carry thin variant-specific review data and no long guarantee. If the taupe design lane is where the trio lands, the TUBO dominates on value; pay the €10 for the Zone only if its specific Scandinavian-design read is the one you want on show.",
+      "flag": "Near-identical specs; the gap is brand cachet (Zone) vs €10 saved (Blomus), with thin review data on both."
     }
   }
 };</script>
