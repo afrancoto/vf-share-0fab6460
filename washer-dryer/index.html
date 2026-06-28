@@ -296,14 +296,14 @@ button{font-family:inherit;}
 .vf-subcap{font-size:12.5px;color:var(--muted);margin-bottom:14px;line-height:1.5;max-width:760px;}
 
 /* Table-Lens matrix */
-.vf-tl{border:1px solid var(--line);border-radius:var(--r-card);overflow-x:auto;background:var(--card);box-shadow:var(--sh-1);}
-.vf-tl-row{display:grid;grid-template-columns:minmax(168px,1.7fr) 48px repeat(var(--vf-tl-cols),minmax(66px,1fr));align-items:stretch;min-width:720px;border-bottom:1px solid var(--line2);}
+.vf-tl{border:1px solid var(--line);border-radius:var(--r-card);overflow:auto;max-height:calc(100dvh - var(--appbar-h) - 32px);-webkit-overflow-scrolling:touch;background:var(--card);box-shadow:var(--sh-1);}
+.vf-tl-row{display:grid;grid-template-columns:minmax(168px,1.7fr) 48px repeat(var(--vf-tl-cols),minmax(78px,1fr));align-items:stretch;min-width:720px;border-bottom:1px solid var(--line2);}
 .vf-tl-row[data-id]:nth-child(even){background:#1c1a1705;}
 .vf-tl-row[data-id]:nth-child(even) .vf-tl-name{background:#faf9f6;}
 .vf-tl-row:last-child{border-bottom:none;}
-.vf-tl-head{position:sticky;top:var(--appbar-h);background:var(--head);z-index:2;border-bottom:1px solid var(--line);}
-.vf-tl-h{font-family:var(--mono);font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--faint);padding:9px 8px;cursor:pointer;user-select:none;display:flex;align-items:center;}
-.vf-tl-cell.vf-tl-h{justify-content:flex-end;text-align:right;min-width:0;overflow:hidden;overflow-wrap:anywhere;line-height:1.2;}
+.vf-tl-head{position:sticky;top:0;background:var(--head);z-index:2;border-bottom:1px solid var(--line);}
+.vf-tl-h{font-family:var(--mono);font-size:9px;letter-spacing:.02em;text-transform:uppercase;color:var(--faint);padding:9px 8px;cursor:pointer;user-select:none;display:flex;align-items:center;}
+.vf-tl-cell.vf-tl-h{justify-content:flex-end;text-align:right;min-width:0;overflow:hidden;overflow-wrap:break-word;line-height:1.16;}
 .vf-tl-h:hover{color:var(--ink);}
 .vf-tl-h-on{color:var(--rec);}
 .vf-tl-name{position:sticky;left:0;background:var(--card);z-index:1;padding:10px 14px 10px 12px;font-size:13px;font-weight:500;line-height:1.25;display:flex;align-items:center;gap:8px;min-width:0;box-shadow:1px 0 0 var(--line2);}
@@ -2425,8 +2425,8 @@ button{font-family:inherit;}
   App.prototype.renderTableLens = function () {
     var self = this, res = this.result, dims = this.posDims(), antis = this.antiDims();
     var cols = [{ key: 'value', label: 'Value', kind: 'value' }, { key: 'cost', label: this.state.costMode === 'eac' ? '€/yr' : this.state.costMode === 'acq' ? 'Buy €' : 'Total €', kind: 'cost' }]
-      .concat(dims.map(function (d, i) { return { key: 'dim:' + d.id, label: d.label, kind: 'dim', dim: d, color: PALETTE[i % PALETTE.length] }; }))
-      .concat(antis.map(function (d) { return { key: 'dim:' + d.id, label: d.label, kind: 'anti', dim: d }; }));
+      .concat(dims.map(function (d, i) { return { key: 'dim:' + d.id, label: d.label, short: d.short || d.label, kind: 'dim', dim: d, color: PALETTE[i % PALETTE.length] }; }))
+      .concat(antis.map(function (d) { return { key: 'dim:' + d.id, label: d.label, short: d.short || d.label, kind: 'anti', dim: d }; }));
     var sortKey = this.state.sortKey, sortDir = this.state.sortDir;
     function metric(r) {
       if (sortKey === 'value') return r.plot;
@@ -2461,7 +2461,7 @@ button{font-family:inherit;}
     var arrow = function (k) { return sortKey === k ? (sortDir < 0 ? ' ▾' : ' ▴') : ' <span class="vf-tl-sortcue">⇅</span>'; };
     var head = '<div class="vf-tl-row vf-tl-head"><div class="vf-tl-name vf-tl-h vf-tl-namehead">Option</div>'
       + '<div class="vf-tl-cell vf-tl-h vf-tl-rankhead' + (sortKey === 'value' ? ' vf-tl-h-on' : '') + '" data-rankhead="1" tabindex="0" role="button" title="Rank by your current weights">Rank</div>'
-      + cols.map(function (c) { return '<div class="vf-tl-cell vf-tl-h' + (sortKey === c.key ? ' vf-tl-h-on' : '') + '" data-sort="' + c.key + '" tabindex="0" role="button" aria-label="Sort by ' + htmlEsc(c.label) + '" title="Sort by ' + htmlEsc(c.label) + '">' + htmlEsc(c.label) + arrow(c.key) + '</div>'; }).join('') + '</div>';
+      + cols.map(function (c) { return '<div class="vf-tl-cell vf-tl-h' + (sortKey === c.key ? ' vf-tl-h-on' : '') + '" data-sort="' + c.key + '" tabindex="0" role="button" aria-label="Sort by ' + htmlEsc(c.label) + '" title="Sort by ' + htmlEsc(c.label) + '">' + htmlEsc(c.short || c.label) + arrow(c.key) + '</div>'; }).join('') + '</div>';
     var body = ranked.map(function (r) {
       var ss = shortStat(r), med = medals[r.id];
       var rankCell = '<div class="vf-tl-cell vf-tl-rankcell"><span class="vf-tl-fig vf-num vf-tl-rankfig">' + rankOf[r.id] + '</span></div>';
