@@ -24,8 +24,13 @@ h1{font-family:var(--serif);font-weight:600;font-size:32px;letter-spacing:-.015e
 .card:hover{box-shadow:var(--sh2);transform:translateY(-1px);border-color:var(--rec-border);}
 .card-h{display:flex;align-items:center;justify-content:space-between;gap:12px;}
 .card-title{font-family:var(--serif);font-weight:600;font-size:18px;}
+.card-head-r{display:flex;align-items:center;gap:10px;}
+.card-status{font-family:var(--mono);font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:#5f7a55;background:#eef1ea;border:1px solid #dde3d6;border-radius:999px;padding:3px 9px;line-height:1;white-space:nowrap;}
 .card-go{color:var(--rec);font-size:18px;line-height:1;}
 .card-blurb{color:var(--muted);font-size:13.5px;margin:5px 0 0;}
+.card-chose{font-size:13.5px;color:var(--muted);margin:8px 0 0;}
+.card-chose strong{color:var(--rec);font-weight:600;}
+.card.decided{border-color:var(--line);}
 .card-meta{font-size:12px;color:var(--faint);margin:10px 0 0;line-height:1.5;}
 .card-date{font-family:var(--mono);font-size:10.5px;letter-spacing:.02em;text-transform:uppercase;color:var(--rec);}
 .foot{margin-top:30px;font-size:12px;color:var(--faint);border-top:1px solid var(--line2);padding-top:16px;}
@@ -39,34 +44,37 @@ h1{font-family:var(--serif);font-weight:600;font-size:32px;letter-spacing:-.015e
 <h1>Decisions</h1>
 <p class="lead">Each one weighs what matters to you against the true cost of owning it, then shows where buying up stops paying off.</p>
 <nav class="cards">
-      <a class="card" href="washer-dryer/">
-        <div class="card-h"><span class="card-title">Washer-dryer</span><span class="card-go" aria-hidden="true">&rarr;</span></div>
+      <a class="card decided" href="washer-dryer/">
+        <div class="card-h"><span class="card-title">Washer-dryer</span><span class="card-head-r"><span class="card-status">Decided</span><span class="card-go" aria-hidden="true">&rarr;</span></span></div>
         <p class="card-blurb">Stacked washer + heat-pump dryer for a one-person flat.</p>
+        <p class="card-chose">Chosen &middot; <strong>Bosch Serie 6 (WGG244ZANL + WQG233D1NL)</strong></p>
         <p class="card-meta"><span class="card-date">Updated 27 Jun 2026</span> &middot; Scoring QA pass — Bosch/Beko/Siemens scores corrected; the pick held.</p>
       </a>
-      <a class="card" href="sanchi-tv/">
-        <div class="card-h"><span class="card-title">Television</span><span class="card-go" aria-hidden="true">&rarr;</span></div>
+      <a class="card decided" href="sanchi-tv/">
+        <div class="card-h"><span class="card-title">Television</span><span class="card-head-r"><span class="card-status">Decided</span><span class="card-go" aria-hidden="true">&rarr;</span></span></div>
         <p class="card-blurb">55-inch OLED for a bright, Apple-TV-first living room.</p>
+        <p class="card-chose">Chosen &middot; <strong>Sony Bravia 8</strong></p>
         <p class="card-meta"><span class="card-date">Updated 27 Jun 2026</span> &middot; Added the current TV (Samsung 55Q64B) as the €0 keep-it baseline; prices reconciled to live + sound gap corrected — Sony Bravia 8 still the pick.</p>
       </a>
       <a class="card" href="wc-bin/">
-        <div class="card-h"><span class="card-title">Bathroom bin</span><span class="card-go" aria-hidden="true">&rarr;</span></div>
+        <div class="card-h"><span class="card-title">Bathroom bin</span><span class="card-head-r"><span class="card-go" aria-hidden="true">&rarr;</span></span></div>
         <p class="card-blurb">Small pedal bin for the WC, warm-neutral palette.</p>
         <p class="card-meta"><span class="card-date">Updated 27 Jun 2026</span> &middot; Recommendation corrected to the Brabantia — it dominates on value.</p>
       </a>
       <a class="card" href="wc-brush/">
-        <div class="card-h"><span class="card-title">Toilet brush</span><span class="card-go" aria-hidden="true">&rarr;</span></div>
+        <div class="card-h"><span class="card-title">Toilet brush</span><span class="card-head-r"><span class="card-go" aria-hidden="true">&rarr;</span></span></div>
         <p class="card-blurb">A brush that hides the bristles and matches the room.</p>
         <p class="card-meta"><span class="card-date">Updated 27 Jun 2026</span> &middot; Added side-by-side comparisons and the new app design.</p>
       </a>
       <a class="card" href="wc-dispenser/">
-        <div class="card-h"><span class="card-title">Soap dispenser</span><span class="card-go" aria-hidden="true">&rarr;</span></div>
+        <div class="card-h"><span class="card-title">Soap dispenser</span><span class="card-head-r"><span class="card-go" aria-hidden="true">&rarr;</span></span></div>
         <p class="card-blurb">Refillable dispenser in a warm-sand palette.</p>
         <p class="card-meta"><span class="card-date">Updated 27 Jun 2026</span> &middot; Added side-by-side comparisons and the new app design.</p>
       </a>
-      <a class="card" href="cocktail-shaker/">
-        <div class="card-h"><span class="card-title">Cocktail shaker</span><span class="card-go" aria-hidden="true">&rarr;</span></div>
+      <a class="card decided" href="cocktail-shaker/">
+        <div class="card-h"><span class="card-title">Cocktail shaker</span><span class="card-head-r"><span class="card-status">Decided</span><span class="card-go" aria-hidden="true">&rarr;</span></span></div>
         <p class="card-blurb">One dishwasher-safe shaker for regular home cocktails.</p>
+        <p class="card-chose">Chosen &middot; <strong>OXO Steel single-wall shaker</strong></p>
         <p class="card-meta"><span class="card-date">Updated 27 Jun 2026</span> &middot; bol.com verification sweep — added the OXO Steel single-wall shaker, which becomes the pick (Zulay Boston now co-lead runner-up).</p>
       </a>
 </nav>

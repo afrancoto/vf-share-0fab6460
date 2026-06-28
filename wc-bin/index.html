@@ -580,7 +580,7 @@ button{font-family:inherit;}
     "discountRate": 0.05,
     "engineVersion": "0.9.5",
     "createdISO": "2026-06-25",
-    "note": "One of three WC pieces under a €150 trio cap. Cost shown defaults to purchase + delivery (use the Per-year / Total toggle at the top of the chart for EAC); bin-liners are common to all, so consumables=0. Pedal + soft-close + lid carries the hard screen (the lid stores pads). A footprint-fit dimension was added after the scout. Links re-verified 2026-06-25: Blokker (bankrupt Nov-2024, SKU now 404) and Mette Ditmer WENDY Sand (out of stock NL-wide) were removed; every option shown is live and in stock."
+    "note": "One of three WC pieces under a €150 trio cap. RE-SCOUTED 2026-06-27 with a hard NO-PLASTIC rule (body must be powder-coated steel / metal). Removed for plastic bodies: IKEA EKOLN (PP), JYSK Ullatti (PP), Kwantum Organic (ABS), Blomus SONO Tan (ABS), Zone UME (ABS). Also excluded: Zone Sensu Sand €50.90 ('Kunststof' — plastic; the interior-design repo's own pick), Wesco Mini Master €95 (cost), EKO Belle/Luna/Serene (cool stainless RVS), Mette Ditmer Walther (10 L). ADDED 2026-06-27 a 'front-of-house design presence' dimension — the WC is visible when guests enter the apartment, so the bin is partly on show. Cost defaults to purchase + delivery (Per-year / Total toggle gives EAC); liners common to all → consumables=0. Pedal + soft-close + lid carries the hard screen."
   },
   "dimensions": [
     {
@@ -606,7 +606,7 @@ button{font-family:inherit;}
         "min": 0,
         "max": 10
       },
-      "rationale": "Powder-coated steel ≫ ABS plastic (even soft-touch). The bin earns its 'warm anchor' read partly by being honest metal."
+      "rationale": "Powder-coated steel ≫ ABS plastic (even soft-touch). The bin earns its 'warm anchor' read partly by being honest metal. With plastic bodies now excluded, this dimension separates solid steel from thin budget-gauge steel."
     },
     {
       "id": "tone",
@@ -630,7 +630,19 @@ button{font-family:inherit;}
         "min": 0,
         "max": 10
       },
-      "rationale": "Solidity, anti-slip base, the quality of the damped close in use."
+      "rationale": "Solidity, anti-slip base, the quality of the damped close in use, gauge of the steel."
+    },
+    {
+      "id": "presence",
+      "label": "Front-of-house design presence",
+      "type": "social",
+      "direction": "more-better",
+      "weight": 0.1,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
+      "rationale": "The WC is visible when guests enter the apartment, so the bin is partly ON SHOW — how much it reads as a considered, designed object at a glance (silhouette, finish, brand-design pedigree) and gives a good first impression. Distinct from 'character' (intrinsic texture) and 'harmony' (fitting the family): this is the guest's-eye signalling value that pure-infrastructure logic underweights. Adjustable live on the chart if you want it to count for more or less."
     },
     {
       "id": "durability",
@@ -642,7 +654,7 @@ button{font-family:inherit;}
         "min": 0,
         "max": 10
       },
-      "rationale": "The soft-close hinge is the wear point; warranty and review volume are the signal. Brabantia's 10-yr guarantee anchors the top."
+      "rationale": "The soft-close hinge and the coating are the wear points; warranty and review volume are the signal. Brabantia's 10-yr guarantee anchors the top; cheap steel that peels/rusts within a year anchors the bottom."
     },
     {
       "id": "fit",
@@ -654,7 +666,7 @@ button{font-family:inherit;}
         "min": 0,
         "max": 10
       },
-      "rationale": "Added after the scout: in 1.33 m², a round ~Ø17 footprint suits the corner; a wide 5 L (26.5 cm) crowds it. Capacity over ~5 L was screened."
+      "rationale": "Added after the scout: in 1.33 m², a round ~Ø17 footprint suits the corner; a wide/tall 5 L crowds it. Capacity over ~5 L was screened."
     },
     {
       "id": "harmony",
@@ -673,12 +685,12 @@ button{font-family:inherit;}
       "label": "Texture / character",
       "type": "aesthetic",
       "direction": "more-better",
-      "weight": 0.07,
+      "weight": 0.06,
       "range": {
         "min": 0,
         "max": 10
       },
-      "rationale": "Down-weighted on purpose — the bin is recessive infrastructure; character lives in the dispenser + brush, not here."
+      "rationale": "Intrinsic material/texture interest. Down-weighted — the bin's job is to recede; the new 'front-of-house presence' dimension carries the guest-facing read instead."
     },
     {
       "id": "coolmetal",
@@ -694,7 +706,7 @@ button{font-family:inherit;}
     },
     {
       "id": "cheapfeel",
-      "label": "Visibly cheap plastic",
+      "label": "Visibly cheap / thin steel",
       "type": "anti-need",
       "direction": "unwanted",
       "weight": 0.025,
@@ -702,7 +714,7 @@ button{font-family:inherit;}
         "min": -5,
         "max": 5
       },
-      "rationale": "A plastic body that visibly cheapens (e.g. a coating that goes tacky). Floor infrastructure, so weighted lightly."
+      "rationale": "Thin budget-gauge steel that dents, or a coating that peels. Floor infrastructure, so weighted lightly."
     },
     {
       "id": "fauxdouble",
@@ -719,63 +731,67 @@ button{font-family:inherit;}
   ],
   "products": [
     {
-      "id": "ikea-ekoln-3l",
-      "name": "IKEA EKOLN 3L beige",
-      "price": 6.99,
+      "id": "5five-beige-3l",
+      "name": "5five kleine pedaalemmer beige 3L (metaal)",
+      "price": 13.99,
       "links": [
         {
-          "label": "IKEA",
-          "url": "https://www.ikea.com/nl/nl/p/ekoln-afvalemmer-beige-70493013/"
+          "label": "bol.com",
+          "url": "https://www.bol.com/nl/nl/p/5five-kleine-pedaalemmer-metaal-beige-3l-16-x-25-cm-badkamer-badkamer-toilet/9300000146549106/"
         }
       ],
-      "note": "Plastic cost anchor. 4.4★/36, soft-close praised ('perfect voor toilet'), but the coating turns tacky over time and the pedal is stiff. Verify H≤30 cm. 365-day return. Link verified live 2026-06-25 (€6.99).",
+      "note": "Cheapest honest-steel bin in the no-plastic scout. Metal, beige, 16×25, soft-close confirmed in reviews. BUT 4.6★/14 hides the cheap-steel failure: owners report 'verf eraf binnen een jaar' (paint peeled within a year) and 'deksel geroest, sluit slecht' (lid rusted, closes badly). Kept as the budget-steel anchor that shows why paying up matters. Re-scouted 2026-06-27.",
       "costs": {
         "consumablesPerYear": 0,
         "energyPerYear": 0,
         "maintenancePerYear": 0,
-        "deliveryCost": 4,
-        "expectedLifeYears": 6,
+        "deliveryCost": 2.99,
+        "expectedLifeYears": 5,
         "resaleValue": 0
       },
       "scores": {
         "works": {
           "value": 6,
-          "why": "4.4★/36 — soft-close 'zacht en stil'; a stiff pedal is noted",
-          "source": "https://www.ikea.com/nl/nl/p/ekoln-afvalemmer-beige-70493013/"
+          "why": "soft-close confirmed by reviews, but one owner reports the lid rusted and 'sluit slecht' — close reliability is uneven",
+          "source": "https://www.bol.com/nl/nl/p/5five-kleine-pedaalemmer-metaal-beige-3l-16-x-25-cm-badkamer-badkamer-toilet/9300000146549106/"
         },
         "honesty": {
-          "value": 4,
-          "why": "PP plastic body"
+          "value": 7,
+          "why": "powder-coated steel — honest metal, but thin budget gauge"
         },
         "tone": {
           "value": 7,
-          "why": "warm beige, matte, monochrome"
+          "why": "warm beige, matte, monochrome per photos/reviews"
         },
         "feel": {
+          "value": 5,
+          "why": "light thin-gauge steel, budget"
+        },
+        "presence": {
           "value": 4,
-          "why": "light plastic"
+          "why": "a plain budget cylinder — reads as a cheap bin to a guest, no design signal"
         },
         "durability": {
-          "value": 5,
-          "why": "coating turns tacky over time; stiff pedal"
+          "value": 4,
+          "why": "two reviews: paint peeled within a year + lid rusted — the exact cheap-steel failure mode"
         },
         "fit": {
           "value": 8,
-          "why": "3 L, compact (confirm H≤30)"
+          "why": "16×25 — compact footprint, good for the corner"
         },
         "harmony": {
           "value": 7
         },
         "character": {
           "value": 4,
-          "why": "plain"
+          "why": "plain budget cylinder"
         },
         "coolmetal": {
           "value": 0
         },
         "cheapfeel": {
           "value": -1,
-          "why": "plastic body, coating goes tacky"
+          "why": "thin budget steel, paint reported peeling"
         },
         "fauxdouble": {
           "value": 0
@@ -783,126 +799,66 @@ button{font-family:inherit;}
       }
     },
     {
-      "id": "jysk-ullatti-5l",
-      "name": "JYSK ULLATTI 5L beige",
-      "price": 13.5,
+      "id": "urban-living-toulon-3l",
+      "name": "Urban Living Toulon beige 3L (metaal)",
+      "price": 17.99,
       "links": [
         {
-          "label": "JYSK",
-          "url": "https://jysk.nl/badkamer/badkamerartikelen/pedaalemmers/pedaalemmer-ullatti-5l-softclose-beige"
+          "label": "bol.com",
+          "url": "https://www.bol.com/nl/nl/p/urban-living-pedaalemmer-toulon-beige-3-liter-metaal-l17-x-h23-cm-soft-close-toilet-badkamer/9300000226637726/"
         }
       ],
-      "note": "PP + steel, beige (leans khaki/greige). Soft-close + lid-lock confirmed, hinge well-reviewed. Narrow rectangle (14 cm wide) but tall (29) and 5 L. Link verified live 2026-06-25 (€13.50, in stock).",
+      "note": "The budget-steel pick of the no-plastic scout. Metal, warm beige, L17×H23 (compact + short), soft-close. 5★/4 — every review confirms a genuinely good close ('echt goede softclose', 'Softclose werkt prima') with no durability complaints. Budget brand + thin review count (n=4) = modest confidence vs Brabantia. Re-scouted 2026-06-27.",
       "costs": {
         "consumablesPerYear": 0,
         "energyPerYear": 0,
         "maintenancePerYear": 0,
-        "deliveryCost": 3.95,
+        "deliveryCost": 1.99,
         "expectedLifeYears": 8,
         "resaleValue": 0
       },
       "scores": {
         "works": {
           "value": 7,
-          "why": "4.6★/29 — soft-close + lid-lock confirmed, hinge well-reviewed",
-          "source": "https://jysk.nl/badkamer/badkamerartikelen/pedaalemmers/pedaalemmer-ullatti-5l-softclose-beige"
+          "why": "5★/4, all reviews confirm a genuinely good working soft-close",
+          "source": "https://www.bol.com/nl/nl/p/urban-living-pedaalemmer-toulon-beige-3-liter-metaal-l17-x-h23-cm-soft-close-toilet-badkamer/9300000226637726/"
         },
         "honesty": {
-          "value": 6,
-          "why": "PP body + steel pedal"
+          "value": 7,
+          "why": "powder-coated steel — honest metal (budget brand)"
         },
         "tone": {
-          "value": 6,
-          "why": "beige but leans khaki/greige"
+          "value": 7,
+          "why": "warm beige, matte, monochrome; owners praise the colour"
         },
         "feel": {
+          "value": 6,
+          "why": "metal, decent for the price"
+        },
+        "presence": {
           "value": 5,
-          "why": "PP + steel, ok"
+          "why": "clean simple form — looks fine, but reads as 'a plain good bin', not a design piece a guest would notice"
         },
         "durability": {
-          "value": 7,
-          "why": "hinge well-reviewed; no material defects"
+          "value": 6,
+          "why": "no complaints across 4 reviews, but thin sample + budget brand → modest confidence"
         },
         "fit": {
-          "value": 6,
-          "why": "narrow rectangle (14 cm) but tall (29) and 5 L"
-        },
-        "harmony": {
-          "value": 6
-        },
-        "character": {
-          "value": 4
-        },
-        "coolmetal": {
-          "value": 0
-        },
-        "cheapfeel": {
-          "value": -1,
-          "why": "PP body, budget"
-        },
-        "fauxdouble": {
-          "value": 0
-        }
-      }
-    },
-    {
-      "id": "kwantum-organic-5l",
-      "name": "Kwantum Organic 5L beige",
-      "price": 18.5,
-      "links": [
-        {
-          "label": "Kwantum",
-          "url": "https://www.kwantum.nl/pedaalemmer-organic-5-liter-beige-4316054"
-        }
-      ],
-      "note": "Best-rated plastic bin (4.9★/52, silent soft-close, removable inner). But ABS, and a wide 5 L (26.5 cm) footprint that pushes the tiny-corner ceiling. Link verified live 2026-06-25 (€18.50, 2–3 day delivery).",
-      "costs": {
-        "consumablesPerYear": 0,
-        "energyPerYear": 0,
-        "maintenancePerYear": 0,
-        "deliveryCost": 2.95,
-        "expectedLifeYears": 8,
-        "resaleValue": 0
-      },
-      "scores": {
-        "works": {
           "value": 8,
-          "why": "4.9★/52 — silent soft-close, removable inner",
-          "source": "https://www.kwantum.nl/pedaalemmer-organic-5-liter-beige-4316054"
-        },
-        "honesty": {
-          "value": 4,
-          "why": "ABS plastic"
-        },
-        "tone": {
-          "value": 7,
-          "why": "warm beige, matte, monochrome"
-        },
-        "feel": {
-          "value": 5,
-          "why": "decent ABS"
-        },
-        "durability": {
-          "value": 7,
-          "why": "well-rated, no defects surfaced (ABS though)"
-        },
-        "fit": {
-          "value": 4,
-          "why": "5 L, 26.5 cm wide — pushes the corner footprint"
+          "why": "L17×H23 — compact and short, good for the corner"
         },
         "harmony": {
           "value": 7
         },
         "character": {
-          "value": 5,
-          "why": "organic rounded form"
+          "value": 4,
+          "why": "plain cylinder"
         },
         "coolmetal": {
           "value": 0
         },
         "cheapfeel": {
-          "value": 0,
-          "why": "well-finished for ABS"
+          "value": 0
         },
         "fauxdouble": {
           "value": 0
@@ -923,7 +879,7 @@ button{font-family:inherit;}
           "url": "https://www.gamma.nl/assortiment/brabantia-newicon-prullenbak-3-l-soft-beige/p/B215372"
         }
       ],
-      "note": "The category's strongest evidence — 4.8★/~826, 10-yr guarantee, silent damped close, anti-slip base. Round Ø16.8 × H26.4 = truest tiny-WC footprint. Monochrome, no dark/chrome trim. Re-verified 2026-06-25: bol.com €23.85, in stock (cheaper than GAMMA €24.99).",
+      "note": "The category's strongest evidence — 4.8★/~826, 10-yr guarantee, silent damped close, anti-slip base. Round Ø16.8 × H26.4 = truest tiny-WC footprint. Monochrome, no dark/chrome trim. Re-verified 2026-06-25: bol.com €23.85, in stock (cheaper than GAMMA €24.99). Survives the no-plastic re-scout as the clear pick.",
       "costs": {
         "consumablesPerYear": 0,
         "energyPerYear": 0,
@@ -950,6 +906,10 @@ button{font-family:inherit;}
           "value": 7,
           "why": "solid steel, anti-slip base, the damped close feels quality"
         },
+        "presence": {
+          "value": 8,
+          "why": "the NewIcon is a design-awarded, iconic clean cylinder in fingerprint-proof matte — reads as a deliberate quality object to a guest"
+        },
         "durability": {
           "value": 9,
           "why": "10-yr guarantee; no systemic defect across ~826 reviews"
@@ -969,6 +929,140 @@ button{font-family:inherit;}
         "coolmetal": {
           "value": 0,
           "why": "monochrome — integrated hinge/pedal, no contrasting trim"
+        },
+        "cheapfeel": {
+          "value": 0
+        },
+        "fauxdouble": {
+          "value": 0
+        }
+      }
+    },
+    {
+      "id": "brab-newicon-5l",
+      "name": "Brabantia NewIcon 5L Soft Beige",
+      "price": 23.85,
+      "links": [
+        {
+          "label": "bol.com",
+          "url": "https://www.bol.com/nl/nl/p/brabantia-newicon-prullenbak-5-l-soft-beige/9300000082477250/"
+        }
+      ],
+      "note": "Same NewIcon steel body + 10-yr guarantee as the 3L, but 5 L — and currently the SAME price (€23.85, 4.7★/301). The only trade is footprint: the 5 L is taller/wider (≈Ø20.5 × H35), more presence in the tiny corner. Worth it only if you want the extra capacity. Re-scouted 2026-06-27.",
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 0,
+        "maintenancePerYear": 0,
+        "deliveryCost": 0,
+        "expectedLifeYears": 15,
+        "resaleValue": 0
+      },
+      "scores": {
+        "works": {
+          "value": 9,
+          "why": "4.7★/301 — same silent damped close as the 3L",
+          "source": "https://www.bol.com/nl/nl/p/brabantia-newicon-prullenbak-5-l-soft-beige/9300000082477250/"
+        },
+        "honesty": {
+          "value": 8,
+          "why": "powder-coated steel — honest metal"
+        },
+        "tone": {
+          "value": 8,
+          "why": "warm soft-beige, matte, monochrome"
+        },
+        "feel": {
+          "value": 7,
+          "why": "same NewIcon build as the 3L"
+        },
+        "presence": {
+          "value": 7,
+          "why": "same iconic NewIcon design, but the taller 5 L proportions are a touch less elegant on show"
+        },
+        "durability": {
+          "value": 9,
+          "why": "10-yr guarantee; 4.7★/301"
+        },
+        "fit": {
+          "value": 6,
+          "why": "5 L is taller/wider (≈Ø20.5 × H35) — more presence in the corner than the round 3 L"
+        },
+        "harmony": {
+          "value": 8
+        },
+        "character": {
+          "value": 6
+        },
+        "coolmetal": {
+          "value": 0
+        },
+        "cheapfeel": {
+          "value": 0
+        },
+        "fauxdouble": {
+          "value": 0
+        }
+      }
+    },
+    {
+      "id": "zone-solo-taupe-3l",
+      "name": "Zone Denmark Solo Taupe 3L (steel)",
+      "price": 36.19,
+      "links": [
+        {
+          "label": "bol.com",
+          "url": "https://www.bol.com/nl/nl/p/zone-denmark-solo-pedaalemmer-dia-17-x-25-cm-3-liter-taupe/9300000225367873/"
+        }
+      ],
+      "note": "The premium honest-steel taupe option (and the old interior-design 'A8' bin — vindicated here as steel, not ABS: bol breadcrumb says 'Staal'). Round Ø17×25, warm taupe matte, soft-close confirmed in review ('sluit licht met soft touch'). Premium Danish design; thin review volume (5★/1). Only comes warm in taupe (else white/black). Re-scouted 2026-06-27.",
+      "costs": {
+        "consumablesPerYear": 0,
+        "energyPerYear": 0,
+        "maintenancePerYear": 0,
+        "deliveryCost": 1.99,
+        "expectedLifeYears": 12,
+        "resaleValue": 0
+      },
+      "scores": {
+        "works": {
+          "value": 7,
+          "why": "review confirms 'sluit licht met soft touch' — soft-close works; thin review volume (5★/1)",
+          "source": "https://www.bol.com/nl/nl/p/zone-denmark-solo-pedaalemmer-dia-17-x-25-cm-3-liter-taupe/9300000225367873/"
+        },
+        "honesty": {
+          "value": 8,
+          "why": "powder-coated steel (bol breadcrumb: 'Staal') — honest metal"
+        },
+        "tone": {
+          "value": 8,
+          "why": "warm taupe, matte, monochrome — premium Danish design"
+        },
+        "feel": {
+          "value": 7,
+          "why": "Zone design build, strak/clean"
+        },
+        "presence": {
+          "value": 9,
+          "why": "premium Zone Denmark design — the most 'design object' in the set; a design-literate guest clocks it. The best front-of-house showpiece"
+        },
+        "durability": {
+          "value": 7,
+          "why": "steel body (sturdier than Zone's ABS Nova line, which had lid complaints); thin review data, no defect surfaced"
+        },
+        "fit": {
+          "value": 9,
+          "why": "round Ø17 × H25 — matches the Brabantia 3L's tiny-corner footprint"
+        },
+        "harmony": {
+          "value": 8,
+          "why": "taupe pairs with a taupe/sand dispenser + brush"
+        },
+        "character": {
+          "value": 6,
+          "why": "clean Scandinavian cylinder"
+        },
+        "coolmetal": {
+          "value": 0
         },
         "cheapfeel": {
           "value": 0
@@ -1014,6 +1108,10 @@ button{font-family:inherit;}
         "feel": {
           "value": 7,
           "why": "as the NewIcon line"
+        },
+        "presence": {
+          "value": 8,
+          "why": "the iconic NewIcon silhouette in a satin taupe — reads as a considered, slightly more 'designed' tone to a guest"
         },
         "durability": {
           "value": 9,
@@ -1077,6 +1175,10 @@ button{font-family:inherit;}
         "feel": {
           "value": 7
         },
+        "presence": {
+          "value": 7,
+          "why": "clean squarer Brabantia — well-designed and tidy, but less iconic on show than the NewIcon cylinder"
+        },
         "durability": {
           "value": 9,
           "why": "10-yr guarantee"
@@ -1101,154 +1203,24 @@ button{font-family:inherit;}
           "value": 0
         }
       }
-    },
-    {
-      "id": "blomus-sono-tan-3l",
-      "name": "Blomus SONO Tan 3L",
-      "price": 49.55,
-      "links": [
-        {
-          "label": "Bath & Living",
-          "url": "https://www.bath-living.com/products/sono-pedaalemmer-tan-3-liter"
-        }
-      ],
-      "note": "The most tactile bin — silk soft-touch in warm Tan, monochrome, Ø20×H25.5. But ABS-bodied and the soft-close hinge is the named wear point (Blomus sells a spare hinge that sells out). Link verified live 2026-06-25 (€49.55, was €59.95, same-day ship).",
-      "costs": {
-        "consumablesPerYear": 0,
-        "energyPerYear": 0,
-        "maintenancePerYear": 0,
-        "deliveryCost": 0,
-        "expectedLifeYears": 8,
-        "resaleValue": 0
-      },
-      "scores": {
-        "works": {
-          "value": 7,
-          "why": "pedal + soft-close (line 4.6–4.8★, small n)",
-          "source": "https://www.bath-living.com/products/sono-pedaalemmer-tan-3-liter"
-        },
-        "honesty": {
-          "value": 5,
-          "why": "ABS plastic with a soft-touch coat"
-        },
-        "tone": {
-          "value": 9,
-          "why": "warm Tan, matte soft-touch — the warmest, fully monochrome"
-        },
-        "feel": {
-          "value": 8,
-          "why": "silk soft-touch, the most tactile bin"
-        },
-        "durability": {
-          "value": 6,
-          "why": "soft-close hinge is the named wear point (spare hinge sells out)"
-        },
-        "fit": {
-          "value": 7,
-          "why": "round Ø20 — fits but at the upper width"
-        },
-        "harmony": {
-          "value": 8
-        },
-        "character": {
-          "value": 7,
-          "why": "sculpted soft-touch form, the most characterful bin"
-        },
-        "coolmetal": {
-          "value": 0
-        },
-        "cheapfeel": {
-          "value": 0,
-          "why": "premium soft-touch despite ABS"
-        },
-        "fauxdouble": {
-          "value": 0
-        }
-      }
-    },
-    {
-      "id": "zone-ume-sand-4l",
-      "name": "Zone Denmark UME Warm Sand 4L",
-      "price": 74.95,
-      "links": [
-        {
-          "label": "Badwoondesign",
-          "url": "https://badwoondesign.nl/product/zone-ume-prullenbak-warm-zand/"
-        }
-      ],
-      "note": "Velvety soft-touch in the ideal warm sand, monochrome, compact round Ø19.5 × H22. The best tone in the set — but ABS-bodied and ~€75, well over the per-piece budget. Matches a Zone UME / sand dispenser+brush. Link verified live 2026-06-25 (€74.95, add-to-cart active; inner bucket 4 L).",
-      "costs": {
-        "consumablesPerYear": 0,
-        "energyPerYear": 0,
-        "maintenancePerYear": 0,
-        "deliveryCost": 0,
-        "expectedLifeYears": 9,
-        "resaleValue": 0
-      },
-      "scores": {
-        "works": {
-          "value": 7,
-          "why": "pedal + soft-close (UME line ~4.7★)",
-          "source": "https://badwoondesign.nl/product/zone-ume-prullenbak-warm-zand/"
-        },
-        "honesty": {
-          "value": 5,
-          "why": "ABS plastic with a velvety coat"
-        },
-        "tone": {
-          "value": 9,
-          "why": "warm sand, matte, monochrome — the ideal tone"
-        },
-        "feel": {
-          "value": 8,
-          "why": "velvety soft-touch, premium"
-        },
-        "durability": {
-          "value": 6,
-          "why": "ABS + soft-touch coat; line ~4.7★, thin long-term data"
-        },
-        "fit": {
-          "value": 8,
-          "why": "round Ø19.5 × H22 — compact and short"
-        },
-        "harmony": {
-          "value": 9,
-          "why": "warm sand harmonizes with almost anything"
-        },
-        "character": {
-          "value": 6,
-          "why": "soft sculpted form"
-        },
-        "coolmetal": {
-          "value": 0
-        },
-        "cheapfeel": {
-          "value": 0
-        },
-        "fauxdouble": {
-          "value": 0
-        }
-      }
     }
   ],
   "comparisons": {
-    "ikea-ekoln-3l|jysk-ullatti-5l": {
-      "text": "The cheapest step on the frontier: about €6 buys +4 value (€11 to €17, V56 to V60). The JYSK is the sturdier build — a steel pedal instead of pure PP (honesty 6 vs 4), a better-reviewed soft-close hinge (4.6★/29 vs 4.4★/36, works 7 vs 6), and an 8-yr vs 6-yr life. The IKEA answers on the two things a tiny WC cares about: a truer compact 3 L footprint (fit 8 vs the JYSK's narrow-but-5 L 6) and a cleaner warm beige (tone 7 vs the JYSK's khaki-leaning 6). Neither is the pick — both are out-valued upstream — but if you stopped here the JYSK is the more solid buy and the IKEA the smaller, warmer one.",
-      "flag": "IKEA dims aren't published (confirm H≤30) and its coating is reported to go tacky over time (durability 5) — verify before buying."
+    "5five-beige-3l|urban-living-toulon-3l": {
+      "text": "The two budget-steel anchors, €4 apart (€14 → €18). Both are warm-beige metal with a working soft-close — but the Urban Living is the one to trust. Its 4 reviews are unanimous on a good close and show no failures, while the 5five's 4.6★/14 carries the cheap-steel warning signs: an owner whose paint peeled within a year, another whose lid rusted and 'sluit slecht'. So €4 buys a longer expected life (8 vs 5 yr, durability 6 vs 4) and a cleaner close (works 7 vs 6). Neither is the pick — both are stepping stones — but between them the Urban Living is the honest budget buy and the 5five the cautionary one.",
+      "flag": "Both are budget brands with thin review counts; treat the Urban Living's 5★/4 as encouraging, not proven."
     },
-    "jysk-ullatti-5l|kwantum-organic-5l": {
-      "text": "Two cheap frontier steps almost on top of each other: about €4 apart for +1 value (€17 to €21, V60 to V61). The Kwantum has the best soft-close evidence of any plastic bin here (4.9★/52, works 8 vs 7), but it's a wide 5 L that eats the corner (fit 4 vs the JYSK's narrower 6) and plain ABS rather than the JYSK's PP-plus-steel-pedal (honesty 4 vs 6). The two nearly cancel — you pay €4 for a quieter close and hand back footprint and material. Both are stepping stones; the real jump is the next one."
+    "urban-living-toulon-3l|brab-newicon-softbeige": {
+      "text": "This is the decision. For about €6 more than the Urban Living (€18 → €24) the Brabantia jumps well clear on value — and it isn't a trade, it wins on the things that matter for a buy-it-once floor object that guests also half-see on entry: the deepest evidence in the category (4.8★/~826 vs 4 — works 9 vs 7), a 10-yr guarantee on a 15-yr life (durability 9 vs 6), the truest tiny-corner footprint, AND the design-awarded NewIcon silhouette that actually reads as a considered object to a visitor (presence 8 vs 5). With plastic excluded, the Urban Living is the cheapest honest option — but €6 to move from a thin-gauge budget bin to the category's strongest, best-looking steel one, guaranteed for a decade, is the clearest call in the set.",
+      "flag": "The Urban Living is genuinely fine and half the price — if the bin barely shows from the door and you'd rather not spend €24, it's the defensible budget steel choice."
     },
-    "brab-newicon-softbeige|kwantum-organic-5l": {
-      "text": "This is the decision. For about €3 more than the Kwantum (€21 to €24) the Brabantia jumps +21 value (V61 to V82) — and it wins on every dimension, so it isn't a trade. Honest powder-coated steel vs ABS (honesty 8 vs 4), the truest tiny-corner footprint at Ø16.8 cm vs the Kwantum's wide 26.5 cm 5 L (fit 9 vs 4), the deepest evidence in the category (4.8★ across ~826 reviews vs 52, works 9 vs 8), and a 10-yr guarantee on a 15-yr life vs 8 (durability 9 vs 7). The frontier curves up exactly here: the earlier steps bought ~1 value per euro, this one buys roughly 7. Paying €3 to move from the best plastic bin to the category's strongest steel one is the clearest call in the set — which is why the Brabantia is the pick."
+    "brab-newicon-softbeige|zone-solo-taupe-3l": {
+      "text": "Now that the bin is partly on show, this is the real upgrade question. The Zone Solo is the set's best front-of-house object — premium Zone Denmark design, the piece a design-literate guest would actually notice (presence 9 vs 8) — in honest steel with the same tight Ø17 footprint and a confirmed soft-close. But at €36 it's €12 over the Brabantia Soft Beige for thinner proof (5★/1 vs 4.8★/~826, works 7 vs 9) and no 10-yr guarantee. So it comes down to how much the door-view matters: if the bin is a genuine first impression and you want the design pedigree (in taupe), the Zone earns its premium; if you weight evidence, guarantee and price, the Brabantia still wins the knee by a clear margin — its NewIcon silhouette is no slouch on show either.",
+      "flag": "Zone Solo only comes warm in taupe — it commits the trio to the taupe family, not Soft Beige."
     },
     "brab-newicon-softbeige|brab-newicon-taupe": {
-      "text": "The same Brabantia NewIcon body in two tones, €16 apart (€24 vs €40). On the data the Soft Beige strictly wins — same steel, same Ø16.8 cm footprint, same 10-yr guarantee and 15-yr life — but it costs less and carries the category's deepest proof (4.8★/~826 on the bol listing). So this isn't a value question, it's a colour one: choose the Satin Taupe only if its greiger, darker tone is the one your dispenser and brush need to pair with; otherwise the Soft Beige is the identical bin for €16 less.",
-      "flag": "The V82-vs-V79 gap is one point of works (9 vs 8), and that's review volume on each colour's listing — not a real difference in the close. Physically it's the same bin."
-    },
-    "blomus-sono-tan-3l|brab-newicon-softbeige": {
-      "text": "The pick against the prettiest bin in the set. The Blomus is the most tactile — silk soft-touch in the warmest Tan (tone 9 vs 8, feel 8 vs 7, character 7 vs 6) — but it's ABS over a soft-close hinge that is its named wear point (Blomus sells a spare that sells out; durability 6 vs 9). At about €50 it's more than double the €24 Brabantia, for −11 value (V71 vs V82). The Brabantia gives up a little warmth and wins everything structural: honest steel (honesty 8 vs 5), the tighter footprint (fit 9 vs 7), and the best longevity here (15-yr life + 10-yr guarantee). Paying double for a warmer skin over a weaker hinge is the wrong trade — the Brabantia is both cheaper and higher value, so it dominates outright.",
-      "flag": "If you weight pure tone and tactility far above build and price, the Blomus is the warmest, most characterful object — that's the only frame in which it wins."
+      "text": "The same Brabantia NewIcon body in two tones, €16 apart (€24 vs €40). Same steel, same Ø16.8 cm footprint, same 10-yr guarantee and 15-yr life, near-identical on show — but the Soft Beige costs less and carries the category's deepest proof (4.8★/~826 on the bol listing). So this isn't a value question, it's a colour one: choose the Satin Taupe only if its greiger, darker tone is the one your dispenser and brush need to pair with; otherwise the Soft Beige is the identical bin for €16 less.",
+      "flag": "Physically it's the same bin — the small value gap is just review volume on each colour's listing, not a real difference in the close."
     }
   }
 };</script>
