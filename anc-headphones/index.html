@@ -598,7 +598,7 @@ button{font-family:inherit;}
     "discountRate": 0.05,
     "engineVersion": "1.0.0",
     "createdISO": "2026-07-01",
-    "note": "Benchmark = Sony WH-1000XM6 (he owns the XM4). Weights from his own signals: forced top-two = ANC + a 'beautiful object' (build); sound close behind; 95% wireless; ~99% home listening; named the XM4 MIC (thin voice + room noise). Field = the full NL premium-ANC over-ear universe >=€250 (16, brand-by-brand via Tweakers). Prices live 2026-07-01. Scores went through THREE passes: initial lab+expert+owner, an audiophile+Reddit cross-check, and a per-dimension workflow (one agent per dimension + a completeness critic, 2026-07-01) that refined 13 cells. RESULT: the value KNEE is the Sennheiser Momentum 5 (€418), but the top of the frontier is a TIGHT CLUSTER (XM6 ~68 · Momentum 5 ~72 · Collexion ~72 · Px8 S2 ~75) — small evidence updates reshuffle the knee, so read €360-420 as the value ZONE, and pick by your anchors, not a single number. XM6 vs COLLEXION (his question): a WASH on performance — same ANC (87% vs 86%), tied calls, both LDAC+multipoint, ±0.5 sound; the Collexion's €266 premium buys BUILD (metal 8 vs plastic 3.5) + a bit of comfort and COSTS ~6h battery (24h vs 30h). Correction: the XM6 is NOT the fixed-hinge model it was sold as — it cracks like the XM5 (build 4->3.5). Momentum 5 & HDB 630 mics now review-verified (calls ->7). Completeness critic: the 10 dims are well-tailored; the one genuine gap is EQ-flexibility (his tuning habit vs Bose 3-band / B&W bass-treble-only) — not yet added, pending his call; also open: does he wear glasses (would fold into ANC-pressure/comfort). For his ANCHORS (ANC + object): the XM6 is the cheap-ANC play and the Collexion / Px8 S2 are the object buy-ups; the Momentum 5 is the value-max all-rounder that wins the secondary dims. Verify mic + ANC-pressure in-store (30-day returns); XM6 dips to ~€230 on sale."
+    "note": "Benchmark = Sony WH-1000XM6 (he owns the XM4). Weights from his own signals: forced top-two = ANC + a 'beautiful object' (build); sound close behind; 95% wireless; ~99% home listening; named the XM4 MIC (thin voice + room noise). Field = the full NL premium-ANC over-ear universe >=€250 (16, brand-by-brand via Tweakers). Prices live 2026-07-01. Scores went through THREE passes: initial lab+expert+owner, an audiophile+Reddit cross-check, and a per-dimension workflow (one agent per dimension + a completeness critic, 2026-07-01) that refined 13 cells. RESULT: the value KNEE is the Sennheiser Momentum 5 (€418), but the top of the frontier is a TIGHT CLUSTER (XM6 ~68 · Momentum 5 ~72 · Collexion ~72 · Px8 S2 ~75) — small evidence updates reshuffle the knee, so read €360-420 as the value ZONE, and pick by your anchors, not a single number. XM6 vs COLLEXION (his question): a WASH on performance — same ANC (87% vs 86%), tied calls, both LDAC+multipoint, ±0.5 sound; the Collexion's €266 premium buys BUILD (metal 8 vs plastic 3.5) + a bit of comfort and COSTS ~6h battery (24h vs 30h). Correction: the XM6 is NOT the fixed-hinge model it was sold as — it cracks like the XM5 (build 4->3.5). Momentum 5 & HDB 630 mics now review-verified (calls ->7). Completeness critic: the 10 dims are well-tailored; the one genuine gap, EQ-flexibility, is now ADDED as an 11th dimension (~3.9%) — his tuning habit vs Bose 3-band / B&W Px8 bass-treble / Dali no-EQ; it reinforces the Sony/Sennheiser cluster and dings Dali/Bose/Sonos. Glasses: confirmed N/A (he doesn't wear them). For his ANCHORS (ANC + object): the XM6 is the cheap-ANC play and the Collexion / Px8 S2 are the object buy-ups; the Momentum 5 is the value-max all-rounder that wins the secondary dims. Verify mic + ANC-pressure in-store (30-day returns); XM6 dips to ~€230 on sale."
   },
   "dimensions": [
     {
@@ -606,7 +606,7 @@ button{font-family:inherit;}
       "label": "Noise cancelling (deep + low-pressure)",
       "type": "functional",
       "direction": "more-better",
-      "weight": 0.161,
+      "weight": 0.155,
       "range": {
         "min": 0,
         "max": 10
@@ -618,7 +618,7 @@ button{font-family:inherit;}
       "label": "Build, materials & durability",
       "type": "aesthetic",
       "direction": "more-better",
-      "weight": 0.161,
+      "weight": 0.155,
       "range": {
         "min": 0,
         "max": 10
@@ -630,7 +630,7 @@ button{font-family:inherit;}
       "label": "Sound quality (detail · stage · balance)",
       "type": "functional",
       "direction": "more-better",
-      "weight": 0.145,
+      "weight": 0.14,
       "range": {
         "min": 0,
         "max": 10
@@ -638,11 +638,23 @@ button{font-family:inherit;}
       "rationale": "Wants it all (bass + detail + soundstage + neutral); his hearing test is Excellent/Good across the band so detail is audible. Bass is table-stakes (EQ-able)."
     },
     {
+      "id": "eq",
+      "label": "EQ & tuning flexibility",
+      "type": "functional",
+      "direction": "more-better",
+      "weight": 0.039,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
+      "rationale": "He actively tunes (custom Sony Adapt-Sound profile). Rewards deep, correctable EQ (10-band / parametric) over crippled EQ (3-band / bass-treble-only) or none — because the Sound rubric assumes bass is EQ-able, which only holds if the set can actually be tuned. Added 2026-07-01 after the dimension-completeness critic flagged it as the one genuine gap."
+    },
+    {
       "id": "wireless",
       "label": "Wireless stack (codecs + multipoint)",
       "type": "functional",
       "direction": "more-better",
-      "weight": 0.129,
+      "weight": 0.124,
       "range": {
         "min": 0,
         "max": 10
@@ -654,7 +666,7 @@ button{font-family:inherit;}
       "label": "Comfort — cool & long-wear",
       "type": "experiential",
       "direction": "more-better",
-      "weight": 0.097,
+      "weight": 0.093,
       "range": {
         "min": 0,
         "max": 10
@@ -666,7 +678,7 @@ button{font-family:inherit;}
       "label": "Call & mic quality",
       "type": "functional",
       "direction": "more-better",
-      "weight": 0.097,
+      "weight": 0.093,
       "range": {
         "min": 0,
         "max": 10
@@ -678,7 +690,7 @@ button{font-family:inherit;}
       "label": "Transparency / ambient",
       "type": "experiential",
       "direction": "more-better",
-      "weight": 0.065,
+      "weight": 0.062,
       "range": {
         "min": 0,
         "max": 10
@@ -690,7 +702,7 @@ button{font-family:inherit;}
       "label": "Wired / USB-DAC hi-res",
       "type": "functional",
       "direction": "more-better",
-      "weight": 0.048,
+      "weight": 0.047,
       "range": {
         "min": 0,
         "max": 10
@@ -702,7 +714,7 @@ button{font-family:inherit;}
       "label": "Battery life",
       "type": "functional",
       "direction": "more-better",
-      "weight": 0.048,
+      "weight": 0.047,
       "range": {
         "min": 0,
         "max": 10
@@ -714,7 +726,7 @@ button{font-family:inherit;}
       "label": "Anti-needs / friction",
       "type": "anti-need",
       "direction": "unwanted",
-      "weight": 0.048,
+      "weight": 0.047,
       "range": {
         "min": -5,
         "max": 5
@@ -794,6 +806,11 @@ button{font-family:inherit;}
           "value": -1,
           "why": "capacitive touch panel (disableable) + retains physical buttons; SoundGuys flags the app's data collection + account push.",
           "source": "https://www.soundguys.com/sony-wh-1000xm6-review-137397/ (2026-07-01)"
+        },
+        "eq": {
+          "value": 9,
+          "why": "Sony Sound Connect: full 10-band graphic EQ + custom 'Find Your EQ' profiles.",
+          "source": "https://www.sony.nl/ (2026-07-01)"
         }
       }
     },
@@ -867,6 +884,11 @@ button{font-family:inherit;}
         "antineed": {
           "value": -1,
           "why": "Sony Sound Connect app (cluttered) + capacitive touch + physical buttons; privacy/data specifics unreported. One reviewer's unit had an ANC failure (single anecdote).",
+          "source": "https://www.soundguys.com/sony-1000x-the-collexion-review-157096/ (2026-07-01)"
+        },
+        "eq": {
+          "value": 9,
+          "why": "Same Sony 10-band EQ + custom profiles as the XM6.",
           "source": "https://www.soundguys.com/sony-1000x-the-collexion-review-157096/ (2026-07-01)"
         }
       }
@@ -942,6 +964,11 @@ button{font-family:inherit;}
           "value": -1,
           "why": "capacitive touch (misfires in rain/cold/gloves) + app pushed; SoundGuys flags extensive data collection.",
           "source": "https://www.soundguys.com/sony-wh-1000xm5-review-71783/ (2026-07-01)"
+        },
+        "eq": {
+          "value": 9,
+          "why": "Sony 10-band EQ + custom profiles.",
+          "source": "https://www.soundguys.com/sony-wh-1000xm5-review-71783/ (2026-07-01)"
         }
       }
     },
@@ -1015,6 +1042,11 @@ button{font-family:inherit;}
         "antineed": {
           "value": 0,
           "why": "physical buttons (no accidental-touch); app optional (5-band EQ). Minor: wear-detection over-sensitive.",
+          "source": "https://www.soundguys.com/bowers-and-wilkins-px7-s3-review-an-unexpected-anc-heavyweight-142231/ (2026-07-01)"
+        },
+        "eq": {
+          "value": 6,
+          "why": "B&W Music app: 5-band EQ — more than the Px8's 2-band, short of parametric.",
           "source": "https://www.soundguys.com/bowers-and-wilkins-px7-s3-review-an-unexpected-anc-heavyweight-142231/ (2026-07-01)"
         }
       }
@@ -1090,6 +1122,11 @@ button{font-family:inherit;}
           "value": -1,
           "why": "capacitive touch swipe pad (accidental-touch risk) + 1 physical button; app optional, account optional.",
           "source": "https://www.soundguys.com/sennheiser-momentum-5-vs-momentum-4-wireless-158155/ (2026-07-01)"
+        },
+        "eq": {
+          "value": 9,
+          "why": "Sennheiser Smart Control: parametric EQ + presets — deep, correctable tuning.",
+          "source": "https://www.soundguys.com/sennheiser-momentum-5-vs-momentum-4-wireless-158155/ (2026-07-01)"
         }
       }
     },
@@ -1164,6 +1201,11 @@ button{font-family:inherit;}
           "value": -1,
           "why": "Sennheiser Smart Control app (optional for playback) + touch controls.",
           "source": "https://www.soundguys.com/sennheiser-hdb-630-review-audiophile-anc-at-a-cost-146569/ (2026-07-01)"
+        },
+        "eq": {
+          "value": 9,
+          "why": "Onboard parametric EQ (Smart Control) — among the most tunable here.",
+          "source": "https://www.whathifi.com/headphones/sennheiser-hdb-630 (2026-07-01)"
         }
       }
     },
@@ -1237,6 +1279,11 @@ button{font-family:inherit;}
         "antineed": {
           "value": 0,
           "why": "NO app, NO account ('Power-Pair-Play'), all physical buttons — lowest-friction here. Risk: niche brand, thin retail.",
+          "source": "https://www.dali-speakers.com/en/products/io/dali-io-8/ (2026-07-01)"
+        },
+        "eq": {
+          "value": 2,
+          "why": "NO app and NO EQ at all ('Power-Pair-Play') — the tuning is fixed; a real limit for someone who EQs.",
           "source": "https://www.dali-speakers.com/en/products/io/dali-io-8/ (2026-07-01)"
         }
       }
@@ -1312,6 +1359,11 @@ button{font-family:inherit;}
           "value": 0,
           "why": "physical buttons; app gives only bass/treble sliders (needed for firmware).",
           "source": "https://www.soundguys.com/bowers-and-wilkins-px8-review-116184/ (2026-07-01)"
+        },
+        "eq": {
+          "value": 4,
+          "why": "App EQ is bass/treble sliders only (2-band) — minimal correction.",
+          "source": "https://www.soundguys.com/bowers-and-wilkins-px8-review-116184/ (2026-07-01)"
         }
       }
     },
@@ -1385,6 +1437,11 @@ button{font-family:inherit;}
         "antineed": {
           "value": 0,
           "why": "physical buttons; app = 5-band EQ/modes, not required for playback.",
+          "source": "https://www.soundguys.com/bowers-and-wilkins-px8-s2-review-an-unlikely-successor-147206/ (2026-07-01)"
+        },
+        "eq": {
+          "value": 6,
+          "why": "B&W Music app: 5-band EQ.",
           "source": "https://www.soundguys.com/bowers-and-wilkins-px8-s2-review-an-unlikely-successor-147206/ (2026-07-01)"
         }
       }
@@ -1460,6 +1517,11 @@ button{font-family:inherit;}
           "value": -2,
           "why": "finicky touch volume-strip + app effectively required for EQ/multipoint/firmware; NL owners report firmware updates removing features.",
           "source": "https://tweakers.net/pricewatch/2275062/bose-quietcomfort-ultra-headphones-2de-gen-zwart.html (2026-07-01)"
+        },
+        "eq": {
+          "value": 4,
+          "why": "Bose app EQ is 3-band (bass/mid/treble) only, no parametric — owners flag it as limited.",
+          "source": "https://tweakers.net/pricewatch/2275062/bose-quietcomfort-ultra-headphones-2de-gen-zwart.html (2026-07-01)"
         }
       }
     },
@@ -1533,6 +1595,11 @@ button{font-family:inherit;}
         "antineed": {
           "value": -1,
           "why": "B&O app for EQ + touch controls; no major lock-in.",
+          "source": "https://www.techradar.com/reviews/bang-and-olufsen-beoplay-hx (2026-07-01)"
+        },
+        "eq": {
+          "value": 5,
+          "why": "B&O 'Beosonic' 4-corner tone control — unusual and limited, not a graphic/parametric EQ.",
           "source": "https://www.techradar.com/reviews/bang-and-olufsen-beoplay-hx (2026-07-01)"
         }
       }
@@ -1608,6 +1675,11 @@ button{font-family:inherit;}
           "value": 0,
           "why": "physical buttons (near-zero accidental-touch); app optional; widely stocked.",
           "source": "https://www.whathifi.com/reviews/focal-bathys (2026-07-01)"
+        },
+        "eq": {
+          "value": 6,
+          "why": "Focal & Listen app: 5-band EQ + presets.",
+          "source": "https://www.whathifi.com/reviews/focal-bathys (2026-07-01)"
         }
       }
     },
@@ -1681,6 +1753,11 @@ button{font-family:inherit;}
         "antineed": {
           "value": 0,
           "why": "correction: reviewers praise its 5 physical buttons (no touch panel, 'works first try') and the app is fully optional — no real friction. Boutique parts/repair risk is in the product note, not scored here.",
+          "source": "https://headfonics.com/noble-audio-fokus-apollo-review/ (2026-07-01)"
+        },
+        "eq": {
+          "value": 7,
+          "why": "Noble FoKus app: graphic EQ + presets — flexible for the class.",
           "source": "https://headfonics.com/noble-audio-fokus-apollo-review/ (2026-07-01)"
         }
       }
@@ -1756,6 +1833,11 @@ button{font-family:inherit;}
           "value": -2,
           "why": "Sonos app + account required for setup/EQ/spatial, 2024 app-collapse overhang, ecosystem perks gated behind a Sonos soundbar.",
           "source": "https://www.theverge.com/24172354/sonos-ace-headphones-review (2026-07-01)"
+        },
+        "eq": {
+          "value": 3,
+          "why": "Sonos app EQ is bass/treble + very limited; NL owners specifically flag 'EQ zeer beperkt'.",
+          "source": "https://tweakers.net/pricewatch/2080300/sonos-ace-zwart.html (2026-07-01)"
         }
       }
     },
@@ -1830,6 +1912,11 @@ button{font-family:inherit;}
           "value": -1,
           "why": "app for EQ/hearing-test + touch/controls.",
           "source": "https://www.whathifi.com/headphones/wireless-headphones/beyerdynamic-aventho-300 (2026-07-01)"
+        },
+        "eq": {
+          "value": 7,
+          "why": "Beyerdynamic app: 5-band EQ + MIY sound personalisation.",
+          "source": "https://www.whathifi.com/headphones/wireless-headphones/beyerdynamic-aventho-300 (2026-07-01)"
         }
       }
     },
@@ -1903,6 +1990,11 @@ button{font-family:inherit;}
         "antineed": {
           "value": -2,
           "why": "MyDyson app + ACCOUNT required for full features; Android Police flags account + location sharing; awkward joystick + flaky double-tap touch.",
+          "source": "https://www.androidpolice.com/dyson-ontrac-review/ (2026-07-01)"
+        },
+        "eq": {
+          "value": 5,
+          "why": "MyDyson app: basic EQ (presets + limited custom).",
           "source": "https://www.androidpolice.com/dyson-ontrac-review/ (2026-07-01)"
         }
       }
