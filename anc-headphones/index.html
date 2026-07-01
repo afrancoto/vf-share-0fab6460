@@ -598,305 +598,1323 @@ button{font-family:inherit;}
     "discountRate": 0.05,
     "engineVersion": "1.0.0",
     "createdISO": "2026-07-01",
-    "note": "Benchmark = Sony WH-1000XM6 (he owns the XM4). Weights are his own signals: forced-choice top-two = ANC + a 'beautiful object' (build); sound close behind; 95% WIRELESS even at his desk (so the codec path is weighted over a cable); Sony-app usage ~3985h that is ~99% stationary/home (so portability/battery down, cool long-wear comfort up); and he named the XM4 MIC unprompted (thin voice + transmits room noise) so calls were bumped. Field = the FULL NL premium-ANC over-ear universe >=€250, enumerated brand-by-brand via Tweakers (all shops). Prices live 2026-07-01 (Coolblue/Bol/Tweakers), cross-checked vs history as realistic not spikes (XM6 dips ~€230, Px8 ~€380 on sale). Scores blend lab (Rtings/SoundGuys), expert and NL owner reviews, then were re-checked by an audiophile+Reddit second pass which CORRECTED three load-bearing reads: (1) the modern Bose QC Ultra is LOW ANC-pressure (not high) + has 11 dial-down ANC levels — its eardrum-suck reputation is from OLD Bose, and his own Tweakers owner review said 'weinig druk op de oren'; (2) the B&W Px7 S3 carries BOTH an ANC 'pressurisation' sensation AND the 3rd-tightest measured clamp (442g) — bad for a pressure-sensitive marathon listener; (3) Sony's mic (either gen) is the best fix for his THIN-voice pain, and the XM6 mic is not worse than the XM5. After corrections the value KNEE is the Sony WH-1000XM6 (€363) — his benchmark instinct was right. But the XM6 is PLASTIC, and his anchor was a 'beautiful object', so the two buy-ups that satisfy that are the new Sony Collexion (€629, metal, hinge-proof, keeps the XM6's ANC/mic/LDAC/comfort) and the B&W Px8 S2 (€649, cast-metal + best sound). Excluded after research: KEF Mu7 (ANC 'cabin-pressure' sensation — his exact sensitivity), Teufel Real Blue Pro (plastic build, mid ANC, hot, weak mic), Master & Dynamic MW75 (not sourceable at an NL price + 2022 spec), PSB M4U 8 (not sold in NL), JBL Tour One M3 (€229 <floor), Sennheiser HDB 630 kept but note thin newness, AirPods Max (Android), B&O H95/H100 & Dali IO-12 & Bathys MG & Px8 McLaren (>budget). Famous audiophile names (Meze, HiFiMan, Audeze, Grado) make NO wireless ANC. Reddit was partly blocked to the research crawler — owner-consensus is proxied via Head-Fi/AVForums/Tweakers, flagged where thin. Scores/prices are snapshots — try the mic + ANC-pressure in-store before buying."
+    "note": "Benchmark = Sony WH-1000XM6 (he owns the XM4). Weights from his own signals: forced top-two = ANC + a 'beautiful object' (build); sound close behind; 95% wireless; ~99% home listening; named the XM4 MIC (thin voice + room noise). Field = the full NL premium-ANC over-ear universe >=€250 (16, brand-by-brand via Tweakers). Prices live 2026-07-01. Scores went through THREE passes: initial lab+expert+owner, an audiophile+Reddit cross-check, and a per-dimension workflow (one agent per dimension + a completeness critic, 2026-07-01) that refined 13 cells. RESULT: the value KNEE is the Sennheiser Momentum 5 (€418), but the top of the frontier is a TIGHT CLUSTER (XM6 ~68 · Momentum 5 ~72 · Collexion ~72 · Px8 S2 ~75) — small evidence updates reshuffle the knee, so read €360-420 as the value ZONE, and pick by your anchors, not a single number. XM6 vs COLLEXION (his question): a WASH on performance — same ANC (87% vs 86%), tied calls, both LDAC+multipoint, ±0.5 sound; the Collexion's €266 premium buys BUILD (metal 8 vs plastic 3.5) + a bit of comfort and COSTS ~6h battery (24h vs 30h). Correction: the XM6 is NOT the fixed-hinge model it was sold as — it cracks like the XM5 (build 4->3.5). Momentum 5 & HDB 630 mics now review-verified (calls ->7). Completeness critic: the 10 dims are well-tailored; the one genuine gap is EQ-flexibility (his tuning habit vs Bose 3-band / B&W bass-treble-only) — not yet added, pending his call; also open: does he wear glasses (would fold into ANC-pressure/comfort). For his ANCHORS (ANC + object): the XM6 is the cheap-ANC play and the Collexion / Px8 S2 are the object buy-ups; the Momentum 5 is the value-max all-rounder that wins the secondary dims. Verify mic + ANC-pressure in-store (30-day returns); XM6 dips to ~€230 on sale."
   },
   "dimensions": [
-    { "id": "anc", "label": "Noise cancelling (deep + low-pressure)", "type": "functional", "direction": "more-better", "weight": 0.161, "range": { "min": 0, "max": 10 }, "rationale": "His forced-choice #1 ('dead silence'). Scores cancellation depth AND freedom from the eardrum-pressure/suction he's sensitive to — a set that's quiet but induces pressure is docked." },
-    { "id": "build", "label": "Build, materials & durability", "type": "aesthetic", "direction": "more-better", "weight": 0.161, "range": { "min": 0, "max": 10 }, "rationale": "His forced-choice #1-tie ('a beautiful, built-to-last object'). Metal/leather > plastic; fit-finish; hinge/pad longevity + repairability." },
-    { "id": "sound", "label": "Sound quality (detail · stage · balance)", "type": "functional", "direction": "more-better", "weight": 0.145, "range": { "min": 0, "max": 10 }, "rationale": "Wants it all (bass + detail + soundstage + neutral); his hearing test is Excellent/Good across the band so detail is audible. Bass is table-stakes (EQ-able)." },
-    { "id": "wireless", "label": "Wireless stack (codecs + multipoint)", "type": "functional", "direction": "more-better", "weight": 0.129, "range": { "min": 0, "max": 10 }, "rationale": "He's 95% wireless → the codec IS his sound path. Rewards hi-res on Android (LDAC / aptX Adaptive-Lossless) + RELIABLE multipoint for phone↔PC; owner-reported multipoint bugs penalised." },
-    { "id": "comfort", "label": "Comfort — cool & long-wear", "type": "experiential", "direction": "more-better", "weight": 0.097, "range": { "min": 0, "max": 10 }, "rationale": "XM4 already comfy; his gap is HEAT. Rewards cool/breathable pads, low clamp and low weight over many-hour sessions." },
-    { "id": "calls", "label": "Call & mic quality", "type": "functional", "direction": "more-better", "weight": 0.097, "range": { "min": 0, "max": 10 }, "rationale": "His unprompted XM4 complaint: thin voice to the far end AND the mic transmits room noise. Scores outbound voice clarity + mic-side background-noise rejection." },
-    { "id": "transparency", "label": "Transparency / ambient", "type": "experiential", "direction": "more-better", "weight": 0.065, "range": { "min": 0, "max": 10 }, "rationale": "Naturalness of pass-through. Lower weight — mostly home." },
-    { "id": "wired", "label": "Wired / USB-DAC hi-res", "type": "functional", "direction": "more-better", "weight": 0.048, "range": { "min": 0, "max": 10 }, "rationale": "Nice-to-have (USB-DAC > analog-while-ANC-on > none). Demoted — he's 95% wireless." },
-    { "id": "battery", "label": "Battery life", "type": "functional", "direction": "more-better", "weight": 0.048, "range": { "min": 0, "max": 10 }, "rationale": "Sedentary/near-a-charger and all clear 24h+ ANC-on → lowest leverage." },
-    { "id": "antineed", "label": "Anti-needs / friction", "type": "anti-need", "direction": "unwanted", "weight": 0.048, "range": { "min": -5, "max": 5 }, "rationale": "Signed. 0 = neutral. Negative only for real harm: forced account/app-dependence, firmware-nag that removes features, over-touchy controls, privacy. He tolerates an app for EQ; physical buttons are neutral-good." }
+    {
+      "id": "anc",
+      "label": "Noise cancelling (deep + low-pressure)",
+      "type": "functional",
+      "direction": "more-better",
+      "weight": 0.161,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
+      "rationale": "His forced-choice #1 ('dead silence'). Scores cancellation depth AND freedom from the eardrum-pressure/suction he's sensitive to — a set that's quiet but induces pressure is docked."
+    },
+    {
+      "id": "build",
+      "label": "Build, materials & durability",
+      "type": "aesthetic",
+      "direction": "more-better",
+      "weight": 0.161,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
+      "rationale": "His forced-choice #1-tie ('a beautiful, built-to-last object'). Metal/leather > plastic; fit-finish; hinge/pad longevity + repairability."
+    },
+    {
+      "id": "sound",
+      "label": "Sound quality (detail · stage · balance)",
+      "type": "functional",
+      "direction": "more-better",
+      "weight": 0.145,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
+      "rationale": "Wants it all (bass + detail + soundstage + neutral); his hearing test is Excellent/Good across the band so detail is audible. Bass is table-stakes (EQ-able)."
+    },
+    {
+      "id": "wireless",
+      "label": "Wireless stack (codecs + multipoint)",
+      "type": "functional",
+      "direction": "more-better",
+      "weight": 0.129,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
+      "rationale": "He's 95% wireless → the codec IS his sound path. Rewards hi-res on Android (LDAC / aptX Adaptive-Lossless) + RELIABLE multipoint for phone↔PC; owner-reported multipoint bugs penalised."
+    },
+    {
+      "id": "comfort",
+      "label": "Comfort — cool & long-wear",
+      "type": "experiential",
+      "direction": "more-better",
+      "weight": 0.097,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
+      "rationale": "XM4 already comfy; his gap is HEAT. Rewards cool/breathable pads, low clamp and low weight over many-hour sessions."
+    },
+    {
+      "id": "calls",
+      "label": "Call & mic quality",
+      "type": "functional",
+      "direction": "more-better",
+      "weight": 0.097,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
+      "rationale": "His unprompted XM4 complaint: thin voice to the far end AND the mic transmits room noise. Scores outbound voice clarity + mic-side background-noise rejection."
+    },
+    {
+      "id": "transparency",
+      "label": "Transparency / ambient",
+      "type": "experiential",
+      "direction": "more-better",
+      "weight": 0.065,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
+      "rationale": "Naturalness of pass-through. Lower weight — mostly home."
+    },
+    {
+      "id": "wired",
+      "label": "Wired / USB-DAC hi-res",
+      "type": "functional",
+      "direction": "more-better",
+      "weight": 0.048,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
+      "rationale": "Nice-to-have (USB-DAC > analog-while-ANC-on > none). Demoted — he's 95% wireless."
+    },
+    {
+      "id": "battery",
+      "label": "Battery life",
+      "type": "functional",
+      "direction": "more-better",
+      "weight": 0.048,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
+      "rationale": "Sedentary/near-a-charger and all clear 24h+ ANC-on → lowest leverage."
+    },
+    {
+      "id": "antineed",
+      "label": "Anti-needs / friction",
+      "type": "anti-need",
+      "direction": "unwanted",
+      "weight": 0.048,
+      "range": {
+        "min": -5,
+        "max": 5
+      },
+      "rationale": "Signed. 0 = neutral. Negative only for real harm: forced account/app-dependence, firmware-nag that removes features, over-touchy controls, privacy. He tolerates an app for EQ; physical buttons are neutral-good."
+    }
   ],
   "products": [
-    { "id": "sony-xm6", "name": "Sony WH-1000XM6", "price": 363,
-      "costs": { "deliveryCost": 0, "installCost": 0, "extrasCost": 0, "consumablesPerYear": 0, "energyPerYear": 0.5, "maintenancePerYear": 6, "expectedLifeYears": 5, "resaleValue": 75 },
-      "links": [{ "label": "Coolblue", "url": "https://www.coolblue.nl/product/962722/sony-wh-1000xm6-zwart.html" }],
+    {
+      "id": "sony-xm6",
+      "name": "Sony WH-1000XM6",
+      "price": 363,
+      "costs": {
+        "deliveryCost": 0,
+        "installCost": 0,
+        "extrasCost": 0,
+        "consumablesPerYear": 0,
+        "energyPerYear": 0.5,
+        "maintenancePerYear": 6,
+        "expectedLifeYears": 5,
+        "resaleValue": 75
+      },
+      "links": [
+        {
+          "label": "Coolblue",
+          "url": "https://www.coolblue.nl/product/962722/sony-wh-1000xm6-zwart.html"
+        }
+      ],
       "note": "€363 Coolblue (30-day returns, free delivery); dips to ~€230 on sale — set a price alert. Rating 8.6/10 (n=64). The ★ value knee — but plastic, so it doesn't meet the 'beautiful object' wish (see the Collexion/Px8 S2 buy-ups).",
       "scores": {
-        "anc": { "value": 9, "why": "lab: Rtings -28.4dB overall (best measured), QN3 chip / 12 mics; class-leader, Sony low-pressure.", "source": "https://www.rtings.com/headphones/reviews/sony/wh-1000xm6 (2026-07-01)" },
-        "build": { "value": 4, "why": "expert: plastic body (short of his 'beautiful object'); re-added folding + redesigned hinge fixes the XM4/XM5 crack history; pads replaceable.", "source": "https://www.soundguys.com/sony-wh-1000xm6-review-137397/ (2026-07-01)" },
-        "sound": { "value": 7, "why": "lab/cross-check: best-sounding WH-1000X yet, balanced (≈Bose tier); still consumer-tuned, not detailed/wide like the audiophile sets.", "source": "https://www.soundguys.com/sony-wh-1000xm6-review-137397/ (2026-07-01)" },
-        "wireless": { "value": 10, "why": "spec: LDAC (hi-res on Android) + LC3/LE Audio + reliable multipoint; no aptX (LDAC covers Android).", "source": "https://helpguide.sony.net/mdr/2984/ (2026-07-01)" },
-        "comfort": { "value": 6, "why": "expert: 254g, low clamp, but thin pads compress + trap heat; owners note shallow-cup rubbing. Better ventilated than XM5, firmer clamp (~355g).", "source": "https://www.soundguys.com/sony-wh-1000xm6-comfort-problem-152225/ (2026-07-01)" },
-        "calls": { "value": 8, "why": "cross-check: for his THIN-voice pain Sony's fuller/warmer voice is the best fix; XM6 not worse than XM5, good indoor room-noise rejection (aggressive AI only bites outdoors — he's home).", "source": "https://www.soundguys.com/sony-wh-1000xm6-vs-sony-wh-1000xm5-137876/ (2026-07-01)" },
-        "transparency": { "value": 8, "why": "expert: among the most natural ambient modes.", "source": "https://www.soundguys.com/sony-wh-1000xm6-review-137397/ (2026-07-01)" },
-        "wired": { "value": 6, "why": "spec: 3.5mm analog with full DSP when powered; no USB-C digital audio.", "source": "https://helpguide.sony.net/mdr/2984/ (2026-07-01)" },
-        "battery": { "value": 8, "why": "lab: 30h rated, ~37h measured.", "source": "https://www.soundguys.com/sony-wh-1000xm6-review-137397/ (2026-07-01)" },
-        "antineed": { "value": -1, "why": "capacitive touch panel (disableable) + retains physical buttons; SoundGuys flags the app's data collection + account push.", "source": "https://www.soundguys.com/sony-wh-1000xm6-review-137397/ (2026-07-01)" }
+        "anc": {
+          "value": 9,
+          "why": "lab: Rtings -28.4dB overall (best measured), QN3 chip / 12 mics; class-leader, Sony low-pressure.",
+          "source": "https://www.rtings.com/headphones/reviews/sony/wh-1000xm6 (2026-07-01)"
+        },
+        "build": {
+          "value": 3.5,
+          "why": "review-consensus: plastic body; CORRECTION — the XM6 is NOT the fixed-hinge product it was marketed as: SoundGuys/Android Authority document it cracking at the hinge like the XM5 (sometimes within weeks), lower hinge housing still plastic. Pads replaceable. Fails his 'built-to-last' anchor twice (plastic + cracks).",
+          "source": "https://www.soundguys.com/sony-wh-1000xm6-review-137397/ (2026-07-01)"
+        },
+        "sound": {
+          "value": 7,
+          "why": "lab/cross-check: best-sounding WH-1000X yet, balanced (≈Bose tier); still consumer-tuned, not detailed/wide like the audiophile sets.",
+          "source": "https://www.soundguys.com/sony-wh-1000xm6-review-137397/ (2026-07-01)"
+        },
+        "wireless": {
+          "value": 10,
+          "why": "spec: LDAC (hi-res on Android) + LC3/LE Audio + reliable multipoint; no aptX (LDAC covers Android).",
+          "source": "https://helpguide.sony.net/mdr/2984/ (2026-07-01)"
+        },
+        "comfort": {
+          "value": 6,
+          "why": "expert: 254g, low clamp, but thin pads compress + trap heat; owners note shallow-cup rubbing. Better ventilated than XM5, firmer clamp (~355g).",
+          "source": "https://www.soundguys.com/sony-wh-1000xm6-comfort-problem-152225/ (2026-07-01)"
+        },
+        "calls": {
+          "value": 8,
+          "why": "cross-check: for his THIN-voice pain Sony's fuller/warmer voice is the best fix; XM6 not worse than XM5, good indoor room-noise rejection (aggressive AI only bites outdoors — he's home).",
+          "source": "https://www.soundguys.com/sony-wh-1000xm6-vs-sony-wh-1000xm5-137876/ (2026-07-01)"
+        },
+        "transparency": {
+          "value": 8,
+          "why": "expert: among the most natural ambient modes.",
+          "source": "https://www.soundguys.com/sony-wh-1000xm6-review-137397/ (2026-07-01)"
+        },
+        "wired": {
+          "value": 6,
+          "why": "spec: 3.5mm analog with full DSP when powered; no USB-C digital audio.",
+          "source": "https://helpguide.sony.net/mdr/2984/ (2026-07-01)"
+        },
+        "battery": {
+          "value": 8,
+          "why": "lab: 30h rated, ~37h measured.",
+          "source": "https://www.soundguys.com/sony-wh-1000xm6-review-137397/ (2026-07-01)"
+        },
+        "antineed": {
+          "value": -1,
+          "why": "capacitive touch panel (disableable) + retains physical buttons; SoundGuys flags the app's data collection + account push.",
+          "source": "https://www.soundguys.com/sony-wh-1000xm6-review-137397/ (2026-07-01)"
+        }
       }
     },
-    { "id": "sony-collexion", "name": "Sony 1000X The Collexion", "price": 629,
-      "costs": { "deliveryCost": 0, "installCost": 0, "extrasCost": 0, "consumablesPerYear": 0, "energyPerYear": 0.5, "maintenancePerYear": 6, "expectedLifeYears": 6, "resaleValue": 150 },
-      "links": [{ "label": "Coolblue", "url": "https://www.coolblue.nl/product/979732/sony-1000x-the-collexion-zwart.html" }],
+    {
+      "id": "sony-collexion",
+      "name": "Sony 1000X The Collexion",
+      "price": 629,
+      "costs": {
+        "deliveryCost": 0,
+        "installCost": 0,
+        "extrasCost": 0,
+        "consumablesPerYear": 0,
+        "energyPerYear": 0.5,
+        "maintenancePerYear": 6,
+        "expectedLifeYears": 6,
+        "resaleValue": 150
+      },
+      "links": [
+        {
+          "label": "Coolblue",
+          "url": "https://www.coolblue.nl/product/979732/sony-1000x-the-collexion-zwart.html"
+        }
+      ],
       "note": "€629 Coolblue (30-day returns). Brand new (n=1). 10th-anniversary premium Sony: XM6 brains (QN3, 12-mic) in a METAL + leather body with a single-piece stem that removes the XM5/XM6 hinge weak point. THE buy-up that keeps everything you like about the XM6 and adds the object.",
       "scores": {
-        "anc": { "value": 8, "why": "expert: same QN3 platform as XM6 but softer leather seal → ~86% loudness, 'just behind top'; beats Focal/Px8 S2. Low pressure (reduced clamp, thicker headband).", "source": "https://www.soundguys.com/sony-1000x-the-collexion-review-157096/ (2026-07-01)" },
-        "build": { "value": 8, "why": "expert: metal band + stainless swivel joint + vegan leather; single-piece stem removes the hinge failure point; pads replaceable, not foldable. Caveat: faux leather smudges over time (short of cast-Nappa Px8 tier).", "source": "https://www.trustedreviews.com/reviews/sony-1000x-the-collexion (2026-07-01)" },
-        "sound": { "value": 7.5, "why": "expert (unsettled): most say detailed/wider than XM6 with bass tempered and clearer vocals — modestly above XM6; Engadget dissents ('booming bass'). New 30mm carbon driver.", "source": "https://www.gsmarena.com/sony_1000x_the_collexion_review_-news-73152.php (2026-07-01)" },
-        "wireless": { "value": 9, "why": "spec: LDAC + LC3 + BT 6.0 + multipoint + Auracast/LE Audio; no aptX. LDAC covers his Android.", "source": "https://www.soundguys.com/sony-1000x-the-collexion-review-157096/ (2026-07-01)" },
-        "comfort": { "value": 7, "why": "expert: 'most comfortable over-ear Sony' — bigger/deeper cups (fixes XM6 shallow-cup rubbing), 40% thicker headband, lower clamp, low pressure. Caveat: 320g + leather pads may run warm (heat not directly tested).", "source": "https://www.trustedreviews.com/reviews/sony-1000x-the-collexion (2026-07-01)" },
-        "calls": { "value": 7.5, "why": "expert: same 12-mic array as XM6, but reviewers single out its room-noise REJECTION ('didn't pick up any background or wind noise') — his exact pain; voice good, gate can occasionally clip.", "source": "https://www.trustedreviews.com/reviews/sony-1000x-the-collexion (2026-07-01)" },
-        "transparency": { "value": 8, "why": "expert: Sony ambient platform, natural.", "source": "https://www.soundguys.com/sony-1000x-the-collexion-review-157096/ (2026-07-01)" },
-        "wired": { "value": 5, "why": "spec: analog-only via detachable 3.5mm; USB-C is charge-only AND the DSP/EQ/ANC don't work while wired (worse than XM6 here).", "source": "https://www.soundguys.com/sony-1000x-the-collexion-review-157096/ (2026-07-01)" },
-        "battery": { "value": 7, "why": "lab: 24h rated ANC-on, ~26h measured (down from XM6's 30h).", "source": "https://www.soundguys.com/sony-1000x-the-collexion-review-157096/ (2026-07-01)" },
-        "antineed": { "value": -1, "why": "Sony Sound Connect app (cluttered) + capacitive touch + physical buttons; privacy/data specifics unreported. One reviewer's unit had an ANC failure (single anecdote).", "source": "https://www.soundguys.com/sony-1000x-the-collexion-review-157096/ (2026-07-01)" }
+        "anc": {
+          "value": 8,
+          "why": "expert: same QN3 platform as XM6 but softer leather seal → ~86% loudness, 'just behind top'; beats Focal/Px8 S2. Low pressure (reduced clamp, thicker headband).",
+          "source": "https://www.soundguys.com/sony-1000x-the-collexion-review-157096/ (2026-07-01)"
+        },
+        "build": {
+          "value": 8,
+          "why": "expert: metal band + stainless swivel joint + vegan leather; single-piece stem removes the hinge failure point; pads replaceable, not foldable. Caveat: faux leather smudges over time (short of cast-Nappa Px8 tier).",
+          "source": "https://www.trustedreviews.com/reviews/sony-1000x-the-collexion (2026-07-01)"
+        },
+        "sound": {
+          "value": 7.5,
+          "why": "expert (unsettled): most say detailed/wider than XM6 with bass tempered and clearer vocals — modestly above XM6; Engadget dissents ('booming bass'). New 30mm carbon driver.",
+          "source": "https://www.gsmarena.com/sony_1000x_the_collexion_review_-news-73152.php (2026-07-01)"
+        },
+        "wireless": {
+          "value": 9,
+          "why": "spec: LDAC + LC3 + BT 6.0 + multipoint + Auracast/LE Audio; no aptX. LDAC covers his Android.",
+          "source": "https://www.soundguys.com/sony-1000x-the-collexion-review-157096/ (2026-07-01)"
+        },
+        "comfort": {
+          "value": 7,
+          "why": "expert: 'most comfortable over-ear Sony' — bigger/deeper cups (fixes XM6 shallow-cup rubbing), 40% thicker headband, lower clamp, low pressure. Caveat: 320g + leather pads may run warm (heat not directly tested).",
+          "source": "https://www.trustedreviews.com/reviews/sony-1000x-the-collexion (2026-07-01)"
+        },
+        "calls": {
+          "value": 7.5,
+          "why": "expert: same 12-mic array as XM6, but reviewers single out its room-noise REJECTION ('didn't pick up any background or wind noise') — his exact pain; voice good, gate can occasionally clip.",
+          "source": "https://www.trustedreviews.com/reviews/sony-1000x-the-collexion (2026-07-01)"
+        },
+        "transparency": {
+          "value": 8,
+          "why": "expert: Sony ambient platform, natural.",
+          "source": "https://www.soundguys.com/sony-1000x-the-collexion-review-157096/ (2026-07-01)"
+        },
+        "wired": {
+          "value": 5.5,
+          "why": "correction: like the XM6 it's 3.5mm analog-only (no USB-C DAC) BUT ANC/DSP/hi-res DO work over the wire when powered; only lacks the XM6's passive-when-off fallback.",
+          "source": "https://www.soundguys.com/sony-1000x-the-collexion-review-157096/ (2026-07-01)"
+        },
+        "battery": {
+          "value": 6.5,
+          "why": "lab: 24h rated ANC-on, 26h measured — a full band below the XM6 (30h/37h) despite the identical QN3 chip; runtime is its one clear regression.",
+          "source": "https://www.soundguys.com/sony-1000x-the-collexion-review-157096/ (2026-07-01)"
+        },
+        "antineed": {
+          "value": -1,
+          "why": "Sony Sound Connect app (cluttered) + capacitive touch + physical buttons; privacy/data specifics unreported. One reviewer's unit had an ANC failure (single anecdote).",
+          "source": "https://www.soundguys.com/sony-1000x-the-collexion-review-157096/ (2026-07-01)"
+        }
       }
     },
-    { "id": "sony-xm5", "name": "Sony WH-1000XM5", "price": 261,
-      "costs": { "deliveryCost": 0, "installCost": 0, "extrasCost": 0, "consumablesPerYear": 0, "energyPerYear": 0.5, "maintenancePerYear": 6, "expectedLifeYears": 4, "resaleValue": 45 },
-      "links": [{ "label": "Coolblue", "url": "https://www.coolblue.nl/product/905648/sony-wh-1000xm5-zwart.html" }],
+    {
+      "id": "sony-xm5",
+      "name": "Sony WH-1000XM5",
+      "price": 261,
+      "costs": {
+        "deliveryCost": 0,
+        "installCost": 0,
+        "extrasCost": 0,
+        "consumablesPerYear": 0,
+        "energyPerYear": 0.5,
+        "maintenancePerYear": 6,
+        "expectedLifeYears": 4,
+        "resaleValue": 45
+      },
+      "links": [
+        {
+          "label": "Coolblue",
+          "url": "https://www.coolblue.nl/product/905648/sony-wh-1000xm5-zwart.html"
+        }
+      ],
       "note": "€261 Coolblue (30-day returns). Rating 8.8/10 (n=394). Cheapest frontier point — the budget mic-fix. Note the hinge-crack risk + it does NOT fold.",
       "scores": {
-        "anc": { "value": 8, "why": "lab: ~-25.8dB, a step below the 2025 flagships but excellent; Sony low-pressure.", "source": "https://www.soundguys.com/sony-wh-1000xm5-review-71783/ (2026-07-01)" },
-        "build": { "value": 3, "why": "owner/expert: mostly plastic AND does NOT fold; documented hinge/headband cracking — SoundGuys owner poll ~47% reported a failure, US class-action filed. The durability red flag.", "source": "https://www.soundguys.com/sony-hinge-failure-poll-133002/ (2026-07-01)" },
-        "sound": { "value": 5.5, "why": "lab: bassy/warm, recessed mids, treble rolls off >10kHz; MDAQS 4.2. Weakest stock tuning here.", "source": "https://www.soundguys.com/sony-wh-1000xm5-review-71783/ (2026-07-01)" },
-        "wireless": { "value": 9, "why": "spec: LDAC (hi-res on Android) + multipoint (simultaneous after firmware); no aptX.", "source": "https://helpguide.sony.net/mdr/wh1000xm5/ (2026-07-01)" },
-        "comfort": { "value": 6, "why": "lab/owner: 251g, low clamp (~297g), but leatherette pads get sweaty in ~20-40 min.", "source": "https://www.soundguys.com/sony-wh-1000xm5-review-71783/ (2026-07-01)" },
-        "calls": { "value": 8, "why": "cross-check: co-best-for-his-pain with the XM6 — full/warm voice + clean voice/background separation (the direct antidote to thin voice).", "source": "https://www.soundguys.com/bose-quietcomfort-ultra-headphones-vs-sony-wh-1000xm5-104454/ (2026-07-01)" },
-        "transparency": { "value": 7, "why": "expert: good natural ambient.", "source": "https://www.soundguys.com/sony-wh-1000xm5-review-71783/ (2026-07-01)" },
-        "wired": { "value": 6, "why": "spec: 3.5mm analog with DSP when powered; USB-C charge-only.", "source": "https://helpguide.sony.net/mdr/wh1000xm5/ (2026-07-01)" },
-        "battery": { "value": 8, "why": "lab: 30h rated, ~31.5h measured.", "source": "https://www.soundguys.com/sony-wh-1000xm5-review-71783/ (2026-07-01)" },
-        "antineed": { "value": -1, "why": "capacitive touch (misfires in rain/cold/gloves) + app pushed; SoundGuys flags extensive data collection.", "source": "https://www.soundguys.com/sony-wh-1000xm5-review-71783/ (2026-07-01)" }
+        "anc": {
+          "value": 8,
+          "why": "lab: ~-25.8dB, a step below the 2025 flagships but excellent; Sony low-pressure.",
+          "source": "https://www.soundguys.com/sony-wh-1000xm5-review-71783/ (2026-07-01)"
+        },
+        "build": {
+          "value": 3,
+          "why": "owner/expert: mostly plastic AND does NOT fold; documented hinge/headband cracking — SoundGuys owner poll ~47% reported a failure, US class-action filed. The durability red flag.",
+          "source": "https://www.soundguys.com/sony-hinge-failure-poll-133002/ (2026-07-01)"
+        },
+        "sound": {
+          "value": 5.5,
+          "why": "lab: bassy/warm, recessed mids, treble rolls off >10kHz; MDAQS 4.2. Weakest stock tuning here.",
+          "source": "https://www.soundguys.com/sony-wh-1000xm5-review-71783/ (2026-07-01)"
+        },
+        "wireless": {
+          "value": 9,
+          "why": "spec: LDAC (hi-res on Android) + multipoint (simultaneous after firmware); no aptX.",
+          "source": "https://helpguide.sony.net/mdr/wh1000xm5/ (2026-07-01)"
+        },
+        "comfort": {
+          "value": 6,
+          "why": "lab/owner: 251g, low clamp (~297g), but leatherette pads get sweaty in ~20-40 min.",
+          "source": "https://www.soundguys.com/sony-wh-1000xm5-review-71783/ (2026-07-01)"
+        },
+        "calls": {
+          "value": 7.5,
+          "why": "cross-check: excellent room-noise rejection + clear voice, but What Hi-Fi rates the XM6 'even clearer' on calls — nudged to 7.5 to keep the XM6 > XM5 order.",
+          "source": "https://www.soundguys.com/bose-quietcomfort-ultra-headphones-vs-sony-wh-1000xm5-104454/ (2026-07-01)"
+        },
+        "transparency": {
+          "value": 7,
+          "why": "expert: good natural ambient.",
+          "source": "https://www.soundguys.com/sony-wh-1000xm5-review-71783/ (2026-07-01)"
+        },
+        "wired": {
+          "value": 6,
+          "why": "spec: 3.5mm analog with DSP when powered; USB-C charge-only.",
+          "source": "https://helpguide.sony.net/mdr/wh1000xm5/ (2026-07-01)"
+        },
+        "battery": {
+          "value": 8,
+          "why": "lab: 30h rated, ~31.5h measured.",
+          "source": "https://www.soundguys.com/sony-wh-1000xm5-review-71783/ (2026-07-01)"
+        },
+        "antineed": {
+          "value": -1,
+          "why": "capacitive touch (misfires in rain/cold/gloves) + app pushed; SoundGuys flags extensive data collection.",
+          "source": "https://www.soundguys.com/sony-wh-1000xm5-review-71783/ (2026-07-01)"
+        }
       }
     },
-    { "id": "bw-px7-s3", "name": "Bowers & Wilkins Px7 S3", "price": 329,
-      "costs": { "deliveryCost": 0, "installCost": 0, "extrasCost": 0, "consumablesPerYear": 0, "energyPerYear": 0.5, "maintenancePerYear": 6, "expectedLifeYears": 5, "resaleValue": 75 },
-      "links": [{ "label": "Coolblue", "url": "https://www.coolblue.nl/product/963644/bowers-wilkins-px7-s3-zwart.html" }],
+    {
+      "id": "bw-px7-s3",
+      "name": "Bowers & Wilkins Px7 S3",
+      "price": 329,
+      "costs": {
+        "deliveryCost": 0,
+        "installCost": 0,
+        "extrasCost": 0,
+        "consumablesPerYear": 0,
+        "energyPerYear": 0.5,
+        "maintenancePerYear": 6,
+        "expectedLifeYears": 5,
+        "resaleValue": 75
+      },
+      "links": [
+        {
+          "label": "Coolblue",
+          "url": "https://www.coolblue.nl/product/963644/bowers-wilkins-px7-s3-zwart.html"
+        }
+      ],
       "note": "€329 Coolblue (30-day returns). Rating 9.6/10 (n=19). Great value on paper — but the cross-check found a hidden double-penalty FOR YOU: an ANC 'pressurisation' sensation + the 3rd-tightest measured clamp (442g), the two things a pressure-sensitive marathon listener feels most.",
       "scores": {
-        "anc": { "value": 7, "why": "lab: ~83% loudness ('ANC heavyweight', near-leader) BUT owners/reviewers report a 'pressurised' feeling when ANC is ON — docked for his pressure-sensitivity.", "source": "https://www.avforums.com/threads/discussion-of-our-review-of-bowers-wilkins-px7-s3-headphone.2528959/ (2026-07-01)" },
-        "build": { "value": 6, "why": "spec: composite body (least premium B&W), replaceable earpads + headband pad, fold-flat. No metal.", "source": "https://www.soundguys.com/bowers-and-wilkins-px7-s3-review-an-unexpected-anc-heavyweight-142231/ (2026-07-01)" },
-        "sound": { "value": 8, "why": "lab: MDAQS 4.3, immersive/musical, better technical detail than the XM6 (close); 'not for neutral listeners', highs can grate.", "source": "https://www.soundguys.com/bowers-and-wilkins-px7-s3-vs-sony-wh-1000xm6-can-an-underdog-get-an-upset-win-143755/ (2026-07-01)" },
-        "wireless": { "value": 8, "why": "spec: aptX Adaptive/Lossless (hi-res on Android), multipoint 2-device; no LDAC. Owner: NC briefly drops on source switch.", "source": "https://tweakers.net/pricewatch/2200698/bowers-en-wilkins-px7-s3-zwart.html (2026-07-01)" },
-        "comfort": { "value": 6, "why": "cross-check: light (300g) with roomy cups, BUT a calibrated rig measured it 3rd-tightest clamp (442g) and it carries the ANC-pressure sensation — 'feels' forgiving but isn't for a pressure-sensitive user.", "source": "https://www.loudnwireless.com/blog/sony-wh-1000xm6-the-most-uncomfortable-headphones-vs-px7-s3-xm5-qc-ultra-airpods-max (2026-07-01)" },
-        "calls": { "value": 6, "why": "expert: ADI Pure Voice, best-of-B&W-trio, serviceable not headset-tier.", "source": "https://www.soundguys.com/bowers-and-wilkins-px7-s3-review-an-unexpected-anc-heavyweight-142231/ (2026-07-01)" },
-        "transparency": { "value": 6, "why": "expert: usable pass-through.", "source": "https://www.soundguys.com/bowers-and-wilkins-px7-s3-review-an-unexpected-anc-heavyweight-142231/ (2026-07-01)" },
-        "wired": { "value": 10, "why": "spec: USB-C onboard DAC (24-bit) + 3.5mm adapter; ANC works wired.", "source": "https://www.soundguys.com/bowers-and-wilkins-px7-s3-review-an-unexpected-anc-heavyweight-142231/ (2026-07-01)" },
-        "battery": { "value": 8, "why": "spec: 30h ANC-on; 15-min = 7h.", "source": "https://www.soundguys.com/bowers-and-wilkins-px7-s3-review-an-unexpected-anc-heavyweight-142231/ (2026-07-01)" },
-        "antineed": { "value": 0, "why": "physical buttons (no accidental-touch); app optional (5-band EQ). Minor: wear-detection over-sensitive.", "source": "https://www.soundguys.com/bowers-and-wilkins-px7-s3-review-an-unexpected-anc-heavyweight-142231/ (2026-07-01)" }
+        "anc": {
+          "value": 7,
+          "why": "lab: ~83% loudness ('ANC heavyweight', near-leader) BUT owners/reviewers report a 'pressurised' feeling when ANC is ON — docked for his pressure-sensitivity.",
+          "source": "https://www.avforums.com/threads/discussion-of-our-review-of-bowers-wilkins-px7-s3-headphone.2528959/ (2026-07-01)"
+        },
+        "build": {
+          "value": 6,
+          "why": "spec: composite body (least premium B&W), replaceable earpads + headband pad, fold-flat. No metal.",
+          "source": "https://www.soundguys.com/bowers-and-wilkins-px7-s3-review-an-unexpected-anc-heavyweight-142231/ (2026-07-01)"
+        },
+        "sound": {
+          "value": 8,
+          "why": "lab: MDAQS 4.3, immersive/musical, better technical detail than the XM6 (close); 'not for neutral listeners', highs can grate.",
+          "source": "https://www.soundguys.com/bowers-and-wilkins-px7-s3-vs-sony-wh-1000xm6-can-an-underdog-get-an-upset-win-143755/ (2026-07-01)"
+        },
+        "wireless": {
+          "value": 8,
+          "why": "spec: aptX Adaptive/Lossless (hi-res on Android), multipoint 2-device; no LDAC. Owner: NC briefly drops on source switch.",
+          "source": "https://tweakers.net/pricewatch/2200698/bowers-en-wilkins-px7-s3-zwart.html (2026-07-01)"
+        },
+        "comfort": {
+          "value": 6,
+          "why": "cross-check: light (300g) with roomy cups, BUT a calibrated rig measured it 3rd-tightest clamp (442g) and it carries the ANC-pressure sensation — 'feels' forgiving but isn't for a pressure-sensitive user.",
+          "source": "https://www.loudnwireless.com/blog/sony-wh-1000xm6-the-most-uncomfortable-headphones-vs-px7-s3-xm5-qc-ultra-airpods-max (2026-07-01)"
+        },
+        "calls": {
+          "value": 6,
+          "why": "expert: ADI Pure Voice, best-of-B&W-trio, serviceable not headset-tier.",
+          "source": "https://www.soundguys.com/bowers-and-wilkins-px7-s3-review-an-unexpected-anc-heavyweight-142231/ (2026-07-01)"
+        },
+        "transparency": {
+          "value": 6,
+          "why": "expert: usable pass-through.",
+          "source": "https://www.soundguys.com/bowers-and-wilkins-px7-s3-review-an-unexpected-anc-heavyweight-142231/ (2026-07-01)"
+        },
+        "wired": {
+          "value": 10,
+          "why": "spec: USB-C onboard DAC (24-bit) + 3.5mm adapter; ANC works wired.",
+          "source": "https://www.soundguys.com/bowers-and-wilkins-px7-s3-review-an-unexpected-anc-heavyweight-142231/ (2026-07-01)"
+        },
+        "battery": {
+          "value": 8,
+          "why": "spec: 30h ANC-on; 15-min = 7h.",
+          "source": "https://www.soundguys.com/bowers-and-wilkins-px7-s3-review-an-unexpected-anc-heavyweight-142231/ (2026-07-01)"
+        },
+        "antineed": {
+          "value": 0,
+          "why": "physical buttons (no accidental-touch); app optional (5-band EQ). Minor: wear-detection over-sensitive.",
+          "source": "https://www.soundguys.com/bowers-and-wilkins-px7-s3-review-an-unexpected-anc-heavyweight-142231/ (2026-07-01)"
+        }
       }
     },
-    { "id": "senn-momentum5", "name": "Sennheiser Momentum 5 Wireless", "price": 418,
-      "costs": { "deliveryCost": 0, "installCost": 0, "extrasCost": 0, "consumablesPerYear": 0, "energyPerYear": 0.5, "maintenancePerYear": 6, "expectedLifeYears": 7, "resaleValue": 90 },
-      "links": [{ "label": "Coolblue", "url": "https://www.coolblue.nl/product/980828/sennheiser-momentum-5-black.html" }],
+    {
+      "id": "senn-momentum5",
+      "name": "Sennheiser Momentum 5 Wireless",
+      "price": 418,
+      "costs": {
+        "deliveryCost": 0,
+        "installCost": 0,
+        "extrasCost": 0,
+        "consumablesPerYear": 0,
+        "energyPerYear": 0.5,
+        "maintenancePerYear": 6,
+        "expectedLifeYears": 7,
+        "resaleValue": 90
+      },
+      "links": [
+        {
+          "label": "Coolblue",
+          "url": "https://www.coolblue.nl/product/980828/sennheiser-momentum-5-black.html"
+        }
+      ],
       "note": "€418 Coolblue (30-day returns). Frontier point just above the XM6 — the sound+comfort+battery step. Sleeper comfort pick (light clamp, doesn't sweat) and a USER-REPLACEABLE battery (longest realistic life here). Mic gains are maker-claimed, not lab-verified.",
       "scores": {
-        "anc": { "value": 8, "why": "lab-backed: ~86% attenuation, improved over M4; low-ish pressure.", "source": "https://www.soundguys.com/sennheiser-momentum-5-vs-momentum-4-wireless-158155/ (2026-07-01)" },
-        "build": { "value": 6, "why": "spec: mostly plastic + leatherette, folds flat; adds USER-REPLACEABLE battery (screwdriver) + replaceable pads → best real-world longevity.", "source": "https://www.soundguys.com/sennheiser-momentum-5-vs-momentum-4-wireless-158155/ (2026-07-01)" },
-        "sound": { "value": 8, "why": "lab: warm-neutral, detailed, above-average soundstage (Sennheiser 'detailed' rep); some treble roll-off past 10kHz.", "source": "https://www.soundguys.com/sennheiser-momentum-4-wireless-review-2-86111/ (2026-07-01)" },
-        "wireless": { "value": 8, "why": "spec: aptX Adaptive + aptX Lossless (Snapdragon), BT 5.4, multipoint; no LDAC.", "source": "https://www.soundguys.com/sennheiser-momentum-5-vs-momentum-4-wireless-158155/ (2026-07-01)" },
-        "comfort": { "value": 8, "why": "cross-check: sleeper comfort pick — ~293g, light clamp, wide headband, and (unusually) doesn't sweat.", "source": "https://www.rtings.com/headphones/reviews/sennheiser/momentum-4-wireless (2026-07-01)" },
-        "calls": { "value": 5, "why": "SPEC-ONLY (flag): M4 mic was poor at room-noise rejection; M5 adds an 8-mic array targeting this, not yet lab-verified.", "source": "https://www.soundguys.com/sennheiser-momentum-5-vs-momentum-4-wireless-158155/ (2026-07-01)" },
-        "transparency": { "value": 6, "why": "expert: usable ambient.", "source": "https://www.soundguys.com/sennheiser-momentum-5-vs-momentum-4-wireless-158155/ (2026-07-01)" },
-        "wired": { "value": 10, "why": "spec: USB-C hi-res DAC (24-bit) with ANC+EQ + analog cable that works fully PASSIVE (no battery).", "source": "https://www.iwantek.com/blogs/news/our-in-depth-review-sennheiser-momentum-4-wireless-headphones (2026-07-01)" },
-        "battery": { "value": 10, "why": "lab: ~60h rated ANC-on (M4 measured 56h — class-leading).", "source": "https://www.soundguys.com/sennheiser-momentum-4-wireless-review-2-86111/ (2026-07-01)" },
-        "antineed": { "value": -1, "why": "capacitive touch swipe pad (accidental-touch risk) + 1 physical button; app optional, account optional.", "source": "https://www.soundguys.com/sennheiser-momentum-5-vs-momentum-4-wireless-158155/ (2026-07-01)" }
+        "anc": {
+          "value": 8,
+          "why": "lab-backed: ~86% attenuation, improved over M4; low-ish pressure.",
+          "source": "https://www.soundguys.com/sennheiser-momentum-5-vs-momentum-4-wireless-158155/ (2026-07-01)"
+        },
+        "build": {
+          "value": 6,
+          "why": "spec: mostly plastic + leatherette, folds flat; adds USER-REPLACEABLE battery (screwdriver) + replaceable pads → best real-world longevity.",
+          "source": "https://www.soundguys.com/sennheiser-momentum-5-vs-momentum-4-wireless-158155/ (2026-07-01)"
+        },
+        "sound": {
+          "value": 8,
+          "why": "lab: warm-neutral, detailed, above-average soundstage (Sennheiser 'detailed' rep); some treble roll-off past 10kHz.",
+          "source": "https://www.soundguys.com/sennheiser-momentum-4-wireless-review-2-86111/ (2026-07-01)"
+        },
+        "wireless": {
+          "value": 8,
+          "why": "spec: aptX Adaptive + aptX Lossless (Snapdragon), BT 5.4, multipoint; no LDAC.",
+          "source": "https://www.soundguys.com/sennheiser-momentum-5-vs-momentum-4-wireless-158155/ (2026-07-01)"
+        },
+        "comfort": {
+          "value": 8,
+          "why": "cross-check: sleeper comfort pick — ~293g, light clamp, wide headband, and (unusually) doesn't sweat.",
+          "source": "https://www.rtings.com/headphones/reviews/sennheiser/momentum-4-wireless (2026-07-01)"
+        },
+        "calls": {
+          "value": 7,
+          "why": "review-VERIFIED (was spec-only): the M5's new 8-mic array is confirmed strong — reviewers call calls 'top-notch' with good background rejection. Directly addresses his XM4 mic pain.",
+          "source": "https://www.soundguys.com/sennheiser-momentum-5-vs-momentum-4-wireless-158155/ (2026-07-01)"
+        },
+        "transparency": {
+          "value": 6,
+          "why": "expert: usable ambient.",
+          "source": "https://www.soundguys.com/sennheiser-momentum-5-vs-momentum-4-wireless-158155/ (2026-07-01)"
+        },
+        "wired": {
+          "value": 10,
+          "why": "spec: USB-C hi-res DAC (24-bit) with ANC+EQ + analog cable that works fully PASSIVE (no battery).",
+          "source": "https://www.iwantek.com/blogs/news/our-in-depth-review-sennheiser-momentum-4-wireless-headphones (2026-07-01)"
+        },
+        "battery": {
+          "value": 10,
+          "why": "lab: ~60h rated ANC-on (M4 measured 56h — class-leading).",
+          "source": "https://www.soundguys.com/sennheiser-momentum-4-wireless-review-2-86111/ (2026-07-01)"
+        },
+        "antineed": {
+          "value": -1,
+          "why": "capacitive touch swipe pad (accidental-touch risk) + 1 physical button; app optional, account optional.",
+          "source": "https://www.soundguys.com/sennheiser-momentum-5-vs-momentum-4-wireless-158155/ (2026-07-01)"
+        }
       }
     },
-    { "id": "senn-hdb630", "name": "Sennheiser HDB 630", "price": 499,
-      "costs": { "deliveryCost": 0, "installCost": 0, "extrasCost": 0, "consumablesPerYear": 0, "energyPerYear": 0.5, "maintenancePerYear": 6, "expectedLifeYears": 6, "resaleValue": 110 },
-      "links": [{ "label": "Coolblue", "url": "https://www.coolblue.nl/product/981606/sennheiser-hdb-630.html" }],
+    {
+      "id": "senn-hdb630",
+      "name": "Sennheiser HDB 630",
+      "price": 499,
+      "costs": {
+        "deliveryCost": 0,
+        "installCost": 0,
+        "extrasCost": 0,
+        "consumablesPerYear": 0,
+        "energyPerYear": 0.5,
+        "maintenancePerYear": 6,
+        "expectedLifeYears": 6,
+        "resaleValue": 110
+      },
+      "links": [
+        {
+          "label": "Coolblue",
+          "url": "https://www.coolblue.nl/product/981606/sennheiser-hdb-630.html"
+        }
+      ],
       "note": "€499 Coolblue (30-day returns). New (Oct 2025). Best-SOUNDING wireless ANC of the year + a bundled BTD 700 USB-C dongle for hi-res to your PC + parametric EQ. Dominated for you because its ANC/mic/build don't clear the cheaper XM6/Px7 S3 on your top weights.",
       "scores": {
-        "anc": { "value": 6.5, "why": "expert: good but a notch under Sony/Bose ('audiophile ANC, at a cost').", "source": "https://www.soundguys.com/sennheiser-hdb-630-review-audiophile-anc-at-a-cost-146569/ (2026-07-01)" },
-        "build": { "value": 6, "why": "expert: serious but not metal-luxury; replaceable pads.", "source": "https://www.whathifi.com/headphones/sennheiser-hdb-630 (2026-07-01)" },
-        "sound": { "value": 9, "why": "expert: 'set a new standard of wireless sound at this level' — top-tier, with onboard parametric EQ.", "source": "https://www.whathifi.com/headphones/sennheiser-hdb-630 (2026-07-01)" },
-        "wireless": { "value": 8, "why": "spec: aptX Adaptive/HD + bundled USB-C dongle (hi-res to PC) + reliable multipoint; no LDAC (aptX Adaptive covers Android).", "source": "https://www.whathifi.com/headphones/sennheiser-hdb-630 (2026-07-01)" },
-        "comfort": { "value": 7, "why": "expert: comfortable; plush pads may run a little warm.", "source": "https://www.soundguys.com/sennheiser-hdb-630-review-audiophile-anc-at-a-cost-146569/ (2026-07-01)" },
-        "calls": { "value": 5, "why": "expert: array mic adequate, not a standout for room-noise rejection.", "source": "https://www.soundguys.com/sennheiser-hdb-630-review-audiophile-anc-at-a-cost-146569/ (2026-07-01)" },
-        "transparency": { "value": 6, "why": "expert: usable.", "source": "https://www.soundguys.com/sennheiser-hdb-630-review-audiophile-anc-at-a-cost-146569/ (2026-07-01)" },
-        "wired": { "value": 10, "why": "spec: USB-C DAC + bundled BTD 700 dongle for PC hi-res + analog — strongest wired story.", "source": "https://www.whathifi.com/headphones/sennheiser-hdb-630 (2026-07-01)" },
-        "battery": { "value": 10, "why": "spec: ~60h ANC-on.", "source": "https://www.whathifi.com/headphones/sennheiser-hdb-630 (2026-07-01)" },
-        "antineed": { "value": -1, "why": "Sennheiser Smart Control app (optional for playback) + touch controls.", "source": "https://www.soundguys.com/sennheiser-hdb-630-review-audiophile-anc-at-a-cost-146569/ (2026-07-01)" }
+        "anc": {
+          "value": 6.5,
+          "why": "expert: good but a notch under Sony/Bose ('audiophile ANC, at a cost').",
+          "source": "https://www.soundguys.com/sennheiser-hdb-630-review-audiophile-anc-at-a-cost-146569/ (2026-07-01)"
+        },
+        "build": {
+          "value": 6,
+          "why": "expert: serious but not metal-luxury; replaceable pads.",
+          "source": "https://www.whathifi.com/headphones/sennheiser-hdb-630 (2026-07-01)"
+        },
+        "sound": {
+          "value": 9,
+          "why": "expert: 'set a new standard of wireless sound at this level' — top-tier, with onboard parametric EQ.",
+          "source": "https://www.whathifi.com/headphones/sennheiser-hdb-630 (2026-07-01)"
+        },
+        "wireless": {
+          "value": 8,
+          "why": "spec: aptX Adaptive/HD + bundled USB-C dongle (hi-res to PC) + reliable multipoint; no LDAC (aptX Adaptive covers Android).",
+          "source": "https://www.whathifi.com/headphones/sennheiser-hdb-630 (2026-07-01)"
+        },
+        "comfort": {
+          "value": 7,
+          "why": "expert: comfortable; plush pads may run a little warm.",
+          "source": "https://www.soundguys.com/sennheiser-hdb-630-review-audiophile-anc-at-a-cost-146569/ (2026-07-01)"
+        },
+        "calls": {
+          "value": 7,
+          "why": "review-consensus: mic rated 'excellent/top-notch' — 4 omni beamforming mics/cup with a deeper noise gate than the Momentum.",
+          "source": "https://www.soundguys.com/sennheiser-hdb-630-review-audiophile-anc-at-a-cost-146569/ (2026-07-01)"
+        },
+        "transparency": {
+          "value": 6,
+          "why": "expert: usable.",
+          "source": "https://www.soundguys.com/sennheiser-hdb-630-review-audiophile-anc-at-a-cost-146569/ (2026-07-01)"
+        },
+        "wired": {
+          "value": 10,
+          "why": "spec: USB-C DAC + bundled BTD 700 dongle for PC hi-res + analog — strongest wired story.",
+          "source": "https://www.whathifi.com/headphones/sennheiser-hdb-630 (2026-07-01)"
+        },
+        "battery": {
+          "value": 10,
+          "why": "spec: ~60h ANC-on.",
+          "source": "https://www.whathifi.com/headphones/sennheiser-hdb-630 (2026-07-01)"
+        },
+        "antineed": {
+          "value": -1,
+          "why": "Sennheiser Smart Control app (optional for playback) + touch controls.",
+          "source": "https://www.soundguys.com/sennheiser-hdb-630-review-audiophile-anc-at-a-cost-146569/ (2026-07-01)"
+        }
       }
     },
-    { "id": "dali-io8", "name": "Dali IO-8", "price": 449,
-      "costs": { "deliveryCost": 0, "installCost": 0, "extrasCost": 0, "consumablesPerYear": 0, "energyPerYear": 0.5, "maintenancePerYear": 6, "expectedLifeYears": 6, "resaleValue": 100 },
-      "links": [{ "label": "Tweakers Pricewatch (7 shops)", "url": "https://tweakers.net/pricewatch/2123896/dali-io-8-beige.html" }],
+    {
+      "id": "dali-io8",
+      "name": "Dali IO-8",
+      "price": 449,
+      "costs": {
+        "deliveryCost": 0,
+        "installCost": 0,
+        "extrasCost": 0,
+        "consumablesPerYear": 0,
+        "energyPerYear": 0.5,
+        "maintenancePerYear": 6,
+        "expectedLifeYears": 6,
+        "resaleValue": 100
+      },
+      "links": [
+        {
+          "label": "Tweakers Pricewatch (7 shops)",
+          "url": "https://tweakers.net/pricewatch/2123896/dali-io-8-beige.html"
+        }
+      ],
       "note": "€449 via Tweakers Pricewatch (7 shops). No lab data — expert-ear + owner. The cleanest 'no app, no account, all buttons' option + luxe build; held back by (likely) no multipoint and small pads.",
       "scores": {
-        "anc": { "value": 7.5, "why": "cross-check: expert consensus 'almost as good as the XM5' (XM5-tier); strong low rumble. Low pressure. (No lab dB.)", "source": "https://www.whathifi.com/reviews/dali-io-8 (2026-07-01)" },
-        "build": { "value": 8, "why": "expert: aluminium/metal + textile + genuine leather, luxury feel; folds flat, pads replaceable (~€40). New → durability unproven.", "source": "https://www.dali-speakers.com/en/products/io/dali-io-8/ (2026-07-01)" },
-        "sound": { "value": 8.5, "why": "cross-check: excellent (warm, textured, wide stage) but NOT co-top with Focal — What Hi-Fi rates it 'not quite as detailed' as the Px7 S3; earlier 10 was an IO-12 conflation.", "source": "https://www.whathifi.com/reviews/dali-io-8 (2026-07-01)" },
-        "wireless": { "value": 5, "why": "spec: aptX HD/Adaptive, NO LDAC; multipoint NOT listed (treat as absent) — a real ding for phone↔PC.", "source": "https://www.dali-speakers.com/en/products/io/dali-io-8/ (2026-07-01)" },
-        "comfort": { "value": 5, "why": "expert/owner: 325g, round pads run SMALL (large ears may not fit) + thin headband → top-of-head pressure after ~1h; plush, no heat issue.", "source": "https://www.whathifi.com/reviews/dali-io-8 (2026-07-01)" },
-        "calls": { "value": 5, "why": "cross-check: middle/serviceable ('on the level of the competition'), not worst; wind is its weak point.", "source": "https://www.tomsguide.com/audio/dali-io-8-review (2026-07-01)" },
-        "transparency": { "value": 6, "why": "expert: usable.", "source": "https://www.whathifi.com/reviews/dali-io-8 (2026-07-01)" },
-        "wired": { "value": 10, "why": "spec: USB-DAC (24/96) with ANC active AND a 3.5mm that works fully passive (zero battery).", "source": "https://audio46.com/blogs/headphones/dali-io-8-noise-canceling-headphones-review (2026-07-01)" },
-        "battery": { "value": 8, "why": "spec: 30h ANC-on.", "source": "https://www.dali-speakers.com/en/products/io/dali-io-8/ (2026-07-01)" },
-        "antineed": { "value": 0, "why": "NO app, NO account ('Power-Pair-Play'), all physical buttons — lowest-friction here. Risk: niche brand, thin retail.", "source": "https://www.dali-speakers.com/en/products/io/dali-io-8/ (2026-07-01)" }
+        "anc": {
+          "value": 7.5,
+          "why": "cross-check: expert consensus 'almost as good as the XM5' (XM5-tier); strong low rumble. Low pressure. (No lab dB.)",
+          "source": "https://www.whathifi.com/reviews/dali-io-8 (2026-07-01)"
+        },
+        "build": {
+          "value": 8,
+          "why": "expert: aluminium/metal + textile + genuine leather, luxury feel; folds flat, pads replaceable (~€40). New → durability unproven.",
+          "source": "https://www.dali-speakers.com/en/products/io/dali-io-8/ (2026-07-01)"
+        },
+        "sound": {
+          "value": 8.5,
+          "why": "cross-check: excellent (warm, textured, wide stage) but NOT co-top with Focal — What Hi-Fi rates it 'not quite as detailed' as the Px7 S3; earlier 10 was an IO-12 conflation.",
+          "source": "https://www.whathifi.com/reviews/dali-io-8 (2026-07-01)"
+        },
+        "wireless": {
+          "value": 5,
+          "why": "spec: aptX HD/Adaptive, NO LDAC; multipoint NOT listed (treat as absent) — a real ding for phone↔PC.",
+          "source": "https://www.dali-speakers.com/en/products/io/dali-io-8/ (2026-07-01)"
+        },
+        "comfort": {
+          "value": 5,
+          "why": "expert/owner: 325g, round pads run SMALL (large ears may not fit) + thin headband → top-of-head pressure after ~1h; plush, no heat issue.",
+          "source": "https://www.whathifi.com/reviews/dali-io-8 (2026-07-01)"
+        },
+        "calls": {
+          "value": 5,
+          "why": "cross-check: middle/serviceable ('on the level of the competition'), not worst; wind is its weak point.",
+          "source": "https://www.tomsguide.com/audio/dali-io-8-review (2026-07-01)"
+        },
+        "transparency": {
+          "value": 6,
+          "why": "expert: usable.",
+          "source": "https://www.whathifi.com/reviews/dali-io-8 (2026-07-01)"
+        },
+        "wired": {
+          "value": 10,
+          "why": "spec: USB-DAC (24/96) with ANC active AND a 3.5mm that works fully passive (zero battery).",
+          "source": "https://audio46.com/blogs/headphones/dali-io-8-noise-canceling-headphones-review (2026-07-01)"
+        },
+        "battery": {
+          "value": 8,
+          "why": "spec: 30h ANC-on.",
+          "source": "https://www.dali-speakers.com/en/products/io/dali-io-8/ (2026-07-01)"
+        },
+        "antineed": {
+          "value": 0,
+          "why": "NO app, NO account ('Power-Pair-Play'), all physical buttons — lowest-friction here. Risk: niche brand, thin retail.",
+          "source": "https://www.dali-speakers.com/en/products/io/dali-io-8/ (2026-07-01)"
+        }
       }
     },
-    { "id": "bw-px8", "name": "Bowers & Wilkins Px8", "price": 456,
-      "costs": { "deliveryCost": 0, "installCost": 0, "extrasCost": 0, "consumablesPerYear": 0, "energyPerYear": 0.5, "maintenancePerYear": 6, "expectedLifeYears": 6, "resaleValue": 120 },
-      "links": [{ "label": "Coolblue", "url": "https://www.coolblue.nl/product/917585/bowers-wilkins-px8-zwart.html" }],
+    {
+      "id": "bw-px8",
+      "name": "Bowers & Wilkins Px8",
+      "price": 456,
+      "costs": {
+        "deliveryCost": 0,
+        "installCost": 0,
+        "extrasCost": 0,
+        "consumablesPerYear": 0,
+        "energyPerYear": 0.5,
+        "maintenancePerYear": 6,
+        "expectedLifeYears": 6,
+        "resaleValue": 120
+      },
+      "links": [
+        {
+          "label": "Coolblue",
+          "url": "https://www.coolblue.nl/product/917585/bowers-wilkins-px8-zwart.html"
+        }
+      ],
       "note": "€456 Coolblue (30-day returns); dips to ~€380. Rating 9.4/10 (n=63). The metal object at a lower price than the S2 — but DOMINATED by the cheaper Px7 S3 for you, and its calls are the weakest here. If you want metal B&W, buy the S2.",
       "scores": {
-        "anc": { "value": 6.5, "why": "lab: ~83% average but leaks low rumble <90Hz; weakest B&W ANC. Low pressure but the B&W 'pressurisation' family trait applies.", "source": "https://www.soundguys.com/bowers-and-wilkins-px8-review-116184/ (2026-07-01)" },
-        "build": { "value": 10, "why": "lab: cast-metal skeleton, aluminium arms, Nappa-leather headband — the most tank-like build. Fold-flat.", "source": "https://www.soundguys.com/bowers-and-wilkins-px8-review-116184/ (2026-07-01)" },
-        "sound": { "value": 8, "why": "lab: bass-heavy 'overwhelming' but refined; MDAQS 4.2 (slightly below the S2).", "source": "https://www.soundguys.com/bowers-and-wilkins-px8-review-116184/ (2026-07-01)" },
-        "wireless": { "value": 6, "why": "spec/owner: aptX Adaptive, NO Lossless, NO LDAC; multipoint switches unwanted per owners.", "source": "https://www.soundguys.com/bowers-and-wilkins-px8-review-116184/ (2026-07-01)" },
-        "comfort": { "value": 6, "why": "lab: 320g (heaviest B&W); real-leather pads trap heat + pressure after ~2-3h.", "source": "https://www.soundguys.com/bowers-and-wilkins-px8-review-116184/ (2026-07-01)" },
-        "calls": { "value": 4, "why": "lab/owner: bottom of the field ('speakerphone') — wind + loud-room cut-outs. Does not fix his mic gripe.", "source": "https://www.soundguys.com/bowers-and-wilkins-px8-review-116184/ (2026-07-01)" },
-        "transparency": { "value": 6, "why": "expert: usable.", "source": "https://www.soundguys.com/bowers-and-wilkins-px8-review-116184/ (2026-07-01)" },
-        "wired": { "value": 10, "why": "spec: USB-C DAC (24/96) + 3.5mm analog.", "source": "https://www.soundguys.com/bowers-and-wilkins-px8-review-116184/ (2026-07-01)" },
-        "battery": { "value": 8, "why": "lab: 30h rated, ~40h measured.", "source": "https://www.soundguys.com/bowers-and-wilkins-px8-review-116184/ (2026-07-01)" },
-        "antineed": { "value": 0, "why": "physical buttons; app gives only bass/treble sliders (needed for firmware).", "source": "https://www.soundguys.com/bowers-and-wilkins-px8-review-116184/ (2026-07-01)" }
+        "anc": {
+          "value": 6.5,
+          "why": "lab: ~83% average but leaks low rumble <90Hz; weakest B&W ANC. Low pressure but the B&W 'pressurisation' family trait applies.",
+          "source": "https://www.soundguys.com/bowers-and-wilkins-px8-review-116184/ (2026-07-01)"
+        },
+        "build": {
+          "value": 10,
+          "why": "lab: cast-metal skeleton, aluminium arms, Nappa-leather headband — the most tank-like build. Fold-flat.",
+          "source": "https://www.soundguys.com/bowers-and-wilkins-px8-review-116184/ (2026-07-01)"
+        },
+        "sound": {
+          "value": 8,
+          "why": "lab: bass-heavy 'overwhelming' but refined; MDAQS 4.2 (slightly below the S2).",
+          "source": "https://www.soundguys.com/bowers-and-wilkins-px8-review-116184/ (2026-07-01)"
+        },
+        "wireless": {
+          "value": 6,
+          "why": "spec/owner: aptX Adaptive, NO Lossless, NO LDAC; multipoint switches unwanted per owners.",
+          "source": "https://www.soundguys.com/bowers-and-wilkins-px8-review-116184/ (2026-07-01)"
+        },
+        "comfort": {
+          "value": 6,
+          "why": "lab: 320g (heaviest B&W); real-leather pads trap heat + pressure after ~2-3h.",
+          "source": "https://www.soundguys.com/bowers-and-wilkins-px8-review-116184/ (2026-07-01)"
+        },
+        "calls": {
+          "value": 4,
+          "why": "lab/owner: bottom of the field ('speakerphone') — wind + loud-room cut-outs. Does not fix his mic gripe.",
+          "source": "https://www.soundguys.com/bowers-and-wilkins-px8-review-116184/ (2026-07-01)"
+        },
+        "transparency": {
+          "value": 6,
+          "why": "expert: usable.",
+          "source": "https://www.soundguys.com/bowers-and-wilkins-px8-review-116184/ (2026-07-01)"
+        },
+        "wired": {
+          "value": 10,
+          "why": "spec: USB-C DAC (24/96) + 3.5mm analog.",
+          "source": "https://www.soundguys.com/bowers-and-wilkins-px8-review-116184/ (2026-07-01)"
+        },
+        "battery": {
+          "value": 8,
+          "why": "lab: 30h rated, ~40h measured.",
+          "source": "https://www.soundguys.com/bowers-and-wilkins-px8-review-116184/ (2026-07-01)"
+        },
+        "antineed": {
+          "value": 0,
+          "why": "physical buttons; app gives only bass/treble sliders (needed for firmware).",
+          "source": "https://www.soundguys.com/bowers-and-wilkins-px8-review-116184/ (2026-07-01)"
+        }
       }
     },
-    { "id": "bw-px8-s2", "name": "Bowers & Wilkins Px8 S2", "price": 649,
-      "costs": { "deliveryCost": 0, "installCost": 0, "extrasCost": 0, "consumablesPerYear": 0, "energyPerYear": 0.5, "maintenancePerYear": 6, "expectedLifeYears": 6, "resaleValue": 160 },
-      "links": [{ "label": "Coolblue", "url": "https://www.coolblue.nl/product/969274/bowers-wilkins-px8-s2-zwart.html" }],
+    {
+      "id": "bw-px8-s2",
+      "name": "Bowers & Wilkins Px8 S2",
+      "price": 649,
+      "costs": {
+        "deliveryCost": 0,
+        "installCost": 0,
+        "extrasCost": 0,
+        "consumablesPerYear": 0,
+        "energyPerYear": 0.5,
+        "maintenancePerYear": 6,
+        "expectedLifeYears": 6,
+        "resaleValue": 160
+      },
+      "links": [
+        {
+          "label": "Coolblue",
+          "url": "https://www.coolblue.nl/product/969274/bowers-wilkins-px8-s2-zwart.html"
+        }
+      ],
       "note": "€649 Coolblue (30-day returns). Rating 9.6/10 (n=10). Frontier top: the ultimate build + best sound. The buy-up if sound + cast-metal luxury outrank Sony's ANC/mic/LDAC. Try the fit — the rigid band can dig after hours, and it carries the B&W ANC-pressure trait.",
       "scores": {
-        "anc": { "value": 7, "why": "lab/cross-check: decent, roughly Px7 S3 level; behind Sony/Bose on wideband + wind. Note the B&W 'pressurisation' family trait.", "source": "https://www.soundguys.com/bowers-and-wilkins-px8-s2-review-an-unlikely-successor-147206/ (2026-07-01)" },
-        "build": { "value": 10, "why": "expert: die-cast aluminium + Nappa-leather headband & pads, slimmer body; service-replaceable pads. The 'beautiful object'.", "source": "https://www.whathifi.com/headphones/bowers-and-wilkins-px8-s2 (2026-07-01)" },
-        "sound": { "value": 9, "why": "cross-check: most refined here (new carbon drivers, holographic stage) but only marginally above the Px7 S3 — sits just below the Bathys-MG elite, so 9 not 10.", "source": "https://headmania.org/2025/10/02/bowers-wilkins-px8-s2-review-vs-ml-5909-focal-bathys-sound-anc-measurements/ (2026-07-01)" },
-        "wireless": { "value": 8, "why": "spec: aptX Adaptive/Lossless (Snapdragon, 24/96), BT 5.3, multipoint; no LDAC.", "source": "https://www.whathifi.com/headphones/bowers-and-wilkins-px8-s2 (2026-07-01)" },
-        "comfort": { "value": 6, "why": "expert: ~310g; rigid band can dig into the scalp after a couple of hours; Nappa pads run warm.", "source": "https://www.soundguys.com/bowers-and-wilkins-px8-s2-review-an-unlikely-successor-147206/ (2026-07-01)" },
-        "calls": { "value": 6, "why": "lab/owner: best B&W mic (8-mic array, best noise-rejection of the line); processing trades off some voice naturalness.", "source": "https://www.soundguys.com/bowers-and-wilkins-px8-s2-review-an-unlikely-successor-147206/ (2026-07-01)" },
-        "transparency": { "value": 6, "why": "expert: usable.", "source": "https://www.soundguys.com/bowers-and-wilkins-px8-s2-review-an-unlikely-successor-147206/ (2026-07-01)" },
-        "wired": { "value": 10, "why": "spec: USB-C 24-bit DAC + 3.5mm analog; ANC works wired.", "source": "https://headmania.org/2025/10/02/bowers-wilkins-px8-s2-review-vs-ml-5909-focal-bathys-sound-anc-measurements/ (2026-07-01)" },
-        "battery": { "value": 8, "why": "spec: 30h ANC-on rated.", "source": "https://www.soundguys.com/bowers-and-wilkins-px8-s2-review-an-unlikely-successor-147206/ (2026-07-01)" },
-        "antineed": { "value": 0, "why": "physical buttons; app = 5-band EQ/modes, not required for playback.", "source": "https://www.soundguys.com/bowers-and-wilkins-px8-s2-review-an-unlikely-successor-147206/ (2026-07-01)" }
+        "anc": {
+          "value": 7,
+          "why": "lab/cross-check: decent, roughly Px7 S3 level; behind Sony/Bose on wideband + wind. Note the B&W 'pressurisation' family trait.",
+          "source": "https://www.soundguys.com/bowers-and-wilkins-px8-s2-review-an-unlikely-successor-147206/ (2026-07-01)"
+        },
+        "build": {
+          "value": 10,
+          "why": "expert: die-cast aluminium + Nappa-leather headband & pads, slimmer body; service-replaceable pads. The 'beautiful object'.",
+          "source": "https://www.whathifi.com/headphones/bowers-and-wilkins-px8-s2 (2026-07-01)"
+        },
+        "sound": {
+          "value": 9,
+          "why": "cross-check: most refined here (new carbon drivers, holographic stage) but only marginally above the Px7 S3 — sits just below the Bathys-MG elite, so 9 not 10.",
+          "source": "https://headmania.org/2025/10/02/bowers-wilkins-px8-s2-review-vs-ml-5909-focal-bathys-sound-anc-measurements/ (2026-07-01)"
+        },
+        "wireless": {
+          "value": 8,
+          "why": "spec: aptX Adaptive/Lossless (Snapdragon, 24/96), BT 5.3, multipoint; no LDAC.",
+          "source": "https://www.whathifi.com/headphones/bowers-and-wilkins-px8-s2 (2026-07-01)"
+        },
+        "comfort": {
+          "value": 6,
+          "why": "expert: ~310g; rigid band can dig into the scalp after a couple of hours; Nappa pads run warm.",
+          "source": "https://www.soundguys.com/bowers-and-wilkins-px8-s2-review-an-unlikely-successor-147206/ (2026-07-01)"
+        },
+        "calls": {
+          "value": 6,
+          "why": "lab/owner: best B&W mic (8-mic array, best noise-rejection of the line); processing trades off some voice naturalness.",
+          "source": "https://www.soundguys.com/bowers-and-wilkins-px8-s2-review-an-unlikely-successor-147206/ (2026-07-01)"
+        },
+        "transparency": {
+          "value": 6,
+          "why": "expert: usable.",
+          "source": "https://www.soundguys.com/bowers-and-wilkins-px8-s2-review-an-unlikely-successor-147206/ (2026-07-01)"
+        },
+        "wired": {
+          "value": 10,
+          "why": "spec: USB-C 24-bit DAC + 3.5mm analog; ANC works wired.",
+          "source": "https://headmania.org/2025/10/02/bowers-wilkins-px8-s2-review-vs-ml-5909-focal-bathys-sound-anc-measurements/ (2026-07-01)"
+        },
+        "battery": {
+          "value": 8,
+          "why": "spec: 30h ANC-on rated.",
+          "source": "https://www.soundguys.com/bowers-and-wilkins-px8-s2-review-an-unlikely-successor-147206/ (2026-07-01)"
+        },
+        "antineed": {
+          "value": 0,
+          "why": "physical buttons; app = 5-band EQ/modes, not required for playback.",
+          "source": "https://www.soundguys.com/bowers-and-wilkins-px8-s2-review-an-unlikely-successor-147206/ (2026-07-01)"
+        }
       }
     },
-    { "id": "bose-qcu2", "name": "Bose QuietComfort Ultra (2nd gen)", "price": 380,
-      "costs": { "deliveryCost": 0, "installCost": 0, "extrasCost": 0, "consumablesPerYear": 0, "energyPerYear": 0.5, "maintenancePerYear": 6, "expectedLifeYears": 5, "resaleValue": 80 },
-      "links": [{ "label": "Coolblue", "url": "https://www.coolblue.nl/product/968677/bose-quietcomfort-ultra-headphones-2e-gen-zwart.html" }],
+    {
+      "id": "bose-qcu2",
+      "name": "Bose QuietComfort Ultra (2nd gen)",
+      "price": 380,
+      "costs": {
+        "deliveryCost": 0,
+        "installCost": 0,
+        "extrasCost": 0,
+        "consumablesPerYear": 0,
+        "energyPerYear": 0.5,
+        "maintenancePerYear": 6,
+        "expectedLifeYears": 5,
+        "resaleValue": 80
+      },
+      "links": [
+        {
+          "label": "Coolblue",
+          "url": "https://www.coolblue.nl/product/968677/bose-quietcomfort-ultra-headphones-2e-gen-zwart.html"
+        }
+      ],
       "note": "€380 Coolblue (30-day returns). Rating 9.0/10 (n=19). The ANC + comfort champion, now correctly scored (low pressure + 11 adjustable ANC levels). Still just off your frontier: plastic build + no-LDAC + firmware/app nag keep it a hair behind the cheaper XM6 for YOUR weights.",
       "scores": {
-        "anc": { "value": 9, "why": "cross-check: class-best (near-tie XM6, deeper sub-bass) AND — corrected — LOW pressure with 11 dial-down ANC levels; the eardrum-suck rep is from OLD Bose. His own Tweakers owner review: 'ANC, weinig druk op de oren'.", "source": "https://www.rtings.com/headphones/reviews/bose/quietcomfort-ultra-headphones-wireless (2026-07-01)" },
-        "build": { "value": 4.5, "why": "expert: plastic + metal headband, folds; pads not marketed replaceable. Not a 'premium object'.", "source": "https://www.soundguys.com/bose-quietcomfort-ultra-headphones-2nd-gen-review-144545/ (2026-07-01)" },
-        "sound": { "value": 7, "why": "cross-check: 'top drawer' (MDAQS 4.7) but darker with micro-detail smoothed, no wide stage; ≈XM6.", "source": "https://www.whathifi.com/reviews/bose-quietcomfort-ultra-headphones-review (2026-07-01)" },
-        "wireless": { "value": 6, "why": "spec/owner: aptX Adaptive (Lossless only on Snapdragon), NO LDAC; owner-reported flaky multipoint with >2 devices.", "source": "https://tweakers.net/pricewatch/2275062/bose-quietcomfort-ultra-headphones-2de-gen-zwart.html (2026-07-01)" },
-        "comfort": { "value": 8, "why": "cross-check: the comfort standout — 250g, lightest real clamp (~299g), relatively cool pads; comfort ~9/10.", "source": "https://www.soundguys.com/bose-quietcomfort-ultra-headphones-review-103901/ (2026-07-01)" },
-        "calls": { "value": 7, "why": "cross-check: very good room-muting, but Sony edges it for HIS thin-voice pain (Bose is 'acceptable' + a transient quirk that transmits sudden room sounds).", "source": "https://www.soundguys.com/bose-quietcomfort-ultra-headphones-vs-sony-wh-1000xm5-104454/ (2026-07-01)" },
-        "transparency": { "value": 4, "why": "owner: 'flinke white noise' (hiss) in aware mode.", "source": "https://tweakers.net/pricewatch/2275062/bose-quietcomfort-ultra-headphones-2de-gen-zwart.html (2026-07-01)" },
-        "wired": { "value": 8, "why": "spec: USB-C lossless digital audio (gen-2 headline) + analog ANC-on.", "source": "https://www.soundguys.com/bose-quietcomfort-ultra-headphones-2nd-gen-review-144545/ (2026-07-01)" },
-        "battery": { "value": 7, "why": "spec: 30h ANC-on (23h with Immersive Audio).", "source": "https://www.soundguys.com/bose-quietcomfort-ultra-headphones-2nd-gen-review-144545/ (2026-07-01)" },
-        "antineed": { "value": -2, "why": "finicky touch volume-strip + app effectively required for EQ/multipoint/firmware; NL owners report firmware updates removing features.", "source": "https://tweakers.net/pricewatch/2275062/bose-quietcomfort-ultra-headphones-2de-gen-zwart.html (2026-07-01)" }
+        "anc": {
+          "value": 9,
+          "why": "cross-check: class-best (near-tie XM6, deeper sub-bass) AND — corrected — LOW pressure with 11 dial-down ANC levels; the eardrum-suck rep is from OLD Bose. His own Tweakers owner review: 'ANC, weinig druk op de oren'.",
+          "source": "https://www.rtings.com/headphones/reviews/bose/quietcomfort-ultra-headphones-wireless (2026-07-01)"
+        },
+        "build": {
+          "value": 4.5,
+          "why": "expert: plastic + metal headband, folds; pads not marketed replaceable. Not a 'premium object'.",
+          "source": "https://www.soundguys.com/bose-quietcomfort-ultra-headphones-2nd-gen-review-144545/ (2026-07-01)"
+        },
+        "sound": {
+          "value": 7,
+          "why": "cross-check: 'top drawer' (MDAQS 4.7) but darker with micro-detail smoothed, no wide stage; ≈XM6.",
+          "source": "https://www.whathifi.com/reviews/bose-quietcomfort-ultra-headphones-review (2026-07-01)"
+        },
+        "wireless": {
+          "value": 6,
+          "why": "spec/owner: aptX Adaptive (Lossless only on Snapdragon), NO LDAC; owner-reported flaky multipoint with >2 devices.",
+          "source": "https://tweakers.net/pricewatch/2275062/bose-quietcomfort-ultra-headphones-2de-gen-zwart.html (2026-07-01)"
+        },
+        "comfort": {
+          "value": 8,
+          "why": "cross-check: the comfort standout — 250g, lightest real clamp (~299g), relatively cool pads; comfort ~9/10.",
+          "source": "https://www.soundguys.com/bose-quietcomfort-ultra-headphones-review-103901/ (2026-07-01)"
+        },
+        "calls": {
+          "value": 7,
+          "why": "cross-check: very good room-muting, but Sony edges it for HIS thin-voice pain (Bose is 'acceptable' + a transient quirk that transmits sudden room sounds).",
+          "source": "https://www.soundguys.com/bose-quietcomfort-ultra-headphones-vs-sony-wh-1000xm5-104454/ (2026-07-01)"
+        },
+        "transparency": {
+          "value": 4,
+          "why": "owner: 'flinke white noise' (hiss) in aware mode.",
+          "source": "https://tweakers.net/pricewatch/2275062/bose-quietcomfort-ultra-headphones-2de-gen-zwart.html (2026-07-01)"
+        },
+        "wired": {
+          "value": 8,
+          "why": "spec: USB-C lossless digital audio (gen-2 headline) + analog ANC-on.",
+          "source": "https://www.soundguys.com/bose-quietcomfort-ultra-headphones-2nd-gen-review-144545/ (2026-07-01)"
+        },
+        "battery": {
+          "value": 7.5,
+          "why": "spec: 30h rated ANC-on (45h off); Immersive Audio cuts it to ~23h.",
+          "source": "https://www.soundguys.com/bose-quietcomfort-ultra-headphones-2nd-gen-review-144545/ (2026-07-01)"
+        },
+        "antineed": {
+          "value": -2,
+          "why": "finicky touch volume-strip + app effectively required for EQ/multipoint/firmware; NL owners report firmware updates removing features.",
+          "source": "https://tweakers.net/pricewatch/2275062/bose-quietcomfort-ultra-headphones-2de-gen-zwart.html (2026-07-01)"
+        }
       }
     },
-    { "id": "bo-beoplay-hx", "name": "Bang & Olufsen Beoplay HX", "price": 512,
-      "costs": { "deliveryCost": 0, "installCost": 0, "extrasCost": 0, "consumablesPerYear": 0, "energyPerYear": 0.5, "maintenancePerYear": 6, "expectedLifeYears": 5, "resaleValue": 110 },
-      "links": [{ "label": "Tweakers Pricewatch (8 shops)", "url": "https://tweakers.net/pricewatch/1701638/bang-en-olufsen-beoplay-hx-zwart.html" }],
+    {
+      "id": "bo-beoplay-hx",
+      "name": "Bang & Olufsen Beoplay HX",
+      "price": 512,
+      "costs": {
+        "deliveryCost": 0,
+        "installCost": 0,
+        "extrasCost": 0,
+        "consumablesPerYear": 0,
+        "energyPerYear": 0.5,
+        "maintenancePerYear": 6,
+        "expectedLifeYears": 5,
+        "resaleValue": 110
+      },
+      "links": [
+        {
+          "label": "Tweakers Pricewatch (8 shops)",
+          "url": "https://tweakers.net/pricewatch/1701638/bang-en-olufsen-beoplay-hx-zwart.html"
+        }
+      ],
       "note": "€512 via Tweakers Pricewatch (8 shops). The design/comfort choice — lightest (285g) + lowest clamp = your low-pressure + cool-comfort priorities. But 2021 design: ANC good-not-great, mic average, no LDAC.",
       "scores": {
-        "anc": { "value": 6, "why": "expert: good, not class-leading (2021 design).", "source": "https://www.techradar.com/reviews/bang-and-olufsen-beoplay-hx (2026-07-01)" },
-        "build": { "value": 8, "why": "expert: recycled aluminium + lambskin, most luxe-looking here — a genuine 'beautiful object' (his anchor). Lambskin durability a mild question.", "source": "https://www.t3.com/reviews/bang-olufsen-beoplay-hx-review (2026-07-01)" },
-        "sound": { "value": 7, "why": "expert: good, warm B&O signature; not audiophile-reference.", "source": "https://www.techradar.com/reviews/bang-and-olufsen-beoplay-hx (2026-07-01)" },
-        "wireless": { "value": 6, "why": "spec: aptX Adaptive + multipoint; no LDAC; 2021 Bluetooth.", "source": "https://www.techradar.com/reviews/bang-and-olufsen-beoplay-hx (2026-07-01)" },
-        "comfort": { "value": 8, "why": "expert: lightest here (~285g) with the lowest clamp — best for his low-pressure + cool long-wear.", "source": "https://www.t3.com/reviews/bang-olufsen-beoplay-hx-review (2026-07-01)" },
-        "calls": { "value": 4, "why": "expert: mic only average — doesn't clearly fix his gripe.", "source": "https://www.techradar.com/reviews/bang-and-olufsen-beoplay-hx (2026-07-01)" },
-        "transparency": { "value": 6, "why": "expert: usable ambient.", "source": "https://www.techradar.com/reviews/bang-and-olufsen-beoplay-hx (2026-07-01)" },
-        "wired": { "value": 6, "why": "spec: analog 3.5mm; USB-C audio not a highlight.", "source": "https://www.techradar.com/reviews/bang-and-olufsen-beoplay-hx (2026-07-01)" },
-        "battery": { "value": 7, "why": "spec: ~35h ANC-on.", "source": "https://www.techradar.com/reviews/bang-and-olufsen-beoplay-hx (2026-07-01)" },
-        "antineed": { "value": -1, "why": "B&O app for EQ + touch controls; no major lock-in.", "source": "https://www.techradar.com/reviews/bang-and-olufsen-beoplay-hx (2026-07-01)" }
+        "anc": {
+          "value": 6,
+          "why": "expert: good, not class-leading (2021 design).",
+          "source": "https://www.techradar.com/reviews/bang-and-olufsen-beoplay-hx (2026-07-01)"
+        },
+        "build": {
+          "value": 8,
+          "why": "expert: recycled aluminium + lambskin, most luxe-looking here — a genuine 'beautiful object' (his anchor). Lambskin durability a mild question.",
+          "source": "https://www.t3.com/reviews/bang-olufsen-beoplay-hx-review (2026-07-01)"
+        },
+        "sound": {
+          "value": 7,
+          "why": "expert: good, warm B&O signature; not audiophile-reference.",
+          "source": "https://www.techradar.com/reviews/bang-and-olufsen-beoplay-hx (2026-07-01)"
+        },
+        "wireless": {
+          "value": 6,
+          "why": "spec: aptX Adaptive + multipoint; no LDAC; 2021 Bluetooth.",
+          "source": "https://www.techradar.com/reviews/bang-and-olufsen-beoplay-hx (2026-07-01)"
+        },
+        "comfort": {
+          "value": 8,
+          "why": "expert: lightest here (~285g) with the lowest clamp — best for his low-pressure + cool long-wear.",
+          "source": "https://www.t3.com/reviews/bang-olufsen-beoplay-hx-review (2026-07-01)"
+        },
+        "calls": {
+          "value": 4,
+          "why": "expert: mic only average — doesn't clearly fix his gripe.",
+          "source": "https://www.techradar.com/reviews/bang-and-olufsen-beoplay-hx (2026-07-01)"
+        },
+        "transparency": {
+          "value": 6,
+          "why": "expert: usable ambient.",
+          "source": "https://www.techradar.com/reviews/bang-and-olufsen-beoplay-hx (2026-07-01)"
+        },
+        "wired": {
+          "value": 6,
+          "why": "spec: analog 3.5mm; USB-C audio not a highlight.",
+          "source": "https://www.techradar.com/reviews/bang-and-olufsen-beoplay-hx (2026-07-01)"
+        },
+        "battery": {
+          "value": 8,
+          "why": "spec: 35h ANC-on (40h off) per B&O/Engadget — squarely in the 30-40h band.",
+          "source": "https://www.techradar.com/reviews/bang-and-olufsen-beoplay-hx (2026-07-01)"
+        },
+        "antineed": {
+          "value": -1,
+          "why": "B&O app for EQ + touch controls; no major lock-in.",
+          "source": "https://www.techradar.com/reviews/bang-and-olufsen-beoplay-hx (2026-07-01)"
+        }
       }
     },
-    { "id": "focal-bathys", "name": "Focal Bathys", "price": 649,
-      "costs": { "deliveryCost": 0, "installCost": 0, "extrasCost": 0, "consumablesPerYear": 0, "energyPerYear": 0.5, "maintenancePerYear": 6, "expectedLifeYears": 6, "resaleValue": 160 },
-      "links": [{ "label": "Bol.com", "url": "https://www.bol.com/nl/nl/p/focal-bathys-draadloze-hoofdtelefoon/9300000131742196/" }],
+    {
+      "id": "focal-bathys",
+      "name": "Focal Bathys",
+      "price": 649,
+      "costs": {
+        "deliveryCost": 0,
+        "installCost": 0,
+        "extrasCost": 0,
+        "consumablesPerYear": 0,
+        "energyPerYear": 0.5,
+        "maintenancePerYear": 6,
+        "expectedLifeYears": 6,
+        "resaleValue": 160
+      },
+      "links": [
+        {
+          "label": "Bol.com",
+          "url": "https://www.bol.com/nl/nl/p/focal-bathys-draadloze-hoofdtelefoon/9300000131742196/"
+        }
+      ],
       "note": "€649 Bol.com (30-day returns). The audiophile soundstage + USB-DAC darling — but its ANC leaks, its mic doesn't reject room noise, and its stock pads run hot (his concern). The Mu7's beauty without the pressure penalty, but not the ANC/mic he needs.",
       "scores": {
-        "anc": { "value": 5, "why": "lab: good raw depth but leaks upper-mids/voices (~Momentum-4, below Sony/Bose). Low-to-medium pressure.", "source": "https://www.soundguys.com/focal-bathys-review-90686/ (2026-07-01)" },
-        "build": { "value": 8, "why": "lab: resin cups + magnesium yokes + aluminium headband + leather; minimal creak; folds flat, pads replaceable. Some call the look 'kitsch'.", "source": "https://www.soundguys.com/focal-bathys-review-90686/ (2026-07-01)" },
-        "sound": { "value": 10, "why": "lab/expert: top SQ tier for wireless ANC — warm slightly-dark U-shape with a genuinely WIDE soundstage (a ~900Hz dip is the only nit; the MG variant fixes it).", "source": "https://www.whathifi.com/reviews/focal-bathys (2026-07-01)" },
-        "wireless": { "value": 6, "why": "spec: aptX Adaptive (24/48), NO LDAC/HD/Lossless; multipoint yes.", "source": "https://www.focal.com/products/bathys (2026-07-01)" },
-        "comfort": { "value": 5.5, "why": "expert/owner: 350g (heaviest premium), barely-there clamp, but stock pads trap heat — ears warm by ~2-3h (aftermarket suede fixes it).", "source": "https://headfonics.com/focal-bathys-review/ (2026-07-01)" },
-        "calls": { "value": 4, "why": "expert: voice good/natural but room-noise REJECTION is weak — pulls in the environment. Fixes half his gripe, not the 'transmits room noise' half.", "source": "https://www.whathifi.com/reviews/focal-bathys (2026-07-01)" },
-        "transparency": { "value": 6, "why": "expert: usable.", "source": "https://www.whathifi.com/reviews/focal-bathys (2026-07-01)" },
-        "wired": { "value": 10, "why": "spec: USB-DAC (24/192, its best mode); 3.5mm needs battery power.", "source": "https://headfonics.com/focal-bathys-review/ (2026-07-01)" },
-        "battery": { "value": 8, "why": "lab: ~30h ANC-on (31.5h measured); ~42h in USB-DAC.", "source": "https://www.soundguys.com/focal-bathys-review-90686/ (2026-07-01)" },
-        "antineed": { "value": 0, "why": "physical buttons (near-zero accidental-touch); app optional; widely stocked.", "source": "https://www.whathifi.com/reviews/focal-bathys (2026-07-01)" }
+        "anc": {
+          "value": 5,
+          "why": "lab: good raw depth but leaks upper-mids/voices (~Momentum-4, below Sony/Bose). Low-to-medium pressure.",
+          "source": "https://www.soundguys.com/focal-bathys-review-90686/ (2026-07-01)"
+        },
+        "build": {
+          "value": 8,
+          "why": "lab: resin cups + magnesium yokes + aluminium headband + leather; minimal creak; folds flat, pads replaceable. Some call the look 'kitsch'.",
+          "source": "https://www.soundguys.com/focal-bathys-review-90686/ (2026-07-01)"
+        },
+        "sound": {
+          "value": 10,
+          "why": "lab/expert: top SQ tier for wireless ANC — warm slightly-dark U-shape with a genuinely WIDE soundstage (a ~900Hz dip is the only nit; the MG variant fixes it).",
+          "source": "https://www.whathifi.com/reviews/focal-bathys (2026-07-01)"
+        },
+        "wireless": {
+          "value": 6,
+          "why": "spec: aptX Adaptive (24/48), NO LDAC/HD/Lossless; multipoint yes.",
+          "source": "https://www.focal.com/products/bathys (2026-07-01)"
+        },
+        "comfort": {
+          "value": 5.5,
+          "why": "expert/owner: 350g (heaviest premium), barely-there clamp, but stock pads trap heat — ears warm by ~2-3h (aftermarket suede fixes it).",
+          "source": "https://headfonics.com/focal-bathys-review/ (2026-07-01)"
+        },
+        "calls": {
+          "value": 4,
+          "why": "expert: voice good/natural but room-noise REJECTION is weak — pulls in the environment. Fixes half his gripe, not the 'transmits room noise' half.",
+          "source": "https://www.whathifi.com/reviews/focal-bathys (2026-07-01)"
+        },
+        "transparency": {
+          "value": 6,
+          "why": "expert: usable.",
+          "source": "https://www.whathifi.com/reviews/focal-bathys (2026-07-01)"
+        },
+        "wired": {
+          "value": 10,
+          "why": "spec: USB-DAC (24/192, its best mode); 3.5mm needs battery power.",
+          "source": "https://headfonics.com/focal-bathys-review/ (2026-07-01)"
+        },
+        "battery": {
+          "value": 8,
+          "why": "lab: ~30h ANC-on (31.5h measured); ~42h in USB-DAC.",
+          "source": "https://www.soundguys.com/focal-bathys-review-90686/ (2026-07-01)"
+        },
+        "antineed": {
+          "value": 0,
+          "why": "physical buttons (near-zero accidental-touch); app optional; widely stocked.",
+          "source": "https://www.whathifi.com/reviews/focal-bathys (2026-07-01)"
+        }
       }
     },
-    { "id": "noble-apollo", "name": "Noble FoKus Apollo", "price": 599,
-      "costs": { "deliveryCost": 0, "installCost": 0, "extrasCost": 0, "consumablesPerYear": 0, "energyPerYear": 0.5, "maintenancePerYear": 6, "expectedLifeYears": 5, "resaleValue": 100 },
-      "links": [{ "label": "Bol.com", "url": "https://www.bol.com/nl/nl/p/noble-fokus-apollo-bt-anc-hooftelefoon/9300000193632871/" }],
+    {
+      "id": "noble-apollo",
+      "name": "Noble FoKus Apollo",
+      "price": 599,
+      "costs": {
+        "deliveryCost": 0,
+        "installCost": 0,
+        "extrasCost": 0,
+        "consumablesPerYear": 0,
+        "energyPerYear": 0.5,
+        "maintenancePerYear": 6,
+        "expectedLifeYears": 5,
+        "resaleValue": 100
+      },
+      "links": [
+        {
+          "label": "Bol.com",
+          "url": "https://www.bol.com/nl/nl/p/noble-fokus-apollo-bt-anc-hooftelefoon/9300000193632871/"
+        }
+      ],
       "note": "€599 (⚠ thin availability — ~1 shop). Boutique planar+dynamic hybrid: superb sound over LDAC + huge battery, but weak ANC, the worst call mic here (gates your own voice), and small-brand parts/repair risk.",
       "scores": {
-        "anc": { "value": 5.5, "why": "cross-check: isolation > active depth; kills low hum but chatter leaks + faint hiss; below Sony/Bose. Low pressure over 8h.", "source": "https://headfonics.com/noble-audio-fokus-apollo-review/ (2026-07-01)" },
-        "build": { "value": 8, "why": "spec: anodized aluminium + Alcantara + replaceable protein-leather pads. Not foldable (large case). New/niche → no track record.", "source": "https://nobleaudio.com/products/fokus-apollo (2026-07-01)" },
-        "sound": { "value": 9, "why": "expert: genuinely high SQ ('best sound in class' in some head-to-heads) — but connection-dependent (full over LDAC/USB, thinner on plain BT).", "source": "https://headfonics.com/noble-audio-fokus-apollo-review/ (2026-07-01)" },
-        "wireless": { "value": 7, "why": "spec: LDAC + aptX HD, multipoint (stable) — best codec set of the audiophile group for Android; needs LDAC for full quality.", "source": "https://nobleaudio.com/products/fokus-apollo (2026-07-01)" },
-        "comfort": { "value": 6, "why": "expert: all-day comfy, moderate clamp, ~327g; large pads press temples on some heads; heat untested.", "source": "https://headfonics.com/noble-audio-fokus-apollo-review/ (2026-07-01)" },
-        "calls": { "value": 3, "why": "cross-check: WORST here — built-in mic muffled and aggressive gating drops your voice to 'barely audible' (it would REPRODUCE his thin-voice pain); good only with the detachable boom.", "source": "https://www.loudnwireless.com/blog/best-sound-but-noble-fokus-apollo-review-vs-wh-1000xm6-bose-qc-ultra-momentum-4 (2026-07-01)" },
-        "transparency": { "value": 5, "why": "expert: modest.", "source": "https://headfonics.com/noble-audio-fokus-apollo-review/ (2026-07-01)" },
-        "wired": { "value": 10, "why": "spec: USB-DAC (best mode); 3.5mm passive-only (no ANC on analog).", "source": "https://nobleaudio.com/products/fokus-apollo (2026-07-01)" },
-        "battery": { "value": 10, "why": "measured: ~60h ANC-on (80h off).", "source": "https://headfonics.com/noble-audio-fokus-apollo-review/ (2026-07-01)" },
-        "antineed": { "value": -1, "why": "app optional, physical buttons — but boutique brand = thin spare-parts + repair risk, and ~1-shop availability.", "source": "https://headfonics.com/noble-audio-fokus-apollo-review/ (2026-07-01)" }
+        "anc": {
+          "value": 5.5,
+          "why": "cross-check: isolation > active depth; kills low hum but chatter leaks + faint hiss; below Sony/Bose. Low pressure over 8h.",
+          "source": "https://headfonics.com/noble-audio-fokus-apollo-review/ (2026-07-01)"
+        },
+        "build": {
+          "value": 8,
+          "why": "spec: anodized aluminium + Alcantara + replaceable protein-leather pads. Not foldable (large case). New/niche → no track record.",
+          "source": "https://nobleaudio.com/products/fokus-apollo (2026-07-01)"
+        },
+        "sound": {
+          "value": 9,
+          "why": "expert: genuinely high SQ ('best sound in class' in some head-to-heads) — but connection-dependent (full over LDAC/USB, thinner on plain BT).",
+          "source": "https://headfonics.com/noble-audio-fokus-apollo-review/ (2026-07-01)"
+        },
+        "wireless": {
+          "value": 7,
+          "why": "spec: LDAC + aptX HD, multipoint (stable) — best codec set of the audiophile group for Android; needs LDAC for full quality.",
+          "source": "https://nobleaudio.com/products/fokus-apollo (2026-07-01)"
+        },
+        "comfort": {
+          "value": 6,
+          "why": "expert: all-day comfy, moderate clamp, ~327g; large pads press temples on some heads; heat untested.",
+          "source": "https://headfonics.com/noble-audio-fokus-apollo-review/ (2026-07-01)"
+        },
+        "calls": {
+          "value": 3,
+          "why": "cross-check: WORST here — built-in mic muffled and aggressive gating drops your voice to 'barely audible' (it would REPRODUCE his thin-voice pain); good only with the detachable boom.",
+          "source": "https://www.loudnwireless.com/blog/best-sound-but-noble-fokus-apollo-review-vs-wh-1000xm6-bose-qc-ultra-momentum-4 (2026-07-01)"
+        },
+        "transparency": {
+          "value": 5,
+          "why": "expert: modest.",
+          "source": "https://headfonics.com/noble-audio-fokus-apollo-review/ (2026-07-01)"
+        },
+        "wired": {
+          "value": 10,
+          "why": "spec: USB-DAC (best mode); 3.5mm passive-only (no ANC on analog).",
+          "source": "https://nobleaudio.com/products/fokus-apollo (2026-07-01)"
+        },
+        "battery": {
+          "value": 10,
+          "why": "measured: ~60h ANC-on (80h off).",
+          "source": "https://headfonics.com/noble-audio-fokus-apollo-review/ (2026-07-01)"
+        },
+        "antineed": {
+          "value": 0,
+          "why": "correction: reviewers praise its 5 physical buttons (no touch panel, 'works first try') and the app is fully optional — no real friction. Boutique parts/repair risk is in the product note, not scored here.",
+          "source": "https://headfonics.com/noble-audio-fokus-apollo-review/ (2026-07-01)"
+        }
       }
     },
-    { "id": "sonos-ace", "name": "Sonos Ace", "price": 354,
-      "costs": { "deliveryCost": 0, "installCost": 0, "extrasCost": 0, "consumablesPerYear": 0, "energyPerYear": 0.5, "maintenancePerYear": 6, "expectedLifeYears": 5, "resaleValue": 55 },
-      "links": [{ "label": "Coolblue", "url": "https://www.coolblue.nl/product/948054/sonos-ace-zwart.html" }],
+    {
+      "id": "sonos-ace",
+      "name": "Sonos Ace",
+      "price": 354,
+      "costs": {
+        "deliveryCost": 0,
+        "installCost": 0,
+        "extrasCost": 0,
+        "consumablesPerYear": 0,
+        "energyPerYear": 0.5,
+        "maintenancePerYear": 6,
+        "expectedLifeYears": 5,
+        "resaleValue": 55
+      },
+      "links": [
+        {
+          "label": "Coolblue",
+          "url": "https://www.coolblue.nl/product/948054/sonos-ace-zwart.html"
+        }
+      ],
       "note": "€354 Coolblue (30-day returns). Rating 8.9/10 (n=29). Premium look + physical buttons + magnetic replaceable pads — but NL owners flag mediocre sound, a poor call mic, and Sonos-app/account dependence.",
       "scores": {
-        "anc": { "value": 6.5, "why": "lab: solid, behind the Bose QC Ultra.", "source": "https://www.rtings.com/headphones/reviews/sonos/ace (2026-07-01)" },
-        "build": { "value": 6.5, "why": "expert: aluminium earcups + plastic, magnetic REPLACEABLE pads, physical buttons (no touch — a plus); premium look but heavy, no IP.", "source": "https://www.theverge.com/24172354/sonos-ace-headphones-review (2026-07-01)" },
-        "sound": { "value": 5.5, "why": "lab-vs-owner split: Rtings measures it balanced, but NL owners repeatedly call it 'matig' (mediocre) — reconciled to the middle.", "source": "https://tweakers.net/pricewatch/2080300/sonos-ace-zwart.html (2026-07-01)" },
-        "wireless": { "value": 5, "why": "spec/owner: aptX Lossless/Adaptive, NO LDAC; NL owners report a multipoint bug.", "source": "https://tweakers.net/pricewatch/2080300/sonos-ace-zwart.html (2026-07-01)" },
-        "comfort": { "value": 5, "why": "owner: ~312g heavy, 'presses on the side of the head'; some heat.", "source": "https://tweakers.net/pricewatch/2080300/sonos-ace-zwart.html (2026-07-01)" },
-        "calls": { "value": 4, "why": "lab-vs-owner split: Rtings rates voice decent, NL owners call the mic NC 'beroerd' (terrible) — doesn't clearly fix his gripe.", "source": "https://tweakers.net/pricewatch/2080300/sonos-ace-zwart.html (2026-07-01)" },
-        "transparency": { "value": 6, "why": "expert: usable ambient.", "source": "https://www.rtings.com/headphones/reviews/sonos/ace (2026-07-01)" },
-        "wired": { "value": 8, "why": "spec: USB-C lossless digital (24-bit) + USB-C→3.5mm analog.", "source": "https://www.theverge.com/24172354/sonos-ace-headphones-review (2026-07-01)" },
-        "battery": { "value": 6, "why": "spec/owner: 30h rated; owners note it drains faster.", "source": "https://tweakers.net/pricewatch/2080300/sonos-ace-zwart.html (2026-07-01)" },
-        "antineed": { "value": -2, "why": "Sonos app + account required for setup/EQ/spatial, 2024 app-collapse overhang, ecosystem perks gated behind a Sonos soundbar.", "source": "https://www.theverge.com/24172354/sonos-ace-headphones-review (2026-07-01)" }
+        "anc": {
+          "value": 6.5,
+          "why": "lab: solid, behind the Bose QC Ultra.",
+          "source": "https://www.rtings.com/headphones/reviews/sonos/ace (2026-07-01)"
+        },
+        "build": {
+          "value": 6.5,
+          "why": "expert: aluminium earcups + plastic, magnetic REPLACEABLE pads, physical buttons (no touch — a plus); premium look but heavy, no IP.",
+          "source": "https://www.theverge.com/24172354/sonos-ace-headphones-review (2026-07-01)"
+        },
+        "sound": {
+          "value": 6,
+          "why": "lab (Rtings/Tom's Guide): bigger soundstage + better clarity than the XM5, broadly balanced tuning; still below the audiophile sets and NL owners call it 'matig' — reconciled up to 6.",
+          "source": "https://tweakers.net/pricewatch/2080300/sonos-ace-zwart.html (2026-07-01)"
+        },
+        "wireless": {
+          "value": 5,
+          "why": "spec/owner: aptX Lossless/Adaptive, NO LDAC; NL owners report a multipoint bug.",
+          "source": "https://tweakers.net/pricewatch/2080300/sonos-ace-zwart.html (2026-07-01)"
+        },
+        "comfort": {
+          "value": 5,
+          "why": "owner: ~312g heavy, 'presses on the side of the head'; some heat.",
+          "source": "https://tweakers.net/pricewatch/2080300/sonos-ace-zwart.html (2026-07-01)"
+        },
+        "calls": {
+          "value": 4,
+          "why": "lab-vs-owner split: Rtings rates voice decent, NL owners call the mic NC 'beroerd' (terrible) — doesn't clearly fix his gripe.",
+          "source": "https://tweakers.net/pricewatch/2080300/sonos-ace-zwart.html (2026-07-01)"
+        },
+        "transparency": {
+          "value": 6,
+          "why": "expert: usable ambient.",
+          "source": "https://www.rtings.com/headphones/reviews/sonos/ace (2026-07-01)"
+        },
+        "wired": {
+          "value": 8,
+          "why": "spec: USB-C lossless digital (24-bit) + USB-C→3.5mm analog.",
+          "source": "https://www.theverge.com/24172354/sonos-ace-headphones-review (2026-07-01)"
+        },
+        "battery": {
+          "value": 8,
+          "why": "lab: Rtings 30h + SoundGuys 32h ANC-on measured — in the 30-40h band (prior 6 under-scored it).",
+          "source": "https://tweakers.net/pricewatch/2080300/sonos-ace-zwart.html (2026-07-01)"
+        },
+        "antineed": {
+          "value": -2,
+          "why": "Sonos app + account required for setup/EQ/spatial, 2024 app-collapse overhang, ecosystem perks gated behind a Sonos soundbar.",
+          "source": "https://www.theverge.com/24172354/sonos-ace-headphones-review (2026-07-01)"
+        }
       }
     },
-    { "id": "beyer-aventho300", "name": "Beyerdynamic Aventho 300", "price": 279,
-      "costs": { "deliveryCost": 0, "installCost": 0, "extrasCost": 0, "consumablesPerYear": 0, "energyPerYear": 0.5, "maintenancePerYear": 6, "expectedLifeYears": 6, "resaleValue": 70 },
-      "links": [{ "label": "Bol.com", "url": "https://www.bol.com/nl/nl/p/beyerdynamic-aventho-300-bluetooth-anc-draadloze-over-ear-koptelefoon-zwart/9300000195027339/" }],
+    {
+      "id": "beyer-aventho300",
+      "name": "Beyerdynamic Aventho 300",
+      "price": 279,
+      "costs": {
+        "deliveryCost": 0,
+        "installCost": 0,
+        "extrasCost": 0,
+        "consumablesPerYear": 0,
+        "energyPerYear": 0.5,
+        "maintenancePerYear": 6,
+        "expectedLifeYears": 6,
+        "resaleValue": 70
+      },
+      "links": [
+        {
+          "label": "Bol.com",
+          "url": "https://www.bol.com/nl/nl/p/beyerdynamic-aventho-300-bluetooth-anc-draadloze-over-ear-koptelefoon-zwart/9300000195027339/"
+        }
+      ],
       "note": "€279 Bol.com (30-day returns). The cheap frontier step — best codec story (aptX Lossless) + big battery + detailed sound. But heavier (319g), firm clamp + heat, and a middling mic — works against your comfort priority.",
       "scores": {
-        "anc": { "value": 6.5, "why": "expert: strong adaptive ANC ('good to very good'), though SoundGuys is cooler on it than the establishment leaders.", "source": "https://www.whathifi.com/headphones/wireless-headphones/beyerdynamic-aventho-300 (2026-07-01)" },
-        "build": { "value": 6.5, "why": "expert: German STELLAR.45 build, solid; metal/plastic mix.", "source": "https://www.whathifi.com/headphones/wireless-headphones/beyerdynamic-aventho-300 (2026-07-01)" },
-        "sound": { "value": 8, "why": "expert: 'clear, natural and even-handed' — detailed Beyer tuning.", "source": "https://www.whathifi.com/headphones/wireless-headphones/beyerdynamic-aventho-300 (2026-07-01)" },
-        "wireless": { "value": 8, "why": "spec: aptX Lossless + aptX Adaptive, BT 5.4, multipoint — best codec value here; no LDAC.", "source": "https://www.whathifi.com/headphones/wireless-headphones/beyerdynamic-aventho-300 (2026-07-01)" },
-        "comfort": { "value": 5, "why": "expert: heavier (319g) with firm clamp and some heat build-up — against his cool-comfort priority.", "source": "https://www.soundguys.com/beyerdynamic-aventho-300-review-128644/ (2026-07-01)" },
-        "calls": { "value": 5, "why": "expert: middling call mic.", "source": "https://www.soundguys.com/beyerdynamic-aventho-300-review-128644/ (2026-07-01)" },
-        "transparency": { "value": 6, "why": "expert: usable.", "source": "https://www.whathifi.com/headphones/wireless-headphones/beyerdynamic-aventho-300 (2026-07-01)" },
-        "wired": { "value": 8, "why": "spec: USB-C DAC + analog.", "source": "https://www.whathifi.com/headphones/wireless-headphones/beyerdynamic-aventho-300 (2026-07-01)" },
-        "battery": { "value": 9, "why": "spec: ~50h ANC-on.", "source": "https://www.whathifi.com/headphones/wireless-headphones/beyerdynamic-aventho-300 (2026-07-01)" },
-        "antineed": { "value": -1, "why": "app for EQ/hearing-test + touch/controls.", "source": "https://www.whathifi.com/headphones/wireless-headphones/beyerdynamic-aventho-300 (2026-07-01)" }
+        "anc": {
+          "value": 6.5,
+          "why": "expert: strong adaptive ANC ('good to very good'), though SoundGuys is cooler on it than the establishment leaders.",
+          "source": "https://www.whathifi.com/headphones/wireless-headphones/beyerdynamic-aventho-300 (2026-07-01)"
+        },
+        "build": {
+          "value": 6.5,
+          "why": "expert: German STELLAR.45 build, solid; metal/plastic mix.",
+          "source": "https://www.whathifi.com/headphones/wireless-headphones/beyerdynamic-aventho-300 (2026-07-01)"
+        },
+        "sound": {
+          "value": 8,
+          "why": "expert: 'clear, natural and even-handed' — detailed Beyer tuning.",
+          "source": "https://www.whathifi.com/headphones/wireless-headphones/beyerdynamic-aventho-300 (2026-07-01)"
+        },
+        "wireless": {
+          "value": 8,
+          "why": "spec: aptX Lossless + aptX Adaptive, BT 5.4, multipoint — best codec value here; no LDAC.",
+          "source": "https://www.whathifi.com/headphones/wireless-headphones/beyerdynamic-aventho-300 (2026-07-01)"
+        },
+        "comfort": {
+          "value": 5,
+          "why": "expert: heavier (319g) with firm clamp and some heat build-up — against his cool-comfort priority.",
+          "source": "https://www.soundguys.com/beyerdynamic-aventho-300-review-128644/ (2026-07-01)"
+        },
+        "calls": {
+          "value": 5,
+          "why": "expert: middling call mic.",
+          "source": "https://www.soundguys.com/beyerdynamic-aventho-300-review-128644/ (2026-07-01)"
+        },
+        "transparency": {
+          "value": 6,
+          "why": "expert: usable.",
+          "source": "https://www.whathifi.com/headphones/wireless-headphones/beyerdynamic-aventho-300 (2026-07-01)"
+        },
+        "wired": {
+          "value": 10,
+          "why": "spec: USB-C DAC up to 24-bit/96kHz + 3.5mm, ANC works wired — reviewers rate wired-with-DAC its best mode.",
+          "source": "https://www.whathifi.com/headphones/wireless-headphones/beyerdynamic-aventho-300 (2026-07-01)"
+        },
+        "battery": {
+          "value": 10,
+          "why": "lab: 50h rated, SoundGuys measured ~65h ANC-on — the best runtime in the set.",
+          "source": "https://www.whathifi.com/headphones/wireless-headphones/beyerdynamic-aventho-300 (2026-07-01)"
+        },
+        "antineed": {
+          "value": -1,
+          "why": "app for EQ/hearing-test + touch/controls.",
+          "source": "https://www.whathifi.com/headphones/wireless-headphones/beyerdynamic-aventho-300 (2026-07-01)"
+        }
       }
     },
-    { "id": "dyson-ontrac", "name": "Dyson OnTrac", "price": 499,
-      "costs": { "deliveryCost": 0, "installCost": 0, "extrasCost": 0, "consumablesPerYear": 0, "energyPerYear": 0.5, "maintenancePerYear": 6, "expectedLifeYears": 6, "resaleValue": 90 },
-      "links": [{ "label": "Coolblue", "url": "https://www.coolblue.nl/product/952785/dyson-ontrac-koper.html" }],
+    {
+      "id": "dyson-ontrac",
+      "name": "Dyson OnTrac",
+      "price": 499,
+      "costs": {
+        "deliveryCost": 0,
+        "installCost": 0,
+        "extrasCost": 0,
+        "consumablesPerYear": 0,
+        "energyPerYear": 0.5,
+        "maintenancePerYear": 6,
+        "expectedLifeYears": 6,
+        "resaleValue": 90
+      },
+      "links": [
+        {
+          "label": "Coolblue",
+          "url": "https://www.coolblue.nl/product/952785/dyson-ontrac-koper.html"
+        }
+      ],
       "note": "€499 Coolblue (30-day returns). Rating 9.4/10 (n=11). Customisable aluminium + huge battery, but heavy (451g), narrow sound, no wired option, no multipoint, and a MyDyson account requirement.",
       "scores": {
-        "anc": { "value": 6, "why": "lab/expert (disputed): good on airplane/street mids, weak on deep rumble; reviewers split mid-pack↔QC-level. Not the leader.", "source": "https://www.rtings.com/headphones/reviews/dyson/ontrac-wireless (2026-07-01)" },
-        "build": { "value": 7, "why": "expert: machined aluminium, swappable caps + pads; solid but heavy, not foldable.", "source": "https://www.engadget.com/audio/headphones/dyson-ontrac-headphones-review-when-the-basics-arent-enough-151518312.html (2026-07-01)" },
-        "sound": { "value": 5, "why": "lab: NARROW soundstage, uneven treble, needs EQ; below the flagships for the price.", "source": "https://www.rtings.com/headphones/reviews/dyson/ontrac-wireless (2026-07-01)" },
-        "wireless": { "value": 4, "why": "spec: SBC/AAC/LHDC only — NO LDAC, NO aptX, and NO multipoint. Poor fit for Android + phone↔PC.", "source": "https://www.androidpolice.com/dyson-ontrac-review/ (2026-07-01)" },
-        "comfort": { "value": 4, "why": "expert/owner: 451g (heaviest) though headband-batteries distribute it; ears get warm; round cups cramped on larger ears.", "source": "https://stereoguide.com/headphones/noise-cancelling-en/dyson-ontrac-review-over-ear-headphones-with-anc/ (2026-07-01)" },
-        "calls": { "value": 5, "why": "lab: room-noise REJECTION is good (beamforming) but the voice is 'compressed, lacked energy' (single mic). Mixed on his two-part gripe.", "source": "https://www.engadget.com/audio/headphones/dyson-ontrac-headphones-review-when-the-basics-arent-enough-151518312.html (2026-07-01)" },
-        "transparency": { "value": 6, "why": "expert: usable.", "source": "https://www.rtings.com/headphones/reviews/dyson/ontrac-wireless (2026-07-01)" },
-        "wired": { "value": 2, "why": "spec: NO USB-DAC and NO 3.5mm jack (USB-C charge-only) — wireless-only in practice.", "source": "https://stereoguide.com/headphones/noise-cancelling-en/dyson-ontrac-review-over-ear-headphones-with-anc/ (2026-07-01)" },
-        "battery": { "value": 10, "why": "lab: 55h rated ANC-on (~51h measured) — best of the field.", "source": "https://www.rtings.com/headphones/reviews/dyson/ontrac-wireless (2026-07-01)" },
-        "antineed": { "value": -2, "why": "MyDyson app + ACCOUNT required for full features; Android Police flags account + location sharing; awkward joystick + flaky double-tap touch.", "source": "https://www.androidpolice.com/dyson-ontrac-review/ (2026-07-01)" }
+        "anc": {
+          "value": 6,
+          "why": "lab/expert (disputed): good on airplane/street mids, weak on deep rumble; reviewers split mid-pack↔QC-level. Not the leader.",
+          "source": "https://www.rtings.com/headphones/reviews/dyson/ontrac-wireless (2026-07-01)"
+        },
+        "build": {
+          "value": 7,
+          "why": "expert: machined aluminium, swappable caps + pads; solid but heavy, not foldable.",
+          "source": "https://www.engadget.com/audio/headphones/dyson-ontrac-headphones-review-when-the-basics-arent-enough-151518312.html (2026-07-01)"
+        },
+        "sound": {
+          "value": 5,
+          "why": "lab: NARROW soundstage, uneven treble, needs EQ; below the flagships for the price.",
+          "source": "https://www.rtings.com/headphones/reviews/dyson/ontrac-wireless (2026-07-01)"
+        },
+        "wireless": {
+          "value": 4,
+          "why": "spec: SBC/AAC/LHDC only — NO LDAC, NO aptX, and NO multipoint. Poor fit for Android + phone↔PC.",
+          "source": "https://www.androidpolice.com/dyson-ontrac-review/ (2026-07-01)"
+        },
+        "comfort": {
+          "value": 4,
+          "why": "expert/owner: 451g (heaviest) though headband-batteries distribute it; ears get warm; round cups cramped on larger ears.",
+          "source": "https://stereoguide.com/headphones/noise-cancelling-en/dyson-ontrac-review-over-ear-headphones-with-anc/ (2026-07-01)"
+        },
+        "calls": {
+          "value": 5,
+          "why": "lab: room-noise REJECTION is good (beamforming) but the voice is 'compressed, lacked energy' (single mic). Mixed on his two-part gripe.",
+          "source": "https://www.engadget.com/audio/headphones/dyson-ontrac-headphones-review-when-the-basics-arent-enough-151518312.html (2026-07-01)"
+        },
+        "transparency": {
+          "value": 6,
+          "why": "expert: usable.",
+          "source": "https://www.rtings.com/headphones/reviews/dyson/ontrac-wireless (2026-07-01)"
+        },
+        "wired": {
+          "value": 2,
+          "why": "spec: NO USB-DAC and NO 3.5mm jack (USB-C charge-only) — wireless-only in practice.",
+          "source": "https://stereoguide.com/headphones/noise-cancelling-en/dyson-ontrac-review-over-ear-headphones-with-anc/ (2026-07-01)"
+        },
+        "battery": {
+          "value": 10,
+          "why": "lab: 55h rated ANC-on (~51h measured) — best of the field.",
+          "source": "https://www.rtings.com/headphones/reviews/dyson/ontrac-wireless (2026-07-01)"
+        },
+        "antineed": {
+          "value": -2,
+          "why": "MyDyson app + ACCOUNT required for full features; Android Police flags account + location sharing; awkward joystick + flaky double-tap touch.",
+          "source": "https://www.androidpolice.com/dyson-ontrac-review/ (2026-07-01)"
+        }
       }
     }
   ],
   "comparisons": {
-    "bw-px7-s3|sony-xm6": {
-      "text": "The value knee vs its cheaper frontier neighbour. On paper the Px7 S3 (€329) looks like the steal — better build-feel, more refined sound, USB-C DAC. But the cross-check found it carries BOTH an ANC 'pressurisation' sensation and the 3rd-tightest measured clamp (442g) — the two things you, specifically, feel most on a long home session. The XM6 (€363, +€34) answers your two named needs better: class-best low-pressure ANC and the fuller voice that fixes your thin-mic gripe, plus LDAC. Prefer the XM6 unless you try the Px7 S3 and its clamp/pressure genuinely doesn't bother you.",
-      "flag": "Px7 S3's 442g clamp is from a single calibrated rig (medium confidence); the ANC-pressure reports are owner+expert. Try it on before relying on the comfort score."
-    },
     "sony-xm6|senn-momentum5": {
       "text": "The knee vs its pricier frontier neighbour. Stepping up €55 to the Momentum 5 buys the biggest battery here (~60h), a user-replaceable battery (longest life), a genuinely cooler/lighter fit, and more detailed sound. You give up the XM6's class-best ANC (M5 is a step behind) and its stronger, proven mic (the M5's mic upgrade is maker-claimed, not yet tested). Prefer the Momentum 5 if sound + all-day comfort + longevity matter more than last-word ANC and calls; the XM6 if quiet and the mic-fix are the point."
     },
     "sony-xm6|sony-collexion": {
-      "text": "The rational knee vs the object you wanted. This is the core trade of your decision. The Collexion (€629, +€266) is the same Sony ANC/mic/LDAC brain as the XM6 wrapped in metal + leather with a hinge-proof single-piece stem — it keeps everything you like about the XM6 and finally satisfies your 'beautiful, built-to-last object' anchor, plus bigger cups that fix the XM6's shallow-cup rubbing. The costs are honest: ANC a touch behind the XM6 (softer seal), battery 24h not 30h, no USB-DAC, and ~€266 for the build. Prefer the Collexion if the object itself is part of why you're upgrading; the XM6 if you can't justify paying €266 for a metal shell.",
-      "flag": "Collexion is ~1-2 months old — durability-over-years, real-world heat, and exact ANC/mic numbers aren't independently confirmed yet."
+      "text": "YOUR CORE QUESTION, answered. A per-dimension review confirms these two are a WASH on performance: identical ANC platform (measured 87% vs 86%), tied on calls, both LDAC + multipoint, near-identical sound (±0.5, a taste call) and transparency, same anti-need profile. They diverge on exactly ONE axis — build (Collexion metal + hinge-proof stem = 8; XM6 plastic and, corrected, still crack-prone = 3.5) — plus a small comfort edge to the Collexion (lower clamp) and a real battery cost (24h vs 30h). So the €266 premium buys the beautiful, built-to-last OBJECT you anchored on — not more silence, sound, or mic. Prefer the Collexion if the object is part of the upgrade; the XM6 if you won't feel €266 of metal (and want 6 more hours of battery).",
+      "flag": "The €266 is almost entirely the build dimension — the one you tied for #1. That makes it a values call, not a spec call."
     },
     "sony-collexion|bw-px8-s2": {
       "text": "The two buy-ups, head to head (~€20 apart). The Px8 S2 (€649) is the higher score overall — the most refined sound here and true cast-aluminium + Nappa luxury. The Collexion (€629) wins the things you ranked highest: deeper, lower-pressure ANC, LDAC (vs no LDAC), a better mic for your room-noise pain, and Sony's easier comfort. The Px8 S2 counters with clearly better sound, a more jewel-like build, and USB-C hi-res wired. Prefer the Px8 S2 if sound + ultimate build lead; the Collexion if ANC + your mic-fix + Android LDAC + comfort lead (they do, on your weights).",
@@ -907,7 +1925,7 @@ button{font-family:inherit;}
       "flag": "If you're worried about ANC pressure, the Bose is arguably the SAFEST here (adjustable levels) — the opposite of its old reputation. Worth an in-store try."
     },
     "sony-xm6|sony-xm5": {
-      "text": "The knee vs the budget floor. The XM5 (€261) is the cheap way to fix your mic gripe — its room-noise rejection is co-best with the XM6 and it keeps LDAC, for €102 less. The catch is durability: it's all-plastic, does NOT fold, and has a documented hinge-cracking problem (class action, ~47% owner-failure poll). The XM6 adds class-best ANC, a redesigned hinge, better sound and folding. Prefer the XM5 only to spend the least; the XM6 is the safer keeper for a heavy daily user like you (≈4,000h logged)."
+      "text": "The cheap-Sony pair. The XM5 (€261) fixes the mic and keeps LDAC for €102 less, but it's all-plastic, doesn't fold, and has the documented hinge-crack problem — which, corrected, the XM6 shares (though it at least folds and cancels more). Prefer the XM5 only to spend the least; neither is built to last, so if durability matters, look to the metal buy-ups."
     },
     "beyer-aventho300|bw-px7-s3": {
       "text": "The two cheapest frontier steps. The Beyerdynamic (€279) is the codec/battery value play — aptX Lossless, ~50h, detailed sound. But it's heavier with a firm clamp and runs warm, and its mic is middling — three misses for a pressure-sensitive, comfort-first home listener. The Px7 S3 (+€50) sounds similar, builds nicer and adds a USB-DAC, but carries its own clamp/pressure issue. Honestly, for you both are out-shone one step up by the XM6 — treat these as the 'spend the least' end of the frontier."
@@ -918,6 +1936,18 @@ button{font-family:inherit;}
     },
     "bw-px8-s2|bw-px8": {
       "text": "If you're buying the metal B&W, buy the S2. For €193 more the Px8 S2 upgrades to new carbon drivers (more refined sound), an 8-mic array (calls 6 vs the Px8's bottom-of-field 4), aptX Lossless, a slimmer body, and fixes the Px8's unwanted-multipoint bug — same premium metal build. The original Px8 (€456) is actually dominated by the cheaper Px7 S3 for you. Only consider the plain Px8 if it drops to ~€380 AND you don't care about calls."
+    },
+    "senn-momentum5|sony-xm6": {
+      "text": "The value knee vs the cheaper Sony. The Momentum 5 (€418) edged ahead once its mic was review-verified — it pairs that with the biggest, USER-REPLACEABLE battery (longest life here), a cooler/lighter fit, aptX Lossless and detailed sound. The XM6 (€363) counters with class-best ANC (its and your #1), the most natural transparency, and €55 less. They're within a hair on total value — prefer the Momentum 5 for the best all-round package + longevity, the XM6 for deeper ANC at the lowest Sony price. Both are plastic, so neither is the 'object'."
+    },
+    "senn-momentum5|sony-collexion": {
+      "text": "Best all-round value vs the object. Nearly the same value score (~72) — but the Momentum 5 is €211 cheaper. The Collexion earns its premium only on build (metal vs plastic) and a touch of comfort; the Momentum 5 wins battery, wired flexibility and (marginally) sound, and ties the rest. Prefer the Collexion strictly if a beautiful metal object is worth €211 to you; otherwise the Momentum 5 is the rational pick and the Collexion is a heart-buy."
+    },
+    "senn-momentum5|bose-qcu2": {
+      "text": "The value knee vs the ANC champion. Bose has the deepest ANC + best out-of-box comfort (low pressure, 11 adjustable levels), but for your weights it trails: plastic build, no LDAC + flaky multipoint, firmware nag, and only 3-band EQ (you tune). The Momentum 5 gives detailed sound, a huge battery, aptX Lossless and a verified-good mic for less. Prefer the Bose only if raw quiet is everything and you'll live in its app."
+    },
+    "senn-momentum5|focal-bathys": {
+      "text": "Value knee vs the sound champion. The Focal (€649) is the best-sounding here and a lovely object, but it fails your named needs: ANC that leaks (5), a mic that transmits room noise (4), and pads that run hot. The Momentum 5 costs €231 less, cancels better, rejects room noise on calls, stays cooler and lasts far longer — giving up only the last-word soundstage. Prefer the Focal only if sound-above-all is the point."
     }
   }
 };</script>
