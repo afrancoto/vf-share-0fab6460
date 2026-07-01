@@ -565,6 +565,24 @@ button{font-family:inherit;}
   .vf-chart-legend{gap:4px 12px;font-size:10.5px;}
 }
 
+/* Explore-relationships tab: pick any two dimensions → scatter + trend line */
+.vf-rel-intro{font-size:12.5px;color:var(--muted);margin-bottom:14px;line-height:1.5;max-width:760px;}
+.vf-rel-ctrls{display:flex;align-items:flex-end;flex-wrap:wrap;gap:10px 14px;margin-bottom:16px;}
+.vf-rel-ctrl{display:flex;flex-direction:column;gap:5px;}
+.vf-rel-lab{font-family:var(--mono);font-size:9px;letter-spacing:.05em;text-transform:uppercase;color:var(--faint);}
+.vf-rel-ctrl select{font-family:inherit;font-size:13px;padding:9px 11px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);min-width:210px;cursor:pointer;}
+.vf-rel-ctrl select:hover{border-color:var(--dom);}
+.vf-rel-vs{color:var(--faint);font-size:12px;padding-bottom:10px;}
+.vf-rel-note{font-size:13px;color:var(--muted);padding:24px 4px;}
+.vf-rel-plotwrap{padding:10px 10px 4px;margin-bottom:14px;}
+.vf-trend{stroke:var(--rec);stroke-width:2;stroke-dasharray:7 5;opacity:.7;fill:none;stroke-linecap:round;}
+.vf-pt-lab-dim{fill:var(--faint);font-weight:500;}
+.vf-rel-cap{display:flex;flex-direction:column;gap:6px;padding:14px 16px;background:var(--card-2);border:1px solid var(--line);border-radius:var(--r-card);}
+.vf-rel-r{font-family:var(--mono);font-size:12px;color:var(--rec);letter-spacing:.02em;}
+.vf-rel-plain{font-size:14px;color:var(--ink);line-height:1.5;}
+.vf-rel-foot{font-size:11.5px;color:var(--faint);line-height:1.45;}
+@media(max-width:560px){.vf-rel-ctrl select{min-width:0;width:100%;}.vf-rel-ctrl{flex:1 1 100%;}}
+
 @media (prefers-reduced-motion: reduce){*{transition:none !important;animation:none !important;}}
 </style>
 </head>
@@ -1935,7 +1953,7 @@ button{font-family:inherit;}
     var self = this;
     this.data = data; this.root = root;
     this.state = { weights: {}, wants: {}, lensDim: null, selectedId: null, hoveredId: null,
-      costMode: 'acq', horizon: null, budgetCap: null, zoomPreset: 'all', tab: 'overview', sortKey: 'value', sortDir: -1, cmp: null, cmpWhyOpen: false, pensOpen: false };
+      costMode: 'acq', horizon: null, budgetCap: null, zoomPreset: 'all', tab: 'overview', sortKey: 'value', sortDir: -1, cmp: null, cmpWhyOpen: false, pensOpen: false, relX: null, relY: null };
     this.dotEls = {};
     this.initWants();
     this.readHash();
@@ -2016,6 +2034,8 @@ button{font-family:inherit;}
       if (q.b) s.budgetCap = +q.b || null;
       if (q.cmp) s.cmp = q.cmp.split(',');
       if (q.tab) s.tab = q.tab;
+      if (q.rx) s.relX = q.rx;
+      if (q.ry) s.relY = q.ry;
       if (q.w) q.w.split(',').forEach(function (pair) { var p = pair.split(':'); if (p[0]) s.wants[p[0]] = +p[1]; });
       if (q.p) q.p.split(',').forEach(function (pair) { var p = pair.split(':'); if (p[0]) s.weights[p[0]] = (+p[1]) / 100; });
       this.syncWeights();
@@ -2031,6 +2051,8 @@ button{font-family:inherit;}
       if (s.selectedId && s.selectedId !== this.result.recommendedId) parts.push('sel=' + encodeURIComponent(s.selectedId));
       if (s.budgetCap != null) parts.push('b=' + Math.round(s.budgetCap));
       if (s.tab && s.tab !== 'overview') parts.push('tab=' + s.tab);
+      if (s.tab === 'relate' && s.relX) parts.push('rx=' + encodeURIComponent(s.relX));
+      if (s.tab === 'relate' && s.relY) parts.push('ry=' + encodeURIComponent(s.relY));
       if (s.cmp && s.cmp.filter(Boolean).length) parts.push('cmp=' + encodeURIComponent(s.cmp.filter(Boolean).join(',')));
       var wd = this.posDims().map(function (d) { return d.id + ':' + (s.wants[d.id] || 0); }).join(',');
       if (wd) parts.push('w=' + encodeURIComponent(wd));
@@ -2383,10 +2405,143 @@ button{font-family:inherit;}
     return bars;
   };
 
+  // ---------- Explore relationships: pick any two dimensions → scatter + trend line ----------
+  // Selectable axes = every dimension (raw score) + Cost + Total value. Answers "does A track B?"
+  App.prototype.axisFields = function () {
+    var self = this;
+    var fields = (this.data.dimensions || []).map(function (d) {
+      return { key: 'dim:' + d.id, label: d.label, dim: d,
+        min: d.range ? d.range.min : 0, max: d.range ? d.range.max : 10,
+        get: function (r) { var p = r.parts.filter(function (q) { return q.id === d.id; })[0]; return p ? p.raw : null; },
+        fmt: function (v) { return (Math.round(v * 10) / 10) + ''; } };
+    });
+    fields.push({ key: 'cost', label: this.costLabel() + ' (€)',
+      get: function (r) { return r.costX; }, fmt: function (v) { return '€' + Math.round(v).toLocaleString(); } });
+    fields.push({ key: 'value', label: 'Total value to you',
+      get: function (r) { return r.plot; }, fmt: function (v) { return Math.round(v) + ''; } });
+    return fields;
+  };
+  App.prototype.renderRelate = function () {
+    var self = this, panel = this.elTabPanel; if (!panel) return;
+    var fields = this.axisFields(), byKey = {}; fields.forEach(function (f) { byKey[f.key] = f; });
+    var dimKeys = fields.filter(function (f) { return f.dim; }).map(function (f) { return f.key; });
+    var kx = (this.state.relX && byKey[this.state.relX]) ? this.state.relX : (dimKeys[0] || fields[0].key);
+    var ky = (this.state.relY && byKey[this.state.relY]) ? this.state.relY : (dimKeys[1] || dimKeys[0] || fields[0].key);
+    this.state.relX = kx; this.state.relY = ky;
+    var fx = byKey[kx], fy = byKey[ky];
+    function optlist(sel) { return fields.map(function (f) { return '<option value="' + htmlEsc(f.key) + '"' + (f.key === sel ? ' selected' : '') + '>' + htmlEsc(f.label) + '</option>'; }).join(''); }
+    var controls = '<div class="vf-rel-intro">Pick any two dimensions to see how they relate across the options — a fitted trend line shows whether one tends to move with the other (a trade-off, or a two-birds win).</div>'
+      + '<div class="vf-rel-ctrls">'
+      + '<label class="vf-rel-ctrl"><span class="vf-rel-lab">Horizontal (X)</span><select data-rel="x" aria-label="X-axis dimension">' + optlist(kx) + '</select></label>'
+      + '<span class="vf-rel-vs">vs</span>'
+      + '<label class="vf-rel-ctrl"><span class="vf-rel-lab">Vertical (Y)</span><select data-rel="y" aria-label="Y-axis dimension">' + optlist(ky) + '</select></label>'
+      + '</div>';
+
+    // gather plottable points (any product with both values present)
+    var pts = this.result.rows.map(function (r) { return { r: r, x: fx.get(r), y: fy.get(r) }; })
+      .filter(function (p) { return p.x != null && p.y != null && isFinite(p.x) && isFinite(p.y); });
+    var n = pts.length;
+    if (kx === ky) { panel.innerHTML = controls + '<div class="vf-rel-note">Pick two <em>different</em> dimensions to see a relationship.</div>'; this.bindRelate(); return; }
+    if (n < 2) { panel.innerHTML = controls + '<div class="vf-rel-note">Not enough data to plot.</div>'; this.bindRelate(); return; }
+
+    // least-squares fit + Pearson r
+    var sx1 = 0, sy1 = 0; pts.forEach(function (p) { sx1 += p.x; sy1 += p.y; });
+    var mx = sx1 / n, my = sy1 / n, sxx = 0, syy = 0, sxy = 0;
+    pts.forEach(function (p) { var ax = p.x - mx, ay = p.y - my; sxx += ax * ax; syy += ay * ay; sxy += ax * ay; });
+    var canFit = sxx > 1e-9, slope = canFit ? sxy / sxx : 0, intercept = my - slope * mx;
+    var r = (sxx > 1e-9 && syy > 1e-9) ? sxy / Math.sqrt(sxx * syy) : 0, r2 = r * r;
+
+    // domains: dimensions anchor to their own scale; cost/value auto-fit to the data
+    function dom(f, sel) {
+      if (f.dim && f.min != null && f.max != null) { var pd = (f.max - f.min) * 0.06 || 1; return { lo: f.min - pd, hi: f.max + pd }; }
+      var vs = pts.map(function (p) { return sel === 'x' ? p.x : p.y; }); var lo = Math.min.apply(null, vs), hi = Math.max.apply(null, vs), pd2 = (hi - lo) * 0.12 || 1; return { lo: lo - pd2, hi: hi + pd2 };
+    }
+    var dX = dom(fx, 'x'), dY = dom(fy, 'y');
+    var W = 960, H = 560, m = { l: 64, r: 26, t: 34, b: 60 }, iw = W - m.l - m.r, ih = H - m.t - m.b;
+    var sx = function (v) { return m.l + (v - dX.lo) / (dX.hi - dX.lo) * iw; }, sy = function (v) { return m.t + (1 - (v - dY.lo) / (dY.hi - dY.lo)) * ih; };
+    var svg = svgEl('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'vf-svg', role: 'img', 'aria-label': 'Scatter of ' + fx.label + ' versus ' + fy.label + ' with trend line' });
+    ticks(dX.lo, dX.hi, 5).forEach(function (t) { svg.appendChild(svgEl('line', { x1: sx(t), y1: m.t, x2: sx(t), y2: m.t + ih, class: 'vf-grid' })); svg.appendChild(svgText(sx(t), m.t + ih + 22, fx.fmt(t), 'vf-tick')); });
+    ticks(dY.lo, dY.hi, 5).forEach(function (t) { svg.appendChild(svgEl('line', { x1: m.l, y1: sy(t), x2: m.l + iw, y2: sy(t), class: 'vf-grid' })); svg.appendChild(svgText(m.l - 10, sy(t) + 4, fy.fmt(t), 'vf-tick vf-tick-y')); });
+    svg.appendChild(svgText(m.l, m.t - 14, htmlEsc(fy.label) + ' →', 'vf-axhint'));
+    var xh = svgText(m.l + iw, m.t + ih + 44, htmlEsc(fx.label) + ' →', 'vf-axhint vf-axhint-r'); svg.appendChild(xh);
+    // trend line, clipped to the plot box
+    if (canFit) {
+      var pA = { x: dX.lo, y: intercept + slope * dX.lo }, pB = { x: dX.hi, y: intercept + slope * dX.hi };
+      // clip y to domain so a steep line stays inside
+      function clip(pa, pb) {
+        var yy0 = pa.y, yy1 = pb.y;
+        if (yy0 < dY.lo) { pa = { x: pa.x + (pb.x - pa.x) * (dY.lo - pa.y) / (pb.y - pa.y), y: dY.lo }; }
+        if (yy0 > dY.hi) { pa = { x: pa.x + (pb.x - pa.x) * (dY.hi - pa.y) / (pb.y - pa.y), y: dY.hi }; }
+        if (yy1 < dY.lo) { pb = { x: pa.x + (pb.x - pa.x) * (dY.lo - yy0) / (yy1 - yy0), y: dY.lo }; }
+        if (yy1 > dY.hi) { pb = { x: pa.x + (pb.x - pa.x) * (dY.hi - yy0) / (yy1 - yy0), y: dY.hi }; }
+        return [pa, pb];
+      }
+      var cl = clip(pA, pB);
+      svg.appendChild(svgEl('line', { x1: sx(cl[0].x), y1: sy(cl[0].y), x2: sx(cl[1].x), y2: sy(cl[1].y), class: 'vf-trend' }));
+    }
+    // points (+ greedy label placement; pick = accent ring, screened = faded, selected = ring)
+    var sel = this.state.selectedId, placed = [];
+    pts.slice().sort(function (a, b) { return (b.r.recommended - a.r.recommended) || (b.r.onFrontier - a.r.onFrontier); }).forEach(function (p) {
+      var r0 = p.r, cx = sx(p.x), cy = sy(p.y), dim = r0.screenedOut || r0.overBudget, isRec = r0.recommended, isSel = r0.id === sel;
+      var g = svgEl('g', { class: 'vf-pt-g', 'data-id': r0.id, tabindex: '0', role: 'button', 'aria-label': r0.name + ': ' + fx.label + ' ' + fx.fmt(p.x) + ', ' + fy.label + ' ' + fy.fmt(p.y) });
+      if (isSel) g.appendChild(svgEl('circle', { cx: cx, cy: cy, r: 14, class: 'vf-pt-selring' }));
+      if (isRec) g.appendChild(svgEl('circle', { cx: cx, cy: cy, r: 12, class: 'vf-pt-recring' }));
+      var cls = 'vf-pt ' + (dim ? 'vf-pt-screen' : isRec ? 'vf-pt-rec' : r0.onFrontier ? 'vf-pt-front' : 'vf-pt-dom');
+      var c = svgEl('circle', { cx: cx, cy: cy, r: isRec ? 8 : 6, class: cls });
+      c.appendChild(svgEl('title', {}, [])); c.lastChild.textContent = r0.name + ' — ' + fx.label + ': ' + fx.fmt(p.x) + ' · ' + fy.label + ': ' + fy.fmt(p.y);
+      g.appendChild(c);
+      // label with simple collision avoidance
+      var lab = shortName(r0.name), wEst = lab.length * 6.1 + 6, hEst = 14;
+      var cands = [[10, 'start', -4], [-10, 'end', -4], [10, 'start', 12], [-10, 'end', 12], [0, 'middle', -12], [0, 'middle', 18]];
+      var chosen = null;
+      for (var ci = 0; ci < cands.length && !chosen; ci++) {
+        var cd = cands[ci], anc = cd[1];
+        var lx = cx + cd[0], ly = cy + cd[2];
+        var left = anc === 'start' ? lx : anc === 'end' ? lx - wEst : lx - wEst / 2;
+        var box = { x0: left, y0: ly - hEst, x1: left + wEst, y1: ly + 2 };
+        if (box.x0 < m.l - 1 || box.x1 > m.l + iw + 1 || box.y0 < m.t + 1 || box.y1 > m.t + ih - 1) continue;
+        var hit = false; for (var pi = 0; pi < placed.length; pi++) { var q = placed[pi]; if (!(box.x1 < q.x0 || box.x0 > q.x1 || box.y1 < q.y0 || box.y0 > q.y1)) { hit = true; break; } }
+        if (!hit) { chosen = { lx: lx, ly: ly, anc: anc, box: box }; }
+      }
+      if (chosen) {
+        var tEl = svgText(chosen.lx, chosen.ly, lab, 'vf-pt-lab' + (isRec ? ' vf-pt-lab-rec' : (dim ? ' vf-pt-lab-dim' : '')));
+        tEl.setAttribute('text-anchor', chosen.anc); g.appendChild(tEl); placed.push(chosen.box);
+      }
+      g.addEventListener('click', function () { self.select(r0.id); self.renderRelate(); });
+      g.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); self.select(r0.id); self.renderRelate(); } });
+      svg.appendChild(g);
+    });
+
+    // plain-language read of the correlation
+    var mag = Math.abs(r), strength = !canFit ? 'flat' : mag >= 0.7 ? 'strong' : mag >= 0.4 ? 'moderate' : mag >= 0.2 ? 'weak' : 'no clear';
+    var dir = r >= 0 ? 'positive' : 'negative';
+    var plain;
+    if (!canFit) plain = 'The options barely differ on ' + htmlEsc(fx.label) + ', so there is no relationship to read.';
+    else if (strength === 'no clear') plain = 'Little to no relationship — ' + htmlEsc(fx.label) + ' and ' + htmlEsc(fy.label) + ' move independently across these options.';
+    else if (r >= 0) plain = '<strong>' + strength + ' positive</strong> — options that score higher on ' + htmlEsc(fx.label) + ' <em>tend to</em> score higher on ' + htmlEsc(fy.label) + ' too (they come together).';
+    else plain = '<strong>' + strength + ' negative</strong> — options that score higher on ' + htmlEsc(fx.label) + ' <em>tend to</em> score lower on ' + htmlEsc(fy.label) + ' (a trade-off).';
+    var stat = canFit ? ('r = ' + r.toFixed(2) + ' · R² = ' + r2.toFixed(2)) : 'r = n/a';
+    var cap = '<div class="vf-rel-cap"><span class="vf-rel-r">' + stat + '</span> <span class="vf-rel-plain">' + plain + '</span>'
+      + '<span class="vf-rel-foot">Trend = least-squares fit; correlation ≠ causation, and with few options one outlier can swing the line. Click a point to inspect that option.</span></div>';
+
+    panel.innerHTML = controls + '<div class="vf-card vf-rel-plotwrap"></div>' + cap;
+    panel.querySelector('.vf-rel-plotwrap').appendChild(svg);
+    this.bindRelate();
+  };
+  App.prototype.bindRelate = function () {
+    var self = this;
+    Array.prototype.forEach.call(this.elTabPanel.querySelectorAll('select[data-rel]'), function (s) {
+      s.addEventListener('change', function () {
+        if (s.getAttribute('data-rel') === 'x') self.state.relX = s.value; else self.state.relY = s.value;
+        self.writeHash(); self.renderRelate();
+      });
+    });
+  };
+
   // ---------- tabs ----------
   App.prototype.buildTabs = function () {
     var self = this, cur = this.state.tab || 'overview';
-    var defs = [['overview', 'Overview'], ['table', 'All options'], ['compare', 'Compare'], ['robust', 'How solid is the pick'], ['score', 'How it’s scored']];
+    var defs = [['overview', 'Overview'], ['table', 'All options'], ['compare', 'Compare'], ['relate', 'Explore relationships'], ['robust', 'How solid is the pick'], ['score', 'How it’s scored']];
     this.elTabs.innerHTML = '<div class="vf-tabnav" role="tablist">'
       + defs.map(function (t) { return '<button class="vf-tab' + (t[0] === cur ? ' vf-tab-on' : '') + '" data-tab="' + t[0] + '" role="tab" aria-selected="' + (t[0] === cur ? 'true' : 'false') + '">' + htmlEsc(t[1]) + '</button>'; }).join('')
       + '</div>';
@@ -2407,6 +2562,7 @@ button{font-family:inherit;}
     if (t === 'score') this.renderScoring();
     else if (t === 'robust') this.renderRobust();
     else if (t === 'compare') this.renderCompare();
+    else if (t === 'relate') this.renderRelate();
     else this.renderTableLens();
   };
 
