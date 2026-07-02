@@ -598,49 +598,73 @@ button{font-family:inherit;}
     "discountRate": 0.05,
     "engineVersion": "1.0.0",
     "createdISO": "2026-07-02",
-    "note": "The hard constraint drives everything: it must sit in the bottom of Andrea's Peak Design Everyday Backpack Zip 20L (interior 28.5 cm wide) → folded length ≤ 28 cm. That ≤28 cm ceiling screens out nearly every 'obvious' quality windproof pick — Blunt Metro (37.5 cm), Senz Original (79 cm stick), Doppler Carbonsteel Magic (29 cm), Senz Mini (28.2 cm), Repel (29 cm), Balios (35.6 cm). 41 models scouted 2026-07-02 (product-search on bol.com/amazon.nl/samsonite.nl + web for specs/reviews, 7 parallel brand clusters). 14 fitting contenders scored + 4 near-misses kept greyed-out so the constraint is auditable. Weights: quality-first (no price cap), balanced compactness↔coverage, windproof + durability lead. Cost defaults to Purchase; the Per-year/Total toggle re-spreads over expected life (rewarding the lifetime-guaranteed Davek). PFAS-free confirmed only for Original Duckhead. Prices incl. VAT; Davek adds NL shipping + EU import duty (new on all EU shipments from 2026-07-01), folded into delivery."
+    "note": "REVISED 2026-07-02 after a deep review-evidence pass (OutdoorGearLab, Wirecutter, Reddit r/umbrellas + r/BuyItForLife, Trustpilot, owner reviews on amazon.de/.nl + bol; 8-agent synthesis) + a full knirps.com catalogue walk. Four evidence-driven changes: (1) NEW dimension 'Mechanism reliability' — the field's #1 documented failure (the auto open/close spring) was double-mis-scored: hidden inside durability AND rewarded by ease=10 on the very autos that die. Split out, it favours MANUAL models (Knirps' own manuals out-rate its autos: US.050 4.5/1,685 vs U.200 4.2/505). (2) 'Windproof' re-anchored to real/side-wind stability — the km/h figures are frontal-lab survive-inversion ratings; OGL saw no compact reach its marketed rating (U.200 9→7). (3) 'Coverage' now weighs canopy depth/shape — asymmetric (Senz) and shallow (Davek Mini) canopies leave the windward flank + back-worn pack wet in cross-wind rain. (4) 'Fabric' credits fast-shed/no-leak re-sheathing (it lives in the bag bottom); PFAS-free is UNVERIFIED for most (only Duckhead + Knirps Vision/Re3 substantiate it). ease weight cut 0.068→0.04. NET EFFECT: adding Mechanism reliability lifts the MANUAL umbrellas — the value frontier is now a cluster of manuals. The engine's pure value-for-money knee is the cheap manual Fulton Storm-1 (€25.69); the QUALITY-FIRST recommendation one step up is the Knirps US.050 (the highest-rated umbrella in the field, 4.5★/1,685, manual — nothing to fail, lightest at 115 g, rustproof); Davek Mini stays the buy-it-for-life top; and the new EuroSCHIRM Light Trek Ultra is the most CREDIBLY windproof fitter (independently lab-tested to Force 11 ~117 km/h). The old auto U.200 drops to the auto-convenience option (docked for the auto-close spring + real-wind stability); T.200 is the max-wind/coverage auto. +3 new fitting Knirps autos (Vision Duomatic — only one documenting PFC-free ecorepel fabric + 5-yr; MINI Duomatic — lightest fitting auto 175 g; C.250 — 120 km/h in 25 cm) + 3 new brands from a major/innovative-brand gap-scan (EuroSCHIRM lab-windproof manual; Victorinox Ecorepel self-drying PFC-free fabric; Montbell 111 g ultralight). The 28cm fit still screens the storm kings (Carbonsteel Magic 29cm, Blunt Metro 37.5cm, Senz Original stick); Samsonite Alu Drop now screens on the windproof floor (aluminium inverts). Prices incl. VAT, lowest in-stock bol/amazon.nl seller (U.200 €31.94 modeherz verified 2026-07-02); Davek adds NL shipping + EU import duty."
   },
   "dimensions": [
-    { "id": "windproof", "short": "Windproof", "label": "Windproofness / storm resistance", "type": "functional", "direction": "more-better", "weight": 0.122, "range": { "min": 0, "max": 10 }, "hardMin": 3,
-      "rationale": "The #1 need for Dutch wind-driven rain: does the canopy resist turning inside-out? Scored on tested km/h rating, frame flex-and-recover, and vented/aerodynamic design — not marketing. 10 = tested ≥120 km/h; 8 = ~100; 6 = ~70–80 aero/flex; 4 = 'wind-resistant' but untested; 2 = inverts early." },
-    { "id": "durability", "short": "Durability", "label": "Build durability — won't break", "type": "risk", "direction": "more-better", "weight": 0.122, "range": { "min": 0, "max": 10 },
-      "rationale": "Buy-it-once quality: rib/joint robustness, mechanism longevity (an auto spring is one more failure point), and how far the warranty backs it. 10 = lifetime guarantee / near-indestructible; 8 = 5-yr, quality fibreglass; 6 = 2–3-yr solid; 4 = budget frame that wears." },
-    { "id": "coverage", "short": "Coverage", "label": "Coverage when open (canopy)", "type": "functional", "direction": "more-better", "weight": 0.108, "range": { "min": 0, "max": 10 }, "hardMin": 3,
-      "rationale": "How fully it keeps one adult (+ a backpack on the back) dry — canopy arc/span. 9 = ~100–102 cm; 8 = ~97–98; 7 = ~94–96; 6 = ~90–92; 5 = ~84–86. Senz's asymmetric shape covers the back better than its span suggests; Blunt's scalloped shape covers worse than its span suggests." },
-    { "id": "packdown", "short": "Compact", "label": "Pack-down compactness (folded length)", "type": "functional", "direction": "more-better", "weight": 0.108, "range": { "min": 0, "max": 10 }, "hardMin": 4,
-      "rationale": "The fit constraint, scored: folded length vs the bag's 28.5 cm interior. hardMin 4 ⇒ ≤ ~28 cm (anything longer is screened — it won't sit in the bottom). Anchors: 10 = ≤16 cm · 9 = ~17–18 · 8 = ~18–21 · 7 = ~21–22 · 6 = ~23–25 · 5 = ~26 · 4 = 27–28 · <4 = >28 (fails)." },
-    { "id": "fabric", "short": "Fabric", "label": "Canopy fabric (waterproof, fast-dry, PFAS)", "type": "functional", "direction": "more-better", "weight": 0.108, "range": { "min": 0, "max": 10 },
-      "rationale": "'Compact but covering cloth that doesn't break' — water column/repellency, fast-dry (it lives in the bag bottom, so a slow-drying canopy wets everything), and PFAS-free as a plus. 10 = fast-dry + PFAS-free; 8 = fast-dry good coating; 7 = quality/OEKO-TEX; 6 = standard DWR; 5 = ultra-thin, wets through; 4 = budget pongee." },
-    { "id": "design", "short": "Design", "label": "Design & finish", "type": "aesthetic", "direction": "more-better", "weight": 0.095, "range": { "min": 0, "max": 10 },
-      "rationale": "'Good design' — form, finish, materials, considered-object feel (Andrea owns a Peak Design bag). Scored on merit, colour-agnostic. 9 = design icon / award-winning (Senz, Davek, Anatole); 8 = wood-handle design pieces (Duckhead); 7 = clean understated (Knirps, Doppler Zero); 6 = classic-plain; 4 = generic budget." },
-    { "id": "weight", "short": "Light", "label": "Lightness (weight)", "type": "experiential", "direction": "more-better", "weight": 0.095, "range": { "min": 0, "max": 10 },
-      "rationale": "'Light enough to always bring.' 10 = ≤120 g; 8 = ~150–190; 7 = ~220–240; 6 = ~270–300; 5 = ~320–370; 4 = ~400–450." },
-    { "id": "nolose", "short": "No-lose", "label": "Self-contained — no losable pieces", "type": "risk", "direction": "more-better", "weight": 0.095, "range": { "min": 0, "max": 10 },
-      "rationale": "'Not to have pieces that get lost.' Rewards attached straps, tethered/feature cases, loss-protection programs; penalises a loose slip-cover you'll misplace. 8 = attached strap + loss-cover/feature case; 7 = attached strap + zip case; 6 = attached wrist cord + slip pouch; 5 = plain detachable slip cover." },
-    { "id": "corrosion", "short": "No-rust", "label": "Corrosion / rust resistance", "type": "risk", "direction": "more-better", "weight": 0.081, "range": { "min": 0, "max": 10 },
-      "rationale": "'Doesn't rust.' Frame material: 10 = anodised alu + fibreglass, no steel; 9 = alu shaft + fibreglass ribs; 8 = fibreglass ribs + steel shaft (treated); 7 = steel shaft/frame elements; 6 = budget/plain steel; 5 = cheap steel." },
-    { "id": "ease", "short": "Ease", "label": "Open/close ease & handling", "type": "experiential", "direction": "more-better", "weight": 0.068, "range": { "min": 0, "max": 10 },
-      "rationale": "One-handed use in the rain while juggling a bag. 10 = auto open+close (one button); 8 = auto-open, manual close; 6 = smooth manual + nice handle; 5 = fiddly two-hand manual." }
+    { "id": "wind", "short": "Windproof", "label": "Windproofness — real-world stability", "type": "functional", "direction": "more-better", "weight": 0.12, "range": { "min": 0, "max": 10 }, "hardMin": 3,
+      "rationale": "RE-ANCHORED to how the canopy behaves in real gusty/side wind (does it stay domed and keep you dry?), NOT the frontal wind-tunnel km/h — those are clamped-frame survive-inversion ratings, and OutdoorGearLab found no compact folder actually reached its marketed figure (Blunt inverted ~22 mph vs its 115 km/h claim). Knirps' own docs say the ultra-light canopy 'flips inside out to avoid breaking the ribs' — survival, not stability. 10 = genuinely holds in storm (fixed-shaft/8-rib storm frames); 8 = strong; 6 = holds moderate wind, inverts-recovers in gusts; 4 = 'wind-resistant' but inverts early; 2 = inverts in a breeze." },
+    { "id": "dura", "short": "Build", "label": "Build durability — frame/ribs/canopy", "type": "risk", "direction": "more-better", "weight": 0.12, "range": { "min": 0, "max": 10 },
+      "rationale": "Frame, rib and canopy build quality + warranty backing — MECHANISM-AGNOSTIC (the open/close mechanism now lives in its own dimension). 10 = lifetime-backed / near-indestructible frame; 8 = 5-yr quality fibreglass; 6 = solid 2–3-yr; 4 = budget frame that bends/wears." },
+    { "id": "mech", "short": "Mechanism", "label": "Open/close mechanism reliability", "type": "risk", "direction": "more-better", "weight": 0.08, "range": { "min": 0, "max": 10 },
+      "rationale": "NEW — the single most decision-relevant finding: across every review source, the auto open/CLOSE spring is the #1 real-world failure (U.200 owners report it dying in <1 yr; Repel's button dead in 3–10 mo; Doppler 'Magic' won't latch). Manual umbrellas have nothing here to fail — which is why Knirps' own manuals out-rate its automatics. 10 = manual, no mechanism to break (or lifetime-replace-anything); 7 = premium auto that mostly holds; 5–6 = mainstream auto with a known-but-warrantied spring; 3 = auto with widespread early failures." },
+    { "id": "cover", "short": "Coverage", "label": "Coverage — canopy size, depth & shape", "type": "functional", "direction": "more-better", "weight": 0.11, "range": { "min": 0, "max": 10 }, "hardMin": 3,
+      "rationale": "RE-INTERPRETED to weigh canopy depth/shape for CROSS-WIND rain over a back-worn 20L pack, not just arc span in still air. OGL on the asymmetric Senz: 'raindrops struck at the upper thigh and mid-bicep… we often got wet on one side… did not keep backpacks dry'; the Davek Mini is 'small and shallow — head and shoulders only'. 9 = large + deep, covers you + the pack; 7 = solid one-person; 5 = shallow/asymmetric, one flank or the pack gets wet." },
+    { "id": "pack", "short": "Compact", "label": "Pack-down compactness (folded length)", "type": "functional", "direction": "more-better", "weight": 0.11, "range": { "min": 0, "max": 10 }, "hardMin": 4,
+      "rationale": "The fit constraint, scored: folded length vs the bag's 28.5 cm interior. hardMin 4 ⇒ ≤ ~28 cm (longer is screened). NB OGL repeatedly measured folded lengths LONGER than marketed (Blunt 37.8, Repel 29.8), so treat marketed lengths as unverified — the T.200 at exactly 28 cm carries real fit risk. Anchors: 10 = ≤16 · 9 = ~17–18 · 8 = ~18–21 · 7 = ~21–22 · 6 = ~23–25 · 5 = ~26 · 4 = 27–28 · <4 = >28 (fails)." },
+    { "id": "fab", "short": "Fabric", "label": "Canopy fabric — repellency, fast-dry, PFAS", "type": "functional", "direction": "more-better", "weight": 0.10, "range": { "min": 0, "max": 10 },
+      "rationale": "Waterproofing + FAST-SHED / no-leak so it re-sheaths into the bag bottom without soaking everything (US.050's own sleeve is reported to 'leak all over' the bag; the Davek 'shakes dry in seconds, doesn't leak'), + PFAS-free as a plus. 10 = fast-shed + PFAS-free documented; 8 = fast-dry good coating; 7 = quality/OEKO-TEX; 6 = standard DWR; 5 = ultra-thin, wets through; 4 = budget pongee. PFAS-free is UNVERIFIED for most brands (only Original Duckhead + Knirps Vision/Re3 substantiate it)." },
+    { "id": "wt", "short": "Light", "label": "Lightness (weight)", "type": "experiential", "direction": "more-better", "weight": 0.09, "range": { "min": 0, "max": 10 },
+      "rationale": "'Light enough to always bring.' 10 = ≤120 g · 8 = ~150–190 · 7 = ~220–240 · 6 = ~270–300 · 5 = ~320–370 · 4 = ~400–450." },
+    { "id": "nolo", "short": "No-lose", "label": "Self-contained — no losable pieces", "type": "risk", "direction": "more-better", "weight": 0.08, "range": { "min": 0, "max": 10 },
+      "rationale": "'No pieces that get lost.' Rewards attached straps / feature cases / loss-protection; penalises a loose slip cover. 8 = attached strap + loss-cover/feature case; 7 = attached strap + zip case; 6 = attached cord + pouch; 5 = plain detachable slip cover." },
+    { "id": "des", "short": "Design", "label": "Design & finish", "type": "aesthetic", "direction": "more-better", "weight": 0.08, "range": { "min": 0, "max": 10 },
+      "rationale": "'Good design' — form, finish, materials, considered-object feel; colour-agnostic. 9 = design icon (Senz, Davek, Anatole); 8 = wood-handle design pieces (Duckhead); 7 = clean understated (Knirps, Doppler Zero); 6 = classic-plain; 4 = generic budget." },
+    { "id": "rust", "short": "No-rust", "label": "Corrosion / rust resistance", "type": "risk", "direction": "more-better", "weight": 0.07, "range": { "min": 0, "max": 10 },
+      "rationale": "'Doesn't rust.' Frame material: 10 = anodised alu + fibreglass, no steel; 9 = alu shaft + fibreglass ribs; 8 = fibreglass ribs + treated steel shaft; 7 = steel elements; 6 = budget/plain steel; 4 = exposed steel that owners report rusting." },
+    { "id": "ease", "short": "Ease", "label": "Open/close ease & handling", "type": "experiential", "direction": "more-better", "weight": 0.04, "range": { "min": 0, "max": 10 },
+      "rationale": "Convenience of deployment only (reliability now lives in Mechanism; weight cut 0.068→0.04 because the auto convenience is minor and was flattering the fragile autos). 10 = true one-hand auto open+close; 9 = auto but stiff push-down to close; 8 = auto-open/manual-close; 6 = smooth manual; 5 = fiddly multi-stage / two-hand." }
   ],
   "products": [
+    {
+      "id": "knirps-us050",
+      "name": "Knirps US.050 Ultra Light Slim Manual",
+      "price": 39.99,
+      "links": [{ "label": "bol.com", "url": "https://www.bol.com/nl/nl/p/us-050-ultra-light-slim-manual-grey/9300000163523211/" }],
+      "note": "bol.com (seller modeherz), 30-day returns. THE PICK after the review revision: the highest-rated umbrella in the whole field (amazon 4.5★/1,685) precisely because it is fully manual — no auto-close spring to fail. 115 g, ~4 cm thick. Trade-offs: a 90 cm canopy and a small handle some find un-ergonomic; owners note the included sleeve can leak in the bag.",
+      "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 0, "expectedLifeYears": 8, "resaleValue": 0 },
+      "scores": {
+        "wind": { "value": 6, "why": "Tested 100 km/h frontal, but re-anchored: owners note the 6-rib canopy inverts in real side wind ('in their test the wind comes from the front; in real life it never does') — holds moderate wind, recovers from gusts", "source": "amazon.de/.nl US.050 owner reviews + OutdoorGearLab methodology (2026-07-02)" },
+        "dura": { "value": 8, "why": "Quality alu+fibreglass frame, Knirps 5-yr; the highest owner-satisfaction Knirps by far (4.5/1,685)", "source": "https://knirps.com/950050-us-050-ultra-light-slim-manual.html + amazon reviews (2026-07-02)" },
+        "mech": { "value": 10, "why": "Fully manual — no auto spring/string, the field's #1 failure part is simply absent; this is why Knirps' manuals out-rate its automatics", "source": "amazon.de/.nl aggregate (US.050 4.5/1,685 vs U.200 4.2/505) (2026-07-02)" },
+        "cover": { "value": 6, "why": "90 cm canopy — adequate one-person, a notch under the 97 cm autos; snug over a backpack", "source": "https://knirps.com/950050-us-050-ultra-light-slim-manual.html (2026-07-02)" },
+        "pack": { "value": 7, "why": "21 cm folded, ~4 cm thick — slips flat into the bag", "source": "https://knirps.com/950050-us-050-ultra-light-slim-manual.html (2026-07-02)" },
+        "fab": { "value": 7, "why": "Quick-drying polyester; but owners warn the included sleeve leaks at the seams into the bag — carry it canopy-up", "source": "amazon US.050 owner review (Erin) (2026-07-02)" },
+        "wt": { "value": 10, "why": "115 g — the lightest quality option in the field", "source": "https://knirps.com/950050-us-050-ultra-light-slim-manual.html (2026-07-02)" },
+        "nolo": { "value": 5, "why": "Detachable slim slip cover (losable); manual, no button", "source": "https://knirps.com/950050-us-050-ultra-light-slim-manual.html (2026-07-02)" },
+        "des": { "value": 7, "why": "Clean, slim, understated German design", "source": "https://knirps.com/950050-us-050-ultra-light-slim-manual.html (2026-07-02)" },
+        "rust": { "value": 9, "why": "Aluminium shaft + fibreglass ribs — no steel to rust", "source": "https://knirps.com/950050-us-050-ultra-light-slim-manual.html (2026-07-02)" },
+        "ease": { "value": 6, "why": "Manual open/close; some owners find the small handle un-ergonomic", "source": "amazon US.050 owner reviews (2026-07-02)" }
+      }
+    },
     {
       "id": "knirps-u200",
       "name": "Knirps U.200 Ultra Light Duomatic",
       "price": 31.94,
       "links": [{ "label": "bol.com", "url": "https://www.bol.com/nl/nl/p/knirps-u-200-duomatic-zakparaplu-28-cm/9300000181409068/" }],
-      "note": "bol.com, 30-day returns, one order. Range €31.94–40.66 by colour. The all-round pick: fits with 2 cm margin, genuinely light, full one-hand auto, 5-yr warranty.",
+      "note": "bol.com (seller modeherz, verified €31.94 in stock 2026-07-02), 30-day returns. The AUTO-CONVENIENCE alternative and cheapest quality auto: one-button open+close, 185 g, fits with margin. The revision docks it on the two soft spots owners flag — the auto-close spring (mechanism) and real-wind stability — but it stays on the frontier as the value auto.",
       "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 0, "expectedLifeYears": 8, "resaleValue": 0 },
       "scores": {
-        "windproof": { "value": 9, "why": "Wind-tunnel tested to 120 km/h; flexible fibreglass ribs invert and recover without damage — best windproof-per-gram in Knirps' auto line", "source": "https://knirps.com/952200-u-200-ultra-light-duomatic.html (2026-07-02)" },
-        "durability": { "value": 8, "why": "Quality fibreglass frame + 5-yr worldwide warranty (no registration); only reservation is the auto-close spring as an eventual wear point", "source": "https://knirps.com/952200-u-200-ultra-light-duomatic.html (2026-07-02)" },
-        "coverage": { "value": 7, "why": "95 cm canopy — solid one-person coverage", "source": "https://knirps.com/952200-u-200-ultra-light-duomatic.html (2026-07-02)" },
-        "packdown": { "value": 5, "why": "26 cm folded — fits the 28.5 cm interior with ~2 cm to spare (drops in, doesn't wedge)", "source": "https://www.bol.com/nl/nl/p/knirps-u-200-duomatic-zakparaplu-28-cm/9300000181409068/ (2026-07-02)" },
-        "fabric": { "value": 7, "why": "Quick-drying 100% polyester (HeatShield UV variants block ~95% UV); PFAS status not published", "source": "https://knirps.com/952200-u-200-ultra-light-duomatic.html (2026-07-02)" },
-        "design": { "value": 7, "why": "Clean, understated German design; well-finished but not a statement piece", "source": "https://knirps.com/952200-u-200-ultra-light-duomatic.html (2026-07-02)" },
-        "weight": { "value": 8, "why": "185 g — lightest full-auto windproof in the field", "source": "https://knirps.com/952200-u-200-ultra-light-duomatic.html (2026-07-02)" },
-        "nolose": { "value": 5, "why": "Detachable matching slip cover (losable); no carry strap; Duomatic button integrated", "source": "https://knirps.com/952200-u-200-ultra-light-duomatic.html (2026-07-02)" },
-        "corrosion": { "value": 9, "why": "Aluminium shaft + fibreglass ribs — no rust-prone steel", "source": "https://knirps.com/952200-u-200-ultra-light-duomatic.html (2026-07-02)" },
-        "ease": { "value": 10, "why": "Full Duomatic auto open AND close — one button, ideal one-handed in wind", "source": "https://knirps.com/952200-u-200-ultra-light-duomatic.html (2026-07-02)" }
+        "wind": { "value": 7, "why": "120 km/h frontal-lab, but re-anchored down: owners report the 6-rib canopy flipping in moderate/side wind ('turns inside out even in moderate winds') — Knirps designs it to invert-not-snap", "source": "amazon.de U.200 reviews + knirps.com ultra-light note (2026-07-02)" },
+        "dura": { "value": 8, "why": "Good fibreglass frame + 5-yr warranty (frame quality, mechanism scored separately)", "source": "https://knirps.com/952200-u-200-ultra-light-duomatic.html (2026-07-02)" },
+        "mech": { "value": 6, "why": "Duomatic auto-close spring is the top failure part — owners report sub-1-yr deaths + DOA returns (amazon.de 3.9/71 on one listing) — but the 5-yr warranty covers it and the aggregate holds 4.2/505", "source": "amazon.de U.200 + reklamation.com/knirps (2026-07-02)" },
+        "cover": { "value": 7, "why": "95 cm canopy — solid one-person", "source": "https://knirps.com/952200-u-200-ultra-light-duomatic.html (2026-07-02)" },
+        "pack": { "value": 5, "why": "26 cm folded — fits the 28.5 cm interior with ~2 cm to spare", "source": "https://www.bol.com/nl/nl/p/knirps-u-200-duomatic-zakparaplu-28-cm/9300000181409068/ (2026-07-02)" },
+        "fab": { "value": 7, "why": "Quick-drying polyester (HeatShield UV variants); PFAS status not published", "source": "https://knirps.com/952200-u-200-ultra-light-duomatic.html (2026-07-02)" },
+        "wt": { "value": 8, "why": "185 g — lightest full-auto in the field", "source": "https://knirps.com/952200-u-200-ultra-light-duomatic.html (2026-07-02)" },
+        "nolo": { "value": 5, "why": "Detachable slip cover (losable); no strap", "source": "https://knirps.com/952200-u-200-ultra-light-duomatic.html (2026-07-02)" },
+        "des": { "value": 7, "why": "Clean, understated", "source": "https://knirps.com/952200-u-200-ultra-light-duomatic.html (2026-07-02)" },
+        "rust": { "value": 9, "why": "Aluminium shaft + fibreglass ribs — no steel", "source": "https://knirps.com/952200-u-200-ultra-light-duomatic.html (2026-07-02)" },
+        "ease": { "value": 9, "why": "One-button auto open+close, though closing needs a firm push-down of the shaft ('zwaar')", "source": "amazon.de U.200 reviews (2026-07-02)" }
       }
     },
     {
@@ -648,39 +672,20 @@ button{font-family:inherit;}
       "name": "Knirps T.200 Medium Duomatic",
       "price": 39.99,
       "links": [{ "label": "bol.com", "url": "https://www.bol.com/nl/nl/p/knirps-t-200-medium-duomatic-windproof-paraplu-solid-coral-uv-protection/9300000243338771/" }],
-      "note": "bol.com, 30-day returns. 4.1★/5 (7). Range to €71.80 by colour. Max storm + fullest coverage, but sits exactly at the 28 cm limit (wedges rather than drops) and is the heaviest fitter.",
+      "note": "bol.com, 30-day returns. 4.1★/5. The MAX WIND + COVERAGE alternative: 8-rib 150 km/h frame, 97 cm canopy, attached carry strap. But 300 g and 28 cm folded = zero fit margin (OGL warns marketed folded lengths run long, so measure), and it shares the U.200's auto-close spring.",
       "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 0, "expectedLifeYears": 8, "resaleValue": 0 },
       "scores": {
-        "windproof": { "value": 10, "why": "Wind-tunnel tested to 150 km/h — the strongest fitter; 8-rib frame spreads wind load, Knirps' benchmark windproof folder", "source": "https://knirps.com/953201-t-200-medium-duomatic-new.html (2026-07-02)" },
-        "durability": { "value": 8, "why": "8 ribs on an alu+steel shaft, 5-yr warranty, OEKO-TEX fabric; robust, with the auto spring the one wear point", "source": "https://knirps.com/953201-t-200-medium-duomatic-new.html (2026-07-02)" },
-        "coverage": { "value": 8, "why": "97 cm canopy — fuller one-person coverage", "source": "https://knirps.com/953201-t-200-medium-duomatic-new.html (2026-07-02)" },
-        "packdown": { "value": 4, "why": "28 cm folded = zero margin against the 28.5 cm interior — it fits, but wedges in rather than dropping", "source": "https://www.bol.com/nl/nl/p/knirps-t-200-medium-duomatic-windproof-paraplu-solid-coral-uv-protection/9300000243338771/ (2026-07-02)" },
-        "fabric": { "value": 7, "why": "100% polyester, OEKO-TEX certified; quality but no explicit fast-dry/PFAS-free claim", "source": "https://knirps.com/953201-t-200-medium-duomatic-new.html (2026-07-02)" },
-        "design": { "value": 7, "why": "Clean Knirps design; functional-first, a touch bulkier-looking than the U.200", "source": "https://knirps.com/953201-t-200-medium-duomatic-new.html (2026-07-02)" },
-        "weight": { "value": 6, "why": "300 g — heaviest of the fitting field", "source": "https://knirps.com/953201-t-200-medium-duomatic-new.html (2026-07-02)" },
-        "nolose": { "value": 7, "why": "Zip case PLUS a carry strap permanently attached to the handle — least losable of the Knirps cluster", "source": "https://knirps.com/953201-t-200-medium-duomatic-new.html (2026-07-02)" },
-        "corrosion": { "value": 8, "why": "Fibreglass ribs + alu/steel shaft — steel element treated but present", "source": "https://knirps.com/953201-t-200-medium-duomatic-new.html (2026-07-02)" },
-        "ease": { "value": 10, "why": "Full Duomatic auto open+close", "source": "https://knirps.com/953201-t-200-medium-duomatic-new.html (2026-07-02)" }
-      }
-    },
-    {
-      "id": "knirps-us050",
-      "name": "Knirps US.050 Ultra Light Slim Manual",
-      "price": 39.99,
-      "links": [{ "label": "bol.com", "url": "https://www.bol.com/nl/nl/p/knirps-paraplu-us-050-ultra-light-slim-manual-white-wit/9300000197716104/" }],
-      "note": "bol.com, 30-day returns. The reliability + lightness pick: fully manual (no spring to fail), 115 g, ~4 cm thick folded.",
-      "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 0, "expectedLifeYears": 8, "resaleValue": 0 },
-      "scores": {
-        "windproof": { "value": 8, "why": "Wind-tunnel tested to 100 km/h; very flexible ribs collapse and recover without breaking", "source": "https://knirps.com/950050-us-050-ultra-light-slim-manual.html (2026-07-02)" },
-        "durability": { "value": 8, "why": "5-yr warranty; manual = no auto spring, the fewest failure points of the Knirps autos' siblings", "source": "https://knirps.com/950050-us-050-ultra-light-slim-manual.html (2026-07-02)" },
-        "coverage": { "value": 6, "why": "90 cm canopy — adequate one-person, a notch under the U.200/T.200", "source": "https://knirps.com/950050-us-050-ultra-light-slim-manual.html (2026-07-02)" },
-        "packdown": { "value": 7, "why": "21 cm folded and only ~4 cm thick — slips flat into the bag", "source": "https://knirps.com/950050-us-050-ultra-light-slim-manual.html (2026-07-02)" },
-        "fabric": { "value": 7, "why": "Quick-drying 100% polyester; HeatShield UV variants; PFAS not published", "source": "https://knirps.com/950050-us-050-ultra-light-slim-manual.html (2026-07-02)" },
-        "design": { "value": 7, "why": "Clean, slim, understated", "source": "https://knirps.com/950050-us-050-ultra-light-slim-manual.html (2026-07-02)" },
-        "weight": { "value": 10, "why": "115 g — the lightest premium option in the field", "source": "https://knirps.com/950050-us-050-ultra-light-slim-manual.html (2026-07-02)" },
-        "nolose": { "value": 5, "why": "Detachable slim slip cover (losable); manual, no button", "source": "https://knirps.com/950050-us-050-ultra-light-slim-manual.html (2026-07-02)" },
-        "corrosion": { "value": 9, "why": "Aluminium shaft + fibreglass ribs — no steel to rust", "source": "https://knirps.com/950050-us-050-ultra-light-slim-manual.html (2026-07-02)" },
-        "ease": { "value": 6, "why": "Manual open/close — you work it by hand (the trade for the light weight)", "source": "https://knirps.com/950050-us-050-ultra-light-slim-manual.html (2026-07-02)" }
+        "wind": { "value": 9, "why": "8-rib 150 km/h frame — the most storm-stable fitting Knirps; the extra ribs genuinely help it hold shape vs the 6-rib ultralights", "source": "https://knirps.com/953201-t-200-medium-duomatic-new.html + owner reviews (2026-07-02)" },
+        "dura": { "value": 8, "why": "8 ribs on alu+steel shaft, OEKO-TEX fabric, 5-yr", "source": "https://knirps.com/953201-t-200-medium-duomatic-new.html (2026-07-02)" },
+        "mech": { "value": 6, "why": "Same Duomatic auto-close spring as the U.200 — the known wear point, warranty-covered (thin n=41, 4.1★)", "source": "https://www.bol.com/nl/nl/p/knirps-t-200-medium-duomatic-windproof-paraplu-solid-coral-uv-protection/9300000243338771/ (2026-07-02)" },
+        "cover": { "value": 8, "why": "97 cm canopy — fuller one-person coverage", "source": "https://knirps.com/953201-t-200-medium-duomatic-new.html (2026-07-02)" },
+        "pack": { "value": 4, "why": "28 cm folded = zero margin against the 28.5 cm interior; OGL found marketed lengths often run long, so it may not fit — measure first", "source": "https://knirps.com/953201-t-200-medium-duomatic-new.html (2026-07-02)" },
+        "fab": { "value": 7, "why": "Polyester, OEKO-TEX certified; no fast-dry/PFAS-free claim", "source": "https://knirps.com/953201-t-200-medium-duomatic-new.html (2026-07-02)" },
+        "wt": { "value": 5, "why": "300 g — heaviest of the fitting field", "source": "https://knirps.com/953201-t-200-medium-duomatic-new.html (2026-07-02)" },
+        "nolo": { "value": 7, "why": "Zip case + a carry strap permanently attached to the handle — least losable Knirps", "source": "https://knirps.com/953201-t-200-medium-duomatic-new.html (2026-07-02)" },
+        "des": { "value": 7, "why": "Clean, functional; slightly bulkier look", "source": "https://knirps.com/953201-t-200-medium-duomatic-new.html (2026-07-02)" },
+        "rust": { "value": 7, "why": "Fibreglass ribs + alu/steel shaft — steel element treated but present", "source": "https://knirps.com/953201-t-200-medium-duomatic-new.html (2026-07-02)" },
+        "ease": { "value": 9, "why": "Duomatic auto open+close (firm push-down to close)", "source": "https://knirps.com/953201-t-200-medium-duomatic-new.html (2026-07-02)" }
       }
     },
     {
@@ -688,19 +693,83 @@ button{font-family:inherit;}
       "name": "Knirps A.050 Medium Manual",
       "price": 24.53,
       "links": [{ "label": "bol.com", "url": "https://www.bol.com/nl/nl/p/knirps-manual-a-050-zak-paraplu-24-cm/9300000181417218/" }],
-      "note": "bol.com, 30-day returns. Range to €39.99 by colour. Value + fullest-coverage manual: widest canopy at the lowest Knirps price, but only 80 km/h.",
+      "note": "bol.com (modeherz), 30-day returns. 4.3★/849. The value + coverage manual: widest Knirps canopy (98 cm) at the lowest price, fully manual (nothing to fail). Catch: only 80 km/h and a plain handle owners call un-ergonomic.",
       "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 0, "expectedLifeYears": 7, "resaleValue": 0 },
       "scores": {
-        "windproof": { "value": 6, "why": "Wind-tunnel tested to 80 km/h; 8 ribs spread load well for a manual, but below the 120–150 autos — fine for rain, less for a coastal gale", "source": "https://knirps.com/957050-a-050-medium-manual.html (2026-07-02)" },
-        "durability": { "value": 8, "why": "8-rib frame on a steel shaft described rust-resistant; simple manual action, 5-yr warranty", "source": "https://knirps.com/957050-a-050-medium-manual.html (2026-07-02)" },
-        "coverage": { "value": 8, "why": "98 cm — widest canopy of the Knirps cluster", "source": "https://knirps.com/957050-a-050-medium-manual.html (2026-07-02)" },
-        "packdown": { "value": 6, "why": "24 cm folded — fits comfortably", "source": "https://www.bol.com/nl/nl/p/knirps-manual-a-050-zak-paraplu-24-cm/9300000181417218/ (2026-07-02)" },
-        "fabric": { "value": 6, "why": "Water-repellent polyester; no explicit quick-dry/PFAS claim", "source": "https://knirps.com/957050-a-050-medium-manual.html (2026-07-02)" },
-        "design": { "value": 6, "why": "Plain, functional", "source": "https://knirps.com/957050-a-050-medium-manual.html (2026-07-02)" },
-        "weight": { "value": 6, "why": "270 g", "source": "https://knirps.com/957050-a-050-medium-manual.html (2026-07-02)" },
-        "nolose": { "value": 5, "why": "Detachable slip/zip cover (losable); manual", "source": "https://knirps.com/957050-a-050-medium-manual.html (2026-07-02)" },
-        "corrosion": { "value": 8, "why": "Steel shaft but marketed rust-resistant; fibreglass ribs", "source": "https://knirps.com/957050-a-050-medium-manual.html (2026-07-02)" },
-        "ease": { "value": 6, "why": "Simple, durable manual open/close", "source": "https://knirps.com/957050-a-050-medium-manual.html (2026-07-02)" }
+        "wind": { "value": 6, "why": "80 km/h, 8 ribs spread load well for a manual; fine for rain, inverts-recovers in a real gale", "source": "https://knirps.com/957050-a-050-medium-manual.html (2026-07-02)" },
+        "dura": { "value": 7, "why": "8-rib frame, steel shaft marketed rust-resistant, 5-yr; 4.3/849 owner rating", "source": "amazon A.050 reviews (2026-07-02)" },
+        "mech": { "value": 10, "why": "Fully manual — no mechanism to fail", "source": "https://knirps.com/957050-a-050-medium-manual.html (2026-07-02)" },
+        "cover": { "value": 8, "why": "98 cm — widest Knirps canopy", "source": "https://knirps.com/957050-a-050-medium-manual.html (2026-07-02)" },
+        "pack": { "value": 6, "why": "24 cm folded — fits comfortably", "source": "https://www.bol.com/nl/nl/p/knirps-manual-a-050-zak-paraplu-24-cm/9300000181417218/ (2026-07-02)" },
+        "fab": { "value": 7, "why": "Water-repellent polyester; quick-dry not specifically claimed", "source": "https://knirps.com/957050-a-050-medium-manual.html (2026-07-02)" },
+        "wt": { "value": 6, "why": "270 g", "source": "https://knirps.com/957050-a-050-medium-manual.html (2026-07-02)" },
+        "nolo": { "value": 5, "why": "Detachable cover (losable)", "source": "https://knirps.com/957050-a-050-medium-manual.html (2026-07-02)" },
+        "des": { "value": 6, "why": "Plain, functional", "source": "https://knirps.com/957050-a-050-medium-manual.html (2026-07-02)" },
+        "rust": { "value": 7, "why": "Steel shaft (marketed rust-resistant) + fibreglass ribs", "source": "https://knirps.com/957050-a-050-medium-manual.html (2026-07-02)" },
+        "ease": { "value": 6, "why": "Simple manual; owners note little handle ergonomics ('nada de ergonomia')", "source": "amazon A.050 review (2026-07-02)" }
+      }
+    },
+    {
+      "id": "knirps-vision",
+      "name": "Knirps Vision Duomatic (recycled + PFC-free)",
+      "price": 45.75,
+      "links": [{ "label": "bol.com", "url": "https://www.bol.com/nl/nl/p/knirps-vision-duomatic-zakparaplu-28-cm/9300000181412027/" }],
+      "note": "NEW (knirps.com catalogue walk). bol.com (modeherz), 30-day returns. The only fitting AUTO that documents the buyer's fabric/eco/warranty wants: 100% recycled PET canopy + PFC-free 'ecorepel' water/dirt repellent + explicit 5-yr guarantee, 120 km/h auto, 97 cm. Catch: 28 cm (zero fit margin), 325 g, and rib material unpublished (eco line often steel → rust uncertain).",
+      "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 0, "expectedLifeYears": 8, "resaleValue": 0 },
+      "scores": {
+        "wind": { "value": 7, "why": "120 km/h 8-rib auto — 8 ribs help stability, but same invert-recover ultralight behaviour re-anchored down", "source": "https://knirps.com/9562059-vision-duomatic-box.html (2026-07-02)" },
+        "dura": { "value": 8, "why": "8-rib recycled-PET build + explicit 5-yr guarantee", "source": "https://knirps.com/9562059-vision-duomatic-box.html (2026-07-02)" },
+        "mech": { "value": 6, "why": "Knirps Duomatic auto — same spring wear point as U.200/T.200, 5-yr covered", "source": "https://knirps.com/9562059-vision-duomatic-box.html (2026-07-02)" },
+        "cover": { "value": 8, "why": "97 cm, 8 ribs", "source": "https://knirps.com/9562059-vision-duomatic-box.html (2026-07-02)" },
+        "pack": { "value": 4, "why": "28 cm folded — zero fit margin", "source": "https://www.bol.com/nl/nl/p/knirps-vision-duomatic-zakparaplu-28-cm/9300000181412027/ (2026-07-02)" },
+        "fab": { "value": 9, "why": "The fabric standout: 100% recycled PET + PFC-free 'ecorepel' fast-shedding water/dirt repellent — the only fitting model with a documented PFAS-free coating besides Duckhead", "source": "https://knirps.com/9562059-vision-duomatic-box.html (2026-07-02)" },
+        "wt": { "value": 5, "why": "325 g", "source": "https://knirps.com/9562059-vision-duomatic-box.html (2026-07-02)" },
+        "nolo": { "value": 5, "why": "Detachable box/sleeve (losable)", "source": "https://knirps.com/9562059-vision-duomatic-box.html (2026-07-02)" },
+        "des": { "value": 7, "why": "Clean, eco-considered", "source": "https://knirps.com/9562059-vision-duomatic-box.html (2026-07-02)" },
+        "rust": { "value": 7, "why": "Rib material unpublished; Knirps eco line often uses steel+fibreglass → rust not assured (flagged)", "source": "https://knirps.com/9562059-vision-duomatic-box.html (2026-07-02)" },
+        "ease": { "value": 9, "why": "Duomatic auto open+close", "source": "https://knirps.com/9562059-vision-duomatic-box.html (2026-07-02)" }
+      }
+    },
+    {
+      "id": "knirps-mini-duo",
+      "name": "Knirps MINI Duomatic",
+      "price": 55.91,
+      "links": [{ "label": "bol.com", "url": "https://www.bol.com/nl/nl/p/knirps-paraplu-mini-duomatic-midnight-black-zwart/9300000241746901/" }],
+      "note": "NEW (knirps.com catalogue walk). bol.com, 30-day returns. The lightest + shortest fitting AUTO: 24 cm / 175 g full Duomatic with a 5-yr guarantee — beats the U.200 on both size and weight. Catches: 100 km/h + small 92 cm 6-rib canopy, STEEL ribs (rust risk), and it's the priciest small Knirps.",
+      "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 0, "expectedLifeYears": 7, "resaleValue": 0 },
+      "scores": {
+        "wind": { "value": 6, "why": "100 km/h, 6-rib — invert-recover in gusts, a step below the 8-rib/120–150 autos", "source": "https://knirps.com/958100-mini-x-knirps.html (2026-07-02)" },
+        "dura": { "value": 7, "why": "5-yr guarantee, but small 6-rib frame and steel ribs", "source": "https://knirps.com/958100-mini-x-knirps.html (2026-07-02)" },
+        "mech": { "value": 6, "why": "Knirps Duomatic auto — same spring wear point", "source": "https://knirps.com/958100-mini-x-knirps.html (2026-07-02)" },
+        "cover": { "value": 6, "why": "92 cm, 6-rib — modest", "source": "https://knirps.com/958100-mini-x-knirps.html (2026-07-02)" },
+        "pack": { "value": 6, "why": "24 cm folded — fits comfortably", "source": "https://knirps.com/958100-mini-x-knirps.html (2026-07-02)" },
+        "fab": { "value": 6, "why": "Standard polyester; coating/PFAS not published", "source": "https://knirps.com/958100-mini-x-knirps.html (2026-07-02)" },
+        "wt": { "value": 9, "why": "175 g — lightest fitting AUTO in the field", "source": "https://knirps.com/958100-mini-x-knirps.html (2026-07-02)" },
+        "nolo": { "value": 5, "why": "Detachable sleeve (losable)", "source": "https://knirps.com/958100-mini-x-knirps.html (2026-07-02)" },
+        "des": { "value": 7, "why": "MINI collab, clean", "source": "https://knirps.com/958100-mini-x-knirps.html (2026-07-02)" },
+        "rust": { "value": 6, "why": "STEEL + fibreglass ribs — rust risk vs the alu ultralights", "source": "https://knirps.com/958100-mini-x-knirps.html (2026-07-02)" },
+        "ease": { "value": 9, "why": "Duomatic auto open+close", "source": "https://knirps.com/958100-mini-x-knirps.html (2026-07-02)" }
+      }
+    },
+    {
+      "id": "knirps-c250",
+      "name": "Knirps C.250 Light Duomatic",
+      "price": 39.99,
+      "links": [{ "label": "knirps.com", "url": "https://knirps.com/958250-c-250-light-duomatic.html" }],
+      "note": "NEW (knirps.com catalogue walk). knirps.com list price (no clean bol/amazon.nl match 2026-07-02), verify at purchase. A shorter U.200: 25 cm / 240 g at the same 120 km/h auto. Catch: small 93 cm 6-rib canopy and STEEL ribs (rust risk).",
+      "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 0, "expectedLifeYears": 7, "resaleValue": 0 },
+      "scores": {
+        "wind": { "value": 7, "why": "120 km/h auto — matches the U.200's rating in a shorter package (re-anchored, same invert-recover class)", "source": "https://knirps.com/958250-c-250-light-duomatic.html (2026-07-02)" },
+        "dura": { "value": 7, "why": "Steel+fibreglass frame; no warranty restated on page", "source": "https://knirps.com/958250-c-250-light-duomatic.html (2026-07-02)" },
+        "mech": { "value": 6, "why": "Knirps Duomatic auto — same spring wear point", "source": "https://knirps.com/958250-c-250-light-duomatic.html (2026-07-02)" },
+        "cover": { "value": 6, "why": "93 cm, 6-rib", "source": "https://knirps.com/958250-c-250-light-duomatic.html (2026-07-02)" },
+        "pack": { "value": 6, "why": "25 cm folded — fits with margin, shorter than the U.200", "source": "https://knirps.com/958250-c-250-light-duomatic.html (2026-07-02)" },
+        "fab": { "value": 6, "why": "Standard polyester; coating/PFAS not published", "source": "https://knirps.com/958250-c-250-light-duomatic.html (2026-07-02)" },
+        "wt": { "value": 7, "why": "240 g", "source": "https://knirps.com/958250-c-250-light-duomatic.html (2026-07-02)" },
+        "nolo": { "value": 5, "why": "Detachable sleeve (losable)", "source": "https://knirps.com/958250-c-250-light-duomatic.html (2026-07-02)" },
+        "des": { "value": 7, "why": "Clean", "source": "https://knirps.com/958250-c-250-light-duomatic.html (2026-07-02)" },
+        "rust": { "value": 6, "why": "STEEL + fibreglass ribs — rust risk", "source": "https://knirps.com/958250-c-250-light-duomatic.html (2026-07-02)" },
+        "ease": { "value": 9, "why": "Duomatic auto open+close", "source": "https://knirps.com/958250-c-250-light-duomatic.html (2026-07-02)" }
       }
     },
     {
@@ -708,19 +777,20 @@ button{font-family:inherit;}
       "name": "Doppler Zero Magic",
       "price": 39.99,
       "links": [{ "label": "bol.com", "url": "https://www.bol.com/nl/nl/p/doppler-paraplu-opvouwbaar-paraplu-inklapbaar-zero-magic-zwart/9200000127738619/" }],
-      "note": "bol.com, 30-day returns. Widely cited as the lightest auto open/close umbrella made; the trade is an ultra-thin canopy that wets through in sustained downpours.",
+      "note": "bol.com, 30-day returns. The lightest auto open/close made (~184 g), but the review revision hits it twice: the Doppler 'Magic' mechanism is a class failure point (won't latch), and the ultra-thin canopy wets through in sustained rain.",
       "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 0, "expectedLifeYears": 5, "resaleValue": 0 },
       "scores": {
-        "windproof": { "value": 8, "why": "Wind-tunnel tested to 100 km/h; carbon-fibre ribs flex without snapping (single canopy, not vented)", "source": "https://dopplerschirme.com/en/744563-zero-magic.html (2026-07-02)" },
-        "durability": { "value": 7, "why": "Carbon ribs survive gusts per owners; 3-yr warranty; auto spring the wear point", "source": "https://dopplerschirme.com/en/744563-zero-magic.html (2026-07-02)" },
-        "coverage": { "value": 8, "why": "97 cm canopy", "source": "https://dopplerschirme.com/en/744563-zero-magic.html (2026-07-02)" },
-        "packdown": { "value": 5, "why": "26 cm folded — fits with margin", "source": "https://dopplerschirme.com/en/744563-zero-magic.html (2026-07-02)" },
-        "fabric": { "value": 5, "why": "Ultra-thin 'superthin' polyester chosen for weight — owners report it wets through in prolonged heavy rain; standard DWR, not PFAS-free", "source": "https://dopplerschirme.com/en/744563-zero-magic.html (2026-07-02)" },
-        "design": { "value": 7, "why": "Minimal, tidy", "source": "https://dopplerschirme.com/en/744563-zero-magic.html (2026-07-02)" },
-        "weight": { "value": 8, "why": "~184 g (Amazon lists 176 g)", "source": "https://dopplerschirme.com/en/744563-zero-magic.html (2026-07-02)" },
-        "nolose": { "value": 5, "why": "Detachable slip sleeve (losable); auto, no tip cap", "source": "https://dopplerschirme.com/en/744563-zero-magic.html (2026-07-02)" },
-        "corrosion": { "value": 9, "why": "Aluminium shaft + carbon ribs — no steel", "source": "https://dopplerschirme.com/en/744563-zero-magic.html (2026-07-02)" },
-        "ease": { "value": 10, "why": "One-button auto open+close", "source": "https://dopplerschirme.com/en/744563-zero-magic.html (2026-07-02)" }
+        "wind": { "value": 8, "why": "100 km/h, carbon ribs flex without snapping — holds moderate wind well for the weight", "source": "https://dopplerschirme.com/en/744563-zero-magic.html (2026-07-02)" },
+        "dura": { "value": 7, "why": "Carbon-rib frame, 3-yr; frame survives gusts per owners", "source": "https://dopplerschirme.com/en/744563-zero-magic.html (2026-07-02)" },
+        "mech": { "value": 5, "why": "The Doppler auto 'Magic' mechanism is the class failure point — owners report it not latching/collapsing within months", "source": "amazon.de Doppler Magic reviews + owner threads (2026-07-02)" },
+        "cover": { "value": 8, "why": "97 cm canopy", "source": "https://dopplerschirme.com/en/744563-zero-magic.html (2026-07-02)" },
+        "pack": { "value": 5, "why": "26 cm folded — fits with margin", "source": "https://dopplerschirme.com/en/744563-zero-magic.html (2026-07-02)" },
+        "fab": { "value": 6, "why": "Ultra-thin 'superthin' polyester — owners report it wets through in prolonged rain; standard DWR, not PFAS-free", "source": "https://dopplerschirme.com/en/744563-zero-magic.html + owner reviews (2026-07-02)" },
+        "wt": { "value": 8, "why": "~184 g", "source": "https://dopplerschirme.com/en/744563-zero-magic.html (2026-07-02)" },
+        "nolo": { "value": 5, "why": "Detachable slip sleeve (losable)", "source": "https://dopplerschirme.com/en/744563-zero-magic.html (2026-07-02)" },
+        "des": { "value": 7, "why": "Minimal, tidy", "source": "https://dopplerschirme.com/en/744563-zero-magic.html (2026-07-02)" },
+        "rust": { "value": 9, "why": "Aluminium shaft + carbon ribs", "source": "https://dopplerschirme.com/en/744563-zero-magic.html (2026-07-02)" },
+        "ease": { "value": 9, "why": "One-button auto open+close", "source": "https://dopplerschirme.com/en/744563-zero-magic.html (2026-07-02)" }
       }
     },
     {
@@ -728,19 +798,20 @@ button{font-family:inherit;}
       "name": "Doppler Zero,99",
       "price": 29.99,
       "links": [{ "label": "bol.com", "url": "https://www.bol.com/nl/nl/p/doppler-windproof-paraplu-zero-99-black/9200000127702777/" }],
-      "note": "bol.com, 30-day returns. 3.8★/5 (6). Red Dot Design Award. The featherweight (99 g) — best if raw pack-size/weight dominates; manual, small canopy, least windproof premium.",
+      "note": "bol.com, 30-day returns. 3.8★/5. Red Dot Award. The featherweight (99 g) — manual so nothing to fail — but the smallest, least windproof premium canopy and it 'doesn't cover a bulky backpack'.",
       "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 0, "expectedLifeYears": 5, "resaleValue": 0 },
       "scores": {
-        "windproof": { "value": 5, "why": "Wind-tunnel tested to 80 km/h — lowest of the premium set; ultra-light frame, not a vented storm canopy", "source": "https://dopplerschirme.com/en/7106-zero-99.html (2026-07-02)" },
-        "durability": { "value": 6, "why": "Very thin build (to hit 99 g), 3-yr warranty — least robust of the premium line", "source": "https://dopplerschirme.com/en/7106-zero-99.html (2026-07-02)" },
-        "coverage": { "value": 6, "why": "90 cm canopy", "source": "https://dopplerschirme.com/en/7106-zero-99.html (2026-07-02)" },
-        "packdown": { "value": 7, "why": "21 cm folded — near the ≤20 ideal", "source": "https://dopplerschirme.com/en/7106-zero-99.html (2026-07-02)" },
-        "fabric": { "value": 5, "why": "Very thin polyester; no quick-dry; standard DWR, not PFAS-free — the featherweight trade", "source": "https://dopplerschirme.com/en/7106-zero-99.html (2026-07-02)" },
-        "design": { "value": 8, "why": "Red Dot Design Award winner; minimalist", "source": "https://dopplerschirme.com/en/7106-zero-99.html (2026-07-02)" },
-        "weight": { "value": 10, "why": "99 g — lightest in the entire field", "source": "https://dopplerschirme.com/en/7106-zero-99.html (2026-07-02)" },
-        "nolose": { "value": 5, "why": "Detachable slip sleeve (losable); manual", "source": "https://dopplerschirme.com/en/7106-zero-99.html (2026-07-02)" },
-        "corrosion": { "value": 9, "why": "Aluminium shaft + carbon ribs", "source": "https://dopplerschirme.com/en/7106-zero-99.html (2026-07-02)" },
-        "ease": { "value": 5, "why": "Manual, and owners note it wants two hands to open", "source": "https://www.bol.com/nl/nl/p/doppler-windproof-paraplu-zero-99-black/9200000127702777/ (2026-07-02)" }
+        "wind": { "value": 4, "why": "80 km/h, ultra-light frame — owners report it as the least wind-stable premium, inverts readily", "source": "https://dopplerschirme.com/en/7106-zero-99.html + bol reviews (2026-07-02)" },
+        "dura": { "value": 6, "why": "Very thin build for 99 g, 3-yr", "source": "https://dopplerschirme.com/en/7106-zero-99.html (2026-07-02)" },
+        "mech": { "value": 9, "why": "Manual — nothing to fail", "source": "https://dopplerschirme.com/en/7106-zero-99.html (2026-07-02)" },
+        "cover": { "value": 5, "why": "90 cm but shallow — owners note it 'does not cover a bulky backpack'", "source": "bol Zero,99 owner reviews (2026-07-02)" },
+        "pack": { "value": 7, "why": "21 cm folded", "source": "https://dopplerschirme.com/en/7106-zero-99.html (2026-07-02)" },
+        "fab": { "value": 5, "why": "Very thin polyester; wets in sustained rain; not PFAS-free", "source": "https://dopplerschirme.com/en/7106-zero-99.html (2026-07-02)" },
+        "wt": { "value": 10, "why": "99 g — lightest in the entire field", "source": "https://dopplerschirme.com/en/7106-zero-99.html (2026-07-02)" },
+        "nolo": { "value": 5, "why": "Detachable slip sleeve (losable)", "source": "https://dopplerschirme.com/en/7106-zero-99.html (2026-07-02)" },
+        "des": { "value": 8, "why": "Red Dot Design Award winner", "source": "https://dopplerschirme.com/en/7106-zero-99.html (2026-07-02)" },
+        "rust": { "value": 9, "why": "Aluminium shaft + carbon ribs", "source": "https://dopplerschirme.com/en/7106-zero-99.html (2026-07-02)" },
+        "ease": { "value": 5, "why": "Manual, wants two hands to open", "source": "https://www.bol.com/nl/nl/p/doppler-windproof-paraplu-zero-99-black/9200000127702777/ (2026-07-02)" }
       }
     },
     {
@@ -748,19 +819,20 @@ button{font-family:inherit;}
       "name": "Senz° Micro (foldable storm umbrella)",
       "price": 54.95,
       "links": [{ "label": "bol.com", "url": "https://www.bol.com/nl/nl/p/senz-micro-opvouwbare-paraplu-midnight-blue/9300000125618804/" }],
-      "note": "bol.com (also senz.com), 30-day returns. 4.3★/5. The Dutch design icon (iF/Red Dot). Best fit + drop-in of the whole field (18.5 cm); manual. A Micro Automatic exists but folds longer + adds a spring.",
+      "note": "bol.com (also senz.com), 30-day returns. The Dutch design icon and best fit (18.5 cm). But the review revision is harsh on the FOLDABLE Senz: OGL 40/100 — it inverts at 40–60 km/h, its asymmetric canopy wets one flank + your pack, and it bunches when you re-sheath it. The design/fit choice, not the all-weather one.",
       "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 0, "expectedLifeYears": 6, "resaleValue": 0 },
       "scores": {
-        "windproof": { "value": 7, "why": "Asymmetric aerodynamic canopy points into the wind and resists inversion better than symmetric folders (mfr 70 km/h); but owner reports note the folding micro frame bends more readily than the stick Original in ~40–50 km/h gusts", "source": "https://www.senz.com/umbrellas/foldable-umbrellas/micro/ (2026-07-02)" },
-        "durability": { "value": 7, "why": "Well-built fibreglass/stainless ribs, 2-yr warranty; the folding frame is the less-bombproof end of the Senz range (Trustpilot mixed on longevity)", "source": "https://www.senz.com/umbrellas/foldable-umbrellas/micro/ (2026-07-02)" },
-        "coverage": { "value": 6, "why": "80×74 cm — smallest span, but the asymmetric shape shelters the head/back better than the number implies", "source": "https://www.senz.com/umbrellas/foldable-umbrellas/micro/ (2026-07-02)" },
-        "packdown": { "value": 8, "why": "18.5 cm folded — well under the 28 cm limit and under the ≤20 ideal; drops into the pack bottom easily", "source": "https://www.senz.com/umbrellas/foldable-umbrellas/micro/ (2026-07-02)" },
-        "fabric": { "value": 8, "why": "Pongee with a fast-dry water-repellent coating, UPF50+ — genuinely compact-but-covering", "source": "https://www.senz.com/umbrellas/foldable-umbrellas/micro/ (2026-07-02)" },
-        "design": { "value": 9, "why": "iconic Senz asymmetric design, multiple iF/Red Dot awards — the design object of the fitting field", "source": "https://www.senz.com/umbrellas/foldable-umbrellas/micro/ (2026-07-02)" },
-        "weight": { "value": 7, "why": "240 g", "source": "https://www.senz.com/umbrellas/foldable-umbrellas/micro/ (2026-07-02)" },
-        "nolose": { "value": 6, "why": "Attached wrist cord; removable slip pouch (losable); no detachable cap", "source": "https://www.senz.com/umbrellas/foldable-umbrellas/micro/ (2026-07-02)" },
-        "corrosion": { "value": 9, "why": "Aluminium shaft + fibreglass/stainless ribs — won't rust", "source": "https://www.senz.com/umbrellas/foldable-umbrellas/micro/ (2026-07-02)" },
-        "ease": { "value": 6, "why": "Manual open/close; comfortable, light action", "source": "https://www.senz.com/umbrellas/foldable-umbrellas/micro/ (2026-07-02)" }
+        "wind": { "value": 6, "why": "Aero shape helps, but the FOLDABLE Micro is the weak Senz sibling — owners/OGL report inversion at 40–60 km/h (unlike the bombproof Original stick)", "source": "OutdoorGearLab Senz + Trustpilot (2026-07-02)" },
+        "dura": { "value": 6, "why": "Folding frame less robust than the stick; 2-yr; Trustpilot mixed on longevity", "source": "Trustpilot senz + OGL (2026-07-02)" },
+        "mech": { "value": 9, "why": "Manual — no mechanism to fail (a Micro Automatic variant exists but adds a spring)", "source": "https://www.senz.com/umbrellas/foldable-umbrellas/micro/ (2026-07-02)" },
+        "cover": { "value": 5, "why": "80×74 cm asymmetric — OGL: 'raindrops struck the thigh and bicep, we got wet on one side, did not keep backpacks dry'", "source": "OutdoorGearLab Senz review (2026-07-02)" },
+        "pack": { "value": 8, "why": "18.5 cm folded — best fit of the field, drops straight in", "source": "https://www.senz.com/umbrellas/foldable-umbrellas/micro/ (2026-07-02)" },
+        "fab": { "value": 8, "why": "Pongee with fast-dry coating, UPF50+ — but OGL notes it 'bunches unevenly and is hard to stuff back into the sleeve' when wet", "source": "https://www.senz.com/umbrellas/foldable-umbrellas/micro/ + OGL (2026-07-02)" },
+        "wt": { "value": 7, "why": "240 g", "source": "https://www.senz.com/umbrellas/foldable-umbrellas/micro/ (2026-07-02)" },
+        "nolo": { "value": 6, "why": "Attached wrist cord; removable pouch (losable)", "source": "https://www.senz.com/umbrellas/foldable-umbrellas/micro/ (2026-07-02)" },
+        "des": { "value": 9, "why": "Iconic Senz asymmetric design, iF/Red Dot", "source": "https://www.senz.com/umbrellas/foldable-umbrellas/micro/ (2026-07-02)" },
+        "rust": { "value": 9, "why": "Aluminium shaft + fibreglass/stainless ribs", "source": "https://www.senz.com/umbrellas/foldable-umbrellas/micro/ (2026-07-02)" },
+        "ease": { "value": 5, "why": "Manual; OGL notes the metal hinges are a finger-pinch hazard and it's fiddly to re-sheath", "source": "OutdoorGearLab Senz review (2026-07-02)" }
       }
     },
     {
@@ -768,19 +840,20 @@ button{font-family:inherit;}
       "name": "Davek Mini",
       "price": 60,
       "links": [{ "label": "davekny.com", "url": "https://www.davekny.com/products/the-davek-mini" }],
-      "note": "Davek direct ($65 ≈ €60) + NL shipping + EU import duty (new on all EU shipments from 2026-07-01) — folded into delivery. 30-day returns. The buy-it-for-life pick: unconditional lifetime guarantee + loss-protection (up to 50% off a replacement if lost). Davek also on amazon.nl (Solo/Duet 4.4–4.5★).",
+      "note": "Davek direct ($65 ≈ €60) + NL shipping + EU import duty (all EU parcels from 2026-07-01), folded into delivery. 30-day returns. The buy-it-for-life pick: lifetime 'any reason' guarantee + loss-protection. BUT the revision softens it — the canopy is 'small and shallow, head-and-shoulders only', and every warranty claim from NL means shipping to New York + duty. You're paying for the warranty, not more umbrella.",
       "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 12, "expectedLifeYears": 15, "resaleValue": 0 },
       "scores": {
-        "windproof": { "value": 6, "why": "No km/h figure; single (non-vented) canopy, but reviews report it handles gusty rain well for its size and the frame is lifetime-backed", "source": "https://www.davekny.com/products/the-davek-mini (2026-07-02)" },
-        "durability": { "value": 10, "why": "Unconditional lifetime guarantee (free repair/replace for any malfunction) + loss-protection + 30-day returns — best-in-class; fibreglass-reinforced ribs on steel + aircraft-alu frame", "source": "https://www.davekny.com/products/the-davek-mini (2026-07-02)" },
-        "coverage": { "value": 8, "why": "96.5 cm canopy — full one-person coverage despite the tiny fold", "source": "https://packhacker.com/travel-gear/davek/mini-umbrella (2026-07-02)" },
-        "packdown": { "value": 9, "why": "17.8 cm folded — meets the ≤20 ideal; disappears in the pack bottom", "source": "https://www.davekny.com/products/the-davek-mini (2026-07-02)" },
-        "fabric": { "value": 6, "why": "High-density microweave polyester, water-repellent; no explicit fast-dry claim, PFAS not published", "source": "https://www.davekny.com/products/the-davek-mini (2026-07-02)" },
-        "design": { "value": 9, "why": "Understated premium, considered-object build feel — a design-lover's EDC pick", "source": "https://packhacker.com/travel-gear/davek/mini-umbrella (2026-07-02)" },
-        "weight": { "value": 7, "why": "227 g", "source": "https://www.davekny.com/products/the-davek-mini (2026-07-02)" },
-        "nolose": { "value": 8, "why": "Attached wrist strap + slip sleeve; and a loss-protection program that directly answers 'what if I lose it'", "source": "https://www.davekny.com/products/the-davek-mini (2026-07-02)" },
-        "corrosion": { "value": 8, "why": "Fibreglass-reinforced ribs + aircraft-alu; some high-grade steel in the frame", "source": "https://www.davekny.com/products/the-davek-mini (2026-07-02)" },
-        "ease": { "value": 6, "why": "Manual open/close; quality action", "source": "https://www.davekny.com/products/the-davek-mini (2026-07-02)" }
+        "wind": { "value": 6, "why": "Single non-vented canopy; reviews report it handles gusty rain adequately for its size, lifetime-backed", "source": "https://packhacker.com/travel-gear/davek/mini-umbrella (2026-07-02)" },
+        "dura": { "value": 9, "why": "Premium fibreglass-reinforced frame; 'replace-proof' lifetime guarantee — though owners do report occasional snapped shafts", "source": "https://www.davekny.com/products/the-davek-mini + Reddit r/BuyItForLife (2026-07-02)" },
+        "mech": { "value": 10, "why": "Manual + a lifetime guarantee that replaces the whole umbrella for any reason — nothing to fail with lasting consequence", "source": "https://www.davekny.com/products/the-davek-mini (2026-07-02)" },
+        "cover": { "value": 6, "why": "96.5 cm arc but SHALLOW — onebag/Pack Hacker consensus: 'won't keep more than head and shoulders dry in heavy rain'", "source": "onebag + Pack Hacker Davek Mini (2026-07-02)" },
+        "pack": { "value": 8, "why": "17.8 cm folded — meets the ≤20 ideal (note owners say it 'runs larger than expected')", "source": "https://www.davekny.com/products/the-davek-mini (2026-07-02)" },
+        "fab": { "value": 7, "why": "High-density microweave — 'water rolls off, shaken dry in seconds, doesn't leak' (a genuine re-sheath plus); PFAS not published", "source": "familyweal Davek review (2026-07-02)" },
+        "wt": { "value": 7, "why": "227 g", "source": "https://www.davekny.com/products/the-davek-mini (2026-07-02)" },
+        "nolo": { "value": 7, "why": "Attached wrist strap + slip sleeve + loss-protection program (up to 50% off a replacement if lost)", "source": "https://www.davekny.com/products/the-davek-mini (2026-07-02)" },
+        "des": { "value": 9, "why": "Understated premium, considered-object build feel", "source": "https://packhacker.com/travel-gear/davek/mini-umbrella (2026-07-02)" },
+        "rust": { "value": 8, "why": "Fibreglass-reinforced ribs + aircraft alu; some high-grade steel", "source": "https://www.davekny.com/products/the-davek-mini (2026-07-02)" },
+        "ease": { "value": 6, "why": "Manual; quality action", "source": "https://www.davekny.com/products/the-davek-mini (2026-07-02)" }
       }
     },
     {
@@ -788,19 +861,20 @@ button{font-family:inherit;}
       "name": "Davek Commuter (ex-Traveler)",
       "price": 87,
       "links": [{ "label": "davekny.com", "url": "https://www.davekny.com/products/the-davek-traveler" }],
-      "note": "Davek direct ($95 ≈ €87) + NL shipping + EU import duty, folded into delivery. 30-day returns. Biggest coverage that still fits (101.6 cm) with one-button auto + lifetime guarantee — but heavy and the priciest.",
+      "note": "Davek direct ($95 ≈ €87) + NL shipping + EU import duty, folded into delivery. 30-day returns. Biggest coverage that still fits (101.6 cm) + one-button auto + lifetime guarantee — but heavy, priciest, and the auto module is a failure point the manual Mini avoids.",
       "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 12, "expectedLifeYears": 15, "resaleValue": 0 },
       "scores": {
-        "windproof": { "value": 6, "why": "7-rib reinforced frame; Davek frames well regarded for wind resilience (Backpacker praised the same-frame Traveler in windy rain); single canopy, no km/h figure", "source": "https://www.davekny.com/products/the-davek-traveler (2026-07-02)" },
-        "durability": { "value": 9, "why": "Unconditional lifetime guarantee + loss protection; premium build — a shade below the manual Mini only because the auto mechanism is one more part", "source": "https://www.davekny.com/products/the-davek-traveler (2026-07-02)" },
-        "coverage": { "value": 9, "why": "101.6 cm canopy — the fullest coverage of any fitter", "source": "https://www.davekny.com/products/the-davek-traveler (2026-07-02)" },
-        "packdown": { "value": 6, "why": "22.9 cm folded — fits, but well over the ≤20 ideal", "source": "https://www.davekny.com/products/the-davek-traveler (2026-07-02)" },
-        "fabric": { "value": 6, "why": "190-thread-count microweave polyester, water-repellent; PFAS not published", "source": "https://www.davekny.com/products/the-davek-traveler (2026-07-02)" },
-        "design": { "value": 8, "why": "Premium finish, genuine leather wrist strap", "source": "https://www.davekny.com/products/the-davek-traveler (2026-07-02)" },
-        "weight": { "value": 5, "why": "~369 g (published 13 oz for the identical-frame Traveler) — heavy", "source": "https://www.davekny.com/products/the-davek-traveler (2026-07-02)" },
-        "nolose": { "value": 8, "why": "Attached leather wrist strap + slip sleeve + loss-protection program", "source": "https://www.davekny.com/products/the-davek-traveler (2026-07-02)" },
-        "corrosion": { "value": 8, "why": "Fibreglass-reinforced 7-rib frame", "source": "https://www.davekny.com/products/the-davek-traveler (2026-07-02)" },
-        "ease": { "value": 10, "why": "Auto open+close + leather strap", "source": "https://www.davekny.com/products/the-davek-traveler (2026-07-02)" }
+        "wind": { "value": 7, "why": "7-rib reinforced frame; Backpacker praised the same-frame Traveler shrugging off windy rain", "source": "backpacker.com Davek Traveler review (2026-07-02)" },
+        "dura": { "value": 9, "why": "Premium build + lifetime guarantee + loss protection", "source": "https://www.davekny.com/products/the-davek-traveler (2026-07-02)" },
+        "mech": { "value": 7, "why": "Auto open+close, but premium and lifetime-backed — more robust than mainstream autos, still a mechanism the Mini lacks", "source": "https://www.davekny.com/products/the-davek-traveler (2026-07-02)" },
+        "cover": { "value": 9, "why": "101.6 cm — the fullest coverage of any fitter", "source": "https://www.davekny.com/products/the-davek-traveler (2026-07-02)" },
+        "pack": { "value": 6, "why": "22.9 cm folded — fits, over the ≤20 ideal", "source": "https://www.davekny.com/products/the-davek-traveler (2026-07-02)" },
+        "fab": { "value": 7, "why": "190-TC microweave, water-repellent, sheds well; PFAS not published", "source": "https://www.davekny.com/products/the-davek-traveler (2026-07-02)" },
+        "wt": { "value": 5, "why": "~369 g — heavy", "source": "https://www.davekny.com/products/the-davek-traveler (2026-07-02)" },
+        "nolo": { "value": 8, "why": "Attached leather strap + sleeve + loss protection", "source": "https://www.davekny.com/products/the-davek-traveler (2026-07-02)" },
+        "des": { "value": 8, "why": "Premium finish, leather strap", "source": "https://www.davekny.com/products/the-davek-traveler (2026-07-02)" },
+        "rust": { "value": 8, "why": "Fibreglass-reinforced 7-rib frame", "source": "https://www.davekny.com/products/the-davek-traveler (2026-07-02)" },
+        "ease": { "value": 9, "why": "Auto open+close + leather strap", "source": "https://www.davekny.com/products/the-davek-traveler (2026-07-02)" }
       }
     },
     {
@@ -808,19 +882,20 @@ button{font-family:inherit;}
       "name": "Anatole de Paris — Signature Folding",
       "price": 38,
       "links": [{ "label": "anatole-paris.com", "url": "https://anatole-paris.com/en/folding-compact-umbrella/" }],
-      "note": "anatole-paris.com (ships NL in EUR; NL stockist WNKL Den Haag). The design flagship and cheapest premium option (€38); ultra-compact but the smallest canopy in the field.",
+      "note": "anatole-paris.com (ships NL in EUR; stockist WNKL Den Haag). The design flagship and cheapest premium (€38); manual so nothing to fail. BUT near-zero independent lab/owner evidence — wind + durability rest on brand copy + design press — and the smallest canopy in the field.",
       "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 6, "expectedLifeYears": 7, "resaleValue": 0 },
       "scores": {
-        "windproof": { "value": 5, "why": "7 fibreglass ribs each with 14 cm carbon reinforcement — 'more wind-resistant than an ordinary 6-rib micro', but no km/h test and a small span limits it in driven rain", "source": "https://anatole-paris.com/en/folding-compact-umbrella/ (2026-07-02)" },
-        "durability": { "value": 6, "why": "Carbon-reinforced fibreglass ribs, repairable French design piece; EU 2-yr default, no lifetime backing", "source": "https://anatole-paris.com/en/folding-compact-umbrella/ (2026-07-02)" },
-        "coverage": { "value": 5, "why": "84 cm — smallest canopy of the field; less body coverage", "source": "https://anatole-paris.com/en/folding-compact-umbrella/ (2026-07-02)" },
-        "packdown": { "value": 9, "why": "17.5 cm folded — meets the ≤20 ideal", "source": "https://anatole-paris.com/en/folding-compact-umbrella/ (2026-07-02)" },
-        "fabric": { "value": 7, "why": "rPET recycled microfibre, quick-drying, UV50+; PFAS not stated", "source": "https://anatole-paris.com/en/folding-compact-umbrella/ (2026-07-02)" },
-        "design": { "value": 9, "why": "Design-press darling — colour-blocked French micro with a wood handle; the aesthetic flagship", "source": "https://anatole-paris.com/en/folding-compact-umbrella/ (2026-07-02)" },
-        "weight": { "value": 7, "why": "220 g", "source": "https://anatole-paris.com/en/folding-compact-umbrella/ (2026-07-02)" },
-        "nolose": { "value": 6, "why": "Attached grosgrain wrist strap; matching slip pouch (losable)", "source": "https://anatole-paris.com/en/folding-compact-umbrella/ (2026-07-02)" },
-        "corrosion": { "value": 9, "why": "Aluminium+titanium shaft, fibreglass ribs", "source": "https://anatole-paris.com/en/folding-compact-umbrella/ (2026-07-02)" },
-        "ease": { "value": 6, "why": "Manual; wood handle is a nice grip", "source": "https://anatole-paris.com/en/folding-compact-umbrella/ (2026-07-02)" }
+        "wind": { "value": 5, "why": "7 carbon-reinforced ribs, brand-claimed 'more wind-resistant than a 6-rib micro' — but NO independent test/owner corpus and a small span; treat as unproven", "source": "https://anatole-paris.com/en/folding-compact-umbrella/ (thin evidence) (2026-07-02)" },
+        "dura": { "value": 6, "why": "Carbon-reinforced fibreglass, repairable; EU 2-yr; evidence thin (design-press, not hands-on)", "source": "https://anatole-paris.com/en/folding-compact-umbrella/ (2026-07-02)" },
+        "mech": { "value": 9, "why": "Manual — nothing to fail", "source": "https://anatole-paris.com/en/folding-compact-umbrella/ (2026-07-02)" },
+        "cover": { "value": 5, "why": "84 cm — smallest canopy of the field", "source": "https://anatole-paris.com/en/folding-compact-umbrella/ (2026-07-02)" },
+        "pack": { "value": 10, "why": "17.5 cm folded — meets the ≤20 ideal", "source": "https://anatole-paris.com/en/folding-compact-umbrella/ (2026-07-02)" },
+        "fab": { "value": 7, "why": "rPET recycled microfibre, quick-drying, UV50+; PFAS not stated", "source": "https://anatole-paris.com/en/folding-compact-umbrella/ (2026-07-02)" },
+        "wt": { "value": 8, "why": "220 g", "source": "https://anatole-paris.com/en/folding-compact-umbrella/ (2026-07-02)" },
+        "nolo": { "value": 6, "why": "Attached grosgrain wrist strap; pouch (losable)", "source": "https://anatole-paris.com/en/folding-compact-umbrella/ (2026-07-02)" },
+        "des": { "value": 9, "why": "Design-press flagship — colour-blocked French micro with a wood handle", "source": "https://anatole-paris.com/en/folding-compact-umbrella/ (2026-07-02)" },
+        "rust": { "value": 9, "why": "Aluminium+titanium shaft, fibreglass ribs", "source": "https://anatole-paris.com/en/folding-compact-umbrella/ (2026-07-02)" },
+        "ease": { "value": 6, "why": "Manual; wood handle grip", "source": "https://anatole-paris.com/en/folding-compact-umbrella/ (2026-07-02)" }
       }
     },
     {
@@ -828,18 +903,19 @@ button{font-family:inherit;}
       "name": "Original Duckhead — Mini",
       "price": 41,
       "links": [{ "label": "originalduckhead.com", "url": "https://originalduckhead.com/products/black-mini-umbrella" }],
-      "note": "Buy direct (£35 ≈ €41, ships NL) — the bol.nl Duckhead listings are the 35 cm Compact, which does NOT fit. The only fitter with an explicit PFAS-free coating; steel frame is the durability wildcard.",
+      "note": "Buy direct (£35 ≈ €41, ships NL) — the bol.nl Duckhead is the 35 cm Compact, which does NOT fit. The only fitter with a documented PFAS-free coating; manual. BUT its 2-yr warranty explicitly excludes wind/bending damage, and the steel frame is the rust wildcard (the brand itself admits it).",
       "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 8, "expectedLifeYears": 6, "resaleValue": 0 },
       "scores": {
-        "windproof": { "value": 4, "why": "Steel structure 'designed to give, not break, and pop back into shape' — wind-resistant but not storm/km-h rated; single canopy, moderate span", "source": "https://originalduckhead.com/blogs/blog/why-the-mini (2026-07-02)" },
-        "durability": { "value": 6, "why": "High-strength steel frame, 2-yr warranty; steel adds heft and a theoretical rust concern vs fibreglass rivals", "source": "https://originalduckhead.com/products/black-mini-umbrella (2026-07-02)" },
-        "coverage": { "value": 6, "why": "Canopy diameter not published by the brand; reported moderate one-person coverage", "source": "https://originalduckhead.com/products/black-mini-umbrella (2026-07-02)" },
-        "packdown": { "value": 7, "why": "21 cm folded — fits well", "source": "https://originalduckhead.com/products/black-mini-umbrella (2026-07-02)" },
-        "fabric": { "value": 8, "why": "rPET canopy (9 recycled bottles) with an explicitly PFAS-FREE waterproof coating — the strongest fabric-ethics claim of any fitter", "source": "https://originalduckhead.com/products/black-mini-umbrella (2026-07-02)" },
-        "design": { "value": 8, "why": "Solid maple wood handle, design/sustainability-press favourite", "source": "https://originalduckhead.com/products/black-mini-umbrella (2026-07-02)" },
-        "weight": { "value": 6, "why": "280 g — steel frame adds weight", "source": "https://originalduckhead.com/products/black-mini-umbrella (2026-07-02)" },
-        "nolose": { "value": 5, "why": "Separate snap-band cover (losable); handle fixed", "source": "https://originalduckhead.com/products/black-mini-umbrella (2026-07-02)" },
-        "corrosion": { "value": 6, "why": "High-strength STEEL frame — the rust wildcard against the buyer's 'won't rust' wish", "source": "https://originalduckhead.com/products/black-mini-umbrella (2026-07-02)" },
+        "wind": { "value": 4, "why": "Steel 'gives not breaks' frame — wind-resistant but not storm-rated, and the 2-yr warranty explicitly excludes wind/bending (the way compacts die)", "source": "https://originalduckhead.com/blogs/blog/why-the-mini (2026-07-02)" },
+        "dura": { "value": 5, "why": "High-strength steel frame, but warranty excludes the main failure mode; ~175 Trustpilot store-level", "source": "originalduckhead Trustpilot (2026-07-02)" },
+        "mech": { "value": 9, "why": "Manual — nothing to fail", "source": "https://originalduckhead.com/products/black-mini-umbrella (2026-07-02)" },
+        "cover": { "value": 5, "why": "Open diameter undisclosed by the brand; reported moderate — treat as thin evidence", "source": "https://originalduckhead.com/products/black-mini-umbrella (2026-07-02)" },
+        "pack": { "value": 7, "why": "21 cm folded", "source": "https://originalduckhead.com/products/black-mini-umbrella (2026-07-02)" },
+        "fab": { "value": 8, "why": "rPET (9 recycled bottles) with an explicitly PFAS-FREE coating — strongest fabric-ethics claim of any fitter", "source": "https://originalduckhead.com/products/black-mini-umbrella (2026-07-02)" },
+        "wt": { "value": 6, "why": "280 g — steel adds weight", "source": "https://originalduckhead.com/products/black-mini-umbrella (2026-07-02)" },
+        "nolo": { "value": 5, "why": "Separate snap-band cover (losable)", "source": "https://originalduckhead.com/products/black-mini-umbrella (2026-07-02)" },
+        "des": { "value": 8, "why": "Solid maple wood handle, design/sustainability favourite", "source": "https://originalduckhead.com/products/black-mini-umbrella (2026-07-02)" },
+        "rust": { "value": 4, "why": "High-strength STEEL frame — the brand itself notes rust risk; the weakest on the 'won't rust' wish", "source": "https://originalduckhead.com/products/black-mini-umbrella (2026-07-02)" },
         "ease": { "value": 6, "why": "Manual; wood handle grip", "source": "https://originalduckhead.com/products/black-mini-umbrella (2026-07-02)" }
       }
     },
@@ -848,19 +924,83 @@ button{font-family:inherit;}
       "name": "Fulton Storm-1",
       "price": 25.69,
       "links": [{ "label": "amazon.nl", "url": "https://www.amazon.nl/dp/B073F78KJC" }],
-      "note": "amazon.nl (€25.69, low stock), 30-day returns. The best cheap windproof-ish fitter: FRP ribs engineered to bend and spring back; single (non-vented) canopy, smallish 95 cm.",
+      "note": "amazon.nl (€25.69), 30-day returns, 3.8★/30. The best cheap manual fitter: FRP ribs bend and spring back, 18 cm fold, manual so nothing to fail. Single (non-vented) 95 cm canopy is the limit.",
       "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 0, "expectedLifeYears": 7, "resaleValue": 0 },
       "scores": {
-        "windproof": { "value": 6, "why": "Fibre-reinforced-polymer ribs bend and recover rather than snap — genuinely the wind pick of the mid-tier compacts; single canopy (not vented), no formal km/h test", "source": "https://www.fultonumbrellas.com (Storm-1) (2026-07-02)" },
-        "durability": { "value": 7, "why": "FRP ribs + polycarbonate joints; Fulton frame guarantee (3-yr via UK sellers); resilient for a compact", "source": "https://www.amazon.nl/dp/B073F78KJC (2026-07-02)" },
-        "coverage": { "value": 7, "why": "95 cm canopy — decent one-person, snug not generous", "source": "https://www.fultonumbrellas.com (Storm-1) (2026-07-02)" },
-        "packdown": { "value": 8, "why": "18 cm folded — well under the limit", "source": "https://www.fultonumbrellas.com (Storm-1) (2026-07-02)" },
-        "fabric": { "value": 6, "why": "High-performance polyester, UPF30+, water-repellent; no PFAS-free claim", "source": "https://www.fultonumbrellas.com (Storm-1) (2026-07-02)" },
-        "design": { "value": 6, "why": "Classic British, plain black — tidy but not a statement", "source": "https://www.amazon.nl/dp/B073F78KJC (2026-07-02)" },
-        "weight": { "value": 7, "why": "230 g", "source": "https://www.fultonumbrellas.com (Storm-1) (2026-07-02)" },
-        "nolose": { "value": 5, "why": "Detachable wrap-over case (losable); no tip cap", "source": "https://www.fultonumbrellas.com (Storm-1) (2026-07-02)" },
-        "corrosion": { "value": 9, "why": "Aluminium shaft + FRP ribs — rustproof", "source": "https://www.fultonumbrellas.com (Storm-1) (2026-07-02)" },
-        "ease": { "value": 6, "why": "Manual 5-stage open/close", "source": "https://www.fultonumbrellas.com (Storm-1) (2026-07-02)" }
+        "wind": { "value": 6, "why": "Fibre-reinforced-polymer ribs bend and recover — the wind pick of the cheap compacts; single canopy, no formal test", "source": "https://www.amazon.nl/dp/B073F78KJC + fultonumbrellas.com (2026-07-02)" },
+        "dura": { "value": 6, "why": "FRP ribs + polycarbonate joints; Fulton frame guarantee; resilient for a compact", "source": "https://www.amazon.nl/dp/B073F78KJC (2026-07-02)" },
+        "mech": { "value": 9, "why": "Manual — nothing to fail", "source": "https://www.fultonumbrellas.com (Storm-1) (2026-07-02)" },
+        "cover": { "value": 6, "why": "95 cm — decent one-person, snug over a pack", "source": "https://www.fultonumbrellas.com (Storm-1) (2026-07-02)" },
+        "pack": { "value": 9, "why": "18 cm folded — well under the limit", "source": "https://www.fultonumbrellas.com (Storm-1) (2026-07-02)" },
+        "fab": { "value": 6, "why": "High-performance polyester, UPF30+; no PFAS-free claim", "source": "https://www.fultonumbrellas.com (Storm-1) (2026-07-02)" },
+        "wt": { "value": 8, "why": "230 g", "source": "https://www.fultonumbrellas.com (Storm-1) (2026-07-02)" },
+        "nolo": { "value": 5, "why": "Detachable wrap-over case (losable)", "source": "https://www.fultonumbrellas.com (Storm-1) (2026-07-02)" },
+        "des": { "value": 6, "why": "Classic British, plain black", "source": "https://www.amazon.nl/dp/B073F78KJC (2026-07-02)" },
+        "rust": { "value": 8, "why": "Aluminium shaft + FRP ribs — rustproof", "source": "https://www.fultonumbrellas.com (Storm-1) (2026-07-02)" },
+        "ease": { "value": 6, "why": "Manual 5-stage open/close (several push stages)", "source": "https://www.fultonumbrellas.com (Storm-1) (2026-07-02)" }
+      }
+    },
+    {
+      "id": "euroschirm-lighttrek",
+      "name": "EuroSCHIRM Light Trek Ultra",
+      "price": 49.90,
+      "links": [{ "label": "amazon.nl", "url": "https://www.amazon.nl/EuroSCHIRM-Ultra-Light-Weight-Trekking-Umbrella/dp/B073TYH1LW" }],
+      "note": "NEW (brand-gap scan). amazon.nl / euroschirm.com, 30-day returns. German trekking-umbrella specialist — the most CREDIBLY windproof fitting option: independently wind-tunnel tested to Force 11 (~117 km/h) at KIT-Karlsruhe, on flexible carbon+aluminium (rustproof), fully manual (nothing to fail), 175 g. Weaknesses vs the field: functional/outdoorsy (not urban) design, and 27.5 cm folded is near the fit limit.",
+      "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 0, "expectedLifeYears": 9, "resaleValue": 0 },
+      "scores": {
+        "wind": { "value": 8, "why": "Independently wind-tunnel tested to Force 11 (~117 km/h) at KIT-Karlsruhe — one of only two lab-validated wind ratings in the field (with Doppler Carbonsteel); flexible carbon ribs stay stable in gusts", "source": "https://www.euroschirm.com/en/trekking-umbrella-light-trek-ultra-black/30199120 (2026-07-02)" },
+        "dura": { "value": 8, "why": "German trekking-grade carbon+aluminium frame, well-regarded durability; ultralight so a touch less bombproof than the heavier Light Trek", "source": "https://nl.hardloop.com/product/32592-euroschirm-light-trek-ultra (2026-07-02)" },
+        "mech": { "value": 10, "why": "Fully manual — no mechanism to fail", "source": "https://www.euroschirm.com/en/trekking-umbrella-light-trek-ultra-black/30199120 (2026-07-02)" },
+        "cover": { "value": 8, "why": "98 cm canopy — full one-person coverage", "source": "https://www.amazon.nl/EuroSCHIRM-Ultra-Light-Weight-Trekking-Umbrella/dp/B073TYH1LW (2026-07-02)" },
+        "pack": { "value": 4, "why": "27.5 cm folded — fits, but near the 28.5 cm limit (a 3-section trekking folder)", "source": "https://www.euroschirm.com/en/trekking-umbrella-light-trek-ultra-black/30199120 (2026-07-02)" },
+        "fab": { "value": 7, "why": "PES quick-dry polyester canopy; no PFAS-free claim", "source": "https://www.euroschirm.com/en/trekking-umbrella-light-trek-ultra-black/30199120 (2026-07-02)" },
+        "wt": { "value": 8, "why": "175 g — very light for a hurricane-rated frame", "source": "https://www.euroschirm.com/en/trekking-umbrella-light-trek-ultra-black/30199120 (2026-07-02)" },
+        "nolo": { "value": 5, "why": "Slip sleeve (losable); manual", "source": "https://www.euroschirm.com/en/trekking-umbrella-light-trek-ultra-black/30199120 (2026-07-02)" },
+        "des": { "value": 5, "why": "Functional/outdoorsy trekking look — the field's least urban-elegant design", "source": "https://nl.hardloop.com/product/32592-euroschirm-light-trek-ultra (2026-07-02)" },
+        "rust": { "value": 10, "why": "Carbon + aluminium composite frame — no steel, fully corrosion-proof", "source": "https://www.euroschirm.com/en/trekking-umbrella-light-trek-ultra-black/30199120 (2026-07-02)" },
+        "ease": { "value": 6, "why": "Manual open, telescopic 3-section shaft", "source": "https://www.euroschirm.com/en/trekking-umbrella-light-trek-ultra-black/30199120 (2026-07-02)" }
+      }
+    },
+    {
+      "id": "victorinox-ultralight",
+      "name": "Victorinox Ultralight (Ecorepel)",
+      "price": 55,
+      "links": [{ "label": "amazon.nl", "url": "https://www.amazon.nl/s?k=victorinox+paraplu+ultralight" }],
+      "note": "NEW (brand-gap scan). amazon.nl / victorinox.com EU, 30-day returns. Swiss-Army brand; the fabric story the field lacks — an Ecorepel self-drying, PFC-free, water- & mud-repellent canopy (ideal for a bag-bottom umbrella) on a rust-safe fibreglass frame, 20 cm fold, manual, reflective safety panel. ⚠ Weight disputed (vendor lists 100 g, real-world ~340 g — verify) and only ~80 km/h.",
+      "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 0, "expectedLifeYears": 8, "resaleValue": 0 },
+      "scores": {
+        "wind": { "value": 5, "why": "~80 km/h, manual fibreglass frame — moderate, not tested-storm; inverts-recovers in gusts", "source": "https://www.victorinox.com (Ultralight Umbrella) (2026-07-02)" },
+        "dura": { "value": 7, "why": "Victorinox build quality, fibreglass ribs; no lifetime backing", "source": "https://www.victorinox.com (2026-07-02)" },
+        "mech": { "value": 10, "why": "Fully manual — no mechanism to fail", "source": "https://www.victorinox.com (2026-07-02)" },
+        "cover": { "value": 6, "why": "90 cm canopy — adequate one-person", "source": "https://www.victorinox.com (2026-07-02)" },
+        "pack": { "value": 8, "why": "20 cm folded — meets the ≤20 ideal", "source": "https://www.victorinox.com (2026-07-02)" },
+        "fab": { "value": 9, "why": "Ecorepel self-drying (PFC-free) water- & mud-repellent coating — shakes dry, won't soak the bag; one of only two documented PFAS-free fitters", "source": "https://www.victorinox.com (Ecorepel) (2026-07-02)" },
+        "wt": { "value": 5, "why": "~340 g real-world (vendor's 100 g figure is implausible for a 90 cm canopy — flagged; verify)", "source": "amazon.nl Victorinox paraplu listings (2026-07-02)" },
+        "nolo": { "value": 5, "why": "Slip cover (losable); reflective panel", "source": "https://www.victorinox.com (2026-07-02)" },
+        "des": { "value": 7, "why": "Clean Swiss-Army design, reflective safety trim", "source": "https://www.victorinox.com (2026-07-02)" },
+        "rust": { "value": 9, "why": "Fibreglass ribs + anodised aluminium shaft — won't rust", "source": "https://www.victorinox.com (2026-07-02)" },
+        "ease": { "value": 6, "why": "Manual open", "source": "https://www.victorinox.com (2026-07-02)" }
+      }
+    },
+    {
+      "id": "montbell-travel55",
+      "name": "Montbell Travel Umbrella 55",
+      "price": 82.59,
+      "links": [{ "label": "montbell.eu", "url": "https://en.montbell.jp/products/disp.php?product_id=1128707" }],
+      "note": "NEW (brand-gap scan). Montbell EU store (ships NL), 30-day returns. The ultralight innovation — 111 g carbon folder with a full 97 cm canopy and a quick-dry canopy. Genuinely impressive weight, but NOT storm-rated (engineered for grams, not gusts) — fine for normal Dutch rain/breeze, not the windproof class — and pricey for what it is.",
+      "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 8, "expectedLifeYears": 7, "resaleValue": 0 },
+      "scores": {
+        "wind": { "value": 4, "why": "No storm rating — the frame is built for minimum weight, so it inverts in real wind; fine for a breeze, not a Dutch gale", "source": "https://en.montbell.jp/products/disp.php?product_id=1128707 (2026-07-02)" },
+        "dura": { "value": 6, "why": "Ultralight carbon — Montbell quality but necessarily delicate at 111 g", "source": "https://en.montbell.jp/products/disp.php?product_id=1128707 (2026-07-02)" },
+        "mech": { "value": 10, "why": "Fully manual — no mechanism to fail", "source": "https://en.montbell.jp/products/disp.php?product_id=1128707 (2026-07-02)" },
+        "cover": { "value": 8, "why": "97 cm canopy — remarkably full for 111 g", "source": "https://en.montbell.jp/products/disp.php?product_id=1128707 (2026-07-02)" },
+        "pack": { "value": 6, "why": "25 cm folded — fits with margin", "source": "https://en.montbell.jp/products/disp.php?product_id=1128707 (2026-07-02)" },
+        "fab": { "value": 7, "why": "Quick-drying canopy; PFAS not stated", "source": "https://en.montbell.jp/products/disp.php?product_id=1128707 (2026-07-02)" },
+        "wt": { "value": 10, "why": "111 g — the lightest full-coverage umbrella in the field (a genuine ultralight innovation)", "source": "https://en.montbell.jp/products/disp.php?product_id=1128707 (2026-07-02)" },
+        "nolo": { "value": 5, "why": "Slip sleeve (losable); manual", "source": "https://en.montbell.jp/products/disp.php?product_id=1128707 (2026-07-02)" },
+        "des": { "value": 6, "why": "Clean functional-outdoor Montbell look", "source": "https://en.montbell.jp/products/disp.php?product_id=1128707 (2026-07-02)" },
+        "rust": { "value": 9, "why": "Carbon shaft + aluminium — no steel", "source": "https://en.montbell.jp/products/disp.php?product_id=1128707 (2026-07-02)" },
+        "ease": { "value": 6, "why": "Manual open", "source": "https://en.montbell.jp/products/disp.php?product_id=1128707 (2026-07-02)" }
       }
     },
     {
@@ -868,19 +1008,20 @@ button{font-family:inherit;}
       "name": "Impliva miniMAX Windproof Ø100",
       "price": 12.90,
       "links": [{ "label": "bol.com", "url": "https://www.bol.com/nl/nl/p/minimax-opvouwbare-paraplu-windproof-o-100-cm-zwart/9200000046254365/" }],
-      "note": "bol.com (sold by bol), 30-day returns. 3.8★/5 (79). The Dutch value floor: ~€13, biggest canopy, but a budget frame — not a buy-it-for-life piece. NB the auto miniMAX folds to ~30 cm and would NOT fit; only this manual version clears the bag.",
+      "note": "bol.com (sold by bol), 30-day returns. 3.8★/79. The Dutch value floor: ~€13, biggest canopy, manual. But a budget frame that wears fast — not a buy-it-for-life piece.",
       "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 3.95, "expectedLifeYears": 3, "resaleValue": 0 },
       "scores": {
-        "windproof": { "value": 4, "why": "Marketed windproof (8 fibreglass ribs, vents let gusts through), but no verified km/h figure — budget-grade, not the tested-storm class", "source": "https://www.impliva.nl/minimax-opvouwbaar-windproof-100-cm-.html (2026-07-02)" },
-        "durability": { "value": 4, "why": "bol reviews: competent but clearly below Senz/Knirps — thinner frame that wears faster; no stated warranty", "source": "https://www.bol.com/nl/nl/p/minimax-opvouwbare-paraplu-windproof-o-100-cm-zwart/9200000046254365/ (2026-07-02)" },
-        "coverage": { "value": 9, "why": "Ø~100 cm — the biggest canopy in the fitting field", "source": "https://www.impliva.nl/minimax-opvouwbaar-windproof-100-cm-.html (2026-07-02)" },
-        "packdown": { "value": 5, "why": "26 cm folded — fits with margin", "source": "https://www.impliva.nl/minimax-opvouwbaar-windproof-100-cm-.html (2026-07-02)" },
-        "fabric": { "value": 4, "why": "Budget polyester pongee, water-repellent; PFAS not stated", "source": "https://www.impliva.nl/minimax-opvouwbaar-windproof-100-cm-.html (2026-07-02)" },
-        "design": { "value": 4, "why": "Generic budget look", "source": "https://www.bol.com/nl/nl/p/minimax-opvouwbare-paraplu-windproof-o-100-cm-zwart/9200000046254365/ (2026-07-02)" },
-        "weight": { "value": 6, "why": "296 g", "source": "https://www.impliva.nl/minimax-opvouwbaar-windproof-100-cm-.html (2026-07-02)" },
-        "nolose": { "value": 5, "why": "Removable case sleeve (losable); no cap", "source": "https://www.impliva.nl/minimax-opvouwbaar-windproof-100-cm-.html (2026-07-02)" },
-        "corrosion": { "value": 6, "why": "Fibreglass ribs but a 3-piece budget metal shaft", "source": "https://www.impliva.nl/minimax-opvouwbaar-windproof-100-cm-.html (2026-07-02)" },
-        "ease": { "value": 5, "why": "Manual open/close, basic action", "source": "https://www.impliva.nl/minimax-opvouwbaar-windproof-100-cm-.html (2026-07-02)" }
+        "wind": { "value": 3, "why": "Marketed windproof (8 fibreglass ribs, vents) but no verified rating and a budget frame — inverts in real Dutch wind per reviews", "source": "https://www.bol.com/nl/nl/p/minimax-opvouwbare-paraplu-windproof-o-100-cm-zwart/9200000046254365/ (2026-07-02)" },
+        "dura": { "value": 3, "why": "bol reviews: clearly below Senz/Knirps — thin frame wears fast; no stated warranty", "source": "https://www.bol.com/nl/nl/p/minimax-opvouwbare-paraplu-windproof-o-100-cm-zwart/9200000046254365/ (2026-07-02)" },
+        "mech": { "value": 8, "why": "Manual — nothing to fail (a budget build, so slightly below the premium manuals)", "source": "https://www.impliva.nl/minimax-opvouwbaar-windproof-100-cm-.html (2026-07-02)" },
+        "cover": { "value": 9, "why": "Ø~100 cm — biggest canopy in the fitting field", "source": "https://www.impliva.nl/minimax-opvouwbaar-windproof-100-cm-.html (2026-07-02)" },
+        "pack": { "value": 5, "why": "26 cm folded — fits with margin", "source": "https://www.impliva.nl/minimax-opvouwbaar-windproof-100-cm-.html (2026-07-02)" },
+        "fab": { "value": 4, "why": "Budget pongee; PFAS not stated", "source": "https://www.impliva.nl/minimax-opvouwbaar-windproof-100-cm-.html (2026-07-02)" },
+        "wt": { "value": 6, "why": "296 g", "source": "https://www.impliva.nl/minimax-opvouwbaar-windproof-100-cm-.html (2026-07-02)" },
+        "nolo": { "value": 5, "why": "Removable case sleeve (losable)", "source": "https://www.impliva.nl/minimax-opvouwbaar-windproof-100-cm-.html (2026-07-02)" },
+        "des": { "value": 4, "why": "Generic budget look", "source": "https://www.bol.com/nl/nl/p/minimax-opvouwbare-paraplu-windproof-o-100-cm-zwart/9200000046254365/ (2026-07-02)" },
+        "rust": { "value": 6, "why": "Fibreglass ribs but a budget metal shaft", "source": "https://www.impliva.nl/minimax-opvouwbaar-windproof-100-cm-.html (2026-07-02)" },
+        "ease": { "value": 5, "why": "Basic manual action", "source": "https://www.impliva.nl/minimax-opvouwbaar-windproof-100-cm-.html (2026-07-02)" }
       }
     },
     {
@@ -888,19 +1029,20 @@ button{font-family:inherit;}
       "name": "Samsonite Alu Drop S — 4-Sect. Auto Open/Close",
       "price": 39,
       "links": [{ "label": "samsonite.nl", "url": "https://www.samsonite.nl/alu-drop-s/" }],
-      "note": "samsonite.nl (also de Bijenkorf), 30-day returns. The ideal-fit auto variant (20.5 cm) with one-button open+close — but the light aluminium frame is the weak link against the windproof priority.",
+      "note": "samsonite.nl (also de Bijenkorf), 30-day returns. The ideal-fit auto variant (20.5 cm) with one-button open+close — but SCREENED OUT: owner reports confirm the light aluminium frame inverts/bends in wind, below the windproof floor.",
       "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 0, "expectedLifeYears": 4, "resaleValue": 0 },
       "scores": {
-        "windproof": { "value": 2, "why": "Light aluminium frame with no vent — the least storm-hardy metal here; bends/inverts in strong Dutch gusts", "source": "https://www.samsonite.nl/alu-drop-s/ (2026-07-02)" },
-        "durability": { "value": 4, "why": "Sleek but light aluminium that can bend; EU 2-yr statutory", "source": "https://www.samsonite.nl/alu-drop-s/ (2026-07-02)" },
-        "coverage": { "value": 6, "why": "89 cm canopy on the 4-section variant — compact-first", "source": "https://www.samsonite.nl/alu-drop-s/ (2026-07-02)" },
-        "packdown": { "value": 8, "why": "20.5 cm folded — meets the ≤20 ideal", "source": "https://www.samsonite.nl/alu-drop-s/ (2026-07-02)" },
-        "fabric": { "value": 7, "why": "Teflon-coated polyester — sheds water well and dries fast, but Teflon is PTFE (not PFAS-free)", "source": "https://www.samsonite.nl/alu-drop-s/ (2026-07-02)" },
-        "design": { "value": 6, "why": "Clean minimal travel-brand look", "source": "https://www.samsonite.nl/alu-drop-s/ (2026-07-02)" },
-        "weight": { "value": 7, "why": "~250 g (auto 4-section)", "source": "https://www.samsonite.nl/alu-drop-s/ (2026-07-02)" },
-        "nolose": { "value": 5, "why": "Slip pouch (losable); no cap", "source": "https://www.samsonite.nl/alu-drop-s/ (2026-07-02)" },
-        "corrosion": { "value": 9, "why": "Aluminium frame + shaft — won't rust (its one clear strength)", "source": "https://www.samsonite.nl/alu-drop-s/ (2026-07-02)" },
-        "ease": { "value": 10, "why": "One-button auto open+close", "source": "https://www.samsonite.nl/alu-drop-s/ (2026-07-02)" }
+        "wind": { "value": 2, "why": "Light aluminium frame, no vent — 325 amazon.nl + UK owners confirm it inverts/bends in Dutch gusts; below the windproof floor", "source": "amazon.nl + samsonite.nl Alu Drop reviews (2026-07-02)" },
+        "dura": { "value": 4, "why": "Sleek but light aluminium that bends; EU 2-yr", "source": "https://www.samsonite.nl/alu-drop-s/ (2026-07-02)" },
+        "mech": { "value": 6, "why": "Auto open+close; the light mechanism is ok but adds a failure point on a frame that already bends", "source": "https://www.samsonite.nl/alu-drop-s/ (2026-07-02)" },
+        "cover": { "value": 6, "why": "89 cm on the 4-section variant", "source": "https://www.samsonite.nl/alu-drop-s/ (2026-07-02)" },
+        "pack": { "value": 9, "why": "20.5 cm folded — meets the ≤20 ideal", "source": "https://www.samsonite.nl/alu-drop-s/ (2026-07-02)" },
+        "fab": { "value": 7, "why": "Teflon-coated polyester — sheds and dries fast, but Teflon is PTFE (not PFAS-free)", "source": "https://www.samsonite.nl/alu-drop-s/ (2026-07-02)" },
+        "wt": { "value": 7, "why": "~250 g", "source": "https://www.samsonite.nl/alu-drop-s/ (2026-07-02)" },
+        "nolo": { "value": 5, "why": "Slip pouch (losable)", "source": "https://www.samsonite.nl/alu-drop-s/ (2026-07-02)" },
+        "des": { "value": 6, "why": "Clean minimal travel look", "source": "https://www.samsonite.nl/alu-drop-s/ (2026-07-02)" },
+        "rust": { "value": 10, "why": "All-aluminium frame + shaft — won't rust (its one clear strength)", "source": "https://www.samsonite.nl/alu-drop-s/ (2026-07-02)" },
+        "ease": { "value": 9, "why": "One-button auto open+close", "source": "https://www.samsonite.nl/alu-drop-s/ (2026-07-02)" }
       }
     },
     {
@@ -908,19 +1050,20 @@ button{font-family:inherit;}
       "name": "Doppler Carbonsteel Magic",
       "price": 44.95,
       "links": [{ "label": "bol.com", "url": "https://www.bol.com/nl/nl/p/doppler-koolstofstaal-magic-zakparaplu-29-cm/9300000181410966/" }],
-      "note": "SCREENED — 29 cm folded > 28 cm, so it will not sit in the 28.5 cm bag bottom. Kept greyed-out because it is the storm/durability KING of the whole scout: if the bag were 1 cm wider this wins on windproof + coverage + rust + warranty.",
+      "note": "SCREENED — 29 cm folded > 28 cm. The storm/coverage KING (150 km/h wind-tunnel-validated with TU-Munich, 100 cm Pongee, 5-yr), but the review revision also flags that its auto 'Magic' mechanism can fail to latch. Kept greyed-out: 1 cm too long for this bag.",
       "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 0, "expectedLifeYears": 10, "resaleValue": 0 },
       "scores": {
-        "windproof": { "value": 10, "why": "Tested to 150 km/h; 8-rib carbon-steel frame resists inversion — Doppler's benchmark storm pocket umbrella", "source": "https://dopplerschirme.com/en/74486-carbonsteel-magic.html (2026-07-02)" },
-        "durability": { "value": 10, "why": "Near-indestructible reputation; 5-yr extended warranty (vs 3 standard)", "source": "https://dopplerschirme.com/en/74486-carbonsteel-magic.html (2026-07-02)" },
-        "coverage": { "value": 9, "why": "100 cm Pongee canopy — best coverage + water-shedding of the Doppler line", "source": "https://dopplerschirme.com/en/74486-carbonsteel-magic.html (2026-07-02)" },
-        "packdown": { "value": 2, "why": "29 cm folded — OVER the 28 cm ceiling; will not sit in the bag bottom (this is why it's screened)", "source": "https://www.bol.com/nl/nl/p/doppler-koolstofstaal-magic-zakparaplu-29-cm/9300000181410966/ (2026-07-02)" },
-        "fabric": { "value": 7, "why": "Denser Pongee weave sheds water better than the Zero canopies; standard DWR, not PFAS-free", "source": "https://dopplerschirme.com/en/74486-carbonsteel-magic.html (2026-07-02)" },
-        "design": { "value": 7, "why": "Classic 'gentleman's' storm umbrella, tidy", "source": "https://dopplerschirme.com/en/74486-carbonsteel-magic.html (2026-07-02)" },
-        "weight": { "value": 5, "why": "320 g", "source": "https://dopplerschirme.com/en/74486-carbonsteel-magic.html (2026-07-02)" },
-        "nolose": { "value": 5, "why": "Detachable slip sleeve (losable)", "source": "https://dopplerschirme.com/en/74486-carbonsteel-magic.html (2026-07-02)" },
-        "corrosion": { "value": 7, "why": "Carbon-steel frame is treated/rust-resistant but is steel (vs all-fibreglass rivals)", "source": "https://dopplerschirme.com/en/74486-carbonsteel-magic.html (2026-07-02)" },
-        "ease": { "value": 10, "why": "One-button auto open+close", "source": "https://dopplerschirme.com/en/74486-carbonsteel-magic.html (2026-07-02)" }
+        "wind": { "value": 10, "why": "150 km/h, independently wind-tunnel-validated (TU-Munich) — the most credible windproof claim in the field; 8-rib carbon-steel", "source": "https://dopplerschirme.com/en/74486-carbonsteel-magic.html + Fendrihan (2026-07-02)" },
+        "dura": { "value": 9, "why": "Near-indestructible frame, 5-yr; frame is a tank (mechanism scored separately)", "source": "https://dopplerschirme.com/en/74486-carbonsteel-magic.html (2026-07-02)" },
+        "mech": { "value": 5, "why": "The Doppler auto 'Magic' mechanism is the class failure point — owners report shaft collapse / won't-latch within months", "source": "amazon.de Carbonsteel Magic reviews (2026-07-02)" },
+        "cover": { "value": 9, "why": "100 cm Pongee — best coverage + water-shedding of the Doppler line", "source": "https://dopplerschirme.com/en/74486-carbonsteel-magic.html (2026-07-02)" },
+        "pack": { "value": 2, "why": "29 cm folded — over the 28 cm ceiling; will not sit in the bag bottom (screened)", "source": "https://www.bol.com/nl/nl/p/doppler-koolstofstaal-magic-zakparaplu-29-cm/9300000181410966/ (2026-07-02)" },
+        "fab": { "value": 7, "why": "Denser Pongee sheds water well; standard DWR, not PFAS-free", "source": "https://dopplerschirme.com/en/74486-carbonsteel-magic.html (2026-07-02)" },
+        "wt": { "value": 5, "why": "320 g", "source": "https://dopplerschirme.com/en/74486-carbonsteel-magic.html (2026-07-02)" },
+        "nolo": { "value": 5, "why": "Detachable slip sleeve (losable)", "source": "https://dopplerschirme.com/en/74486-carbonsteel-magic.html (2026-07-02)" },
+        "des": { "value": 7, "why": "Classic 'gentleman's' storm umbrella", "source": "https://dopplerschirme.com/en/74486-carbonsteel-magic.html (2026-07-02)" },
+        "rust": { "value": 7, "why": "Carbon-steel frame treated/rust-resistant but is steel", "source": "https://dopplerschirme.com/en/74486-carbonsteel-magic.html (2026-07-02)" },
+        "ease": { "value": 9, "why": "One-button auto open+close", "source": "https://dopplerschirme.com/en/74486-carbonsteel-magic.html (2026-07-02)" }
       }
     },
     {
@@ -928,19 +1071,20 @@ button{font-family:inherit;}
       "name": "Senz° Mini Automatic Deluxe",
       "price": 85,
       "links": [{ "label": "bol.com", "url": "https://www.bol.com/nl/nl/p/senz-mini-automatic-deluxe-opvouwbare-storm-paraplu-zwart-business/9300000014553993/" }],
-      "note": "SCREENED — 28.5 cm folded (0.5 cm over the 28 cm ceiling; equals the interior width) — it would jam, not sit. Kept to show the constraint: in the Senz line, auto open+close + a big canopy inherently push the fold past 28 cm.",
+      "note": "SCREENED — 28.5 cm folded (0.5 cm over). In the Senz line, auto + a big canopy push the fold past 28 cm. Same asymmetric-coverage + folding-frame caveats as the Micro, plus an auto spring.",
       "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 0, "expectedLifeYears": 6, "resaleValue": 0 },
       "scores": {
-        "windproof": { "value": 7, "why": "Larger 91×91 cm asymmetric storm canopy, mfr 80 km/h", "source": "https://www.senz.com/umbrellas/foldable-umbrellas/mini-automatic-deluxe/ (2026-07-02)" },
-        "durability": { "value": 7, "why": "Fibreglass ribs + steel shaft, 2-yr; auto spring a wear point", "source": "https://www.senz.com/umbrellas/foldable-umbrellas/mini-automatic-deluxe/ (2026-07-02)" },
-        "coverage": { "value": 7, "why": "91×91 cm — more coverage than the Micro", "source": "https://www.senz.com/umbrellas/foldable-umbrellas/mini-automatic-deluxe/ (2026-07-02)" },
-        "packdown": { "value": 3, "why": "28.5 cm folded — 0.5 cm OVER the ceiling; screened (it would wedge/jam in the 28.5 cm interior)", "source": "https://www.senz.com/umbrellas/foldable-umbrellas/mini-automatic-deluxe/ (2026-07-02)" },
-        "fabric": { "value": 8, "why": "Fast-dry canopy with an extra-powerful water-resistant coating, UPF50+", "source": "https://www.senz.com/umbrellas/foldable-umbrellas/mini-automatic-deluxe/ (2026-07-02)" },
-        "design": { "value": 9, "why": "Senz aero design + Italian leather handle — the premium foldable", "source": "https://www.senz.com/umbrellas/foldable-umbrellas/mini-automatic-deluxe/ (2026-07-02)" },
-        "weight": { "value": 4, "why": "450 g — heaviest of all", "source": "https://www.senz.com/umbrellas/foldable-umbrellas/mini-automatic-deluxe/ (2026-07-02)" },
-        "nolose": { "value": 6, "why": "Removable luxury sleeve (losable); auto, no detachable parts on the umbrella", "source": "https://www.senz.com/umbrellas/foldable-umbrellas/mini-automatic-deluxe/ (2026-07-02)" },
-        "corrosion": { "value": 8, "why": "Fibreglass ribs + steel shaft", "source": "https://www.senz.com/umbrellas/foldable-umbrellas/mini-automatic-deluxe/ (2026-07-02)" },
-        "ease": { "value": 10, "why": "One-button auto open+close + leather handle", "source": "https://www.senz.com/umbrellas/foldable-umbrellas/mini-automatic-deluxe/ (2026-07-02)" }
+        "wind": { "value": 7, "why": "Larger 91×91 asymmetric storm canopy, 80 km/h", "source": "https://www.senz.com/umbrellas/foldable-umbrellas/mini-automatic-deluxe/ (2026-07-02)" },
+        "dura": { "value": 7, "why": "Fibreglass ribs + steel shaft, 2-yr", "source": "https://www.senz.com/umbrellas/foldable-umbrellas/mini-automatic-deluxe/ (2026-07-02)" },
+        "mech": { "value": 5, "why": "Auto open+close on a folding Senz — a Senz auto folder was reported 'defective after five uses'", "source": "Trustpilot senz (2026-07-02)" },
+        "cover": { "value": 5, "why": "91×91 but asymmetric — same one-flank-wet geometry as the Micro", "source": "OutdoorGearLab Senz (2026-07-02)" },
+        "pack": { "value": 3, "why": "28.5 cm folded — over the ceiling; screened", "source": "https://www.senz.com/umbrellas/foldable-umbrellas/mini-automatic-deluxe/ (2026-07-02)" },
+        "fab": { "value": 8, "why": "Fast-dry extra-powerful water-resistant coating, UPF50+", "source": "https://www.senz.com/umbrellas/foldable-umbrellas/mini-automatic-deluxe/ (2026-07-02)" },
+        "wt": { "value": 4, "why": "450 g — heaviest of all", "source": "https://www.senz.com/umbrellas/foldable-umbrellas/mini-automatic-deluxe/ (2026-07-02)" },
+        "nolo": { "value": 6, "why": "Removable luxury sleeve (losable); auto, no detachable parts on the umbrella", "source": "https://www.senz.com/umbrellas/foldable-umbrellas/mini-automatic-deluxe/ (2026-07-02)" },
+        "des": { "value": 9, "why": "Senz aero + Italian leather handle", "source": "https://www.senz.com/umbrellas/foldable-umbrellas/mini-automatic-deluxe/ (2026-07-02)" },
+        "rust": { "value": 8, "why": "Fibreglass ribs + steel shaft", "source": "https://www.senz.com/umbrellas/foldable-umbrellas/mini-automatic-deluxe/ (2026-07-02)" },
+        "ease": { "value": 9, "why": "One-button auto open+close + leather handle", "source": "https://www.senz.com/umbrellas/foldable-umbrellas/mini-automatic-deluxe/ (2026-07-02)" }
       }
     },
     {
@@ -948,18 +1092,19 @@ button{font-family:inherit;}
       "name": "Blunt Metro",
       "price": 62.90,
       "links": [{ "label": "bol.com", "url": "https://www.bol.com/nl/nl/p/blunt-metro-stormparaplu-opvouwbaar-o-100-cm-windproof-tot-115-km-u-automatisch-uitklapbaar-incl-beschermhoes-ink-black/9300000188189534/" }],
-      "note": "SCREENED — 37.5 cm folded (OGL measured 37.8), ~10 cm over the ceiling. Kept because it's the design-led windproof many buyers reach for first: the same radial-tensioning frame that makes it exceptionally windproof is exactly what prevents it folding short. OutdoorGearLab also flags weak rain coverage (scalloped canopy, 4/10).",
+      "note": "SCREENED — 37.5 cm folded (OGL measured 37.8), ~10 cm over. The radial frame that makes it windproof is what stops it folding short. OGL also flags weak rain coverage (scalloped canopy) and that it inverted at ~22 mph despite the 115 km/h claim.",
       "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 0, "expectedLifeYears": 8, "resaleValue": 0 },
       "scores": {
-        "windproof": { "value": 9, "why": "Radial-tensioning canopy wind-tunnel tested to 115 km/h — genuinely storm-worthy", "source": "https://bluntumbrellas.com/pages/compare-model (2026-07-02)" },
-        "durability": { "value": 8, "why": "Very durable radial frame, anodised alu shaft, 2-yr global warranty", "source": "https://www.outdoorgearlab.com/reviews/camping-and-hiking/umbrella/blunt-metro (2026-07-02)" },
-        "coverage": { "value": 5, "why": "Nominal 100 cm, but OutdoorGearLab rates rain coverage only 4/10 — the scalloped/vaulted canopy leaves gaps", "source": "https://www.outdoorgearlab.com/reviews/camping-and-hiking/umbrella/blunt-metro (2026-07-02)" },
-        "packdown": { "value": 0, "why": "37.5 cm folded — the radial frame can't collapse into a short travel package; ~10 cm over the ceiling (screened)", "source": "https://bluntumbrellas.com/pages/compare-model (2026-07-02)" },
-        "fabric": { "value": 6, "why": "Quick-dry 100% polyester; PFAS status not stated", "source": "https://bluntumbrellas.com/pages/compare-model (2026-07-02)" },
-        "design": { "value": 8, "why": "Distinctive design-led piece (some find the look 'too unique')", "source": "https://www.outdoorgearlab.com/reviews/camping-and-hiking/umbrella/blunt-metro (2026-07-02)" },
-        "weight": { "value": 4, "why": "385 g", "source": "https://bluntumbrellas.com/pages/compare-model (2026-07-02)" },
-        "nolose": { "value": 5, "why": "Separate untethered sleeve (losable); wrist strap attached", "source": "https://www.bol.com/nl/nl/p/blunt-metro-stormparaplu-opvouwbaar-o-100-cm-windproof-tot-115-km-u-automatisch-uitklapbaar-incl-beschermhoes-ink-black/9300000188189534/ (2026-07-02)" },
-        "corrosion": { "value": 10, "why": "Anodised aluminium shaft + fibreglass ribs — no rust", "source": "https://bluntumbrellas.com/pages/compare-model (2026-07-02)" },
+        "wind": { "value": 7, "why": "Radial-tensioning frame is genuinely wind-worthy, but OGL measured inversion at ~22 mph — real-world below the 115 km/h claim, re-anchored down", "source": "https://www.outdoorgearlab.com/reviews/camping-and-hiking/umbrella/blunt-metro (2026-07-02)" },
+        "dura": { "value": 8, "why": "Very durable radial frame, anodised alu shaft, 2-yr", "source": "https://www.outdoorgearlab.com/reviews/camping-and-hiking/umbrella/blunt-metro (2026-07-02)" },
+        "mech": { "value": 7, "why": "Auto-OPEN only (manual close) — fewer failure points than a full auto-close", "source": "https://bluntumbrellas.com/pages/compare-model (2026-07-02)" },
+        "cover": { "value": 4, "why": "Nominal 100 cm but OGL rates rain coverage 4/10 — the scalloped canopy leaves gaps", "source": "https://www.outdoorgearlab.com/reviews/camping-and-hiking/umbrella/blunt-metro (2026-07-02)" },
+        "pack": { "value": 0, "why": "37.5 cm folded — the radial frame can't collapse short; ~10 cm over (screened)", "source": "https://bluntumbrellas.com/pages/compare-model (2026-07-02)" },
+        "fab": { "value": 6, "why": "Quick-dry polyester; PFAS not stated", "source": "https://bluntumbrellas.com/pages/compare-model (2026-07-02)" },
+        "wt": { "value": 4, "why": "385 g", "source": "https://bluntumbrellas.com/pages/compare-model (2026-07-02)" },
+        "nolo": { "value": 5, "why": "Separate untethered sleeve (losable); wrist strap attached", "source": "https://www.bol.com/nl/nl/p/blunt-metro-stormparaplu-opvouwbaar-o-100-cm-windproof-tot-115-km-u-automatisch-uitklapbaar-incl-beschermhoes-ink-black/9300000188189534/ (2026-07-02)" },
+        "des": { "value": 8, "why": "Distinctive design-led piece", "source": "https://www.outdoorgearlab.com/reviews/camping-and-hiking/umbrella/blunt-metro (2026-07-02)" },
+        "rust": { "value": 10, "why": "Anodised aluminium shaft + fibreglass ribs — no rust", "source": "https://bluntumbrellas.com/pages/compare-model (2026-07-02)" },
         "ease": { "value": 8, "why": "Auto-open (push-button); manual close", "source": "https://bluntumbrellas.com/pages/compare-model (2026-07-02)" }
       }
     },
@@ -968,49 +1113,53 @@ button{font-family:inherit;}
       "name": "Repel Windproof Travel Umbrella",
       "price": 17.99,
       "links": [{ "label": "amazon.nl", "url": "https://www.amazon.nl/dp/B0160HYB8S" }],
-      "note": "SCREENED — 29 cm folded (>28 cm). Kept as the market default (amazon.nl 4.4★ over 93,421 ratings) that narrowly misses. Downsides for this brief anyway: Teflon = PFAS-based coating, and OutdoorGearLab saw it invert at ~15 mph (recovers, but not gale-proof).",
+      "note": "SCREENED — 29 cm folded (OGL measured 29.8). The market default (amazon.nl 4.4★/93,421), but for this brief: Teflon (PFAS), its auto-close button dies at 3–10 months, and it inverts at ~15 mph. Kept as the popular near-miss.",
       "costs": { "consumablesPerYear": 0, "energyPerYear": 0, "maintenancePerYear": 0, "deliveryCost": 0, "expectedLifeYears": 5, "resaleValue": 0 },
       "scores": {
-        "windproof": { "value": 4, "why": "Double-vented canopy but OutdoorGearLab measured inversion at ~15 mph / buckling ~20 mph (bounced back without damage) — the 'windproof' name overstates it", "source": "https://www.outdoorgearlab.com/reviews/camping-and-hiking/umbrella/repel-windproof-travel (2026-07-02)" },
-        "durability": { "value": 5, "why": "Heavy but recovers from inversion; lifetime-replacement policy, though the build itself is budget", "source": "https://www.outdoorgearlab.com/reviews/camping-and-hiking/umbrella/repel-windproof-travel (2026-07-02)" },
-        "coverage": { "value": 7, "why": "92.7 cm canopy", "source": "https://www.outdoorgearlab.com/reviews/camping-and-hiking/umbrella/repel-windproof-travel (2026-07-02)" },
-        "packdown": { "value": 2, "why": "29 cm folded — over the 28 cm ceiling; screened", "source": "https://www.amazon.nl/dp/B0160HYB8S (2026-07-02)" },
-        "fabric": { "value": 6, "why": "Teflon-coated (sheds fast, double-vented) but Teflon = PTFE/fluoropolymer, i.e. NOT PFAS-free — counts against the buyer's preference", "source": "https://www.outdoorgearlab.com/reviews/camping-and-hiking/umbrella/repel-windproof-travel (2026-07-02)" },
-        "design": { "value": 4, "why": "Generic travel-umbrella look", "source": "https://www.amazon.nl/dp/B0160HYB8S (2026-07-02)" },
-        "weight": { "value": 4, "why": "~425 g", "source": "https://www.outdoorgearlab.com/reviews/camping-and-hiking/umbrella/repel-windproof-travel (2026-07-02)" },
-        "nolose": { "value": 5, "why": "Separate slip sleeve (losable); auto button integrated", "source": "https://www.amazon.nl/dp/B0160HYB8S (2026-07-02)" },
-        "corrosion": { "value": 7, "why": "Fibreglass ribs + steel telescoping shaft", "source": "https://www.outdoorgearlab.com/reviews/camping-and-hiking/umbrella/repel-windproof-travel (2026-07-02)" },
-        "ease": { "value": 10, "why": "One-button auto open+close", "source": "https://www.amazon.nl/dp/B0160HYB8S (2026-07-02)" }
+        "wind": { "value": 4, "why": "Double-vented, but OGL measured inversion at ~15 mph / buckling ~20 mph (recovers) — 'windproof' overstates it", "source": "https://www.outdoorgearlab.com/reviews/camping-and-hiking/umbrella/repel-windproof-travel (2026-07-02)" },
+        "dura": { "value": 4, "why": "Budget build; recovers from inversion; lifetime-replacement policy but low build quality", "source": "https://www.outdoorgearlab.com/reviews/camping-and-hiking/umbrella/repel-windproof-travel (2026-07-02)" },
+        "mech": { "value": 3, "why": "The auto open/close button is a documented early failure — owners report it dead at 3–10 months", "source": "OGL + amazon owner threads (2026-07-02)" },
+        "cover": { "value": 6, "why": "92.7 cm canopy", "source": "https://www.outdoorgearlab.com/reviews/camping-and-hiking/umbrella/repel-windproof-travel (2026-07-02)" },
+        "pack": { "value": 2, "why": "29 cm folded (OGL 29.8) — over the ceiling; screened", "source": "https://www.amazon.nl/dp/B0160HYB8S (2026-07-02)" },
+        "fab": { "value": 6, "why": "Teflon-coated (sheds fast) but Teflon = PTFE, NOT PFAS-free", "source": "https://www.outdoorgearlab.com/reviews/camping-and-hiking/umbrella/repel-windproof-travel (2026-07-02)" },
+        "wt": { "value": 4, "why": "~425 g", "source": "https://www.outdoorgearlab.com/reviews/camping-and-hiking/umbrella/repel-windproof-travel (2026-07-02)" },
+        "nolo": { "value": 5, "why": "Separate slip sleeve (losable)", "source": "https://www.amazon.nl/dp/B0160HYB8S (2026-07-02)" },
+        "des": { "value": 4, "why": "Generic travel look", "source": "https://www.amazon.nl/dp/B0160HYB8S (2026-07-02)" },
+        "rust": { "value": 7, "why": "Fibreglass ribs + steel shaft", "source": "https://www.outdoorgearlab.com/reviews/camping-and-hiking/umbrella/repel-windproof-travel (2026-07-02)" },
+        "ease": { "value": 7, "why": "One-button auto open+close — when it works", "source": "https://www.amazon.nl/dp/B0160HYB8S (2026-07-02)" }
       }
     }
   ],
   "comparisons": {
-    "fulton-storm1|knirps-u200": {
-      "text": "The cheaper-neighbour test. The Fulton Storm-1 (€25.69) is the best budget windproof-ish fitter — FRP ribs that flex back, 18 cm fold, 230 g — and it holds ~90% of the U.200's value. But for €6.25 more the Knirps U.200 upgrades on the two things this buyer weighted highest: a tested 120 km/h frame (vs Fulton's untested single canopy) and full one-hand auto open+close (vs manual), plus a 5-yr warranty. Prefer the U.200 — the €6 is the best-spent step on the frontier; take the Fulton only to save every euro or if you specifically want manual simplicity."
+    "knirps-us050|knirps-u200": {
+      "text": "The heart of the revision. Both are Knirps ultralights that fit; the split is manual reliability vs auto convenience. The US.050 wins overall because the deep evidence says the auto-close spring is the field's #1 failure and Knirps' own manuals out-rate its automatics (US.050 4.5/1,685 vs U.200 4.2/505) — for a buyer whose #1 priority is 'won't break', the manual with nothing to fail is the safer quality bet, and it's lighter (115 vs 185 g). The U.200 counters with true one-hand auto open+close and €8 less (€31.94). Prefer the US.050 for reliability + lightness; the U.200 if one-handed auto in the rain (juggling the bag) is worth accepting the spring as the eventual wear point.",
+      "flag": "This pair IS the decision. If you weight the auto convenience (ease) higher, or discount the mechanism-reliability finding, the U.200 retakes the pick — slide the Mechanism/Ease weights on the chart to see it flip."
+    },
+    "knirps-us050|knirps-t200": {
+      "text": "Reliability + lightness vs max wind + coverage. The T.200 is the storm answer — 8-rib 150 km/h and a fuller 97 cm canopy beat the US.050 on windproofing and coverage — but it's an auto (same spring wear point), 300 g vs 115, and sits at exactly 28 cm folded with zero fit margin (and OGL warns marketed lengths run long). Prefer the US.050 for everyday carry and reliability; step to the T.200 if you genuinely face storms and will accept the heft and the snug fit."
+    },
+    "knirps-us050|davek-mini": {
+      "text": "The buy-it-for-life question, now closer than before. The Davek Mini still edges overall value on its lifetime 'any-reason' guarantee, tiny 17.8 cm fold and design — but the revision knocked its coverage (shallow, 'head-and-shoulders only') below the US.050's isn't-far-off 90 cm, and every NL warranty claim means shipping to New York + 2026 EU import duty. You pay ~€70+ for the warranty, not a demonstrably better-covering or tougher umbrella. Prefer the US.050 for value + no-hassle NL ownership; the Davek Mini if 'never buy another umbrella' and the smallest possible fold are worth the premium and the transatlantic service."
+    },
+    "fulton-storm1|knirps-us050": {
+      "text": "The engine's value knee (Fulton) vs the quality-first pick (US.050). The Fulton Storm-1 (€25.69) is the pure value-for-money elbow — flex-recover FRP ribs, 18 cm fold, manual (nothing to fail) — 90% of the value for the least money. But its review record is thin (3.8★/30) and its fabric/design are modest. For €14 more the US.050 buys the best-evidenced quality in the field (4.5★/1,685), less weight (115 vs 230 g) and a rust-safe frame. With a quality-first, no-cap stance, prefer the US.050; the Fulton is the budget-smart play if spend matters.",
+      "flag": "The frontier here is a near-linear cluster of manuals (A.050 · Fulton · U.200 · US.050) — treat them as a value band, not a strict ranking; the engine's ★ knee lands on Fulton by a hair, but the quality-first steer is US.050."
+    },
+    "knirps-us050|euroschirm-lighttrek": {
+      "text": "Best-reviewed vs most-windproof — both manual, both rustproof. The US.050 is lighter (115 vs 175 g), more compact (21 vs 27.5 cm, real fit margin vs near-limit), cheaper (€39.99 vs €49.90) and the highest-rated umbrella in the field. The EuroSCHIRM's edge is windproofing: it's independently lab-tested to Force 11 (~117 km/h) — the only fitter besides the screened Carbonsteel with a validated storm rating — with a fuller 98 cm canopy. Prefer the US.050 as the all-round quality pick; the EuroSCHIRM if genuine storm resistance is the deciding priority and you'll accept the outdoorsy look + near-limit fold."
     },
     "knirps-u200|knirps-t200": {
-      "text": "The 'is the next step up worth it?' walk — and it's essentially a tie on value (both ~7.4). For €8 more the T.200 gives the strongest frame in the field (150 vs 120 km/h), a fuller 97 cm canopy and an attached carry strap (fewer losable bits). Against it: 300 g vs 185 g, and 28 cm folded means zero fit margin — it wedges into the bag rather than dropping in. Prefer the U.200 for the everyday carry (lighter, real fit margin, cheaper); step to the T.200 only if you regularly face genuine storms and want the biggest, toughest canopy that still (barely) fits.",
-      "flag": "U.200 and T.200 land within ~0.04 value-points — treat them as tied. The pick between them is fit-margin + weight (U.200) vs max-storm + coverage (T.200), not the score."
+      "text": "If you want an auto, this is the choice within it — and they're close. The U.200 is lighter (185 vs 300 g), cheaper (€31.94), and fits with real margin (26 vs 28 cm). The T.200 buys more storm resistance (150 vs 120 km/h) and coverage (97 vs 95 cm) and adds an attached strap, at the cost of heft and a zero-margin fit. Both share the same auto-close spring. Prefer the U.200 for daily carry; the T.200 only if storms dominate your use."
     },
-    "knirps-u200|davek-mini": {
-      "text": "The buy-it-for-life comparison. The Davek Mini edges the U.200 on overall value on the strength of an unconditional LIFETIME guarantee + loss-protection, a 17.8 cm fold that meets the ≤20 ideal, and a more considered design — and over an 8-year horizon the Per-year cost view narrows the gap a lot. What you give up: it's manual (no auto), only moderately windproof (no tested km/h, single canopy vs the U.200's 120), and it lands ~€70+ all-in with US import duty. Prefer the U.200 if windproofing and one-hand auto are the point (they were your top weights); prefer the Davek Mini if 'never buy another umbrella' + tiniest-possible fold outrank max wind."
+    "knirps-us050|knirps-vision": {
+      "text": "Reliability/lightness vs the eco-fabric auto. The new Vision Duomatic is the only fitting auto that documents the fabric wants — recycled PET + PFC-free ecorepel coating + a stated 5-yr guarantee — with a fuller 97 cm canopy. But it's an auto (spring wear point), 325 g vs 115, sits at 28 cm (zero margin), and its rib material is unpublished (possibly steel → rust). Prefer the US.050 for reliability, weight and rust-safety; the Vision if a documented PFAS-free, sustainable fabric and one-hand auto are what you care about most."
     },
-    "knirps-u200|doppler-zero-magic": {
-      "text": "The closest same-size rival, and the U.200 wins it for €8 less. Both are ~185 g auto open+close folders that fit with margin. The Doppler counters with a slightly bigger 97 cm canopy and carbon ribs, but its ultra-thin canopy is reported to wet through in sustained downpours, its warranty is 3 yr (vs 5), and its wind rating is 100 km/h (vs 120). Prefer the U.200; the Zero Magic only if you find a colour/deal you prefer."
+    "knirps-us050|senz-micro": {
+      "text": "Value/reliability vs the Dutch design object. The Senz Micro is the best-fitting umbrella here (18.5 cm) and an iF/Red Dot icon — but the review evidence is unkind to the FOLDABLE Senz: OGL 40/100, it inverts at 40–60 km/h and its asymmetric canopy wets one flank and your backpack. The US.050 is more reliable, lighter and (narrowly) covers more evenly, for €15 less. Prefer the US.050 on merit; the Senz Micro if its design and effortless drop-in fit outweigh the weaker wind + coverage (switch to the Design lens and it climbs)."
     },
-    "knirps-u200|knirps-us050": {
-      "text": "The auto-vs-manual reliability call inside the same range — near-tied on value. The U.200 adds one-button auto open+close and a higher 120 km/h rating; the US.050 is fully manual (no spring — the fewest failure points), lighter (115 vs 185 g) and more compact (21 vs 26 cm). Prefer the U.200 for one-handed use in wind while holding a bag; prefer the US.050 if 'most reliable / nothing to fail' and minimum weight are what you care about most.",
-      "flag": "If you truly want the fewest-failure-points build, the manual US.050 or the lifetime-backed manual Davek Mini are the reliability-max picks — the U.200's only weak point is its auto spring."
-    },
-    "knirps-u200|senz-micro": {
-      "text": "Value pick vs the Dutch-design object. The Senz Micro is the best-fitting umbrella here (18.5 cm drops straight in), an iF/Red Dot design icon, with a fast-dry coating and an aero canopy that's smart in wind — but it costs €23 more, is manual, and its small 80×74 canopy plus folding-frame durability reports pull its overall value just below the U.200's. Prefer the U.200 on pure value; prefer the Senz Micro if its design and effortless drop-in fit are worth the premium to you (switch to the Design lens on the chart and it climbs)."
-    },
-    "impliva-minimax|fulton-storm1": {
-      "text": "Why pay up from the €13 floor. The Impliva miniMAX is remarkable value — ~€13, the biggest 100 cm canopy, and it fits — but it's a budget frame that wears faster, with an unverified windproof claim and a generic look. For ~€13 more the Fulton Storm-1 gives purpose-built flex-and-recover FRP ribs, a rustproof frame, half the review-reported wear, and a tidier object. Prefer the Fulton as the sensible entry point; the Impliva only as a keep-in-the-drawer spare or if budget is the hard constraint."
-    },
-    "knirps-u200|doppler-carbonsteel": {
-      "text": "The one that hurts: the Doppler Carbonsteel Magic is the storm/durability KING of the whole scout — 150 km/h, a 100 cm Pongee canopy, 5-yr warranty, near-indestructible — and it costs only €13 more than the U.200. It loses this decision on a single centimetre: 29 cm folded means it will NOT sit in the bottom of the bag. That is exactly what the fit constraint is protecting against. Prefer the U.200 because it actually meets the hard requirement; the Carbonsteel is the answer only if you ever relax the 'lives in the backpack' rule.",
-      "flag": "Carbonsteel Magic is screened out purely by the ≤28 cm fit (29 cm). If the bag or carry method changed, it would be the outright winner on windproof + coverage + durability."
+    "knirps-us050|doppler-carbonsteel": {
+      "text": "The storm king the constraint still rejects. The Doppler Carbonsteel Magic has the field's only independently wind-tunnel-validated rating (150 km/h, TU-Munich), a 100 cm canopy and a tank of a frame — but at 29 cm folded it won't sit in the bag, and even it has the Doppler auto-latch weakness. Prefer the US.050 because it actually meets the hard fit; the Carbonsteel only if you relax the 'lives in the backpack' rule.",
+      "flag": "Carbonsteel is screened purely on the 1 cm fit miss (29 vs 28). Its windproof credibility is the highest in the field — if the carry method changed, it would lead on wind + coverage."
     }
   }
 };</script>
