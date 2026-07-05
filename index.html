@@ -3,8 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="robots" content="noindex,nofollow">
+<meta name="vf-build" content="hub-cfff39f0">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Value Frontier &mdash; decisions</title>
+<title>Value Frontier — decisions</title>
 <style>
 :root{--bg:#f4f4f1;--ink:#1a1815;--muted:#6d685f;--faint:#9c968c;--line:#e7e4dc;--line2:#f0ede6;--card:#fff;--rec:#b8430f;--rec-border:#ecdacd;--sh1:0 1px 2px rgba(26,24,21,.04),0 1px 3px rgba(26,24,21,.05);--sh2:0 2px 5px rgba(26,24,21,.04),0 8px 22px rgba(26,24,21,.06);--serif:'Source Serif 4',Georgia,'Times New Roman',serif;--sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;}
 *{box-sizing:border-box;}
@@ -25,13 +26,17 @@ h1{font-family:var(--serif);font-weight:600;font-size:32px;letter-spacing:-.015e
 .card-h{display:flex;align-items:center;justify-content:space-between;gap:12px;}
 .card-title{font-family:var(--serif);font-weight:600;font-size:18px;}
 .card-head-r{display:flex;align-items:center;gap:10px;}
-.card-status{font-family:var(--mono);font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:#5f7a55;background:#eef1ea;border:1px solid #dde3d6;border-radius:999px;padding:3px 9px;line-height:1;white-space:nowrap;}
+.card-status{font-family:var(--mono);font-size:10px;letter-spacing:.09em;text-transform:uppercase;border-radius:999px;padding:3px 9px;line-height:1;white-space:nowrap;}
+.pill-ok{color:#5f7a55;background:#eef1ea;border:1px solid #dde3d6;}
+.pill-muted{color:#847e72;background:#f0ede6;border:1px solid #e2ded4;}
+.pill-warn{color:#a06a1f;background:#f7efdf;border:1px solid #ead9bb;}
 .card-go{color:var(--rec);font-size:18px;line-height:1;}
 .card-blurb{color:var(--muted);font-size:13.5px;margin:5px 0 0;}
 .card-chose{font-size:13.5px;color:var(--muted);margin:8px 0 0;}
 .card-chose strong{color:var(--rec);font-weight:600;}
 .card.decided{border-color:var(--line);}
 .card-meta{font-size:12px;color:var(--faint);margin:10px 0 0;line-height:1.5;}
+.card-meta a{color:var(--rec);}
 .card-date{font-family:var(--mono);font-size:10.5px;letter-spacing:.02em;text-transform:uppercase;color:var(--rec);}
 .foot{margin-top:30px;font-size:12px;color:var(--faint);border-top:1px solid var(--line2);padding-top:16px;}
 @media(max-width:560px){.bar-in,.wrap{padding-left:16px;padding-right:16px;}.wrap{padding-top:24px;}h1{font-size:27px;}}
@@ -44,56 +49,56 @@ h1{font-family:var(--serif);font-weight:600;font-size:32px;letter-spacing:-.015e
 <h1>Decisions</h1>
 <p class="lead">Each one weighs what matters to you against the true cost of owning it, then shows where buying up stops paying off.</p>
 <nav class="cards">
-      <a class="card decided" href="washer-dryer/">
-        <div class="card-h"><span class="card-title">Washer-dryer</span><span class="card-head-r"><span class="card-status">Decided</span><span class="card-go" aria-hidden="true">&rarr;</span></span></div>
-        <p class="card-blurb">Stacked washer + heat-pump dryer for a one-person flat.</p>
-        <p class="card-chose">Chosen &middot; <strong>Bosch Serie 6 (WGG244ZANL + WQG233D1NL)</strong></p>
-        <p class="card-meta"><span class="card-date">Updated 27 Jun 2026</span> &middot; Scoring QA pass — Bosch/Beko/Siemens scores corrected; the pick held.</p>
-      </a>
-      <a class="card decided" href="sanchi-tv/">
-        <div class="card-h"><span class="card-title">Television</span><span class="card-head-r"><span class="card-status">Decided</span><span class="card-go" aria-hidden="true">&rarr;</span></span></div>
-        <p class="card-blurb">55-inch OLED for a bright, Apple-TV-first living room.</p>
-        <p class="card-chose">Chosen &middot; <strong>Sony Bravia 8</strong></p>
-        <p class="card-meta"><span class="card-date">Updated 27 Jun 2026</span> &middot; Added the current TV (Samsung 55Q64B) as the €0 keep-it baseline; prices reconciled to live + sound gap corrected — Sony Bravia 8 still the pick.</p>
-      </a>
-      <a class="card" href="wc-bin/">
-        <div class="card-h"><span class="card-title">Bathroom bin</span><span class="card-head-r"><span class="card-go" aria-hidden="true">&rarr;</span></span></div>
-        <p class="card-blurb">Small pedal bin for the WC, warm-neutral palette.</p>
-        <p class="card-meta"><span class="card-date">Updated 28 Jun 2026</span> &middot; Multi-shop sweep (bol + amazon + fonq) — added 5 candidates incl. the Blomus TUBO Taupe; the Brabantia NewIcon Soft Beige still wins.</p>
-      </a>
-      <a class="card" href="wc-brush/">
-        <div class="card-h"><span class="card-title">Toilet brush</span><span class="card-head-r"><span class="card-go" aria-hidden="true">&rarr;</span></span></div>
-        <p class="card-blurb">A brush that hides the bristles and matches the room.</p>
-        <p class="card-meta"><span class="card-date">Updated 27 Jun 2026</span> &middot; Added side-by-side comparisons and the new app design.</p>
-      </a>
-      <a class="card" href="wc-dispenser/">
-        <div class="card-h"><span class="card-title">Soap dispenser</span><span class="card-head-r"><span class="card-go" aria-hidden="true">&rarr;</span></span></div>
-        <p class="card-blurb">Refillable dispenser in a warm-sand palette.</p>
-        <p class="card-meta"><span class="card-date">Updated 27 Jun 2026</span> &middot; Added side-by-side comparisons and the new app design.</p>
-      </a>
-      <a class="card decided" href="cocktail-shaker/">
-        <div class="card-h"><span class="card-title">Cocktail shaker</span><span class="card-head-r"><span class="card-status">Decided</span><span class="card-go" aria-hidden="true">&rarr;</span></span></div>
-        <p class="card-blurb">One dishwasher-safe shaker for regular home cocktails.</p>
-        <p class="card-chose">Chosen &middot; <strong>OXO Steel single-wall shaker</strong></p>
-        <p class="card-meta"><span class="card-date">Updated 27 Jun 2026</span> &middot; bol.com verification sweep — added the OXO Steel single-wall shaker, which becomes the pick (Zulay Boston now co-lead runner-up).</p>
-      </a>
       <a class="card" href="anc-headphones/">
         <div class="card-h"><span class="card-title">Noise-cancelling headphones</span><span class="card-head-r"><span class="card-go" aria-hidden="true">&rarr;</span></span></div>
         <p class="card-blurb">A real upgrade over the Sony WH-1000XM4, €300–700.</p>
-        <p class="card-meta"><span class="card-date">Updated 1 Jul 2026</span> &middot; Full NL premium-ANC field (16) + brand-by-brand sweep; audiophile + Reddit score cross-check moved the value knee to the Sony WH-1000XM6; buy-ups = Sony 1000X Collexion / B&amp;W Px8 S2. New Explore-relationships tab.</p>
+        <p class="card-meta"><span class="card-date">Updated 1 Jul 2026</span> &middot; Full NL premium-ANC field + brand sweep; value knee = Sony WH-1000XM6. &middot; <a href="anc-headphones/index.it.html">in italiano</a></p>
       </a>
-      <a class="card" href="umbrella/">
-        <div class="card-h"><span class="card-title">Umbrella</span><span class="card-head-r"><span class="card-go" aria-hidden="true">&rarr;</span></span></div>
-        <p class="card-blurb">A quality windproof umbrella that fits the bottom of the Peak Design 20L backpack.</p>
-        <p class="card-meta"><span class="card-date">Updated 2 Jul 2026</span> &middot; New decision — 41 models scouted across 7 brand clusters. The 28 cm bag-fit ceiling screens out the storm kings (Blunt Metro, Carbonsteel Magic, Senz Original); the value knee is the Knirps U.200 Ultra Light Duomatic, buy-up = Davek Mini (lifetime), design alt = Senz Micro.</p>
+      <a class="card decided" href="cocktail-shaker/">
+        <div class="card-h"><span class="card-title">Cocktail shaker</span><span class="card-head-r"><span class="card-status pill-ok">Decided</span><span class="card-go" aria-hidden="true">&rarr;</span></span></div>
+        <p class="card-blurb">One dishwasher-safe shaker for regular home cocktails.</p>
+        <p class="card-chose">Chosen &middot; <strong>OXO Steel single-wall cocktail shaker (700 ml)</strong></p>
+        <p class="card-meta"><span class="card-date">Updated 27 Jun 2026</span> &middot; bol.com verification sweep — the OXO Steel becomes the pick.</p>
       </a>
-      <a class="card" href="sanchi-monitor/">
+      <a class="card" href="monitor/">
         <div class="card-h"><span class="card-title">Desk monitor</span><span class="card-head-r"><span class="card-go" aria-hidden="true">&rarr;</span></span></div>
         <p class="card-blurb">A ≤€200 white monitor for a WFH desk set against a window.</p>
         <p class="card-meta"><span class="card-date">Updated 4 Jul 2026</span> &middot; New decision — 16 models scouted ≤€200 (Tweakers facets → detail + web-grounded reviews). The frontier is nearly FLAT €138→€210: white-finish gain ≈ USB-C-charging gain, so it is a trade not a ranking. Value knee = Iiyama XB2796QSC (€138, black, 65W USB-C); white pick = LG 27US550-W (€180, 4K); sleek buy-up = Dell S2725DSM (€210).</p>
       </a>
+      <a class="card decided" href="tv/">
+        <div class="card-h"><span class="card-title">Television</span><span class="card-head-r"><span class="card-status pill-ok">Decided</span><span class="card-go" aria-hidden="true">&rarr;</span></span></div>
+        <p class="card-blurb">55-inch OLED for a bright, Apple-TV-first living room.</p>
+        <p class="card-chose">Chosen &middot; <strong>Sony Bravia 8 / K-55XR80</strong></p>
+        <p class="card-meta"><span class="card-date">Updated 27 Jun 2026</span> &middot; Prices reconciled to live + sound gap corrected — Sony Bravia 8 still the pick.</p>
+      </a>
+      <a class="card decided" href="washer-dryer/">
+        <div class="card-h"><span class="card-title">Washer-dryer</span><span class="card-head-r"><span class="card-status pill-ok">Decided</span><span class="card-go" aria-hidden="true">&rarr;</span></span></div>
+        <p class="card-blurb">Stacked washer + heat-pump dryer for a one-person flat.</p>
+        <p class="card-chose">Chosen &middot; <strong>Bosch Serie 6 WGG244ZANL + WQG233D1NL</strong></p>
+        <p class="card-meta"><span class="card-date">Updated 27 Jun 2026</span> &middot; Scoring QA pass — Bosch/Beko/Siemens scores corrected; the pick held.</p>
+      </a>
+      <a class="card" href="umbrella/">
+        <div class="card-h"><span class="card-title">Umbrella</span><span class="card-head-r"><span class="card-go" aria-hidden="true">&rarr;</span></span></div>
+        <p class="card-blurb">A quality windproof umbrella that fits the bottom of the Peak Design 20L backpack.</p>
+        <p class="card-meta"><span class="card-date">Updated 2 Jul 2026</span> &middot; 41 models scouted across 7 brand clusters; knee = Knirps U.200 Ultra Light Duomatic.</p>
+      </a>
+      <a class="card" href="wc-bin/">
+        <div class="card-h"><span class="card-title">Bathroom bin</span><span class="card-head-r"><span class="card-go" aria-hidden="true">&rarr;</span></span></div>
+        <p class="card-blurb">Small pedal bin for the WC, warm-neutral palette.</p>
+        <p class="card-meta"><span class="card-date">Updated 28 Jun 2026</span> &middot; Multi-shop sweep (bol + amazon + fonq) — Brabantia NewIcon Soft Beige still wins.</p>
+      </a>
+      <a class="card" href="wc-brush/">
+        <div class="card-h"><span class="card-title">Toilet brush</span><span class="card-head-r"><span class="card-go" aria-hidden="true">&rarr;</span></span></div>
+        <p class="card-blurb">A brush that hides the bristles and matches the room.</p>
+        <p class="card-meta"><span class="card-date">Updated 27 Jun 2026</span> &middot; Side-by-side comparisons and the new app design.</p>
+      </a>
+      <a class="card" href="wc-dispenser/">
+        <div class="card-h"><span class="card-title">Soap dispenser</span><span class="card-head-r"><span class="card-go" aria-hidden="true">&rarr;</span></span></div>
+        <p class="card-blurb">Refillable dispenser in a warm-sand palette.</p>
+        <p class="card-meta"><span class="card-date">Updated 27 Jun 2026</span> &middot; Side-by-side comparisons and the new app design.</p>
+      </a>
 </nav>
-<p class="foot">Private &mdash; reachable only by this link, not indexed by search engines.</p>
+<p class="foot">Private — reachable only by this link, not indexed by search engines.</p>
 </main>
 </body>
 </html>
